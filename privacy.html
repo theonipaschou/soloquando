@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Privacy policy · solo.quando</title>
+<meta name="description" content="How solo.quando handles personal data under the Swiss nDSG."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#F5EFE4; --paper:#EDE5D4; --ink:#2B1A0F;
+  --dim:#6B5744; --terra:#C2663D; --honey:#D4A23F;
+  --sage:#7A8B6A; --line:rgba(43,26,15,.10);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bone);color:var(--ink);font-family:'Jost',sans-serif;
+  font-weight:300;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 48px;}
+@media(max-width:720px){.wrap{padding:0 22px;}}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.05;letter-spacing:-.02em;}
+em{font-style:italic;color:var(--terra);}
+a{color:inherit;text-decoration:none;}
+img{display:block;}
+.kicker{font-size:11px;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--terra);}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(245,239,228,.96);
+  backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);
+  border-bottom:1px solid var(--line);}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;
+  height:68px;padding:0 48px;max-width:1180px;margin:0 auto;}
+@media(max-width:720px){.nav__inner{padding:0 22px;}}
+.nav__logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;letter-spacing:-.01em;color:var(--ink);}
+.nav__logo span{color:var(--terra);}
+.nav__links{display:flex;gap:36px;list-style:none;}
+.nav__links a{font-size:13px;font-weight:400;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
+.nav__links a:hover,.nav__links a.on{color:var(--terra);}
+.nav__cta{background:var(--ink);color:var(--bone);border:none;cursor:pointer;
+  font-family:'Jost',sans-serif;font-size:11px;font-weight:400;letter-spacing:.2em;
+  text-transform:uppercase;padding:13px 24px;transition:background .2s;}
+.nav__cta:hover{background:var(--terra);}
+@media(max-width:900px){.nav__links{display:none;}}
+
+/* FOOTER */
+.footer{background:var(--ink);color:rgba(245,239,228,.55);padding:80px 0 44px;font-size:13px;font-weight:300;}
+.footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;}
+@media(max-width:860px){.footer__grid{grid-template-columns:1fr 1fr;gap:40px;}}
+@media(max-width:480px){.footer__grid{grid-template-columns:1fr;}}
+.footer__logo{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--bone);margin-bottom:16px;}
+.footer__logo span{color:var(--terra);}
+.footer__tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;
+  line-height:1.5;color:rgba(245,239,228,.6);max-width:280px;margin-top:14px;}
+.footer__contact{margin-top:20px;}
+.footer__contact a{display:block;color:rgba(245,239,228,.65);margin-bottom:8px;transition:color .2s;font-size:13px;}
+.footer__contact a:hover{color:var(--bone);}
+.footer__col h5{font-family:'Jost',sans-serif;font-weight:500;text-transform:uppercase;
+  letter-spacing:.2em;font-size:10px;color:var(--terra);margin-bottom:18px;}
+.footer__col ul{list-style:none;}
+.footer__col li{margin-bottom:10px;}
+.footer__col a{color:rgba(245,239,228,.55);transition:color .2s;}
+.footer__col a:hover{color:var(--bone);}
+.footer__bottom{border-top:1px solid rgba(245,239,228,.1);padding-top:28px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+  font-size:11px;letter-spacing:.04em;}
+.footer__bottom a{color:rgba(245,239,228,.4);}
+.footer__bottom a:hover{color:var(--bone);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Jost',sans-serif;
+  font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;
+  padding:16px 30px;border:none;cursor:pointer;transition:all .22s ease;line-height:1;}
+.btn--dark{background:var(--ink);color:var(--bone);}
+.btn--dark:hover{background:var(--terra);}
+.btn--terra{background:var(--terra);color:var(--bone);}
+.btn--terra:hover{background:#9C4E2B;}
+.btn--ghost{background:transparent;color:var(--ink);border:1px solid rgba(43,26,15,.3);}
+.btn--ghost:hover{background:var(--ink);color:var(--bone);}
+.btn--ghost-light{background:transparent;color:var(--bone);border:1px solid rgba(245,239,228,.35);}
+.btn--ghost-light:hover{background:var(--bone);color:var(--ink);}
+
+/* FORMS — shared */
+.sq-field{display:flex;flex-direction:column;gap:6px;}
+.sq-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);}
+.sq-input,.sq-select,.sq-textarea{
+  background:var(--paper);border:1px solid var(--line);
+  color:var(--ink);font-family:'Jost',sans-serif;font-size:14px;
+  padding:15px 18px;outline:none;width:100%;
+  transition:border-color .2s,background .2s;
+  -webkit-appearance:none;appearance:none;
+}
+.sq-input:focus,.sq-select:focus,.sq-textarea:focus{
+  border-color:rgba(43,26,15,.4);background:var(--bone);}
+.sq-input::placeholder,.sq-textarea::placeholder{color:var(--dim);opacity:.55;}
+.sq-textarea{resize:vertical;min-height:110px;}
+.sq-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B5744' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;}
+.sq-check-row{display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:14px;color:var(--dim);line-height:1.5;}
+.sq-check-row input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:1px;
+  accent-color:var(--terra);cursor:pointer;}
+.sq-check-row a{color:var(--terra);text-decoration:underline;}
+.sq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:560px){.sq-grid{grid-template-columns:1fr;}}
+.sq-submit{background:var(--ink);color:var(--bone);border:none;cursor:pointer;
+  font-family:'Jost',sans-serif;font-size:11px;font-weight:400;letter-spacing:.22em;
+  text-transform:uppercase;padding:18px 36px;transition:background .22s;width:100%;}
+.sq-submit:hover{background:var(--terra);}
+.sq-submit:disabled{opacity:.5;cursor:not-allowed;}
+.sq-submit--honey{background:var(--honey);color:var(--ink);}
+.sq-submit--honey:hover{background:#c4901d;}
+.sq-honeypot{display:none!important;}
+.form-msg{padding:20px 24px;font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:19px;line-height:1.45;border-left:2px solid var(--terra);}
+.form-msg--ok{background:rgba(122,139,106,.1);border-color:var(--sage);}
+.form-msg--err{background:rgba(194,102,61,.08);border-color:var(--terra);}
+
+/* PILOT BADGE */
+.pilot-badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(194,102,61,.12);border:1px solid rgba(194,102,61,.3);
+  padding:8px 16px;margin-bottom:20px;}
+.pilot-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--terra);animation:pulse 2s infinite;}
+.pilot-badge span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav__inner">
+  <a href="/" class="nav__logo">solo<span>.</span>quando</a>
+  <ul class="nav__links"><li><a href="/">Home</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li></ul>
+  <button class="nav__cta" onclick="location.href='/first-circle'">Join the first circle</button>
+</div></nav>
+<style>
+.legal-wrap{max-width:760px;margin:0 auto;padding:96px 48px 96px;}
+@media(max-width:720px){.legal-wrap{padding:72px 22px 80px;}}
+.legal-wrap h1{font-size:clamp(44px,6vw,70px);letter-spacing:-.02em;margin-bottom:40px;}
+.legal-wrap h2{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:-.01em;
+  margin:40px 0 13px;font-weight:400;}
+.legal-wrap h2:first-of-type{margin-top:0;}
+.legal-wrap p{font-size:16px;line-height:1.72;color:var(--dim);margin-bottom:13px;}
+.legal-wrap ul{margin:0 0 14px 20px;}
+.legal-wrap li{font-size:16px;line-height:1.72;color:var(--dim);margin-bottom:8px;}
+.legal-wrap a{color:var(--terra);}
+.legal-meta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:#A89A82;margin-bottom:56px;display:block;}
+.info-box{background:var(--paper);padding:24px 28px;margin:22px 0;border-left:2px solid var(--terra);}
+.info-box p{margin-bottom:8px;color:var(--dim);}
+.info-box p:last-child{margin-bottom:0;}
+.toc-box{background:var(--paper);padding:26px 30px;margin-bottom:40px;}
+.toc-box h3{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:16px;color:var(--dim);}
+.toc-box ol{margin-left:18px;}
+.toc-box li{font-size:14px;color:var(--dim);margin-bottom:7px;}
+.toc-box a{color:var(--terra);}
+code{font-family:monospace;font-size:13px;background:var(--paper);padding:2px 6px;}
+</style><div class="legal-wrap">
+<p class="kicker">Legal</p>
+<h1>Privacy <em>policy</em>.</h1>
+<span class="legal-meta">Last updated: 27 April 2026 · Swiss nDSG (SR 235.1, in force 1 September 2023)</span>
+<h2>Who is responsible</h2>
+<p>The data controller is Theoni Paschou, Frauentalweg 119, 8045 Zürich, Switzerland. Email: <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>. Phone: <a href="tel:+41787942700">+41 78 794 27 00</a>.</p>
+<h2>What data we collect</h2>
+<ul>
+  <li><strong>Email address</strong> — when you join the first circle, submit a baker enquiry, or use the contact form.</li>
+  <li><strong>Name, phone, neighbourhood</strong> — when you submit a baker or contact enquiry (fields marked optional are not required).</li>
+  <li><strong>Message content and form responses</strong> — when you use any of our forms.</li>
+  <li><strong>Usage data</strong> — standard web server logs (IP address, browser type, pages visited) collected automatically by Cloudflare.</li>
+</ul>
+<h2>Why we collect it and the legal basis</h2>
+<ul>
+  <li><strong>First circle signups</strong> — to notify you when the first batch goes live. Legal basis: your consent (nDSG Art. 6).</li>
+  <li><strong>Baker enquiries</strong> — to respond to your interest in joining as a producer. Legal basis: pre-contractual measures at your request.</li>
+  <li><strong>Contact form messages</strong> — to reply to your enquiry. Legal basis: legitimate interest in responding to communications.</li>
+  <li><strong>Usage logs</strong> — website security and performance. Legal basis: legitimate interest.</li>
+</ul>
+<h2>How long we keep it</h2>
+<p>First circle email addresses are kept until the platform launches and you register or unsubscribe. Baker and contact enquiries are kept for a maximum of 24 months. Usage logs are retained by Cloudflare under their standard policy.</p>
+<h2>Who we share it with</h2>
+<p>We do not sell or share your data for marketing. Sub-processors used:</p>
+<ul>
+  <li><strong>Cloudflare, Inc.</strong> (US) — website hosting and CDN.</li>
+  <li><strong>GitHub, Inc.</strong> (US) — source code hosting.</li>
+  <li><strong>Formspree, Inc.</strong> (US) — form submission and email delivery. Formspree's privacy policy is available at formspree.io/legal/privacy-policy.</li>
+</ul>
+<p>All three participate in applicable EU-US data privacy frameworks.</p>
+<h2>Your rights under the Swiss nDSG</h2>
+<p>You have the right to access, correct, delete, or object to processing of your personal data, and to withdraw consent at any time. To exercise any of these rights, write to <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>. We will respond within 30 days. You may also lodge a complaint with the Federal Data Protection and Information Commissioner (FDPIC) at edoeb.admin.ch.</p>
+<h2>Cookies and tracking</h2>
+<p>This website uses no analytics cookies and no marketing cookies. Cloudflare may set a strictly necessary cookie (<code>__cf_bm</code>) for bot detection. No consent is required for strictly necessary cookies under Swiss law. If analytics are introduced in future, this policy will be updated and a consent mechanism added before tracking begins.</p>
+<h2>Changes to this policy</h2>
+<p>Material changes will be reflected in the updated date above. We encourage you to review this page periodically.</p>
+<h2>Contact</h2>
+<p>For any privacy question: <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a> · +41 78 794 27 00</p>
+</div>
+<footer class="footer"><div class="wrap">
+  <div class="footer__grid">
+    <div>
+      <div class="footer__logo">solo<span>.</span>quando</div>
+      <p class="footer__tagline">Made only when you want it.</p>
+      <div class="footer__contact">
+        <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>
+        <a href="tel:+41787942700">+41 78 794 27 00</a>
+        <a href="https://www.instagram.com/solo.quando" target="_blank">@solo.quando</a>
+        <a href="https://www.linkedin.com/company/soloquando/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h5>Discover</h5>
+      <ul>
+        <li><a href="/how-it-works">How it works</a></li>
+        <li><a href="/our-story">Our story</a></li>
+        <li><a href="/first-circle">Join the first circle</a></li>
+        <li><a href="/bake-with-us">Bake with us</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="/contact">Contact us</a></li>
+        <li><a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a></li>
+        <li><a href="tel:+41787942700">+41 78 794 27 00</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="/imprint">Imprint</a></li>
+        <li><a href="/privacy">Privacy policy</a></li>
+        <li><a href="/terms">Terms of use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 solo.quando · Theoni Paschou · Zürich, Switzerland</span>
+    <span><a href="#">EN</a> &nbsp;·&nbsp; <a href="#">DE</a></span>
+  </div>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Terms of use · solo.quando</title>
+<meta name="description" content="Terms governing use of soloquando.ch — the demand-first pre-order platform."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#F5EFE4; --paper:#EDE5D4; --ink:#2B1A0F;
+  --dim:#6B5744; --terra:#C2663D; --honey:#D4A23F;
+  --sage:#7A8B6A; --line:rgba(43,26,15,.10);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bone);color:var(--ink);font-family:'Jost',sans-serif;
+  font-weight:300;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 48px;}
+@media(max-width:720px){.wrap{padding:0 22px;}}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.05;letter-spacing:-.02em;}
+em{font-style:italic;color:var(--terra);}
+a{color:inherit;text-decoration:none;}
+img{display:block;}
+.kicker{font-size:11px;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--terra);}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(245,239,228,.96);
+  backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);
+  border-bottom:1px solid var(--line);}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;
+  height:68px;padding:0 48px;max-width:1180px;margin:0 auto;}
+@media(max-width:720px){.nav__inner{padding:0 22px;}}
+.nav__logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;letter-spacing:-.01em;color:var(--ink);}
+.nav__logo span{color:var(--terra);}
+.nav__links{display:flex;gap:36px;list-style:none;}
+.nav__links a{font-size:13px;font-weight:400;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
+.nav__links a:hover,.nav__links a.on{color:var(--terra);}
+.nav__cta{background:var(--ink);color:var(--bone);border:none;cursor:pointer;
+  font-family:'Jost',sans-serif;font-size:11px;font-weight:400;letter-spacing:.2em;
+  text-transform:uppercase;padding:13px 24px;transition:background .2s;}
+.nav__cta:hover{background:var(--terra);}
+@media(max-width:900px){.nav__links{display:none;}}
+
+/* FOOTER */
+.footer{background:var(--ink);color:rgba(245,239,228,.55);padding:80px 0 44px;font-size:13px;font-weight:300;}
+.footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;}
+@media(max-width:860px){.footer__grid{grid-template-columns:1fr 1fr;gap:40px;}}
+@media(max-width:480px){.footer__grid{grid-template-columns:1fr;}}
+.footer__logo{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--bone);margin-bottom:16px;}
+.footer__logo span{color:var(--terra);}
+.footer__tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;
+  line-height:1.5;color:rgba(245,239,228,.6);max-width:280px;margin-top:14px;}
+.footer__contact{margin-top:20px;}
+.footer__contact a{display:block;color:rgba(245,239,228,.65);margin-bottom:8px;transition:color .2s;font-size:13px;}
+.footer__contact a:hover{color:var(--bone);}
+.footer__col h5{font-family:'Jost',sans-serif;font-weight:500;text-transform:uppercase;
+  letter-spacing:.2em;font-size:10px;color:var(--terra);margin-bottom:18px;}
+.footer__col ul{list-style:none;}
+.footer__col li{margin-bottom:10px;}
+.footer__col a{color:rgba(245,239,228,.55);transition:color .2s;}
+.footer__col a:hover{color:var(--bone);}
+.footer__bottom{border-top:1px solid rgba(245,239,228,.1);padding-top:28px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+  font-size:11px;letter-spacing:.04em;}
+.footer__bottom a{color:rgba(245,239,228,.4);}
+.footer__bottom a:hover{color:var(--bone);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Jost',sans-serif;
+  font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;
+  padding:16px 30px;border:none;cursor:pointer;transition:all .22s ease;line-height:1;}
+.btn--dark{background:var(--ink);color:var(--bone);}
+.btn--dark:hover{background:var(--terra);}
+.btn--terra{background:var(--terra);color:var(--bone);}
+.btn--terra:hover{background:#9C4E2B;}
+.btn--ghost{background:transparent;color:var(--ink);border:1px solid rgba(43,26,15,.3);}
+.btn--ghost:hover{background:var(--ink);color:var(--bone);}
+.btn--ghost-light{background:transparent;color:var(--bone);border:1px solid rgba(245,239,228,.35);}
+.btn--ghost-light:hover{background:var(--bone);color:var(--ink);}
+
+/* FORMS — shared */
+.sq-field{display:flex;flex-direction:column;gap:6px;}
+.sq-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);}
+.sq-input,.sq-select,.sq-textarea{
+  background:var(--paper);border:1px solid var(--line);
+  color:var(--ink);font-family:'Jost',sans-serif;font-size:14px;
+  padding:15px 18px;outline:none;width:100%;
+  transition:border-color .2s,background .2s;
+  -webkit-appearance:none;appearance:none;
+}
+.sq-input:focus,.sq-select:focus,.sq-textarea:focus{
+  border-color:rgba(43,26,15,.4);background:var(--bone);}
+.sq-input::placeholder,.sq-textarea::placeholder{color:var(--dim);opacity:.55;}
+.sq-textarea{resize:vertical;min-height:110px;}
+.sq-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B5744' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;}
+.sq-check-row{display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:14px;color:var(--dim);line-height:1.5;}
+.sq-check-row input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:1px;
+  accent-color:var(--terra);cursor:pointer;}
+.sq-check-row a{color:var(--terra);text-decoration:underline;}
+.sq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:560px){.sq-grid{grid-template-columns:1fr;}}
+.sq-submit{background:var(--ink);color:var(--bone);border:none;cursor:pointer;
+  font-family:'Jost',sans-serif;font-size:11px;font-weight:400;letter-spacing:.22em;
+  text-transform:uppercase;padding:18px 36px;transition:background .22s;width:100%;}
+.sq-submit:hover{background:var(--terra);}
+.sq-submit:disabled{opacity:.5;cursor:not-allowed;}
+.sq-submit--honey{background:var(--honey);color:var(--ink);}
+.sq-submit--honey:hover{background:#c4901d;}
+.sq-honeypot{display:none!important;}
+.form-msg{padding:20px 24px;font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:19px;line-height:1.45;border-left:2px solid var(--terra);}
+.form-msg--ok{background:rgba(122,139,106,.1);border-color:var(--sage);}
+.form-msg--err{background:rgba(194,102,61,.08);border-color:var(--terra);}
+
+/* PILOT BADGE */
+.pilot-badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(194,102,61,.12);border:1px solid rgba(194,102,61,.3);
+  padding:8px 16px;margin-bottom:20px;}
+.pilot-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--terra);animation:pulse 2s infinite;}
+.pilot-badge span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav__inner">
+  <a href="/" class="nav__logo">solo<span>.</span>quando</a>
+  <ul class="nav__links"><li><a href="/">Home</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li></ul>
+  <button class="nav__cta" onclick="location.href='/first-circle'">Join the first circle</button>
+</div></nav>
+<style>
+.legal-wrap{max-width:760px;margin:0 auto;padding:96px 48px 96px;}
+@media(max-width:720px){.legal-wrap{padding:72px 22px 80px;}}
+.legal-wrap h1{font-size:clamp(44px,6vw,70px);letter-spacing:-.02em;margin-bottom:40px;}
+.legal-wrap h2{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:-.01em;
+  margin:40px 0 13px;font-weight:400;}
+.legal-wrap h2:first-of-type{margin-top:0;}
+.legal-wrap p{font-size:16px;line-height:1.72;color:var(--dim);margin-bottom:13px;}
+.legal-wrap ul{margin:0 0 14px 20px;}
+.legal-wrap li{font-size:16px;line-height:1.72;color:var(--dim);margin-bottom:8px;}
+.legal-wrap a{color:var(--terra);}
+.legal-meta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:#A89A82;margin-bottom:56px;display:block;}
+.info-box{background:var(--paper);padding:24px 28px;margin:22px 0;border-left:2px solid var(--terra);}
+.info-box p{margin-bottom:8px;color:var(--dim);}
+.info-box p:last-child{margin-bottom:0;}
+.toc-box{background:var(--paper);padding:26px 30px;margin-bottom:40px;}
+.toc-box h3{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:16px;color:var(--dim);}
+.toc-box ol{margin-left:18px;}
+.toc-box li{font-size:14px;color:var(--dim);margin-bottom:7px;}
+.toc-box a{color:var(--terra);}
+code{font-family:monospace;font-size:13px;background:var(--paper);padding:2px 6px;}
+</style><div class="legal-wrap">
+<p class="kicker">Legal</p>
+<h1>Terms of <em>use</em>.</h1>
+<span class="legal-meta">Last updated: 27 April 2026 · Governed by Swiss law</span>
+<div class="toc-box">
+  <h3>Contents</h3>
+  <ol>
+    <li><a href="#scope">Scope and acceptance</a></li>
+    <li><a href="#about">About solo.quando</a></li>
+    <li><a href="#mechanism">The demand-first mechanism</a></li>
+    <li><a href="#payment">Pricing, fees and payment</a></li>
+    <li><a href="#pickup">Pickup and collection</a></li>
+    <li><a href="#refunds">Cancellations and refunds</a></li>
+    <li><a href="#food">Food safety and allergens</a></li>
+    <li><a href="#bakers">Obligations of producers</a></li>
+    <li><a href="#buyers">Obligations of buyers</a></li>
+    <li><a href="#liability">Liability</a></li>
+    <li><a href="#ip">Intellectual property</a></li>
+    <li><a href="#privacy">Data protection</a></li>
+    <li><a href="#law">Governing law and jurisdiction</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</div>
+<h2 id="scope">1. Scope and acceptance</h2>
+<p>These Terms of Use ("Terms") govern access to and use of soloquando.ch and any related services. By joining the first circle, submitting a baker enquiry, placing a pre-order, or otherwise using the Platform, you accept these Terms in full.</p>
+<h2 id="about">2. About solo.quando</h2>
+<p>The Platform is operated by Theoni Paschou, Frauentalweg 119, 8045 Zürich, Switzerland (see the <a href="/imprint">Imprint</a>). solo.quando is a pre-order marketplace connecting home bakers ("Producers") with neighbours ("Buyers"). solo.quando acts as an intermediary; the contract for any food item is concluded directly between the Producer and the Buyer.</p>
+<h2 id="mechanism">3. The demand-first mechanism</h2>
+<p>A Producer lists a batch with a minimum threshold (typically five Buyers). A Buyer's payment is held — not charged — until the threshold is reached before the deadline. If the threshold is met, the batch is confirmed and production begins. If not, all payment holds are released automatically and no charge is made to any Buyer.</p>
+<h2 id="payment">4. Pricing, fees and payment</h2>
+<p>Producers set their own prices. solo.quando charges a platform fee of 11–12% (Starter tier: 12%; Pro tier: 10%), deducted from the Producer's payout. Buyers pay the price shown at the time of commitment — no additional charges. All prices are in Swiss Francs (CHF) and include applicable taxes.</p>
+<h2 id="pickup">5. Pickup and collection</h2>
+<p>All orders are collected in person near the Producer's home, at a time agreed between Producer and Buyer. solo.quando does not provide delivery. Buyers are responsible for collecting their order within the agreed window.</p>
+<h2 id="refunds">6. Cancellations and refunds</h2>
+<p>If a batch does not reach its minimum threshold before the deadline, all payment holds are released automatically and in full. No cancellation request is required. If a confirmed batch is cancelled by the Producer, Buyers are entitled to a full refund. If goods collected are materially different from the listing description, Buyers should contact <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a> within 24 hours of collection.</p>
+<h2 id="food">7. Food safety and allergens</h2>
+<p>Producers must declare all ingredients and allergens in their listing before publication, in accordance with the Swiss Federal Act on Foodstuffs (LMG, SR 817.0) and the Swiss Food and Utility Articles Ordinance (LGV, SR 817.02). Buyers with severe allergies are advised to contact the Producer directly before committing. Producers are responsible for the accuracy of their declarations.</p>
+<h2 id="bakers">8. Obligations of producers</h2>
+<p>Producers agree to: list only food they can make to the standard described; declare all ingredients and allergens accurately; honour confirmed batches; comply with all applicable Swiss food-safety regulations; and not list food that is unfit for consumption, mislabelled, or subject to any recall.</p>
+<h2 id="buyers">9. Obligations of buyers</h2>
+<p>Buyers agree to: collect their order at the agreed time and place; treat Producers with respect; not commit to batches with no intention to collect; and report any food-safety concern to solo.quando promptly.</p>
+<h2 id="liability">10. Liability</h2>
+<p>solo.quando provides the Platform as an intermediary and is not a party to the contract between Producer and Buyer. solo.quando accepts no liability for the quality, safety, accuracy of description, or fitness for purpose of any food listed on the Platform, except in cases of wilful misconduct or gross negligence on the part of solo.quando. Total liability in any case is limited to the fees paid by the relevant party to solo.quando in the twelve months preceding the claim.</p>
+<h2 id="ip">11. Intellectual property</h2>
+<p>The solo.quando brand, logo, and website design are the property of Theoni Paschou. Nothing may be reproduced or used commercially without prior written consent. Producers retain ownership of their recipes, photos, and stories, and grant solo.quando a non-exclusive, royalty-free licence to display that content for operating and promoting the Platform.</p>
+<h2 id="privacy">12. Data protection</h2>
+<p>Personal data is processed in accordance with the <a href="/privacy">Privacy Policy</a>, which forms an integral part of these Terms.</p>
+<h2 id="law">13. Governing law and jurisdiction</h2>
+<p>These Terms are governed by the substantive laws of Switzerland, excluding conflict-of-laws rules and the CISG. The exclusive place of jurisdiction is Zürich, Switzerland, subject to any mandatory consumer-protection provisions applicable to users at their place of domicile.</p>
+<h2 id="contact">14. Contact</h2>
+<p>For any question about these Terms: <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a> · +41 78 794 27 00<br/>
+Theoni Paschou · Frauentalweg 119 · 8045 Zürich · Switzerland</p>
+</div>
+<footer class="footer"><div class="wrap">
+  <div class="footer__grid">
+    <div>
+      <div class="footer__logo">solo<span>.</span>quando</div>
+      <p class="footer__tagline">Made only when you want it.</p>
+      <div class="footer__contact">
+        <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>
+        <a href="tel:+41787942700">+41 78 794 27 00</a>
+        <a href="https://www.instagram.com/solo.quando" target="_blank">@solo.quando</a>
+        <a href="https://www.linkedin.com/company/soloquando/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h5>Discover</h5>
+      <ul>
+        <li><a href="/how-it-works">How it works</a></li>
+        <li><a href="/our-story">Our story</a></li>
+        <li><a href="/first-circle">Join the first circle</a></li>
+        <li><a href="/bake-with-us">Bake with us</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="/contact">Contact us</a></li>
+        <li><a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a></li>
+        <li><a href="tel:+41787942700">+41 78 794 27 00</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="/imprint">Imprint</a></li>
+        <li><a href="/privacy">Privacy policy</a></li>
+        <li><a href="/terms">Terms of use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 solo.quando · Theoni Paschou · Zürich, Switzerland</span>
+    <span><a href="#">EN</a> &nbsp;·&nbsp; <a href="#">DE</a></span>
+  </div>
+</div></footer>
+</body>
+</html>
