@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Contact · solo.quando</title>
-<meta name="description" content="Get in touch with solo.quando. We reply within 48 hours."/>
+<title>FAQ · solo.quando</title>
+<meta name="description" content="Common questions about solo.quando — the demand-first pre-order marketplace."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -126,7 +126,7 @@ img{display:block;max-width:100%;}
 <body>
 <nav class="nav"><div class="nav-inner">
   <a href="/" class="nav-logo">solo<span>.</span>quando</a>
-  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li></ul>
+  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq" class="on">FAQ</a></li></ul>
   <div style="display:flex;align-items:center;">
     <button class="nav-cta" onclick="location.href='/waiting-list'">Join the waiting list</button>
     <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
@@ -136,83 +136,77 @@ img{display:block;max-width:100%;}
 </div></nav>
 
 <style>
-.ct-hero{padding:96px 0 70px;background:linear-gradient(150deg,rgba(194,102,61,.07) 0%,transparent 55%);}
-.ct-hero h1{font-size:clamp(48px,6.5vw,84px);letter-spacing:-.025em;margin:14px 0 22px;}
-.ct-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:540px;line-height:1.5;}
-.ct-body{padding:72px 0 96px;}
-.ct-grid{display:grid;grid-template-columns:5fr 7fr;gap:80px;}
-@media(max-width:860px){.ct-grid{grid-template-columns:1fr;gap:48px;}}
-.ct-info h2{font-size:clamp(28px,3.5vw,42px);letter-spacing:-.015em;margin-bottom:20px;}
-.ct-info p{font-size:17px;line-height:1.7;color:var(--dim);margin-bottom:18px;}
-.ct-block{margin-top:32px;}
-.ct-block h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:12px;}
-.ct-link{display:block;font-size:16px;color:var(--dim);margin-bottom:9px;transition:color .2s;}
-.ct-link:hover{color:var(--terra);}
-.ct-form-box{background:var(--paper);padding:40px;}
-@media(max-width:560px){.ct-form-box{padding:28px 22px;}}
-.ct-form-box h3{font-size:26px;letter-spacing:-.01em;margin-bottom:24px;}
-.ct-fields{display:flex;flex-direction:column;gap:14px;}
+.faq-hero{padding:96px 0 64px;background:linear-gradient(150deg,rgba(194,102,61,.06) 0%,transparent 55%);text-align:center;}
+.faq-hero h1{font-size:clamp(46px,6.5vw,84px);letter-spacing:-.025em;margin:14px 0 20px;}
+.faq-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:560px;line-height:1.5;margin:0 auto;}
+.faq-body{padding:64px 0 96px;}
+.faq-list{max-width:760px;margin:0 auto;}
+.faq-item{padding:28px 0;border-bottom:1px solid var(--line);}
+.faq-item:first-child{border-top:1px solid var(--line);}
+.faq-q{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin-bottom:14px;letter-spacing:-.01em;line-height:1.2;}
+.faq-a{font-size:17px;color:var(--dim);line-height:1.7;}
+.faq-a a{color:var(--terra);}
+.faq-cta{padding:96px 0;text-align:center;background:var(--paper);}
+.faq-cta h2{font-size:clamp(34px,4.5vw,52px);letter-spacing:-.02em;margin-bottom:14px;}
+.faq-cta p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:480px;margin:0 auto 36px;}
 </style>
 
-<header class="ct-hero">
+<header class="faq-hero">
   <div class="wrap">
-    <p class="kicker">Get in touch</p>
-    <h1>Let's <em>talk</em>.</h1>
-    <p class="sub">Whether you have a recipe, a question, or want to know more — write to us. We read every message and reply within 48 hours.</p>
+    <p class="kicker">Common questions</p>
+    <h1><em>Honest</em> answers.</h1>
+    <p class="sub">If your question isn't here, write to us at hello@soloquando.ch — we read every message.</p>
   </div>
 </header>
 
-<section class="ct-body">
+<section class="faq-body">
   <div class="wrap">
-    <div class="ct-grid">
-      <div class="ct-info">
-        <h2>We'd love to<br/>hear from <em>you</em>.</h2>
-        <p>solo.quando is a small operation run with care. Every message is read by Theoni personally.</p>
-        <div class="ct-block"><h3>Email</h3><a href="mailto:hello@soloquando.ch" class="ct-link">hello@soloquando.ch</a></div>
-        <div class="ct-block"><h3>Phone</h3><a href="tel:+41787942700" class="ct-link">+41 78 794 27 00</a></div>
-        <div class="ct-block"><h3>Instagram</h3><a href="https://www.instagram.com/solo.quando" target="_blank" class="ct-link">@solo.quando</a></div>
-        <div class="ct-block"><h3>LinkedIn</h3><a href="https://www.linkedin.com/company/soloquando/" target="_blank" class="ct-link">solo.quando on LinkedIn</a></div>
-        <div class="ct-block" style="margin-top:36px;padding-top:30px;border-top:1px solid var(--line);">
-          <h3>Have a recipe?</h3>
-          <p style="font-size:15px;color:var(--dim);margin-bottom:16px;">Use the baker form — it asks the right questions.</p>
-          <a href="/bake-with-us#tell-us" class="btn btn-ghost">Tell us your recipe →</a>
-        </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-q">What is solo.quando?</p>
+        <p class="faq-a">A demand-first pre-order marketplace for homemade food in Zürich. A baker proposes a batch. Neighbours pre-order. Nothing is made until enough people say yes.</p>
       </div>
-      <div>
-        <div class="ct-form-box">
-          <h3>Send a <em>message</em>.</h3>
-          <form
-            class="ct-fields"
-            id="contact-form"
-            action="https://formspree.io/f/mnjleeya"
-            method="POST">
-            <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=contact"/>
-            <input type="hidden" name="_subject" value="New contact message — solo.quando"/>
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
-            <div class="f-grid">
-              <div class="f-field"><label class="f-label">Your name *</label><input class="f-input" type="text" name="name" placeholder="Anna Meier" required/></div>
-              <div class="f-field"><label class="f-label">Your email *</label><input class="f-input" type="email" name="email" placeholder="anna@email.ch" required/></div>
-            </div>
-            <div class="f-field"><label class="f-label">Phone (optional)</label><input class="f-input" type="tel" name="phone" placeholder="+41 78 000 00 00"/></div>
-            <div class="f-field"><label class="f-label">Subject</label>
-              <select class="f-select" name="subject">
-                <option value="">Select…</option>
-                <option>I want to join the waiting list</option>
-                <option>I have a recipe / I want to bake</option>
-                <option>Question about how it works</option>
-                <option>Press / media enquiry</option>
-                <option>Partnership or collaboration</option>
-                <option>Investor enquiry</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="f-field"><label class="f-label">Message *</label><textarea class="f-textarea" name="message" rows="5" placeholder="Write your message here…" required style="min-height:130px;"></textarea></div>
-            <div class="f-field" style="margin-top:6px;"><label class="f-check"><input type="checkbox" name="privacy" required/><span>I accept the <a href="/privacy" target="_blank">Privacy Policy</a>. *</span></label></div>
-            <button class="f-submit" type="submit">Send message →</button>
-          </form>
-        </div>
+      <div class="faq-item">
+        <p class="faq-q">What if a batch doesn't reach its minimum?</p>
+        <p class="faq-a">Every payment returns automatically — in full, every time. No exceptions, no credits, no partial refunds. The full amount, every time.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How is food safety handled?</p>
+        <p class="faq-a">Every listing must declare every ingredient and every allergen before publication. Swiss food-safety law (LMG SR 817.0 / LGV SR 817.02) applies to all producers, who are responsible for accurate declarations.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How do I pick up the food?</p>
+        <p class="faq-a">Near the baker's home, at a time you both agree. Typically a 10–15 minute walk or bike ride in the same neighbourhood. We don't deliver — that's the point.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Can I bake on solo.quando?</p>
+        <p class="faq-a">Yes — that is what the platform is for. Tell us about your recipe through the <a href="/bake-with-us">baker form</a>. No commercial kitchen required, no minimum volumes. We guide you through every administrative step.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Is this accessible for people with disabilities?</p>
+        <p class="faq-a">Intentionally so. Producers never need to leave their home — pickup happens at their door, at a time they set. For buyers, the short, agreed-time pickup is significantly more accessible than markets or shops.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">When does this launch?</p>
+        <p class="faq-a">We are in pre-launch in Zürich. <a href="/waiting-list">Join the waiting list</a> to be notified the moment a batch opens in your neighbourhood.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How is my data handled?</p>
+        <p class="faq-a">Personal data is processed under the Swiss nDSG. We don't sell or share your data for marketing. See the <a href="/privacy">Privacy Policy</a> for full details.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How do I get in touch?</p>
+        <p class="faq-a">Email <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>, call <a href="tel:+41787942700">+41 78 794 27 00</a>, or use the <a href="/contact">contact form</a>. We reply within 48 hours.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="faq-cta">
+  <div class="wrap">
+    <h2>Still have a <em>question</em>?</h2>
+    <p>Write to us — we'll reply within 48 hours.</p>
+    <a href="/contact" class="btn btn-dark">Contact us →</a>
   </div>
 </section>
 
