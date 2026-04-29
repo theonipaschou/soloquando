@@ -42,7 +42,7 @@ img{display:block;}
   font-family:'Jost',sans-serif;font-size:11px;font-weight:400;letter-spacing:.2em;
   text-transform:uppercase;padding:13px 24px;transition:background .2s;}
 .nav__cta:hover{background:var(--terra);}
-@media(max-width:900px){.nav__links{display:none;}}
+
 
 /* FOOTER */
 .footer{background:var(--ink);color:rgba(245,239,228,.55);padding:80px 0 44px;font-size:13px;font-weight:300;}
@@ -123,14 +123,56 @@ img{display:block;}
 .pilot-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--terra);animation:pulse 2s infinite;}
 .pilot-badge span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+
+/* ── MOBILE MENU ── */
+.nav__hamburger{
+  display:none;flex-direction:column;justify-content:center;
+  gap:5px;background:none;border:none;cursor:pointer;
+  padding:6px;margin-left:12px;
+}
+.nav__hamburger span{
+  display:block;width:22px;height:1.5px;
+  background:var(--ink);transition:all .28s ease;transform-origin:center;
+}
+@media(max-width:900px){
+  .nav__links{
+    display:none;position:fixed;top:68px;left:0;right:0;
+    background:rgba(245,239,228,.98);backdrop-filter:blur(16px) saturate(180%);
+    -webkit-backdrop-filter:blur(16px) saturate(180%);
+    flex-direction:column;gap:0;padding:0;
+    border-bottom:1px solid var(--line);z-index:99;
+    box-shadow:0 8px 32px rgba(43,26,15,.10);
+  }
+  .nav__links.open{display:flex;}
+  .nav__links li{border-bottom:1px solid var(--line);}
+  .nav__links a{
+    display:block;padding:18px 24px;font-size:15px;
+    letter-spacing:.01em;color:var(--ink);
+  }
+  .nav__links a:hover,.nav__links a.on{color:var(--terra);background:rgba(194,102,61,.05);}
+  .nav__cta{display:none;}
+  .nav__hamburger{display:flex;}
+  /* hamburger → X when open */
+  .nav__hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .nav__hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+  .nav__hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+}
+
 </style>
 </head>
 <body>
-<nav class="nav"><div class="nav__inner">
-  <a href="/" class="nav__logo">solo<span>.</span>quando</a>
-  <ul class="nav__links"><li><a href="/">Home</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li></ul>
-  <button class="nav__cta" onclick="location.href='/first-circle'">Join the first circle</button>
-</div></nav>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">solo<span>.</span>quando</a>
+    <ul class="nav__links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li></ul>
+    <div style="display:flex;align-items:center;gap:0;">
+      <button class="nav__cta" onclick="location.href='/first-circle'">Join the first circle</button>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
 
 <style>
 .contact-hero{padding:90px 0 70px;background:linear-gradient(150deg,rgba(194,102,61,.07) 0%,transparent 55%);}
@@ -342,5 +384,33 @@ img{display:block;}
     <span><a href="#">EN</a> &nbsp;·&nbsp; <a href="#">DE</a></span>
   </div>
 </div></footer>
+<script>
+(function(){
+  var btn = document.querySelector('.nav__hamburger');
+  var menu = document.querySelector('.nav__links');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+  });
+  // close on link click
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', false);
+    });
+  });
+  // close on outside click
+  document.addEventListener('click', function(e){
+    if(!btn.contains(e.target) && !menu.contains(e.target)){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', false);
+    }
+  });
+})();
+</script>
 </body>
 </html>
