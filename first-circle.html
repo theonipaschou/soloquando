@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Join the first circle · solo.quando</title>
+<meta name="description" content="Be first to know when a batch opens in your Zürich neighbourhood."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{--bone:#F5EFE4;--paper:#EDE5D4;--ink:#2B1A0F;--dim:#6B5744;--terra:#C2663D;--honey:#D4A23F;--sage:#7A8B6A;--line:rgba(43,26,15,.10);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bone);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 48px;}
+@media(max-width:720px){.wrap{padding:0 22px;}}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.05;letter-spacing:-.02em;}
+em{font-style:italic;color:var(--terra);}
+a{color:inherit;text-decoration:none;}
+img{display:block;}
+.kicker{font-size:11px;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--terra);}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 48px;max-width:1180px;margin:0 auto;}
+@media(max-width:720px){.nav-inner{padding:0 22px;}}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--ink);letter-spacing:-.01em;}
+.nav-logo span{color:var(--terra);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:13px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
+.nav-links a:hover,.nav-links a.on{color:var(--terra);}
+.nav-cta{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:12px 22px;transition:background .2s;white-space:nowrap;}
+.nav-cta:hover{background:var(--terra);}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:8px;}
+.nav-burger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:all .28s ease;transform-origin:center;}
+@media(max-width:900px){
+  .nav-links{display:none;position:fixed;top:68px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
+  .nav-links.open{display:flex;}
+  .nav-links li{border-bottom:1px solid var(--line);}
+  .nav-links a{display:block;padding:18px 24px;font-size:15px;color:var(--ink);}
+  .nav-cta{display:none;}
+  .nav-burger{display:flex;}
+  .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+}
+
+/* FOOTER */
+.footer{background:var(--ink);color:rgba(245,239,228,.55);padding:72px 0 40px;font-size:13px;}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px;}
+@media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--bone);margin-bottom:12px;}
+.footer-logo span{color:var(--terra);}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:1.5;color:rgba(245,239,228,.55);margin-top:12px;}
+.footer-contacts{margin-top:16px;display:flex;flex-direction:column;gap:7px;}
+.footer-contacts a{color:rgba(245,239,228,.6);transition:color .2s;font-size:13px;}
+.footer-contacts a:hover{color:var(--bone);}
+.footer-col h5{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:16px;font-weight:500;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:9px;}
+.footer-col a{color:rgba(245,239,228,.55);transition:color .2s;}
+.footer-col a:hover{color:var(--bone);}
+.footer-bottom{border-top:1px solid rgba(245,239,228,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:11px;letter-spacing:.04em;}
+.footer-bottom a{color:rgba(245,239,228,.35);}
+.footer-bottom a:hover{color:var(--bone);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:15px 28px;border:none;cursor:pointer;transition:all .2s;line-height:1;}
+.btn-dark{background:var(--ink);color:var(--bone);}
+.btn-dark:hover{background:var(--terra);}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(43,26,15,.3);}
+.btn-ghost:hover{background:var(--ink);color:var(--bone);}
+.btn-ghost-light{background:transparent;color:var(--bone);border:1px solid rgba(245,239,228,.35);}
+.btn-ghost-light:hover{background:var(--bone);color:var(--ink);}
+.btn-honey{background:var(--honey);color:var(--ink);}
+.btn-honey:hover{background:#c4901d;}
+
+/* FORMS */
+.f-field{display:flex;flex-direction:column;gap:6px;}
+.f-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);}
+.f-input,.f-select,.f-textarea{background:var(--paper);border:1px solid var(--line);color:var(--ink);font-family:'Jost',sans-serif;font-size:14px;padding:14px 16px;outline:none;width:100%;transition:border-color .2s;-webkit-appearance:none;appearance:none;}
+.f-input:focus,.f-select:focus,.f-textarea:focus{border-color:rgba(43,26,15,.4);}
+.f-input::placeholder,.f-textarea::placeholder{color:var(--dim);opacity:.5;}
+.f-textarea{resize:vertical;min-height:100px;}
+.f-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B5744' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
+.f-check{display:flex;align-items:flex-start;gap:11px;font-size:14px;color:var(--dim);line-height:1.5;cursor:pointer;}
+.f-check input{width:17px;height:17px;flex-shrink:0;margin-top:2px;accent-color:var(--terra);cursor:pointer;}
+.f-check a{color:var(--terra);text-decoration:underline;}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:560px){.f-grid{grid-template-columns:1fr;}}
+.f-submit{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:17px 32px;width:100%;transition:background .2s;margin-top:4px;}
+.f-submit:hover{background:var(--terra);}
+.f-submit:disabled{opacity:.5;cursor:not-allowed;}
+.f-submit-honey{background:var(--honey);color:var(--ink);}
+.f-submit-honey:hover{background:#c4901d;}
+.f-result{display:none;padding:18px 22px;margin-top:14px;}
+.f-result.ok{background:rgba(122,139,106,.12);border-left:2px solid var(--sage);}
+.f-result.err{background:rgba(194,102,61,.08);border-left:2px solid var(--terra);}
+.f-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.45;color:var(--ink);}
+.f-result.err p{font-family:'Jost',sans-serif;font-style:normal;font-size:14px;color:var(--terra);}
+
+/* PILOT BADGE */
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(194,102,61,.1);border:1px solid rgba(194,102,61,.28);padding:7px 14px;margin-bottom:18px;}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--terra);animation:pulse 2s infinite;}
+.badge span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+</style>
+
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-logo">solo<span>.</span>quando</a>
+  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li></ul>
+  <div style="display:flex;align-items:center;">
+    <button class="nav-cta" onclick="location.href='/first-circle'">Join the first circle</button>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div></nav>
+
+<style>
+.fc-hero{padding:88px 0 70px;background:linear-gradient(150deg,rgba(194,102,61,.08) 0%,transparent 55%);}
+.fc-hero h1{font-size:clamp(46px,6.5vw,84px);letter-spacing:-.025em;margin:12px 0 20px;max-width:800px;}
+.fc-body{padding:72px 0 96px;}
+.fc-grid{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start;}
+@media(max-width:860px){.fc-grid{grid-template-columns:1fr;gap:44px;}}
+.fc-left h2{font-size:clamp(26px,3.2vw,38px);letter-spacing:-.015em;margin-bottom:16px;}
+.fc-left p{font-size:16px;line-height:1.65;color:var(--dim);margin-bottom:14px;}
+.fc-promises{margin-top:28px;display:flex;flex-direction:column;gap:11px;}
+.fc-promise{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--dim);line-height:1.5;}
+.fc-promise::before{content:'✓';color:var(--sage);font-weight:700;flex-shrink:0;}
+.fc-form-box{background:var(--paper);padding:36px;}
+@media(max-width:560px){.fc-form-box{padding:26px 20px;}}
+.fc-form-box h3{font-size:26px;letter-spacing:-.01em;margin-bottom:24px;}
+.fc-fields{display:flex;flex-direction:column;gap:14px;}
+.check-group{display:flex;flex-direction:column;gap:9px;margin-top:4px;}
+</style>
+
+<header class="fc-hero">
+  <div class="wrap">
+    <div class="badge"><span class="badge-dot"></span><span>Zürich pilot · May 2026</span></div>
+    <p class="kicker">For neighbours</p>
+    <h1>Join the<br/><em>first circle</em>.</h1>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:540px;line-height:1.5;">The first batches go live in May 2026. Be the first to know when a baker in your neighbourhood opens a batch.</p>
+  </div>
+</header>
+
+<section class="fc-body">
+  <div class="wrap">
+    <div class="fc-grid">
+      <div class="fc-left">
+        <h2>What happens<br/>when you join.</h2>
+        <p>One email — the moment a batch opens near you. Nothing else. No weekly digest, no promotions, no noise.</p>
+        <p>If you say yes to a batch, your payment is held — not charged — until five people commit. If five don't sign up, every Franc comes back. Automatically.</p>
+        <p>You are not subscribing to a service. You are joining a neighbourhood.</p>
+        <div class="fc-promises">
+          <div class="fc-promise">One notification when the first batch near you goes live</div>
+          <div class="fc-promise">Full refund if a batch doesn't reach five people</div>
+          <div class="fc-promise">No obligation — say yes when something is worth it</div>
+          <div class="fc-promise">Every baker is a real person with a real name and a real recipe</div>
+        </div>
+      </div>
+      <div>
+        <div class="fc-form-box">
+          <h3>Tell us a little<br/>about <em>yourself</em>.</h3>
+          <form id="consumer-form" class="fc-fields">
+            <input type="hidden" name="_gotcha"/>
+            <div class="f-field">
+              <label class="f-label">Your name *</label>
+              <input class="f-input" type="text" name="name" placeholder="Anna Meier" required/>
+            </div>
+            <div class="f-field">
+              <label class="f-label">Your email *</label>
+              <input class="f-input" type="email" name="email" placeholder="anna@email.ch" required/>
+            </div>
+            <div class="f-field">
+              <label class="f-label">Your neighbourhood in Zürich</label>
+              <select class="f-select" name="neighbourhood">
+                <option value="">Select…</option>
+                <option>Kreis 1 — Altstadt</option>
+                <option>Kreis 2 — Enge / Wollishofen</option>
+                <option>Kreis 3 — Wiedikon</option>
+                <option>Kreis 4 — Aussersihl</option>
+                <option>Kreis 5 — Gewerbeschule</option>
+                <option>Kreis 6 — Unterstrass / Oberstrass</option>
+                <option>Kreis 7 — Fluntern / Hottingen</option>
+                <option>Kreis 8 — Riesbach</option>
+                <option>Kreis 9 — Albisrieden / Altstetten</option>
+                <option>Kreis 10 — Höngg / Wipkingen</option>
+                <option>Kreis 11 — Affoltern / Oerlikon / Seebach</option>
+                <option>Kreis 12 — Schwamendingen</option>
+                <option>Outside Zürich city</option>
+              </select>
+            </div>
+            <div class="f-field">
+              <label class="f-label">What interests you most? (optional)</label>
+              <div class="check-group">
+                <label class="f-check"><input type="checkbox" name="interest" value="local-bakers"/> Discovering local bakers and their recipes</label>
+                <label class="f-check"><input type="checkbox" name="interest" value="support"/> Supporting home bakers in my neighbourhood</label>
+                <label class="f-check"><input type="checkbox" name="interest" value="gifting"/> Homemade gifts for people I care about</label>
+                <label class="f-check"><input type="checkbox" name="interest" value="community"/> Building community around food</label>
+              </div>
+            </div>
+            <div class="f-field" style="margin-top:6px;">
+              <label class="f-check">
+                <input type="checkbox" name="privacy" required/>
+                <span>I have read and accept the <a href="/privacy" target="_blank">Privacy Policy</a>. I agree to receive one notification when the first batch in my neighbourhood goes live. *</span>
+              </label>
+            </div>
+            <div class="f-result" id="consumer-result"></div>
+            <button class="f-submit" type="submit">Join the first circle →</button>
+          </form>
+        </div>
+        <p style="font-size:12px;color:var(--dim);margin-top:12px;line-height:1.5;">Data processed under Swiss nDSG. Unsubscribe at any time: <a href="mailto:hello@soloquando.ch" style="color:var(--terra);">hello@soloquando.ch</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var form = document.getElementById('consumer-form');
+  var result = document.getElementById('consumer-result');
+  if (!form) return;
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; btn.textContent = 'Joining…';
+    try {
+      var r = await fetch('https://formspree.io/f/mpqkvvnk', {
+        method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }
+      });
+      if (r.ok) {
+        form.style.display = 'none';
+        result.className = 'f-result ok'; result.style.display = 'block';
+        result.innerHTML = '<p>You're in. We'll send one email — the moment a batch opens near you.</p>';
+      } else { throw new Error(r.status); }
+    } catch(err) {
+      btn.disabled = false; btn.textContent = 'Join the first circle →';
+      result.className = 'f-result err'; result.style.display = 'block';
+      result.innerHTML = '<p>Something went wrong. Write to <a href="mailto:hello@soloquando.ch" style="color:var(--terra);">hello@soloquando.ch</a></p>';
+    }
+  });
+})();
+</script>
+
+<footer class="footer"><div class="wrap">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">solo<span>.</span>quando</div>
+      <p class="footer-tagline">Made only when you want it.</p>
+      <div class="footer-contacts">
+        <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>
+        <a href="tel:+41787942700">+41 78 794 27 00</a>
+        <a href="https://www.instagram.com/solo.quando" target="_blank">@solo.quando</a>
+        <a href="https://www.linkedin.com/company/soloquando/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Discover</h5><ul>
+      <li><a href="/how-it-works">How it works</a></li>
+      <li><a href="/our-story">Our story</a></li>
+      <li><a href="/first-circle">Join the first circle</a></li>
+      <li><a href="/bake-with-us">Bake with us</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul>
+      <li><a href="/contact">Contact us</a></li>
+      <li><a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a></li>
+      <li><a href="tel:+41787942700">+41 78 794 27 00</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Legal</h5><ul>
+      <li><a href="/imprint">Imprint</a></li>
+      <li><a href="/privacy">Privacy policy</a></li>
+      <li><a href="/terms">Terms of use</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 solo.quando · Theoni Paschou · Zürich</span>
+    <span><a href="#">EN</a> · <a href="#">DE</a></span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  var burger = document.querySelector('.nav-burger');
+  var menu = document.querySelector('.nav-links');
+  if(!burger||!menu)return;
+  function close(){menu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+  burger.addEventListener('click',function(){
+    var o=menu.classList.toggle('open');
+    burger.classList.toggle('open',o);
+    burger.setAttribute('aria-expanded',String(o));
+  });
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  document.addEventListener('click',function(e){if(!burger.contains(e.target)&&!menu.contains(e.target))close();});
+})();
+</script>
+
+</body>
+</html>
