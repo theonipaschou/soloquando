@@ -4,69 +4,77 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Privacy policy · solo.quando</title>
-<meta name="description" content="Privacy policy · solo.quando"/>
+<meta name="description" content="How solo.quando handles personal data under the Swiss nDSG."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
-:root{--bone:#F5EFE4;--paper:#EDE5D4;--ink:#2B1A0F;--dim:#6B5744;--terra:#C2663D;--honey:#D4A23F;--sage:#7A8B6A;--line:rgba(43,26,15,.10);}
+:root{
+  --bone:#F5EFE4;--paper:#EDE5D4;--ink:#2B1A0F;
+  --dim:#5C4738;--terra:#C2663D;--honey:#D4A23F;--sage:#7A8B6A;
+  --line:rgba(43,26,15,.10);
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--bone);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+body{
+  background:var(--bone);color:var(--ink);
+  font-family:'Jost',sans-serif;font-weight:300;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+@media(max-width:720px){body{font-size:18px;}}
 .wrap{max-width:1180px;margin:0 auto;padding:0 48px;}
 @media(max-width:720px){.wrap{padding:0 22px;}}
 h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.05;letter-spacing:-.02em;}
 em{font-style:italic;color:var(--terra);}
 a{color:inherit;text-decoration:none;}
-img{display:block;}
-.kicker{font-size:11px;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--terra);}
+img{display:block;max-width:100%;}
+.kicker{font-size:13px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 48px;max-width:1180px;margin:0 auto;}
-@media(max-width:720px){.nav-inner{padding:0 22px;}}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--ink);letter-spacing:-.01em;}
+.nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 48px;max-width:1180px;margin:0 auto;}
+@media(max-width:720px){.nav-inner{padding:0 22px;height:64px;}}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink);letter-spacing:-.01em;}
 .nav-logo span{color:var(--terra);}
-.nav-links{display:flex;gap:36px;list-style:none;}
-.nav-links a{font-size:13px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
+.nav-links{display:flex;gap:34px;list-style:none;}
+.nav-links a{font-size:14px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
 .nav-links a:hover,.nav-links a.on{color:var(--terra);}
-.nav-cta{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:12px 22px;transition:background .2s;white-space:nowrap;}
+.nav-cta{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:13px 22px;transition:background .2s;white-space:nowrap;}
 .nav-cta:hover{background:var(--terra);}
-.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;margin-left:8px;}
-.nav-burger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:all .28s ease;transform-origin:center;}
-@media(max-width:900px){
-  .nav-links{display:none;position:fixed;top:68px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:10px;margin-left:8px;}
+.nav-burger span{display:block;width:24px;height:2px;background:var(--ink);transition:all .28s ease;transform-origin:center;}
+@media(max-width:920px){
+  .nav-links{display:none;position:fixed;top:64px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
   .nav-links.open{display:flex;}
   .nav-links li{border-bottom:1px solid var(--line);}
-  .nav-links a{display:block;padding:18px 24px;font-size:15px;color:var(--ink);}
+  .nav-links a{display:block;padding:20px 24px;font-size:17px;color:var(--ink);}
   .nav-cta{display:none;}
   .nav-burger{display:flex;}
-  .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .nav-burger.open span:nth-child(2){opacity:0;}
-  .nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 }
 
 /* FOOTER */
-.footer{background:var(--ink);color:rgba(245,239,228,.55);padding:72px 0 40px;font-size:13px;}
+.footer{background:var(--ink);color:rgba(245,239,228,.65);padding:72px 0 40px;font-size:14px;}
 .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px;}
 @media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px;}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--bone);margin-bottom:12px;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--bone);margin-bottom:12px;}
 .footer-logo span{color:var(--terra);}
-.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:1.5;color:rgba(245,239,228,.55);margin-top:12px;}
-.footer-contacts{margin-top:16px;display:flex;flex-direction:column;gap:7px;}
-.footer-contacts a{color:rgba(245,239,228,.6);transition:color .2s;font-size:13px;}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;line-height:1.5;color:rgba(245,239,228,.6);margin-top:12px;}
+.footer-contacts{margin-top:20px;display:flex;flex-direction:column;gap:8px;}
+.footer-contacts a{color:rgba(245,239,228,.7);transition:color .2s;font-size:14px;}
 .footer-contacts a:hover{color:var(--bone);}
-.footer-col h5{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:16px;font-weight:500;}
+.footer-col h5{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;font-weight:500;}
 .footer-col ul{list-style:none;}
-.footer-col li{margin-bottom:9px;}
-.footer-col a{color:rgba(245,239,228,.55);transition:color .2s;}
+.footer-col li{margin-bottom:10px;}
+.footer-col a{color:rgba(245,239,228,.65);transition:color .2s;font-size:14px;}
 .footer-col a:hover{color:var(--bone);}
-.footer-bottom{border-top:1px solid rgba(245,239,228,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:11px;letter-spacing:.04em;}
-.footer-bottom a{color:rgba(245,239,228,.35);}
+.footer-bottom{border-top:1px solid rgba(245,239,228,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;letter-spacing:.04em;color:rgba(245,239,228,.45);}
+.footer-bottom a{color:rgba(245,239,228,.45);}
 .footer-bottom a:hover{color:var(--bone);}
 
 /* BUTTONS */
-.btn{display:inline-flex;align-items:center;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:15px 28px;border:none;cursor:pointer;transition:all .2s;line-height:1;}
+.btn{display:inline-flex;align-items:center;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:16px 28px;border:none;cursor:pointer;transition:all .2s;line-height:1;}
 .btn-dark{background:var(--ink);color:var(--bone);}
 .btn-dark:hover{background:var(--terra);}
 .btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(43,26,15,.3);}
@@ -76,78 +84,109 @@ img{display:block;}
 .btn-honey{background:var(--honey);color:var(--ink);}
 .btn-honey:hover{background:#c4901d;}
 
-/* FORMS */
-.f-field{display:flex;flex-direction:column;gap:6px;}
-.f-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);}
-.f-input,.f-select,.f-textarea{background:var(--paper);border:1px solid var(--line);color:var(--ink);font-family:'Jost',sans-serif;font-size:14px;padding:14px 16px;outline:none;width:100%;transition:border-color .2s;-webkit-appearance:none;appearance:none;}
+/* FORMS — bigger inputs, clearer labels */
+.f-field{display:flex;flex-direction:column;gap:7px;}
+.f-label{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
+.f-input,.f-select,.f-textarea{
+  background:var(--paper);border:1px solid var(--line);
+  color:var(--ink);font-family:'Jost',sans-serif;font-size:16px;
+  padding:16px 18px;outline:none;width:100%;
+  transition:border-color .2s;-webkit-appearance:none;appearance:none;
+}
 .f-input:focus,.f-select:focus,.f-textarea:focus{border-color:rgba(43,26,15,.4);}
-.f-input::placeholder,.f-textarea::placeholder{color:var(--dim);opacity:.5;}
-.f-textarea{resize:vertical;min-height:100px;}
-.f-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B5744' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
-.f-check{display:flex;align-items:flex-start;gap:11px;font-size:14px;color:var(--dim);line-height:1.5;cursor:pointer;}
-.f-check input{width:17px;height:17px;flex-shrink:0;margin-top:2px;accent-color:var(--terra);cursor:pointer;}
+.f-input::placeholder,.f-textarea::placeholder{color:var(--dim);opacity:.55;}
+.f-textarea{resize:vertical;min-height:110px;}
+.f-select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235C4738' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;
+}
+.f-check{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--dim);line-height:1.55;cursor:pointer;}
+.f-check input{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--terra);cursor:pointer;}
 .f-check a{color:var(--terra);text-decoration:underline;}
 .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 @media(max-width:560px){.f-grid{grid-template-columns:1fr;}}
-.f-submit{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:17px 32px;width:100%;transition:background .2s;margin-top:4px;}
+.f-submit{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:18px 32px;width:100%;transition:background .2s;margin-top:8px;}
 .f-submit:hover{background:var(--terra);}
 .f-submit:disabled{opacity:.5;cursor:not-allowed;}
 .f-submit-honey{background:var(--honey);color:var(--ink);}
 .f-submit-honey:hover{background:#c4901d;}
 .f-result{display:none;padding:18px 22px;margin-top:14px;}
-.f-result.ok{background:rgba(122,139,106,.12);border-left:2px solid var(--sage);}
-.f-result.err{background:rgba(194,102,61,.08);border-left:2px solid var(--terra);}
-.f-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.45;color:var(--ink);}
-.f-result.err p{font-family:'Jost',sans-serif;font-style:normal;font-size:14px;color:var(--terra);}
+.f-result.ok{background:rgba(122,139,106,.12);border-left:3px solid var(--sage);}
+.f-result.err{background:rgba(194,102,61,.08);border-left:3px solid var(--terra);}
+.f-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.45;color:var(--ink);}
+.f-result.err p{font-family:'Jost',sans-serif;font-style:normal;font-size:15px;color:var(--terra);}
 
 /* PILOT BADGE */
-.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(194,102,61,.1);border:1px solid rgba(194,102,61,.28);padding:7px 14px;margin-bottom:18px;}
-.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--terra);animation:pulse 2s infinite;}
-.badge span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);}
+.badge{display:inline-flex;align-items:center;gap:9px;background:rgba(194,102,61,.1);border:1px solid rgba(194,102,61,.28);padding:8px 16px;margin-bottom:18px;}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--terra);animation:pulse 2s infinite;}
+.badge span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
 </style>
-
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
   <a href="/" class="nav-logo">solo<span>.</span>quando</a>
-  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li></ul>
+  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li></ul>
   <div style="display:flex;align-items:center;">
-    <button class="nav-cta" onclick="location.href='/first-circle'">Join the first circle</button>
+    <button class="nav-cta" onclick="location.href='/waiting-list'">Join the waiting list</button>
     <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
   </div>
 </div></nav>
 <style>
-.lw{max-width:720px;margin:0 auto;padding:88px 48px;}
-@media(max-width:720px){.lw{padding:64px 22px;}}
-.lw h1{font-size:clamp(42px,6vw,68px);letter-spacing:-.02em;margin-bottom:36px;}
-.lw h2{font-family:'Cormorant Garamond',serif;font-size:24px;letter-spacing:-.01em;margin:36px 0 12px;font-weight:400;}
+.lw{max-width:760px;margin:0 auto;padding:96px 48px;}
+@media(max-width:720px){.lw{padding:72px 22px 80px;}}
+.lw h1{font-size:clamp(44px,6vw,72px);letter-spacing:-.02em;margin-bottom:40px;}
+.lw h2{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:-.01em;margin:40px 0 14px;font-weight:400;}
 .lw h2:first-of-type{margin-top:0;}
-.lw p{font-size:15px;line-height:1.7;color:var(--dim);margin-bottom:12px;}
-.lw ul{margin:0 0 12px 18px;}
-.lw li{font-size:15px;line-height:1.7;color:var(--dim);margin-bottom:7px;}
+.lw p{font-size:16px;line-height:1.72;color:var(--dim);margin-bottom:13px;}
+.lw ul{margin:0 0 14px 20px;}
+.lw li{font-size:16px;line-height:1.72;color:var(--dim);margin-bottom:7px;}
 .lw a{color:var(--terra);}
 .lw code{font-family:monospace;font-size:13px;background:var(--paper);padding:2px 5px;}
-.lmeta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#A89A82;margin-bottom:52px;display:block;}
-.lbox{background:var(--paper);padding:22px 26px;margin:20px 0;border-left:2px solid var(--terra);}
+.lmeta{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#A89A82;margin-bottom:56px;display:block;}
+.lbox{background:var(--paper);padding:24px 28px;margin:22px 0;border-left:3px solid var(--terra);}
 .lbox p{margin-bottom:7px;}
-.ltoc{background:var(--paper);padding:24px 28px;margin-bottom:36px;}
-.ltoc h3{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;color:var(--dim);}
-.ltoc ol{margin-left:16px;}
-.ltoc li{font-size:14px;color:var(--dim);margin-bottom:6px;}
+.ltoc{background:var(--paper);padding:26px 30px;margin-bottom:40px;}
+.ltoc h3{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;color:var(--dim);}
+.ltoc ol{margin-left:18px;}
+.ltoc li{font-size:14px;color:var(--dim);margin-bottom:7px;}
 .ltoc a{color:var(--terra);}
 </style><div class="lw">
-<p class="kicker">Legal</p><h1>Privacy <em>policy</em>.</h1>
-<span class="lmeta">Last updated: 27 April 2026 · Swiss nDSG (SR 235.1)</span>
-<h2>Controller</h2><p>Theoni Paschou · Frauentalweg 119 · 8045 Zürich · <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a></p>
-<h2>Data we collect</h2><ul><li>Email address — first circle signups, baker enquiries, contact form</li><li>Name, phone, neighbourhood — baker and contact enquiries (optional fields)</li><li>Message content — contact form</li><li>Usage data — standard server logs via Cloudflare</li></ul>
-<h2>Legal basis</h2><ul><li>First circle signups — your consent (nDSG Art. 6)</li><li>Baker enquiries — pre-contractual measures at your request</li><li>Contact messages — legitimate interest in responding</li><li>Usage logs — legitimate interest in site security</li></ul>
-<h2>Retention</h2><p>First circle addresses: until platform launch and registration or unsubscription. Enquiries: maximum 24 months. Usage logs: per Cloudflare's standard policy.</p>
-<h2>Sub-processors</h2><ul><li><strong>Cloudflare, Inc.</strong> (US) — hosting and CDN</li><li><strong>GitHub, Inc.</strong> (US) — source code hosting</li><li><strong>Formspree, Inc.</strong> (US) — form submissions</li></ul>
-<h2>Your rights</h2><p>Under the Swiss nDSG you have the right to access, correct, delete, or object to your data, and to withdraw consent at any time. Write to <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>. You may also lodge a complaint with the FDPIC at edoeb.admin.ch.</p>
-<h2>Cookies</h2><p>No analytics or marketing cookies. Cloudflare may set <code>__cf_bm</code> for bot detection — no consent required under Swiss law.</p>
+<p class="kicker">Legal</p>
+<h1>Privacy <em>policy</em>.</h1>
+<span class="lmeta">Last updated: 29 April 2026 · Swiss nDSG (SR 235.1)</span>
+<h2>Controller</h2>
+<p>Theoni Paschou · Frauentalweg 119 · 8045 Zürich · Switzerland · <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a></p>
+<h2>What we collect</h2>
+<ul>
+  <li><strong>Email address</strong> — when you join the waiting list, submit a baker enquiry, or use the contact form.</li>
+  <li><strong>Name, phone, neighbourhood</strong> — when you submit a baker or contact enquiry.</li>
+  <li><strong>Message content</strong> — when you use the contact form.</li>
+  <li><strong>Usage data</strong> — standard server logs collected by Cloudflare.</li>
+</ul>
+<h2>Why we collect it</h2>
+<ul>
+  <li><strong>Waiting list</strong> — to notify you when a batch opens near you. Legal basis: your consent (nDSG Art. 6).</li>
+  <li><strong>Baker enquiries</strong> — to respond to your interest. Legal basis: pre-contractual measures at your request.</li>
+  <li><strong>Contact messages</strong> — to reply to your enquiry. Legal basis: legitimate interest.</li>
+  <li><strong>Usage logs</strong> — site security and performance. Legal basis: legitimate interest.</li>
+</ul>
+<h2>How long we keep it</h2>
+<p>Waiting list addresses are kept until the platform launches and you register or unsubscribe. Enquiries are kept for a maximum of 24 months. Usage logs are retained per Cloudflare's standard policy.</p>
+<h2>Sub-processors</h2>
+<ul>
+  <li><strong>Cloudflare, Inc.</strong> (US) — hosting and CDN</li>
+  <li><strong>GitHub, Inc.</strong> (US) — source code hosting</li>
+  <li><strong>Formspree, Inc.</strong> (US) — form submissions and email delivery</li>
+</ul>
+<h2>Your rights under the Swiss nDSG</h2>
+<p>You have the right to access, correct, delete, or object to processing of your data, and to withdraw consent at any time. Write to <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>. You may also lodge a complaint with the FDPIC at edoeb.admin.ch.</p>
+<h2>Cookies</h2>
+<p>This site uses no analytics or marketing cookies. Cloudflare may set <code>__cf_bm</code> for bot detection — no consent required under Swiss law.</p>
+<h2>Contact</h2>
+<p>For any privacy question: <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a></p>
 </div>
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
@@ -164,8 +203,9 @@ img{display:block;}
     <div class="footer-col"><h5>Discover</h5><ul>
       <li><a href="/how-it-works">How it works</a></li>
       <li><a href="/our-story">Our story</a></li>
-      <li><a href="/first-circle">Join the first circle</a></li>
+      <li><a href="/waiting-list">Join the waiting list</a></li>
       <li><a href="/bake-with-us">Bake with us</a></li>
+      <li><a href="/faq">FAQ</a></li>
     </ul></div>
     <div class="footer-col"><h5>Contact</h5><ul>
       <li><a href="/contact">Contact us</a></li>
@@ -179,26 +219,32 @@ img{display:block;}
     </ul></div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 solo.quando · Theoni Paschou · Zürich</span>
+    <span>© 2026 solo.quando · Zürich</span>
     <span><a href="#">EN</a> · <a href="#">DE</a></span>
   </div>
 </div></footer>
-
 <script>
 (function(){
   var burger = document.querySelector('.nav-burger');
   var menu = document.querySelector('.nav-links');
-  if(!burger||!menu)return;
-  function close(){menu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');}
-  burger.addEventListener('click',function(){
-    var o=menu.classList.toggle('open');
-    burger.classList.toggle('open',o);
-    burger.setAttribute('aria-expanded',String(o));
+  if(!burger || !menu) return;
+  function close(){
+    menu.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+  }
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
   });
-  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
-  document.addEventListener('click',function(e){if(!burger.contains(e.target)&&!menu.contains(e.target))close();});
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', close);
+  });
+  document.addEventListener('click', function(e){
+    if(!burger.contains(e.target) && !menu.contains(e.target)) close();
+  });
 })();
 </script>
-
 </body>
 </html>

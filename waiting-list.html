@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Contact · solo.quando</title>
-<meta name="description" content="Get in touch with solo.quando. We reply within 48 hours."/>
+<title>Join the waiting list · solo.quando</title>
+<meta name="description" content="Be the first to know when a baker in your neighbourhood opens a batch."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -136,81 +136,94 @@ img{display:block;max-width:100%;}
 </div></nav>
 
 <style>
-.ct-hero{padding:96px 0 70px;background:linear-gradient(150deg,rgba(194,102,61,.07) 0%,transparent 55%);}
-.ct-hero h1{font-size:clamp(48px,6.5vw,84px);letter-spacing:-.025em;margin:14px 0 22px;}
-.ct-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:540px;line-height:1.5;}
-.ct-body{padding:72px 0 96px;}
-.ct-grid{display:grid;grid-template-columns:5fr 7fr;gap:80px;}
-@media(max-width:860px){.ct-grid{grid-template-columns:1fr;gap:48px;}}
-.ct-info h2{font-size:clamp(28px,3.5vw,42px);letter-spacing:-.015em;margin-bottom:20px;}
-.ct-info p{font-size:17px;line-height:1.7;color:var(--dim);margin-bottom:18px;}
-.ct-block{margin-top:32px;}
-.ct-block h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:12px;}
-.ct-link{display:block;font-size:16px;color:var(--dim);margin-bottom:9px;transition:color .2s;}
-.ct-link:hover{color:var(--terra);}
-.ct-form-box{background:var(--paper);padding:40px;}
-@media(max-width:560px){.ct-form-box{padding:28px 22px;}}
-.ct-form-box h3{font-size:26px;letter-spacing:-.01em;margin-bottom:24px;}
-.ct-fields{display:flex;flex-direction:column;gap:14px;}
+.wl-hero{padding:96px 0 76px;background:linear-gradient(150deg,rgba(194,102,61,.08) 0%,transparent 55%);}
+.wl-hero h1{font-size:clamp(48px,6.5vw,86px);letter-spacing:-.025em;margin:14px 0 22px;max-width:780px;}
+.wl-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--dim);max-width:580px;line-height:1.5;}
+.wl-body{padding:80px 0 96px;}
+.wl-grid{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start;}
+@media(max-width:860px){.wl-grid{grid-template-columns:1fr;gap:44px;}}
+.wl-left h2{font-size:clamp(28px,3.5vw,40px);letter-spacing:-.015em;margin-bottom:18px;}
+.wl-left p{font-size:17px;line-height:1.7;color:var(--dim);margin-bottom:16px;}
+.wl-promises{margin-top:32px;display:flex;flex-direction:column;gap:14px;}
+.wl-promise{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--dim);line-height:1.5;}
+.wl-promise::before{content:'✓';color:var(--sage);font-weight:700;flex-shrink:0;font-size:16px;}
+.wl-form-box{background:var(--paper);padding:40px;}
+@media(max-width:560px){.wl-form-box{padding:28px 22px;}}
+.wl-form-box h3{font-size:28px;letter-spacing:-.01em;margin-bottom:26px;}
+.wl-fields{display:flex;flex-direction:column;gap:16px;}
 </style>
 
-<header class="ct-hero">
+<header class="wl-hero">
   <div class="wrap">
-    <p class="kicker">Get in touch</p>
-    <h1>Let's <em>talk</em>.</h1>
-    <p class="sub">Whether you have a recipe, a question, or want to know more — write to us. We read every message and reply within 48 hours.</p>
+    <div class="badge"><span class="badge-dot"></span><span>Zürich · pre-launch</span></div>
+    <p class="kicker">For neighbours</p>
+    <h1>Join the<br/><em>waiting list</em>.</h1>
+    <p class="sub">Be the first to know when a baker in your neighbourhood opens a batch. One email. No newsletter. No noise.</p>
   </div>
 </header>
 
-<section class="ct-body">
+<section class="wl-body">
   <div class="wrap">
-    <div class="ct-grid">
-      <div class="ct-info">
-        <h2>We'd love to<br/>hear from <em>you</em>.</h2>
-        <p>solo.quando is a small operation run with care. Every message is read by Theoni personally.</p>
-        <div class="ct-block"><h3>Email</h3><a href="mailto:hello@soloquando.ch" class="ct-link">hello@soloquando.ch</a></div>
-        <div class="ct-block"><h3>Phone</h3><a href="tel:+41787942700" class="ct-link">+41 78 794 27 00</a></div>
-        <div class="ct-block"><h3>Instagram</h3><a href="https://www.instagram.com/solo.quando" target="_blank" class="ct-link">@solo.quando</a></div>
-        <div class="ct-block"><h3>LinkedIn</h3><a href="https://www.linkedin.com/company/soloquando/" target="_blank" class="ct-link">solo.quando on LinkedIn</a></div>
-        <div class="ct-block" style="margin-top:36px;padding-top:30px;border-top:1px solid var(--line);">
-          <h3>Have a recipe?</h3>
-          <p style="font-size:15px;color:var(--dim);margin-bottom:16px;">Use the baker form — it asks the right questions.</p>
-          <a href="/bake-with-us#tell-us" class="btn btn-ghost">Tell us your recipe →</a>
+    <div class="wl-grid">
+      <div class="wl-left">
+        <h2>What happens<br/>when you <em>join</em>.</h2>
+        <p>One email — the moment a baker opens a batch near you. Nothing else. No weekly digests, no promotions, no noise.</p>
+        <p>If you say yes to a batch, your payment is held — never taken — until enough people commit. If they don't, every Franc returns automatically.</p>
+        <p>You are not subscribing to a service. You are joining a neighbourhood.</p>
+        <div class="wl-promises">
+          <div class="wl-promise">One notification when the first batch near you goes live</div>
+          <div class="wl-promise">Full refund if a batch doesn't reach its minimum</div>
+          <div class="wl-promise">No obligation — say yes when something is worth it</div>
+          <div class="wl-promise">Every baker is a real person with a real name and a real recipe</div>
+          <div class="wl-promise">Pickup near the baker's home, at a time you both agree</div>
         </div>
       </div>
       <div>
-        <div class="ct-form-box">
-          <h3>Send a <em>message</em>.</h3>
+        <div class="wl-form-box">
+          <h3>Tell us a little<br/>about <em>yourself</em>.</h3>
           <form
-            class="ct-fields"
-            id="contact-form"
-            action="https://formspree.io/f/mnjleeya"
+            class="wl-fields"
+            id="waitlist-form"
+            action="https://formspree.io/f/mpqkvvnk"
             method="POST">
-            <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=contact"/>
-            <input type="hidden" name="_subject" value="New contact message — solo.quando"/>
+            <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
+            <input type="hidden" name="_subject" value="New waiting list signup — solo.quando"/>
+            <input type="hidden" name="source" value="waiting-list-page"/>
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
-            <div class="f-grid">
-              <div class="f-field"><label class="f-label">Your name *</label><input class="f-input" type="text" name="name" placeholder="Anna Meier" required/></div>
-              <div class="f-field"><label class="f-label">Your email *</label><input class="f-input" type="email" name="email" placeholder="anna@email.ch" required/></div>
+            <div class="f-field">
+              <label class="f-label">Your name *</label>
+              <input class="f-input" type="text" name="name" placeholder="Anna Meier" required/>
             </div>
-            <div class="f-field"><label class="f-label">Phone (optional)</label><input class="f-input" type="tel" name="phone" placeholder="+41 78 000 00 00"/></div>
-            <div class="f-field"><label class="f-label">Subject</label>
-              <select class="f-select" name="subject">
+            <div class="f-field">
+              <label class="f-label">Your email *</label>
+              <input class="f-input" type="email" name="email" placeholder="anna@email.ch" required/>
+            </div>
+            <div class="f-field">
+              <label class="f-label">Your neighbourhood (optional)</label>
+              <select class="f-select" name="neighbourhood">
                 <option value="">Select…</option>
-                <option>I want to join the waiting list</option>
-                <option>I have a recipe / I want to bake</option>
-                <option>Question about how it works</option>
-                <option>Press / media enquiry</option>
-                <option>Partnership or collaboration</option>
-                <option>Investor enquiry</option>
-                <option>Other</option>
+                <option>Kreis 1 — Altstadt</option>
+                <option>Kreis 2 — Enge / Wollishofen</option>
+                <option>Kreis 3 — Wiedikon</option>
+                <option>Kreis 4 — Aussersihl</option>
+                <option>Kreis 5 — Gewerbeschule</option>
+                <option>Kreis 6 — Unterstrass / Oberstrass</option>
+                <option>Kreis 7 — Fluntern / Hottingen</option>
+                <option>Kreis 8 — Riesbach</option>
+                <option>Kreis 9 — Albisrieden / Altstetten</option>
+                <option>Kreis 10 — Höngg / Wipkingen</option>
+                <option>Kreis 11 — Affoltern / Oerlikon / Seebach</option>
+                <option>Kreis 12 — Schwamendingen</option>
+                <option>Outside Zürich city</option>
               </select>
             </div>
-            <div class="f-field"><label class="f-label">Message *</label><textarea class="f-textarea" name="message" rows="5" placeholder="Write your message here…" required style="min-height:130px;"></textarea></div>
-            <div class="f-field" style="margin-top:6px;"><label class="f-check"><input type="checkbox" name="privacy" required/><span>I accept the <a href="/privacy" target="_blank">Privacy Policy</a>. *</span></label></div>
-            <button class="f-submit" type="submit">Send message →</button>
+            <div class="f-field" style="margin-top:6px;">
+              <label class="f-check"><input type="checkbox" name="privacy" required/><span>I accept the <a href="/privacy" target="_blank">Privacy Policy</a>. I agree to receive notifications when batches open in my neighbourhood. *</span></label>
+            </div>
+            <button class="f-submit" type="submit">Join the waiting list →</button>
           </form>
         </div>
+        <p style="font-size:13px;color:var(--dim);margin-top:14px;line-height:1.5;">Data processed under the Swiss nDSG. Unsubscribe at any time: <a href="mailto:hello@soloquando.ch" style="color:var(--terra);">hello@soloquando.ch</a></p>
       </div>
     </div>
   </div>
