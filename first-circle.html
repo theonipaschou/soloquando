@@ -298,7 +298,7 @@ img{display:block;}
       if(res.ok){
         form.style.display='none';
         msgEl.className='form-msg form-msg--ok';
-        msgEl.innerHTML="You're in the first circle. We'll be in touch the moment a batch opens near you.";
+        msgEl.innerHTML='<p style="font-family:Cormorant Garamond,serif;font-style:italic;font-size:21px;line-height:1.5;color:var(--terra);">You're in. We'll send one email — the moment a batch opens near you.</p>';
         msgEl.style.display='block';
       } else { throw new Error(); }
     } catch(err){

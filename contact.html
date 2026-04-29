@@ -327,7 +327,7 @@ img{display:block;}
       if(res.ok){
         form.style.display='none';
         msgEl.className='form-msg form-msg--ok';
-        msgEl.innerHTML='Thank you — we'll be back in touch within 48 hours.';
+        msgEl.innerHTML='<p style="font-family:Cormorant Garamond,serif;font-style:italic;font-size:21px;line-height:1.5;color:var(--terra);">Thank you — we'll reply within 48 hours.</p>';
         msgEl.style.display='block';
       } else { throw new Error(); }
     } catch(err){
