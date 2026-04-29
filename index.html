@@ -552,7 +552,7 @@ f.addEventListener('submit',async function(e){e.preventDefault();
 var b=f.querySelector('button'),m=f.parentElement.querySelector('.form-result');
 b.disabled=true;b.textContent='…';
 var d=new FormData(f);d.append('source','homepage');
-try{var r=await fetch('https://formspree.io/f/YOUR_CONSUMER_FORM_ID',{method:'POST',body:d,headers:{'Accept':'application/json'}});
+try{var r=await fetch('https://formspree.io/f/mpqkvvnk',{method:'POST',body:d,headers:{'Accept':'application/json'}});
 if(r.ok){f.style.display='none';m.className='form-msg form-msg--ok';m.innerHTML="You're in the first circle.";m.style.display='block';}
 else throw new Error();}catch(e){b.disabled=false;b.textContent='Join →';
 m.className='form-msg form-msg--err';m.innerHTML='Something went wrong. Write to us at <a href="mailto:hello@soloquando.ch" style="color:var(--terra)">hello@soloquando.ch</a>';
