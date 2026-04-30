@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Terms of use · solo.quando</title>
+<title>Terms of use &middot; solo.quando</title>
 <meta name="description" content="Terms governing use of soloquando.ch."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{
   --bone:#F5EFE4;--paper:#EDE5D4;--ink:#2B1A0F;
-  --dim:#5C4738;--terra:#C2663D;--honey:#D4A23F;--sage:#7A8B6A;
+  --dim:#5C4738;--terra:#C4622D;--sage:#7A8B6A;
   --line:rgba(43,26,15,.10);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -26,26 +27,27 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1
 em{font-style:italic;color:var(--terra);}
 a{color:inherit;text-decoration:none;}
 img{display:block;max-width:100%;}
+picture{display:block;width:100%;height:100%;}
+picture img{width:100%;height:100%;object-fit:cover;}
 .kicker{font-size:13px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);}
 
-/* NAV */
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 48px;max-width:1180px;margin:0 auto;}
-@media(max-width:720px){.nav-inner{padding:0 22px;height:64px;}}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink);letter-spacing:-.01em;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px;padding:0 48px;max-width:1180px;margin:0 auto;}
+@media(max-width:720px){.nav-inner{padding:0 22px;height:66px;}}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);letter-spacing:-.01em;}
 .nav-logo span{color:var(--terra);}
-.nav-links{display:flex;gap:34px;list-style:none;}
-.nav-links a{font-size:14px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:15px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
 .nav-links a:hover,.nav-links a.on{color:var(--terra);}
-.nav-cta{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:13px 22px;transition:background .2s;white-space:nowrap;}
+.nav-cta{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:14px 22px;transition:background .2s;white-space:nowrap;}
 .nav-cta:hover{background:var(--terra);}
 .nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:10px;margin-left:8px;}
 .nav-burger span{display:block;width:24px;height:2px;background:var(--ink);transition:all .28s ease;transform-origin:center;}
 @media(max-width:920px){
-  .nav-links{display:none;position:fixed;top:64px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
+  .nav-links{display:none;position:fixed;top:66px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
   .nav-links.open{display:flex;}
   .nav-links li{border-bottom:1px solid var(--line);}
-  .nav-links a{display:block;padding:20px 24px;font-size:17px;color:var(--ink);}
+  .nav-links a{display:block;padding:20px 24px;font-size:18px;color:var(--ink);}
   .nav-cta{display:none;}
   .nav-burger{display:flex;}
   .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
@@ -53,7 +55,6 @@ img{display:block;max-width:100%;}
   .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 }
 
-/* FOOTER */
 .footer{background:var(--ink);color:rgba(245,239,228,.65);padding:72px 0 40px;font-size:14px;}
 .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px;}
 @media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px;}}
@@ -73,18 +74,23 @@ img{display:block;max-width:100%;}
 .footer-bottom a{color:rgba(245,239,228,.45);}
 .footer-bottom a:hover{color:var(--bone);}
 
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:16px 28px;border:none;cursor:pointer;transition:all .2s;line-height:1;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.16em;text-transform:uppercase;padding:17px 30px;border:none;cursor:pointer;transition:all .2s;line-height:1;}
 .btn-dark{background:var(--ink);color:var(--bone);}
 .btn-dark:hover{background:var(--terra);}
 .btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(43,26,15,.3);}
 .btn-ghost:hover{background:var(--ink);color:var(--bone);}
 .btn-ghost-light{background:transparent;color:var(--bone);border:1px solid rgba(245,239,228,.35);}
 .btn-ghost-light:hover{background:var(--bone);color:var(--ink);}
-.btn-honey{background:var(--honey);color:var(--ink);}
-.btn-honey:hover{background:#c4901d;}
 
-/* FORMS — bigger inputs, clearer labels */
+.share-block{padding:56px 0;text-align:center;border-top:1px solid var(--line);}
+.share-block .label{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.share-block .quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);margin-bottom:24px;line-height:1.45;}
+.share-btn{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid rgba(43,26,15,.3);color:var(--ink);padding:14px 24px;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.share-btn:hover{background:var(--ink);color:var(--bone);}
+.share-btn svg{width:14px;height:14px;}
+.share-feedback{display:inline-block;margin-left:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--sage);opacity:0;transition:opacity .3s;}
+.share-feedback.show{opacity:1;}
+
 .f-field{display:flex;flex-direction:column;gap:7px;}
 .f-label{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
 .f-input,.f-select,.f-textarea{
@@ -108,15 +114,12 @@ img{display:block;max-width:100%;}
 .f-submit{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:18px 32px;width:100%;transition:background .2s;margin-top:8px;}
 .f-submit:hover{background:var(--terra);}
 .f-submit:disabled{opacity:.5;cursor:not-allowed;}
-.f-submit-honey{background:var(--honey);color:var(--ink);}
-.f-submit-honey:hover{background:#c4901d;}
 .f-result{display:none;padding:18px 22px;margin-top:14px;}
 .f-result.ok{background:rgba(122,139,106,.12);border-left:3px solid var(--sage);}
 .f-result.err{background:rgba(194,102,61,.08);border-left:3px solid var(--terra);}
 .f-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.45;color:var(--ink);}
 .f-result.err p{font-family:'Jost',sans-serif;font-style:normal;font-size:15px;color:var(--terra);}
 
-/* PILOT BADGE */
 .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(194,102,61,.1);border:1px solid rgba(194,102,61,.28);padding:8px 16px;margin-bottom:18px;}
 .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--terra);animation:pulse 2s infinite;}
 .badge span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);}
@@ -156,7 +159,7 @@ img{display:block;max-width:100%;}
 </style><div class="lw">
 <p class="kicker">Legal</p>
 <h1>Terms of <em>use</em>.</h1>
-<span class="lmeta">Last updated: 29 April 2026 · Swiss law</span>
+<span class="lmeta">Last updated: 29 April 2026 &middot; Swiss law</span>
 <div class="ltoc">
   <h3>Contents</h3>
   <ol>
@@ -175,13 +178,13 @@ img{display:block;max-width:100%;}
 <h2 id="scope">1. Scope</h2>
 <p>These Terms govern access to and use of soloquando.ch. By joining the waiting list, submitting a baker enquiry, or otherwise using the Platform, you accept these Terms in full.</p>
 <h2 id="about">2. About solo.quando</h2>
-<p>The Platform is operated by Theoni Paschou, Frauentalweg 119, 8045 Zürich, Switzerland (see the <a href="/imprint">Imprint</a>). solo.quando is an intermediary; the contract for any food item is concluded directly between Producer and Buyer.</p>
+<p>The Platform is operated by Theoni Paschou, Frauentalweg 119, 8045 Z&uuml;rich, Switzerland (see the <a href="/imprint">Imprint</a>). solo.quando is an intermediary; the contract for any food item is concluded directly between Producer and Buyer.</p>
 <h2 id="mechanism">3. The mechanism</h2>
-<p>A Producer lists a batch with a minimum threshold. A Buyer's payment is held — not charged — until the threshold is reached before the deadline. If met, the batch is confirmed. If not, all holds are released automatically.</p>
+<p>A Producer lists a batch with a minimum threshold. A Buyer's payment is held, not charged, until the threshold is reached before the deadline. If met, the batch is confirmed. If not, all holds are released automatically.</p>
 <h2 id="payment">4. Pricing and payment</h2>
-<p>Producers set their own prices. solo.quando charges a platform fee, deducted from the Producer's payout. Buyers pay the price shown at commitment — no hidden charges. All prices in CHF and include applicable taxes.</p>
+<p>Producers set their own prices. solo.quando charges a platform fee, deducted from the Producer's payout. Buyers pay the price shown at commitment, no hidden charges. All prices in CHF and include applicable taxes.</p>
 <h2 id="pickup">5. Pickup</h2>
-<p>All orders are collected in person near the Producer's home, at a time agreed between Producer and Buyer. solo.quando does not provide delivery.</p>
+<p>All orders are collected in person at a curated central Z&uuml;rich location, the address of which is shared only with confirmed buyers. solo.quando does not provide delivery.</p>
 <h2 id="refunds">6. Cancellations and refunds</h2>
 <p>If a batch does not reach its minimum, all holds are released automatically and in full. If a confirmed batch is cancelled by the Producer, Buyers receive a full refund. If goods are materially different from the listing, contact <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a> within 24 hours of collection.</p>
 <h2 id="food">7. Food safety</h2>
@@ -189,9 +192,9 @@ img{display:block;max-width:100%;}
 <h2 id="liability">8. Liability</h2>
 <p>solo.quando is not a party to the contract between Producer and Buyer and accepts no liability for the quality, safety, or accuracy of food listed, except in cases of wilful misconduct or gross negligence. Total liability is limited to fees paid in the twelve months preceding the claim.</p>
 <h2 id="law">9. Governing law</h2>
-<p>These Terms are governed by Swiss law, excluding conflict-of-laws rules and the CISG. Exclusive jurisdiction: Zürich, subject to mandatory consumer-protection provisions.</p>
+<p>These Terms are governed by Swiss law, excluding conflict-of-laws rules and the CISG. Exclusive jurisdiction: Z&uuml;rich, subject to mandatory consumer-protection provisions.</p>
 <h2 id="contact">10. Contact</h2>
-<p><a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a> · +41 78 794 27 00 · Frauentalweg 119 · 8045 Zürich</p>
+<p><a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a> &middot; +41 78 794 27 00 &middot; Frauentalweg 119 &middot; 8045 Z&uuml;rich</p>
 </div>
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
@@ -201,8 +204,8 @@ img{display:block;max-width:100%;}
       <div class="footer-contacts">
         <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>
         <a href="tel:+41787942700">+41 78 794 27 00</a>
-        <a href="https://www.instagram.com/solo.quando" target="_blank">@solo.quando</a>
-        <a href="https://www.linkedin.com/company/soloquando/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">@solo.quando</a>
+        <a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
     <div class="footer-col"><h5>Discover</h5><ul>
@@ -224,30 +227,39 @@ img{display:block;max-width:100%;}
     </ul></div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 solo.quando · Zürich</span>
-    <span><a href="#">EN</a> · <a href="#">DE</a></span>
+    <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
+    <span><a href="#">EN</a> &middot; <a href="#">DE</a></span>
   </div>
 </div></footer>
 <script>
 (function(){
-  var burger = document.querySelector('.nav-burger');
-  var menu = document.querySelector('.nav-links');
-  if(!burger || !menu) return;
-  function close(){
-    menu.classList.remove('open');
-    burger.classList.remove('open');
-    burger.setAttribute('aria-expanded','false');
+  var burger=document.querySelector('.nav-burger');
+  var menu=document.querySelector('.nav-links');
+  if(burger && menu){
+    function close(){menu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+    burger.addEventListener('click',function(){var open=menu.classList.toggle('open');burger.classList.toggle('open',open);burger.setAttribute('aria-expanded',String(open));});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    document.addEventListener('click',function(e){if(!burger.contains(e.target) && !menu.contains(e.target)) close();});
   }
-  burger.addEventListener('click', function(){
-    var open = menu.classList.toggle('open');
-    burger.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', String(open));
-  });
-  menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', close);
-  });
-  document.addEventListener('click', function(e){
-    if(!burger.contains(e.target) && !menu.contains(e.target)) close();
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.share-btn').forEach(function(btn){
+    btn.addEventListener('click', async function(){
+      var url = btn.getAttribute('data-share-url') || window.location.href;
+      var title = btn.getAttribute('data-share-title') || 'solo.quando';
+      var text = btn.getAttribute('data-share-text') || "Saw this and thought of you. A small Swiss food project starting in Z\u00fcrich \u2014 pre-order homemade food from your neighbour, made only when you want it.";
+      var feedback = btn.parentElement.querySelector('.share-feedback');
+      function showFeedback(msg){
+        if(feedback){ feedback.textContent = msg; feedback.classList.add('show'); setTimeout(function(){ feedback.classList.remove('show'); }, 2400); }
+      }
+      if(navigator.share){
+        try{ await navigator.share({title: title, text: text, url: url}); showFeedback('Thank you.'); }catch(e){}
+      } else if(navigator.clipboard){
+        try{ await navigator.clipboard.writeText(text + ' ' + url); showFeedback('Link copied.'); }catch(e){ showFeedback('Copy this URL: ' + url); }
+      } else { showFeedback('Copy this URL: ' + url); }
+    });
   });
 })();
 </script>

@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Join the waiting list · solo.quando</title>
+<title>Join the waiting list &middot; solo.quando</title>
 <meta name="description" content="Be the first to know when a baker in your neighbourhood opens a batch."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{
   --bone:#F5EFE4;--paper:#EDE5D4;--ink:#2B1A0F;
-  --dim:#5C4738;--terra:#C2663D;--honey:#D4A23F;--sage:#7A8B6A;
+  --dim:#5C4738;--terra:#C4622D;--sage:#7A8B6A;
   --line:rgba(43,26,15,.10);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -26,26 +27,27 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1
 em{font-style:italic;color:var(--terra);}
 a{color:inherit;text-decoration:none;}
 img{display:block;max-width:100%;}
+picture{display:block;width:100%;height:100%;}
+picture img{width:100%;height:100%;object-fit:cover;}
 .kicker{font-size:13px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);}
 
-/* NAV */
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 48px;max-width:1180px;margin:0 auto;}
-@media(max-width:720px){.nav-inner{padding:0 22px;height:64px;}}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink);letter-spacing:-.01em;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px;padding:0 48px;max-width:1180px;margin:0 auto;}
+@media(max-width:720px){.nav-inner{padding:0 22px;height:66px;}}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);letter-spacing:-.01em;}
 .nav-logo span{color:var(--terra);}
-.nav-links{display:flex;gap:34px;list-style:none;}
-.nav-links a{font-size:14px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:15px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
 .nav-links a:hover,.nav-links a.on{color:var(--terra);}
-.nav-cta{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:13px 22px;transition:background .2s;white-space:nowrap;}
+.nav-cta{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:14px 22px;transition:background .2s;white-space:nowrap;}
 .nav-cta:hover{background:var(--terra);}
 .nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:10px;margin-left:8px;}
 .nav-burger span{display:block;width:24px;height:2px;background:var(--ink);transition:all .28s ease;transform-origin:center;}
 @media(max-width:920px){
-  .nav-links{display:none;position:fixed;top:64px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
+  .nav-links{display:none;position:fixed;top:66px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
   .nav-links.open{display:flex;}
   .nav-links li{border-bottom:1px solid var(--line);}
-  .nav-links a{display:block;padding:20px 24px;font-size:17px;color:var(--ink);}
+  .nav-links a{display:block;padding:20px 24px;font-size:18px;color:var(--ink);}
   .nav-cta{display:none;}
   .nav-burger{display:flex;}
   .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
@@ -53,7 +55,6 @@ img{display:block;max-width:100%;}
   .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 }
 
-/* FOOTER */
 .footer{background:var(--ink);color:rgba(245,239,228,.65);padding:72px 0 40px;font-size:14px;}
 .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px;}
 @media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px;}}
@@ -73,18 +74,23 @@ img{display:block;max-width:100%;}
 .footer-bottom a{color:rgba(245,239,228,.45);}
 .footer-bottom a:hover{color:var(--bone);}
 
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:16px 28px;border:none;cursor:pointer;transition:all .2s;line-height:1;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.16em;text-transform:uppercase;padding:17px 30px;border:none;cursor:pointer;transition:all .2s;line-height:1;}
 .btn-dark{background:var(--ink);color:var(--bone);}
 .btn-dark:hover{background:var(--terra);}
 .btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(43,26,15,.3);}
 .btn-ghost:hover{background:var(--ink);color:var(--bone);}
 .btn-ghost-light{background:transparent;color:var(--bone);border:1px solid rgba(245,239,228,.35);}
 .btn-ghost-light:hover{background:var(--bone);color:var(--ink);}
-.btn-honey{background:var(--honey);color:var(--ink);}
-.btn-honey:hover{background:#c4901d;}
 
-/* FORMS — bigger inputs, clearer labels */
+.share-block{padding:56px 0;text-align:center;border-top:1px solid var(--line);}
+.share-block .label{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
+.share-block .quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);margin-bottom:24px;line-height:1.45;}
+.share-btn{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid rgba(43,26,15,.3);color:var(--ink);padding:14px 24px;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.share-btn:hover{background:var(--ink);color:var(--bone);}
+.share-btn svg{width:14px;height:14px;}
+.share-feedback{display:inline-block;margin-left:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--sage);opacity:0;transition:opacity .3s;}
+.share-feedback.show{opacity:1;}
+
 .f-field{display:flex;flex-direction:column;gap:7px;}
 .f-label{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
 .f-input,.f-select,.f-textarea{
@@ -108,15 +114,12 @@ img{display:block;max-width:100%;}
 .f-submit{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:18px 32px;width:100%;transition:background .2s;margin-top:8px;}
 .f-submit:hover{background:var(--terra);}
 .f-submit:disabled{opacity:.5;cursor:not-allowed;}
-.f-submit-honey{background:var(--honey);color:var(--ink);}
-.f-submit-honey:hover{background:#c4901d;}
 .f-result{display:none;padding:18px 22px;margin-top:14px;}
 .f-result.ok{background:rgba(122,139,106,.12);border-left:3px solid var(--sage);}
 .f-result.err{background:rgba(194,102,61,.08);border-left:3px solid var(--terra);}
 .f-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.45;color:var(--ink);}
 .f-result.err p{font-family:'Jost',sans-serif;font-style:normal;font-size:15px;color:var(--terra);}
 
-/* PILOT BADGE */
 .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(194,102,61,.1);border:1px solid rgba(194,102,61,.28);padding:8px 16px;margin-bottom:18px;}
 .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--terra);animation:pulse 2s infinite;}
 .badge span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);}
@@ -136,17 +139,30 @@ img{display:block;max-width:100%;}
 </div></nav>
 
 <style>
-.wl-hero{padding:96px 0 76px;background:linear-gradient(150deg,rgba(194,102,61,.08) 0%,transparent 55%);}
+.wl-hero{padding:96px 0 64px;background:linear-gradient(150deg,rgba(194,102,61,.08) 0%,transparent 55%);}
 .wl-hero h1{font-size:clamp(48px,6.5vw,86px);letter-spacing:-.025em;margin:14px 0 22px;max-width:780px;}
 .wl-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--dim);max-width:580px;line-height:1.5;}
-.wl-body{padding:80px 0 96px;}
+
+.wl-body{padding:64px 0 96px;}
 .wl-grid{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start;}
 @media(max-width:860px){.wl-grid{grid-template-columns:1fr;gap:44px;}}
+
 .wl-left h2{font-size:clamp(28px,3.5vw,40px);letter-spacing:-.015em;margin-bottom:18px;}
 .wl-left p{font-size:17px;line-height:1.7;color:var(--dim);margin-bottom:16px;}
-.wl-promises{margin-top:32px;display:flex;flex-direction:column;gap:14px;}
-.wl-promise{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--dim);line-height:1.5;}
-.wl-promise::before{content:'✓';color:var(--sage);font-weight:700;flex-shrink:0;font-size:16px;}
+
+/* What you get */
+.wl-getbox{background:var(--paper);padding:30px 32px;margin:30px 0;border-left:3px solid var(--terra);}
+.wl-getbox .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;}
+.wl-getbox h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin-bottom:12px;line-height:1.25;}
+.wl-getbox p{font-size:16px;line-height:1.65;color:var(--dim);margin:0;}
+
+/* 3-line timeline */
+.wl-timeline{margin-top:30px;}
+.wl-tl-item{display:grid;grid-template-columns:80px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);}
+.wl-tl-item:last-child{border-bottom:none;}
+.wl-tl-time{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);padding-top:3px;}
+.wl-tl-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--ink);line-height:1.4;}
+
 .wl-form-box{background:var(--paper);padding:40px;}
 @media(max-width:560px){.wl-form-box{padding:28px 22px;}}
 .wl-form-box h3{font-size:28px;letter-spacing:-.01em;margin-bottom:26px;}
@@ -155,7 +171,7 @@ img{display:block;max-width:100%;}
 
 <header class="wl-hero">
   <div class="wrap">
-    <div class="badge"><span class="badge-dot"></span><span>Zürich · pre-launch</span></div>
+    <div class="badge"><span class="badge-dot"></span><span>Z&uuml;rich &middot; pre-launch</span></div>
     <p class="kicker">For neighbours</p>
     <h1>Join the<br/><em>waiting list</em>.</h1>
     <p class="sub">Be the first to know when a baker in your neighbourhood opens a batch. One email. No newsletter. No noise.</p>
@@ -167,65 +183,87 @@ img{display:block;max-width:100%;}
     <div class="wl-grid">
       <div class="wl-left">
         <h2>What happens<br/>when you <em>join</em>.</h2>
-        <p>One email — the moment a baker opens a batch near you. Nothing else. No weekly digests, no promotions, no noise.</p>
-        <p>If you say yes to a batch, your payment is held — never taken — until enough people commit. If they don't, every Franc returns automatically.</p>
-        <p>You are not subscribing to a service. You are joining a neighbourhood.</p>
-        <div class="wl-promises">
-          <div class="wl-promise">One notification when the first batch near you goes live</div>
-          <div class="wl-promise">Full refund if a batch doesn't reach its minimum</div>
-          <div class="wl-promise">No obligation — say yes when something is worth it</div>
-          <div class="wl-promise">Every baker is a real person with a real name and a real recipe</div>
-          <div class="wl-promise">Pickup near the baker's home, at a time you both agree</div>
+        <p>You join a quiet group of neighbours who said yes early. You will not hear from us until something is genuinely worth saying.</p>
+
+        <div class="wl-getbox">
+          <p class="label">What you get</p>
+          <h3>Early access.</h3>
+          <p>You'll hear before anyone else when bakers in your neighbourhood are ready. One short email, only when there's something worth saying.</p>
+        </div>
+
+        <div class="wl-timeline">
+          <div class="wl-tl-item">
+            <span class="wl-tl-time">Now</span>
+            <span class="wl-tl-text">You're on the list.</span>
+          </div>
+          <div class="wl-tl-item">
+            <span class="wl-tl-time">When ready</span>
+            <span class="wl-tl-text">One email when the first batch opens near you.</span>
+          </div>
+          <div class="wl-tl-item">
+            <span class="wl-tl-time">After</span>
+            <span class="wl-tl-text">Pickup at a quiet, central Z&uuml;rich address.</span>
+          </div>
         </div>
       </div>
       <div>
         <div class="wl-form-box">
           <h3>Tell us a little<br/>about <em>yourself</em>.</h3>
-          <form
-            class="wl-fields"
-            id="waitlist-form"
-            action="https://formspree.io/f/mpqkvvnk"
-            method="POST">
+          <form class="wl-fields" id="waitlist-form"
+                action="https://formspree.io/f/mpqkvvnk"
+                method="POST">
             <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
-            <input type="hidden" name="_subject" value="New waiting list signup — solo.quando"/>
+            <input type="hidden" name="_subject" value="New waiting list signup"/>
             <input type="hidden" name="source" value="waiting-list-page"/>
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
-            <div class="f-field">
-              <label class="f-label">Your name *</label>
-              <input class="f-input" type="text" name="name" placeholder="Anna Meier" required/>
-            </div>
             <div class="f-field">
               <label class="f-label">Your email *</label>
               <input class="f-input" type="email" name="email" placeholder="anna@email.ch" required/>
             </div>
             <div class="f-field">
+              <label class="f-label">Your name (optional)</label>
+              <input class="f-input" type="text" name="name" placeholder="Anna"/>
+            </div>
+            <div class="f-field">
               <label class="f-label">Your neighbourhood (optional)</label>
               <select class="f-select" name="neighbourhood">
-                <option value="">Select…</option>
-                <option>Kreis 1 — Altstadt</option>
-                <option>Kreis 2 — Enge / Wollishofen</option>
-                <option>Kreis 3 — Wiedikon</option>
-                <option>Kreis 4 — Aussersihl</option>
-                <option>Kreis 5 — Gewerbeschule</option>
-                <option>Kreis 6 — Unterstrass / Oberstrass</option>
-                <option>Kreis 7 — Fluntern / Hottingen</option>
-                <option>Kreis 8 — Riesbach</option>
-                <option>Kreis 9 — Albisrieden / Altstetten</option>
-                <option>Kreis 10 — Höngg / Wipkingen</option>
-                <option>Kreis 11 — Affoltern / Oerlikon / Seebach</option>
-                <option>Kreis 12 — Schwamendingen</option>
-                <option>Outside Zürich city</option>
+                <option value="">Select&hellip;</option>
+                <option>Kreis 1 &mdash; Altstadt</option>
+                <option>Kreis 2 &mdash; Enge / Wollishofen</option>
+                <option>Kreis 3 &mdash; Wiedikon</option>
+                <option>Kreis 4 &mdash; Aussersihl</option>
+                <option>Kreis 5 &mdash; Gewerbeschule</option>
+                <option>Kreis 6 &mdash; Unterstrass / Oberstrass</option>
+                <option>Kreis 7 &mdash; Fluntern / Hottingen</option>
+                <option>Kreis 8 &mdash; Riesbach</option>
+                <option>Kreis 9 &mdash; Albisrieden / Altstetten</option>
+                <option>Kreis 10 &mdash; H&ouml;ngg / Wipkingen</option>
+                <option>Kreis 11 &mdash; Affoltern / Oerlikon / Seebach</option>
+                <option>Kreis 12 &mdash; Schwamendingen</option>
+                <option>Outside Z&uuml;rich city</option>
               </select>
             </div>
             <div class="f-field" style="margin-top:6px;">
-              <label class="f-check"><input type="checkbox" name="privacy" required/><span>I accept the <a href="/privacy" target="_blank">Privacy Policy</a>. I agree to receive notifications when batches open in my neighbourhood. *</span></label>
+              <label class="f-check"><input type="checkbox" name="privacy" required/><span>I accept the <a href="/privacy" target="_blank">Privacy Policy</a>. *</span></label>
             </div>
-            <button class="f-submit" type="submit">Join the waiting list →</button>
+            <button class="f-submit" type="submit">Join the waiting list &rarr;</button>
           </form>
         </div>
         <p style="font-size:13px;color:var(--dim);margin-top:14px;line-height:1.5;">Data processed under the Swiss nDSG. Unsubscribe at any time: <a href="mailto:hello@soloquando.ch" style="color:var(--terra);">hello@soloquando.ch</a></p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="share-block">
+  <div class="wrap" style="max-width:680px;">
+    <p class="label">Pass it on</p>
+    <p class="quote">Know a neighbour who would love this? Send it to them.</p>
+    <button class="share-btn" data-share-title="solo.quando">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      Share with a neighbour
+    </button>
+    <span class="share-feedback"></span>
   </div>
 </section>
 
@@ -237,8 +275,8 @@ img{display:block;max-width:100%;}
       <div class="footer-contacts">
         <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>
         <a href="tel:+41787942700">+41 78 794 27 00</a>
-        <a href="https://www.instagram.com/solo.quando" target="_blank">@solo.quando</a>
-        <a href="https://www.linkedin.com/company/soloquando/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">@solo.quando</a>
+        <a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
     <div class="footer-col"><h5>Discover</h5><ul>
@@ -260,30 +298,39 @@ img{display:block;max-width:100%;}
     </ul></div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 solo.quando · Zürich</span>
-    <span><a href="#">EN</a> · <a href="#">DE</a></span>
+    <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
+    <span><a href="#">EN</a> &middot; <a href="#">DE</a></span>
   </div>
 </div></footer>
 <script>
 (function(){
-  var burger = document.querySelector('.nav-burger');
-  var menu = document.querySelector('.nav-links');
-  if(!burger || !menu) return;
-  function close(){
-    menu.classList.remove('open');
-    burger.classList.remove('open');
-    burger.setAttribute('aria-expanded','false');
+  var burger=document.querySelector('.nav-burger');
+  var menu=document.querySelector('.nav-links');
+  if(burger && menu){
+    function close(){menu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+    burger.addEventListener('click',function(){var open=menu.classList.toggle('open');burger.classList.toggle('open',open);burger.setAttribute('aria-expanded',String(open));});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    document.addEventListener('click',function(e){if(!burger.contains(e.target) && !menu.contains(e.target)) close();});
   }
-  burger.addEventListener('click', function(){
-    var open = menu.classList.toggle('open');
-    burger.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', String(open));
-  });
-  menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', close);
-  });
-  document.addEventListener('click', function(e){
-    if(!burger.contains(e.target) && !menu.contains(e.target)) close();
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.share-btn').forEach(function(btn){
+    btn.addEventListener('click', async function(){
+      var url = btn.getAttribute('data-share-url') || window.location.href;
+      var title = btn.getAttribute('data-share-title') || 'solo.quando';
+      var text = btn.getAttribute('data-share-text') || "Saw this and thought of you. A small Swiss food project starting in Z\u00fcrich \u2014 pre-order homemade food from your neighbour, made only when you want it.";
+      var feedback = btn.parentElement.querySelector('.share-feedback');
+      function showFeedback(msg){
+        if(feedback){ feedback.textContent = msg; feedback.classList.add('show'); setTimeout(function(){ feedback.classList.remove('show'); }, 2400); }
+      }
+      if(navigator.share){
+        try{ await navigator.share({title: title, text: text, url: url}); showFeedback('Thank you.'); }catch(e){}
+      } else if(navigator.clipboard){
+        try{ await navigator.clipboard.writeText(text + ' ' + url); showFeedback('Link copied.'); }catch(e){ showFeedback('Copy this URL: ' + url); }
+      } else { showFeedback('Copy this URL: ' + url); }
+    });
   });
 })();
 </script>
