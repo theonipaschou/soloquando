@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>solo.quando &middot; Z&uuml;rich</title>
-<meta name="description" content="Pre-order homemade food from your neighbour in Z&uuml;rich. Made only when enough people say yes."/>
+<meta name="description" content="Pre-order homemade food from your neighbour in Z&uuml;rich. Made only when you want it."/>
 <link rel="preload" href="hero-abundance-1200.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -38,7 +38,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .nav-logo img{height:38px;width:auto;display:block;}
 @media(max-width:720px){.nav-logo img{height:32px;}}
 .nav-links{display:flex;gap:36px;list-style:none;}
-.nav-links a{font-size:15px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
+.nav-links a{font-size:16px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
 .nav-links a:hover,.nav-links a.on{color:var(--terra);}
 .nav-cta{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:14px 22px;transition:background .2s;white-space:nowrap;}
 .nav-cta:hover{background:var(--terra);}
@@ -56,10 +56,10 @@ picture img{width:100%;height:100%;object-fit:cover;}
   .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 }
 
-.footer{background:var(--ink);color:rgba(245,239,228,.65);padding:72px 0 40px;font-size:14px;}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px;}
-@media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px;}}
-@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+.footer{background:var(--ink);color:rgba(245,239,228,.65);padding:72px 0 40px;font-size:15px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;align-items:start;}
+@media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:40px 32px;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;gap:32px;}}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--bone);margin-bottom:12px;}
 .footer-logo span{color:var(--terra);}
 .footer-logo-img{display:block;height:auto;width:240px;max-width:100%;margin-bottom:14px;}
@@ -72,12 +72,12 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .footer-payments-methods{color:rgba(245,239,228,.35);}
 @media(max-width:560px){.footer-payments{flex-direction:column;gap:8px;}}
 .footer-contacts{margin-top:20px;display:flex;flex-direction:column;gap:8px;}
-.footer-contacts a{color:rgba(245,239,228,.7);transition:color .2s;font-size:14px;}
+.footer-contacts a{color:rgba(245,239,228,.7);transition:color .2s;font-size:15px;}
 .footer-contacts a:hover{color:var(--bone);}
-.footer-col h5{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;font-weight:500;}
+.footer-col h5{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;font-weight:500;margin-top:14px;}
 .footer-col ul{list-style:none;}
 .footer-col li{margin-bottom:10px;}
-.footer-col a{color:rgba(245,239,228,.65);transition:color .2s;font-size:14px;}
+.footer-col a{color:rgba(245,239,228,.65);transition:color .2s;font-size:15px;}
 .footer-col a:hover{color:var(--bone);}
 .footer-bottom{border-top:1px solid rgba(245,239,228,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;letter-spacing:.04em;color:rgba(245,239,228,.45);}
 .footer-bottom a{color:rgba(245,239,228,.45);}
@@ -104,7 +104,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .f-label{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
 .f-input,.f-select,.f-textarea{
   background:var(--paper);border:1px solid var(--line);
-  color:var(--ink);font-family:'Jost',sans-serif;font-size:16px;
+  color:var(--ink);font-family:'Jost',sans-serif;font-size:17px;
   padding:16px 18px;outline:none;width:100%;
   transition:border-color .2s;-webkit-appearance:none;appearance:none;
 }
@@ -115,7 +115,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235C4738' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;
 }
-.f-check{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--dim);line-height:1.55;cursor:pointer;}
+.f-check{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--dim);line-height:1.55;cursor:pointer;}
 .f-check input{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--terra);cursor:pointer;}
 .f-check a{color:var(--terra);text-decoration:underline;}
 .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
@@ -153,102 +153,113 @@ picture img{width:100%;height:100%;object-fit:cover;}
 @media(max-width:860px){.hero{grid-template-columns:1fr;min-height:auto;}}
 .hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;}
 @media(max-width:720px){.hero-text{padding:60px 22px;}}
-.hero-h1{font-size:clamp(50px,6vw,82px);line-height:1.0;letter-spacing:-.025em;margin:14px 0 22px;}
-.hero-sub{font-size:18px;line-height:1.6;color:var(--dim);max-width:460px;margin-bottom:28px;}
+.hero-h1{font-size:clamp(54px,6.4vw,86px);line-height:1.0;letter-spacing:-.025em;margin:14px 0 22px;}
+.hero-sub{font-size:19px;line-height:1.6;color:var(--dim);max-width:480px;margin-bottom:32px;}
 .hero-img{position:relative;overflow:hidden;background:var(--paper);}
 @media(max-width:860px){.hero-img{height:60vw;min-height:300px;}}
-.hero-cap{position:absolute;bottom:24px;left:24px;background:rgba(43,26,15,.78);backdrop-filter:blur(8px);padding:12px 16px;color:var(--bone);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;max-width:260px;line-height:1.4;}
+.hero-cap{position:absolute;bottom:24px;left:24px;background:rgba(43,26,15,.78);backdrop-filter:blur(8px);padding:12px 16px;color:var(--bone);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;max-width:280px;line-height:1.4;}
 
-.hero-optin{display:flex;max-width:460px;margin-bottom:14px;}
+.hero-optin{display:flex;max-width:480px;margin-bottom:14px;}
 @media(max-width:520px){.hero-optin{flex-direction:column;gap:10px;}}
-.hero-optin input{flex:1;padding:16px 18px;background:var(--paper);border:1px solid var(--line);border-right:none;color:var(--ink);font-family:'Jost',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
+.hero-optin input{flex:1;padding:18px 20px;background:var(--paper);border:1px solid var(--line);border-right:none;color:var(--ink);font-family:'Jost',sans-serif;font-size:17px;outline:none;transition:border-color .2s;}
 @media(max-width:520px){.hero-optin input{border-right:1px solid var(--line);}}
 .hero-optin input::placeholder{color:var(--dim);opacity:.6;}
 .hero-optin input:focus{border-color:rgba(43,26,15,.4);}
-.hero-optin button{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:16px 22px;white-space:nowrap;transition:background .2s;}
+.hero-optin button{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.16em;text-transform:uppercase;padding:18px 24px;white-space:nowrap;transition:background .2s;}
 .hero-optin button:hover{background:var(--terra);}
-.hero-optin-note{font-size:13px;color:var(--dim);margin-bottom:18px;}
-.hero-optin-result{display:none;max-width:460px;padding:14px 18px;margin-bottom:14px;background:rgba(122,139,106,.12);border-left:3px solid var(--sage);}
+.hero-optin-note{font-size:14px;color:var(--dim);margin-bottom:24px;}
+.hero-optin-result{display:none;max-width:480px;padding:14px 18px;margin-bottom:14px;background:rgba(122,139,106,.12);border-left:3px solid var(--sage);}
 .hero-optin-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--ink);}
-.hero-secondary{font-size:14px;color:var(--dim);margin-bottom:22px;}
+.hero-secondary{font-size:15px;color:var(--dim);margin-bottom:24px;}
 .hero-secondary a{color:var(--ink);text-decoration:underline;text-decoration-color:rgba(194,102,61,.4);text-underline-offset:4px;}
-.hero-trust{display:flex;align-items:center;gap:14px;font-size:13px;color:var(--dim);flex-wrap:wrap;}
+.hero-trust{display:flex;align-items:center;gap:14px;font-size:14px;color:var(--dim);flex-wrap:wrap;}
 .hero-trust-dot{width:6px;height:6px;border-radius:50%;background:var(--terra);flex-shrink:0;}
 .hero-trust strong{font-weight:400;color:var(--ink);}
 
-/* ─── LOGO FLOURISH ─── */
-.logo-flourish{padding:64px 22px 48px;text-align:center;}
-.logo-flourish img{max-width:520px;width:100%;height:auto;margin:0 auto;}
-
 /* ─── CLARITY STRIP ─── */
-.clarity-s{padding:48px 0 72px;border-bottom:1px solid var(--line);}
+.clarity-s{padding:96px 0 80px;border-bottom:1px solid var(--line);}
+.clarity-intro{text-align:center;max-width:680px;margin:0 auto 56px;}
+.clarity-intro h2{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:clamp(28px,3.6vw,40px);line-height:1.25;color:var(--ink);letter-spacing:-.01em;}
+.clarity-intro h2 em{color:var(--terra);font-style:italic;}
 .clarity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:980px;margin:0 auto;}
 @media(max-width:760px){.clarity-grid{grid-template-columns:1fr;gap:36px;}}
 .clarity-col{text-align:center;}
-.clarity-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:42px;color:var(--terra);margin-bottom:14px;line-height:1;}
-.clarity-h{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;letter-spacing:-.01em;margin-bottom:10px;color:var(--ink);}
-.clarity-p{font-size:15px;line-height:1.6;color:var(--dim);max-width:280px;margin:0 auto;}
-.clarity-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--terra);text-align:center;margin-top:48px;}
+.clarity-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:48px;color:var(--terra);margin-bottom:14px;line-height:1;}
+.clarity-h{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;letter-spacing:-.01em;margin-bottom:10px;color:var(--ink);}
+.clarity-p{font-size:17px;line-height:1.6;color:var(--dim);max-width:300px;margin:0 auto;}
 
-/* ─── TANGIBLE EXAMPLE — narrative form ─── */
+/* ─── EXAMPLE — TWO BATCH CARDS ─── */
 .example-s{padding:96px 0;background:var(--paper);}
 .example-head{text-align:center;margin-bottom:56px;}
-.example-head h2{font-size:clamp(36px,4.5vw,56px);letter-spacing:-.02em;margin-bottom:14px;}
-.example-head p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:520px;margin:0 auto;line-height:1.5;}
-.example-card{max-width:920px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:0;background:var(--bone);border:1px solid var(--line);}
-@media(max-width:720px){.example-card{grid-template-columns:1fr;}}
-.example-img{aspect-ratio:1;overflow:hidden;background:var(--paper);}
-.example-text{padding:48px 44px;}
-@media(max-width:720px){.example-text{padding:36px 28px;}}
-.example-eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;}
-.example-title{font-family:'Cormorant Garamond',serif;font-size:38px;letter-spacing:-.015em;margin-bottom:14px;line-height:1.05;}
-.example-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--dim);line-height:1.55;margin-bottom:22px;}
-.example-body{font-size:15px;line-height:1.7;color:var(--dim);margin-bottom:24px;}
-.example-meta{font-size:13px;color:var(--dim);line-height:1.7;margin-bottom:24px;padding-top:18px;border-top:1px solid var(--line);}
-.example-meta strong{color:var(--ink);font-weight:400;}
-.example-sig{margin-top:18px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--dim);}
+.example-head h2{font-size:clamp(40px,4.8vw,60px);letter-spacing:-.02em;margin-bottom:14px;}
+.example-head h2 em{color:var(--terra);font-style:italic;}
+.example-head p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:540px;margin:0 auto;line-height:1.5;}
 
-/* ─── WHY THIS EXISTS ─── */
+.batch-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1100px;margin:0 auto;}
+@media(max-width:860px){.batch-grid{grid-template-columns:1fr;gap:24px;}}
+
+.batch-card{background:var(--bone);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;}
+.batch-card-img{aspect-ratio:4/3;overflow:hidden;background:var(--paper);}
+.batch-card-img img{width:100%;height:100%;object-fit:cover;}
+.batch-card-text{padding:36px 32px;flex:1;display:flex;flex-direction:column;}
+@media(max-width:520px){.batch-card-text{padding:28px 24px;}}
+.batch-card-eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:12px;}
+.batch-card-title{font-family:'Cormorant Garamond',serif;font-size:34px;letter-spacing:-.015em;margin-bottom:12px;line-height:1.05;}
+.batch-card-title em{color:var(--terra);font-style:italic;}
+.batch-card-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--dim);line-height:1.55;margin-bottom:20px;}
+.batch-card-meta{font-size:14px;color:var(--dim);line-height:1.7;padding-top:16px;border-top:1px solid var(--line);margin-top:auto;}
+.batch-card-meta strong{color:var(--ink);font-weight:400;}
+
+/* Placeholder card for batch 002 */
+.batch-card.is-placeholder{background:var(--bone);border:1px dashed rgba(43,26,15,.18);position:relative;}
+.batch-card.is-placeholder .batch-card-img{background:linear-gradient(135deg,rgba(194,102,61,.04) 0%,rgba(122,139,106,.04) 100%);position:relative;display:flex;align-items:center;justify-content:center;}
+.batch-card.is-placeholder .batch-card-img::before{content:'?';font-family:'Cormorant Garamond',serif;font-style:italic;font-size:120px;color:rgba(194,102,61,.15);line-height:1;}
+.batch-card.is-placeholder .batch-card-eyebrow{color:var(--dim);}
+.batch-card.is-placeholder .batch-card-title{color:rgba(43,26,15,.5);}
+.batch-card.is-placeholder .batch-card-desc{color:rgba(92,71,56,.7);}
+.batch-card.is-placeholder .batch-card-meta{color:rgba(92,71,56,.7);}
+
+/* ─── WHY THIS EXISTS — tightened ─── */
 .why-s{padding:96px 0;}
 .why-inner{max-width:780px;margin:0 auto;text-align:center;}
-.why-h{font-size:clamp(40px,5.5vw,72px);line-height:1.05;letter-spacing:-.025em;margin:14px 0 26px;}
+.why-h{font-size:clamp(44px,5.5vw,72px);line-height:1.05;letter-spacing:-.025em;margin:14px 0 26px;}
 .why-h em{color:var(--terra);font-style:italic;}
-.why-p{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:18px;}
+.why-p{font-size:19px;line-height:1.7;color:var(--dim);margin-bottom:18px;}
 .why-stats{display:flex;justify-content:center;gap:48px;margin-top:44px;flex-wrap:wrap;}
 @media(max-width:560px){.why-stats{gap:32px;}}
-.why-stat-num{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--terra);line-height:1;letter-spacing:-.02em;}
-.why-stat-lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-top:8px;}
+.why-stat-num{font-family:'Cormorant Garamond',serif;font-size:46px;color:var(--terra);line-height:1;letter-spacing:-.02em;}
+.why-stat-lbl{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-top:8px;}
 .why-cta{margin-top:48px;}
 
 /* ─── DUAL AUDIENCE SPLIT ─── */
 .split-s{padding:96px 0;background:var(--paper);}
 .split-head{text-align:center;margin-bottom:56px;}
-.split-head h2{font-size:clamp(36px,4.5vw,56px);letter-spacing:-.02em;margin-bottom:14px;}
-.split-head p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:480px;margin:0 auto;line-height:1.5;}
+.split-head h2{font-size:clamp(40px,4.8vw,60px);letter-spacing:-.02em;margin-bottom:14px;}
+.split-head h2 em{color:var(--terra);font-style:italic;}
 .split-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:980px;margin:0 auto;}
 @media(max-width:760px){.split-grid{grid-template-columns:1fr;gap:22px;}}
 .split-col{background:var(--bone);border:1px solid var(--line);padding:40px 36px;}
 @media(max-width:560px){.split-col{padding:32px 24px;}}
-.split-col h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;letter-spacing:-.015em;margin-bottom:8px;line-height:1.1;}
-.split-col h3 em{color:var(--terra);}
-.split-col .lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--dim);margin-bottom:24px;line-height:1.5;}
-.split-col ul{list-style:none;margin-bottom:32px;}
-.split-col li{font-size:15px;line-height:1.6;color:var(--dim);padding-left:22px;margin-bottom:10px;position:relative;}
-.split-col li::before{content:'';position:absolute;left:0;top:11px;width:10px;height:1px;background:var(--terra);}
+.split-col h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;letter-spacing:-.015em;margin-bottom:8px;line-height:1.1;}
+.split-col h3 em{color:var(--terra);font-style:italic;}
+.split-col .lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--dim);margin-bottom:22px;line-height:1.5;}
+.split-col ul{list-style:none;}
+.split-col li{font-size:17px;line-height:1.65;color:var(--dim);padding-left:22px;margin-bottom:10px;position:relative;}
+.split-col li::before{content:'';position:absolute;left:0;top:13px;width:10px;height:1px;background:var(--terra);}
 
 /* ─── INLINE FAQ ─── */
 .faqi-s{padding:96px 0;}
 .faqi-head{text-align:center;margin-bottom:48px;}
-.faqi-head h2{font-size:clamp(36px,4.5vw,56px);letter-spacing:-.02em;margin-bottom:12px;}
-.faqi-head p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--dim);max-width:480px;margin:0 auto;line-height:1.5;}
+.faqi-head h2{font-size:clamp(40px,4.8vw,60px);letter-spacing:-.02em;margin-bottom:12px;}
+.faqi-head h2 em{color:var(--terra);font-style:italic;}
 .faqi-list{max-width:760px;margin:0 auto;}
 .faqi-item{border-top:1px solid var(--line);padding:0;}
 .faqi-item:last-child{border-bottom:1px solid var(--line);}
-.faqi-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:24px 0;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:-.005em;color:var(--ink);user-select:none;list-style:none;}
+.faqi-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:24px 0;font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:400;letter-spacing:-.005em;color:var(--ink);user-select:none;list-style:none;}
 .faqi-q::-webkit-details-marker{display:none;}
-.faqi-q::after{content:'+';font-family:'Jost',sans-serif;font-size:28px;font-weight:300;color:var(--terra);transition:transform .25s;flex-shrink:0;margin-left:18px;}
+.faqi-q::after{content:'+';font-family:'Jost',sans-serif;font-size:30px;font-weight:300;color:var(--terra);transition:transform .25s;flex-shrink:0;margin-left:18px;}
 details[open] .faqi-q::after{content:'\2013';}
-.faqi-a{padding:0 0 24px;font-size:16px;line-height:1.7;color:var(--dim);}
+.faqi-a{padding:0 0 24px;font-size:17px;line-height:1.7;color:var(--dim);}
 .faqi-a a{color:var(--terra);text-decoration:underline;text-decoration-color:rgba(194,102,61,.4);text-underline-offset:3px;}
 .faqi-cta{text-align:center;margin-top:36px;}
 .faqi-cta a{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);text-decoration:underline;text-decoration-color:rgba(194,102,61,.3);text-underline-offset:5px;}
@@ -258,33 +269,32 @@ details[open] .faqi-q::after{content:'\2013';}
 .founder-inner{max-width:780px;margin:0 auto;text-align:center;}
 .founder-eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:30px;}
 .founder-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(28px,4vw,46px);line-height:1.3;color:var(--ink);margin-bottom:32px;}
-.founder-quote em{color:var(--terra);}
-.founder-bridge{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dim);margin-bottom:32px;line-height:1.5;}
+.founder-quote em{color:var(--terra);font-style:italic;}
+.founder-bridge{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--dim);margin-bottom:32px;line-height:1.5;}
 .founder-creds{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:36px;padding-top:32px;border-top:1px solid var(--line);}
 .founder-creds-img{width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0;}
+.founder-creds-img img{width:100%;height:100%;object-fit:cover;}
 .founder-creds-text{text-align:left;}
 @media(max-width:520px){.founder-creds{flex-direction:column;gap:14px;}.founder-creds-text{text-align:center;}}
-.founder-creds-name{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--ink);line-height:1.3;}
-.founder-creds-bio{font-size:13px;color:var(--dim);line-height:1.5;margin-top:3px;}
+.founder-creds-name{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);line-height:1.3;}
+.founder-creds-name em{color:var(--terra);font-style:italic;}
+.founder-creds-bio{font-size:14px;color:var(--dim);line-height:1.5;margin-top:4px;}
 
 /* ─── FINAL CTA ─── */
 .cta-s{padding:96px 0;text-align:center;background:var(--ink);color:var(--bone);}
-.cta-s h2{font-size:clamp(40px,5.5vw,72px);letter-spacing:-.025em;margin-bottom:18px;color:var(--bone);}
-.cta-s h2 em{color:var(--terra);}
-.cta-s .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:rgba(245,239,228,.75);max-width:520px;margin:0 auto 44px;line-height:1.5;}
+.cta-s h2{font-size:clamp(44px,5.5vw,72px);letter-spacing:-.025em;margin-bottom:18px;color:var(--bone);}
+.cta-s h2 em{color:var(--terra);font-style:italic;}
+.cta-s .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:rgba(245,239,228,.75);max-width:540px;margin:0 auto 44px;line-height:1.5;}
 .cta-form-wrap{max-width:480px;margin:0 auto;}
 .cta-form{display:flex;}
 @media(max-width:520px){.cta-form{flex-direction:column;gap:10px;}}
-.cta-form input[type=email]{flex:1;padding:18px 20px;background:rgba(245,239,228,.08);border:1px solid rgba(245,239,228,.2);border-right:none;color:var(--bone);font-family:'Jost',sans-serif;font-size:16px;outline:none;}
+.cta-form input[type=email]{flex:1;padding:18px 20px;background:rgba(245,239,228,.08);border:1px solid rgba(245,239,228,.2);border-right:none;color:var(--bone);font-family:'Jost',sans-serif;font-size:17px;outline:none;}
 @media(max-width:520px){.cta-form input[type=email]{border-right:1px solid rgba(245,239,228,.2);}}
 .cta-form input[type=email]::placeholder{color:rgba(245,239,228,.5);}
 .cta-form input[type=email]:focus{border-color:rgba(245,239,228,.45);}
-.cta-btn{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:18px 26px;white-space:nowrap;transition:background .2s;}
+.cta-btn{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:18px 26px;white-space:nowrap;transition:background .2s;}
 .cta-btn:hover{background:#a8552a;}
-.cta-secondary{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;}
-.cta-secondary a{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,239,228,.7);padding:14px 24px;border:1px solid rgba(245,239,228,.25);transition:all .2s;}
-.cta-secondary a:hover{background:rgba(245,239,228,.08);color:var(--bone);border-color:rgba(245,239,228,.4);}
-.cta-tertiary{margin-top:32px;font-size:14px;color:rgba(245,239,228,.55);}
+.cta-tertiary{margin-top:32px;font-size:15px;color:rgba(245,239,228,.55);}
 .cta-tertiary a{color:var(--terra);text-decoration:underline;text-decoration-color:rgba(194,102,61,.4);text-underline-offset:4px;}
 .cta-note{margin-top:18px;font-size:13px;color:rgba(245,239,228,.45);}
 .cta-result{max-width:480px;margin:14px auto 0;display:none;}
@@ -296,7 +306,7 @@ details[open] .faqi-q::after{content:'\2013';}
   <div class="hero-text">
     <p class="kicker">The food you've been missing</p>
     <h1 class="hero-h1">Made only when<br/><em>you want it</em>.</h1>
-    <p class="hero-sub">Pre-order homemade food from your neighbour in Z&uuml;rich. Made by hand, by someone with a name. Didn't come from a factory.</p>
+    <p class="hero-sub">Pre-order homemade food from your neighbour in Z&uuml;rich. Made by hand. By someone with a name.</p>
 
     <form class="hero-optin" id="hero-optin"
           action="https://formspree.io/f/mpqkvvnk"
@@ -323,99 +333,108 @@ details[open] .faqi-q::after{content:'\2013';}
   </div>
 </section>
 
-<!-- ─── LOGO FLOURISH ─── -->
-<section class="logo-flourish">
-  <img src="logo-hero.webp" alt="solo.quando — the pre-order food platform" width="520" height="180" loading="lazy" decoding="async"/>
-</section>
-
-<!-- ─── CLARITY STRIP ─── -->
+<!-- ─── CLARITY STRIP — Kickstarter intro ABOVE the steps ─── -->
 <section class="clarity-s">
   <div class="wrap">
+    <div class="clarity-intro">
+      <h2>Like Kickstarter, for <em>homemade food</em>. Made by your neighbour.</h2>
+    </div>
     <div class="clarity-grid">
       <div class="clarity-col">
         <div class="clarity-num">01</div>
         <h3 class="clarity-h">A baker proposes a batch.</h3>
-        <p class="clarity-p">A small round of baking. Their recipe, their price, their pickup window.</p>
+        <p class="clarity-p">A small round of baking. Their recipe. Their price.</p>
       </div>
       <div class="clarity-col">
         <div class="clarity-num">02</div>
         <h3 class="clarity-h">Neighbours pre-order.</h3>
-        <p class="clarity-p">Payment is held, never charged, until the batch is confirmed.</p>
+        <p class="clarity-p">Payment is held, never charged, until enough say yes.</p>
       </div>
       <div class="clarity-col">
         <div class="clarity-num">03</div>
         <h3 class="clarity-h">The kitchen opens.</h3>
-        <p class="clarity-p">Made by hand, picked up in person at a quiet central Z&uuml;rich address.</p>
+        <p class="clarity-p">Made by hand. Picked up at a quiet central address.</p>
       </div>
     </div>
-    <p class="clarity-tagline">Like Kickstarter, for homemade food. Made by your neighbour.</p>
   </div>
 </section>
 
-<!-- ─── TANGIBLE EXAMPLE ─── -->
+<!-- ─── EXAMPLE: BATCH 001 + 002 ─── -->
 <section class="example-s">
   <div class="wrap">
     <div class="example-head">
       <p class="kicker">This is what it looks like</p>
-      <h2 style="margin-top:14px;">Theoni opens <em>a batch</em>.</h2>
-      <p>One real example. Real recipe. Real kitchen. The first batch on solo.quando.</p>
+      <h2 style="margin-top:14px;">Real batches. <em>Real people</em>.</h2>
+      <p>The first batch is mine. The second one is waiting for someone like you.</p>
     </div>
-    <div class="example-card">
-      <div class="example-img">
-        <picture><source type="image/webp" srcset="hero-marmalade-800.webp 800w, hero-marmalade-1200.webp 1200w" sizes="(max-width:720px) 100vw, 380px"><source type="image/jpeg" srcset="hero-marmalade-800.jpg 800w, hero-marmalade-1200.jpg 1200w" sizes="(max-width:720px) 100vw, 380px"><img src="hero-marmalade-1200.jpg" alt="Theoni in her kitchen, simmering strawberry marmalade in a saucepan with jars of preserves and a bowl of fresh strawberries on the counter beside her" loading="lazy" decoding="async"/></picture>
-      </div>
-      <div class="example-text">
-        <p class="example-eyebrow">BATCH 001 &middot; COMING SOON</p>
-        <h3 class="example-title">Strawberry <em>marmalade</em>.</h3>
-        <p class="example-desc">A Greek recipe from my grandmother. Slow-simmered, made by hand, ready when you are.</p>
-        <p class="example-body">She lists the batch. She sets the threshold. Neighbours pre-order. When enough say yes, she simmers a small batch on a Sunday morning. You collect later that week.</p>
-        <p class="example-meta">
-          <strong>Pickup:</strong> a quiet central Z&uuml;rich address<br/>
-          <strong>Status:</strong> opening soon
-        </p>
-        <a href="/waiting-list" class="btn btn-dark">Be the first to know &rarr;</a>
-        <p class="example-sig">&mdash; Theoni</p>
-      </div>
+    <div class="batch-grid">
+
+      <!-- Batch 001 — real -->
+      <article class="batch-card">
+        <div class="batch-card-img">
+          <picture><source type="image/webp" srcset="hero-marmalade-800.webp 800w, hero-marmalade-1200.webp 1200w" sizes="(max-width:860px) 100vw, 540px"><source type="image/jpeg" srcset="hero-marmalade-800.jpg 800w, hero-marmalade-1200.jpg 1200w" sizes="(max-width:860px) 100vw, 540px"><img src="hero-marmalade-1200.jpg" alt="Theoni in her kitchen, simmering strawberry marmalade in a saucepan with jars of preserves and a bowl of fresh strawberries on the counter beside her" loading="lazy" decoding="async"/></picture>
+        </div>
+        <div class="batch-card-text">
+          <p class="batch-card-eyebrow">BATCH 001 &middot; OPENING SOON</p>
+          <h3 class="batch-card-title">Strawberry <em>marmalade</em>.</h3>
+          <p class="batch-card-desc">A Greek recipe from my grandmother. Slow-simmered, made by hand.</p>
+          <p class="batch-card-meta">
+            <strong>Baker:</strong> Theoni<br/>
+            <strong>Pickup:</strong> central Z&uuml;rich
+          </p>
+        </div>
+      </article>
+
+      <!-- Batch 002 — placeholder -->
+      <article class="batch-card is-placeholder">
+        <div class="batch-card-img"></div>
+        <div class="batch-card-text">
+          <p class="batch-card-eyebrow">BATCH 002 &middot; COMING SOON</p>
+          <h3 class="batch-card-title">Yours, perhaps?</h3>
+          <p class="batch-card-desc">Another baker. Another recipe. Another Sunday morning in Z&uuml;rich.</p>
+          <p class="batch-card-meta">
+            <strong>Baker:</strong> waiting<br/>
+            <strong>Pickup:</strong> central Z&uuml;rich
+          </p>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<!-- ─── WHY THIS EXISTS ─── -->
+<!-- ─── WHY THIS EXISTS — tightened ─── -->
 <section class="why-s">
   <div class="wrap">
     <div class="why-inner">
       <p class="kicker">Why this exists</p>
-      <h2 class="why-h">Across Z&uuml;rich, people<br/>bake <em>alone</em>.</h2>
-      <p class="why-p">Most of what we make goes to waste. Most of it happens without anyone knowing. One kitchen, repeated in a thousand homes.</p>
-      <p class="why-p">solo.quando reverses the order. We ask before we make. We make only when wanted.</p>
+      <h2 class="why-h">Most homemade food<br/>never finds <em>its people</em>.</h2>
+      <p class="why-p">Across Switzerland, 2.8 million tonnes of food are wasted every year. 38% comes from households alone. Most of it baked with care, by people who simply made too much.</p>
+      <p class="why-p">solo.quando reverses the order. Ask first. Bake second.</p>
       <div class="why-stats">
         <div>
           <div class="why-stat-num">2.8M</div>
-          <div class="why-stat-lbl">tonnes wasted yearly &middot; CH</div>
+          <div class="why-stat-lbl">tonnes wasted &middot; CH</div>
         </div>
         <div>
           <div class="why-stat-num">38%</div>
-          <div class="why-stat-lbl">from households alone</div>
+          <div class="why-stat-lbl">from households</div>
         </div>
         <div>
           <div class="why-stat-num">CHF 600</div>
-          <div class="why-stat-lbl">wasted per person</div>
+          <div class="why-stat-lbl">per person, yearly</div>
         </div>
-      </div>
-      <div class="why-cta">
-        <a href="/our-story" class="btn btn-ghost">Read the full story &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── DUAL AUDIENCE SPLIT ─── -->
+<!-- ─── DUAL AUDIENCE SPLIT — no buttons ─── -->
 <section class="split-s">
   <div class="wrap">
     <div class="split-head">
       <p class="kicker">For who is this</p>
       <h2 style="margin-top:14px;">Two paths, <em>one neighbourhood</em>.</h2>
-      <p>solo.quando works in two directions. Both honest, both quiet.</p>
     </div>
     <div class="split-grid">
       <div class="split-col">
@@ -425,9 +444,8 @@ details[open] .faqi-q::after{content:'\2013';}
           <li>Bake only when neighbours are waiting</li>
           <li>No wasted ingredients, no leftover stock</li>
           <li>Set your recipe, your price, your pickup window</li>
-          <li>Stay in your kitchen, never open your home</li>
+          <li>You bake. We handle the rest</li>
         </ul>
-        <a href="/bake-with-us" class="btn btn-ghost">Become a baker &rarr;</a>
       </div>
       <div class="split-col">
         <h3>If you love <em>real food</em></h3>
@@ -436,9 +454,8 @@ details[open] .faqi-q::after{content:'\2013';}
           <li>Made fresh, only after you order</li>
           <li>Real recipes from real people in Z&uuml;rich</li>
           <li>Meet the person who made your food</li>
-          <li>Pickup at a quiet central Z&uuml;rich address</li>
+          <li>Pickup at a quiet central address</li>
         </ul>
-        <a href="/waiting-list" class="btn btn-dark">Join the waiting list &rarr;</a>
       </div>
     </div>
   </div>
@@ -449,25 +466,24 @@ details[open] .faqi-q::after{content:'\2013';}
   <div class="wrap">
     <div class="faqi-head">
       <p class="kicker">Common questions</p>
-      <h2 style="margin-top:14px;">Honest <em>answers</em>.</h2>
-      <p>The four most common questions before launch.</p>
+      <h2 style="margin-top:14px;"><em>Honest</em> answers.</h2>
     </div>
     <div class="faqi-list">
       <details class="faqi-item">
         <summary class="faqi-q">When does this launch?</summary>
-        <p class="faqi-a">First batches in Z&uuml;rich are planned for May 2026. <a href="/waiting-list">Join the waiting list</a> and you'll be the first to hear the moment a baker in your neighbourhood is ready.</p>
+        <p class="faqi-a">First batches in Z&uuml;rich are planned for May 2026. <a href="/waiting-list">Join the waiting list</a> to be the first to hear.</p>
       </details>
       <details class="faqi-item">
         <summary class="faqi-q">What if a batch doesn't reach its threshold?</summary>
-        <p class="faqi-a">Every payment is released back to you, automatically and in full. No exceptions, no credits, no partial refunds. The full amount, every time.</p>
+        <p class="faqi-a">Every payment returns automatically and in full. No exceptions, no credits, no partial refunds.</p>
       </details>
       <details class="faqi-item">
         <summary class="faqi-q">How does pickup work?</summary>
-        <p class="faqi-a">Pickup happens at a place we keep private. Central Z&uuml;rich, quiet, warm, and considered. The address is shared only once you've committed to a batch. We do not deliver.</p>
+        <p class="faqi-a">Pickup happens at a single, central Z&uuml;rich address we curate. Quiet, warm, and considered. The address is shared once you've committed.</p>
       </details>
       <details class="faqi-item">
         <summary class="faqi-q">Is the food safe? What about allergens?</summary>
-        <p class="faqi-a">Every listing must declare every ingredient and every allergen before publication. Swiss food-safety law (LMG SR 817.0 / LGV SR 817.02) applies to all bakers, who are responsible for accurate declarations.</p>
+        <p class="faqi-a">Every listing must declare every ingredient and every allergen. Swiss food-safety law (LMG SR 817.0) applies to all bakers.</p>
       </details>
     </div>
     <div class="faqi-cta">
@@ -488,30 +504,15 @@ details[open] .faqi-q::after{content:'\2013';}
           <picture><source type="image/webp" srcset="theoni-portrait-600.webp 600w, theoni-portrait-900.webp 900w" sizes="64px"><source type="image/jpeg" srcset="theoni-portrait-600.jpg 600w, theoni-portrait-900.jpg 900w" sizes="64px"><img src="theoni-portrait-900.jpg" alt="Theoni Paschou, founder of solo.quando" loading="lazy" decoding="async"/></picture>
         </div>
         <div class="founder-creds-text">
-          <div class="founder-creds-name">Theoni Paschou &middot; <em style="color:var(--terra);">founder</em></div>
+          <div class="founder-creds-name">Theoni Paschou &middot; <em>founder</em></div>
           <div class="founder-creds-bio">PhD. Eight years in product and transformation. Now baking from her grandmother's recipes.</div>
         </div>
-      </div>
-      <div style="margin-top:36px;">
-        <a href="/our-story" class="btn btn-ghost">Read the full story &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="share-block">
-  <div class="wrap" style="max-width:680px;">
-    <p class="label">Pass it on</p>
-    <p class="quote">Know a neighbour who would love this?</p>
-    <button class="share-btn" data-share-title="solo.quando">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-      Share with a neighbour
-    </button>
-    <span class="share-feedback"></span>
-  </div>
-</section>
-
-<!-- ─── FINAL CTA ─── -->
+<!-- ─── FINAL CTA — single, clean ─── -->
 <section class="cta-s" id="waitlist">
   <div class="wrap">
     <p class="kicker" style="color:var(--terra);">Join us</p>
@@ -531,10 +532,7 @@ details[open] .faqi-q::after{content:'\2013';}
       <div class="cta-result" id="home-waitlist-result"></div>
       <p class="cta-note">Free &middot; Unsubscribe any time &middot; Z&uuml;rich first</p>
     </div>
-    <div class="cta-secondary">
-      <a href="/bake-with-us">Become a baker</a>
-    </div>
-    <p class="cta-tertiary">Or just follow along: <a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">Instagram</a></p>
+    <p class="cta-tertiary">Have a recipe to share? <a href="/bake-with-us">Bake with us &rarr;</a></p>
   </div>
 </section>
 

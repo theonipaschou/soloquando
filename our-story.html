@@ -4,8 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Our story &middot; solo.quando</title>
-<meta name="description" content="Why Theoni Paschou built a demand-first marketplace for homemade food in Z&uuml;rich."/>
-
+<meta name="description" content="Why we built solo.quando: a small story about a Sunday, twenty-four cookies, and food waste."/>
+<link rel="preload" href="hero-marmalade-1200.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -38,7 +38,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .nav-logo img{height:38px;width:auto;display:block;}
 @media(max-width:720px){.nav-logo img{height:32px;}}
 .nav-links{display:flex;gap:36px;list-style:none;}
-.nav-links a{font-size:15px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
+.nav-links a{font-size:16px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
 .nav-links a:hover,.nav-links a.on{color:var(--terra);}
 .nav-cta{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:14px 22px;transition:background .2s;white-space:nowrap;}
 .nav-cta:hover{background:var(--terra);}
@@ -56,10 +56,10 @@ picture img{width:100%;height:100%;object-fit:cover;}
   .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 }
 
-.footer{background:var(--ink);color:rgba(245,239,228,.65);padding:72px 0 40px;font-size:14px;}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px;}
-@media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px;}}
-@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+.footer{background:var(--ink);color:rgba(245,239,228,.65);padding:72px 0 40px;font-size:15px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;align-items:start;}
+@media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:40px 32px;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;gap:32px;}}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--bone);margin-bottom:12px;}
 .footer-logo span{color:var(--terra);}
 .footer-logo-img{display:block;height:auto;width:240px;max-width:100%;margin-bottom:14px;}
@@ -72,12 +72,12 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .footer-payments-methods{color:rgba(245,239,228,.35);}
 @media(max-width:560px){.footer-payments{flex-direction:column;gap:8px;}}
 .footer-contacts{margin-top:20px;display:flex;flex-direction:column;gap:8px;}
-.footer-contacts a{color:rgba(245,239,228,.7);transition:color .2s;font-size:14px;}
+.footer-contacts a{color:rgba(245,239,228,.7);transition:color .2s;font-size:15px;}
 .footer-contacts a:hover{color:var(--bone);}
-.footer-col h5{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;font-weight:500;}
+.footer-col h5{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;font-weight:500;margin-top:14px;}
 .footer-col ul{list-style:none;}
 .footer-col li{margin-bottom:10px;}
-.footer-col a{color:rgba(245,239,228,.65);transition:color .2s;font-size:14px;}
+.footer-col a{color:rgba(245,239,228,.65);transition:color .2s;font-size:15px;}
 .footer-col a:hover{color:var(--bone);}
 .footer-bottom{border-top:1px solid rgba(245,239,228,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;letter-spacing:.04em;color:rgba(245,239,228,.45);}
 .footer-bottom a{color:rgba(245,239,228,.45);}
@@ -104,7 +104,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .f-label{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
 .f-input,.f-select,.f-textarea{
   background:var(--paper);border:1px solid var(--line);
-  color:var(--ink);font-family:'Jost',sans-serif;font-size:16px;
+  color:var(--ink);font-family:'Jost',sans-serif;font-size:17px;
   padding:16px 18px;outline:none;width:100%;
   transition:border-color .2s;-webkit-appearance:none;appearance:none;
 }
@@ -115,7 +115,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235C4738' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;
 }
-.f-check{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--dim);line-height:1.55;cursor:pointer;}
+.f-check{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--dim);line-height:1.55;cursor:pointer;}
 .f-check input{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--terra);cursor:pointer;}
 .f-check a{color:var(--terra);text-decoration:underline;}
 .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
@@ -148,30 +148,36 @@ picture img{width:100%;height:100%;object-fit:cover;}
 </div></nav>
 
 <style>
-.s-hero{padding:48px 0 56px;background:linear-gradient(150deg,rgba(194,102,61,.08) 0%,transparent 55%);}
-.s-hero-img{margin:0 auto 56px;max-width:1100px;padding:0 24px;}
-.s-hero-img figure{margin:0;}
-.s-hero-img picture, .s-hero-img img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;}
-@media(max-width:560px){.s-hero-img picture, .s-hero-img img{aspect-ratio:4/3;}}
-.s-hero-img figcaption{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--dim);text-align:center;margin-top:14px;letter-spacing:.02em;}
-.s-hero h1{font-size:clamp(48px,6.5vw,84px);letter-spacing:-.025em;margin:14px 0 22px;max-width:780px;}
-.s-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--dim);max-width:600px;line-height:1.5;}
+/* ─── UNIFIED HERO (image right) ─── */
+.s-hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
+@media(max-width:860px){.s-hero{grid-template-columns:1fr;min-height:auto;}}
+.s-hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;}
+@media(max-width:720px){.s-hero-text{padding:60px 22px;}}
+.s-hero h1{font-size:clamp(48px,5.8vw,80px);line-height:1.04;letter-spacing:-.025em;margin:14px 0 22px;}
+.s-hero h1 em{color:var(--terra);font-style:italic;}
+.s-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:480px;line-height:1.55;}
+.s-hero-img{position:relative;overflow:hidden;background:var(--paper);}
+@media(max-width:860px){.s-hero-img{height:60vw;min-height:300px;}}
+.s-hero-img img{width:100%;height:100%;object-fit:cover;}
 
-.s-section{padding:80px 0;}
+/* ─── ALTERNATING SECTIONS ─── */
+.s-section{padding:96px 0;}
 .s-section.alt{background:var(--paper);}
-.s-split{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start;}
-@media(max-width:860px){.s-split{grid-template-columns:1fr;gap:44px;}}
-.s-img{aspect-ratio:4/5;overflow:hidden;background:var(--paper);}
+.s-split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto;}
+@media(max-width:860px){.s-split{grid-template-columns:1fr;gap:36px;}}
+.s-split.reverse{direction:rtl;}
+.s-split.reverse > *{direction:ltr;}
+.s-img{aspect-ratio:4/5;overflow:hidden;background:var(--paper);margin:0;}
 .s-img img{width:100%;height:100%;object-fit:cover;}
-.s-img figcaption{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--dim);margin-top:12px;}
-.prose p{font-size:18px;line-height:1.75;color:var(--dim);margin-bottom:22px;}
-.prose h3{font-family:'Cormorant Garamond',serif;font-size:32px;margin:0 0 18px;color:var(--ink);font-weight:400;letter-spacing:-.015em;}
-.pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;line-height:1.35;color:var(--ink);padding:24px 0 24px 26px;border-left:3px solid var(--terra);margin:32px 0;}
+.s-img figcaption{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--dim);margin-top:14px;text-align:center;}
+.s-text h2{font-size:clamp(34px,4vw,48px);letter-spacing:-.02em;margin-bottom:22px;line-height:1.1;}
+.s-text h2 em{color:var(--terra);font-style:italic;}
+.s-text p{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:16px;}
+.s-text .pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);line-height:1.5;border-left:3px solid var(--terra);padding-left:20px;margin:24px 0;}
 
+/* ─── STATS ─── */
 .stats-wrap{padding:80px 0;background:var(--paper);}
 .stats-wrap svg{max-width:900px;width:100%;height:auto;display:block;margin:0 auto;}
-
-/* Mobile-friendly stacked stats */
 .stats-mobile{display:none;max-width:520px;margin:0 auto;padding:0 22px;}
 .stats-mobile-head{text-align:center;margin-bottom:36px;}
 .stats-mobile-eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
@@ -184,89 +190,101 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .stats-mobile-tile{background:var(--bone);border:1px solid rgba(43,26,15,.08);padding:24px 20px;text-align:center;}
 .stats-mobile-tile-num{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--terra);line-height:1;margin-bottom:8px;}
 .stats-mobile-tile-lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
-.stats-mobile-tile-sub{font-size:13px;color:var(--dim);}
+.stats-mobile-tile-sub{font-size:14px;color:var(--dim);}
 .stats-mobile-foot{text-align:center;padding-top:18px;}
 .stats-mobile-foot-lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;}
 .stats-mobile-foot-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--dim);}
-
 @media(max-width:680px){
   .stats-wrap svg{display:none;}
   .stats-mobile{display:block;}
   .stats-wrap{padding:64px 0;}
 }
 
-/* Vision card */
-.vision{padding:140px 0;text-align:center;background:var(--bone);}
-.vision .label{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);margin-bottom:50px;}
-.vision h2{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5.5vw,72px);line-height:1.1;color:var(--ink);max-width:920px;margin:0 auto;}
-.vision h2 em{color:var(--terra);font-style:italic;}
-.vision .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.4vw,28px);color:var(--dim);margin-top:36px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.5;}
+/* ─── PERSONAS LIST ─── */
+.personas-s{padding:96px 0;text-align:center;}
+.personas-s h2{font-size:clamp(36px,4.5vw,52px);letter-spacing:-.02em;margin-bottom:14px;}
+.personas-s h2 em{color:var(--terra);font-style:italic;}
+.personas-s .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:520px;margin:0 auto 48px;line-height:1.5;}
+.personas-list{max-width:680px;margin:0 auto;text-align:left;}
+.personas-list li{font-size:18px;line-height:1.6;color:var(--dim);padding:18px 0 18px 32px;border-bottom:1px solid var(--line);position:relative;list-style:none;}
+.personas-list li:last-child{border-bottom:none;}
+.personas-list li::before{content:'';position:absolute;left:0;top:30px;width:18px;height:1px;background:var(--terra);}
+.personas-list li strong{color:var(--ink);font-weight:400;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;}
 
-/* Personas paragraph */
-.personas-para{padding:80px 0;background:var(--paper);text-align:center;}
-.personas-para .label{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;}
-.personas-para h2{font-size:clamp(34px,4.5vw,52px);letter-spacing:-.02em;margin-bottom:36px;}
-.personas-para p{font-size:19px;line-height:1.75;color:var(--dim);max-width:780px;margin:0 auto 18px;}
-.personas-para p em{color:var(--terra);font-style:italic;}
-
-.s-cta{padding:96px 0;text-align:center;}
-.s-cta h2{font-size:clamp(40px,5vw,64px);letter-spacing:-.02em;margin-bottom:18px;}
-.s-cta p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:480px;margin:0 auto 38px;}
+/* ─── FINAL CTA shared with homepage ─── */
+.cta-s{padding:96px 0;text-align:center;background:var(--ink);color:var(--bone);}
+.cta-s h2{font-size:clamp(44px,5.5vw,72px);letter-spacing:-.025em;margin-bottom:18px;color:var(--bone);}
+.cta-s h2 em{color:var(--terra);font-style:italic;}
+.cta-s .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:rgba(245,239,228,.75);max-width:540px;margin:0 auto 44px;line-height:1.5;}
+.cta-form-wrap{max-width:480px;margin:0 auto;}
+.cta-form{display:flex;}
+@media(max-width:520px){.cta-form{flex-direction:column;gap:10px;}}
+.cta-form input[type=email]{flex:1;padding:18px 20px;background:rgba(245,239,228,.08);border:1px solid rgba(245,239,228,.2);border-right:none;color:var(--bone);font-family:'Jost',sans-serif;font-size:17px;outline:none;}
+@media(max-width:520px){.cta-form input[type=email]{border-right:1px solid rgba(245,239,228,.2);}}
+.cta-form input[type=email]::placeholder{color:rgba(245,239,228,.5);}
+.cta-form input[type=email]:focus{border-color:rgba(245,239,228,.45);}
+.cta-btn{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:18px 26px;white-space:nowrap;transition:background .2s;}
+.cta-btn:hover{background:#a8552a;}
+.cta-tertiary{margin-top:32px;font-size:15px;color:rgba(245,239,228,.55);}
+.cta-tertiary a{color:var(--terra);text-decoration:underline;text-decoration-color:rgba(194,102,61,.4);text-underline-offset:4px;}
+.cta-note{margin-top:18px;font-size:13px;color:rgba(245,239,228,.45);}
+.cta-result{max-width:480px;margin:14px auto 0;display:none;}
+.cta-result p{color:var(--terra);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;}
 </style>
 
+<!-- ─── HERO (image right, unified) ─── -->
 <header class="s-hero">
-  <div class="s-hero-img">
-    <figure>
-      <picture><source type="image/webp" srcset="grandma-600.webp 600w, grandma-900.webp 900w" sizes="(max-width:1100px) 100vw, 1100px"><source type="image/jpeg" srcset="grandma-600.jpg 600w, grandma-900.jpg 900w" sizes="(max-width:1100px) 100vw, 1100px"><img src="grandma-900.jpg" alt="Theoni and her grandmother in the kitchen, making orange marmalade together at the stove with jars of preserves on the counter"/></picture>
-      <figcaption>Learning marmalade with my grandmother.</figcaption>
-    </figure>
-  </div>
-  <div class="wrap">
-    <p class="kicker">The origin</p>
+  <div class="s-hero-text">
+    <p class="kicker">Our story</p>
     <h1>Why we built<br/><em>solo.quando</em>.</h1>
     <p class="sub">A small story about a Sunday, twenty-four cookies, and the question that started everything.</p>
   </div>
+  <div class="s-hero-img">
+    <picture><source type="image/webp" srcset="hero-marmalade-800.webp 800w, hero-marmalade-1200.webp 1200w" sizes="(max-width:860px) 100vw, 50vw"><source type="image/jpeg" srcset="hero-marmalade-800.jpg 800w, hero-marmalade-1200.jpg 1200w" sizes="(max-width:860px) 100vw, 50vw"><img src="hero-marmalade-1200.jpg" alt="Theoni in her kitchen making strawberry marmalade, smiling at the camera with jars of preserves and a pot of simmering fruit beside her"/></picture>
+  </div>
 </header>
 
-<!-- 1. It began in my kitchen -->
+<!-- ─── SECTION 1: GRANDMOTHER (the emotional opening) ─── -->
 <section class="s-section">
   <div class="wrap">
     <div class="s-split">
       <figure class="s-img">
-        <picture><source type="image/webp" srcset="hero-marmalade-800.webp 800w, hero-marmalade-1200.webp 1200w" sizes="(max-width:860px) 100vw, 480px"><source type="image/jpeg" srcset="hero-marmalade-800.jpg 800w, hero-marmalade-1200.jpg 1200w" sizes="(max-width:860px) 100vw, 480px"><img src="hero-marmalade-1200.jpg" alt="Theoni in her kitchen making strawberry marmalade, smiling at the camera with jars of preserves and a pot of simmering fruit beside her" loading="lazy" decoding="async"/></picture>
-        <figcaption>Theoni &middot; Z&uuml;rich &middot; every Sunday</figcaption>
+        <picture><source type="image/webp" srcset="grandma-600.webp 600w, grandma-900.webp 900w" sizes="(max-width:860px) 100vw, 480px"><source type="image/jpeg" srcset="grandma-600.jpg 600w, grandma-900.jpg 900w" sizes="(max-width:860px) 100vw, 480px"><img src="grandma-900.jpg" alt="Theoni and her grandmother in the kitchen, making orange marmalade together at the stove with jars of preserves on the counter" loading="lazy" decoding="async"/></picture>
+        <figcaption>Learning marmalade with my grandmother.</figcaption>
       </figure>
-      <div class="prose">
-        <h3>It began in my kitchen.</h3>
-        <p>My grandmother taught me to bake. Patience, butter, citrus peel, time. Recipes that didn't come from books. They came from her hands, and from her mother's hands before that.</p>
-        <p>She is no longer here. But on Sunday mornings, when my kitchen fills with the smell of orange and warm sugar, she still is. Just a little.</p>
-        <p>I live alone in Z&uuml;rich. For years I baked the way she taught me. Out of love, out of habit, out of memory. And every Sunday, most of what I made sat on the counter until it went stale.</p>
-        <div class="pull">"One Sunday I made twenty-four cookies. I ate two. The rest went to waste. That was the Sunday I knew something was wrong."</div>
+      <div class="s-text">
+        <p class="kicker">It started with her</p>
+        <h2>It began in <em>her kitchen</em>.</h2>
+        <p>My grandmother taught me to bake. Patience. Butter. Citrus peel. Time.</p>
+        <p>She never used a recipe book. She remembered everything by hand. She called me to the kitchen when something needed stirring, and that is how I learned.</p>
+        <p>She is no longer here. The recipes are. So I make them. Most Sundays.</p>
+        <p class="pull">"One Sunday I made twenty-four cookies. I ate two. The rest went to waste. That was the Sunday I knew something was wrong."</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 2. The same kitchen in a thousand homes -->
+<!-- ─── SECTION 2: A THOUSAND HOMES ─── -->
 <section class="s-section alt">
   <div class="wrap">
-    <div class="s-split">
-      <div class="prose" style="grid-column:1;">
-        <h3>The same kitchen,<br/>in a thousand homes.</h3>
-        <p>I started talking to people in Z&uuml;rich. Friends. Colleagues. Neighbours. Strangers in caf&eacute;s. I expected to learn that my Sunday problem was a small private thing.</p>
-        <p>It wasn't. It was everywhere.</p>
-        <p>A grandmother making b&ouml;rek every Friday for thirty years, giving most of it to neighbours who never asked for it. A father baking sourdough for twelve when only three would eat it. A woman who moved here from Lebanon making her mother's maamoul, freezing what she couldn't share.</p>
+    <div class="s-split reverse">
+      <figure class="s-img">
+        <picture><source type="image/webp" srcset="thousand-homes-600.webp 600w, thousand-homes-900.webp 900w" sizes="(max-width:860px) 100vw, 480px"><source type="image/jpeg" srcset="thousand-homes-600.jpg 600w, thousand-homes-900.jpg 900w" sizes="(max-width:860px) 100vw, 480px"><img src="thousand-homes-900.jpg" alt="An older woman baking alone in a quiet kitchen, sleeves rolled up, light through the window" loading="lazy" decoding="async"/></picture>
+      </figure>
+      <div class="s-text">
+        <p class="kicker">The bigger picture</p>
+        <h2>The same kitchen,<br/>in a <em>thousand homes</em>.</h2>
+        <p>I started talking to people in Z&uuml;rich. Friends. Colleagues. Neighbours. Strangers in caf&eacute;s.</p>
+        <p>What I expected to find: a small private problem.</p>
+        <p>What I found: it was everywhere.</p>
+        <p>A grandmother making b&ouml;rek every Friday for thirty years, giving most of it to neighbours who never asked for it. A father baking sourdough for twelve when only three would eat it.</p>
         <p>We were all doing the same thing. Baking from love, alone, throwing away what wouldn't fit.</p>
       </div>
-      <figure class="s-img" style="grid-column:2;">
-        <picture><source type="image/webp" srcset="thousand-homes-600.webp 600w, thousand-homes-900.webp 900w" sizes="(max-width:860px) 100vw, 50vw"><source type="image/jpeg" srcset="thousand-homes-600.jpg 600w, thousand-homes-900.jpg 900w" sizes="(max-width:860px) 100vw, 50vw"><img src="thousand-homes-900.jpg" alt="An older woman baking alone in a quiet kitchen, sleeves rolled up, light through the window" loading="lazy" decoding="async"/></picture>
-        <figcaption>Sundays, multiplied across a city</figcaption>
-      </figure>
     </div>
   </div>
 </section>
 
-<!-- 3. Stats infographic -->
+<!-- ─── STATS ─── -->
 <section class="stats-wrap">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" role="img" aria-label="Food waste statistics in Switzerland and globally">
   <defs>
@@ -351,65 +369,86 @@ picture img{width:100%;height:100%;object-fit:cover;}
   </div>
 </section>
 
-<!-- 4. What solo.quando is for -->
+<!-- ─── SECTION 4: SO WE DID THE OPPOSITE ─── -->
 <section class="s-section">
   <div class="wrap">
     <div class="s-split">
       <figure class="s-img">
         <picture><source type="image/webp" srcset="theoni-whisking-600.webp 600w, theoni-whisking-900.webp 900w" sizes="(max-width:860px) 100vw, 480px"><source type="image/jpeg" srcset="theoni-whisking-600.jpg 600w, theoni-whisking-900.jpg 900w" sizes="(max-width:860px) 100vw, 480px"><img src="theoni-whisking-900.jpg" alt="Theoni whisking batter in a ceramic bowl, smiling, with eggs and flour on the counter beside her" loading="lazy" decoding="async"/></picture>
-        <figcaption>Made for the people who asked first</figcaption>
       </figure>
-      <div class="prose">
-        <h3>So we did the opposite.</h3>
-        <p>Restaurants make first and hope someone wants it. Supermarkets stock first and write off what doesn't sell. Apps like Too Good To Go exist to rescue what was already over-produced.</p>
-        <p>What if we did the opposite. What if nothing was made until someone asked for it.</p>
-        <p>solo.quando is a platform where homemade food is <em>made only when you want it</em>. Where the grandmother knows exactly how many b&ouml;rek to bake on Friday, because her neighbours already said yes. Where the Lebanese maamoul finds the people who have never tasted it but want to. Where a recipe written in a notebook in 1962 does not go quiet when the person who wrote it does.</p>
+      <div class="s-text">
+        <p class="kicker">What if we asked first</p>
+        <h2>So we did <em>the opposite</em>.</h2>
+        <p>Most food platforms make first, sell second.</p>
+        <p>solo.quando reverses the order. We ask first, bake second.</p>
+        <p>Where the grandmother knew exactly how many b&ouml;rek to make on Friday because her village had told her. Where the Lebanese maamoul finds the people who have never tasted it but want it.</p>
+        <p>Where a recipe written in 1962 does not go quiet when the person who wrote it does.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 5. Who this is for (single paragraph, no grid) -->
-<section class="personas-para">
+<!-- ─── SECTION 5: PERSONAS as a tight list ─── -->
+<section class="personas-s">
   <div class="wrap">
-    <p class="label">Who this is for</p>
+    <p class="kicker">Who this is for</p>
     <h2>For anyone with skill, story, or<br/><em>memory in their kitchen</em>.</h2>
-    <p>The grandmother whose recipes shouldn't be lost. The immigrant whose food doesn't appear on any Swiss shelf. The maker whose kitchen is their best asset. The weekend baker who already has the people, just doesn't know it yet.</p>
-    <p>And for everyone else. The neighbours who would rather wait three days for something made by hand than buy something made by no one.</p>
+    <p class="sub">Four kinds of bakers. Many more in between.</p>
+    <ul class="personas-list">
+      <li><strong>The grandmother</strong> whose recipes shouldn't be lost.</li>
+      <li><strong>The immigrant</strong> whose food doesn't appear on any Swiss shelf.</li>
+      <li><strong>The maker</strong> whose kitchen is their best asset.</li>
+      <li><strong>The weekend baker</strong> who already has the people, just doesn't know it yet.</li>
+    </ul>
   </div>
 </section>
 
-<!-- 6. Vision -->
-<section class="vision">
+<!-- ─── FINAL CTA ─── -->
+<section class="cta-s">
   <div class="wrap">
-    <p class="label">Our promise</p>
-    <h2>A neighbourhood<br/>where every recipe<br/><em>finds its people</em>.</h2>
-    <p class="sub">Where culture moves slowly across kitchen counters. Where nothing is made until you ask for it. Where less goes to waste, and more goes to belonging.</p>
-  </div>
-</section>
-
-<section class="share-block">
-  <div class="wrap" style="max-width:680px;">
-    <p class="label">Pass it on</p>
-    <p class="quote">If this resonates, send it to someone who would understand.</p>
-    <button class="share-btn" data-share-title="solo.quando">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-      Share with a neighbour
-    </button>
-    <span class="share-feedback"></span>
-  </div>
-</section>
-
-<section class="s-cta">
-  <div class="wrap">
-    <h2>Be among the <em>first</em>.</h2>
-    <p>Join the waiting list. We'll write when we're ready in your neighbourhood.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <a href="/waiting-list" class="btn btn-dark">Join the waiting list &rarr;</a>
-      <a href="/how-it-works" class="btn btn-ghost">How it works &rarr;</a>
+    <p class="kicker" style="color:var(--terra);">Join us</p>
+    <h2 style="margin-top:14px;">Be among the <em>first</em>.</h2>
+    <p class="sub">Z&uuml;rich first. May 2026. Then your neighbourhood.</p>
+    <div class="cta-form-wrap">
+      <form class="cta-form" id="story-waitlist"
+            action="https://formspree.io/f/mpqkvvnk"
+            method="POST">
+        <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
+        <input type="hidden" name="source" value="our-story-cta"/>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+        <input type="email" name="email" placeholder="your@email.ch" required aria-label="Email address"/>
+        <button type="submit" class="cta-btn">Join &rarr;</button>
+      </form>
+      <div class="cta-result" id="story-waitlist-result"></div>
+      <p class="cta-note">Free &middot; Unsubscribe any time &middot; Z&uuml;rich first</p>
     </div>
+    <p class="cta-tertiary">Have a recipe to share? <a href="/bake-with-us">Bake with us &rarr;</a></p>
   </div>
 </section>
+
+<script>
+(function(){
+  function setupForm(formId, resultId){
+    var form = document.getElementById(formId);
+    var result = document.getElementById(resultId);
+    if(!form || !result) return;
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var btn = form.querySelector('button[type=submit]');
+      btn.disabled = true; btn.textContent = 'Joining…';
+      try{
+        var r = await fetch(form.action, {method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+        if(r.ok){
+          form.style.display = 'none';
+          result.style.display = 'block';
+          result.innerHTML = '<p>You are on the list. We will be in touch.</p>';
+        } else { form.submit(); }
+      } catch(err){ form.submit(); }
+    });
+  }
+  setupForm('story-waitlist','story-waitlist-result');
+})();
+</script>
 
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
