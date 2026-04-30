@@ -34,8 +34,9 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px;padding:0 48px;max-width:1180px;margin:0 auto;}
 @media(max-width:720px){.nav-inner{padding:0 22px;height:66px;}}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);letter-spacing:-.01em;}
-.nav-logo span{color:var(--terra);}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo img{height:38px;width:auto;display:block;}
+@media(max-width:720px){.nav-logo img{height:32px;}}
 .nav-links{display:flex;gap:36px;list-style:none;}
 .nav-links a{font-size:15px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
 .nav-links a:hover,.nav-links a.on{color:var(--terra);}
@@ -136,7 +137,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-  <a href="/" class="nav-logo">solo<span>.</span>quando</a>
+  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="186" height="40"/></a>
   <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story" class="on">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li></ul>
   <div style="display:flex;align-items:center;">
     <button class="nav-cta" onclick="location.href='/waiting-list'">Join the waiting list</button>
@@ -169,6 +170,30 @@ picture img{width:100%;height:100%;object-fit:cover;}
 
 .stats-wrap{padding:80px 0;background:var(--paper);}
 .stats-wrap svg{max-width:900px;width:100%;height:auto;display:block;margin:0 auto;}
+
+/* Mobile-friendly stacked stats */
+.stats-mobile{display:none;max-width:520px;margin:0 auto;padding:0 22px;}
+.stats-mobile-head{text-align:center;margin-bottom:36px;}
+.stats-mobile-eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
+.stats-mobile-h{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:32px;color:var(--ink);letter-spacing:-.01em;}
+.stats-mobile-big{text-align:center;margin-bottom:36px;padding-bottom:30px;border-bottom:1px solid rgba(43,26,15,.1);}
+.stats-mobile-big-num{font-family:'Cormorant Garamond',serif;font-size:80px;color:var(--terra);line-height:1;margin-bottom:6px;}
+.stats-mobile-big-lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
+.stats-mobile-big-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--dim);}
+.stats-mobile-tiles{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:30px;}
+.stats-mobile-tile{background:var(--bone);border:1px solid rgba(43,26,15,.08);padding:24px 20px;text-align:center;}
+.stats-mobile-tile-num{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--terra);line-height:1;margin-bottom:8px;}
+.stats-mobile-tile-lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+.stats-mobile-tile-sub{font-size:13px;color:var(--dim);}
+.stats-mobile-foot{text-align:center;padding-top:18px;}
+.stats-mobile-foot-lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;}
+.stats-mobile-foot-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--dim);}
+
+@media(max-width:680px){
+  .stats-wrap svg{display:none;}
+  .stats-mobile{display:block;}
+  .stats-wrap{padding:64px 0;}
+}
 
 /* Vision card */
 .vision{padding:140px 0;text-align:center;background:var(--bone);}
@@ -292,6 +317,38 @@ picture img{width:100%;height:100%;object-fit:cover;}
   <text x="450" y="572" text-anchor="middle" class="body" style="font-style:italic;font-family:Cormorant Garamond,Georgia,serif;font-size:18px;">One billion meals wasted, while 783 million go hungry.</text>
 </svg>
 
+  <div class="stats-mobile">
+    <div class="stats-mobile-head">
+      <p class="stats-mobile-eyebrow">The bigger picture</p>
+      <h3 class="stats-mobile-h">Food waste, in numbers.</h3>
+    </div>
+    <div class="stats-mobile-big">
+      <div class="stats-mobile-big-num">2.8M</div>
+      <div class="stats-mobile-big-lbl">million tonnes</div>
+      <div class="stats-mobile-big-sub">of edible food, thrown away in Switzerland every year.</div>
+    </div>
+    <div class="stats-mobile-tiles">
+      <div class="stats-mobile-tile">
+        <div class="stats-mobile-tile-num">38%</div>
+        <div class="stats-mobile-tile-lbl">household share</div>
+        <div class="stats-mobile-tile-sub">the single largest source</div>
+      </div>
+      <div class="stats-mobile-tile">
+        <div class="stats-mobile-tile-num">CHF 600</div>
+        <div class="stats-mobile-tile-lbl">per person</div>
+        <div class="stats-mobile-tile-sub">CHF 5+ billion nationally</div>
+      </div>
+      <div class="stats-mobile-tile">
+        <div class="stats-mobile-tile-num">&frac14;</div>
+        <div class="stats-mobile-tile-lbl">food footprint</div>
+        <div class="stats-mobile-tile-sub">half of all private cars</div>
+      </div>
+    </div>
+    <div class="stats-mobile-foot">
+      <p class="stats-mobile-foot-lbl">Globally &middot; every day</p>
+      <p class="stats-mobile-foot-text">One billion meals wasted, while 783 million go hungry.</p>
+    </div>
+  </div>
 </section>
 
 <!-- 4. What solo.quando is for -->
@@ -317,7 +374,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
   <div class="wrap">
     <p class="label">Who this is for</p>
     <h2>For anyone with skill, story, or<br/><em>memory in their kitchen</em>.</h2>
-    <p>The grandmother whose recipes shouldn't be lost. The immigrant whose food doesn't appear on any Swiss shelf. The home-bound maker whose kitchen is their best asset. The weekend baker who already has the people, just doesn't know it yet.</p>
+    <p>The grandmother whose recipes shouldn't be lost. The immigrant whose food doesn't appear on any Swiss shelf. The maker whose kitchen is their best asset. The weekend baker who already has the people, just doesn't know it yet.</p>
     <p>And for everyone else. The neighbours who would rather wait three days for something made by hand than buy something made by no one.</p>
   </div>
 </section>

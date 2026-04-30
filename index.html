@@ -34,8 +34,9 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px;padding:0 48px;max-width:1180px;margin:0 auto;}
 @media(max-width:720px){.nav-inner{padding:0 22px;height:66px;}}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);letter-spacing:-.01em;}
-.nav-logo span{color:var(--terra);}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo img{height:38px;width:auto;display:block;}
+@media(max-width:720px){.nav-logo img{height:32px;}}
 .nav-links{display:flex;gap:36px;list-style:none;}
 .nav-links a{font-size:15px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
 .nav-links a:hover,.nav-links a.on{color:var(--terra);}
@@ -136,7 +137,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-  <a href="/" class="nav-logo">solo<span>.</span>quando</a>
+  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="186" height="40"/></a>
   <ul class="nav-links" id="main-nav"><li><a href="/" class="on">Home</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li></ul>
   <div style="display:flex;align-items:center;">
     <button class="nav-cta" onclick="location.href='/waiting-list'">Join the waiting list</button>
@@ -294,8 +295,8 @@ details[open] .faqi-q::after{content:'\2013';}
 <section class="hero">
   <div class="hero-text">
     <p class="kicker">The food you've been missing</p>
-    <h1 class="hero-h1">Didn't come<br/>from a <em>factory</em>.</h1>
-    <p class="hero-sub">Pre-order homemade food from your neighbour in Z&uuml;rich. Made only when enough people say yes.</p>
+    <h1 class="hero-h1">Made only when<br/><em>you want it</em>.</h1>
+    <p class="hero-sub">Pre-order homemade food from your neighbour in Z&uuml;rich. Made by hand, by someone with a name. Didn't come from a factory.</p>
 
     <form class="hero-optin" id="hero-optin"
           action="https://formspree.io/f/mpqkvvnk"
@@ -313,7 +314,7 @@ details[open] .faqi-q::after{content:'\2013';}
       <span class="hero-trust-dot"></span>
       <span><strong>35+ neighbours</strong> already on the waiting list</span>
       <span style="color:var(--line);">&middot;</span>
-      <span>Z&uuml;rich &middot; first batches May 2026</span>
+      <span>Pilot in Z&uuml;rich &middot; first batches May 2026</span>
     </p>
   </div>
   <div class="hero-img">

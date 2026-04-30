@@ -34,8 +34,9 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px;padding:0 48px;max-width:1180px;margin:0 auto;}
 @media(max-width:720px){.nav-inner{padding:0 22px;height:66px;}}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);letter-spacing:-.01em;}
-.nav-logo span{color:var(--terra);}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo img{height:38px;width:auto;display:block;}
+@media(max-width:720px){.nav-logo img{height:32px;}}
 .nav-links{display:flex;gap:36px;list-style:none;}
 .nav-links a{font-size:15px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
 .nav-links a:hover,.nav-links a.on{color:var(--terra);}
@@ -136,7 +137,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-  <a href="/" class="nav-logo">solo<span>.</span>quando</a>
+  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="186" height="40"/></a>
   <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us" class="on">Bake with us</a></li><li><a href="/faq">FAQ</a></li></ul>
   <div style="display:flex;align-items:center;">
     <button class="nav-cta" onclick="location.href='/waiting-list'">Join the waiting list</button>
@@ -172,7 +173,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .shield-p{font-size:17px;line-height:1.7;color:rgba(245,239,228,.85);margin-bottom:14px;}
 .shield-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:23px;color:rgba(245,239,228,.92);margin-top:22px;line-height:1.4;}
 
-/* Producer benefit: you don't open your home */
+/* Curated pickup point section */
 .no-home{padding:96px 0;background:var(--paper);}
 .no-home-inner{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:center;}
 @media(max-width:860px){.no-home-inner{grid-template-columns:1fr;gap:40px;}}
@@ -234,7 +235,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
     <p class="kicker">Who we built this for</p>
     <h2 style="margin-top:14px;">For the bakers who were<br/><em>never asked</em>.</h2>
     <p class="intro">Most food platforms were built around professional kitchens, delivery logistics, and volume. solo.quando was built around a person with a recipe and the neighbours who want it.</p>
-    <p>For the keeper of recipes whose mother taught her to bake. For the carrier of culture whose food does not appear on any Swiss shelf. For the home-bound maker whose kitchen is her best asset. For the weekend baker who bakes every Sunday because she loves it. And for anyone in between.</p>
+    <p>For the keeper of recipes whose mother taught her to bake. For the carrier of culture whose food does not appear on any Swiss shelf. For the maker whose kitchen is her best asset. For the weekend baker who bakes every Sunday because she loves it. And for anyone in between.</p>
     <p>You don't need a business plan. You don't need to pretend you are something you are not. You only need a recipe, and the willingness to share it.</p>
   </div>
 </section>
@@ -256,7 +257,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
   </div>
 </section>
 
-<!-- You don't open your home -->
+<!-- A curated pickup point -->
 <section class="no-home">
   <div class="wrap">
     <div class="no-home-inner">
@@ -264,11 +265,11 @@ picture img{width:100%;height:100%;object-fit:cover;}
         <picture><source type="image/webp" srcset="batch-jar-600.webp 600w, batch-jar-900.webp 900w" sizes="(max-width:860px) 100vw, 480px"><source type="image/jpeg" srcset="batch-jar-600.jpg 600w, batch-jar-900.jpg 900w" sizes="(max-width:860px) 100vw, 480px"><img src="batch-jar-900.jpg" alt="A small jar of homemade preserves on a wooden table, sunlight on the glass" loading="lazy" decoding="async"/></picture>
       </div>
       <div>
-        <p class="kicker">A pickup that protects you</p>
-        <h2>You stay in <em>your kitchen</em>.</h2>
-        <p>Every pickup happens at a single, central Z&uuml;rich address we curate. Quiet, warm, and considered. <strong>You don't open your home.</strong></p>
-        <p>You drop your batch off when you're ready. Neighbours collect from the same place. We handle the handover.</p>
-        <p>It's one of the things we built carefully on purpose. Especially for the home-bound, the introvert, and anyone who values their privacy.</p>
+        <p class="kicker">A curated pickup point</p>
+        <h2>One <em>quiet place</em> to meet.</h2>
+        <p>Every pickup happens at a single, central Z&uuml;rich address we curate. Quiet, warm, and considered.</p>
+        <p>You drop your batch off when you're ready. Neighbours collect from the same place. We handle the handover, the small talk, the warm welcome.</p>
+        <p>It's a small detail we built carefully on purpose. The food is homemade. The handover should feel that way too.</p>
       </div>
     </div>
   </div>
