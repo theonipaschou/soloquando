@@ -64,6 +64,12 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .footer-logo-img{display:block;height:auto;width:240px;max-width:100%;margin-bottom:14px;}
 @media(max-width:480px){.footer-logo-img{width:200px;}}
 .footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;line-height:1.5;color:rgba(245,239,228,.6);margin-top:12px;}
+.footer-payments{padding:24px 0;border-top:1px solid rgba(245,239,228,.08);margin-top:32px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:12px;letter-spacing:.06em;color:rgba(245,239,228,.45);text-align:center;}
+.footer-payments-label{text-transform:uppercase;letter-spacing:.16em;}
+.footer-payments-name{color:rgba(245,239,228,.7);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;letter-spacing:0;text-decoration:none;border-bottom:1px solid rgba(194,102,61,.3);padding-bottom:1px;transition:color .2s;}
+.footer-payments-name:hover{color:var(--terra);}
+.footer-payments-methods{color:rgba(245,239,228,.35);}
+@media(max-width:560px){.footer-payments{flex-direction:column;gap:8px;}}
 .footer-contacts{margin-top:20px;display:flex;flex-direction:column;gap:8px;}
 .footer-contacts a{color:rgba(245,239,228,.7);transition:color .2s;font-size:14px;}
 .footer-contacts a:hover{color:var(--bone);}
@@ -144,13 +150,31 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .faq-hero{padding:96px 0 64px;background:linear-gradient(150deg,rgba(194,102,61,.06) 0%,transparent 55%);text-align:center;}
 .faq-hero h1{font-size:clamp(46px,6.5vw,84px);letter-spacing:-.025em;margin:14px 0 20px;}
 .faq-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:560px;line-height:1.5;margin:0 auto;}
-.faq-body{padding:64px 0 96px;}
-.faq-list{max-width:760px;margin:0 auto;}
-.faq-item{padding:28px 0;border-bottom:1px solid var(--line);}
+
+.faq-jump{background:var(--paper);padding:32px 0;border-bottom:1px solid var(--line);}
+.faq-jump-inner{max-width:920px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:18px 28px;padding:0 22px;}
+.faq-jump a{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s;border-bottom:1px solid transparent;padding-bottom:2px;}
+.faq-jump a:hover{color:var(--terra);border-bottom-color:rgba(194,102,61,.4);}
+
+.faq-body{padding:72px 0 96px;}
+.faq-section{max-width:780px;margin:0 auto 64px;}
+.faq-section:last-child{margin-bottom:0;}
+.faq-section-h{display:flex;align-items:baseline;gap:18px;margin-bottom:32px;padding-bottom:18px;border-bottom:1px solid var(--line);}
+.faq-section-h h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;letter-spacing:-.015em;color:var(--ink);}
+.faq-section-h h2 em{color:var(--terra);}
+.faq-section-h .count{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--dim);}
+
+.faq-item{border-bottom:1px solid var(--line);}
 .faq-item:first-child{border-top:1px solid var(--line);}
-.faq-q{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin-bottom:14px;letter-spacing:-.01em;line-height:1.2;}
-.faq-a{font-size:17px;color:var(--dim);line-height:1.7;}
-.faq-a a{color:var(--terra);}
+.faq-item summary{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:22px 0;font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;letter-spacing:-.005em;color:var(--ink);user-select:none;list-style:none;line-height:1.3;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:'+';font-family:'Jost',sans-serif;font-size:26px;font-weight:300;color:var(--terra);transition:transform .25s;flex-shrink:0;margin-left:18px;}
+details[open] summary::after{content:'\2013';}
+.faq-a{padding:0 0 24px;font-size:16px;line-height:1.75;color:var(--dim);}
+.faq-a a{color:var(--terra);text-decoration:underline;text-decoration-color:rgba(194,102,61,.4);text-underline-offset:3px;}
+.faq-a p{margin-bottom:14px;}
+.faq-a p:last-child{margin-bottom:0;}
+
 .faq-cta{padding:96px 0;text-align:center;background:var(--paper);}
 .faq-cta h2{font-size:clamp(34px,4.5vw,52px);letter-spacing:-.02em;margin-bottom:14px;}
 .faq-cta p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:480px;margin:0 auto 36px;}
@@ -160,54 +184,313 @@ picture img{width:100%;height:100%;object-fit:cover;}
   <div class="wrap">
     <p class="kicker">Common questions</p>
     <h1><em>Honest</em> answers.</h1>
-    <p class="sub">If your question isn't here, write to us at hello@soloquando.ch. We read every message.</p>
+    <p class="sub">Everything we get asked, and a few things we wish we got asked more.</p>
   </div>
 </header>
 
+<nav class="faq-jump">
+  <div class="faq-jump-inner">
+    <a href="#basics">The basics</a>
+    <a href="#buyers">For neighbours</a>
+    <a href="#bakers">For bakers</a>
+    <a href="#payments">Payments &amp; pickup</a>
+    <a href="#legal">Legal &amp; safety</a>
+    <a href="#about">About us</a>
+  </div>
+</nav>
+
 <section class="faq-body">
   <div class="wrap">
-    <div class="faq-list">
-      <div class="faq-item">
-        <p class="faq-q">What is solo.quando?</p>
-        <p class="faq-a">A demand-first pre-order marketplace for homemade food in Z&uuml;rich. A baker proposes a batch. Neighbours pre-order. Nothing is made until enough people say yes.</p>
+
+    <!-- 1. THE BASICS -->
+    <div class="faq-section" id="basics">
+      <div class="faq-section-h">
+        <h2>The <em>basics</em></h2>
+        <span class="count">five questions</span>
       </div>
-      <div class="faq-item">
-        <p class="faq-q">What if a batch doesn't reach its minimum?</p>
-        <p class="faq-a">Every payment returns automatically, in full, every time. No exceptions, no credits, no partial refunds. The full amount, every time.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Where do I pick up the food?</p>
-        <p class="faq-a">At a place we keep private. Central Z&uuml;rich, quiet, warm, and considered. The address is shared only once you've committed to a batch. We do not deliver. Pickup is part of the experience.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Why a secret pickup location?</p>
-        <p class="faq-a">Two reasons. Home bakers should not have strangers at their door. And something quietly held becomes something worth arriving for.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">How is food safety handled?</p>
-        <p class="faq-a">Every listing must declare every ingredient and every allergen before publication. Swiss food-safety law (LMG SR 817.0 / LGV SR 817.02) applies to all producers, who are responsible for accurate declarations.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Can I bake on solo.quando?</p>
-        <p class="faq-a">Yes. That is what the platform is for. Tell us about your recipe through the <a href="/bake-with-us">baker form</a>. No commercial kitchen required, no minimum volumes. We guide you through every administrative step.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Is this accessible for people with disabilities or chronic illness?</p>
-        <p class="faq-a">Intentionally so. Producers never need to leave their home. Pickup happens at our central address, not theirs. For neighbours, a short pre-arranged collection is significantly easier than markets or shops.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">When does this launch?</p>
-        <p class="faq-a">We are in pre-launch in Z&uuml;rich. <a href="/waiting-list">Join the waiting list</a> to be notified the moment a batch opens in your neighbourhood.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">How is my data handled?</p>
-        <p class="faq-a">Personal data is processed under the Swiss nDSG. We don't sell or share your data for marketing. See the <a href="/privacy">Privacy Policy</a> for full details.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">How do I get in touch?</p>
-        <p class="faq-a">Email <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>, call <a href="tel:+41787942700">+41 78 794 27 00</a>, or use the <a href="/contact">contact form</a>. We reply within 48 hours.</p>
-      </div>
+
+      <details class="faq-item">
+        <summary>What is solo.quando?</summary>
+        <div class="faq-a">
+          <p>A demand-first pre-order marketplace for homemade food in Z&uuml;rich. A baker proposes a batch (a small round of baking). Neighbours pre-order. Nothing is made until enough people say yes.</p>
+          <p>Think Kickstarter, for homemade food. Made by your neighbour.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is a "batch"?</summary>
+        <div class="faq-a">
+          <p>A batch is a small round of baking proposed by one of our bakers. They decide the recipe, the price, the pickup window, and the minimum number of pre-orders they need before they'll cook. Once enough neighbours say yes, the batch is confirmed and the kitchen opens.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>When does this launch?</summary>
+        <div class="faq-a">
+          <p>First batches in Z&uuml;rich are planned for May 2026. <a href="/waiting-list">Join the waiting list</a> and you'll be the first to hear when a baker in your neighbourhood opens a batch.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Where does solo.quando operate?</summary>
+        <div class="faq-a">
+          <p>We are starting in Z&uuml;rich. Once the model is proven here, we'll expand to other Swiss cities. We are not in a hurry.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do you have a mobile app?</summary>
+        <div class="faq-a">
+          <p>Not yet. solo.quando is web-first, designed to work cleanly on phone browsers. An app may come later, when there's something for it to do.</p>
+        </div>
+      </details>
     </div>
+
+    <!-- 2. FOR NEIGHBOURS (BUYERS) -->
+    <div class="faq-section" id="buyers">
+      <div class="faq-section-h">
+        <h2>For <em>neighbours</em></h2>
+        <span class="count">if you want to order</span>
+      </div>
+
+      <details class="faq-item">
+        <summary>How do I pre-order a batch?</summary>
+        <div class="faq-a">
+          <p>You browse open batches, choose one, and reserve a portion. Your payment is held but not charged until the batch is confirmed. If the threshold isn't met before the deadline, the hold is released automatically.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if a batch doesn't reach its threshold?</summary>
+        <div class="faq-a">
+          <p>Every payment returns automatically and in full. No exceptions, no credits, no partial refunds. The full amount, every time.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I cancel my pre-order?</summary>
+        <div class="faq-a">
+          <p>You can cancel any time before the batch is confirmed (i.e., before the threshold is met). Once a batch is confirmed and the baker has started cooking, the order is final, the same way it would be at any small restaurant taking a private booking.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I know the food is fresh?</summary>
+        <div class="faq-a">
+          <p>The whole model is built around freshness. Bakers don't cook anything until enough neighbours commit. You collect within hours of it being made, often the same day. There is no shelf, no warehouse, no waiting.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if I have allergies or dietary restrictions?</summary>
+        <div class="faq-a">
+          <p>Every listing must declare every ingredient and every major allergen before publication. Bakers must also disclose if their kitchen handles other allergens (cross-contamination risk). If a baker omits something or misdescribes a batch, write to us at <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a> within 24 hours of pickup.</p>
+          <p>If you have severe allergies, we strongly recommend reading every ingredient list carefully and contacting the baker through the platform with any specific questions before pre-ordering.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if the food isn't what I expected?</summary>
+        <div class="faq-a">
+          <p>If something is materially different from how it was described (wrong ingredients, spoiled, missing) write to <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a> within 24 hours of collection. We will investigate and resolve fairly.</p>
+          <p>For matters of personal taste, we ask for understanding. Homemade food is not factory food. Every batch is unique.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I request a custom batch from a baker?</summary>
+        <div class="faq-a">
+          <p>Not yet. At launch, batches are proposed by bakers, not requested by neighbours. As the platform grows, we plan to allow direct requests, but only between people who already know each other through the platform.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- 3. FOR BAKERS (PRODUCERS) -->
+    <div class="faq-section" id="bakers">
+      <div class="faq-section-h">
+        <h2>For <em>bakers</em></h2>
+        <span class="count">if you want to bake</span>
+      </div>
+
+      <details class="faq-item">
+        <summary>Who can bake on solo.quando?</summary>
+        <div class="faq-a">
+          <p>Anyone with a home kitchen, a recipe they're proud of, and the willingness to share it. No commercial kitchen required, no minimum volumes, no business background needed.</p>
+          <p>What matters is consistency, care, and honesty about what you make.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need a permit to sell homemade food in Switzerland?</summary>
+        <div class="faq-a">
+          <p>For most home bakers operating at small volumes, no specific permit is required, but you must comply with general Swiss food-safety law (LMG SR 817.0 and LGV SR 817.02) and your cantonal food-safety authority's guidance.</p>
+          <p>We guide every baker through the relevant rules during onboarding. The most common requirements: clear ingredient and allergen labelling, basic kitchen hygiene, and accurate descriptions of what you sell.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need food-safety training?</summary>
+        <div class="faq-a">
+          <p>Not legally required at small volumes, but strongly recommended. We can point you to short, low-cost hygiene courses available in Z&uuml;rich. The peace of mind is worth it.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much does it cost me to use solo.quando?</summary>
+        <div class="faq-a">
+          <p>For our first cohort of bakers in Z&uuml;rich, the platform is free. Our long-term model is a small commission per confirmed batch (planned at 10&ndash;15%). No subscription, no listing fees, no fees if a batch doesn't reach its threshold.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I get paid?</summary>
+        <div class="faq-a">
+          <p>Payments are processed through Payrexx (Switzerland's leading SME payment platform). When a batch is confirmed and pickup is complete, your payout is transferred to your Swiss bank account. Refunds, if any, are automatic and don't affect your future payouts.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if not enough people pre-order?</summary>
+        <div class="faq-a">
+          <p>Then nothing happens. The batch closes. Nobody is charged. You haven't lost a Sunday or a gram of flour. You can re-list the same batch or try a different one.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I cancel a batch I've proposed?</summary>
+        <div class="faq-a">
+          <p>You can cancel an open batch at any time before it reaches its threshold. After confirmation, cancellation should only happen for genuine emergencies. Repeated late cancellations risk being asked to leave the platform.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Who is liable if someone gets sick from my food?</summary>
+        <div class="faq-a">
+          <p>Under Swiss law, the producer is responsible for the safety of the food they sell. solo.quando provides the platform but is not the manufacturer of the food.</p>
+          <p>We strongly recommend bakers consider basic food-product liability insurance (typically a few hundred CHF per year). We can recommend Swiss insurers who offer this.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- 4. PAYMENTS & PICKUP -->
+    <div class="faq-section" id="payments">
+      <div class="faq-section-h">
+        <h2>Payments &amp; <em>pickup</em></h2>
+        <span class="count">how it actually works</span>
+      </div>
+
+      <details class="faq-item">
+        <summary>How do I pay?</summary>
+        <div class="faq-a">
+          <p>Payments are processed by Payrexx, a Swiss payment platform. Accepted methods include TWINT, PostFinance, Visa, Mastercard, Apple Pay, and Google Pay.</p>
+          <p>Your payment is authorised but not charged when you pre-order. The charge happens only if the batch is confirmed (i.e., the threshold is reached). If not, the authorisation expires and no money moves.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Where do I pick up?</summary>
+        <div class="faq-a">
+          <p>Pickup happens at a single, central Z&uuml;rich address we curate. Quiet, warm, and considered. The address is shared with you only once you've committed to a batch.</p>
+          <p>We do not deliver. Pickup is part of the experience.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why is the pickup location secret?</summary>
+        <div class="faq-a">
+          <p>Something quietly held becomes something worth arriving for. We share it only with people who've committed.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if the baker doesn't show up?</summary>
+        <div class="faq-a">
+          <p>This shouldn't happen, but if it does, we refund your full payment immediately and the baker faces consequences on the platform, up to and including being asked to leave. Tell us at <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens if I miss my pickup window?</summary>
+        <div class="faq-a">
+          <p>Each batch has a clearly stated pickup window (usually 2&ndash;3 hours on a specific day). If you miss it without arranging an alternative with the baker, the food may be forfeited. Pickup is a commitment.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- 5. LEGAL & SAFETY -->
+    <div class="faq-section" id="legal">
+      <div class="faq-section-h">
+        <h2>Legal &amp; <em>safety</em></h2>
+        <span class="count">the boring but important bit</span>
+      </div>
+
+      <details class="faq-item">
+        <summary>Is solo.quando legal?</summary>
+        <div class="faq-a">
+          <p>Yes. solo.quando operates within Swiss food-safety law (LMG SR 817.0 / LGV SR 817.02) and the Swiss Code of Obligations (CO/OR). We are the platform, not the producer. Bakers are responsible for the safety, declaration, and compliance of their own food.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How is food safety handled?</summary>
+        <div class="faq-a">
+          <p>Every listing must declare every ingredient and every major allergen. Cantonal food-safety inspectors retain the right to inspect any home kitchen producing food for sale, including those operating through solo.quando. We cooperate fully with all such inspections.</p>
+          <p>We onboard every baker with a written agreement covering hygiene basics and accurate labelling.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How is my personal data handled?</summary>
+        <div class="faq-a">
+          <p>Personal data is processed under the Swiss nDSG (Federal Act on Data Protection). We don't sell or share your data for marketing. See the <a href="/privacy">Privacy Policy</a> for full details.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is this accessible for people with disabilities or chronic illness?</summary>
+        <div class="faq-a">
+          <p>Intentionally so. Bakers never need to leave their home. Pickup happens at our central address, not theirs. For neighbours, a short pre-arranged collection at one location is significantly easier than a market or a shop.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- 6. ABOUT -->
+    <div class="faq-section" id="about">
+      <div class="faq-section-h">
+        <h2>About <em>us</em></h2>
+        <span class="count">who's behind this</span>
+      </div>
+
+      <details class="faq-item">
+        <summary>Who is behind solo.quando?</summary>
+        <div class="faq-a">
+          <p>solo.quando was founded by Theoni Paschou, a PhD researcher with eight years of experience in product management and digital transformation. She's also the platform's first baker, making her grandmother's recipes from her own kitchen in Z&uuml;rich.</p>
+          <p>Read <a href="/our-story">the full story</a>.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How is solo.quando different from Too Good To Go?</summary>
+        <div class="faq-a">
+          <p>Too Good To Go sells leftover restaurant or supermarket food at the end of the day, to reduce waste. solo.quando does the opposite: nothing is made until enough people have pre-ordered. The food is fresh, made by your neighbour, and only because you asked.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How is solo.quando different from a farmers' market?</summary>
+        <div class="faq-a">
+          <p>A farmers' market requires the producer to bake speculatively, transport everything to the market, and sell what they can. solo.quando inverts that: the order comes first, then the cooking, then the pickup. Less waste, less guesswork, less anonymous.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I get in touch?</summary>
+        <div class="faq-a">
+          <p>Email <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>, call <a href="tel:+41787942700">+41 78 794 27 00</a>, or use the <a href="/contact">contact form</a>. We reply within 48 hours.</p>
+        </div>
+      </details>
+    </div>
+
   </div>
 </section>
 
@@ -260,6 +543,11 @@ picture img{width:100%;height:100%;object-fit:cover;}
       <li><a href="/privacy">Privacy policy</a></li>
       <li><a href="/terms">Terms of use</a></li>
     </ul></div>
+  </div>
+  <div class="footer-payments">
+    <span class="footer-payments-label">Payments handled by</span>
+    <a href="https://www.payrexx.com" target="_blank" rel="noopener" class="footer-payments-name">Payrexx</a>
+    <span class="footer-payments-methods">TWINT &middot; PostFinance &middot; Visa &middot; Mastercard &middot; Apple Pay &middot; Google Pay</span>
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
