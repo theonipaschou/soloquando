@@ -64,6 +64,12 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .footer-logo-img{display:block;height:auto;width:240px;max-width:100%;margin-bottom:14px;}
 @media(max-width:480px){.footer-logo-img{width:200px;}}
 .footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;line-height:1.5;color:rgba(245,239,228,.6);margin-top:12px;}
+.footer-payments{padding:24px 0;border-top:1px solid rgba(245,239,228,.08);margin-top:32px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:12px;letter-spacing:.06em;color:rgba(245,239,228,.45);text-align:center;}
+.footer-payments-label{text-transform:uppercase;letter-spacing:.16em;}
+.footer-payments-name{color:rgba(245,239,228,.7);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;letter-spacing:0;text-decoration:none;border-bottom:1px solid rgba(194,102,61,.3);padding-bottom:1px;transition:color .2s;}
+.footer-payments-name:hover{color:var(--terra);}
+.footer-payments-methods{color:rgba(245,239,228,.35);}
+@media(max-width:560px){.footer-payments{flex-direction:column;gap:8px;}}
 .footer-contacts{margin-top:20px;display:flex;flex-direction:column;gap:8px;}
 .footer-contacts a{color:rgba(245,239,228,.7);transition:color .2s;font-size:14px;}
 .footer-contacts a:hover{color:var(--bone);}
@@ -141,12 +147,18 @@ picture img{width:100%;height:100%;object-fit:cover;}
 </div></nav>
 
 <style>
-.bake-hero{background:var(--ink);color:var(--bone);padding:96px 0 76px;position:relative;overflow:hidden;}
-.bake-hero::after{content:'';position:absolute;top:-40%;right:-10%;width:60%;height:180%;background:radial-gradient(ellipse,rgba(194,102,61,.08) 0%,transparent 65%);pointer-events:none;}
-.bake-hero h1{font-size:clamp(46px,6.5vw,84px);letter-spacing:-.025em;margin:14px 0 22px;color:var(--bone);position:relative;z-index:1;}
+.bake-hero{background:var(--ink);color:var(--bone);position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
+@media(max-width:860px){.bake-hero{grid-template-columns:1fr;min-height:auto;}}
+.bake-hero-text{padding:96px 56px 76px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;}
+@media(max-width:720px){.bake-hero-text{padding:64px 22px;}}
+.bake-hero::after{content:'';position:absolute;top:-40%;left:-10%;width:60%;height:180%;background:radial-gradient(ellipse,rgba(194,102,61,.08) 0%,transparent 65%);pointer-events:none;}
+.bake-hero h1{font-size:clamp(46px,6vw,76px);letter-spacing:-.025em;margin:14px 0 22px;color:var(--bone);line-height:1.05;}
 .bake-hero h1 em{color:var(--terra);}
-.bake-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:rgba(245,239,228,.72);max-width:580px;line-height:1.5;position:relative;z-index:1;}
-.bake-hero .kicker{color:var(--terra);position:relative;z-index:1;}
+.bake-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:rgba(245,239,228,.75);max-width:520px;line-height:1.5;}
+.bake-hero .kicker{color:var(--terra);}
+.bake-hero-img{position:relative;overflow:hidden;background:var(--paper);}
+@media(max-width:860px){.bake-hero-img{height:55vw;min-height:280px;}}
+.bake-hero-img img{width:100%;height:100%;object-fit:cover;}
 
 .who-section{padding:96px 0;}
 .who-section h2{font-size:clamp(34px,4.5vw,54px);letter-spacing:-.02em;margin-bottom:14px;}
@@ -207,10 +219,13 @@ picture img{width:100%;height:100%;object-fit:cover;}
 </style>
 
 <header class="bake-hero">
-  <div class="wrap">
-    <p class="kicker">For producers</p>
+  <div class="bake-hero-text">
+    <p class="kicker">For bakers</p>
     <h1>Your recipe deserves<br/>more than your <em>kitchen</em>.</h1>
     <p class="sub">You bake every week. More than your table can hold. The neighbours nearby would love what you make. They just don't know you exist yet.</p>
+  </div>
+  <div class="bake-hero-img">
+    <picture><source type="image/webp" srcset="recipe-stills-600.webp 600w, recipe-stills-900.webp 900w" sizes="(max-width:860px) 100vw, 50vw"><source type="image/jpeg" srcset="recipe-stills-600.jpg 600w, recipe-stills-900.jpg 900w" sizes="(max-width:860px) 100vw, 50vw"><img src="recipe-stills-900.jpg" alt="A handwritten recipe card on a wooden kitchen counter beside a bowl of flour and fresh eggs" loading="lazy" decoding="async"/></picture>
   </div>
 </header>
 
@@ -230,7 +245,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
       <div>
         <p class="kicker" style="color:rgba(245,239,228,.7);">The shield</p>
         <h2 class="shield-h" style="margin-top:14px;">You never bake for nothing.</h2>
-        <p class="shield-p">You propose a batch. You set the minimum number of yeses you need. You don't touch the oven until enough people have committed.</p>
+        <p class="shield-p">You propose a batch (a small round of baking, your recipe, your terms). You set the minimum number of yeses you need. You don't touch the oven until enough people have committed.</p>
         <p class="shield-p">If they don't commit, the batch closes. Nobody is charged. You haven't lost a Sunday or a gram of flour.</p>
         <p class="shield-quote">Baking is better when it's wanted.</p>
       </div>
@@ -246,14 +261,14 @@ picture img{width:100%;height:100%;object-fit:cover;}
   <div class="wrap">
     <div class="no-home-inner">
       <div class="no-home-img">
-        <picture><source type="image/webp" srcset="recipe-stills-600.webp 600w, recipe-stills-900.webp 900w" sizes="(max-width:860px) 100vw, 480px"><source type="image/jpeg" srcset="recipe-stills-600.jpg 600w, recipe-stills-900.jpg 900w" sizes="(max-width:860px) 100vw, 480px"><img src="recipe-stills-900.jpg" alt="A handwritten recipe card on a wooden kitchen counter beside a bowl of flour and fresh eggs" loading="lazy" decoding="async"/></picture>
+        <picture><source type="image/webp" srcset="batch-jar-600.webp 600w, batch-jar-900.webp 900w" sizes="(max-width:860px) 100vw, 480px"><source type="image/jpeg" srcset="batch-jar-600.jpg 600w, batch-jar-900.jpg 900w" sizes="(max-width:860px) 100vw, 480px"><img src="batch-jar-900.jpg" alt="A small jar of homemade preserves on a wooden table, sunlight on the glass" loading="lazy" decoding="async"/></picture>
       </div>
       <div>
         <p class="kicker">A pickup that protects you</p>
-        <h2>You don't open <em>your home</em>.</h2>
-        <p>Every pickup happens at a single, central Z&uuml;rich address we curate. Quiet, warm, and considered. <strong>Strangers never come to your door.</strong></p>
-        <p>You drop off your batch when you are ready, neighbours collect from the same place. The address is private until people have committed. You stay in your kitchen, on your terms.</p>
-        <p>It is one of the things we built carefully on purpose. Especially for home bakers, the home-bound, and anyone who values their privacy.</p>
+        <h2>You stay in <em>your kitchen</em>.</h2>
+        <p>Every pickup happens at a single, central Z&uuml;rich address we curate. Quiet, warm, and considered. <strong>You don't open your home.</strong></p>
+        <p>You drop your batch off when you're ready. Neighbours collect from the same place. We handle the handover.</p>
+        <p>It's one of the things we built carefully on purpose. Especially for the home-bound, the introvert, and anyone who values their privacy.</p>
       </div>
     </div>
   </div>
@@ -271,15 +286,6 @@ picture img{width:100%;height:100%;object-fit:cover;}
       <div class="handle-i"><h4>Discovery and matching</h4><p>The platform matches your batch to neighbours nearby. No following needed, no audience to build.</p></div>
       <div class="handle-i"><h4>Your story, your terms</h4><p>You set the minimum, the price, the pickup window. We introduce you. We don't anonymise you.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- Photo quality commitment -->
-<section class="photo-commit">
-  <div class="wrap">
-    <p class="label">Our promise to producers</p>
-    <h2>A good photo of <em>your batch</em>, on us.</h2>
-    <p>If you don't have a good picture of what you make, we'll help you take one. A platform is only as warm as the photographs on it. We treat your batch the way it deserves to be seen.</p>
   </div>
 </section>
 
@@ -365,6 +371,11 @@ picture img{width:100%;height:100%;object-fit:cover;}
       <li><a href="/privacy">Privacy policy</a></li>
       <li><a href="/terms">Terms of use</a></li>
     </ul></div>
+  </div>
+  <div class="footer-payments">
+    <span class="footer-payments-label">Payments handled by</span>
+    <a href="https://www.payrexx.com" target="_blank" rel="noopener" class="footer-payments-name">Payrexx</a>
+    <span class="footer-payments-methods">TWINT &middot; PostFinance &middot; Visa &middot; Mastercard &middot; Apple Pay &middot; Google Pay</span>
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>

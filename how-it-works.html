@@ -64,6 +64,12 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .footer-logo-img{display:block;height:auto;width:240px;max-width:100%;margin-bottom:14px;}
 @media(max-width:480px){.footer-logo-img{width:200px;}}
 .footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;line-height:1.5;color:rgba(245,239,228,.6);margin-top:12px;}
+.footer-payments{padding:24px 0;border-top:1px solid rgba(245,239,228,.08);margin-top:32px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:12px;letter-spacing:.06em;color:rgba(245,239,228,.45);text-align:center;}
+.footer-payments-label{text-transform:uppercase;letter-spacing:.16em;}
+.footer-payments-name{color:rgba(245,239,228,.7);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;letter-spacing:0;text-decoration:none;border-bottom:1px solid rgba(194,102,61,.3);padding-bottom:1px;transition:color .2s;}
+.footer-payments-name:hover{color:var(--terra);}
+.footer-payments-methods{color:rgba(245,239,228,.35);}
+@media(max-width:560px){.footer-payments{flex-direction:column;gap:8px;}}
 .footer-contacts{margin-top:20px;display:flex;flex-direction:column;gap:8px;}
 .footer-contacts a{color:rgba(245,239,228,.7);transition:color .2s;font-size:14px;}
 .footer-contacts a:hover{color:var(--bone);}
@@ -212,7 +218,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
     <p class="label">Where you collect</p>
     <h2>A small <em>secret</em>, kept on purpose.</h2>
     <p>Pickup happens at a place we keep private. Central Z&uuml;rich, quiet, warm, and considered. The address is shared only once you've committed to a batch.</p>
-    <p class="small">Why a secret? Because home bakers should not have strangers at their door. And because something quietly held becomes something worth arriving for.</p>
+    <p class="small">Something quietly held becomes something worth arriving for.</p>
   </div>
 </section>
 
@@ -265,6 +271,11 @@ picture img{width:100%;height:100%;object-fit:cover;}
       <li><a href="/privacy">Privacy policy</a></li>
       <li><a href="/terms">Terms of use</a></li>
     </ul></div>
+  </div>
+  <div class="footer-payments">
+    <span class="footer-payments-label">Payments handled by</span>
+    <a href="https://www.payrexx.com" target="_blank" rel="noopener" class="footer-payments-name">Payrexx</a>
+    <span class="footer-payments-methods">TWINT &middot; PostFinance &middot; Visa &middot; Mastercard &middot; Apple Pay &middot; Google Pay</span>
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
