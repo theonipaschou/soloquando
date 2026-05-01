@@ -184,6 +184,12 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .tyb-pickup h2 em{color:var(--terra);font-style:italic;}
 .tyb-pickup p{font-size:17px;line-height:1.65;color:var(--dim);margin-bottom:14px;}
 .tyb-pickup p:last-child{margin-bottom:0;}
+.tyb-pickup-cal-row{margin-top:24px;margin-bottom:24px;}
+.tyb-pickup-cal{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:var(--bone);padding:14px 24px;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s;}
+.tyb-pickup-cal:hover{background:var(--terra);}
+.tyb-pickup-cal svg{width:16px;height:16px;flex-shrink:0;}
+.tyb-mday{margin-top:32px;padding:18px 22px;background:rgba(194,102,61,.08);border-left:3px solid var(--terra);font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--ink);line-height:1.55;text-align:left;}
+.tyb-mday em{color:var(--terra);font-style:italic;}
 
 .tyb-help{padding:48px 0;text-align:center;background:var(--ink);color:var(--bone);}
 .tyb-help p{font-size:16px;color:rgba(245,239,228,.7);margin-bottom:6px;}
@@ -271,6 +277,15 @@ picture img{width:100%;height:100%;object-fit:cover;}
       <h2 style="margin-top:14px;">Friday <em>8 May 2026</em>.</h2>
       <p>Central Z&uuml;rich, between 17:00 and 19:00. The exact address arrives by email the day before.</p>
       <p>Bring a small bag.</p>
+
+      <p class="tyb-pickup-cal-row">
+        <a class="tyb-pickup-cal" href="/batch-001-pickup.ics" download="solo-quando-batch-001-pickup.ics">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Add pickup to your calendar
+        </a>
+      </p>
+
+      <p class="tyb-mday"><em>A note on timing.</em> Mother's Day in Switzerland falls Sunday 10 May. A jar picked up Friday makes a quiet gift for Sunday.</p>
     </div>
   </div>
 </section>

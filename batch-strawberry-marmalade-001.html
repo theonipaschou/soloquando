@@ -166,6 +166,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .b1-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:480px;line-height:1.55;margin-bottom:18px;}
 .b1-hero .baker{font-size:14px;color:var(--dim);letter-spacing:.04em;}
 .b1-hero .baker strong{color:var(--ink);font-weight:400;}
+.b1-hero .mothers-day-flag{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--terra);margin-top:14px;line-height:1.4;}
 .b1-hero-img{position:relative;overflow:hidden;background:var(--paper);}
 @media(max-width:860px){.b1-hero-img{height:60vw;min-height:280px;}}
 .b1-hero-img img{width:100%;height:100%;object-fit:cover;}
@@ -212,6 +213,11 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .b1-pickup-card{padding:24px 20px;background:var(--bone);border:1px solid var(--line);text-align:center;}
 .b1-pickup-card .lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
 .b1-pickup-card .val{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--ink);line-height:1.3;}
+
+/* Mother's Day note inside pickup section */
+.b1-mothers-day-note{margin-top:32px;padding:22px 24px;background:rgba(194,102,61,.08);border-left:3px solid var(--terra);}
+.b1-mothers-day-note p{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--ink);line-height:1.55;margin:0;}
+.b1-mothers-day-note p em{color:var(--terra);font-style:italic;}
 
 /* ─── SOFT-LAUNCH NOTE ─── */
 .b1-softlaunch{padding:40px 32px;background:rgba(122,139,106,.08);border-left:3px solid var(--sage);margin:32px 0;}
@@ -275,6 +281,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
     <h1>Strawberry <em>marmalade</em>.</h1>
     <p class="sub">A Greek recipe from my grandmother. Slow-simmered with strawberries from a farm near Z&uuml;rich.</p>
     <p class="baker"><strong>By Theoni</strong> &middot; Z&uuml;rich &middot; CHF 14 per jar (approx. 250g)</p>
+    <p class="mothers-day-flag"><em>Pickup is Friday 8 May. Mother's Day is Sunday 10 May.</em></p>
   </div>
   <div class="b1-hero-img">
     <picture><source type="image/webp" srcset="hero-marmalade-800.webp 800w, hero-marmalade-1200.webp 1200w" sizes="(max-width:860px) 100vw, 50vw"><source type="image/jpeg" srcset="hero-marmalade-800.jpg 800w, hero-marmalade-1200.jpg 1200w" sizes="(max-width:860px) 100vw, 50vw"><img src="hero-marmalade-1200.jpg" alt="Theoni in her kitchen, simmering strawberry marmalade in a saucepan with jars of preserves and a bowl of fresh strawberries on the counter beside her"/></picture>
@@ -417,6 +424,10 @@ picture img{width:100%;height:100%;object-fit:cover;}
           <p class="lbl">Location</p>
           <p class="val">Central Z&uuml;rich<br/>address by email</p>
         </div>
+      </div>
+
+      <div class="b1-mothers-day-note">
+        <p><em>A note on timing.</em> Mother's Day in Switzerland falls Sunday 10 May. A jar picked up Friday makes a quiet gift for Sunday.</p>
       </div>
 
       <p style="margin-top:24px;font-size:15px;">If 10 jars aren't reserved by end of day Mon 5 May 2026, the batch closes. Your TWINT is refunded within 48 hours.</p>
