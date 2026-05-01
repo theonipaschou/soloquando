@@ -23,8 +23,8 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:batch-001-pickup-2026@soloquando.ch
 DTSTAMP:20260501T120000Z
-DTSTART;TZID=Europe/Zurich:20260508T170000
-DTEND;TZID=Europe/Zurich:20260508T190000
+DTSTART;TZID=Europe/Zurich:20260508T150000
+DTEND;TZID=Europe/Zurich:20260508T180000
 SUMMARY:solo.quando — Strawberry marmalade pickup
 DESCRIPTION:Pick up your jar(s) of strawberry marmalade. Central Zurich. The exact address is shared by email the day before.\n\nMother's Day in Switzerland: Sunday 10 May.\n\nQuestions: hello@soloquando.ch
 LOCATION:Central Zurich (address shared by email)
