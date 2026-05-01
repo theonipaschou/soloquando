@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Join the waiting list &middot; solo.quando</title>
-<meta name="description" content="Be the first to know when a baker in your neighbourhood opens a batch."/>
+<title>Reservation received &middot; solo.quando</title>
+<meta name="description" content="Your reservation is in. Send TWINT to confirm."/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -151,133 +151,135 @@ picture img{width:100%;height:100%;object-fit:cover;}
 </div></nav>
 
 <style>
-.wl-hero{padding:96px 0 64px;background:linear-gradient(150deg,rgba(194,102,61,.08) 0%,transparent 55%);}
-.wl-hero h1{font-size:clamp(48px,6.5vw,86px);letter-spacing:-.025em;margin:14px 0 22px;max-width:780px;}
-.wl-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--dim);max-width:580px;line-height:1.5;}
+.tyb-hero{padding:80px 0 40px;text-align:center;background:var(--bone);}
+.tyb-hero h1{font-size:clamp(44px,5.5vw,72px);letter-spacing:-.025em;line-height:1.05;margin:14px 0 18px;}
+.tyb-hero h1 em{color:var(--terra);font-style:italic;}
+.tyb-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:560px;margin:0 auto;line-height:1.5;}
 
-.wl-body{padding:64px 0 96px;}
-.wl-grid{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start;}
-@media(max-width:860px){.wl-grid{grid-template-columns:1fr;gap:44px;}}
+.tyb-pay{padding:32px 0 80px;background:var(--bone);}
+.tyb-card{max-width:580px;margin:0 auto;background:var(--paper);border:1px solid rgba(194,102,61,.25);padding:48px 40px;}
+@media(max-width:560px){.tyb-card{padding:36px 24px;margin:0 22px;}}
+.tyb-step{display:flex;gap:16px;padding-bottom:28px;align-items:flex-start;}
+.tyb-step:last-child{padding-bottom:0;}
+.tyb-step-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:32px;color:var(--terra);line-height:1;width:40px;flex-shrink:0;}
+.tyb-step-text h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:-.005em;margin-bottom:6px;line-height:1.3;color:var(--ink);}
+.tyb-step-text p{font-size:16px;line-height:1.6;color:var(--dim);margin:0;}
+.tyb-step-text strong{color:var(--ink);font-weight:400;}
 
-.wl-left h2{font-size:clamp(28px,3.5vw,40px);letter-spacing:-.015em;margin-bottom:18px;}
-.wl-left p{font-size:17px;line-height:1.7;color:var(--dim);margin-bottom:16px;}
+.tyb-twint-block{background:var(--bone);border:2px solid var(--terra);padding:28px 24px;margin:14px 0 20px;}
+.tyb-twint-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line);}
+.tyb-twint-row:last-child{border-bottom:none;}
+.tyb-twint-lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);}
+.tyb-twint-val{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);font-style:italic;}
+.tyb-twint-val.tel{font-family:'Jost',sans-serif;font-style:normal;letter-spacing:.04em;}
+.tyb-twint-val a{color:var(--terra);text-decoration:none;}
+.tyb-twint-val a:hover{text-decoration:underline;}
 
-/* What you get */
-.wl-getbox{background:var(--paper);padding:30px 32px;margin:30px 0;border-left:3px solid var(--terra);}
-.wl-getbox .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;}
-.wl-getbox h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin-bottom:12px;line-height:1.25;}
-.wl-getbox p{font-size:17px;line-height:1.65;color:var(--dim);margin:0;}
+.tyb-deadline{margin-top:20px;padding:18px 22px;background:rgba(194,102,61,.08);border-left:3px solid var(--terra);font-size:15px;line-height:1.6;color:var(--ink);}
+.tyb-deadline strong{font-weight:400;}
 
-/* 3-line timeline */
-.wl-timeline{margin-top:30px;}
-.wl-tl-item{display:grid;grid-template-columns:80px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);}
-.wl-tl-item:last-child{border-bottom:none;}
-.wl-tl-time{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);padding-top:3px;}
-.wl-tl-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--ink);line-height:1.4;}
+.tyb-pickup{padding:60px 0;background:var(--paper);text-align:center;}
+.tyb-pickup-inner{max-width:560px;margin:0 auto;padding:0 22px;}
+.tyb-pickup h2{font-size:clamp(30px,3.6vw,40px);letter-spacing:-.02em;line-height:1.15;margin-bottom:14px;}
+.tyb-pickup h2 em{color:var(--terra);font-style:italic;}
+.tyb-pickup p{font-size:17px;line-height:1.65;color:var(--dim);margin-bottom:14px;}
+.tyb-pickup p:last-child{margin-bottom:0;}
 
-.wl-form-box{background:var(--paper);padding:40px;}
-@media(max-width:560px){.wl-form-box{padding:28px 22px;}}
-.wl-form-box h3{font-size:28px;letter-spacing:-.01em;margin-bottom:26px;}
-.wl-fields{display:flex;flex-direction:column;gap:16px;}
+.tyb-help{padding:48px 0;text-align:center;background:var(--ink);color:var(--bone);}
+.tyb-help p{font-size:16px;color:rgba(245,239,228,.7);margin-bottom:6px;}
+.tyb-help a{color:var(--terra);text-decoration:none;border-bottom:1px solid rgba(194,102,61,.4);padding-bottom:1px;}
+.tyb-help a:hover{color:var(--bone);border-bottom-color:var(--bone);}
 </style>
 
-<header class="wl-hero">
+<!-- ─── HERO ─── -->
+<section class="tyb-hero">
   <div class="wrap">
-    <div class="badge"><span class="badge-dot"></span><span>Z&uuml;rich &middot; pilot</span></div>
-    <p class="kicker">For neighbours</p>
-    <h1>Get notified about<br/><em>future batches</em>.</h1>
-    <p class="sub">Batch 001 (strawberry marmalade) is open now. <a href="/batch/strawberry-marmalade-001" style="color:var(--terra);text-decoration:underline;text-decoration-color:rgba(194,102,61,.4);text-underline-offset:3px;">See it here &rarr;</a></p>
-    <p class="sub" style="margin-top:14px;">If marmalade isn't your thing, sign up below. We'll write when the next baker opens a batch.</p>
+    <p class="kicker">Reservation received</p>
+    <h1>Now send <em>TWINT</em>.</h1>
+    <p class="sub">Your reservation is in. To confirm it, send the payment via TWINT within the next few days. Here is exactly what to do.</p>
   </div>
-</header>
+</section>
 
-<section class="wl-body">
+<!-- ─── PAYMENT INSTRUCTIONS ─── -->
+<section class="tyb-pay">
   <div class="wrap">
-    <div class="wl-grid">
-      <div class="wl-left">
-        <h2>What happens<br/>when you <em>join</em>.</h2>
-        <p>You join a quiet group of neighbours who said yes early. You will not hear from us until something is genuinely worth saying.</p>
+    <div class="tyb-card">
 
-        <div class="wl-getbox">
-          <p class="label">What you get</p>
-          <h3>Early access.</h3>
-          <p>You'll hear before anyone else when bakers in your neighbourhood are ready. One short email, only when there's something worth saying.</p>
+      <div class="tyb-step">
+        <div class="tyb-step-num">1</div>
+        <div class="tyb-step-text">
+          <h3>Open your TWINT app.</h3>
+          <p>Tap <strong>Send money</strong>, choose a contact or enter the number directly.</p>
         </div>
+      </div>
 
-        <div class="wl-timeline">
-          <div class="wl-tl-item">
-            <span class="wl-tl-time">Now</span>
-            <span class="wl-tl-text">You're on the list.</span>
-          </div>
-          <div class="wl-tl-item">
-            <span class="wl-tl-time">When ready</span>
-            <span class="wl-tl-text">One email when the first batch opens near you.</span>
-          </div>
-          <div class="wl-tl-item">
-            <span class="wl-tl-time">After</span>
-            <span class="wl-tl-text">Pickup at a quiet, central Z&uuml;rich address.</span>
+      <div class="tyb-step">
+        <div class="tyb-step-num">2</div>
+        <div class="tyb-step-text">
+          <h3>Send to:</h3>
+
+          <div class="tyb-twint-block">
+            <div class="tyb-twint-row">
+              <span class="tyb-twint-lbl">Number</span>
+              <span class="tyb-twint-val tel"><a href="tel:+41787942700">+41 78 794 27 00</a></span>
+            </div>
+            <div class="tyb-twint-row">
+              <span class="tyb-twint-lbl">Name</span>
+              <span class="tyb-twint-val">Theoni Paschou</span>
+            </div>
+            <div class="tyb-twint-row">
+              <span class="tyb-twint-lbl">Amount</span>
+              <span class="tyb-twint-val">CHF 14 &times; jars</span>
+            </div>
+            <div class="tyb-twint-row">
+              <span class="tyb-twint-lbl">Reference</span>
+              <span class="tyb-twint-val">your name</span>
+            </div>
           </div>
         </div>
       </div>
-      <div>
-        <div class="wl-form-box">
-          <h3>Tell us a little<br/>about <em>yourself</em>.</h3>
-          <form class="wl-fields" id="waitlist-form"
-                action="https://formspree.io/f/mpqkvvnk"
-                method="POST">
-            <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
-            <input type="hidden" name="_subject" value="New waiting list signup"/>
-            <input type="hidden" name="source" value="waiting-list-page"/>
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
-            <div class="f-field">
-              <label class="f-label">Your email *</label>
-              <input class="f-input" type="email" name="email" placeholder="anna@email.ch" required/>
-            </div>
-            <div class="f-field">
-              <label class="f-label">Your name (optional)</label>
-              <input class="f-input" type="text" name="name" placeholder="Anna"/>
-            </div>
-            <div class="f-field">
-              <label class="f-label">Your neighbourhood (optional)</label>
-              <select class="f-select" name="neighbourhood">
-                <option value="">Select&hellip;</option>
-                <option>Kreis 1 &mdash; Altstadt</option>
-                <option>Kreis 2 &mdash; Enge / Wollishofen</option>
-                <option>Kreis 3 &mdash; Wiedikon</option>
-                <option>Kreis 4 &mdash; Aussersihl</option>
-                <option>Kreis 5 &mdash; Gewerbeschule</option>
-                <option>Kreis 6 &mdash; Unterstrass / Oberstrass</option>
-                <option>Kreis 7 &mdash; Fluntern / Hottingen</option>
-                <option>Kreis 8 &mdash; Riesbach</option>
-                <option>Kreis 9 &mdash; Albisrieden / Altstetten</option>
-                <option>Kreis 10 &mdash; H&ouml;ngg / Wipkingen</option>
-                <option>Kreis 11 &mdash; Affoltern / Oerlikon / Seebach</option>
-                <option>Kreis 12 &mdash; Schwamendingen</option>
-                <option>Outside Z&uuml;rich city</option>
-              </select>
-            </div>
-            <div class="f-field" style="margin-top:6px;">
-              <label class="f-check"><input type="checkbox" name="privacy" required/><span>I accept the <a href="/privacy" target="_blank">Privacy Policy</a>. *</span></label>
-            </div>
-            <button class="f-submit" type="submit">Join the waiting list &rarr;</button>
-          </form>
+
+      <div class="tyb-step">
+        <div class="tyb-step-num">3</div>
+        <div class="tyb-step-text">
+          <h3>Add your name in the message.</h3>
+          <p>So Theoni can match the payment to your reservation. The same name you used on the form.</p>
         </div>
-        <p style="font-size:13px;color:var(--dim);margin-top:14px;line-height:1.5;">Data processed under the Swiss nDSG. Unsubscribe at any time: <a href="mailto:hello@soloquando.ch" style="color:var(--terra);">hello@soloquando.ch</a></p>
       </div>
+
+      <div class="tyb-step">
+        <div class="tyb-step-num">4</div>
+        <div class="tyb-step-text">
+          <h3>That's it.</h3>
+          <p>Theoni will reply by email within 24 hours to confirm. Pickup details follow the day before pickup.</p>
+        </div>
+      </div>
+
+      <div class="tyb-deadline">
+        <p><strong>Deadline:</strong> please send TWINT by end of day Mon 5 May 2026. If 10 jars aren't reserved by then, the batch closes and Theoni refunds via TWINT within 48 hours.</p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<section class="share-quiet">
+<!-- ─── PICKUP REMINDER ─── -->
+<section class="tyb-pickup">
   <div class="wrap">
-    <p class="share-quiet-line">
-      <em>Know a neighbour who would love this? Send it to them.</em>
-      <button class="share-quiet-link" data-share-title="solo.quando" aria-label="Share solo.quando with a friend">
-        Share with a friend
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-      </button>
-      <span class="share-quiet-feedback" aria-live="polite"></span>
-    </p>
+    <div class="tyb-pickup-inner">
+      <p class="kicker">Pickup</p>
+      <h2 style="margin-top:14px;">Friday <em>8 May 2026</em>.</h2>
+      <p>Central Z&uuml;rich, between 17:00 and 19:00. The exact address arrives by email the day before.</p>
+      <p>Bring a small bag.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT IF QUESTIONS ─── -->
+<section class="tyb-help">
+  <div class="wrap">
+    <p>Questions? Email <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a></p>
+    <p>or write to Theoni directly. We reply within 24 hours.</p>
   </div>
 </section>
 
