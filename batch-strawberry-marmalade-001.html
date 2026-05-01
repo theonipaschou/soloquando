@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Batch 001: Strawberry marmalade &middot; solo.quando</title>
+<meta name="description" content="A Greek recipe from my grandmother. Slow-simmered, made by hand. Pickup Friday 8 May 2026 in central Z&uuml;rich. CHF 14 per jar."/>
+<link rel="preload" href="hero-marmalade-1200.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#F5EFE4;--paper:#EDE5D4;--ink:#2B1A0F;
+  --dim:#5C4738;--terra:#C4622D;--sage:#7A8B6A;
+  --line:rgba(43,26,15,.10);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bone);color:var(--ink);
+  font-family:'Jost',sans-serif;font-weight:300;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+@media(max-width:720px){body{font-size:18px;}}
+.wrap{max-width:1180px;margin:0 auto;padding:0 48px;}
+@media(max-width:720px){.wrap{padding:0 22px;}}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.05;letter-spacing:-.02em;}
+em{font-style:italic;color:var(--terra);}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+picture{display:block;width:100%;height:100%;}
+picture img{width:100%;height:100%;object-fit:cover;}
+.kicker{font-size:13px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);}
+
+.nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px;padding:0 48px;max-width:1180px;margin:0 auto;}
+@media(max-width:720px){.nav-inner{padding:0 22px;height:66px;}}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo img{height:38px;width:auto;display:block;}
+@media(max-width:720px){.nav-logo img{height:32px;}}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:16px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
+.nav-links a:hover,.nav-links a.on{color:var(--terra);}
+.nav-cta{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:14px 22px;transition:background .2s;white-space:nowrap;}
+.nav-cta:hover{background:var(--terra);}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:10px;margin-left:8px;}
+.nav-burger span{display:block;width:24px;height:2px;background:var(--ink);transition:all .28s ease;transform-origin:center;}
+@media(max-width:920px){
+  .nav-links{display:none;position:fixed;top:66px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
+  .nav-links.open{display:flex;}
+  .nav-links li{border-bottom:1px solid var(--line);}
+  .nav-links a{display:block;padding:20px 24px;font-size:18px;color:var(--ink);}
+  .nav-cta{display:none;}
+  .nav-burger{display:flex;}
+  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+}
+
+.footer{background:var(--ink);color:rgba(245,239,228,.65);padding:72px 0 40px;font-size:15px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;align-items:start;}
+@media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:40px 32px;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;gap:32px;}}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--bone);margin-bottom:12px;}
+.footer-logo span{color:var(--terra);}
+.footer-logo-img{display:block;height:auto;width:240px;max-width:100%;margin-bottom:14px;}
+@media(max-width:480px){.footer-logo-img{width:200px;}}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;line-height:1.5;color:rgba(245,239,228,.6);margin-top:12px;}
+.footer-payments{padding:24px 0;border-top:1px solid rgba(245,239,228,.08);margin-top:32px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:12px;letter-spacing:.06em;color:rgba(245,239,228,.45);text-align:center;}
+.footer-payments-label{text-transform:uppercase;letter-spacing:.16em;}
+.footer-payments-name{color:rgba(245,239,228,.7);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;letter-spacing:0;text-decoration:none;border-bottom:1px solid rgba(194,102,61,.3);padding-bottom:1px;transition:color .2s;}
+.footer-payments-name:hover{color:var(--terra);}
+.footer-payments-methods{color:rgba(245,239,228,.35);}
+@media(max-width:560px){.footer-payments{flex-direction:column;gap:8px;}}
+.footer-contacts{margin-top:20px;display:flex;flex-direction:column;gap:8px;}
+.footer-contacts a{color:rgba(245,239,228,.7);transition:color .2s;font-size:15px;}
+.footer-contacts a:hover{color:var(--bone);}
+.footer-col h5{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;font-weight:500;margin-top:14px;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:10px;}
+.footer-col a{color:rgba(245,239,228,.65);transition:color .2s;font-size:15px;}
+.footer-col a:hover{color:var(--bone);}
+.footer-bottom{border-top:1px solid rgba(245,239,228,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;letter-spacing:.04em;color:rgba(245,239,228,.45);}
+.footer-bottom a{color:rgba(245,239,228,.45);}
+.footer-bottom a:hover{color:var(--bone);}
+
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.16em;text-transform:uppercase;padding:17px 30px;border:none;cursor:pointer;transition:all .2s;line-height:1;}
+.btn-dark{background:var(--ink);color:var(--bone);}
+.btn-dark:hover{background:var(--terra);}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(43,26,15,.3);}
+.btn-ghost:hover{background:var(--ink);color:var(--bone);}
+.btn-ghost-light{background:transparent;color:var(--bone);border:1px solid rgba(245,239,228,.35);}
+.btn-ghost-light:hover{background:var(--bone);color:var(--ink);}
+
+.share-quiet{padding:36px 0;border-top:1px solid var(--line);text-align:center;}
+.share-quiet-line{font-size:14px;color:var(--dim);letter-spacing:.02em;line-height:1.6;}
+.share-quiet-line em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--ink);margin-right:8px;}
+.share-quiet-link{display:inline-flex;align-items:center;gap:6px;background:transparent;border:none;color:var(--terra);font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.04em;cursor:pointer;padding:0;border-bottom:1px solid rgba(194,102,61,.4);padding-bottom:1px;transition:all .2s;}
+.share-quiet-link:hover{color:#a8552a;border-bottom-color:#a8552a;}
+.share-quiet-link svg{width:14px;height:14px;}
+.share-quiet-feedback{display:inline-block;margin-left:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--sage);opacity:0;transition:opacity .3s;}
+.share-quiet-feedback.show{opacity:1;}
+@media(max-width:560px){
+  .share-quiet-line em{display:block;margin:0 0 10px;}
+}
+
+.f-field{display:flex;flex-direction:column;gap:7px;}
+.f-label{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
+.f-input,.f-select,.f-textarea{
+  background:var(--paper);border:1px solid var(--line);
+  color:var(--ink);font-family:'Jost',sans-serif;font-size:17px;
+  padding:16px 18px;outline:none;width:100%;
+  transition:border-color .2s;-webkit-appearance:none;appearance:none;
+}
+.f-input:focus,.f-select:focus,.f-textarea:focus{border-color:rgba(43,26,15,.4);}
+.f-input::placeholder,.f-textarea::placeholder{color:var(--dim);opacity:.55;}
+.f-textarea{resize:vertical;min-height:110px;}
+.f-select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235C4738' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;
+}
+.f-check{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--dim);line-height:1.55;cursor:pointer;}
+.f-check input{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--terra);cursor:pointer;}
+.f-check a{color:var(--terra);text-decoration:underline;}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:560px){.f-grid{grid-template-columns:1fr;}}
+.f-submit{background:var(--ink);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:18px 32px;width:100%;transition:background .2s;margin-top:8px;}
+.f-submit:hover{background:var(--terra);}
+.f-submit:disabled{opacity:.5;cursor:not-allowed;}
+.f-result{display:none;padding:18px 22px;margin-top:14px;}
+.f-result.ok{background:rgba(122,139,106,.12);border-left:3px solid var(--sage);}
+.f-result.err{background:rgba(194,102,61,.08);border-left:3px solid var(--terra);}
+.f-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.45;color:var(--ink);}
+.f-result.err p{font-family:'Jost',sans-serif;font-style:normal;font-size:15px;color:var(--terra);}
+
+.badge{display:inline-flex;align-items:center;gap:9px;background:rgba(194,102,61,.1);border:1px solid rgba(194,102,61,.28);padding:8px 16px;margin-bottom:18px;}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--terra);animation:pulse 2s infinite;}
+.badge span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="186" height="40"/></a>
+  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li></ul>
+  <div style="display:flex;align-items:center;">
+    <button class="nav-cta" onclick="location.href='/waiting-list'">Join the waiting list</button>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div></nav>
+
+<style>
+/* ─── BACK LINK ─── */
+.batch-back{padding:32px 0 16px;background:var(--bone);}
+.batch-back a{font-size:14px;color:var(--dim);text-decoration:none;letter-spacing:.04em;transition:color .2s;}
+.batch-back a:hover{color:var(--terra);}
+
+/* ─── HERO (image right, unified) ─── */
+.b1-hero{display:grid;grid-template-columns:1fr 1fr;min-height:480px;background:var(--bone);}
+@media(max-width:860px){.b1-hero{grid-template-columns:1fr;min-height:auto;}}
+.b1-hero-text{display:flex;flex-direction:column;justify-content:center;padding:60px 56px 60px 48px;}
+@media(max-width:720px){.b1-hero-text{padding:48px 22px;}}
+.b1-hero h1{font-size:clamp(46px,5.4vw,72px);line-height:1.04;letter-spacing:-.025em;margin:14px 0 18px;}
+.b1-hero h1 em{color:var(--terra);font-style:italic;}
+.b1-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:480px;line-height:1.55;margin-bottom:18px;}
+.b1-hero .baker{font-size:14px;color:var(--dim);letter-spacing:.04em;}
+.b1-hero .baker strong{color:var(--ink);font-weight:400;}
+.b1-hero-img{position:relative;overflow:hidden;background:var(--paper);}
+@media(max-width:860px){.b1-hero-img{height:60vw;min-height:280px;}}
+.b1-hero-img img{width:100%;height:100%;object-fit:cover;}
+
+/* ─── PROGRESS BAND ─── */
+.b1-progress{padding:56px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.b1-progress-inner{max-width:780px;margin:0 auto;text-align:center;}
+.b1-progress-stat{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,60px);color:var(--ink);line-height:1.1;letter-spacing:-.015em;margin-bottom:8px;}
+.b1-progress-stat em{color:var(--terra);font-style:italic;}
+.b1-progress-bar-wrap{max-width:480px;height:6px;margin:18px auto;background:rgba(43,26,15,.08);border-radius:3px;overflow:hidden;}
+.b1-progress-bar{height:100%;background:var(--terra);transition:width .6s ease;}
+.b1-progress-meta{display:flex;justify-content:center;gap:32px;margin-top:18px;flex-wrap:wrap;font-size:14px;color:var(--dim);}
+.b1-progress-meta strong{color:var(--ink);font-weight:400;}
+@media(max-width:560px){.b1-progress-meta{gap:16px;font-size:13px;}}
+
+/* ─── FULL SECTION ─── */
+.b1-section{padding:80px 0;}
+.b1-section.alt{background:var(--paper);}
+.b1-section-inner{max-width:780px;margin:0 auto;}
+.b1-section h2{font-size:clamp(32px,4vw,46px);letter-spacing:-.02em;margin-bottom:22px;line-height:1.1;}
+.b1-section h2 em{color:var(--terra);font-style:italic;}
+.b1-section p{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:16px;}
+
+/* ─── PROCESS — numbered steps with dotted connector ─── */
+.process-list{margin:0;padding:0;list-style:none;counter-reset:step;}
+.process-step{display:grid;grid-template-columns:64px 1fr;gap:28px;padding-bottom:36px;position:relative;}
+.process-step:not(:last-child)::after{content:'';position:absolute;left:31px;top:64px;bottom:0;width:1px;background:rgba(43,26,15,.12);}
+.process-step:last-child{padding-bottom:0;}
+.process-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:36px;color:var(--terra);line-height:1;width:64px;height:64px;border-radius:50%;background:var(--bone);border:1px solid rgba(194,102,61,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;}
+.process-text h3{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:400;letter-spacing:-.005em;margin-bottom:8px;line-height:1.3;color:var(--ink);}
+.process-text p{font-size:17px;line-height:1.65;color:var(--dim);margin:0;}
+
+/* ─── INGREDIENTS / ALLERGENS ─── */
+.b1-spec{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px;}
+@media(max-width:680px){.b1-spec{grid-template-columns:1fr;gap:18px;}}
+.b1-spec-item{padding:24px 26px;background:var(--bone);border:1px solid var(--line);}
+.b1-spec-item h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
+.b1-spec-item p{font-size:16px;line-height:1.6;color:var(--ink);margin:0;}
+.b1-spec-item .small{font-size:13px;color:var(--dim);margin-top:8px;}
+
+/* ─── PICKUP DETAILS ─── */
+.b1-pickup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px;}
+@media(max-width:680px){.b1-pickup-grid{grid-template-columns:1fr;gap:14px;}}
+.b1-pickup-card{padding:24px 20px;background:var(--bone);border:1px solid var(--line);text-align:center;}
+.b1-pickup-card .lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
+.b1-pickup-card .val{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--ink);line-height:1.3;}
+
+/* ─── SOFT-LAUNCH NOTE ─── */
+.b1-softlaunch{padding:40px 32px;background:rgba(122,139,106,.08);border-left:3px solid var(--sage);margin:32px 0;}
+.b1-softlaunch p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--ink);line-height:1.5;margin-bottom:10px;}
+.b1-softlaunch p:last-child{margin-bottom:0;}
+
+/* ─── RESERVATION FORM ─── */
+.b1-form-s{padding:96px 0;background:var(--ink);color:var(--bone);}
+.b1-form-inner{max-width:680px;margin:0 auto;}
+.b1-form-head{text-align:center;margin-bottom:48px;}
+.b1-form-head h2{font-size:clamp(36px,4.6vw,56px);color:var(--bone);margin-bottom:16px;letter-spacing:-.02em;line-height:1.05;}
+.b1-form-head h2 em{color:var(--terra);font-style:italic;}
+.b1-form-head .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:rgba(245,239,228,.75);line-height:1.5;}
+.b1-form-card{background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.1);padding:40px 36px;}
+@media(max-width:560px){.b1-form-card{padding:28px 22px;}}
+.b1-form-card label{display:block;margin-bottom:18px;}
+.b1-form-card .f-label{display:block;color:rgba(245,239,228,.7);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
+.b1-form-card .f-input{width:100%;padding:14px 16px;background:rgba(245,239,228,.06);border:1px solid rgba(245,239,228,.18);color:var(--bone);font-family:'Jost',sans-serif;font-size:17px;outline:none;transition:border-color .2s,background .2s;}
+.b1-form-card .f-input::placeholder{color:rgba(245,239,228,.4);}
+.b1-form-card .f-input:focus{border-color:rgba(245,239,228,.4);background:rgba(245,239,228,.09);}
+.b1-form-card textarea.f-input{resize:vertical;min-height:90px;font-family:'Jost',sans-serif;line-height:1.5;}
+.b1-form-card .f-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media(max-width:560px){.b1-form-card .f-row{grid-template-columns:1fr;gap:0;}}
+.b1-form-card .f-jars-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;}
+@media(max-width:560px){.b1-form-card .f-jars-row{grid-template-columns:1fr;gap:0;}}
+.b1-form-card .f-total{padding:16px;background:rgba(194,102,61,.1);border:1px solid rgba(194,102,61,.3);text-align:center;}
+.b1-form-card .f-total-lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,239,228,.65);margin-bottom:4px;}
+.b1-form-card .f-total-val{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--bone);line-height:1;}
+.b1-form-card .f-check{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:rgba(245,239,228,.7);line-height:1.55;cursor:pointer;margin-bottom:22px;}
+.b1-form-card .f-check a{color:var(--terra);text-decoration:underline;}
+.b1-form-card .f-submit{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:18px 32px;width:100%;transition:background .2s;}
+.b1-form-card .f-submit:hover{background:#a8552a;}
+
+/* ─── BATCH FULL ALTERNATIVE (commented out, swap in when threshold reached) ─── */
+.b1-full{padding:80px 32px;background:rgba(122,139,106,.12);border:1px solid rgba(122,139,106,.4);text-align:center;}
+.b1-full h2{font-size:clamp(36px,4.6vw,56px);color:var(--ink);margin-bottom:18px;letter-spacing:-.02em;line-height:1.05;}
+.b1-full h2 em{color:var(--terra);font-style:italic;}
+.b1-full p{font-size:18px;color:var(--dim);margin-bottom:28px;}
+</style>
+
+<!-- ─── BACK LINK ─── -->
+<div class="batch-back">
+  <div class="wrap">
+    <a href="/#batches">&larr; Back to all batches</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- BATCH 001 RESERVATION COUNTER                                   -->
+<!--                                                                 -->
+<!-- To update the count: change BATCH001_RESERVED in build.py       -->
+<!-- (top of the file). Commit, push, deploy. ~60s lag.              -->
+<!--                                                                 -->
+<!-- Current value is rendered into the page below.                  -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<!-- ─── HERO ─── -->
+<header class="b1-hero">
+  <div class="b1-hero-text">
+    <p class="kicker">Batch 001 &middot; open now</p>
+    <h1>Strawberry <em>marmalade</em>.</h1>
+    <p class="sub">A Greek recipe from my grandmother. Slow-simmered with strawberries from a farm near Z&uuml;rich.</p>
+    <p class="baker"><strong>By Theoni</strong> &middot; Z&uuml;rich &middot; CHF 14 per jar (approx. 250g)</p>
+  </div>
+  <div class="b1-hero-img">
+    <picture><source type="image/webp" srcset="hero-marmalade-800.webp 800w, hero-marmalade-1200.webp 1200w" sizes="(max-width:860px) 100vw, 50vw"><source type="image/jpeg" srcset="hero-marmalade-800.jpg 800w, hero-marmalade-1200.jpg 1200w" sizes="(max-width:860px) 100vw, 50vw"><img src="hero-marmalade-1200.jpg" alt="Theoni in her kitchen, simmering strawberry marmalade in a saucepan with jars of preserves and a bowl of fresh strawberries on the counter beside her"/></picture>
+  </div>
+</header>
+
+<!-- ─── PROGRESS BAND ─── -->
+<section class="b1-progress">
+  <div class="wrap">
+    <div class="b1-progress-inner">
+      <p class="kicker">The batch opens when 10 are reserved</p>
+      <p class="b1-progress-stat" style="margin-top:14px;"><em>0</em> of 10 jars reserved</p>
+      <div class="b1-progress-bar-wrap"><div class="b1-progress-bar" style="width:0%;"></div></div>
+      <div class="b1-progress-meta">
+        <span><strong>Reserve by:</strong> end of day Mon 5 May 2026</span>
+        <span><strong>Pickup:</strong> Friday 8 May 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── THE RECIPE ─── -->
+<section class="b1-section">
+  <div class="wrap">
+    <div class="b1-section-inner">
+      <p class="kicker">The recipe</p>
+      <h2 style="margin-top:14px;">A jar of <em>my grandmother</em>.</h2>
+      <p>Strawberries, sugar, lemon. Nothing else. The way she made it, every June, in her kitchen on the island.</p>
+      <p>Slow-simmered for hours, not minutes. Hand-jarred while warm, sealed properly, hand-labelled. Each jar is approximately 250 grams. Enough for ten thick toasts, six small breakfast jars, or one weekend of feeling looked after.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── THE PROCESS ─── -->
+<section class="b1-section alt">
+  <div class="wrap">
+    <div class="b1-section-inner">
+      <p class="kicker">How it will be made</p>
+      <h2 style="margin-top:14px;">From <em>field to jar</em>, by hand.</h2>
+      <p style="margin-bottom:36px;">Once the batch reaches 10 reservations, the kitchen opens. Here is what happens between then and your pickup on Friday 8 May 2026.</p>
+
+      <ol class="process-list">
+
+        <li class="process-step">
+          <div class="process-num">1</div>
+          <div class="process-text">
+            <h3>Pick the strawberries.</h3>
+            <p>Fresh, ripe, from a farm near Z&uuml;rich. Picked the morning before cooking, never from a supermarket shelf.</p>
+          </div>
+        </li>
+
+        <li class="process-step">
+          <div class="process-num">2</div>
+          <div class="process-text">
+            <h3>Hull and clean, by hand.</h3>
+            <p>Each strawberry is washed, hulled, and quartered at home in my kitchen. No shortcuts, no machines.</p>
+          </div>
+        </li>
+
+        <li class="process-step">
+          <div class="process-num">3</div>
+          <div class="process-text">
+            <h3>Slow-simmer with sugar and lemon.</h3>
+            <p>Two hours over low heat. The fruit breaks down, the sugar caramelises, the lemon brings everything alive. The kitchen smells the way I remember.</p>
+          </div>
+        </li>
+
+        <li class="process-step">
+          <div class="process-num">4</div>
+          <div class="process-text">
+            <h3>Jar while warm. Seal properly.</h3>
+            <p>Sterilised glass jars, filled while the marmalade is still hot, sealed with a vacuum lid. Each one labelled with the batch date and your name.</p>
+          </div>
+        </li>
+
+        <li class="process-step">
+          <div class="process-num">5</div>
+          <div class="process-text">
+            <h3>Hand-label each jar.</h3>
+            <p>A small label, written by hand. Ingredients, batch number, your name. Because mass-produced labels feel wrong on something this slow.</p>
+          </div>
+        </li>
+
+        <li class="process-step">
+          <div class="process-num">6</div>
+          <div class="process-text">
+            <h3>Ready for pickup.</h3>
+            <p>On Friday 8 May 2026, central Z&uuml;rich. The exact address is shared with you the day before. Bring a small bag.</p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INGREDIENTS / ALLERGENS ─── -->
+<section class="b1-section">
+  <div class="wrap">
+    <div class="b1-section-inner">
+      <p class="kicker">What's in it</p>
+      <h2 style="margin-top:14px;">Three <em>ingredients</em>.</h2>
+      <p>This is a traditional fruit preserve. Nothing more, nothing less.</p>
+
+      <div class="b1-spec">
+        <div class="b1-spec-item">
+          <h4>Ingredients</h4>
+          <p>Strawberries, sugar, lemon.</p>
+          <p class="small">No preservatives, no thickeners, no added pectin.</p>
+        </div>
+        <div class="b1-spec-item">
+          <h4>Kitchen disclosure</h4>
+          <p>Made in a home kitchen.</p>
+          <p class="small">The same kitchen also handles wheat, eggs, dairy, and nuts. Cross-contamination is possible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PICKUP DETAILS ─── -->
+<section class="b1-section alt">
+  <div class="wrap">
+    <div class="b1-section-inner">
+      <p class="kicker">Pickup</p>
+      <h2 style="margin-top:14px;">Friday <em>8 May</em>, central Z&uuml;rich.</h2>
+      <p>The exact pickup address is shared with reserved customers the day before. Quiet, central, walkable from a tram stop.</p>
+
+      <div class="b1-pickup-grid">
+        <div class="b1-pickup-card">
+          <p class="lbl">Date</p>
+          <p class="val">Friday<br/>8 May 2026</p>
+        </div>
+        <div class="b1-pickup-card">
+          <p class="lbl">Time</p>
+          <p class="val">17:00 to 19:00<br/>(2-hour window)</p>
+        </div>
+        <div class="b1-pickup-card">
+          <p class="lbl">Location</p>
+          <p class="val">Central Z&uuml;rich<br/>address by email</p>
+        </div>
+      </div>
+
+      <p style="margin-top:24px;font-size:15px;">If 10 jars aren't reserved by end of day Mon 5 May 2026, the batch closes. Your TWINT is refunded within 48 hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOFT-LAUNCH NOTE + RESERVATION FORM ─── -->
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- STATE A: form ACTIVE (default)                                  -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<section class="b1-form-s" id="reserve">
+  <div class="wrap">
+    <div class="b1-form-inner">
+      <div class="b1-form-head">
+        <p class="kicker" style="color:var(--terra);">Reserve a jar</p>
+        <h2 style="margin-top:14px;">Reserve <em>your jar</em>.</h2>
+        <p class="sub">Batch 001 is the first one. We're starting small with friends, family, and neighbours we already know. To reserve, fill in below and send TWINT.</p>
+      </div>
+
+      <div class="b1-form-card">
+        <form id="batch001-form"
+              action="https://formspree.io/f/mbdwljae"
+              method="POST">
+          <input type="hidden" name="_next" value="https://soloquando.ch/thank-you-batch-001"/>
+          <input type="hidden" name="_subject" value="New batch 001 reservation &mdash; strawberry marmalade"/>
+          <input type="hidden" name="batch" value="batch-001-strawberry-marmalade"/>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+
+          <div class="f-row">
+            <label>
+              <span class="f-label">Your name *</span>
+              <input class="f-input" type="text" name="name" required placeholder="Anna Meier"/>
+            </label>
+            <label>
+              <span class="f-label">Your email *</span>
+              <input class="f-input" type="email" name="email" required placeholder="anna@email.ch"/>
+            </label>
+          </div>
+
+          <div class="f-jars-row">
+            <label>
+              <span class="f-label">How many jars? *</span>
+              <select class="f-input" name="jars" required id="jars-select">
+                <option value="1" selected>1 jar (CHF 14)</option>
+                <option value="2">2 jars (CHF 28)</option>
+                <option value="3">3 jars (CHF 42)</option>
+              </select>
+            </label>
+            <div class="f-total">
+              <p class="f-total-lbl">Total to TWINT</p>
+              <p class="f-total-val" id="total-display">CHF 14</p>
+            </div>
+          </div>
+
+          <label>
+            <span class="f-label">Notes (optional)</span>
+            <textarea class="f-input" name="notes" rows="3" placeholder="Anything we should know? Allergies, gift, special pickup time?"></textarea>
+          </label>
+
+          <label class="f-check">
+            <input type="checkbox" required/>
+            <span>I understand my reservation is confirmed only after I send CHF 14 (per jar) via TWINT to +41 78 794 27 00 with my name as reference. *</span>
+          </label>
+
+          <button type="submit" class="f-submit">Reserve my jar &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  // Update total when jars selection changes
+  var select = document.getElementById('jars-select');
+  var display = document.getElementById('total-display');
+  if(select && display){
+    select.addEventListener('change', function(){
+      var n = parseInt(select.value, 10) || 1;
+      display.textContent = 'CHF ' + (n * 14);
+    });
+  }
+})();
+</script>
+
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- STATE C (commented out): threshold NOT reached after deadline   -->
+<!--                                                                 -->
+<!-- After end of day Mon 5 May 2026, if the count is below      -->
+<!-- 10, replace the form section above with this block: -->
+<!--                                                                 -->
+<!-- <section class="b1-section alt" id="reserve">                  -->
+<!--   <div class="wrap">                                            -->
+<!--     <div class="b1-section-inner">                              -->
+<!--       <div class="b1-full">                                     -->
+<!--         <p class="kicker">Batch closed</p>                      -->
+<!--         <h2>Batch 001 didn't reach the <em>threshold</em>.</h2> -->
+<!--         <p>This time, not enough neighbours said yes. Refunds   -->
+<!--            processed by Theoni via TWINT within 48 hours.</p>   -->
+<!--         <p>Sign up below for batch 002.</p>                     -->
+<!--         <a href="/waiting-list" class="btn btn-dark">           -->
+<!--           Get notified about batch 002 &rarr;</a>               -->
+<!--       </div>                                                    -->
+<!--     </div>                                                      -->
+<!--   </div>                                                        -->
+<!-- </section>                                                      -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<section class="share-quiet">
+  <div class="wrap">
+    <p class="share-quiet-line">
+      <em>Know someone who would love a jar?</em>
+      <button class="share-quiet-link" data-share-title="solo.quando" aria-label="Share solo.quando with a friend">
+        Share with a friend
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+      </button>
+      <span class="share-quiet-feedback" aria-live="polite"></span>
+    </p>
+  </div>
+</section>
+
+<footer class="footer"><div class="wrap">
+  <div class="footer-grid">
+    <div>
+      <img src="logo-footer.webp" alt="solo.quando" class="footer-logo-img" width="240" height="82" loading="lazy"/>
+      <p class="footer-tagline">Made only when you want it.</p>
+      <div class="footer-contacts">
+        <a href="mailto:hello@soloquando.ch">Email</a>
+        <a href="tel:+41787942700">Phone</a>
+        <a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Discover</h5><ul>
+      <li><a href="/how-it-works">How it works</a></li>
+      <li><a href="/our-story">Our story</a></li>
+      <li><a href="/waiting-list">Join the waiting list</a></li>
+      <li><a href="/bake-with-us">Bake with us</a></li>
+      <li><a href="/faq">FAQ</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul>
+      <li><a href="/contact">Contact us</a></li>
+      <li><a href="mailto:hello@soloquando.ch">Email</a></li>
+      <li><a href="tel:+41787942700">Phone</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Legal</h5><ul>
+      <li><a href="/imprint">Imprint</a></li>
+      <li><a href="/privacy">Privacy policy</a></li>
+      <li><a href="/terms">Terms of use</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-payments">
+    <span class="footer-payments-label">Payments handled by</span>
+    <a href="https://www.payrexx.com" target="_blank" rel="noopener" class="footer-payments-name">Payrexx</a>
+    <span class="footer-payments-methods">TWINT &middot; PostFinance &middot; Visa &middot; Mastercard &middot; Apple Pay &middot; Google Pay</span>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
+    <span><a href="#">EN</a> &middot; <a href="#">DE</a></span>
+  </div>
+</div></footer>
+<script>
+(function(){
+  var burger=document.querySelector('.nav-burger');
+  var menu=document.querySelector('.nav-links');
+  if(burger && menu){
+    function close(){menu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+    burger.addEventListener('click',function(){var open=menu.classList.toggle('open');burger.classList.toggle('open',open);burger.setAttribute('aria-expanded',String(open));});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+    document.addEventListener('click',function(e){if(!burger.contains(e.target) && !menu.contains(e.target)) close();});
+  }
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.share-quiet-link').forEach(function(btn){
+    btn.addEventListener('click', async function(){
+      var url = btn.getAttribute('data-share-url') || window.location.href;
+      var title = btn.getAttribute('data-share-title') || 'solo.quando';
+      var text = btn.getAttribute('data-share-text') || "Saw this and thought of you. A small Swiss food project starting in Z\u00fcrich. Pre-order homemade food from your neighbour, made only when you want it.";
+      var feedback = btn.parentElement.querySelector('.share-quiet-feedback');
+      function showFeedback(msg){
+        if(feedback){ feedback.textContent = msg; feedback.classList.add('show'); setTimeout(function(){ feedback.classList.remove('show'); }, 2400); }
+      }
+      if(navigator.share){
+        try{ await navigator.share({title: title, text: text, url: url}); showFeedback('Thank you.'); }catch(e){}
+      } else if(navigator.clipboard){
+        try{ await navigator.clipboard.writeText(text + ' ' + url); showFeedback('Link copied.'); }catch(e){ showFeedback('Copy this URL: ' + url); }
+      } else { showFeedback('Copy this URL: ' + url); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
