@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Our story &middot; solo.quando</title>
 <meta name="description" content="Why we built solo.quando: a small story about a Sunday, twenty-four cookies, and food waste."/>
-<link rel="preload" href="hero-marmalade-1200.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="grandma-900.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -91,14 +91,17 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .btn-ghost-light{background:transparent;color:var(--bone);border:1px solid rgba(245,239,228,.35);}
 .btn-ghost-light:hover{background:var(--bone);color:var(--ink);}
 
-.share-block{padding:56px 0;text-align:center;border-top:1px solid var(--line);}
-.share-block .label{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px;}
-.share-block .quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);margin-bottom:24px;line-height:1.45;}
-.share-btn{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid rgba(43,26,15,.3);color:var(--ink);padding:14px 24px;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .2s;}
-.share-btn:hover{background:var(--ink);color:var(--bone);}
-.share-btn svg{width:14px;height:14px;}
-.share-feedback{display:inline-block;margin-left:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--sage);opacity:0;transition:opacity .3s;}
-.share-feedback.show{opacity:1;}
+.share-quiet{padding:36px 0;border-top:1px solid var(--line);text-align:center;}
+.share-quiet-line{font-size:14px;color:var(--dim);letter-spacing:.02em;line-height:1.6;}
+.share-quiet-line em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--ink);margin-right:8px;}
+.share-quiet-link{display:inline-flex;align-items:center;gap:6px;background:transparent;border:none;color:var(--terra);font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.04em;cursor:pointer;padding:0;border-bottom:1px solid rgba(194,102,61,.4);padding-bottom:1px;transition:all .2s;}
+.share-quiet-link:hover{color:#a8552a;border-bottom-color:#a8552a;}
+.share-quiet-link svg{width:14px;height:14px;}
+.share-quiet-feedback{display:inline-block;margin-left:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--sage);opacity:0;transition:opacity .3s;}
+.share-quiet-feedback.show{opacity:1;}
+@media(max-width:560px){
+  .share-quiet-line em{display:block;margin:0 0 10px;}
+}
 
 .f-field{display:flex;flex-direction:column;gap:7px;}
 .f-label{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
@@ -148,20 +151,9 @@ picture img{width:100%;height:100%;object-fit:cover;}
 </div></nav>
 
 <style>
-/* ─── UNIFIED HERO (image right) ─── */
-.s-hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
-@media(max-width:860px){.s-hero{grid-template-columns:1fr;min-height:auto;}}
-.s-hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;}
-@media(max-width:720px){.s-hero-text{padding:60px 22px;}}
-.s-hero h1{font-size:clamp(48px,5.8vw,80px);line-height:1.04;letter-spacing:-.025em;margin:14px 0 22px;}
-.s-hero h1 em{color:var(--terra);font-style:italic;}
-.s-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:480px;line-height:1.55;}
-.s-hero-img{position:relative;overflow:hidden;background:var(--paper);}
-@media(max-width:860px){.s-hero-img{height:60vw;min-height:300px;}}
-.s-hero-img img{width:100%;height:100%;object-fit:cover;}
-
 /* ─── ALTERNATING SECTIONS ─── */
 .s-section{padding:96px 0;}
+.s-section.first{padding-top:64px;}
 .s-section.alt{background:var(--paper);}
 .s-split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto;}
 @media(max-width:860px){.s-split{grid-template-columns:1fr;gap:36px;}}
@@ -170,10 +162,13 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .s-img{aspect-ratio:4/5;overflow:hidden;background:var(--paper);margin:0;}
 .s-img img{width:100%;height:100%;object-fit:cover;}
 .s-img figcaption{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--dim);margin-top:14px;text-align:center;}
+.s-text h1{font-size:clamp(46px,5.4vw,72px);line-height:1.04;letter-spacing:-.025em;margin-bottom:22px;}
+.s-text h1 em{color:var(--terra);font-style:italic;}
 .s-text h2{font-size:clamp(34px,4vw,48px);letter-spacing:-.02em;margin-bottom:22px;line-height:1.1;}
 .s-text h2 em{color:var(--terra);font-style:italic;}
 .s-text p{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:16px;}
 .s-text .pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);line-height:1.5;border-left:3px solid var(--terra);padding-left:20px;margin:24px 0;}
+.s-text .kicker{margin-bottom:14px;display:block;}
 
 /* ─── STATS ─── */
 .stats-wrap{padding:80px 0;background:var(--paper);}
@@ -232,29 +227,17 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .cta-result p{color:var(--terra);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;}
 </style>
 
-<!-- ─── HERO (image right, unified) ─── -->
-<header class="s-hero">
-  <div class="s-hero-text">
-    <p class="kicker">Our story</p>
-    <h1>Why we built<br/><em>solo.quando</em>.</h1>
-    <p class="sub">A small story about a Sunday, twenty-four cookies, and the question that started everything.</p>
-  </div>
-  <div class="s-hero-img">
-    <picture><source type="image/webp" srcset="hero-marmalade-800.webp 800w, hero-marmalade-1200.webp 1200w" sizes="(max-width:860px) 100vw, 50vw"><source type="image/jpeg" srcset="hero-marmalade-800.jpg 800w, hero-marmalade-1200.jpg 1200w" sizes="(max-width:860px) 100vw, 50vw"><img src="hero-marmalade-1200.jpg" alt="Theoni in her kitchen making strawberry marmalade, smiling at the camera with jars of preserves and a pot of simmering fruit beside her"/></picture>
-  </div>
-</header>
-
-<!-- ─── SECTION 1: GRANDMOTHER (the emotional opening) ─── -->
-<section class="s-section">
+<!-- ─── SECTION 1: GRANDMOTHER (the page opener — no hero before it) ─── -->
+<section class="s-section first">
   <div class="wrap">
     <div class="s-split">
       <figure class="s-img">
-        <picture><source type="image/webp" srcset="grandma-600.webp 600w, grandma-900.webp 900w" sizes="(max-width:860px) 100vw, 480px"><source type="image/jpeg" srcset="grandma-600.jpg 600w, grandma-900.jpg 900w" sizes="(max-width:860px) 100vw, 480px"><img src="grandma-900.jpg" alt="Theoni and her grandmother in the kitchen, making orange marmalade together at the stove with jars of preserves on the counter" loading="lazy" decoding="async"/></picture>
+        <picture><source type="image/webp" srcset="grandma-600.webp 600w, grandma-900.webp 900w" sizes="(max-width:860px) 100vw, 480px"><source type="image/jpeg" srcset="grandma-600.jpg 600w, grandma-900.jpg 900w" sizes="(max-width:860px) 100vw, 480px"><img src="grandma-900.jpg" alt="Theoni and her grandmother in the kitchen, making orange marmalade together at the stove with jars of preserves on the counter"/></picture>
         <figcaption>Learning marmalade with my grandmother.</figcaption>
       </figure>
       <div class="s-text">
-        <p class="kicker">It started with her</p>
-        <h2>It began in <em>her kitchen</em>.</h2>
+        <p class="kicker">Our story</p>
+        <h1>It began in<br/><em>her kitchen</em>.</h1>
         <p>My grandmother taught me to bake. Patience. Butter. Citrus peel. Time.</p>
         <p>She never used a recipe book. She remembered everything by hand. She called me to the kitchen when something needed stirring, and that is how I learned.</p>
         <p>She is no longer here. The recipes are. So I make them. Most Sundays.</p>
@@ -403,6 +386,20 @@ picture img{width:100%;height:100%;object-fit:cover;}
   </div>
 </section>
 
+
+<section class="share-quiet">
+  <div class="wrap">
+    <p class="share-quiet-line">
+      <em>Know a neighbour who would love this?</em>
+      <button class="share-quiet-link" data-share-title="solo.quando" aria-label="Share solo.quando with a friend">
+        Share with a friend
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+      </button>
+      <span class="share-quiet-feedback" aria-live="polite"></span>
+    </p>
+  </div>
+</section>
+
 <!-- ─── FINAL CTA ─── -->
 <section class="cta-s">
   <div class="wrap">
@@ -504,12 +501,12 @@ picture img{width:100%;height:100%;object-fit:cover;}
 </script>
 <script>
 (function(){
-  document.querySelectorAll('.share-btn').forEach(function(btn){
+  document.querySelectorAll('.share-quiet-link').forEach(function(btn){
     btn.addEventListener('click', async function(){
       var url = btn.getAttribute('data-share-url') || window.location.href;
       var title = btn.getAttribute('data-share-title') || 'solo.quando';
-      var text = btn.getAttribute('data-share-text') || "Saw this and thought of you. A small Swiss food project starting in Z\u00fcrich \u2014 pre-order homemade food from your neighbour, made only when you want it.";
-      var feedback = btn.parentElement.querySelector('.share-feedback');
+      var text = btn.getAttribute('data-share-text') || "Saw this and thought of you. A small Swiss food project starting in Z\u00fcrich. Pre-order homemade food from your neighbour, made only when you want it.";
+      var feedback = btn.parentElement.querySelector('.share-quiet-feedback');
       function showFeedback(msg){
         if(feedback){ feedback.textContent = msg; feedback.classList.add('show'); setTimeout(function(){ feedback.classList.remove('show'); }, 2400); }
       }
