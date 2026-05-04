@@ -157,19 +157,19 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .batch-back a:hover{color:var(--terra);}
 
 /* ─── HERO (image right, unified) ─── */
-.b1-hero{display:grid;grid-template-columns:1fr 1fr;min-height:640px;background:var(--bone);}
+.b1-hero{display:grid;grid-template-columns:1.15fr 0.85fr;min-height:480px;background:var(--bone);}
 @media(max-width:860px){.b1-hero{grid-template-columns:1fr;min-height:auto;}}
-.b1-hero-text{display:flex;flex-direction:column;justify-content:center;padding:60px 56px 60px 48px;}
-@media(max-width:720px){.b1-hero-text{padding:48px 22px;}}
-.b1-hero h1{font-size:clamp(46px,5.4vw,72px);line-height:1.04;letter-spacing:-.025em;margin:14px 0 18px;}
+.b1-hero-text{display:flex;flex-direction:column;justify-content:center;padding:56px 52px 56px 48px;}
+@media(max-width:720px){.b1-hero-text{padding:44px 22px;}}
+.b1-hero h1{font-size:clamp(40px,4.6vw,60px);line-height:1.05;letter-spacing:-.025em;margin:14px 0 18px;}
 .b1-hero h1 em{color:var(--terra);font-style:italic;}
-.b1-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:480px;line-height:1.55;margin-bottom:18px;}
+.b1-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:460px;line-height:1.55;margin-bottom:18px;}
 .b1-hero .baker{font-size:14px;color:var(--dim);letter-spacing:.04em;}
 .b1-hero .baker strong{color:var(--ink);font-weight:400;}
 .b1-hero .mothers-day-flag{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--terra);margin-top:14px;line-height:1.4;}
 .b1-hero-img{position:relative;overflow:hidden;background:var(--paper);}
-@media(max-width:860px){.b1-hero-img{height:110vw;min-height:380px;}}
-.b1-hero-img img{width:100%;height:100%;object-fit:cover;}
+@media(max-width:860px){.b1-hero-img{height:72vw;min-height:300px;max-height:440px;}}
+.b1-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center;}
 
 /* ─── PROGRESS BAND ─── */
 .b1-progress{padding:56px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
@@ -296,7 +296,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
     <div class="b1-progress-stats">
       <div class="stat">
         <div class="k">Reserved</div>
-        <div class="v"><em>17</em></div>
+        <div class="v"><em id="reserved-count">16</em></div>
         <div class="sub">jars pre-ordered so far</div>
       </div>
       <div class="stat">
@@ -312,7 +312,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
     </div>
 
     <div class="b1-progress-track">
-      <div class="b1-progress-bar" style="width:80%;"></div>
+      <div class="b1-progress-bar" id="progress-bar" style="width:80%;"></div>
       <div class="threshold-marker" style="left:50%;"></div>
     </div>
     <div class="b1-progress-legend">
@@ -321,9 +321,9 @@ picture img{width:100%;height:100%;object-fit:cover;}
       <span>max (20)</span>
     </div>
 
-    <p class="kicker" style="color:var(--terra);margin-top:28px;">Threshold reached. The batch is happening. 4 jars remaining.</p>
+    <p class="kicker" id="status-kicker" style="color:var(--terra);margin-top:28px;">Threshold reached. The batch is happening. 4 jars remaining.</p>
     <p style="font-size:14px;color:var(--dim);margin-top:6px;">
-      <strong>Reserve by:</strong> end of day Mon 5 May 2026 &nbsp;&nbsp;
+      <strong>Reserve by:</strong> end of day Mon 4 May 2026 &nbsp;&nbsp;
       <strong>Pickup:</strong> Friday 8 May 2026
     </p>
 
@@ -522,7 +522,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
         <p><em>A note on timing.</em> Mother's Day in Switzerland falls Sunday 10 May. A jar picked up Friday makes a quiet gift for Sunday.</p>
       </div>
 
-      <p style="margin-top:24px;font-size:15px;">If 10 jars aren't reserved by end of day Mon 5 May 2026, the batch closes. Your TWINT is refunded within 48 hours.</p>
+      <p style="margin-top:24px;font-size:15px;">If 10 jars aren't reserved by end of day Mon 4 May 2026, the batch closes. Your TWINT is refunded within 48 hours.</p>
     </div>
   </div>
 </section>
@@ -606,6 +606,75 @@ picture img{width:100%;height:100%;object-fit:cover;}
       display.textContent = 'CHF ' + (n * 14);
     });
   }
+
+  // ── Auto sold-out at maximum capacity ──
+  // When the reserved count reaches the max (20), the order form is
+  // automatically replaced with a sold-out message and no further
+  // orders can be placed. To trigger: change <em id="reserved-count">16</em>
+  // to 20 (or higher) at the top of the page. Everything else flips
+  // automatically. The minimum threshold is 10, the maximum is 20.
+  var MAX_CAPACITY = 20;
+  var MIN_THRESHOLD = 10;
+  var countEl = document.getElementById('reserved-count');
+  var reserved = countEl ? parseInt(countEl.textContent, 10) : 0;
+
+  // Update progress bar width to match (clamped to 100%)
+  var bar = document.getElementById('progress-bar');
+  if(bar){
+    var pct = Math.min(100, Math.round((reserved / MAX_CAPACITY) * 100));
+    bar.style.width = pct + '%';
+  }
+
+  // Update status kicker dynamically (only if NOT sold out yet)
+  var kicker = document.getElementById('status-kicker');
+  if(kicker && reserved < MAX_CAPACITY){
+    if(reserved >= MIN_THRESHOLD){
+      var remaining = MAX_CAPACITY - reserved;
+      kicker.textContent = 'Threshold reached. The batch is happening. ' +
+        remaining + (remaining === 1 ? ' jar' : ' jars') + ' remaining.';
+    } else {
+      var needed = MIN_THRESHOLD - reserved;
+      kicker.textContent = needed + (needed === 1 ? ' jar' : ' jars') +
+        ' away from confirming the batch.';
+    }
+  }
+
+  // Sold out: hide form, replace with thank-you message, update everything
+  if(reserved >= MAX_CAPACITY){
+    var formSection = document.getElementById('reserve');
+    if(formSection){
+      formSection.outerHTML =
+        '<section class="b1-section alt" id="reserve">' +
+          '<div class="wrap">' +
+            '<div class="b1-section-inner">' +
+              '<div class="b1-full" style="text-align:center;">' +
+                '<p class="kicker" style="color:var(--terra);">Sold out</p>' +
+                '<h2 style="margin-top:14px;">Thank you &mdash; Batch 001 is <em>full</em>.</h2>' +
+                '<p>We&rsquo;ve reached maximum capacity for Batch 001. ' +
+                  'All 20 jars are spoken for. Pre-orders are now closed.</p>' +
+                '<p>If you reserved a jar: pickup is Friday 8 May 2026, ' +
+                  'central Z&uuml;rich, 15:00 to 18:00. The address comes ' +
+                  'to your inbox the day before.</p>' +
+                '<p style="margin-top:24px;">If you missed it &mdash; write to ' +
+                  '<a href="mailto:hello@soloquando.ch?subject=Waitlist%20Batch%20002" style="color:var(--terra);">hello@soloquando.ch</a> ' +
+                  'and you&rsquo;ll be first to know about Batch 002.</p>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</section>';
+    }
+
+    // Update the status kicker on the progress block
+    if(kicker){
+      kicker.textContent = 'Sold out. Thank you. Batch 001 closed at ' + MAX_CAPACITY + ' jars.';
+    }
+
+    // Flip the hero kicker from "still open" to "sold out"
+    var heroKickers = document.querySelectorAll('.b1-hero-text .kicker');
+    heroKickers.forEach(function(el){
+      el.textContent = 'Batch 001 \u00B7 sold out \u00B7 thank you';
+    });
+  }
 })();
 </script>
 
@@ -614,7 +683,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <!-- STATE C (commented out): threshold NOT reached after deadline   -->
 <!--                                                                 -->
-<!-- After end of day Mon 5 May 2026, if the count is below      -->
+<!-- After end of day Mon 4 May 2026, if the count is below      -->
 <!-- 10, replace the form section above with this block: -->
 <!--                                                                 -->
 <!-- <section class="b1-section alt" id="reserve">                  -->
