@@ -523,7 +523,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
         <p><em>A note on timing.</em> Mother's Day in Switzerland falls Sunday 10 May. A jar picked up Friday makes a quiet gift for Sunday.</p>
       </div>
 
-      <p style="margin-top:24px;font-size:15px;">If 10 jars aren't reserved by end of day Mon 4 May 2026, the batch closes. Your TWINT is refunded within 48 hours.</p>
+      <p style="margin-top:24px;font-size:15px;">If 10 jars aren't reserved by end of day Mon 4 May 2026, the batch closes. Your payment is refunded in full within 48 hours.</p>
     </div>
   </div>
 </section>
@@ -541,16 +541,11 @@ picture img{width:100%;height:100%;object-fit:cover;}
       <div class="b1-form-head">
         <p class="kicker" style="color:var(--terra);">Still open</p>
         <h2 style="margin-top:14px;">Reserve <em>your jar</em>.</h2>
-        <p class="sub">Batch 001 is confirmed and growing. We're starting small with friends, family, and neighbours we already know. To reserve, fill in below and send TWINT.</p>
+        <p class="sub">Batch 001 is confirmed and growing. We're starting small with friends, family, and neighbours we already know. Fill in below, then complete payment in the next step.</p>
       </div>
 
       <div class="b1-form-card">
-        <form id="batch001-form"
-              action="https://formspree.io/f/mbdwljae"
-              method="POST">
-          <input type="hidden" name="_next" value="https://soloquando.ch/thank-you-batch-001"/>
-          <input type="hidden" name="_subject" value="New batch 001 reservation &mdash; strawberry marmalade"/>
-          <input type="hidden" name="batch" value="batch-001-strawberry-marmalade"/>
+        <form id="batch001-form" novalidate>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
 
           <div class="f-row">
@@ -574,7 +569,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
               </select>
             </label>
             <div class="f-total">
-              <p class="f-total-lbl">Total to TWINT</p>
+              <p class="f-total-lbl">Total</p>
               <p class="f-total-val" id="total-display">CHF 14</p>
             </div>
           </div>
@@ -586,10 +581,10 @@ picture img{width:100%;height:100%;object-fit:cover;}
 
           <label class="f-check">
             <input type="checkbox" required/>
-            <span>I understand my reservation is confirmed only after I send CHF 14 (per jar) via TWINT to +41 78 794 27 00 with my name as reference. *</span>
+            <span>I understand my reservation is confirmed only once payment is completed in the next step. *</span>
           </label>
 
-          <button type="submit" class="f-submit">Reserve my jar &rarr;</button>
+          <button type="submit" class="f-submit" id="reserve-submit">Continue to payment &rarr;</button>
         </form>
       </div>
     </div>
@@ -598,13 +593,124 @@ picture img{width:100%;height:100%;object-fit:cover;}
 
 <script>
 (function(){
+  // ─────────────────────────────────────────────────────────────────
+  // PAYREXX CONFIG — fill in before going live
+  // ─────────────────────────────────────────────────────────────────
+  // 1. PAYREXX_INSTANCE: your Payrexx subdomain (the part before .payrexx.com)
+  //    Find it in your Payrexx merchant dashboard URL.
+  //    Example: if your dashboard is at https://soloquando.payrexx.com,
+  //    then set this to 'soloquando'.
+  // 2. PAYREXX_TID: the Paylink/Page template ID (called "tid" in Payrexx URLs)
+  //    Create a Paylink in Payrexx → Tools → Paylink, set payment type =
+  //    "one-time", currency = CHF, then copy the tid from the generated URL
+  //    (e.g. https://soloquando.payrexx.com/pay?tid=XXXXXXXX → use XXXXXXXX).
+  // 3. THANK_YOU_URL: where to send the customer after a successful payment.
+  // ─────────────────────────────────────────────────────────────────
+  var PAYREXX_INSTANCE = 'soloquando';
+  var PAYREXX_TID      = '74d6da41';
+  var THANK_YOU_URL    = 'https://soloquando.ch/thank-you-batch-001';
+  var PRICE_PER_JAR    = 14;
+
   // Update total when jars selection changes
   var select = document.getElementById('jars-select');
   var display = document.getElementById('total-display');
   if(select && display){
     select.addEventListener('change', function(){
       var n = parseInt(select.value, 10) || 1;
-      display.textContent = 'CHF ' + (n * 14);
+      display.textContent = 'CHF ' + (n * PRICE_PER_JAR);
+    });
+  }
+
+  // ─── FORM SUBMISSION FLOW ────────────────────────────────────────
+  // Step 1: validate the form
+  // Step 2: open Payrexx modal pre-filled with name, email, amount,
+  //         and a purpose string that includes jars + notes
+  // Step 3: on payment success → redirect to thank-you page
+  // ─────────────────────────────────────────────────────────────────
+  var form = document.getElementById('batch001-form');
+  var submitBtn = document.getElementById('reserve-submit');
+  if(form && submitBtn){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      // Honeypot — silently drop bots
+      var gotcha = form.querySelector('input[name="_gotcha"]');
+      if(gotcha && gotcha.value){ return; }
+
+      // Native form validation (required fields, email format, checkbox)
+      if(!form.checkValidity()){
+        form.reportValidity();
+        return;
+      }
+
+      // Read form values
+      var name  = (form.elements['name'].value || '').trim();
+      var email = (form.elements['email'].value || '').trim();
+      var jars  = parseInt(form.elements['jars'].value, 10) || 1;
+      var notes = (form.elements['notes'].value || '').trim();
+      var amount = jars * PRICE_PER_JAR;
+
+      // Split name into forename / surname for Payrexx pre-fill
+      var nameParts = name.split(/\s+/);
+      var forename = nameParts.shift() || '';
+      var surname  = nameParts.join(' ');
+
+      // Lock the button
+      submitBtn.disabled = true;
+      var originalLabel = submitBtn.textContent;
+      submitBtn.textContent = 'Opening payment…';
+
+      // Build the purpose string — this is what Theoni sees in the
+      // Payrexx transaction record + email notification, so it carries
+      // the full order context (jars, version preference, notes).
+      var purposeBits = [
+        'Batch 001 — Strawberry marmalade',
+        jars + (jars === 1 ? ' jar' : ' jars')
+      ];
+      if(notes) purposeBits.push('Notes: ' + notes);
+      var purpose = purposeBits.join(' · ');
+
+      // Build the Payrexx payment URL with pre-filled parameters.
+      // Reference: https://docs.payrexx.com/merchant/english/account/tools/parameters
+      var params = new URLSearchParams();
+      params.set('tid', PAYREXX_TID);
+      params.set('invoice_amount', amount.toFixed(2));
+      params.set('invoice_currency', 'CHF');
+      params.set('contact_forename', forename);
+      if(surname) params.set('contact_surname', surname);
+      params.set('contact_email', email);
+      params.set('purpose', purpose);
+
+      var payrexxUrl = 'https://' + PAYREXX_INSTANCE + '.payrexx.com/pay?' + params.toString();
+
+      // Create the modal trigger element, initialize the modal, and click it
+      var trigger = document.createElement('a');
+      trigger.className = 'payrexx-modal-window';
+      trigger.href = '#';
+      trigger.setAttribute('data-href', payrexxUrl);
+      trigger.style.display = 'none';
+      document.body.appendChild(trigger);
+
+      // jQuery + Payrexx modal lib are loaded at the end of the page
+      if(window.jQuery && jQuery.fn.payrexxModal){
+        jQuery(trigger).payrexxModal({
+          // On successful payment, send customer to thank-you page
+          hidden: function(transaction){
+            if(transaction && transaction.status === 'confirmed'){
+              window.location.href = THANK_YOU_URL;
+            } else {
+              // Modal closed without completing payment — let them retry
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalLabel;
+            }
+          }
+        });
+        trigger.click();
+      } else {
+        // Fallback: if for any reason the modal lib didn't load, send
+        // the customer to the Payrexx hosted page directly
+        window.location.href = payrexxUrl;
+      }
     });
   }
 
@@ -694,7 +800,8 @@ picture img{width:100%;height:100%;object-fit:cover;}
 <!--         <p class="kicker">Batch closed</p>                      -->
 <!--         <h2>Batch 001 didn't reach the <em>threshold</em>.</h2> -->
 <!--         <p>This time, not enough neighbours said yes. Refunds   -->
-<!--            processed by Theoni via TWINT within 48 hours.</p>   -->
+<!--            are processed automatically via Payrexx within        -->
+<!--            48 hours.</p>                                         -->
 <!--         <p>Sign up below for batch 002.</p>                     -->
 <!--         <a href="/join" class="btn btn-dark">                  -->
 <!--           Get notified about batch 002 &rarr;</a>               -->
@@ -789,5 +896,13 @@ picture img{width:100%;height:100%;object-fit:cover;}
   });
 })();
 </script>
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- PAYREXX MODAL DEPENDENCIES                                      -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- jQuery is required by the Payrexx modal library (see          -->
+<!-- https://docs.payrexx.com/developer/guides/embedding/modal-window) -->
+<!-- Loading at end of body so the page renders first.               -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://media.payrexx.com/modal/v1/modal.min.js"></script>
 </body>
 </html>
