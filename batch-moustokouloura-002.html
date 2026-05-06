@@ -455,7 +455,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
       <div class="b1-form-head">
         <p class="kicker" style="color:var(--terra);">Pre-orders open</p>
         <h2>Pre-order before I <em>bake</em>.</h2>
-        <p class="sub">Payment is taken now. If the threshold is not reached by Sun 10 May, every payment is refunded automatically &mdash; no questions.</p>
+        <p class="sub">Select your quantity and pickup day. Your name, email and payment details are collected by Payrexx. If the threshold is not reached by Sun 10 May, every payment is refunded automatically.</p>
       </div>
 
       <div class="b1-form-card">
@@ -465,18 +465,6 @@ picture img{width:100%;height:100%;object-fit:cover;}
           https://soloquando.ch/thank-you-batch-002
         -->
         <form id="batch002-form" novalidate>
-
-          <!-- Name + Email -->
-          <div class="b1-form-row">
-            <label>
-              <span class="f-label">Your name *</span>
-              <input class="f-input" type="text" name="name" autocomplete="name" placeholder="Anna Meier"/>
-            </label>
-            <label>
-              <span class="f-label">Your email *</span>
-              <input class="f-input" type="email" name="email" autocomplete="email" placeholder="anna@email.ch"/>
-            </label>
-          </div>
 
           <!-- Pieces + Running total -->
           <div class="b1-bags-row" style="margin-bottom:18px;">
@@ -510,12 +498,6 @@ picture img{width:100%;height:100%;object-fit:cover;}
           <label style="margin-bottom:22px;">
             <span class="f-label">Notes (optional)</span>
             <textarea class="f-input" name="notes" placeholder="Allergies, questions, or anything else."></textarea>
-          </label>
-
-          <!-- Consent -->
-          <label class="b1-form-check">
-            <input type="checkbox" id="consent-check"/>
-            <span>I understand this is a pre-order with immediate payment via Payrexx. If the minimum threshold is not reached by Sun 10 May 2026, I receive a full refund automatically. I agree to the <a href="/terms">terms of use</a>. *</span>
           </label>
 
           <!-- Validation error -->
@@ -721,19 +703,10 @@ var PAYREXX_LINKS = {
     e.preventDefault();
     hideError();
 
-    var name    = form.querySelector('[name="name"]').value.trim();
-    var email   = form.querySelector('[name="email"]').value.trim();
     var pieces  = form.querySelector('[name="pieces"]').value;
     var pickup  = form.querySelector('[name="pickup_day"]').value;
-    var notes   = form.querySelector('[name="notes"]').value.trim();
-    var consent = document.getElementById('consent-check').checked;
-
     /* Validation */
-    if(!name)    return showError('Please enter your name.');
-    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-                 return showError('Please enter a valid email address.');
     if(!pickup)  return showError('Please choose your pickup day.');
-    if(!consent) return showError('Please accept the terms to continue.');
 
     /* Check Payrexx links are configured */
     var link = PAYREXX_LINKS[pieces];
@@ -744,11 +717,8 @@ var PAYREXX_LINKS = {
     /* Save order to sessionStorage for thank-you page */
     try {
       sessionStorage.setItem('sq_mousto_order', JSON.stringify({
-        name   : name,
-        email  : email,
         pieces : pieces,
         pickup : pickup,
-        notes  : notes,
         total  : (parseInt(pieces) * 3.5).toFixed(2)
       }));
     } catch(err){}
