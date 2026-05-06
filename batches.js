@@ -28,7 +28,7 @@ window.SOLO_BATCHES = [
     pickupLocation: 'central Z\u00fcrich',
     price: 'CHF 14 per jar',                              // carousel
     priceTable: 'CHF 14 / jar',                           // table
-    image: '/batch-jar-900.jpg',
+    image: '/hero-marmalade-800.webp',
     imageAlt: 'Strawberry marmalade in a glass jar with fresh strawberries and lemon on a wooden table',
     link: '/batch-strawberry-marmalade-001',
     cta: 'View batch \u2192'
@@ -49,7 +49,7 @@ window.SOLO_BATCHES = [
     pickupLocation: 'central Z\u00fcrich',
     price: 'CHF 3.50 per piece (1\u20135 per order)',
     priceTable: 'CHF 3.50 / piece',
-    image: '/batch-mousto-900.jpg',
+    image: '/mousto-900.webp',
     imageAlt: 'Greek moustokouloura with sesame seeds and coffee',
     link: '/batch-moustokouloura-002',
     cta: 'Pre-order now \u2192'
