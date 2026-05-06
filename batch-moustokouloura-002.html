@@ -5,19 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Batch 002: Mousto &middot; solo.quando</title>
 <meta name="description" content="Mousto &mdash; a very traditional Greek cookie made with petimezi. Pre-order before Theoni bakes. 1 to 5 pieces per order at CHF 3.50 each. Pickup Wed 13 or Sat 16 May, central Z&uuml;rich."/>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="/style.css">
 <style>
-/* ─── BACK LINK ─── */
 .batch-back{padding:32px 0 16px;background:var(--bone);}
 .batch-back a{font-size:14px;color:var(--dim);text-decoration:none;letter-spacing:.04em;transition:color .2s;}
 .batch-back a:hover{color:var(--terra);}
-
-/* ─── HERO (image right, unified) ─── */
 .b1-hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;background:var(--bone);}
 @media(max-width:860px){.b1-hero{grid-template-columns:1fr;min-height:auto;}}
 .b1-hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;}
@@ -27,66 +22,49 @@
 .b1-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:460px;line-height:1.55;margin-bottom:18px;}
 .b1-hero .baker{font-size:14px;color:var(--dim);letter-spacing:.04em;}
 .b1-hero .baker strong{color:var(--ink);font-weight:400;}
-.b1-hero .mothers-day-flag{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--terra);margin-top:14px;line-height:1.4;}
 .b1-hero-img{position:relative;overflow:hidden;background:var(--paper);}
-
 .b1-hero-img img{width:100%;height:100%;object-fit:cover;display:block;}
 @media(max-width:860px){.b1-hero-img{height:60vw;min-height:300px;}}
-
-/* ─── PROGRESS BAND ─── */
+.b1-hero-specs{display:flex;gap:24px;margin-top:22px;flex-wrap:wrap;}
+.b1-hero-specs div{display:flex;flex-direction:column;gap:3px;}
+.sk{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);}
+.sv{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);}
 .b1-progress{padding:56px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.b1-progress-inner{max-width:780px;margin:0 auto;text-align:center;}
-.b1-progress-stat{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,60px);color:var(--ink);line-height:1.1;letter-spacing:-.015em;margin-bottom:8px;}
-.b1-progress-stat em{color:var(--terra);font-style:italic;}
-.b1-progress-bar-wrap{max-width:480px;height:6px;margin:18px auto;background:rgba(43,26,15,.08);border-radius:3px;overflow:hidden;}
-.b1-progress-bar{height:100%;background:var(--terra);transition:width .6s ease;}
-.b1-progress-meta{display:flex;justify-content:center;gap:32px;margin-top:18px;flex-wrap:wrap;font-size:14px;color:var(--dim);}
-.b1-progress-meta strong{color:var(--ink);font-weight:400;}
-@media(max-width:560px){.b1-progress-meta{gap:16px;font-size:13px;}}
-
-/* ─── FULL SECTION ─── */
+.b1-progress-inner{max-width:780px;margin:0 auto;text-align:center;padding:0 24px;}
+.b1-progress-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px;}
+@media(max-width:600px){.b1-progress-stats{grid-template-columns:1fr 1fr;}}
+.b1-progress-stats .stat .k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);}
+.b1-progress-stats .stat .v{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,52px);font-weight:400;line-height:1;margin-top:6px;color:var(--ink);}
+.b1-progress-stats .stat .v em{font-style:italic;color:var(--terra);}
+.b1-progress-stats .stat .sub{font-size:12px;color:var(--dim);margin-top:4px;}
+.b1-progress-track{height:6px;background:rgba(43,26,15,.08);position:relative;border-radius:3px;overflow:visible;max-width:480px;margin:0 auto;}
+.b1-progress-bar{height:100%;background:var(--terra);border-radius:3px;transition:width .6s ease;}
+.threshold-marker{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--ink);border-radius:1px;}
+.b1-progress-legend{display:flex;justify-content:space-between;margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);max-width:480px;margin-left:auto;margin-right:auto;}
 .b1-section{padding:80px 0;}
 .b1-section.alt{background:var(--paper);}
+.b1-section.ink{background:var(--ink);color:var(--bone);}
+.b1-section.ink h2{color:var(--bone);}
+.b1-section.ink p{color:rgba(245,239,228,.75);}
+.b1-section.ink .kicker{color:var(--terra);}
 .b1-section-inner{max-width:780px;margin:0 auto;}
 .b1-section h2{font-size:clamp(32px,4vw,46px);letter-spacing:-.02em;margin-bottom:22px;line-height:1.1;}
 .b1-section h2 em{color:var(--terra);font-style:italic;}
 .b1-section p{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:16px;}
-
-/* ─── PROCESS — numbered steps with dotted connector ─── */
-.process-list{margin:0;padding:0;list-style:none;counter-reset:step;}
-.process-step{display:grid;grid-template-columns:64px 1fr;gap:28px;padding-bottom:36px;position:relative;}
-.process-step:not(:last-child)::after{content:'';position:absolute;left:31px;top:64px;bottom:0;width:1px;background:rgba(43,26,15,.12);}
-.process-step:last-child{padding-bottom:0;}
-.process-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:36px;color:var(--terra);line-height:1;width:64px;height:64px;border-radius:50%;background:var(--bone);border:1px solid rgba(194,102,61,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;}
-.process-text h3{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:400;letter-spacing:-.005em;margin-bottom:8px;line-height:1.3;color:var(--ink);}
-.process-text p{font-size:17px;line-height:1.65;color:var(--dim);margin:0;}
-
-/* ─── INGREDIENTS / ALLERGENS ─── */
+.pullquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;line-height:1.55;border-left:3px solid var(--terra);padding-left:24px;margin:28px 0;color:var(--ink);}
+.b1-section.ink .pullquote{color:var(--bone);border-left-color:var(--terra);}
 .b1-spec{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px;}
 @media(max-width:680px){.b1-spec{grid-template-columns:1fr;gap:18px;}}
 .b1-spec-item{padding:24px 26px;background:var(--bone);border:1px solid var(--line);}
 .b1-spec-item h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
 .b1-spec-item p{font-size:16px;line-height:1.6;color:var(--ink);margin:0;}
 .b1-spec-item .small{font-size:13px;color:var(--dim);margin-top:8px;}
-
-/* ─── PICKUP DETAILS ─── */
-.b1-pickup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px;}
+.b1-pickup-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px;}
 @media(max-width:680px){.b1-pickup-grid{grid-template-columns:1fr;gap:14px;}}
-.b1-pickup-card{padding:24px 20px;background:var(--bone);border:1px solid var(--line);text-align:center;}
+.b1-pickup-card{padding:24px 20px;background:var(--bone);border:1px solid var(--line);}
 .b1-pickup-card .lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
-.b1-pickup-card .val{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--ink);line-height:1.3;}
-
-/* Mother's Day note inside pickup section */
-.b1-mothers-day-note{margin-top:32px;padding:22px 24px;background:rgba(194,102,61,.08);border-left:3px solid var(--terra);}
-.b1-mothers-day-note p{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--ink);line-height:1.55;margin:0;}
-.b1-mothers-day-note p em{color:var(--terra);font-style:italic;}
-
-/* ─── SOFT-LAUNCH NOTE ─── */
-.b1-softlaunch{padding:40px 32px;background:rgba(122,139,106,.08);border-left:3px solid var(--sage);margin:32px 0;}
-.b1-softlaunch p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--ink);line-height:1.5;margin-bottom:10px;}
-.b1-softlaunch p:last-child{margin-bottom:0;}
-
-/* ─── RESERVATION FORM ─── */
+.b1-pickup-card .val{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--ink);line-height:1.3;margin-bottom:8px;}
+.b1-pickup-card .note{font-size:14px;color:var(--dim);line-height:1.5;}
 .b1-form-s{padding:96px 0;background:var(--ink);color:var(--bone);}
 .b1-form-inner{max-width:680px;margin:0 auto;}
 .b1-form-head{text-align:center;margin-bottom:48px;}
@@ -101,42 +79,23 @@
 .b1-form-card .f-input::placeholder{color:rgba(245,239,228,.4);}
 .b1-form-card .f-input:focus{border-color:rgba(245,239,228,.4);background:rgba(245,239,228,.09);}
 .b1-form-card textarea.f-input{resize:vertical;min-height:90px;font-family:'Jost',sans-serif;line-height:1.5;}
-.b1-form-card .f-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-@media(max-width:560px){.b1-form-card .f-row{grid-template-columns:1fr;gap:0;}}
-.b1-form-card .f-jars-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;}
-@media(max-width:560px){.b1-form-card .f-jars-row{grid-template-columns:1fr;gap:0;}}
-.b1-form-card .f-total{padding:16px;background:rgba(194,102,61,.1);border:1px solid rgba(194,102,61,.3);text-align:center;}
-.b1-form-card .f-total-lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,239,228,.65);margin-bottom:4px;}
-.b1-form-card .f-total-val{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--bone);line-height:1;}
-.b1-form-card .f-check{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:rgba(245,239,228,.7);line-height:1.55;cursor:pointer;margin-bottom:22px;}
-.b1-form-card .f-check a{color:var(--terra);text-decoration:underline;}
-.b1-form-card .f-submit{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:18px 32px;width:100%;transition:background .2s;}
-.b1-form-card .f-submit:hover{background:#a8552a;}
-
-/* ─── BATCH FULL ALTERNATIVE (commented out, swap in when threshold reached) ─── */
+.b1-bags-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;}
+@media(max-width:560px){.b1-bags-row{grid-template-columns:1fr;}}
+.b1-total{padding:16px;background:rgba(194,102,61,.1);border:1px solid rgba(194,102,61,.3);text-align:center;}
+.b1-total-lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,239,228,.65);margin-bottom:4px;}
+.b1-total-val{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--bone);line-height:1;}
+.b1-form-result{display:none;padding:18px 22px;margin-top:14px;}
+.b1-form-result.err{background:rgba(194,102,61,.08);border-left:3px solid var(--terra);}
+.b1-form-result p{font-family:'Jost',sans-serif;font-size:15px;color:var(--terra);}
+.b1-form-submit{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:18px 32px;width:100%;transition:background .2s;}
+.b1-form-submit:hover{background:#a8552a;}
 .b1-full{padding:80px 32px;background:rgba(122,139,106,.12);border:1px solid rgba(122,139,106,.4);text-align:center;}
 .b1-full h2{font-size:clamp(36px,4.6vw,56px);color:var(--ink);margin-bottom:18px;letter-spacing:-.02em;line-height:1.05;}
 .b1-full h2 em{color:var(--terra);font-style:italic;}
 .b1-full p{font-size:18px;color:var(--dim);margin-bottom:28px;}
 </style>
-<style>
-.b1-progress{padding:56px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.b1-progress-inner{max-width:780px;margin:0 auto;text-align:center;padding:0 24px;}
-.b1-progress-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px;}
-@media(max-width:600px){.b1-progress-stats{grid-template-columns:1fr 1fr;}}
-.b1-progress-stats .stat .k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);}
-.b1-progress-stats .stat .v{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,52px);font-weight:400;line-height:1;margin-top:6px;color:var(--ink);}
-.b1-progress-stats .stat .v em{font-style:italic;color:var(--terra);}
-.b1-progress-stats .stat .sub{font-size:12px;color:var(--dim);margin-top:4px;}
-.b1-progress-track{height:6px;background:rgba(43,26,15,.08);position:relative;border-radius:3px;overflow:visible;max-width:480px;margin:0 auto;}
-.b1-progress-bar{height:100%;background:var(--terra);border-radius:3px;transition:width .6s ease;}
-.threshold-marker{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--ink);border-radius:1px;}
-.b1-progress-legend{display:flex;justify-content:space-between;margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);max-width:480px;margin-left:auto;margin-right:auto;}
-</style>
 </head>
 <body>
-
-<!-- ─── NAV ─── -->
 <nav class="nav"><div class="nav-inner">
   <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="186" height="40"/></a>
   <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products" class="on">Batches</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li></ul>
@@ -148,16 +107,8 @@
   </div>
 </div></nav>
 
-<!-- ─── BACK ─── -->
-<div class="batch-back">
-  <div class="wrap">
-    <a href="/#batches">&larr; Back to all batches</a>
-  </div>
-</div>
+<div class="batch-back"><div class="wrap"><a href="/#batches">&larr; Back to all batches</a></div></div>
 
-<!-- ═══════════════════════════════════════════════════ -->
-<!--   HERO                                              -->
-<!-- ═══════════════════════════════════════════════════ -->
 <header class="b1-hero">
   <div class="b1-hero-text">
     <div class="badge"><span class="badge-dot"></span><span>Pre-orders open</span></div>
@@ -165,295 +116,152 @@
     <h1><em>Mousto</em>.</h1>
     <p class="sub">A very traditional Greek cookie. Petimezi, olive oil, cinnamon. Made by hand, made only when you want it.</p>
     <p class="baker"><strong>By Theoni</strong> &middot; Z&uuml;rich</p>
-
     <div class="b1-hero-specs">
-      <div>
-        <span class="sk">Per piece</span>
-        <span class="sv">~60g</span>
-      </div>
-      <div>
-        <span class="sk">Price</span>
-        <span class="sv">CHF 3.50</span>
-      </div>
-      <div>
-        <span class="sk">Order</span>
-        <span class="sv">1 to 5 pieces</span>
-      </div>
+      <div><span class="sk">Per piece</span><span class="sv">~60g</span></div>
+      <div><span class="sk">Price</span><span class="sv">CHF 3.50</span></div>
+      <div><span class="sk">Order</span><span class="sv">1 to 5 pieces</span></div>
     </div>
   </div>
   <div class="b1-hero-img">
-    <!--
-      Temporary placeholder — replace with your own photography before going live.
-      Third-party image, not licensed for commercial use.
-    -->
-    <picture><source type="image/jpeg" srcset="mousto-900.jpg"><img src="mousto-900.jpg" alt="Greek moustokouloura with sesame seeds and coffee" fetchpriority="high"/></picture>
+    <img src="mousto-900.jpg" alt="Greek moustokouloura with sesame seeds and coffee" fetchpriority="high"/>
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════════════════ -->
-<!--   PROGRESS BAND                                     -->
-<!-- ═══════════════════════════════════════════════════ -->
 <section class="b1-progress">
   <div class="wrap b1-progress-inner">
-
     <div class="b1-progress-stats">
-      <div class="stat">
-        <div class="k">Pre-ordered</div>
-        <div class="v"><em id="reserved-count">0</em></div>
-        <div class="sub">pieces so far</div>
-      </div>
-      <div class="stat">
-        <div class="k">Minimum threshold</div>
-        <div class="v">10</div>
-        <div class="sub">pieces needed for the batch to happen</div>
-      </div>
-      <div class="stat">
-        <div class="k">Maximum capacity</div>
-        <div class="v">60</div>
-        <div class="sub">pieces total &mdash; hard cap</div>
-      </div>
+      <div class="stat"><div class="k">Pre-ordered</div><div class="v"><em id="reserved-count">0</em></div><div class="sub">pieces so far</div></div>
+      <div class="stat"><div class="k">Minimum threshold</div><div class="v">10</div><div class="sub">pieces needed for the batch to happen</div></div>
+      <div class="stat"><div class="k">Maximum capacity</div><div class="v">60</div><div class="sub">pieces total &mdash; hard cap</div></div>
     </div>
-
     <div class="b1-progress-track">
       <div class="b1-progress-bar" id="progress-bar" style="width:0%;"></div>
       <div class="threshold-marker" style="left:16.7%;"></div>
     </div>
-    <div class="b1-progress-legend">
-      <span>0</span>
-      <span>&#9650; min (10)</span>
-      <span>max (60)</span>
-    </div>
-
+    <div class="b1-progress-legend"><span>0</span><span>&#9650; min (10)</span><span>max (60)</span></div>
     <p class="kicker" id="status-kicker" style="color:var(--terra);margin-top:28px;">10 pieces away from confirming this batch.</p>
     <p style="font-size:14px;color:var(--dim);margin-top:6px;">
       <strong>Pre-order by:</strong> end of day Sun 10 May 2026 &nbsp;&nbsp;
       <strong>Delivery:</strong> Wed 13 May or Sat 16 May &mdash; choose at checkout
     </p>
-
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════ -->
-<!--   THE STORY                                         -->
-<!-- ═══════════════════════════════════════════════════ -->
 <section class="b1-section">
-  <div class="wrap">
-    <div class="b1-section-inner">
-      <p class="kicker">The story</p>
-      <h2 style="margin-top:14px;">For the <em>rainy week</em> ahead.</h2>
-
-      <p style="margin-top:28px;">Next week in Z&uuml;rich the air goes cold again. Rain. Around thirteen degrees. The kind of morning that asks for coffee held in both hands, and something on the side.</p>
-
-      <p>In her kitchen, on rainy autumn afternoons in Thessaloniki, my grandmother baked these. Petimezi and cinnamon for hours &mdash; even her clothes carried the smell. The kitchen window steamed up. The oven was slow. Nothing in that house was rushed.</p>
-
-      <p>As a child I dipped them in milk. The petimezi clouded the cup. I waited. When I bit down, the cookie was already soft &mdash; the warmth came first, then the cinnamon, then the petimezi underneath. My mouth was so full there was no space left for anything else.</p>
-
-      <p>These are the same cookies. Made the same way. For the same kind of morning.</p>
-    </div>
-  </div>
+  <div class="wrap"><div class="b1-section-inner">
+    <p class="kicker">The story</p>
+    <h2 style="margin-top:14px;">For the <em>rainy week</em> ahead.</h2>
+    <p style="margin-top:28px;">Next week in Z&uuml;rich the air goes cold again. Rain. Around thirteen degrees. The kind of morning that asks for coffee held in both hands, and something on the side.</p>
+    <p>In her kitchen, on rainy autumn afternoons in Thessaloniki, my grandmother baked these. Petimezi and cinnamon for hours &mdash; even her clothes carried the smell. The kitchen window steamed up. The oven was slow. Nothing in that house was rushed.</p>
+    <p>As a child I dipped them in milk. The petimezi clouded the cup. I waited. When I bit down, the cookie was already soft &mdash; the warmth came first, then the cinnamon, then the petimezi underneath. My mouth was so full there was no space left for anything else.</p>
+    <p>These are the same cookies. Made the same way. For the same kind of morning.</p>
+  </div></div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════ -->
-<!--   THE PETIMEZI — dark section                       -->
-<!-- ═══════════════════════════════════════════════════ -->
 <section class="b1-section ink">
-  <div class="wrap">
-    <div class="b1-section-inner">
-      <p class="kicker">The petimezi</p>
-      <h2 style="margin-top:14px;">The Honey of the <em>Poor</em>.</h2>
-
-      <p style="margin-top:28px;">Petimezi takes most of a day. The must &mdash; what is left after pressing the grapes &mdash; goes into a wide pot over the lowest possible flame and slowly, over hours, reduces to something thick and dark and sweet. Concentrated grape, until it is almost memory.</p>
-
-      <p class="pullquote">The Greeks and Romans used it long before refined sugar existed. They called it <em>the honey of the poor</em> &mdash; not because it was lesser, but because it came from what was already there.</p>
-
-      <p>It carries the bitterness of the grape skin underneath the sweetness. It carries the smell of harvest. It is why a moustokouloura is not a biscuit.</p>
-
-      <p>The petimezi in this batch comes from a small producer in Greece. There is no equivalent in any Swiss shop. When you taste the cookie, that is what you are tasting &mdash; something that has no business being in Z&uuml;rich, and is.</p>
-    </div>
-  </div>
+  <div class="wrap"><div class="b1-section-inner">
+    <p class="kicker">The petimezi</p>
+    <h2 style="margin-top:14px;">The Honey of the <em>Poor</em>.</h2>
+    <p style="margin-top:28px;">Petimezi takes most of a day. The must &mdash; what is left after pressing the grapes &mdash; goes into a wide pot over the lowest possible flame and slowly, over hours, reduces to something thick and dark and sweet. Concentrated grape, until it is almost memory.</p>
+    <p class="pullquote">The Greeks and Romans used it long before refined sugar existed. They called it <em>the honey of the poor</em> &mdash; not because it was lesser, but because it came from what was already there.</p>
+    <p>It carries the bitterness of the grape skin underneath the sweetness. It carries the smell of harvest. It is why a moustokouloura is not a biscuit.</p>
+    <p>The petimezi in this batch comes from a small producer in Greece. There is no equivalent in any Swiss shop. When you taste the cookie, that is what you are tasting &mdash; something that has no business being in Z&uuml;rich, and is.</p>
+  </div></div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════ -->
-<!--   WHAT'S IN IT                                      -->
-<!-- ═══════════════════════════════════════════════════ -->
 <section class="b1-section">
-  <div class="wrap">
-    <div class="b1-section-inner">
-      <p class="kicker">What's in it</p>
-      <h2 style="margin-top:14px;">Six ingredients. <em>One cookie.</em></h2>
-      <p>Made in a home kitchen from ingredients you can name. No preservatives, no thickeners, nothing added.</p>
-
-      <div class="b1-spec">
-
-        <div class="b1-spec-item">
-          <h4>Ingredients</h4>
-          <p>Greek extra virgin olive oil. Petimezi. Fresh orange juice. Soft flour. Cinnamon. Clove. Sesame seeds on top.</p>
-          <p class="small">Trace baking powder and a pinch of baking soda.</p>
-        </div>
-
-        <div class="b1-spec-item">
-          <h4>Good to know</h4>
-          <p>Vegan. No eggs, no butter, no dairy. One moustokoulouro per piece, approximately 60&thinsp;g.</p>
-          <p class="small">Contains wheat and sesame. Made in a home kitchen that also handles nuts, eggs, and dairy. Cross-contamination is possible.</p>
-        </div>
-
+  <div class="wrap"><div class="b1-section-inner">
+    <p class="kicker">What's in it</p>
+    <h2 style="margin-top:14px;">Six ingredients. <em>One cookie.</em></h2>
+    <p>Made in a home kitchen from ingredients you can name. No preservatives, no thickeners, nothing added.</p>
+    <div class="b1-spec">
+      <div class="b1-spec-item">
+        <h4>Ingredients</h4>
+        <p>Greek extra virgin olive oil. Petimezi. Fresh orange juice. Soft flour. Cinnamon. Clove. Sesame seeds on top.</p>
+        <p class="small">Trace baking powder and a pinch of baking soda.</p>
+      </div>
+      <div class="b1-spec-item">
+        <h4>Good to know</h4>
+        <p>Vegan. No eggs, no butter, no dairy. One moustokoulouro per piece, approximately 60&thinsp;g.</p>
+        <p class="small">Contains wheat and sesame. Made in a home kitchen that also handles nuts, eggs, and dairy. Cross-contamination is possible.</p>
       </div>
     </div>
-  </div>
+  </div></div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════ -->
-<!--   PICKUP — two dates                                -->
-<!-- ═══════════════════════════════════════════════════ -->
 <section class="b1-section alt">
-  <div class="wrap">
-    <div class="b1-section-inner">
-      <p class="kicker">Pickup</p>
-      <h2 style="margin-top:14px;">Two days. <em>Pick yours</em> at checkout.</h2>
-      <p>The exact pickup address is sent to you the day before. Quiet, central, walkable from a tram stop.</p>
-
-      <div class="b1-pickup-grid">
-
-        <div class="b1-pickup-card">
-          <p class="lbl">Wednesday 13 May</p>
-          <p class="val">For the long-weekend escape.</p>
-          <p class="note">Pick up your order before you leave. Fresh from the morning&rsquo;s bake.</p>
-        </div>
-
-        <div class="b1-pickup-card">
-          <p class="lbl">Saturday 16 May</p>
-          <p class="val">For the ones staying in Z&uuml;rich.</p>
-          <p class="note">Late morning. Take your time. Bring a coffee from the corner.</p>
-        </div>
-
+  <div class="wrap"><div class="b1-section-inner">
+    <p class="kicker">Pickup</p>
+    <h2 style="margin-top:14px;">Two days. <em>Pick yours</em> at checkout.</h2>
+    <p>The exact pickup address is sent to you the day before. Quiet, central, walkable from a tram stop.</p>
+    <div class="b1-pickup-grid">
+      <div class="b1-pickup-card">
+        <p class="lbl">Wednesday 13 May</p>
+        <p class="val">For the long-weekend escape.</p>
+        <p class="note">Pick up your order before you leave. Fresh from the morning&rsquo;s bake.</p>
       </div>
-
-      <p style="margin-top:28px;font-size:15px;">If 10 pieces are not pre-ordered by end of day Sun 10 May 2026, the batch does not happen. Every payment is refunded in full within 48 hours.</p>
+      <div class="b1-pickup-card">
+        <p class="lbl">Saturday 16 May</p>
+        <p class="val">For the ones staying in Z&uuml;rich.</p>
+        <p class="note">Late morning. Take your time. Bring a coffee from the corner.</p>
+      </div>
     </div>
-  </div>
+    <p style="margin-top:28px;font-size:15px;">If 10 pieces are not pre-ordered by end of day Sun 10 May 2026, the batch does not happen. Every payment is refunded in full within 48 hours.</p>
+  </div></div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════ -->
-<!--   PRE-ORDER FORM — STATE A: OPEN (default)          -->
-<!--   Swap to STATE B or C by replacing this section.   -->
-<!-- ═══════════════════════════════════════════════════ -->
 <section class="b1-form-s" id="reserve">
-  <div class="wrap">
-    <div class="b1-form-inner">
-
-      <div class="b1-form-head">
-        <p class="kicker" style="color:var(--terra);">Pre-orders open</p>
-        <h2>Pre-order before I <em>bake</em>.</h2>
-        <p class="sub">Select your quantity and pickup day. Your name, email and payment details are collected by Payrexx. If the threshold is not reached by Sun 10 May, every payment is refunded automatically.</p>
-      </div>
-
-      <div class="b1-form-card">
-        <!--
-          Payrexx payment links — paste your 5 Payrexx URLs into the JS below.
-          In each Payrexx link, set the success URL to:
-          https://soloquando.ch/thank-you-batch-002
-        -->
-        <form id="batch002-form" novalidate>
-
-          <!-- Pieces + Running total -->
-          <div class="b1-bags-row" style="margin-bottom:18px;">
-            <label>
-              <span class="f-label">How many pieces? *</span>
-              <select class="f-input" name="pieces" id="bags-select">
-                <option value="1" selected>1 piece &mdash; CHF 3.50</option>
-                <option value="2">2 pieces &mdash; CHF 7.00</option>
-                <option value="3">3 pieces &mdash; CHF 10.50</option>
-                <option value="4">4 pieces &mdash; CHF 14.00</option>
-                <option value="5">5 pieces &mdash; CHF 17.50</option>
-              </select>
-            </label>
-            <div class="b1-total">
-              <p class="b1-total-lbl">You pay</p>
-              <p class="b1-total-val" id="total-display">CHF 3.50</p>
-            </div>
-          </div>
-
-          <!-- Pickup day -->
-          <label style="margin-bottom:18px;">
-            <span class="f-label">Pickup day *</span>
-            <select class="f-input" name="pickup_day" id="pickup-select">
-              <option value="" disabled selected>Choose your day</option>
-              <option value="Wednesday 13 May">Wednesday 13 May &mdash; for the long weekend</option>
-              <option value="Saturday 16 May">Saturday 16 May &mdash; for those staying in Z&uuml;rich</option>
+  <div class="wrap"><div class="b1-form-inner">
+    <div class="b1-form-head">
+      <p class="kicker" style="color:var(--terra);">Pre-orders open</p>
+      <h2>Pre-order before I <em>bake</em>.</h2>
+      <p class="sub">Select your quantity and pickup day. Your payment is handled securely by Payrexx. If the threshold is not reached by Sun 10 May, every payment is refunded automatically.</p>
+    </div>
+    <div class="b1-form-card">
+      <form id="batch002-form" novalidate>
+        <div class="b1-bags-row" style="margin-bottom:18px;">
+          <label>
+            <span class="f-label">How many pieces? *</span>
+            <select class="f-input" name="pieces" id="bags-select">
+              <option value="1" selected>1 piece &mdash; CHF 3.50</option>
+              <option value="2">2 pieces &mdash; CHF 7.00</option>
+              <option value="3">3 pieces &mdash; CHF 10.50</option>
+              <option value="4">4 pieces &mdash; CHF 14.00</option>
+              <option value="5">5 pieces &mdash; CHF 17.50</option>
             </select>
           </label>
-
-          <!-- Notes -->
-          <label style="margin-bottom:22px;">
-            <span class="f-label">Notes (optional)</span>
-            <textarea class="f-input" name="notes" placeholder="Allergies, questions, or anything else."></textarea>
-          </label>
-
-          <!-- Validation error -->
-          <div class="b1-form-result err" id="form-error" role="alert" style="display:none;">
-            <p id="form-error-msg">Please fill in all required fields.</p>
+          <div class="b1-total">
+            <p class="b1-total-lbl">You pay</p>
+            <p class="b1-total-val" id="total-display">CHF 3.50</p>
           </div>
-
-          <!-- Submit button — redirects to Payrexx -->
-          <button type="submit" class="b1-form-submit" id="submit-btn">
-            Continue to payment &mdash; CHF <span id="btn-total">3.50</span> on Payrexx &rarr;
-          </button>
-
-          <p style="margin-top:16px;font-size:12px;color:rgba(245,239,228,.4);text-align:center;letter-spacing:.04em;">
-            You will be redirected to Payrexx to complete your payment securely.<br/>
-            <span style="opacity:.7;">TWINT &middot; PostFinance &middot; Visa &middot; Mastercard &middot; Apple Pay &middot; Google Pay</span>
-          </p>
-
-        </form>
-      </div>
-      </div>
-
+        </div>
+        <label style="margin-bottom:18px;">
+          <span class="f-label">Pickup day *</span>
+          <select class="f-input" name="pickup_day" id="pickup-select">
+            <option value="" disabled selected>Choose your day</option>
+            <option value="Wednesday 13 May">Wednesday 13 May &mdash; for the long weekend</option>
+            <option value="Saturday 16 May">Saturday 16 May &mdash; for those staying in Z&uuml;rich</option>
+          </select>
+        </label>
+        <label style="margin-bottom:22px;">
+          <span class="f-label">Notes (optional)</span>
+          <textarea class="f-input" name="notes" placeholder="Allergies, questions, or anything else."></textarea>
+        </label>
+        <div class="b1-form-result err" id="form-error" role="alert" style="display:none;">
+          <p id="form-error-msg">Please fill in all required fields.</p>
+        </div>
+        <button type="submit" class="b1-form-submit" id="submit-btn">
+          Continue to payment &mdash; CHF <span id="btn-total">3.50</span> on Payrexx &rarr;
+        </button>
+        <p style="margin-top:16px;font-size:12px;color:rgba(245,239,228,.4);text-align:center;letter-spacing:.04em;">
+          You will be redirected to Payrexx to complete your payment securely.<br/>
+          <span style="opacity:.7;">TWINT &middot; PostFinance &middot; Visa &middot; Mastercard &middot; Apple Pay &middot; Google Pay</span>
+        </p>
+      </form>
     </div>
-  </div>
+  </div></div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- STATE B (commented): threshold reached, batch confirmed, open  -->
-<!--                                                                 -->
-<!-- Replace the STATE A section above with this when threshold hit: -->
-<!--                                                                 -->
-<!-- <section class="b1-form-s" id="reserve">                        -->
-<!--   <div class="wrap"><div class="b1-form-inner">                  -->
-<!--     <div class="b1-form-head">                                   -->
-<!--       <p class="kicker" style="color:var(--terra);">Confirmed</p> -->
-<!--       <h2>The batch is <em>happening</em>.</h2>                  -->
-<!--       <p class="sub">We hit the threshold. Theoni is baking.     -->
-<!--          A few bags left before capacity.</p>                    -->
-<!--     </div>                                                       -->
-<!--     [paste the same form block here with updated count]         -->
-<!--   </div></div>                                                   -->
-<!-- </section>                                                       -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
-
-<!-- ═══════════════════════════════════════════════════════════════ -->
-<!-- STATE C (commented): threshold NOT reached after deadline       -->
-<!--                                                                 -->
-<!-- Replace the STATE A section above with this after Sun 10 May   -->
-<!-- if the count is below 10:                                       -->
-<!--                                                                 -->
-<!-- <section class="b1-section alt" id="reserve">                   -->
-<!--   <div class="wrap"><div class="b1-section-inner">               -->
-<!--     <p class="kicker">Batch closed</p>                           -->
-<!--     <h2>Batch 002 didn't reach the <em>threshold</em>.</h2>     -->
-<!--     <p>This time, not enough neighbours said yes.                -->
-<!--        Every payment has been refunded in full.</p>              -->
-<!--     <p>Leave your email below and you'll hear about Batch 004    -->
-<!--        first.</p>                                                -->
-<!--     <a href="mailto:hello@soloquando.ch?subject=Notify%20me%20Batch%20004" -->
-<!--        class="btn-notify" style="display:inline-block;margin-top:24px; -->
-<!--        background:var(--ink);color:var(--bone);padding:16px 28px; -->
-<!--        font-size:13px;letter-spacing:.18em;text-transform:uppercase;"> -->
-<!--        Notify me &rarr;</a>                                      -->
-<!--   </div></div>                                                   -->
-<!-- </section>                                                       -->
-<!-- ═══════════════════════════════════════════════════════════════ -->
-
-<!-- ─── SHARE ─── -->
 <section class="share-quiet">
   <div class="wrap">
     <p class="share-quiet-line">
@@ -467,7 +275,6 @@
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
     <div>
@@ -509,45 +316,7 @@
   </div>
 </div></footer>
 
-<!-- ─── SCRIPTS ─── -->
 <script>
-/* ── Nav burger ── */
-(function(){
-  var burger = document.querySelector('.nav-burger');
-  var menu   = document.querySelector('.nav-links');
-  if(!burger || !menu) return;
-  function close(){menu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');}
-  burger.addEventListener('click',function(){
-    var open = menu.classList.toggle('open');
-    burger.classList.toggle('open',open);
-    burger.setAttribute('aria-expanded',String(open));
-  });
-  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
-  document.addEventListener('click',function(e){if(!burger.contains(e.target)&&!menu.contains(e.target))close();});
-})();
-
-/* ── Share button ── */
-(function(){
-  document.querySelectorAll('.share-quiet-link').forEach(function(btn){
-    btn.addEventListener('click',async function(){
-      var url      = btn.getAttribute('data-share-url') || window.location.href;
-      var title    = btn.getAttribute('data-share-title') || 'solo.quando';
-      var text     = btn.getAttribute('data-share-text')  || "Saw this and thought of you. A traditional Greek cookie, made to order in Z\u00fcrich. Pre-order before she bakes.";
-      var feedback = btn.parentElement.querySelector('.share-quiet-feedback');
-      function showFeedback(msg){
-        if(feedback){feedback.textContent=msg;feedback.classList.add('show');setTimeout(function(){feedback.classList.remove('show');},2400);}
-      }
-      if(navigator.share){
-        try{await navigator.share({title:title,text:text,url:url});showFeedback('Thank you.');}catch(e){}
-      } else if(navigator.clipboard){
-        try{await navigator.clipboard.writeText(text+' '+url);showFeedback('Link copied.');}
-        catch(e){showFeedback('Copy: '+url);}
-      } else {showFeedback('Copy: '+url);}
-    });
-  });
-})();
-
-/* ── Payrexx payment links — fill in your 5 URLs below ── */
 var PAYREXX_LINKS = {
   '1': 'https://soloquando.payrexx.com/en/?payment=7600013c9fdc90f073de1d39415b9d7e',
   '2': 'https://soloquando.payrexx.com/en/?payment=ec0dee29224bb7d29140cd9a7f3ebe76',
@@ -555,123 +324,52 @@ var PAYREXX_LINKS = {
   '4': 'https://soloquando.payrexx.com/en/?payment=33d2639ffeba125232afee47dca30b04',
   '5': 'https://soloquando.payrexx.com/en/?payment=76b5b93129945cf6eced7f9e96891f64'
 };
-
-/* ── Quantity → total display ── */
 (function(){
-  var PRICE   = 3.5;
-  var select  = document.getElementById('bags-select');
-  var display = document.getElementById('total-display');
-  var btnTotal= document.getElementById('btn-total');
+  var PRICE=3.5;
+  var select=document.getElementById('bags-select');
+  var display=document.getElementById('total-display');
+  var btnTotal=document.getElementById('btn-total');
   if(!select) return;
-  function update(){
-    var n = parseInt(select.value,10)||1;
-    var t = (n * PRICE).toFixed(2);
-    if(display)  display.textContent = 'CHF '+t;
-    if(btnTotal) btnTotal.textContent = t;
-  }
-  select.addEventListener('change',update);
-  update();
+  function update(){var n=parseInt(select.value,10)||1;var t=(n*PRICE).toFixed(2);if(display)display.textContent='CHF '+t;if(btnTotal)btnTotal.textContent=t;}
+  select.addEventListener('change',update);update();
 })();
-
-/* ── Form submit → validate → sessionStorage → Payrexx redirect ── */
 (function(){
-  var form    = document.getElementById('batch002-form');
-  var errBox  = document.getElementById('form-error');
-  var errMsg  = document.getElementById('form-error-msg');
-  var btn     = document.getElementById('submit-btn');
+  var form=document.getElementById('batch002-form');
+  var errBox=document.getElementById('form-error');
+  var errMsg=document.getElementById('form-error-msg');
+  var btn=document.getElementById('submit-btn');
   if(!form) return;
-
-  function showError(msg){
-    errMsg.textContent = msg;
-    errBox.style.display = 'block';
-    errBox.scrollIntoView({behavior:'smooth',block:'center'});
-  }
-  function hideError(){ errBox.style.display = 'none'; }
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    hideError();
-
-    var pieces  = form.querySelector('[name="pieces"]').value;
-    var pickup  = form.querySelector('[name="pickup_day"]').value;
-    /* Validation */
-    if(!pickup)  return showError('Please choose your pickup day.');
-
-    /* Check Payrexx links are configured */
-    var link = PAYREXX_LINKS[pieces];
-    if(!link || link.charAt(0) === '['){
-      return showError('Payment is being set up — please try again shortly or write to hello@soloquando.ch.');
-    }
-
-    /* Save order to sessionStorage for thank-you page */
-    try {
-      sessionStorage.setItem('sq_mousto_order', JSON.stringify({
-        pieces : pieces,
-        pickup : pickup,
-        total  : (parseInt(pieces) * 3.5).toFixed(2)
-      }));
-    } catch(err){}
-
-    /* Redirect to Payrexx */
-    btn.textContent = 'Redirecting to Payrexx…';
-    btn.disabled = true;
-    window.location.href = link;
+  function showError(msg){errMsg.textContent=msg;errBox.style.display='block';errBox.scrollIntoView({behavior:'smooth',block:'center'});}
+  function hideError(){errBox.style.display='none';}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();hideError();
+    var pieces=form.querySelector('[name="pieces"]').value;
+    var pickup=form.querySelector('[name="pickup_day"]').value;
+    if(!pickup) return showError('Please choose your pickup day.');
+    var link=PAYREXX_LINKS[pieces];
+    if(!link) return showError('Payment is being set up — please try again shortly or write to hello@soloquando.ch.');
+    try{sessionStorage.setItem('sq_mousto_order',JSON.stringify({pieces:pieces,pickup:pickup,total:(parseInt(pieces)*3.5).toFixed(2)}));}catch(err){}
+    btn.textContent='Redirecting to Payrexx…';btn.disabled=true;
+    window.location.href=link;
   });
 })();
-
-/* ── Progress bar + status kicker + sold-out logic ── */
 (function(){
-  var MIN_THRESHOLD = 10;
-  var MAX_CAPACITY  = 60;
-
-  var countEl  = document.getElementById('reserved-count');
-  var reserved = countEl ? parseInt(countEl.textContent,10) : 0;
-
-  /* Progress bar */
-  var bar = document.getElementById('progress-bar');
-  if(bar){
-    var pct = Math.min(100, Math.round((reserved/MAX_CAPACITY)*100));
-    bar.style.width = pct+'%';
+  var MIN=10,MAX=60;
+  var countEl=document.getElementById('reserved-count');
+  var reserved=countEl?parseInt(countEl.textContent,10):0;
+  var bar=document.getElementById('progress-bar');
+  if(bar){var pct=Math.min(100,Math.round((reserved/MAX)*100));bar.style.width=pct+'%';}
+  var kicker=document.getElementById('status-kicker');
+  if(kicker&&reserved<MAX){
+    if(reserved>=MIN){var rem=MAX-reserved;kicker.textContent='Threshold reached. The batch is happening. '+rem+(rem===1?' piece':' pieces')+' remaining.';}
+    else{var needed=MIN-reserved;kicker.textContent=needed+(needed===1?' piece':' pieces')+' away from confirming this batch.';}
   }
-
-  /* Status kicker */
-  var kicker = document.getElementById('status-kicker');
-  if(kicker && reserved < MAX_CAPACITY){
-    if(reserved >= MIN_THRESHOLD){
-      var rem = MAX_CAPACITY - reserved;
-      kicker.textContent = 'Threshold reached. The batch is happening. '+rem+(rem===1?' piece':' pieces')+' remaining.';
-    } else {
-      var needed = MIN_THRESHOLD - reserved;
-      kicker.textContent = needed+(needed===1?' piece':' pieces')+' away from confirming this batch.';
-    }
-  }
-
-  /* Sold out: swap form for message */
-  if(reserved >= MAX_CAPACITY){
-    var formSection = document.getElementById('reserve');
-    if(formSection){
-      formSection.outerHTML =
-        '<section class="b1-section alt" id="reserve">'+
-          '<div class="wrap"><div class="b1-section-inner">'+
-            '<p class="kicker" style="color:var(--terra);">Sold out</p>'+
-            '<h2 style="margin-top:14px;">Thank you &mdash; Batch 002 is <em>full</em>.</h2>'+
-            '<p>All 60 pieces are spoken for. Pre-orders are closed.</p>'+
-            '<p>If you pre-ordered: your delivery day and pickup address come to your inbox the day before.</p>'+
-            '<p style="margin-top:24px;">Missed it? Write to '+
-              '<a href="mailto:hello@soloquando.ch?subject=Waitlist%20Batch%20004" style="color:var(--terra);">hello@soloquando.ch</a>'+
-              ' and you&rsquo;ll hear about the next batch first.</p>'+
-          '</div></div>'+
-        '</section>';
-    }
-    /* Also update kicker */
-    var k2 = document.getElementById('status-kicker');
-    if(k2) k2.textContent = 'Sold out. Thank you. Batch 002 closed at '+MAX_CAPACITY+' pieces.';
-    var hk = document.querySelectorAll('.b1-hero-text .kicker');
-    hk.forEach(function(el){el.textContent='Batch 002 \u00b7 sold out \u00b7 thank you';});
+  if(reserved>=MAX){
+    var fs=document.getElementById('reserve');
+    if(fs){fs.outerHTML='<section class="b1-section alt" id="reserve"><div class="wrap"><div class="b1-section-inner"><p class="kicker" style="color:var(--terra);">Sold out</p><h2 style="margin-top:14px;">Thank you &mdash; Batch 002 is <em>full</em>.</h2><p>All 60 pieces are spoken for.</p></div></div></section>';}
   }
 })();
 </script>
-
 <script src="/shared.js"></script>
 </body>
 </html>
