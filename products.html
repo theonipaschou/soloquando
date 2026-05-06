@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Products &middot; solo.quando</title>
+<meta name="description" content="All solo.quando batches. Pre-order homemade food from your neighbour in Z&uuml;rich &mdash; made only when you want it."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --terra:#C4622D;
+  --bone:#FAF3EE;
+  --ink:#2B1A0F;
+  --dim:#7A5C4A;
+  --line:rgba(43,26,15,.12);
+  --paper:#FFFDFA;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* ── NAV ─────────────────────────── */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,253,250,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:'Cormorant Garamond',serif;font-size:24px;letter-spacing:-.01em;color:var(--ink)}
+.brand em{color:var(--terra);font-style:italic}
+.nav-links{list-style:none;display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:14px;letter-spacing:.04em;color:var(--ink);opacity:.78;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.nav-links a.on{opacity:1;color:var(--terra)}
+.burger{display:none;background:none;border:0;width:36px;height:36px;cursor:pointer}
+.burger span{display:block;width:22px;height:1.5px;background:var(--ink);margin:5px auto;transition:.25s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:760px){
+  .burger{display:block}
+  .nav-links{position:absolute;top:68px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:0;max-height:0;overflow:hidden;transition:max-height .3s}
+  .nav-links.open{max-height:300px}
+  .nav-links li{width:100%;border-top:1px solid var(--line)}
+  .nav-links a{display:block;padding:18px 28px}
+}
+
+/* ── PAGE HEAD ───────────────────── */
+.page-head{padding:90px 0 30px}
+.kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:18px}
+.page-head h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(40px,5.6vw,68px);letter-spacing:-.025em;line-height:1.05;margin-bottom:18px}
+.page-head h1 em{color:var(--terra);font-style:italic}
+.page-head p.lede{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2vw,22px);color:var(--dim);max-width:640px;line-height:1.55}
+
+/* ── CAROUSEL ────────────────────── */
+.batch-section{padding:50px 0 90px}
+.batch-carousel-outer{position:relative}
+.batch-carousel-track-wrap{overflow:hidden}
+.batch-carousel-track{display:flex;gap:24px;transition:transform .55s cubic-bezier(.4,.0,.2,1);will-change:transform}
+.bcard{flex:0 0 calc((100% - 48px)/3);background:var(--bone);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s, box-shadow .25s}
+.bcard:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(43,26,15,.08)}
+.bcard-disabled{cursor:default;opacity:.78}
+.bcard-disabled:hover{transform:none;box-shadow:none}
+.bcard-img{height:260px;background-size:cover;background-position:center;background-color:#e8ddd3}
+.bcard-img-placeholder{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f1e5d8,#e8d8c4)}
+.bcard-img-placeholder span{font-family:'Cormorant Garamond',serif;font-size:64px;color:rgba(43,26,15,.18);font-style:italic}
+.bcard-body{padding:22px 22px 26px;flex:1;display:flex;flex-direction:column}
+.bcard-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.bcard-id{font-family:'Cormorant Garamond',serif;font-size:24px;color:rgba(43,26,15,.35)}
+.bcard-pill{font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:5px 10px;border-radius:99px;font-weight:400}
+.bcard-pill-confirmed{background:rgba(122,140,110,.18);color:#4d6240}
+.bcard-pill-open{background:var(--terra);color:#fff}
+.bcard-pill-soon{background:rgba(43,26,15,.06);color:var(--dim)}
+.bcard-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;line-height:1.15;letter-spacing:-.01em;margin-bottom:10px}
+.bcard-title em{color:var(--terra);font-style:italic}
+.bcard-title-dim{color:rgba(43,26,15,.4)}
+.bcard-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--dim);line-height:1.5;margin-bottom:16px}
+.bcard-meta{font-size:13px;color:var(--dim);line-height:1.6;margin-top:auto}
+.bcard-meta dt{display:inline-block;width:60px;color:rgba(43,26,15,.5);font-size:11px;letter-spacing:.1em;text-transform:uppercase;vertical-align:top;padding-top:2px}
+.bcard-meta dd{display:inline-block;width:calc(100% - 70px);margin-bottom:6px;color:var(--ink)}
+.bcard-meta-dim{font-style:italic;color:rgba(43,26,15,.45)}
+
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:var(--paper);border:1px solid var(--line);box-shadow:0 4px 14px rgba(43,26,15,.08);cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;transition:background .2s, box-shadow .2s}
+.carousel-btn:hover{background:var(--bone);box-shadow:0 6px 18px rgba(43,26,15,.12)}
+.carousel-btn svg{width:18px;height:18px;fill:none;stroke:var(--ink);stroke-width:1.6}
+.carousel-btn-prev{left:-22px}
+.carousel-btn-next{right:-22px}
+.carousel-dots{display:flex;gap:10px;justify-content:center;margin-top:34px}
+.carousel-dot{width:8px;height:8px;border-radius:50%;border:0;background:rgba(43,26,15,.18);cursor:pointer;padding:0;transition:background .2s, transform .2s}
+.carousel-dot.on{background:var(--terra);transform:scale(1.25)}
+
+@media (max-width:960px){
+  .bcard{flex:0 0 calc((100% - 24px)/2)}
+}
+@media (max-width:640px){
+  .bcard{flex:0 0 84%}
+  .carousel-btn{display:none}
+  .batch-carousel-track-wrap{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .batch-carousel-track{transform:none !important;transition:none}
+  .bcard{scroll-snap-align:start}
+}
+
+/* ── TABLE ───────────────────────── */
+.registry-section{background:var(--bone);padding:90px 0;border-top:1px solid var(--line)}
+.registry-section .wrap{max-width:1080px}
+.registry-head{margin-bottom:42px}
+.registry-head h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(32px,3.8vw,46px);letter-spacing:-.02em;line-height:1.1;margin-bottom:14px}
+.registry-head h2 em{color:var(--terra);font-style:italic}
+.registry-head p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--dim);line-height:1.55}
+
+.batch-table-wrap{background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow-x:auto}
+.batch-table{width:100%;border-collapse:collapse;font-size:14px;min-width:840px}
+.batch-table thead th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:500;text-align:left;padding:18px 16px;border-bottom:1px solid var(--line);background:var(--bone)}
+.batch-table tbody td{padding:18px 16px;border-bottom:1px solid var(--line);color:var(--ink);vertical-align:middle}
+.batch-table tbody tr:last-child td{border-bottom:0}
+.batch-table tbody tr.row-dim td{color:rgba(43,26,15,.4)}
+.batch-table tbody tr.row-dim td em{color:rgba(43,26,15,.4)}
+.batch-table .cell-id{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(43,26,15,.55);width:64px}
+.batch-table tbody tr.row-dim .cell-id{color:rgba(43,26,15,.3)}
+.batch-table em{font-style:italic;color:var(--terra)}
+.status-pill{display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:99px;font-weight:400;white-space:nowrap}
+.status-pill-confirmed{background:rgba(122,140,110,.18);color:#4d6240}
+.status-pill-open{background:var(--terra);color:#fff}
+.status-pill-soon{background:rgba(43,26,15,.06);color:var(--dim)}
+
+/* ── CTA ─────────────────────────── */
+.bake-cta{padding:80px 0;text-align:center}
+.bake-cta h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(28px,3.4vw,38px);letter-spacing:-.015em;margin-bottom:14px}
+.bake-cta h3 em{color:var(--terra);font-style:italic}
+.bake-cta p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--dim);margin-bottom:28px}
+.btn-pill{display:inline-block;padding:14px 30px;border-radius:99px;background:var(--ink);color:#fff;font-size:13px;letter-spacing:.16em;text-transform:uppercase;transition:background .2s, transform .2s}
+.btn-pill:hover{background:var(--terra);transform:translateY(-1px)}
+
+/* ── FOOTER ──────────────────────── */
+.footer{padding:50px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--dim)}
+.footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.footer a:hover{color:var(--terra)}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="/" class="brand">solo<em>.</em>quando</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="main-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/products" class="on">Products</a></li>
+      <li><a href="/how-it-works">How it works</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ─── PAGE HEAD ─── -->
+<section class="page-head">
+  <div class="wrap">
+    <p class="kicker">Every batch</p>
+    <h1>The <em>full list</em>.</h1>
+    <p class="lede">All solo.quando batches, in order. Made by your neighbour, only when you want it.</p>
+  </div>
+</section>
+
+<!-- ─── CAROUSEL ─── -->
+<section class="batch-section">
+  <div class="wrap">
+    <div class="batch-carousel-outer">
+      <button class="carousel-btn carousel-btn-prev" aria-label="Previous batch">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="carousel-btn carousel-btn-next" aria-label="Next batch">
+        <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+      </button>
+      <div class="batch-carousel-track-wrap">
+        <div class="batch-carousel-track" id="batch-track"><!-- rendered by batches.js --></div>
+      </div>
+      <div class="carousel-dots" id="batch-dots"><!-- rendered by batches.js --></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REGISTRY TABLE ─── -->
+<section class="registry-section">
+  <div class="wrap">
+    <div class="registry-head">
+      <p class="kicker">The registry</p>
+      <h2>Every batch, in <em>order</em>.</h2>
+      <p>From the first jar to whatever comes next.</p>
+    </div>
+    <div class="batch-table-wrap">
+      <table class="batch-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Product</th>
+            <th>Baker</th>
+            <th>Status</th>
+            <th>Pre-order by</th>
+            <th>Pickup</th>
+            <th>Where</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody id="batch-table-body"><!-- rendered by batches.js --></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="bake-cta">
+  <div class="wrap">
+    <h3>Bake the <em>next one</em>.</h3>
+    <p>Your recipe. Your price. We handle the rest.</p>
+    <a href="/#producers" class="btn-pill">Become a baker</a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="wrap">
+    <div>solo.quando &middot; hello@soloquando.ch &middot; Z&uuml;rich</div>
+    <div>Made only when you want it.</div>
+  </div>
+</footer>
+
+<script src="/batches.js"></script>
+<script>
+/* mobile burger */
+(function(){
+  var burger=document.querySelector('.burger'),menu=document.querySelector('.nav-links');
+  if(!burger||!menu)return;
+  function close(){menu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+  burger.addEventListener('click',function(){var open=menu.classList.toggle('open');burger.classList.toggle('open',open);burger.setAttribute('aria-expanded',String(open));});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  document.addEventListener('click',function(e){if(!burger.contains(e.target)&&!menu.contains(e.target))close();});
+})();
+</script>
+</body>
+</html>
