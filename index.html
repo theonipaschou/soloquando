@@ -198,9 +198,34 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .example-head h2 em{color:var(--terra);font-style:italic;}
 .example-head p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:540px;margin:0 auto;line-height:1.5;}
 
-.batch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1180px;margin:0 auto;}
-@media(max-width:960px){.batch-grid{grid-template-columns:1fr 1fr;gap:22px;}}
-@media(max-width:600px){.batch-grid{grid-template-columns:1fr;gap:18px;}}
+/* ── Carousel ── */
+.batch-carousel-outer{position:relative;max-width:1180px;margin:0 auto;}
+.batch-carousel-track-wrap{overflow:hidden;}
+.batch-carousel-track{display:flex;gap:24px;transition:transform .45s cubic-bezier(.25,.46,.45,.94);}
+.batch-carousel-track .batch-card-link,
+.batch-carousel-track .batch-card.is-placeholder{flex:0 0 calc(33.333% - 16px);min-width:0;}
+.batch-card-img{height:260px;overflow:hidden;background:var(--paper);flex-shrink:0;}
+.batch-card-img img{width:100%;height:100%;object-fit:cover;object-position:center 20%;}
+.carousel-btn{position:absolute;top:130px;width:44px;height:44px;background:var(--bone);border:1px solid var(--line);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:background .2s,color .2s;color:var(--ink);}
+.carousel-btn:hover{background:var(--ink);color:var(--bone);}
+.carousel-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.carousel-btn-prev{left:-22px;}
+.carousel-btn-next{right:-22px;}
+.carousel-dots{display:flex;gap:8px;justify-content:center;margin-top:28px;}
+.carousel-dot{width:7px;height:7px;border-radius:50%;background:rgba(43,26,15,.15);border:none;cursor:pointer;padding:0;transition:background .25s;}
+.carousel-dot.on{background:var(--terra);}
+@media(max-width:960px){
+  .batch-carousel-track-wrap{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .batch-carousel-track-wrap::-webkit-scrollbar{display:none;}
+  .batch-carousel-track{transition:none;}
+  .batch-carousel-track .batch-card-link,
+  .batch-carousel-track .batch-card.is-placeholder{scroll-snap-align:start;flex:0 0 80vw;}
+  .carousel-btn{display:none;}
+}
+@media(max-width:600px){
+  .batch-carousel-track .batch-card-link,
+  .batch-carousel-track .batch-card.is-placeholder{flex:0 0 90vw;}
+}
 
 /* Live pulse dot in eyebrow */
 .batch-card-eyebrow.is-live::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--terra);animation:pulse 2s infinite;margin-right:8px;vertical-align:middle;}
@@ -390,7 +415,15 @@ details[open] .faqi-q::after{content:'\2013';}
       <h2 style="margin-top:14px;">Real batches. <em>Real people</em>.</h2>
       <p>Theoni and Anca. Two home bakers in Z&uuml;rich. Each batch made only when enough neighbours pre-order.</p>
     </div>
-    <div class="batch-grid">
+    <div class="batch-carousel-outer">
+      <button class="carousel-btn carousel-btn-prev" aria-label="Previous batch">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="carousel-btn carousel-btn-next" aria-label="Next batch">
+        <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+      </button>
+      <div class="batch-carousel-track-wrap">
+        <div class="batch-carousel-track" id="batch-track">
 
       <!-- ── Batch 001 — Strawberry marmalade · Theoni · CONFIRMED ── -->
       <a href="/batch-strawberry-marmalade-001" class="batch-card-link">
@@ -447,6 +480,66 @@ details[open] .faqi-q::after{content:'\2013';}
         </div>
       </article>
 
+        </div><!-- /batch-carousel-track -->
+      </div><!-- /track-wrap -->
+      <div class="carousel-dots" id="batch-dots">
+        <button class="carousel-dot on" data-i="0" aria-label="Batch 001"></button>
+        <button class="carousel-dot" data-i="1" aria-label="Batch 002"></button>
+        <button class="carousel-dot" data-i="2" aria-label="Batch 003"></button>
+      </div>
+    </div><!-- /carousel-outer -->
+  </div>
+</section>
+
+<!-- ─── ALL BATCHES REGISTRY ─── -->
+<section style="padding:80px 0;background:var(--bone);border-top:1px solid var(--line);">
+  <div class="wrap" style="max-width:900px;">
+    <p class="kicker" style="margin-bottom:14px;">Every batch</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.8vw,46px);letter-spacing:-.02em;margin-bottom:12px;">The <em style="color:var(--terra);font-style:italic;">full list</em>.</h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--dim);margin-bottom:40px;line-height:1.55;">All batches, in order. From the first jar to the last cookie.</p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:15px;font-family:'Jost',sans-serif;font-weight:300;">
+        <thead>
+          <tr style="border-bottom:2px solid var(--ink);">
+            <th style="text-align:left;padding:10px 16px 10px 0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:400;">#</th>
+            <th style="text-align:left;padding:10px 16px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:400;">Product</th>
+            <th style="text-align:left;padding:10px 16px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:400;">Baker</th>
+            <th style="text-align:left;padding:10px 16px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:400;">Status</th>
+            <th style="text-align:left;padding:10px 16px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:400;">Pre-order by</th>
+            <th style="text-align:left;padding:10px 16px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:400;">Pickup</th>
+            <th style="text-align:left;padding:10px 0 10px 16px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:400;">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:18px 16px 18px 0;font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--dim);">001</td>
+            <td style="padding:18px 16px;"><a href="/batch-strawberry-marmalade-001" style="color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:1px;transition:color .2s;" onmouseover="this.style.color='var(--terra)'" onmouseout="this.style.color='var(--ink)'">Strawberry marmalade</a></td>
+            <td style="padding:18px 16px;color:var(--dim);">Theoni</td>
+            <td style="padding:18px 16px;"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);">&#10003; Confirmed</span></td>
+            <td style="padding:18px 16px;color:var(--dim);">Mon 4 May 2026</td>
+            <td style="padding:18px 16px;color:var(--dim);">Fri 8 May 2026</td>
+            <td style="padding:18px 0 18px 16px;color:var(--dim);">CHF 14 / jar</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);background:rgba(194,102,61,.03);">
+            <td style="padding:18px 16px 18px 0;font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--terra);">002</td>
+            <td style="padding:18px 16px;"><a href="/batch-moustokouloura-002" style="color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:1px;transition:color .2s;" onmouseover="this.style.color='var(--terra)'" onmouseout="this.style.color='var(--ink)'">Mousto</a></td>
+            <td style="padding:18px 16px;color:var(--dim);">Theoni</td>
+            <td style="padding:18px 16px;"><span style="display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);"><span style="width:6px;height:6px;border-radius:50%;background:var(--terra);display:inline-block;animation:pulse 2s infinite;"></span>Pre-orders open</span></td>
+            <td style="padding:18px 16px;color:var(--dim);">Sun 10 May 2026</td>
+            <td style="padding:18px 16px;color:var(--dim);">Wed 13 or Sat 16 May</td>
+            <td style="padding:18px 0 18px 16px;color:var(--dim);">CHF 3.50 / piece</td>
+          </tr>
+          <tr>
+            <td style="padding:18px 16px 18px 0;font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(43,26,15,.3);">003</td>
+            <td style="padding:18px 16px;color:rgba(43,26,15,.35);font-style:italic;">—</td>
+            <td style="padding:18px 16px;color:rgba(43,26,15,.35);">—</td>
+            <td style="padding:18px 16px;"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);">Coming soon</span></td>
+            <td style="padding:18px 16px;color:rgba(43,26,15,.35);">—</td>
+            <td style="padding:18px 16px;color:rgba(43,26,15,.35);">Central Z&uuml;rich</td>
+            <td style="padding:18px 0 18px 16px;color:rgba(43,26,15,.35);">—</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -622,6 +715,32 @@ details[open] .faqi-q::after{content:'\2013';}
   }
   setupForm('home-waitlist','home-waitlist-result');
 })();
+
+/* ── Batch carousel ── */
+(function(){
+  var track  = document.getElementById('batch-track');
+  var dots   = document.querySelectorAll('#batch-dots .carousel-dot');
+  var btnPrv = document.querySelector('.carousel-btn-prev');
+  var btnNxt = document.querySelector('.carousel-btn-next');
+  if(!track) return;
+
+  var items  = track.children.length;
+  var cur    = 0;
+
+  function slideTo(n){
+    cur = Math.max(0, Math.min(items - 1, n));
+    var cardW = track.children[0].offsetWidth + 24; // width + gap
+    track.style.transform = 'translateX(-' + (cur * cardW) + 'px)';
+    dots.forEach(function(d,i){ d.classList.toggle('on', i === cur); });
+  }
+
+  if(btnPrv) btnPrv.addEventListener('click', function(){ slideTo(cur - 1); });
+  if(btnNxt) btnNxt.addEventListener('click', function(){ slideTo(cur + 1); });
+  dots.forEach(function(d){ d.addEventListener('click', function(){ slideTo(+d.dataset.i); }); });
+
+  // Recalculate on resize
+  window.addEventListener('resize', function(){ slideTo(cur); });
+})();
 </script>
 
 <footer class="footer"><div class="wrap">
@@ -675,6 +794,32 @@ details[open] .faqi-q::after{content:'\2013';}
     document.addEventListener('click',function(e){if(!burger.contains(e.target) && !menu.contains(e.target)) close();});
   }
 })();
+
+/* ── Batch carousel ── */
+(function(){
+  var track  = document.getElementById('batch-track');
+  var dots   = document.querySelectorAll('#batch-dots .carousel-dot');
+  var btnPrv = document.querySelector('.carousel-btn-prev');
+  var btnNxt = document.querySelector('.carousel-btn-next');
+  if(!track) return;
+
+  var items  = track.children.length;
+  var cur    = 0;
+
+  function slideTo(n){
+    cur = Math.max(0, Math.min(items - 1, n));
+    var cardW = track.children[0].offsetWidth + 24; // width + gap
+    track.style.transform = 'translateX(-' + (cur * cardW) + 'px)';
+    dots.forEach(function(d,i){ d.classList.toggle('on', i === cur); });
+  }
+
+  if(btnPrv) btnPrv.addEventListener('click', function(){ slideTo(cur - 1); });
+  if(btnNxt) btnNxt.addEventListener('click', function(){ slideTo(cur + 1); });
+  dots.forEach(function(d){ d.addEventListener('click', function(){ slideTo(+d.dataset.i); }); });
+
+  // Recalculate on resize
+  window.addEventListener('resize', function(){ slideTo(cur); });
+})();
 </script>
 <script>
 (function(){
@@ -694,6 +839,32 @@ details[open] .faqi-q::after{content:'\2013';}
       } else { showFeedback('Copy this URL: ' + url); }
     });
   });
+})();
+
+/* ── Batch carousel ── */
+(function(){
+  var track  = document.getElementById('batch-track');
+  var dots   = document.querySelectorAll('#batch-dots .carousel-dot');
+  var btnPrv = document.querySelector('.carousel-btn-prev');
+  var btnNxt = document.querySelector('.carousel-btn-next');
+  if(!track) return;
+
+  var items  = track.children.length;
+  var cur    = 0;
+
+  function slideTo(n){
+    cur = Math.max(0, Math.min(items - 1, n));
+    var cardW = track.children[0].offsetWidth + 24; // width + gap
+    track.style.transform = 'translateX(-' + (cur * cardW) + 'px)';
+    dots.forEach(function(d,i){ d.classList.toggle('on', i === cur); });
+  }
+
+  if(btnPrv) btnPrv.addEventListener('click', function(){ slideTo(cur - 1); });
+  if(btnNxt) btnNxt.addEventListener('click', function(){ slideTo(cur + 1); });
+  dots.forEach(function(d){ d.addEventListener('click', function(){ slideTo(+d.dataset.i); }); });
+
+  // Recalculate on resize
+  window.addEventListener('resize', function(){ slideTo(cur); });
 })();
 </script>
 </body>
