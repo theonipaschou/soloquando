@@ -84,10 +84,10 @@
 .form-s-inner{max-width:620px;margin:0 auto;text-align:center;}
 .form-s-inner .kicker{color:rgba(245,239,228,.75);display:block;margin-bottom:18px;}
 .form-s-inner h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(40px,5vw,60px);letter-spacing:-.025em;line-height:1.05;color:var(--bone);margin:0 0 24px;}
-.form-s-inner h2 em{color:var(--ink);font-style:italic;}
+.form-s-inner h2 em{color:var(--bone);font-style:italic;opacity:.75;}
 .form-s-lead{font-size:18px;line-height:1.7;color:rgba(245,239,228,.82);margin-bottom:40px;}
-.form-s-btn{display:inline-block;padding:18px 40px;background:var(--ink);color:var(--bone);font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
-.form-s-btn:hover{background:#2c1608;}
+.form-s-btn{display:inline-block;padding:18px 40px;background:var(--bone);color:var(--ink);font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s;}
+.form-s-btn:hover{background:var(--paper);color:var(--ink);}
 </style>
 <style>
 /* Nav — full definition matching index */
@@ -117,27 +117,43 @@
 }
 </style>
 <style>
-/* handle-s */
-.handle-s{padding:96px 0;background:var(--bone);}
-.handle-intro{max-width:680px;margin:0 auto 48px;text-align:center;padding:0 24px;}
+/* handle-s — full-bleed split: bone (you) / terra (we) */
+.handle-s{padding:0;background:var(--bone);}
+.handle-intro{max-width:680px;margin:0 auto;text-align:center;padding:96px 24px 72px;}
 .handle-intro .kicker{color:var(--terra);}
 .handle-intro h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(36px,4.8vw,58px);letter-spacing:-.025em;line-height:1.08;color:var(--ink);margin:14px 0 16px;}
 .handle-intro h2 em{color:var(--terra);font-style:italic;}
-.handle-intro > p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--dim);line-height:1.6;}
-.handle-split{display:grid;grid-template-columns:1fr 1fr;max-width:1040px;margin:0 auto;gap:0;}
+.handle-intro>p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--dim);line-height:1.6;}
+.handle-split{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
 @media(max-width:760px){.handle-split{grid-template-columns:1fr;}}
-.handle-side{padding:40px 48px 56px;border-top:3px solid var(--terra);}
-.handle-side:first-child{border-right:1px solid var(--line);}
-@media(max-width:900px){.handle-side{padding:36px 32px 48px;}}
-@media(max-width:760px){.handle-side:first-child{border-right:none;border-bottom:1px solid var(--line);}}
-.handle-side-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:56px;color:var(--terra);opacity:.45;line-height:1;letter-spacing:-.03em;margin-bottom:24px;}
-.handle-side-h{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:30px;color:var(--ink);margin:0 0 8px;line-height:1.15;}
-.handle-side-h em{color:var(--terra);font-style:italic;}
-.handle-side-lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--dim);opacity:.75;margin-bottom:28px;line-height:1.5;}
+.handle-side--you{background:var(--bone);}
+.handle-side--we{background:var(--terra);}
+.handle-side-inner{padding:64px 56px 80px;}
+@media(max-width:1100px){.handle-side-inner{padding:56px 40px 72px;}}
+@media(max-width:760px){.handle-side-inner{padding:48px 24px 56px;}}
+/* Numbers */
+.handle-side-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:60px;line-height:1;letter-spacing:-.03em;margin-bottom:28px;}
+.handle-side--you .handle-side-num{color:var(--terra);opacity:.35;}
+.handle-side--we .handle-side-num{color:var(--bone);opacity:.28;}
+/* Column headings */
+.handle-side-h{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:32px;margin:0 0 8px;line-height:1.15;}
+.handle-side--you .handle-side-h{color:var(--ink);}
+.handle-side--you .handle-side-h em{color:var(--terra);font-style:italic;}
+.handle-side--we .handle-side-h{color:var(--bone);}
+.handle-side--we .handle-side-h em{color:var(--ink);font-style:italic;}
+/* Lead */
+.handle-side-lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:1.5;margin-bottom:32px;}
+.handle-side--you .handle-side-lead{color:var(--dim);opacity:.8;}
+.handle-side--we .handle-side-lead{color:rgba(245,239,228,.65);}
+/* Lists */
 .handle-side ul{list-style:none;padding:0;margin:0;}
-.handle-side li{font-size:16px;line-height:1.6;color:var(--dim);padding:12px 0 12px 22px;border-bottom:1px solid var(--line);position:relative;}
+.handle-side li{font-size:16px;line-height:1.6;padding:13px 0 13px 24px;position:relative;}
+.handle-side--you li{color:var(--dim);border-bottom:1px solid var(--line);}
+.handle-side--we li{color:rgba(245,239,228,.88);border-bottom:1px solid rgba(245,239,228,.14);}
 .handle-side li:last-child{border-bottom:none;padding-bottom:0;}
-.handle-side li::before{content:'';position:absolute;left:0;top:21px;width:10px;height:1px;background:var(--terra);}
+.handle-side li::before{content:'';position:absolute;left:0;top:22px;width:10px;height:1px;}
+.handle-side--you li::before{background:var(--terra);}
+.handle-side--we li::before{background:rgba(245,239,228,.5);}
 </style>
 </head>
 <body>
@@ -283,14 +299,14 @@
 
 <!-- ─── YOU BRING / WE HANDLE ─── -->
 <section class="handle-s">
-  <div class="wrap">
-    <div class="handle-intro">
-      <p class="kicker">A clear division of labour</p>
-      <h2>You bring the food.<br/>We handle <em>the rest</em>.</h2>
-      <p>You bake. You cook. You make. We take care of everything around it.</p>
-    </div>
-    <div class="handle-split">
-      <div class="handle-side">
+  <div class="handle-intro">
+    <p class="kicker">A clear division of labour</p>
+    <h2>You bring the food.<br/>We handle <em>the rest</em>.</h2>
+    <p>You bake. You cook. You make. We take care of everything around it.</p>
+  </div>
+  <div class="handle-split">
+    <div class="handle-side handle-side--you">
+      <div class="handle-side-inner">
         <div class="handle-side-num">01</div>
         <h3 class="handle-side-h">You <em>bring</em></h3>
         <p class="handle-side-lead">The part that only you can do.</p>
@@ -301,7 +317,9 @@
           <li>Whatever makes it yours</li>
         </ul>
       </div>
-      <div class="handle-side">
+    </div>
+    <div class="handle-side handle-side--we">
+      <div class="handle-side-inner">
         <div class="handle-side-num">02</div>
         <h3 class="handle-side-h">We <em>handle</em></h3>
         <p class="handle-side-lead">The platform around your kitchen.</p>
