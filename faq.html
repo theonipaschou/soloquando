@@ -8,23 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <style>
-/* Option B */
-.faq-hero{background:var(--ink);}
-.faq-hero h1,.faq-hero h2,.faq-hero h3{color:var(--bone);}
-.faq-hero h1 em,.faq-hero h2 em{color:var(--terra);}
-.faq-hero p,.faq-hero .sub{color:rgba(245,239,228,.75);}
-.faq-hero .kicker{color:var(--terra);}
-.faq-hero .pull{color:var(--bone);border-left-color:rgba(245,239,228,.3);}
-.faq-jump{background:var(--paper);}
-.faq-cta{background:var(--terra);}
-.faq-cta h1,.faq-cta h2,.faq-cta h3{color:var(--bone);}
-.faq-cta h1 em,.faq-cta h2 em{color:var(--ink);}
-.faq-cta p,.faq-cta .sub{color:rgba(245,239,228,.85);}
-.faq-cta .kicker{color:rgba(245,239,228,.7);}
-.faq-cta .pull{color:var(--bone);border-left-color:rgba(245,239,228,.4);}
-.faq-cta a.btn{background:var(--ink);color:var(--bone);}
-</style>
-<style>
 /* Nav — full definition matching index */
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
@@ -175,26 +158,68 @@ details[open] summary::after{content:'\2013';}
   </div>
 </section>
 
-<section class="share-quiet">
-  <div class="wrap">
-    <p class="share-quiet-line">
-      <em>Pass these answers on.</em>
-      <button class="share-quiet-link" data-share-title="solo.quando" aria-label="Share solo.quando with a friend">
-        Share with a friend
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-      </button>
-      <span class="share-quiet-feedback" aria-live="polite"></span>
-    </p>
-  </div>
-</section>
+<style>
+.nl-strip{padding:96px 22px;background:var(--bone);border-top:1px solid var(--line);text-align:center;}
+.nl-strip-inner{max-width:560px;margin:0 auto;}
+.nl-strip .kicker{color:var(--terra);}
+.nl-strip h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 16px;color:var(--ink);}
+.nl-strip h2 em{color:var(--terra);font-style:italic;}
+.nl-strip-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);line-height:1.5;margin-bottom:32px;}
+.nl-strip-form{display:flex;max-width:440px;margin:0 auto 14px;}
+@media(max-width:520px){.nl-strip-form{flex-direction:column;gap:10px;}}
+.nl-strip-form input[type=email]{flex:1;padding:16px 18px;background:var(--paper);border:1px solid var(--line);border-right:none;color:var(--ink);font-family:'Jost',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
+@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid var(--line);}}
+.nl-strip-form input[type=email]::placeholder{color:var(--dim);opacity:.55;}
+.nl-strip-form input[type=email]:focus{border-color:rgba(43,26,15,.4);}
+.nl-strip-form button{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:16px 26px;white-space:nowrap;transition:background .2s;}
+.nl-strip-form button:hover{background:#a8552a;}
+.nl-strip-form button:disabled{opacity:.6;cursor:wait;}
+.nl-strip-note{font-size:13px;color:var(--dim);opacity:.7;}
+.nl-strip-result{max-width:440px;margin:8px auto 0;display:none;}
+.nl-strip-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--ink);}
+</style>
 
-<section class="faq-cta">
-  <div class="wrap">
-    <h2>Still have a <em>question</em>?</h2>
-    <p>Write to us. We'll reply within 48 hours.</p>
-    <a href="/contact" class="btn btn-dark">Contact us &rarr;</a>
+<!-- ─── UNIFIED NEWSLETTER STRIP ─── -->
+<section class="nl-strip" aria-labelledby="nl-strip-h">
+  <div class="nl-strip-inner">
+    <p class="kicker">Stay in the loop</p>
+    <h2 id="nl-strip-h">Be the first to know <em>when batches open</em>.</h2>
+    <p class="nl-strip-sub">Z&uuml;rich first. May 2026. Then your neighbourhood.</p>
+    <form class="nl-strip-form" id="nl-strip-form" action="https://formspree.io/f/mpqkvvnk" method="POST">
+      <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
+      <input type="hidden" name="source" value="faq"/>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+      <input type="email" name="email" placeholder="your@email.ch" required aria-label="Email address"/>
+      <button type="submit">Join &rarr;</button>
+    </form>
+    <div class="nl-strip-result" id="nl-strip-result" role="status" aria-live="polite"></div>
+    <p class="nl-strip-note">Free. Unsubscribe any time. Z&uuml;rich first.</p>
   </div>
 </section>
+<script>
+(function(){
+  var form = document.getElementById('nl-strip-form');
+  var out  = document.getElementById('nl-strip-result');
+  if(!form || !out) return;
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; btn.textContent = 'Joining';
+    try{
+      var r = await fetch(form.action, {method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(r.ok){
+        form.style.display='none';
+        out.style.display='block';
+        out.innerHTML='<p>You are on the list. We will be in touch.</p>';
+      } else {
+        form.submit();
+      }
+    } catch(err) {
+      form.submit();
+    }
+  });
+})();
+</script>
 
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
