@@ -76,6 +76,21 @@
 .steps-s .kicker { color: var(--terra); }
 
 </style>
+<style>
+.for-who-s{padding:96px 0;background:var(--paper);}
+.for-who-head{text-align:center;max-width:720px;margin:0 auto 64px;}
+.for-who-head h2{font-size:clamp(36px,4.5vw,54px);letter-spacing:-.02em;margin-top:14px;line-height:1.1;}
+.for-who-head h2 em{color:var(--terra);font-style:italic;}
+.for-who-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1000px;margin:0 auto;}
+@media(max-width:760px){.for-who-grid{grid-template-columns:1fr;gap:36px;}}
+.for-who-col{padding:36px 32px;background:var(--bone);border:1px solid var(--line);}
+.for-who-col h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:28px;letter-spacing:-.01em;margin-bottom:24px;line-height:1.2;color:var(--ink);}
+.for-who-col h3 em{color:var(--terra);font-style:italic;}
+.for-who-col ul{list-style:none;padding:0;}
+.for-who-col li{font-size:16px;line-height:1.65;color:var(--dim);padding:12px 0 12px 20px;border-bottom:1px solid var(--line);position:relative;}
+.for-who-col li:last-child{border-bottom:none;padding-bottom:0;}
+.for-who-col li::before{content:'';position:absolute;left:0;top:22px;width:8px;height:1px;background:var(--terra);}
+</style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
@@ -172,6 +187,36 @@
     </div>
   </div>
 </section>
+
+<section class="for-who-s">
+  <div class="wrap">
+    <div class="for-who-head">
+      <p class="kicker">Who this is for</p>
+      <h2>Two kinds of people. <em>One neighbourhood</em>.</h2>
+    </div>
+    <div class="for-who-grid">
+      <div class="for-who-col">
+        <h3>If you want to <em>eat well</em></h3>
+        <ul>
+          <li>You want honest food made by hand, not a factory</li>
+          <li>You have tasted something homemade and never found it again</li>
+          <li>You would rather support your neighbour than a brand</li>
+          <li>You want to know exactly who made your food and why</li>
+        </ul>
+      </div>
+      <div class="for-who-col">
+        <h3>If you want to <em>bake more</em></h3>
+        <ul>
+          <li>The grandmother whose recipes should not be lost</li>
+          <li>The immigrant whose food does not appear on any Swiss shelf</li>
+          <li>The weekend baker who already has the people, just does not know it yet</li>
+          <li>The maker whose kitchen is their best asset</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <style>
 .nl-strip{padding:96px 22px;background:var(--bone);border-top:1px solid var(--line);text-align:center;}
@@ -272,5 +317,25 @@
 </div></footer>
 
 <script src="/shared.js"></script>
+
+<style>
+/* ── Hero text fix: explicit hex, injected after all other rules ── */
+.h-hero .h-hero-text *,
+.h-hero .h-hero-text p,
+.h-hero .h-hero-text h1,
+.h-hero .h-hero-text h2,
+.h-hero .h-hero-text h3 {
+  color: #FAF3EE;
+}
+.h-hero .h-hero-text em {
+  color: #C4622D;
+}
+.h-hero .h-hero-text .kicker {
+  color: #C4622D;
+}
+.h-hero .h-hero-text .sub {
+  color: rgba(245,239,228,.78);
+}
+</style>
 </body>
 </html>
