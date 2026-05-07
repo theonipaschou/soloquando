@@ -5,131 +5,435 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Contact &middot; solo.quando</title>
 <meta name="description" content="Get in touch with solo.quando. Theoni reads every message personally and replies within 48 hours."/>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 
 <style>
-/* Option B */
-.ct-hero{background:var(--ink);}
-.ct-hero h1,.ct-hero h2,.ct-hero h3{color:var(--bone);}
-.ct-hero h1 em,.ct-hero h2 em{color:var(--terra);}
-.ct-hero p,.ct-hero .sub{color:rgba(245,239,228,.75);}
-.ct-hero .kicker{color:var(--terra);}
-.ct-hero .pull{color:var(--bone);border-left-color:rgba(245,239,228,.3);}
-.ct-paths{background:var(--bone);}
-.ct-details{background:var(--paper);}
-</style>
-<style>
-/* Nav override: match index sizing */
-.nav-inner{height:88px;}
-@media(max-width:720px){.nav-inner{height:72px;}}
-.nav-logo img{height:72px;width:auto;}
-@media(max-width:720px){.nav-logo img{height:32px;}}
-@media(max-width:920px){.nav-links{top:88px;}}
-@media(max-width:720px){.nav-links{top:72px;}}
+/* ─── RESET + TOKENS ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink:   #3D1F0D;
+  --terra: #C4622D;
+  --paper: #FAF3EE;
+  --bone:  #F5EFE4;
+  --dim:   #5C3317;
+  --line:  rgba(61,31,13,.1);
+}
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: 'Jost', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; }
+img { display: block; }
 
-/* Hero */
-.ct-hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(78vh - 88px);}
-@media(max-width:860px){.ct-hero{grid-template-columns:1fr;min-height:auto;}}
-.ct-hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;}
-@media(max-width:720px){.ct-hero-text{padding:60px 22px;}}
-.ct-h1{font-size:clamp(54px,6.4vw,86px);line-height:1.0;letter-spacing:-.025em;margin:14px 0 22px;}
-.ct-sub{font-size:19px;line-height:1.6;color:var(--dim);max-width:400px;margin-bottom:28px;}
-.ct-reply{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;background:rgba(122,139,106,.10);border:1px solid rgba(122,139,106,.22);}
-.ct-reply-dot{width:7px;height:7px;border-radius:50%;background:var(--sage);flex-shrink:0;}
-.ct-reply span{font-size:13px;letter-spacing:.12em;color:var(--sage);}
-.ct-hero-img{position:relative;overflow:hidden;background:var(--paper);}
-@media(max-width:860px){.ct-hero-img{height:60vw;min-height:300px;}}
-.ct-hero-img picture,.ct-hero-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top;}
-
-/* Intent paths */
-.ct-paths{padding:80px 0;background:var(--bone);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.ct-paths-head{text-align:center;margin-bottom:48px;}
-.ct-paths-head h2{font-size:clamp(28px,3vw,38px);letter-spacing:-.015em;}
-.ct-paths-head h2 em{color:var(--terra);font-style:italic;}
-.ct-path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-@media(max-width:760px){.ct-path-grid{grid-template-columns:1fr;gap:16px;}}
-.ct-path-card{background:var(--bone);border:1px solid var(--line);padding:36px 32px;display:flex;flex-direction:column;transition:border-color .2s,transform .22s ease;}
-@media(max-width:560px){.ct-path-card{padding:28px 24px;}}
-.ct-path-card:hover{border-color:rgba(194,102,61,.35);transform:translateY(-2px);}
-.ct-path-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:42px;color:var(--terra);line-height:1;margin-bottom:20px;}
-.ct-path-title{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:400;letter-spacing:-.01em;margin-bottom:10px;line-height:1.1;}
-.ct-path-desc{font-size:16px;line-height:1.7;color:var(--dim);flex:1;margin-bottom:28px;}
-.ct-path-link{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:7px;margin-top:auto;transition:gap .2s;}
-.ct-path-link:hover{gap:12px;}
-
-/* Direct details */
-.ct-details{padding:80px 0;}
-.ct-details-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;}
-@media(max-width:760px){.ct-details-grid{grid-template-columns:1fr;gap:48px;}}
-.ct-detail-group h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;letter-spacing:-.01em;margin-bottom:28px;line-height:1.1;}
-.ct-detail-group h3 em{color:var(--terra);font-style:italic;}
-.ct-detail-item{display:flex;flex-direction:column;gap:5px;margin-bottom:22px;}
-.ct-detail-label{font-size:11px;letter-spacing:.20em;text-transform:uppercase;color:var(--terra);}
-.ct-detail-value a{font-size:18px;color:var(--dim);transition:color .2s;}
-.ct-detail-value a:hover{color:var(--terra);}
-.ct-detail-note{font-size:14px;color:var(--dim);opacity:.7;margin-top:2px;}
-</style>
-<style>
-/* Nav — full definition matching index */
-.nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
+/* ─── NAV ─── */
+.nav { position: sticky; top: 0; z-index: 200; background: rgba(250,243,238,.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 88px; padding: 0 48px; max-width: 1180px; margin: 0 auto; }
 @media(max-width:720px){.nav-inner{padding:0 22px;height:72px;}}
-.nav-logo{display:flex;align-items:center;text-decoration:none;}
-.nav-logo img{height:72px;width:auto;display:block;}
+.nav-logo { display: flex; align-items: center; }
+.nav-logo img { height: 72px; width: auto; }
 @media(max-width:720px){.nav-logo img{height:32px;}}
-.nav-links{display:flex;gap:36px;list-style:none;}
-.nav-links a{font-size:16px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
-.nav-links a:hover,.nav-links a.on{color:var(--terra);}
-.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:10px;margin-left:8px;}
-.nav-burger span{display:block;width:24px;height:2px;background:var(--ink);transition:all .28s ease;transform-origin:center;}
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-size: 16px; letter-spacing: .02em; color: var(--dim); transition: color .2s; }
+.nav-links a:hover, .nav-links a.on { color: var(--terra); }
+.nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 10px; }
+.nav-burger span { display: block; width: 24px; height: 2px; background: var(--ink); transition: all .28s; transform-origin: center; }
 @media(max-width:920px){
-  .nav-links{display:none;position:fixed;top:88px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
-  .nav-links.open{display:flex;}
-  .nav-links li{border-bottom:1px solid var(--line);}
-  .nav-links a{display:block;padding:20px 24px;font-size:18px;color:var(--ink);}
-  .nav-burger{display:flex;}
+  .nav-links { display: none; position: fixed; top: 88px; left: 0; right: 0; flex-direction: column; gap: 0; background: rgba(250,243,238,.98); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); box-shadow: 0 8px 32px rgba(43,26,15,.1); z-index: 199; }
+  .nav-links.open { display: flex; }
+  .nav-links li { border-bottom: 1px solid var(--line); }
+  .nav-links a { display: block; padding: 20px 24px; font-size: 18px; color: var(--ink); }
+  .nav-burger { display: flex; }
   .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .nav-burger.open span:nth-child(2){opacity:0;}
   .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 }
-@media(max-width:720px){
-  .nav-links{top:72px;}
+@media(max-width:720px){.nav-links{top:72px;}}
+
+/* ─── HERO ─── */
+.ct-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(90vh - 88px);
+  background: var(--ink);
 }
-</style>
+@media(max-width:860px){
+  .ct-hero { grid-template-columns: 1fr; min-height: auto; }
+}
 
-<style>
-/* ── DESIGN RHYTHM (auto-applied for v2) ── */
+/* Left: text */
+.ct-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 80px 64px 80px 56px;
+  position: relative;
+  z-index: 1;
+}
+@media(max-width:1100px){.ct-hero-text{padding:64px 40px 64px 40px;}}
+@media(max-width:720px){.ct-hero-text{padding:56px 22px 52px;}}
 
-.ct-hero { background: var(--ink); }
-.ct-hero h1, .ct-hero h2, .ct-hero h3, .ct-hero h4 { color: var(--bone); }
-.ct-hero h1 em, .ct-hero h2 em, .ct-hero h3 em { color: var(--terra); }
-.ct-hero p, .ct-hero .sub, .ct-hero li { color: rgba(245,239,228,0.78); }
-.ct-hero .kicker { color: var(--terra); }
-.ct-hero a { color: var(--bone); }
-.ct-hero a:hover { color: var(--terra); }
+.kicker {
+  font-size: 11px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--terra);
+  display: block;
+  margin-bottom: 20px;
+}
 
-.ct-details { background: var(--paper); }
-.ct-details h1, .ct-details h2, .ct-details h3, .ct-details h4 { color: var(--ink); }
-.ct-details h1 em, .ct-details h2 em, .ct-details h3 em { color: var(--terra); }
-.ct-details p, .ct-details .sub, .ct-details li { color: var(--dim); }
-.ct-details .kicker { color: var(--terra); }
+.ct-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(64px, 7.5vw, 108px);
+  font-weight: 300;
+  line-height: .95;
+  letter-spacing: -.04em;
+  color: var(--bone);
+  margin-bottom: 32px;
+}
+.ct-h1 em { color: var(--terra); font-style: italic; }
 
-.ct-paths { background: var(--bone); }
-.ct-paths h1, .ct-paths h2, .ct-paths h3, .ct-paths h4 { color: var(--ink); }
-.ct-paths h1 em, .ct-paths h2 em, .ct-paths h3 em { color: var(--terra); }
-.ct-paths p, .ct-paths .sub, .ct-paths li { color: var(--dim); }
-.ct-paths .kicker { color: var(--terra); }
+.ct-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(245,239,228,.55);
+  line-height: 1.6;
+  max-width: 360px;
+  margin-bottom: 40px;
+}
 
+.ct-reply-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  border: 1px solid rgba(196,98,45,.3);
+  background: rgba(196,98,45,.08);
+  width: fit-content;
+}
+.ct-reply-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--terra);
+  animation: pulse 2.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(.75); }
+}
+.ct-reply-badge span {
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--terra);
+}
+
+/* Right: image */
+.ct-hero-img {
+  position: relative;
+  overflow: hidden;
+  background: #2a140a;
+}
+@media(max-width:860px){ .ct-hero-img { height: 65vw; min-height: 320px; } }
+
+.ct-hero-img picture,
+.ct-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  /* Subtle warm desaturation to lift perceived quality */
+  filter: contrast(1.04) brightness(.95);
+  transition: transform 8s ease;
+}
+.ct-hero-img:hover img { transform: scale(1.025); }
+
+/* Gradient overlay: dark at bottom fading to transparent */
+.ct-hero-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(30,10,4,.45) 100%
+  );
+  pointer-events: none;
+}
+
+/* Photo credit */
+.ct-img-caption {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(245,239,228,.4);
+  z-index: 2;
+}
+
+/* ─── CONTACT PATHS ─── */
+.ct-paths {
+  background: var(--paper);
+  padding: 100px 0 0;
+}
+.ct-paths-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+@media(max-width:720px){.ct-paths-inner{padding:0 22px;}}
+
+.ct-paths-label {
+  font-size: 11px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 20px;
+  display: block;
+}
+.ct-paths-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 300;
+  letter-spacing: -.025em;
+  color: var(--ink);
+  margin-bottom: 64px;
+  line-height: 1.05;
+}
+.ct-paths-heading em { color: var(--terra); font-style: italic; }
+
+/* Each path is a full-width horizontal row */
+.ct-path-row {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  gap: 40px;
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
+  transition: background .2s;
+}
+.ct-path-row:last-child { border-bottom: 1px solid var(--line); }
+@media(max-width:760px){
+  .ct-path-row { grid-template-columns: 60px 1fr; gap: 24px 20px; }
+}
+@media(max-width:520px){
+  .ct-path-row { grid-template-columns: 1fr; padding: 36px 0; }
+}
+
+.ct-path-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 52px;
+  color: rgba(196,98,45,.22);
+  line-height: 1;
+  font-weight: 300;
+  transition: color .25s;
+  white-space: nowrap;
+}
+.ct-path-row:hover .ct-path-num { color: var(--terra); }
+
+.ct-path-body {}
+.ct-path-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+.ct-path-desc {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--dim);
+  max-width: 520px;
+  opacity: .8;
+}
+
+.ct-path-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: 1px solid rgba(61,31,13,.18);
+  color: var(--ink);
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background .22s, border-color .22s, color .22s, gap .2s;
+  flex-shrink: 0;
+}
+.ct-path-cta::after { content: '→'; transition: transform .2s; }
+.ct-path-cta:hover {
+  background: var(--terra);
+  border-color: var(--terra);
+  color: var(--bone);
+  gap: 14px;
+}
+.ct-path-cta:hover::after { transform: translateX(3px); }
+@media(max-width:760px){
+  .ct-path-cta { grid-column: 2; justify-self: start; margin-top: 8px; }
+}
+@media(max-width:520px){
+  .ct-path-cta { grid-column: 1; margin-top: 4px; }
+}
+
+/* ─── DIRECT DETAILS ─── */
+.ct-details {
+  background: var(--ink);
+  padding: 96px 0;
+  margin-top: 100px;
+}
+.ct-details-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+@media(max-width:760px){.ct-details-inner{grid-template-columns:1fr;gap:56px;padding:0 22px;}}
+
+.ct-detail-group-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -.02em;
+  color: var(--bone);
+  margin-bottom: 40px;
+  line-height: 1.1;
+}
+.ct-detail-group-title em { color: var(--terra); font-style: italic; }
+
+.ct-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(245,239,228,.08);
+}
+.ct-detail-item:first-of-type { border-top: 1px solid rgba(245,239,228,.08); }
+
+.ct-detail-label {
+  font-size: 10px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--terra);
+}
+.ct-detail-value a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--bone);
+  letter-spacing: -.01em;
+  transition: color .2s;
+}
+.ct-detail-value a:hover { color: var(--terra); }
+.ct-detail-note {
+  font-size: 13px;
+  color: rgba(245,239,228,.35);
+  letter-spacing: .02em;
+}
+
+/* ─── NEWSLETTER STRIP ─── */
+.nl-strip {
+  padding: 96px 22px;
+  background: var(--bone);
+  text-align: center;
+}
+.nl-strip-inner { max-width: 560px; margin: 0 auto; }
+.nl-strip .kicker { color: var(--terra); margin-bottom: 16px; }
+.nl-strip h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(34px,4.4vw,52px);
+  letter-spacing: -.02em;
+  line-height: 1.05;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+.nl-strip h2 em { color: var(--terra); font-style: italic; }
+.nl-strip-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 19px;
+  color: var(--dim);
+  opacity: .65;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+.nl-strip-form { display: flex; max-width: 440px; margin: 0 auto 14px; }
+@media(max-width:520px){.nl-strip-form{flex-direction:column;gap:10px;}}
+.nl-strip-form input[type=email] {
+  flex: 1; padding: 16px 18px; background: var(--paper);
+  border: 1px solid var(--line); border-right: none;
+  color: var(--ink); font-family: 'Jost', sans-serif; font-size: 16px;
+  outline: none; transition: border-color .2s;
+}
+@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid var(--line);}}
+.nl-strip-form input[type=email]::placeholder { color: var(--dim); opacity: .4; }
+.nl-strip-form input[type=email]:focus { border-color: rgba(43,26,15,.35); }
+.nl-strip-form button {
+  background: var(--terra); color: var(--bone); border: none;
+  cursor: pointer; font-family: 'Jost', sans-serif; font-size: 12px;
+  letter-spacing: .18em; text-transform: uppercase;
+  padding: 16px 26px; white-space: nowrap; transition: background .2s;
+}
+.nl-strip-form button:hover { background: #a8552a; }
+.nl-strip-form button:disabled { opacity: .6; cursor: wait; }
+.nl-strip-note { font-size: 13px; color: var(--dim); opacity: .45; }
+.nl-strip-result { max-width: 440px; margin: 8px auto 0; display: none; }
+.nl-strip-result p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: var(--ink); }
+
+/* ─── FOOTER ─── */
+.footer { background: var(--ink); padding: 72px 22px 40px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(245,239,228,.08); margin-bottom: 32px; }
+@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+.footer-logo-img { height: 56px; width: auto; margin-bottom: 14px; }
+.footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: rgba(245,239,228,.4); }
+.footer-col h5 { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(245,239,228,.35); margin-bottom: 18px; font-weight: 400; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a { font-size: 15px; color: rgba(245,239,228,.6); transition: color .2s; }
+.footer-col a:hover { color: var(--bone); }
+.footer-payments { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+.footer-payments-label { font-size: 13px; color: rgba(245,239,228,.3); }
+.footer-payments-name { font-size: 13px; color: rgba(245,239,228,.5); transition: color .2s; }
+.footer-payments-name:hover { color: var(--bone); }
+.footer-payments-methods { font-size: 13px; color: rgba(245,239,228,.3); }
+.footer-bottom { font-size: 13px; color: rgba(245,239,228,.25); }
+
+/* ─── PAGE ENTER ANIMATION ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.ct-hero-text > * {
+  animation: fadeUp .6s ease both;
+}
+.ct-hero-text > *:nth-child(1) { animation-delay: .05s; }
+.ct-hero-text > *:nth-child(2) { animation-delay: .15s; }
+.ct-hero-text > *:nth-child(3) { animation-delay: .25s; }
+.ct-hero-text > *:nth-child(4) { animation-delay: .35s; }
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
-  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="126" height="72"/></a>
+  <a href="/" class="nav-logo" aria-label="solo.quando home">
+    <img src="logo-nav.webp" alt="solo.quando" width="126" height="72"/>
+  </a>
   <ul class="nav-links" id="main-nav">
     <li><a href="/">Home</a></li>
     <li><a href="/products">Batches</a></li>
@@ -139,20 +443,18 @@
     <li><a href="/faq">FAQ</a></li>
     <li><a href="/contact" class="on">Contact</a></li>
   </ul>
-  <div style="display:flex;align-items:center;">
-    <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+  <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+    <span></span><span></span><span></span>
+  </button>
 </div></nav>
 
-<!-- Hero -->
+<!-- ─── HERO ─── -->
 <section class="ct-hero">
   <div class="ct-hero-text">
-    <p class="kicker">Get in touch</p>
-    <h1 class="ct-h1">Say <em>hello</em>.</h1>
-    <p class="ct-sub">Theoni reads every message personally. No inbox filters, no support tickets.</p>
-    <div class="ct-reply">
+    <span class="kicker">Get in touch</span>
+    <h1 class="ct-h1">Say<br><em>hello.</em></h1>
+    <p class="ct-tagline">Theoni reads every message personally. No inbox filters, no support tickets.</p>
+    <div class="ct-reply-badge">
       <span class="ct-reply-dot"></span>
       <span>Replies within 48 hours</span>
     </div>
@@ -163,100 +465,86 @@
       <source type="image/jpeg" srcset="theoni-portrait-600.jpg 600w, theoni-portrait-900.jpg 900w" sizes="(max-width:860px) 100vw, 50vw">
       <img src="theoni-portrait-900.jpg" alt="Theoni Paschou, founder of solo.quando" fetchpriority="high"/>
     </picture>
+    <span class="ct-img-caption">Z&uuml;rich, 2025</span>
   </div>
 </section>
 
-<!-- Intent paths -->
+<!-- ─── CONTACT PATHS ─── -->
 <section class="ct-paths">
-  <div class="wrap">
-    <div class="ct-paths-head">
-      <h2>What can we <em>help</em> with?</h2>
-    </div>
-    <div class="ct-path-grid">
+  <div class="ct-paths-inner">
+    <span class="ct-paths-label">What brings you here?</span>
+    <h2 class="ct-paths-heading">We can help with <em>this.</em></h2>
 
-      <div class="ct-path-card">
-        <div class="ct-path-num">01</div>
+    <div class="ct-path-row">
+      <div class="ct-path-num">01</div>
+      <div class="ct-path-body">
         <h3 class="ct-path-title">Order or pickup question</h3>
-        <p class="ct-path-desc">Pickup details, allergens, batch status, or anything about your pre-order. Theoni will get back to you quickly.</p>
-        <a href="mailto:hello@soloquando.ch?subject=Order%20question" class="ct-path-link">Email Theoni &rarr;</a>
+        <p class="ct-path-desc">Pickup details, allergens, batch status, anything about your pre-order. Theoni will get back to you quickly.</p>
       </div>
+      <a href="mailto:hello@soloquando.ch?subject=Order%20question" class="ct-path-cta">Email Theoni</a>
+    </div>
 
-      <div class="ct-path-card">
-        <div class="ct-path-num">02</div>
+    <div class="ct-path-row">
+      <div class="ct-path-num">02</div>
+      <div class="ct-path-body">
         <h3 class="ct-path-title">I want to bake here</h3>
-        <p class="ct-path-desc">Have a recipe and want to bake for your neighbourhood? The baker form asks the right questions.</p>
-        <a href="/bake-with-us" class="ct-path-link">Go to baker form &rarr;</a>
+        <p class="ct-path-desc">Have a recipe and want to bake for your neighbourhood? The baker form asks the right questions and gets you started.</p>
       </div>
+      <a href="/bake-with-us" class="ct-path-cta">Baker form</a>
+    </div>
 
-      <div class="ct-path-card">
-        <div class="ct-path-num">03</div>
+    <div class="ct-path-row">
+      <div class="ct-path-num">03</div>
+      <div class="ct-path-body">
         <h3 class="ct-path-title">Press or collaboration</h3>
-        <p class="ct-path-desc">Media, partnerships, events. Or something we haven't thought of yet.</p>
-        <a href="mailto:hello@soloquando.ch?subject=Press%20inquiry" class="ct-path-link">Write to us &rarr;</a>
+        <p class="ct-path-desc">Media, partnerships, events. Or something we haven't thought of yet. All of it welcome.</p>
       </div>
-
+      <a href="mailto:hello@soloquando.ch?subject=Press%20inquiry" class="ct-path-cta">Write to us</a>
     </div>
+
   </div>
 </section>
 
-<!-- Direct contact details -->
+<!-- ─── DIRECT CONTACT ─── -->
 <section class="ct-details">
-  <div class="wrap">
-    <div class="ct-details-grid">
-      <div class="ct-detail-group">
-        <h3>Direct <em>contact</em></h3>
-        <div class="ct-detail-item">
-          <span class="ct-detail-label">Email</span>
-          <div class="ct-detail-value"><a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a></div>
-        </div>
-        <div class="ct-detail-item">
-          <span class="ct-detail-label">Phone</span>
-          <div class="ct-detail-value"><a href="tel:+41787942700">+41 78 794 27 00</a></div>
-          <div class="ct-detail-note">Z&uuml;rich &middot; Monday to Friday</div>
-        </div>
+  <div class="ct-details-inner">
+
+    <div>
+      <h3 class="ct-detail-group-title">Direct <em>contact</em></h3>
+      <div class="ct-detail-item">
+        <span class="ct-detail-label">Email</span>
+        <div class="ct-detail-value"><a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a></div>
       </div>
-      <div class="ct-detail-group">
-        <h3>Follow <em>along</em></h3>
-        <div class="ct-detail-item">
-          <span class="ct-detail-label">Instagram</span>
-          <div class="ct-detail-value"><a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">@solo.quando</a></div>
-          <div class="ct-detail-note">Batches, stories, behind the scenes</div>
-        </div>
-        <div class="ct-detail-item">
-          <span class="ct-detail-label">LinkedIn</span>
-          <div class="ct-detail-value"><a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">soloquando</a></div>
-        </div>
+      <div class="ct-detail-item">
+        <span class="ct-detail-label">Phone</span>
+        <div class="ct-detail-value"><a href="tel:+41787942700">+41 78 794 27 00</a></div>
+        <div class="ct-detail-note">Z&uuml;rich &middot; Monday to Friday</div>
       </div>
     </div>
+
+    <div>
+      <h3 class="ct-detail-group-title">Follow <em>along</em></h3>
+      <div class="ct-detail-item">
+        <span class="ct-detail-label">Instagram</span>
+        <div class="ct-detail-value"><a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">@solo.quando</a></div>
+        <div class="ct-detail-note">Batches, stories, behind the scenes</div>
+      </div>
+      <div class="ct-detail-item">
+        <span class="ct-detail-label">LinkedIn</span>
+        <div class="ct-detail-value"><a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">soloquando</a></div>
+        <div class="ct-detail-note">Updates and announcements</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<style>
-.nl-strip{padding:96px 22px;background:var(--bone);border-top:1px solid var(--line);text-align:center;}
-.nl-strip-inner{max-width:560px;margin:0 auto;}
-.nl-strip .kicker{color:var(--terra);}
-.nl-strip h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 16px;color:var(--ink);}
-.nl-strip h2 em{color:var(--terra);font-style:italic;}
-.nl-strip-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);line-height:1.5;margin-bottom:32px;}
-.nl-strip-form{display:flex;max-width:440px;margin:0 auto 14px;}
-@media(max-width:520px){.nl-strip-form{flex-direction:column;gap:10px;}}
-.nl-strip-form input[type=email]{flex:1;padding:16px 18px;background:var(--paper);border:1px solid var(--line);border-right:none;color:var(--ink);font-family:'Jost',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
-@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid var(--line);}}
-.nl-strip-form input[type=email]::placeholder{color:var(--dim);opacity:.55;}
-.nl-strip-form input[type=email]:focus{border-color:rgba(43,26,15,.4);}
-.nl-strip-form button{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:16px 26px;white-space:nowrap;transition:background .2s;}
-.nl-strip-form button:hover{background:#a8552a;}
-.nl-strip-form button:disabled{opacity:.6;cursor:wait;}
-.nl-strip-note{font-size:13px;color:var(--dim);opacity:.7;}
-.nl-strip-result{max-width:440px;margin:8px auto 0;display:none;}
-.nl-strip-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--ink);}
-</style>
-
-<!-- ─── UNIFIED NEWSLETTER STRIP ─── -->
+<!-- ─── NEWSLETTER ─── -->
 <section class="nl-strip" aria-labelledby="nl-strip-h">
   <div class="nl-strip-inner">
-    <p class="kicker">Stay in the loop</p>
+    <span class="kicker">Stay in the loop</span>
     <h2 id="nl-strip-h">Subscribe to our <em>newsletter</em>.</h2>
+    <p class="nl-strip-sub">Z&uuml;rich first. One email when something actually happens.</p>
     <form class="nl-strip-form" id="nl-strip-form" action="https://formspree.io/f/mpqkvvnk" method="POST">
       <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
       <input type="hidden" name="source" value="contact"/>
@@ -268,31 +556,8 @@
     <p class="nl-strip-note">Free. Unsubscribe any time. Z&uuml;rich first.</p>
   </div>
 </section>
-<script>
-(function(){
-  var form = document.getElementById('nl-strip-form');
-  var out  = document.getElementById('nl-strip-result');
-  if(!form || !out) return;
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    var btn = form.querySelector('button[type=submit]');
-    btn.disabled = true; btn.textContent = 'Joining';
-    try{
-      var r = await fetch(form.action, {method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-      if(r.ok){
-        form.style.display='none';
-        out.style.display='block';
-        out.innerHTML='<p>You are on the list. We will be in touch.</p>';
-      } else {
-        form.submit();
-      }
-    } catch(err) {
-      form.submit();
-    }
-  });
-})();
-</script>
 
+<!-- ─── FOOTER ─── -->
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
     <div>
@@ -329,6 +594,33 @@
   </div>
 </div></footer>
 
-<script src="/shared.js"></script>
+<script>
+(function(){
+  var burger = document.querySelector('.nav-burger');
+  var nav    = document.getElementById('main-nav');
+  if(!burger||!nav) return;
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+  });
+})();
+
+(function(){
+  var form = document.getElementById('nl-strip-form');
+  var out  = document.getElementById('nl-strip-result');
+  if(!form||!out) return;
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; btn.textContent = 'Joining';
+    try {
+      var r = await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(r.ok){ form.style.display='none'; out.style.display='block'; out.innerHTML='<p>You are on the list. We will be in touch.</p>'; }
+      else { form.submit(); }
+    } catch(e){ form.submit(); }
+  });
+})();
+</script>
 </body>
 </html>
