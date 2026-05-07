@@ -64,14 +64,57 @@
 </style>
 <style>
 /* ── form-s clean styles ── */
-.form-s-inner{max-width:600px;margin:0 auto;text-align:center;}
-.form-s-inner .kicker{color:var(--terra);margin-bottom:18px;display:block;}
-.form-s-inner h2{font-size:clamp(38px,5vw,60px);letter-spacing:-.025em;margin-bottom:24px;line-height:1.05;color:var(--ink);}
-.form-s-inner h2 em{color:var(--terra);font-style:italic;}
-.form-s-lead{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;}
-.form-s-btn{display:inline-block;padding:18px 40px;background:var(--terra);color:var(--bone);font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s;}
-.form-s-btn:hover{background:#a8552a;color:var(--bone);}
 
+
+
+
+
+
+
+
+</style>
+<style>
+/* ── handle-s redesign: open numbered layout on dark ── */
+.handle-s{padding:96px 0;background:var(--ink);}
+.handle-intro{max-width:680px;margin:0 auto 72px;text-align:center;}
+.handle-intro h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(40px,5vw,60px);letter-spacing:-.025em;line-height:1.05;color:var(--bone);margin:14px 0 20px;}
+.handle-intro h2 em{color:var(--terra);font-style:italic;}
+.handle-intro p{font-size:18px;color:rgba(245,239,228,.72);font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.6;}
+.handle-split{display:grid;grid-template-columns:1fr 1px 1fr;gap:0;max-width:1000px;margin:0 auto;}
+@media(max-width:760px){.handle-split{grid-template-columns:1fr;}}
+.handle-divider{background:rgba(245,239,228,.12);}
+@media(max-width:760px){.handle-divider{width:100%;height:1px;margin:48px 0;}}
+.handle-side{padding:0 56px;}
+@media(max-width:960px){.handle-side{padding:0 32px;}}
+@media(max-width:760px){.handle-side{padding:0;}}
+.handle-side-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:80px;color:rgba(194,102,61,.25);line-height:1;letter-spacing:-.03em;margin-bottom:16px;}
+.handle-side-h{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:32px;color:var(--bone);margin-bottom:8px;line-height:1.15;}
+.handle-side-h em{color:var(--terra);font-style:italic;}
+.handle-side-lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:rgba(245,239,228,.55);margin-bottom:32px;line-height:1.5;}
+.handle-side ul{list-style:none;padding:0;}
+.handle-side li{font-size:16px;line-height:1.65;color:rgba(245,239,228,.82);padding:14px 0;border-bottom:1px solid rgba(245,239,228,.08);}
+.handle-side li:last-child{border-bottom:none;}
+
+/* ── form-s redesign: two-column invitation layout ── */
+.form-s{padding:0;background:var(--bone);}
+.form-s-grid{display:grid;grid-template-columns:1fr 1fr;min-height:480px;}
+@media(max-width:760px){.form-s-grid{grid-template-columns:1fr;min-height:auto;}}
+.form-s-left{background:var(--paper);padding:72px 56px;display:flex;flex-direction:column;justify-content:center;}
+@media(max-width:760px){.form-s-left{padding:48px 32px;}}
+.form-s-left .kicker{color:var(--terra);margin-bottom:20px;display:block;}
+.form-s-left h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(32px,3.8vw,48px);letter-spacing:-.02em;line-height:1.1;color:var(--ink);margin-bottom:24px;}
+.form-s-left h2 em{color:var(--terra);font-style:italic;}
+.form-s-checklist{list-style:none;padding:0;margin:0;}
+.form-s-checklist li{font-size:16px;color:var(--dim);line-height:1.65;padding:10px 0 10px 22px;border-bottom:1px solid var(--line);position:relative;}
+.form-s-checklist li:last-child{border-bottom:none;}
+.form-s-checklist li::before{content:'';position:absolute;left:0;top:18px;width:8px;height:1px;background:var(--terra);}
+.form-s-right{background:var(--ink);padding:72px 56px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;}
+@media(max-width:760px){.form-s-right{padding:48px 32px;align-items:center;text-align:center;}}
+.form-s-right-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2.8vw,32px);color:var(--bone);line-height:1.45;margin-bottom:40px;}
+.form-s-right-quote em{color:var(--terra);}
+.form-s-btn{display:inline-block;padding:18px 36px;background:var(--terra);color:var(--bone);font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s;margin-bottom:20px;}
+.form-s-btn:hover{background:#a8552a;}
+.form-s-right-note{font-size:13px;color:rgba(245,239,228,.45);letter-spacing:.04em;}
 </style>
 </head>
 <body>
@@ -128,20 +171,20 @@
 .pickup-text p{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:14px;}
 
 /* ─── YOU BRING / WE HANDLE ─── */
-.handle-s{padding:80px 0;background:var(--ink);}
-.handle-head{text-align:center;max-width:760px;margin:0 auto 48px;}
-.handle-head h2{font-size:clamp(40px,5vw,60px);letter-spacing:-.02em;margin-bottom:14px;line-height:1.05;}
-.handle-head h2 em{color:var(--terra);font-style:italic;}
-.handle-head .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);line-height:1.5;}
-.handle-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1040px;margin:0 auto;}
-@media(max-width:760px){.handle-grid{grid-template-columns:1fr;}}
-.handle-col{padding:40px 36px;border:1px solid rgba(245,239,228,.1);background:rgba(245,239,228,.04);}
-.handle-col-h{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;letter-spacing:-.01em;margin-bottom:6px;line-height:1.2;color:var(--bone);}
-.handle-col-h em{color:var(--terra);font-style:italic;}
-.handle-col-lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:rgba(245,239,228,.65);margin-bottom:22px;line-height:1.5;}
-.handle-col ul{list-style:none;}
-.handle-col li{font-size:17px;line-height:1.6;color:rgba(245,239,228,.82);padding-left:22px;margin-bottom:14px;position:relative;}
-.handle-col li::before{content:'';position:absolute;left:0;top:13px;width:10px;height:1px;background:var(--terra);}
+
+
+
+
+
+
+@media(max-width:760px){}
+
+
+
+
+
+
+
 
 /* ─── FORM ─── */
 .form-s{padding:80px 0;background:var(--bone);}
@@ -218,15 +261,16 @@
 <!-- ─── YOU BRING / WE HANDLE ─── -->
 <section class="handle-s">
   <div class="wrap">
-    <div class="handle-head">
+    <div class="handle-intro">
       <p class="kicker">A clear division of labour</p>
       <h2>You bring the food.<br/>We handle <em>the rest</em>.</h2>
-      <p class="sub">You bake. You cook. You make. We take care of everything around it.</p>
+      <p>You bake. You cook. You make. We take care of everything around it.</p>
     </div>
-    <div class="handle-grid">
-      <div class="handle-col">
-        <h3 class="handle-col-h">You <em>bring</em></h3>
-        <p class="handle-col-lead">The part that only you can do.</p>
+    <div class="handle-split">
+      <div class="handle-side">
+        <div class="handle-side-num">01</div>
+        <h3 class="handle-side-h">You <em>bring</em></h3>
+        <p class="handle-side-lead">The part that only you can do.</p>
         <ul>
           <li>Your recipe and the story behind it</li>
           <li>The ingredients and the care</li>
@@ -234,9 +278,11 @@
           <li>Whatever makes it yours</li>
         </ul>
       </div>
-      <div class="handle-col">
-        <h3 class="handle-col-h">We <em>handle</em></h3>
-        <p class="handle-col-lead">The platform around your kitchen.</p>
+      <div class="handle-divider"></div>
+      <div class="handle-side">
+        <div class="handle-side-num">02</div>
+        <h3 class="handle-side-h">We <em>handle</em></h3>
+        <p class="handle-side-lead">The platform around your kitchen.</p>
         <ul>
           <li>Pricing guidance and packaging standards</li>
           <li>Allergen labelling and food-safety paperwork</li>
@@ -250,12 +296,21 @@
 </section>
 <!-- ─── SHARE YOUR RECIPE ─── -->
 <section class="form-s" id="tell-us">
-  <div class="wrap">
-    <div class="form-s-inner">
+  <div class="form-s-grid">
+    <div class="form-s-left">
       <p class="kicker">Ready to share?</p>
       <h2>Tell us about your <em>recipe</em>.</h2>
-      <p class="form-s-lead">Write to Theoni directly. Tell her what you make, where it comes from, and what makes it yours. She reads every message and replies within 48 hours.</p>
+      <ul class="form-s-checklist">
+        <li>What you make and where it comes from</li>
+        <li>The story behind it, if there is one</li>
+        <li>How many you can make in one batch</li>
+        <li>Anything else you want her to know</li>
+      </ul>
+    </div>
+    <div class="form-s-right">
+      <p class="form-s-right-quote">"I read every message myself.<br/>I reply within <em>48 hours</em>."<br/><br/>Theoni, founder</p>
       <a class="form-s-btn" href="mailto:hello@soloquando.ch?subject=My%20recipe%20%E2%80%94%20solo.quando">Write to us &rarr;</a>
+      <p class="form-s-right-note">hello@soloquando.ch</p>
     </div>
   </div>
 </section>
