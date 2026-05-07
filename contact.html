@@ -17,14 +17,15 @@
   --paper: #FAF3EE;
   --bone:  #F5EFE4;
   --dim:   #5C3317;
-  --line:  rgba(61,31,13,.1);
+  --line:  rgba(61,31,13,.09);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body { background: var(--paper); color: var(--ink); font-family: 'Jost', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
-a { text-decoration: none; }
+a { text-decoration: none; color: inherit; }
 
-/* NAV */
-.nav { position: sticky; top: 0; z-index: 200; background: rgba(250,243,238,.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+/* ── NAV ── */
+.nav { position: sticky; top: 0; z-index: 200; background: rgba(245,239,228,.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 88px; padding: 0 48px; max-width: 1180px; margin: 0 auto; }
 @media(max-width:720px){.nav-inner{padding:0 22px;height:72px;}}
 .nav-logo { display: flex; align-items: center; }
@@ -36,7 +37,7 @@ a { text-decoration: none; }
 .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 10px; margin-left: 8px; }
 .nav-burger span { display: block; width: 24px; height: 2px; background: var(--ink); transition: all .28s ease; transform-origin: center; }
 @media(max-width:920px){
-  .nav-links { display: none; position: fixed; top: 88px; left: 0; right: 0; flex-direction: column; gap: 0; background: rgba(250,243,238,.98); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); box-shadow: 0 8px 32px rgba(43,26,15,.1); z-index: 199; }
+  .nav-links { display: none; position: fixed; top: 88px; left: 0; right: 0; flex-direction: column; gap: 0; background: rgba(245,239,228,.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); box-shadow: 0 8px 32px rgba(43,26,15,.12); z-index: 199; }
   .nav-links.open { display: flex; }
   .nav-links li { border-bottom: 1px solid var(--line); }
   .nav-links a { display: block; padding: 20px 24px; font-size: 18px; color: var(--ink); }
@@ -47,251 +48,427 @@ a { text-decoration: none; }
 }
 @media(max-width:720px){.nav-links{top:72px;}}
 
-/* HERO — pure type, no image */
+/* ══════════════════════════════════
+   HERO — split, full viewport height
+   ══════════════════════════════════ */
 .ct-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 88px);
+}
+@media(max-width:860px) {
+  .ct-hero { grid-template-columns: 1fr; min-height: auto; }
+}
+
+/* LEFT PANEL — text on dark */
+.ct-hero-text {
   background: var(--ink);
-  padding: 96px 48px 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 72px 64px;
   position: relative;
   overflow: hidden;
 }
-@media(max-width:720px){ .ct-hero { padding: 72px 22px 64px; } }
+@media(max-width:1100px){ .ct-hero-text { padding: 64px 48px; } }
+@media(max-width:860px)  { .ct-hero-text { padding: 64px 22px 56px; } }
 
-/* subtle ambient glow */
-.ct-hero::before {
+/* ambient warm glow */
+.ct-hero-text::before {
   content: '';
   position: absolute;
-  top: -100px; right: -60px;
-  width: 480px; height: 480px;
+  top: -80px; right: -80px;
+  width: 420px; height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(196,98,45,.12) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(196,98,45,.13) 0%, transparent 68%);
   pointer-events: none;
 }
 
-.ct-hero-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: flex-end;
-  gap: 48px;
-}
-@media(max-width:720px){ .ct-hero-inner { grid-template-columns: 1fr; gap: 32px; } }
-
 .ct-kicker {
   font-size: 11px;
-  letter-spacing: .26em;
+  letter-spacing: .28em;
   text-transform: uppercase;
   color: var(--terra);
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .ct-h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(72px, 10vw, 128px);
   font-weight: 300;
-  line-height: .92;
+  font-size: clamp(72px, 8.5vw, 120px);
+  line-height: .9;
   letter-spacing: -.04em;
   color: var(--bone);
+  margin-bottom: 40px;
 }
 .ct-h1 em { color: var(--terra); font-style: italic; }
 
-.ct-hero-aside {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 20px;
-  padding-bottom: 8px;
-}
-@media(max-width:720px){ .ct-hero-aside { align-items: flex-start; } }
-
-.ct-tagline {
+.ct-hero-note {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 19px;
-  color: rgba(245,239,228,.5);
-  line-height: 1.6;
-  max-width: 280px;
-  text-align: right;
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(245,239,228,.48);
+  max-width: 380px;
+  margin-bottom: 48px;
 }
-@media(max-width:720px){ .ct-tagline { text-align: left; max-width: 100%; } }
 
+/* PRIMARY ACTIONS */
+.ct-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 44px;
+}
+
+.ct-action {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  border: 1px solid rgba(245,239,228,.1);
+  background: rgba(245,239,228,.04);
+  transition: background .25s, border-color .25s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.ct-action:hover {
+  background: rgba(245,239,228,.09);
+  border-color: rgba(245,239,228,.2);
+}
+.ct-action-icon {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.ct-action-icon svg { width: 18px; height: 18px; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.ct-action--email .ct-action-icon { background: rgba(196,98,45,.15); }
+.ct-action--email .ct-action-icon svg { stroke: var(--terra); }
+.ct-action--whatsapp .ct-action-icon { background: rgba(37,211,102,.15); }
+.ct-action--whatsapp .ct-action-icon svg { stroke: #25d366; }
+
+.ct-action-body { flex: 1; }
+.ct-action-label {
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(245,239,228,.35);
+  display: block;
+  margin-bottom: 3px;
+}
+.ct-action-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--bone);
+  letter-spacing: -.01em;
+}
+.ct-action--email:hover .ct-action-value { color: var(--terra); }
+.ct-action--whatsapp:hover .ct-action-value { color: #25d366; }
+
+.ct-action-arrow {
+  font-size: 18px;
+  color: rgba(245,239,228,.2);
+  transition: color .2s, transform .2s;
+}
+.ct-action:hover .ct-action-arrow { color: rgba(245,239,228,.5); transform: translateX(4px); }
+
+/* Reply badge */
 .ct-badge {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  padding: 10px 16px;
-  border: 1px solid rgba(196,98,45,.28);
-  background: rgba(196,98,45,.07);
+  width: fit-content;
 }
 .ct-badge-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
+  width: 5px; height: 5px; border-radius: 50%;
   background: var(--terra);
-  animation: blink 2.6s ease-in-out infinite;
-  flex-shrink: 0;
+  animation: pulse 2.8s ease-in-out infinite;
 }
-@keyframes blink {
-  0%,100%{ opacity:1; } 50%{ opacity:.3; }
-}
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.25;} }
 .ct-badge span {
   font-size: 11px;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--terra);
+  color: rgba(245,239,228,.3);
 }
 
-/* WHAT BRINGS YOU HERE */
+/* RIGHT PANEL — image */
+.ct-hero-img {
+  position: relative;
+  overflow: hidden;
+  background: #2a140a;
+}
+@media(max-width:860px){
+  .ct-hero-img { height: 70vw; min-height: 340px; }
+}
+.ct-hero-img picture,
+.ct-hero-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  transition: transform 8s ease;
+}
+.ct-hero-img:hover img { transform: scale(1.03); }
+
+/* gradient — dark at bottom */
+.ct-hero-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    transparent 40%,
+    rgba(20,8,3,.55) 100%
+  );
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════
+   WHAT BRINGS YOU HERE
+   ══════════════════════════════════ */
 .ct-paths {
+  padding: 96px 0;
+  background: var(--paper);
+}
+
+.ct-paths-inner {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 88px 48px 0;
+  padding: 0 64px;
 }
-@media(max-width:720px){ .ct-paths { padding: 64px 22px 0; } }
+@media(max-width:860px){ .ct-paths-inner { padding: 0 40px; } }
+@media(max-width:560px){ .ct-paths-inner { padding: 0 22px; } }
 
-.ct-section-label {
+.ct-section-kicker {
   font-size: 11px;
   letter-spacing: .26em;
   text-transform: uppercase;
   color: var(--terra);
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .ct-section-heading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(34px, 4vw, 52px);
   font-weight: 300;
   letter-spacing: -.025em;
   color: var(--ink);
-  margin-bottom: 52px;
   line-height: 1.05;
+  margin-bottom: 56px;
 }
 .ct-section-heading em { color: var(--terra); font-style: italic; }
 
-/* Each path row */
+/* path rows */
 .ct-path {
   display: grid;
-  grid-template-columns: 56px 1fr auto;
+  grid-template-columns: 200px 1fr auto;
   align-items: center;
-  gap: 32px;
-  padding: 36px 0;
+  gap: 48px;
+  padding: 44px 0;
+}
+.ct-path + .ct-path {
   border-top: 1px solid var(--line);
 }
-.ct-path:last-child { border-bottom: 1px solid var(--line); }
-@media(max-width:640px){
-  .ct-path { grid-template-columns: 40px 1fr; gap: 20px 16px; }
+
+@media(max-width:860px){
+  .ct-path { grid-template-columns: 1fr; gap: 16px; }
 }
 
+.ct-path-left {}
 .ct-path-num {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 44px;
-  font-weight: 300;
-  color: rgba(196,98,45,.2);
-  line-height: 1;
-  transition: color .25s;
-  user-select: none;
+  font-size: 13px;
+  letter-spacing: .18em;
+  color: var(--terra);
+  display: block;
+  margin-bottom: 10px;
 }
-.ct-path:hover .ct-path-num { color: var(--terra); }
-
 .ct-path-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 400;
-  letter-spacing: -.01em;
+  letter-spacing: -.02em;
   color: var(--ink);
-  margin-bottom: 6px;
-  line-height: 1.15;
-}
-.ct-path-desc {
-  font-size: 15px;
-  line-height: 1.75;
-  color: var(--dim);
-  opacity: .75;
-  max-width: 480px;
+  line-height: 1.1;
 }
 
-.ct-path-link {
+.ct-path-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--dim);
+  opacity: .75;
+  max-width: 460px;
+}
+
+.ct-path-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 13px 26px;
-  border: 1px solid rgba(61,31,13,.16);
+  padding: 14px 28px;
+  border: 1px solid rgba(61,31,13,.15);
   color: var(--ink);
   font-family: 'Jost', sans-serif;
   font-size: 11px;
-  font-weight: 400;
   letter-spacing: .2em;
   text-transform: uppercase;
   white-space: nowrap;
   flex-shrink: 0;
   transition: background .22s, border-color .22s, color .22s;
 }
-.ct-path-link:hover { background: var(--terra); border-color: var(--terra); color: var(--bone); }
-@media(max-width:640px){
-  .ct-path-link { grid-column: 2; justify-self: start; margin-top: 6px; }
+.ct-path-btn:hover {
+  background: var(--terra);
+  border-color: var(--terra);
+  color: var(--bone);
 }
+@media(max-width:860px){ .ct-path-btn { width: fit-content; } }
 
-/* DIRECT CONTACT */
-.ct-direct {
-  background: var(--bone);
-  border-top: 1px solid var(--line);
-  margin-top: 88px;
+/* ══════════════════════════════════
+   REACH US — dark section
+   ══════════════════════════════════ */
+.ct-reach {
+  background: var(--ink);
+  padding: 96px 0;
 }
-.ct-direct-inner {
+.ct-reach-inner {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 88px 48px;
+  padding: 0 64px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
+  align-items: start;
 }
-@media(max-width:720px){ .ct-direct-inner { grid-template-columns: 1fr; gap: 56px; padding: 64px 22px; } }
+@media(max-width:860px){ .ct-reach-inner { padding: 0 40px; } }
+@media(max-width:720px){ .ct-reach-inner { grid-template-columns: 1fr; gap: 56px; } }
+@media(max-width:560px){ .ct-reach-inner { padding: 0 22px; } }
 
-.ct-direct-group-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 30px;
-  font-weight: 300;
-  letter-spacing: -.02em;
-  color: var(--ink);
-  margin-bottom: 36px;
-  line-height: 1.1;
-}
-.ct-direct-group-title em { color: var(--terra); font-style: italic; }
-
-.ct-contact-item {
-  padding: 22px 0;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.ct-contact-item:first-of-type { border-top: 1px solid var(--line); }
-
-.ct-contact-label {
-  font-size: 10px;
+/* reach left */
+.ct-reach-label {
+  font-size: 11px;
   letter-spacing: .26em;
   text-transform: uppercase;
   color: var(--terra);
+  display: block;
+  margin-bottom: 14px;
 }
-.ct-contact-value a {
+.ct-reach-heading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 21px;
+  font-size: clamp(30px, 3.5vw, 44px);
   font-weight: 300;
-  color: var(--ink);
+  letter-spacing: -.025em;
+  color: var(--bone);
+  line-height: 1.1;
+  margin-bottom: 48px;
+}
+.ct-reach-heading em { color: var(--terra); font-style: italic; }
+
+.ct-contact-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(245,239,228,.07);
+}
+
+
+.ct-contact-type {
+  font-size: 10px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: rgba(245,239,228,.28);
+}
+.ct-contact-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 300;
+  color: var(--bone);
   letter-spacing: -.01em;
   transition: color .2s;
 }
-.ct-contact-value a:hover { color: var(--terra); }
-.ct-contact-note {
+.ct-contact-val:hover { color: var(--terra); }
+.ct-contact-val--wa:hover { color: #25d366; }
+.ct-contact-sub {
   font-size: 13px;
-  color: var(--dim);
-  opacity: .5;
+  color: rgba(245,239,228,.25);
 }
 
-/* NL STRIP */
-.nl-strip { padding: 96px 22px; background: var(--paper); border-top: 1px solid var(--line); text-align: center; }
+/* reach right */
+.ct-reach-right {
+  border-left: 1px solid rgba(245,239,228,.07);
+  padding-left: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+@media(max-width:720px){ .ct-reach-right { border-left: none; padding-left: 0; border-top: 1px solid rgba(245,239,228,.07); padding-top: 48px; } }
+
+.ct-social-label {
+  font-size: 11px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: rgba(245,239,228,.28);
+  display: block;
+  margin-bottom: 28px;
+}
+
+.ct-social-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(245,239,228,.06);
+}
+
+
+.ct-social-platform {
+  font-size: 10px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: rgba(245,239,228,.25);
+}
+.ct-social-handle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: rgba(245,239,228,.6);
+  letter-spacing: -.01em;
+  transition: color .2s;
+}
+.ct-social-handle:hover { color: var(--terra); }
+
+/* bottom quote */
+.ct-reach-quote {
+  margin-top: 52px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(245,239,228,.06);
+}
+.ct-reach-quote p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.65;
+  color: rgba(245,239,228,.3);
+}
+.ct-reach-quote cite {
+  display: block;
+  margin-top: 14px;
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(245,239,228,.18);
+}
+
+/* ── NL STRIP ── */
+.nl-strip { padding: 96px 22px; background: var(--bone); text-align: center; }
 .nl-strip-inner { max-width: 560px; margin: 0 auto; }
 .nl-strip .kicker { font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--terra); display: block; margin-bottom: 16px; }
 .nl-strip h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(34px,4.4vw,52px); letter-spacing: -.02em; line-height: 1.05; margin-bottom: 16px; color: var(--ink); }
@@ -299,7 +476,7 @@ a { text-decoration: none; }
 .nl-strip-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: var(--dim); opacity: .6; line-height: 1.5; margin-bottom: 32px; }
 .nl-strip-form { display: flex; max-width: 440px; margin: 0 auto 14px; }
 @media(max-width:520px){.nl-strip-form{flex-direction:column;gap:10px;}}
-.nl-strip-form input[type=email] { flex: 1; padding: 16px 18px; background: var(--bone); border: 1px solid var(--line); border-right: none; color: var(--ink); font-family: 'Jost', sans-serif; font-size: 16px; outline: none; transition: border-color .2s; }
+.nl-strip-form input[type=email] { flex: 1; padding: 16px 18px; background: var(--paper); border: 1px solid var(--line); border-right: none; color: var(--ink); font-family: 'Jost', sans-serif; font-size: 16px; outline: none; transition: border-color .2s; }
 @media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid var(--line);}}
 .nl-strip-form input[type=email]::placeholder { color: var(--dim); opacity: .4; }
 .nl-strip-form input[type=email]:focus { border-color: rgba(43,26,15,.3); }
@@ -310,32 +487,44 @@ a { text-decoration: none; }
 .nl-strip-result { max-width: 440px; margin: 8px auto 0; display: none; }
 .nl-strip-result p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: var(--ink); }
 
-/* FOOTER */
+/* ── FOOTER ── */
 .footer { background: var(--ink); padding: 72px 22px 40px; }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(245,239,228,.08); margin-bottom: 32px; }
 @media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
-.footer-logo-img { height: 80px; width: auto; margin-bottom: 14px; }
+.footer-logo-img { margin-bottom: 14px; }
 .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: rgba(245,239,228,.4); }
-.footer-col h5 { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(245,239,228,.35); margin-bottom: 18px; font-weight: 400; }
+.footer-col h5 { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(245,239,228,.32); margin-bottom: 18px; font-weight: 400; }
 .footer-col ul { list-style: none; }
 .footer-col li { margin-bottom: 10px; }
-.footer-col a { font-size: 15px; color: rgba(245,239,228,.6); transition: color .2s; }
+.footer-col a { font-size: 15px; color: rgba(245,239,228,.55); transition: color .2s; }
 .footer-col a:hover { color: var(--bone); }
 .footer-payments { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
-.footer-payments-label { font-size: 13px; color: rgba(245,239,228,.3); }
-.footer-payments-name { font-size: 13px; color: rgba(245,239,228,.5); transition: color .2s; }
+.footer-payments-label { font-size: 13px; color: rgba(245,239,228,.28); }
+.footer-payments-name { font-size: 13px; color: rgba(245,239,228,.45); transition: color .2s; }
 .footer-payments-name:hover { color: var(--bone); }
-.footer-payments-methods { font-size: 13px; color: rgba(245,239,228,.3); }
-.footer-bottom { font-size: 13px; color: rgba(245,239,228,.25); }
+.footer-payments-methods { font-size: 13px; color: rgba(245,239,228,.28); }
+.footer-bottom { font-size: 13px; color: rgba(245,239,228,.22); }
+
+/* entrance animation */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(18px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.ct-kicker      { animation: fadeUp .5s ease both .06s; }
+.ct-h1          { animation: fadeUp .6s ease both .14s; }
+.ct-hero-note   { animation: fadeUp .6s ease both .22s; }
+.ct-actions     { animation: fadeUp .6s ease both .30s; }
+.ct-badge       { animation: fadeUp .5s ease both .40s; }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="nav"><div class="nav-inner">
   <a href="/" class="nav-logo" aria-label="solo.quando home">
-    <img src="logo-nav.webp" alt="solo.quando" width="126" height="72"/>
+    <img src="https://soloquando.ch/logo-nav.webp" alt="solo.quando" width="126" height="72"/>
   </a>
   <ul class="nav-links" id="main-nav">
     <li><a href="/">Home</a></li>
@@ -351,84 +540,133 @@ a { text-decoration: none; }
   </button>
 </div></nav>
 
-<!-- HERO — typography only -->
+<!-- HERO -->
 <header class="ct-hero">
-  <div class="ct-hero-inner">
-    <div>
-      <span class="ct-kicker">Get in touch</span>
-      <h1 class="ct-h1">Say<br><em>hello.</em></h1>
+
+  <!-- LEFT: text + CTAs -->
+  <div class="ct-hero-text">
+    <span class="ct-kicker">Get in touch</span>
+    <h1 class="ct-h1">Say<br><em>hello.</em></h1>
+    <p class="ct-hero-note">Theoni reads every message herself. No inbox filters, no support tickets.</p>
+
+    <div class="ct-actions">
+      <a href="mailto:hello@soloquando.ch" class="ct-action ct-action--email">
+        <div class="ct-action-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        </div>
+        <div class="ct-action-body">
+          <span class="ct-action-label">Email</span>
+          <span class="ct-action-value">hello@soloquando.ch</span>
+        </div>
+        <span class="ct-action-arrow">→</span>
+      </a>
+
+      <a href="https://wa.me/message/SL244NA5ARHTL1" target="_blank" rel="noopener" class="ct-action ct-action--whatsapp">
+        <div class="ct-action-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <div class="ct-action-body">
+          <span class="ct-action-label">WhatsApp</span>
+          <span class="ct-action-value">Chat with Theoni</span>
+        </div>
+        <span class="ct-action-arrow">→</span>
+      </a>
     </div>
-    <div class="ct-hero-aside">
-      <p class="ct-tagline">Theoni reads every message personally. No inbox filters, no support tickets.</p>
-      <div class="ct-badge">
-        <span class="ct-badge-dot"></span>
-        <span>Replies within 48 hours</span>
-      </div>
+
+    <div class="ct-badge">
+      <span class="ct-badge-dot"></span>
+      <span>Replies within 48 hours</span>
     </div>
   </div>
+
+  <!-- RIGHT: portrait image -->
+  <div class="ct-hero-img">
+    <picture>
+      <source type="image/webp" srcset="https://soloquando.ch/theoni-portrait-600.webp 600w, https://soloquando.ch/theoni-portrait-900.webp 900w" sizes="(max-width:860px) 100vw, 50vw"/>
+      <source type="image/jpeg" srcset="https://soloquando.ch/theoni-portrait-600.jpg 600w, https://soloquando.ch/theoni-portrait-900.jpg 900w" sizes="(max-width:860px) 100vw, 50vw"/>
+      <img src="https://soloquando.ch/theoni-portrait-900.jpg" alt="Theoni Paschou, founder of solo.quando" fetchpriority="high"/>
+    </picture>
+  </div>
+
 </header>
 
 <!-- WHAT BRINGS YOU HERE -->
 <section class="ct-paths">
-  <span class="ct-section-label">What brings you here?</span>
-  <h2 class="ct-section-heading">We can help with <em>this.</em></h2>
+  <div class="ct-paths-inner">
+    <span class="ct-section-kicker">What brings you here?</span>
+    <h2 class="ct-section-heading">We can help with <em>this.</em></h2>
 
-  <div class="ct-path">
-    <div class="ct-path-num">01</div>
-    <div>
-      <div class="ct-path-title">Order or pickup question</div>
-      <p class="ct-path-desc">Pickup details, allergens, batch status, anything about your pre-order.</p>
+    <div class="ct-path">
+      <div class="ct-path-left">
+        <span class="ct-path-num">01 &mdash;</span>
+        <div class="ct-path-title">Order or pickup question</div>
+      </div>
+      <p class="ct-path-desc">Pickup details, allergens, batch status, anything about your pre-order. Theoni will get back to you quickly.</p>
+      <a href="mailto:hello@soloquando.ch?subject=Order%20question" class="ct-path-btn">Email Theoni &rarr;</a>
     </div>
-    <a href="mailto:hello@soloquando.ch?subject=Order%20question" class="ct-path-link">Email Theoni &rarr;</a>
-  </div>
 
-  <div class="ct-path">
-    <div class="ct-path-num">02</div>
-    <div>
-      <div class="ct-path-title">I want to bake here</div>
+    <div class="ct-path">
+      <div class="ct-path-left">
+        <span class="ct-path-num">02 &mdash;</span>
+        <div class="ct-path-title">I want to bake here</div>
+      </div>
       <p class="ct-path-desc">Have a recipe and want to bake for your neighbourhood? The baker form gets you started.</p>
+      <a href="/bake-with-us" class="ct-path-btn">Baker form &rarr;</a>
     </div>
-    <a href="/bake-with-us" class="ct-path-link">Baker form &rarr;</a>
-  </div>
 
-  <div class="ct-path">
-    <div class="ct-path-num">03</div>
-    <div>
-      <div class="ct-path-title">Press or collaboration</div>
-      <p class="ct-path-desc">Media, partnerships, events. Or something we haven't thought of yet.</p>
+    <div class="ct-path">
+      <div class="ct-path-left">
+        <span class="ct-path-num">03 &mdash;</span>
+        <div class="ct-path-title">Press or collaboration</div>
+      </div>
+      <p class="ct-path-desc">Media, partnerships, events. Or something we haven't thought of yet. All of it welcome.</p>
+      <a href="mailto:hello@soloquando.ch?subject=Press%20inquiry" class="ct-path-btn">Write to us &rarr;</a>
     </div>
-    <a href="mailto:hello@soloquando.ch?subject=Press%20inquiry" class="ct-path-link">Write to us &rarr;</a>
+
   </div>
 </section>
 
-<!-- DIRECT CONTACT -->
-<section class="ct-direct">
-  <div class="ct-direct-inner">
+<!-- REACH US DIRECTLY -->
+<section class="ct-reach">
+  <div class="ct-reach-inner">
 
+    <!-- Left: direct contact -->
     <div>
-      <h3 class="ct-direct-group-title">Direct <em>contact</em></h3>
-      <div class="ct-contact-item">
-        <span class="ct-contact-label">Email</span>
-        <div class="ct-contact-value"><a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a></div>
+      <span class="ct-reach-label">All the ways to reach us</span>
+      <h2 class="ct-reach-heading">Find us <em>anywhere.</em></h2>
+
+      <div class="ct-contact-row">
+        <span class="ct-contact-type">Email</span>
+        <a href="mailto:hello@soloquando.ch" class="ct-contact-val">hello@soloquando.ch</a>
       </div>
-      <div class="ct-contact-item">
-        <span class="ct-contact-label">Phone</span>
-        <div class="ct-contact-value"><a href="tel:+41787942700">+41 78 794 27 00</a></div>
-        <div class="ct-contact-note">Z&uuml;rich &middot; Monday to Friday</div>
+      <div class="ct-contact-row">
+        <span class="ct-contact-type">WhatsApp</span>
+        <a href="https://wa.me/message/SL244NA5ARHTL1" target="_blank" rel="noopener" class="ct-contact-val ct-contact-val--wa">Chat directly with Theoni</a>
+        <span class="ct-contact-sub">WhatsApp Business</span>
+      </div>
+      <div class="ct-contact-row">
+        <span class="ct-contact-type">Phone</span>
+        <a href="tel:+41787942700" class="ct-contact-val">+41 78 794 27 00</a>
+        <span class="ct-contact-sub">Z&uuml;rich &middot; Monday to Friday</span>
       </div>
     </div>
 
-    <div>
-      <h3 class="ct-direct-group-title">Follow <em>along</em></h3>
-      <div class="ct-contact-item">
-        <span class="ct-contact-label">Instagram</span>
-        <div class="ct-contact-value"><a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">@solo.quando</a></div>
-        <div class="ct-contact-note">Batches, stories, behind the scenes</div>
-      </div>
-      <div class="ct-contact-item">
-        <span class="ct-contact-label">LinkedIn</span>
-        <div class="ct-contact-value"><a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">soloquando</a></div>
-        <div class="ct-contact-note">Updates and announcements</div>
+    <!-- Right: social + quote -->
+    <div class="ct-reach-right">
+      <span class="ct-social-label">Follow along</span>
+
+      <a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener" class="ct-social-item">
+        <span class="ct-social-platform">Instagram</span>
+        <span class="ct-social-handle">@solo.quando</span>
+      </a>
+      <a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener" class="ct-social-item">
+        <span class="ct-social-platform">LinkedIn</span>
+        <span class="ct-social-handle">soloquando</span>
+      </a>
+
+      <div class="ct-reach-quote">
+        <p>The food you've been missing didn't come from a factory. It came from a kitchen two streets away.</p>
+        <cite>Theoni Paschou &mdash; Founder</cite>
       </div>
     </div>
 
@@ -457,7 +695,7 @@ a { text-decoration: none; }
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
     <div>
-      <img src="logo-footer.webp" alt="solo.quando" class="footer-logo-img" width="140" height="80" loading="lazy"/>
+      <img src="https://soloquando.ch/logo-footer.webp" alt="solo.quando" class="footer-logo-img" width="140" height="80" loading="lazy"/>
       <p class="footer-tagline">Made only when you want it.</p>
     </div>
     <div class="footer-col"><h5>Discover</h5><ul>
@@ -471,6 +709,7 @@ a { text-decoration: none; }
       <li><a href="/contact">Contact us</a></li>
       <li><a href="mailto:hello@soloquando.ch">Email</a></li>
       <li><a href="tel:+41787942700">Phone</a></li>
+      <li><a href="https://wa.me/message/SL244NA5ARHTL1" target="_blank" rel="noopener">WhatsApp</a></li>
       <li><a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">Instagram</a></li>
       <li><a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">LinkedIn</a></li>
     </ul></div>
@@ -493,7 +732,7 @@ a { text-decoration: none; }
 <script>
 (function(){
   var burger = document.querySelector('.nav-burger');
-  var nav    = document.getElementById('main-nav');
+  var nav = document.getElementById('main-nav');
   if(!burger||!nav) return;
   burger.addEventListener('click', function(){
     var open = nav.classList.toggle('open');
@@ -501,10 +740,9 @@ a { text-decoration: none; }
     burger.setAttribute('aria-expanded', open);
   });
 })();
-
 (function(){
   var form = document.getElementById('nl-strip-form');
-  var out  = document.getElementById('nl-strip-result');
+  var out = document.getElementById('nl-strip-result');
   if(!form||!out) return;
   form.addEventListener('submit', async function(e){
     e.preventDefault();
@@ -518,5 +756,6 @@ a { text-decoration: none; }
   });
 })();
 </script>
+<script src="/shared.js"></script>
 </body>
 </html>
