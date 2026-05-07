@@ -1,32 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Our story &middot; solo.quando</title>
-<meta name="description" content="Why we built solo.quando: a small story about a Sunday, twenty-four cookies, and food waste."/>
-<link rel="preload" href="grandma-900.webp" as="image" type="image/webp" fetchpriority="high">
+<meta name="description" content="It began in her kitchen. The story behind solo.quando."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <style>
-/* Option B */
-.s-section.first{background:var(--ink);}
-.s-section.first h1,.s-section.first h2,.s-section.first h3{color:var(--bone);}
-.s-section.first h1 em,.s-section.first h2 em{color:var(--terra);}
-.s-section.first p,.s-section.first .sub{color:rgba(245,239,228,.75);}
-.s-section.first .kicker{color:var(--terra);}
-.s-section.first .pull{color:var(--bone);border-left-color:rgba(245,239,228,.3);}
-.s-section.first .s-img figcaption{color:rgba(245,239,228,.5);}
-.s-section:not(.first):not(.alt){background:var(--terra);}
-.s-section:not(.first):not(.alt) h1,.s-section:not(.first):not(.alt) h2,.s-section:not(.first):not(.alt) h3{color:var(--bone);}
-.s-section:not(.first):not(.alt) h1 em,.s-section:not(.first):not(.alt) h2 em{color:var(--ink);}
-.s-section:not(.first):not(.alt) p,.s-section:not(.first):not(.alt) .sub{color:rgba(245,239,228,.85);}
-.s-section:not(.first):not(.alt) .kicker{color:rgba(245,239,228,.7);}
-.s-section:not(.first):not(.alt) .pull{color:var(--bone);border-left-color:rgba(245,239,228,.4);}
-.s-section:not(.first):not(.alt) .s-img figcaption{color:rgba(245,239,228,.5);}
-</style>
-<style>
-/* Nav — full definition matching index */
+/* Section colour assignments */
+.h-hero{background:var(--ink);}
+.h-hero h1,.h-hero h2,.h-hero h3{color:var(--bone);}
+.h-hero h1 em{color:var(--terra);}
+.h-hero p,.h-hero .sub{color:rgba(245,239,228,.75);}
+.h-hero .kicker{color:var(--terra);}
+.story-body-s{background:var(--paper);}
+.bigger-s{background:var(--bone);}
+.why-s{background:var(--terra);}
+.why-s h2,.why-s h3{color:var(--bone);}
+.why-s h2 em{color:var(--ink);}
+.why-s p{color:rgba(245,239,228,.85);}
+.why-s .kicker{color:rgba(245,239,228,.7);}
+.opposite-s{background:var(--ink);}
+.opposite-s h2,.opposite-s h3{color:var(--bone);}
+.opposite-s h2 em{color:var(--terra);}
+.opposite-s p{color:rgba(245,239,228,.82);}
+.opposite-s .kicker{color:var(--terra);}
+/* Nav */
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
 @media(max-width:720px){.nav-inner{padding:0 22px;height:72px;}}
@@ -48,96 +48,11 @@
   .nav-burger.open span:nth-child(2){opacity:0;}
   .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 }
-@media(max-width:720px){
-  .nav-links{top:72px;}
-}
-</style>
-
-<style>
-/* ── DESIGN RHYTHM (auto-applied for v2) ── */
-
-.stats-wrap { background: var(--bone); }
-.stats-wrap h1, .stats-wrap h2, .stats-wrap h3, .stats-wrap h4 { color: var(--ink); }
-.stats-wrap h1 em, .stats-wrap h2 em, .stats-wrap h3 em { color: var(--terra); }
-.stats-wrap p, .stats-wrap .sub, .stats-wrap li { color: var(--dim); }
-.stats-wrap .kicker { color: var(--terra); }
-
-</style>
-<style>
-.h-hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
-.h-hero{grid-template-columns:1fr;min-height:auto;}
-.h-hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;}
-.h-hero-text{padding:60px 22px;}
-.h-hero h1{color:var(--bone);font-size:clamp(48px,5.8vw,80px);line-height:1.04;letter-spacing:-.025em;margin:14px 0 22px;}
-.h-hero h1 em{color:var(--terra);font-style:italic;}
-.h-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:rgba(245,239,228,.78);max-width:480px;line-height:1.55;}
-.h-hero-img{position:relative;overflow:hidden;background:var(--paper);}
-.h-hero-img{height:60vw;min-height:300px;}
-.h-hero-img img{width:100%;height:100%;object-fit:cover;}
-</style>
-<style>
-/* why-s complete */
-.why-s { background: var(--terra); }
-.why-s h4 { color: var(--bone); }
-.why-s h3 em { color: var(--ink); }
-.why-s li { color: rgba(245,239,228,0.88); }
-.why-s .kicker { color: rgba(245,239,228,0.78); }
-.why-s{padding:96px 0;background:var(--terra);}
-.why-s .kicker{color:rgba(245,239,228,.7);}
-.why-inner{max-width:780px;margin:0 auto;text-align:center;}
-.why-h{font-size:clamp(44px,5.5vw,72px);line-height:1.05;letter-spacing:-.025em;margin:14px 0 26px;color:var(--bone);}
-.why-h em{color:var(--ink);font-style:italic;}
-.why-p{font-size:19px;line-height:1.7;color:rgba(245,239,228,.85);margin-bottom:18px;}
-.why-stats{display:flex;justify-content:center;gap:48px;margin-top:44px;flex-wrap:wrap;}
-.why-stats{gap:32px;}
-.why-stat-num{font-family:'Cormorant Garamond',serif;font-size:46px;color:var(--bone);line-height:1;letter-spacing:-.02em;}
-.why-stat-lbl{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,239,228,.65);margin-top:8px;}
-.why-cta{margin-top:48px;}
-.why-s h1, .why-s h2, .why-s h3, .why-s h4 { color: var(--bone); }
+@media(max-width:720px){.nav-links{top:72px;}}
 </style>
 </head>
-
-<style>
-/* why-s exact index copy */
-.why-s{padding:96px 0;background:var(--terra);}
-.why-inner{max-width:780px;margin:0 auto;text-align:center;}
-.why-h{font-size:clamp(44px,5.5vw,72px);line-height:1.05;letter-spacing:-.025em;margin:14px 0 26px;color:var(--bone);}
-.why-p{font-size:19px;line-height:1.7;color:rgba(245,239,228,.85);margin-bottom:18px;}
-.why-stats{display:flex;justify-content:center;gap:48px;margin-top:44px;flex-wrap:wrap;}
-.why-stats{gap:32px;}
-.why-stat-num{font-family:'Cormorant Garamond',serif;font-size:46px;color:var(--bone);line-height:1;letter-spacing:-.02em;}
-.why-stat-lbl{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,239,228,.65);margin-top:8px;}
-.why-cta{margin-top:48px;}
-
-/* story-body-s */
-.story-body-s{padding:80px 0;background:var(--paper);}
-.story-body-inner{max-width:680px;margin:0 auto;padding:0 32px;}
-.story-body-s p{font-size:18px;line-height:1.75;color:var(--dim);margin-bottom:18px;}
-.story-pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.4vw,26px);color:var(--ink);line-height:1.5;border-left:3px solid var(--terra);padding-left:24px;margin:32px 0;}
-
-/* bigger-s */
-.bigger-s{padding:96px 0;background:var(--bone);}
-.bigger-inner{max-width:780px;margin:0 auto;padding:0 32px;}
-.bigger-s h2{font-size:clamp(36px,4.5vw,56px);letter-spacing:-.02em;margin:14px 0 28px;line-height:1.1;}
-.bigger-s h2 em{color:var(--terra);font-style:italic;}
-.bigger-s p{font-size:18px;line-height:1.75;color:var(--dim);margin-bottom:18px;}
-
-/* opposite-s */
-.opposite-s{padding:96px 0;background:var(--ink);text-align:center;}
-.opposite-inner{max-width:760px;margin:0 auto;padding:0 32px;}
-.opposite-s .kicker{color:var(--terra);margin-bottom:20px;display:block;}
-.opposite-s h2{font-size:clamp(40px,5vw,64px);letter-spacing:-.025em;margin-bottom:32px;line-height:1.08;color:var(--bone);}
-.opposite-s h2 em{color:var(--terra);font-style:italic;}
-.opposite-s p{font-size:19px;line-height:1.7;color:rgba(245,239,228,.82);margin-bottom:18px;}
-.opposite-pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2.8vw,30px);color:var(--bone);line-height:1.45;border-top:1px solid rgba(250,243,238,.15);border-bottom:1px solid rgba(250,243,238,.15);padding:36px 0;margin:40px 0 0;}
-
-/* h-hero text late override */
-.h-hero .h-hero-text *,.h-hero .h-hero-text p,.h-hero .h-hero-text h1,.h-hero .h-hero-text h2,.h-hero .h-hero-text h3{color:#FAF3EE;}
-.h-hero .h-hero-text em{color:#C4622D;}
-.h-hero .h-hero-text .kicker{color:#C4622D;}
-</style>
-
 <body>
+
 <nav class="nav"><div class="nav-inner">
   <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="126" height="72"/></a>
   <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products">Batches</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story" class="on">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul>
@@ -148,7 +63,49 @@
   </div>
 </div></nav>
 
-<section class="h-hero">
+<style>
+/* Hero layout — same as how-it-works and products */
+.h-hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
+@media(max-width:860px){.h-hero{grid-template-columns:1fr;min-height:auto;}}
+.h-hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;}
+@media(max-width:720px){.h-hero-text{padding:60px 22px;}}
+.h-hero h1{color:var(--bone);font-size:clamp(48px,5.8vw,80px);line-height:1.04;letter-spacing:-.025em;margin:14px 0 0;}
+.h-hero h1 em{color:var(--terra);font-style:italic;}
+.h-hero-img{position:relative;overflow:hidden;background:var(--paper);}
+@media(max-width:860px){.h-hero-img{height:60vw;min-height:300px;}}
+.h-hero-img img{width:100%;height:100%;object-fit:cover;}
+/* Story body */
+.story-body-s{padding:80px 0;}
+.story-body-inner{max-width:680px;margin:0 auto;padding:0 32px;}
+.story-body-s p{font-size:18px;line-height:1.75;color:var(--dim);margin-bottom:18px;}
+.story-pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.4vw,26px);color:var(--ink);line-height:1.5;border-left:3px solid var(--terra);padding-left:24px;margin:32px 0;}
+/* Bigger picture */
+.bigger-s{padding:96px 0;}
+.bigger-inner{max-width:780px;margin:0 auto;padding:0 32px;}
+.bigger-s h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(36px,4.5vw,56px);letter-spacing:-.02em;margin:14px 0 28px;line-height:1.1;color:var(--ink);}
+.bigger-s h2 em{color:var(--terra);font-style:italic;}
+.bigger-s p{font-size:18px;line-height:1.75;color:var(--dim);margin-bottom:18px;}
+.bigger-s .kicker{color:var(--terra);}
+/* Food waste */
+.why-s{padding:96px 0;}
+.why-inner{max-width:780px;margin:0 auto;text-align:center;}
+.why-h{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(44px,5.5vw,72px);line-height:1.05;letter-spacing:-.025em;margin:14px 0 26px;color:var(--bone);}
+.why-h em{color:var(--ink);font-style:italic;}
+.why-p{font-size:19px;line-height:1.7;color:rgba(245,239,228,.85);margin-bottom:18px;}
+.why-stats{display:flex;justify-content:center;gap:48px;margin-top:44px;flex-wrap:wrap;}
+@media(max-width:560px){.why-stats{gap:32px;}}
+.why-stat-num{font-family:'Cormorant Garamond',serif;font-size:46px;color:var(--bone);line-height:1;letter-spacing:-.02em;}
+.why-stat-lbl{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,239,228,.65);margin-top:8px;}
+/* So we did the opposite */
+.opposite-s{padding:96px 0;text-align:center;}
+.opposite-inner{max-width:760px;margin:0 auto;padding:0 32px;}
+.opposite-s .kicker{display:block;margin-bottom:20px;}
+.opposite-s h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(40px,5vw,64px);letter-spacing:-.025em;margin-bottom:32px;line-height:1.08;}
+.opposite-s p{font-size:19px;line-height:1.7;margin-bottom:18px;}
+.opposite-pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2.8vw,30px);line-height:1.45;border-top:1px solid rgba(250,243,238,.15);border-bottom:1px solid rgba(250,243,238,.15);padding:36px 0;margin:40px 0 0;}
+</style>
+
+<header class="h-hero">
   <div class="h-hero-text">
     <p class="kicker">Our story</p>
     <h1>It began in <em>her kitchen</em>.</h1>
@@ -156,10 +113,10 @@
   <div class="h-hero-img">
     <picture>
       <source type="image/webp" srcset="grandma-600.webp 600w, grandma-900.webp 900w" sizes="(max-width:860px) 100vw, 50vw">
-      <img src="grandma-900.webp" alt="Theoni and her grandmother making orange marmalade together, jars of preserves on the counter" fetchpriority="high"/>
+      <img src="grandma-900.webp" alt="Theoni and her grandmother making marmalade together" fetchpriority="high"/>
     </picture>
   </div>
-</section>
+</header>
 
 <section class="story-body-s">
   <div class="story-body-inner">
@@ -189,18 +146,9 @@
       <p class="why-p">Across Switzerland, 2.8 million tonnes of food are wasted every year. 38% comes from households alone. Most of it baked with care, by people who simply made too much.</p>
       <p class="why-p">solo.quando reverses the order. Ask first. Bake second.</p>
       <div class="why-stats">
-        <div>
-          <div class="why-stat-num">2.8M</div>
-          <div class="why-stat-lbl">tonnes wasted &middot; CH</div>
-        </div>
-        <div>
-          <div class="why-stat-num">38%</div>
-          <div class="why-stat-lbl">from households</div>
-        </div>
-        <div>
-          <div class="why-stat-num">CHF 600</div>
-          <div class="why-stat-lbl">per person, yearly</div>
-        </div>
+        <div><div class="why-stat-num">2.8M</div><div class="why-stat-lbl">tonnes wasted &middot; CH</div></div>
+        <div><div class="why-stat-num">38%</div><div class="why-stat-lbl">from households</div></div>
+        <div><div class="why-stat-num">CHF 600</div><div class="why-stat-lbl">per person, yearly</div></div>
       </div>
     </div>
   </div>
@@ -212,11 +160,10 @@
     <h2>So we did <em>the opposite</em>.</h2>
     <p>Most food platforms make first, sell second.</p>
     <p>solo.quando reverses the order. We ask first, bake second.</p>
-    <p class="opposite-pull">Where the grandmother knows exactly how many b&ouml;rek to make on Friday because her neighbours have already said yes. Where the Lebanese maamoul finds the people who have never tasted it but want it. Where a recipe written in 1962 does not go quiet when the person who wrote it does.</p>
+    <p class="opposite-pull">Where the grandmother knows exactly how many b&ouml;rek to make on Friday because her neighbours have already said yes. Where a recipe written in 1962 does not go quiet when the person who wrote it does.</p>
   </div>
 </section>
 
-<!-- ─── UNIFIED NEWSLETTER STRIP ─── -->
 <section class="nl-strip" aria-labelledby="nl-strip-h">
   <div class="nl-strip-inner">
     <p class="kicker">Stay in the loop</p>
@@ -292,42 +239,8 @@
     <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
   </div>
 </div></footer>
+
 <script src="/shared.js"></script>
 
-<style>
-/* ── our-story: late colour fix ── */
-
-/* Hero (dark ink) */
-.h-hero .h-hero-text h1,
-.h-hero .h-hero-text h2,
-.h-hero .h-hero-text p { color: #FAF3EE; }
-.h-hero .h-hero-text em  { color: #C4622D; }
-.h-hero .h-hero-text .kicker { color: #C4622D; }
-
-/* Story body (paper) */
-.story-body-s p { color: #5C3317; }
-.story-pull     { color: #3D1F0D; }
-
-/* Bigger picture (cream) */
-.bigger-s h2   { color: #3D1F0D; }
-.bigger-s p    { color: #5C3317; }
-.bigger-s .kicker { color: #C4622D; }
-
-/* Food waste / why-s (terra) */
-.why-s .why-h    { color: #FAF3EE; }
-.why-s .why-p    { color: rgba(245,239,228,.85); }
-.why-s .kicker   { color: rgba(245,239,228,.75); }
-.why-s .why-stat-num { color: #FAF3EE; }
-.why-s .why-stat-lbl { color: rgba(245,239,228,.65); }
-
-/* So we did the opposite (ink) */
-.opposite-s h2  { color: #FAF3EE; }
-.opposite-s p   { color: rgba(245,239,228,.82); }
-.opposite-s .kicker { color: #C4622D; }
-.opposite-pull  { color: #FAF3EE; }
-</style>
-
-</body>
-</html>
 </body>
 </html>
