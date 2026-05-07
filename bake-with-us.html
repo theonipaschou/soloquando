@@ -199,54 +199,19 @@
   </div>
 </section>
 
-<!-- ─── FORM ─── -->
+<!-- ─── SHARE YOUR RECIPE ─── -->
 <section class="form-s" id="tell-us">
   <div class="wrap">
-    <div class="form-inner">
-      <div class="form-text">
-        <p class="kicker" style="color:var(--terra);">Get in touch</p>
-        <h2>Tell us about<br/>your <em>recipe</em>.</h2>
-        <p>A short conversation, no commitment. We want to understand what you make and whether solo.quando is the right place for it.</p>
-        <p>If you're reading this now, you are early. That matters.</p>
-      </div>
-      <div class="form-card">
-        <form id="baker-form">
-          <div class="f-row">
-            <div class="f-row-2col">
-              <label>
-                <span class="f-label">Your name *</span>
-                <input class="f-input" type="text" id="baker-fname" required placeholder="Anna Meier"/>
-              </label>
-              <label>
-                <span class="f-label">Your email *</span>
-                <input class="f-input" type="email" id="baker-email" required placeholder="anna@email.ch"/>
-              </label>
-            </div>
-          </div>
-
-          <label>
-            <span class="f-label">Your neighbourhood (optional)</span>
-            <select class="f-input" id="baker-neighbourhood">
-              <option value="">Select...</option>
-              <option>Kreis 1 &mdash; Altstadt</option><option>Kreis 2 &mdash; Enge / Wollishofen</option>
-              <option>Kreis 3 &mdash; Wiedikon</option><option>Kreis 4 &mdash; Aussersihl</option>
-              <option>Kreis 5 &mdash; Industriequartier</option><option>Kreis 6 &mdash; Unterstrass / Oberstrass</option>
-              <option>Kreis 7 &mdash; Fluntern / H&ouml;ngg-area</option><option>Kreis 8 &mdash; Riesbach / Seefeld</option>
-              <option>Kreis 9 &mdash; Altstetten / Albisrieden</option><option>Kreis 10 &mdash; H&ouml;ngg / Wipkingen</option>
-              <option>Kreis 11 &mdash; Affoltern / Oerlikon</option><option>Kreis 12 &mdash; Schwamendingen</option>
-              <option>Z&uuml;rich nearby (other)</option>
-            </select>
-          </label>
-
-          <label class="f-check">
-            <input type="checkbox" id="baker-privacy" required/>
-            <span>I accept the <a href="/privacy">Privacy Policy</a> and consent to solo.quando contacting me. *</span>
-          </label>
-
-          <button type="submit" class="f-submit">Send your recipe &rarr;</button>
-          <div id="baker-result" style="display:none;margin-top:20px;padding:24px;background:rgba(122,139,106,.12);border-left:3px solid var(--sage);"></div>
-        </form>
-      </div>
+    <div style="max-width:640px;margin:0 auto;text-align:center;">
+      <p class="kicker" style="color:var(--terra);">Ready to share?</p>
+      <h2 style="margin-top:14px;color:var(--bone);">Tell us about your <em>recipe</em>.</h2>
+      <p style="font-size:18px;line-height:1.7;color:rgba(245,239,228,.7);margin-bottom:36px;">Write to Theoni directly. Tell her what you make, where it comes from, and what makes it yours. She reads every message and replies within 48 hours.</p>
+      <a href="mailto:hello@soloquando.ch?subject=My%20recipe%20%E2%80%94%20solo.quando"
+         style="display:inline-block;padding:18px 36px;background:var(--terra);color:var(--bone);font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s;"
+         onmouseover="this.style.background='#a8552a'" onmouseout="this.style.background='var(--terra)'">
+        Write to us &rarr;
+      </a>
+      <p style="margin-top:20px;font-size:14px;color:rgba(245,239,228,.4);">hello@soloquando.ch</p>
     </div>
   </div>
 </section>
@@ -290,55 +255,5 @@
 
 
 <script src="/shared.js"></script>
-<script>
-(function(){
-  var form = document.getElementById('baker-form');
-  var result = document.getElementById('baker-result');
-  if(!form) return;
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var btn = form.querySelector('button[type=submit]');
-    var email = document.getElementById('baker-email').value.trim();
-    var fname = document.getElementById('baker-fname').value.trim();
-    if(!email || !fname) return;
-
-    btn.disabled = true;
-    btn.textContent = 'Sending\u2026';
-
-    var cbName = 'mcBaker_' + Date.now();
-    var url = 'https://soloquando.us13.list-manage.com/subscribe/post-json'
-      + '?u=cb28c247503fba41dbd96774f'
-      + '&id=739f21ed6b'
-      + '&EMAIL=' + encodeURIComponent(email)
-      + '&FNAME=' + encodeURIComponent(fname)
-      + '&c=' + cbName;
-
-    window[cbName] = function(data){
-      delete window[cbName];
-      var s = document.getElementById('mc-baker-script');
-      if(s) s.parentNode.removeChild(s);
-
-      result.style.display = 'block';
-      if(data.result === 'success'){
-        form.style.display = 'none';
-        result.innerHTML = '<p style="font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:20px;line-height:1.5;color:var(--ink);">You\'re in. Now tell us about your recipe.<br/><br/>Send an email to <a href="mailto:hello@soloquando.ch?subject=My recipe — ' + encodeURIComponent(fname) + '" style="color:var(--terra);">hello@soloquando.ch</a> with what you make, where it comes from, and what makes it yours. Theoni reads every message personally.</p>';
-      } else {
-        var msg = (data.msg || '').replace(/<[^>]+>/g,'');
-        result.style.background = 'rgba(194,102,61,.08)';
-        result.style.borderColor = 'var(--terra)';
-        result.innerHTML = '<p style="font-size:15px;color:var(--terra);">' + (msg || 'Something went wrong. Please try again or write to hello@soloquando.ch directly.') + '</p>';
-        btn.disabled = false;
-        btn.textContent = 'Send your recipe \u2192';
-      }
-    };
-
-    var script = document.createElement('script');
-    script.id = 'mc-baker-script';
-    script.src = url;
-    document.body.appendChild(script);
-  });
-})();
-</script>
 </body>
 </html>

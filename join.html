@@ -14,7 +14,7 @@
   <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="91" height="52"/></a>
   <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products">Batches</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li></ul>
   <div style="display:flex;align-items:center;">
-    <button class="nav-cta" onclick="location.href='/join'">Join</button>
+    <button class="nav-cta" onclick="location.href='/join'">Newsletter</button>
     <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
@@ -72,150 +72,84 @@
 <header class="j-hero">
   <div class="wrap">
     <div class="badge"><span class="badge-dot"></span><span>Z&uuml;rich &middot; pilot</span></div>
-    <p class="kicker">Become part of solo.quando</p>
-    <h1>Join <em>solo.quando</em>.</h1>
-    <p class="sub">A small group of people shaping what gets baked. The early ones. The neighbours we already know. Be part of it.</p>
+    <p class="kicker">Stay in the loop</p>
+    <h1>Our <em>newsletter</em>.</h1>
+    <p class="sub">New batches, producer stories, and the occasional recipe. One email when there is something worth saying.</p>
   </div>
 </header>
 
-<section class="j-body">
+<style>
+.nl-body{padding:80px 0 96px;}
+.nl-inner{max-width:560px;margin:0 auto;text-align:center;}
+.nl-inner h2{font-size:clamp(36px,4.5vw,52px);letter-spacing:-.02em;margin-bottom:18px;line-height:1.05;}
+.nl-inner h2 em{color:var(--terra);font-style:italic;}
+.nl-inner p{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:32px;}
+.nl-form{display:flex;gap:0;max-width:440px;margin:0 auto 18px;}
+@media(max-width:520px){.nl-form{flex-direction:column;gap:10px;}}
+.nl-form input[type=email]{flex:1;padding:17px 18px;background:var(--paper);border:1px solid var(--line);border-right:none;color:var(--ink);font-family:'Jost',sans-serif;font-size:17px;outline:none;transition:border-color .2s;}
+@media(max-width:520px){.nl-form input[type=email]{border-right:1px solid var(--line);}}
+.nl-form input[type=email]::placeholder{color:var(--dim);opacity:.55;}
+.nl-form input[type=email]:focus{border-color:rgba(43,26,15,.4);}
+.nl-form button{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:17px 24px;white-space:nowrap;transition:background .2s;}
+.nl-form button:hover{background:#a8552a;}
+.nl-note{font-size:13px;color:var(--dim);opacity:.7;}
+.nl-result{max-width:440px;margin:16px auto 0;display:none;}
+.nl-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--ink);}
+.nl-divider{margin:48px auto;width:48px;height:1px;background:var(--line);}
+.nl-recipe{font-size:16px;color:var(--dim);line-height:1.6;}
+.nl-recipe a{color:var(--terra);text-decoration:underline;text-underline-offset:3px;}
+</style>
+
+<section class="nl-body">
   <div class="wrap">
-    <div class="j-grid">
+    <div class="nl-inner">
+      <p class="kicker">Stay in the loop</p>
+      <h2 style="margin-top:14px;">Our <em>newsletter</em>.</h2>
+      <p>New batches, producer stories, and the occasional recipe. One email when there is something worth saying. Nothing more.</p>
 
-      <div class="j-left">
-        <p class="kicker">What you get</p>
-        <h2 style="margin-top:14px;">Four <em>things</em>, while we're small.</h2>
-        <p class="lead">Solo.quando is currently a pilot in Z&uuml;rich. The people who join now help shape what it becomes.</p>
+      <form class="nl-form" id="nl-form">
+        <input type="email" id="nl-email" placeholder="your@email.ch" required aria-label="Email address"/>
+        <button type="submit">Subscribe &rarr;</button>
+      </form>
+      <div class="nl-result" id="nl-result"></div>
+      <p class="nl-note">Free &middot; Unsubscribe any time</p>
 
-        <ul class="j-benefits">
-          <li class="j-benefit">
-            <h3><em>Priority</em> on every batch.</h3>
-            <p>You hear before anyone else. You reserve before public release.</p>
-          </li>
-          <li class="j-benefit">
-            <h3>Small <em>gatherings</em>.</h3>
-            <p>Kitchen tastings, supper-club style evenings, in Z&uuml;rich.</p>
-          </li>
-          <li class="j-benefit">
-            <h3>Farm and <em>producer visits</em>.</h3>
-            <p>Where the strawberries grow, where the honey comes from, the people behind the ingredients.</p>
-          </li>
-          <li class="j-benefit">
-            <h3>The parts that <em>never make it online</em>.</h3>
-            <p>Recipe drafts, behind-the-scenes, the first to know what's coming next.</p>
-          </li>
-        </ul>
-
-        <div class="j-pilot">
-          <p>Free, while solo.quando is small. The early people get the most.</p>
-        </div>
-      </div>
-
-      <div class="j-right">
-        <div class="j-form-card">
-          <h2>Be among the <em>first</em>.</h2>
-          <p class="sub">A short form. Theoni will reply within 24 hours.</p>
-
-          <form id="join-form">
-            <label>
-              <span class="f-label">Your name *</span>
-              <input class="f-input" type="text" id="join-fname" required placeholder="Anna Meier"/>
-            </label>
-
-            <label>
-              <span class="f-label">Your email *</span>
-              <input class="f-input" type="email" id="join-email" required placeholder="anna@email.ch"/>
-            </label>
-
-            <label>
-              <span class="f-label">Your neighbourhood (optional)</span>
-              <select class="f-input" id="join-neighbourhood">
-                <option value="">Select...</option>
-                <option>Kreis 1 &mdash; Altstadt</option><option>Kreis 2 &mdash; Enge / Wollishofen</option>
-                <option>Kreis 3 &mdash; Wiedikon</option><option>Kreis 4 &mdash; Aussersihl</option>
-                <option>Kreis 5 &mdash; Industriequartier</option><option>Kreis 6 &mdash; Unterstrass / Oberstrass</option>
-                <option>Kreis 7 &mdash; Fluntern / H&ouml;ngg-area</option><option>Kreis 8 &mdash; Riesbach / Seefeld</option>
-                <option>Kreis 9 &mdash; Altstetten / Albisrieden</option><option>Kreis 10 &mdash; H&ouml;ngg / Wipkingen</option>
-                <option>Kreis 11 &mdash; Affoltern / Oerlikon</option><option>Kreis 12 &mdash; Schwamendingen</option>
-                <option>Z&uuml;rich nearby (other)</option>
-              </select>
-            </label>
-
-            <label class="f-check">
-              <input type="checkbox" required/>
-              <span>I accept the <a href="/privacy">Privacy Policy</a> and consent to solo.quando contacting me. *</span>
-            </label>
-
-            <button type="submit" class="f-submit">Join solo.quando &rarr;</button>
-          </form>
-
-          <div class="j-form-result" id="join-form-result"></div>
-
-          <p class="j-form-note">Free. One short email when there's something worth saying. You can leave any time.</p>
-        </div>
-      </div>
-
+      <div class="nl-divider"></div>
+      <p class="nl-recipe">Have a recipe to share? <a href="mailto:hello@soloquando.ch?subject=Recipe%20submission">Write to us directly &rarr;</a></p>
     </div>
-  </div>
-</section>
-
-<section class="share-quiet">
-  <div class="wrap">
-    <p class="share-quiet-line">
-      <em>Know a neighbour who would love this?</em>
-      <button class="share-quiet-link" data-share-title="solo.quando" aria-label="Share solo.quando with a friend">
-        Share with a friend
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
-      </button>
-      <span class="share-quiet-feedback" aria-live="polite"></span>
-    </p>
   </div>
 </section>
 
 <script>
 (function(){
-  var form = document.getElementById('join-form');
-  var result = document.getElementById('join-form-result');
+  var form   = document.getElementById('nl-form');
+  var result = document.getElementById('nl-result');
   if(!form) return;
-
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    var btn = form.querySelector('button[type=submit]');
-    var email = document.getElementById('join-email').value.trim();
-    var fname = document.getElementById('join-fname').value.trim();
-
-    if(!email || !fname){ return; }
-
-    btn.disabled = true;
-    btn.textContent = 'Joining\u2026';
-
-    var cbName = 'mcCb_' + Date.now();
+    var btn   = form.querySelector('button[type=submit]');
+    var email = document.getElementById('nl-email').value.trim();
+    if(!email) return;
+    btn.disabled = true; btn.textContent = 'Subscribing\u2026';
+    var cbName = 'mcNl_' + Date.now();
     var url = 'https://soloquando.us13.list-manage.com/subscribe/post-json'
-      + '?u=cb28c247503fba41dbd96774f'
-      + '&id=739f21ed6b'
-      + '&EMAIL=' + encodeURIComponent(email)
-      + '&FNAME=' + encodeURIComponent(fname)
-      + '&c=' + cbName;
-
+      + '?u=cb28c247503fba41dbd96774f&id=739f21ed6b'
+      + '&EMAIL=' + encodeURIComponent(email) + '&c=' + cbName;
     window[cbName] = function(data){
       delete window[cbName];
-      var s = document.getElementById('mc-script');
-      if(s) s.parentNode.removeChild(s);
-
-      if(data.result === 'success'){
-        window.location.href = '/welcome';
-      } else {
+      var s = document.getElementById('mc-nl-s'); if(s) s.parentNode.removeChild(s);
+      if(data.result === 'success' || (data.msg && data.msg.indexOf('already subscribed') > -1)){
+        form.style.display = 'none';
         result.style.display = 'block';
-        result.innerHTML = '<p>' + (data.msg || 'Something went wrong. Please try again.') + '</p>';
-        btn.disabled = false;
-        btn.textContent = 'Join solo.quando \u2192';
+        result.innerHTML = '<p>You are on the list.</p>';
+      } else {
+        var msg = (data.msg||'').replace(/<[^>]+>/g,'');
+        btn.disabled = false; btn.textContent = 'Subscribe \u2192';
+        result.style.display = 'block';
+        result.innerHTML = '<p style="font-size:14px;color:var(--terra);">' + (msg||'Something went wrong. Please try again.') + '</p>';
       }
     };
-
-    var script = document.createElement('script');
-    script.id = 'mc-script';
-    script.src = url;
-    document.body.appendChild(script);
+    var script = document.createElement('script'); script.id='mc-nl-s'; script.src=url; document.body.appendChild(script);
   });
 })();
 </script>

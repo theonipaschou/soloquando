@@ -143,7 +143,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
   <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="126" height="72"/></a>
   <ul class="nav-links" id="main-nav"><li><a href="/" class="on">Home</a></li><li><a href="/products">Batches</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li></ul>
   <div style="display:flex;align-items:center;">
-    <button class="nav-cta" onclick="location.href='/join'">Join</button>
+    <button class="nav-cta" onclick="location.href='/#newsletter'">Newsletter</button>
     <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
@@ -357,8 +357,8 @@ details[open] .faqi-q::after{content:'\2013';}
     <h1 class="hero-h1">Made only when<br/><em>you want it</em>.</h1>
     <p class="hero-sub">Pre-order homemade food from your neighbour in Z&uuml;rich. Made by hand. By someone with a name.</p>
     <div class="hero-actions">
-      <a href="/join" class="btn btn-dark">Join solo.quando &rarr;</a>
-      <a href="/bake-with-us" class="hero-secondary-link">Have a recipe to share? <span>Bake with us &rarr;</span></a>
+      <a href="/#newsletter" class="btn btn-dark">Get our newsletter &rarr;</a>
+      <a href="mailto:hello@soloquando.ch?subject=Recipe%20submission" class="hero-secondary-link">Have a recipe to share? <span>Write to us &rarr;</span></a>
     </div>
   </div>
   <div class="hero-img">
@@ -476,7 +476,7 @@ details[open] .faqi-q::after{content:'\2013';}
           <li>Set your recipe, your price, your pickup window</li>
           <li>You bake. We handle the rest</li>
         </ul>
-        <a href="/bake-with-us" class="split-cta">Become a baker &rarr;</a>
+        <a href="mailto:hello@soloquando.ch?subject=I%20want%20to%20bake%20with%20solo.quando" class="split-cta">Share your recipe &rarr;</a>
       </div>
       <div class="split-col">
         <h3>If you love <em>real food</em></h3>
@@ -487,7 +487,7 @@ details[open] .faqi-q::after{content:'\2013';}
           <li>Meet the person who made your food</li>
           <li>Pickup at a quiet central address</li>
         </ul>
-        <a href="/join" class="split-cta">Join solo.quando &rarr;</a>
+        <a href="/#newsletter" class="split-cta">Get our newsletter &rarr;</a>
       </div>
     </div>
   </div>
@@ -558,52 +558,55 @@ details[open] .faqi-q::after{content:'\2013';}
 </section>
 
 <!-- ─── FINAL CTA — single, clean ─── -->
-<section class="cta-s" id="waitlist">
+<section class="cta-s" id="newsletter">
   <div class="wrap">
-    <p class="kicker" style="color:var(--terra);">Join us</p>
-    <h2 style="margin-top:14px;">Be among the <em>first</em>.</h2>
-    <p class="sub">Z&uuml;rich first. May 2026. Then your neighbourhood.</p>
+    <p class="kicker" style="color:var(--terra);">Stay in the loop</p>
+    <h2 style="margin-top:14px;">Our <em>newsletter</em>.</h2>
+    <p class="sub">New batches, producer stories, and the occasional recipe. Nothing more.</p>
     <div class="cta-form-wrap">
-      <form class="cta-form" id="home-waitlist"
-            action="https://formspree.io/f/mpqkvvnk"
-            method="POST">
-        <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
-        <input type="hidden" name="_subject" value="New solo.quando signup &mdash; homepage final CTA"/>
-        <input type="hidden" name="source" value="homepage-final-cta"/>
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
-        <input type="email" name="email" placeholder="your@email.ch" required aria-label="Email address"/>
-        <button type="submit" class="cta-btn">Join &rarr;</button>
+      <form class="cta-form" id="home-waitlist">
+        <input type="email" id="home-email" placeholder="your@email.ch" required aria-label="Email address"/>
+        <button type="submit" class="cta-btn">Subscribe &rarr;</button>
       </form>
       <div class="cta-result" id="home-waitlist-result"></div>
-      <p class="cta-note">Free &middot; Unsubscribe any time &middot; Z&uuml;rich first</p>
+      <p class="cta-note">Free &middot; Unsubscribe any time</p>
     </div>
-    <p class="cta-tertiary">Have a recipe to share? <a href="/bake-with-us">Bake with us &rarr;</a></p>
+    <p class="cta-tertiary">Have a recipe to share? <a href="mailto:hello@soloquando.ch?subject=Recipe%20submission">Write to us &rarr;</a></p>
   </div>
 </section>
 
 <script src="/batches.js"></script>
 <script>
 (function(){
-  function setupForm(formId, resultId){
-    var form = document.getElementById(formId);
-    var result = document.getElementById(resultId);
-    if(!form || !result) return;
-    form.addEventListener('submit', async function(e){
-      e.preventDefault();
-      var btn = form.querySelector('button[type=submit]');
-      var orig = btn.textContent;
-      btn.disabled = true; btn.textContent = 'Joining…';
-      try{
-        var r = await fetch(form.action, {method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-        if(r.ok){
-          form.style.display = 'none';
-          result.style.display = 'block';
-          result.innerHTML = '<p>You are on the list. We will be in touch.</p>';
-        } else { form.submit(); }
-      } catch(err){ form.submit(); }
-    });
-  }
-  setupForm('home-waitlist','home-waitlist-result');
+  var form   = document.getElementById('home-waitlist');
+  var result = document.getElementById('home-waitlist-result');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn   = form.querySelector('button[type=submit]');
+    var email = document.getElementById('home-email').value.trim();
+    if(!email) return;
+    btn.disabled = true; btn.textContent = 'Subscribing\u2026';
+    var cbName = 'mcHome_' + Date.now();
+    var url = 'https://soloquando.us13.list-manage.com/subscribe/post-json'
+      + '?u=cb28c247503fba41dbd96774f&id=739f21ed6b'
+      + '&EMAIL=' + encodeURIComponent(email) + '&c=' + cbName;
+    window[cbName] = function(data){
+      delete window[cbName];
+      var s = document.getElementById('mc-home-s'); if(s) s.parentNode.removeChild(s);
+      if(data.result === 'success' || (data.msg && data.msg.indexOf('already subscribed') > -1)){
+        form.style.display = 'none';
+        result.style.display = 'block';
+        result.innerHTML = '<p>You are on the list.</p>';
+      } else {
+        var msg = (data.msg||'').replace(/<[^>]+>/g,'');
+        btn.disabled = false; btn.textContent = 'Subscribe \u2192';
+        result.style.display = 'block';
+        result.innerHTML = '<p style="font-size:14px;color:var(--terra);">' + (msg||'Something went wrong. Please try again.') + '</p>';
+      }
+    };
+    var script = document.createElement('script'); script.id = 'mc-home-s'; script.src = url; document.body.appendChild(script);
+  });
 })();
 
 /* ── Batch carousel ── */
@@ -642,7 +645,7 @@ details[open] .faqi-q::after{content:'\2013';}
     <div class="footer-col"><h5>Discover</h5><ul>
       <li><a href="/how-it-works">How it works</a></li>
       <li><a href="/our-story">Our story</a></li>
-      <li><a href="/join">Join solo.quando</a></li>
+      <li><a href="/join">Newsletter</a></li>
       <li><a href="/bake-with-us">Bake with us</a></li>
       <li><a href="/faq">FAQ</a></li>
     </ul></div>
