@@ -138,6 +138,17 @@ picture img{width:100%;height:100%;object-fit:cover;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
 </style>
 <style>
+/* Option B */
+.hero{background:var(--ink);}
+.hero h1,.hero h2,.hero h3{color:var(--bone);}
+.hero h1 em,.hero h2 em{color:var(--terra);}
+.hero p,.hero .sub{color:rgba(245,239,228,.75);}
+.hero .kicker{color:var(--terra);}
+.hero .pull{color:var(--bone);border-left-color:rgba(245,239,228,.3);}
+.hero-img{background:var(--ink);}
+.hero-kicker{color:var(--terra);}
+</style>
+<style>
 /* Nav override */
 .nav-inner{height:88px;}
 @media(max-width:720px){.nav-inner{height:72px;}}
@@ -366,7 +377,7 @@ details[open] .faqi-q::after{content:'\2013';}
     <h1 class="hero-h1">Made only when<br/><em>you want it</em>.</h1>
     <p class="hero-sub">Pre-order homemade food from your neighbour in Z&uuml;rich. Made by hand. By someone with a name.</p>
     <div class="hero-actions">
-      <a href="/products" class="btn btn-dark">See open batches &rarr;</a>
+      <a href="/products" class="btn btn-ghost-light">See open batches &rarr;</a>
     </div>
   </div>
   <div class="hero-img">
