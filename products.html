@@ -8,6 +8,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <style>
+/* Option B */
+.h-hero{background:var(--ink);}
+.h-hero h1,.h-hero h2,.h-hero h3{color:var(--bone);}
+.h-hero h1 em,.h-hero h2 em{color:var(--terra);}
+.h-hero p,.h-hero .sub{color:rgba(245,239,228,.75);}
+.h-hero .kicker{color:var(--terra);}
+.h-hero .pull{color:var(--bone);border-left-color:rgba(245,239,228,.3);}
+.h-hero-img{background:var(--ink);}
+.registry-section{background:var(--paper);}
+</style>
+<style>
 /* Nav — full definition matching index */
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
@@ -33,6 +44,31 @@
 @media(max-width:720px){
   .nav-links{top:72px;}
 }
+</style>
+
+<style>
+/* ── DESIGN RHYTHM (auto-applied for v2) ── */
+
+.h-hero { background: var(--ink); }
+.h-hero h1, .h-hero h2, .h-hero h3, .h-hero h4 { color: var(--bone); }
+.h-hero h1 em, .h-hero h2 em, .h-hero h3 em { color: var(--terra); }
+.h-hero p, .h-hero .sub, .h-hero li { color: rgba(245,239,228,0.78); }
+.h-hero .kicker { color: var(--terra); }
+.h-hero a { color: var(--bone); }
+.h-hero a:hover { color: var(--terra); }
+
+.registry-section { background: var(--paper); }
+.registry-section h1, .registry-section h2, .registry-section h3, .registry-section h4 { color: var(--ink); }
+.registry-section h1 em, .registry-section h2 em, .registry-section h3 em { color: var(--terra); }
+.registry-section p, .registry-section .sub, .registry-section li { color: var(--dim); }
+.registry-section .kicker { color: var(--terra); }
+
+.batch-section { background: var(--bone); }
+.batch-section h1, .batch-section h2, .batch-section h3, .batch-section h4 { color: var(--ink); }
+.batch-section h1 em, .batch-section h2 em, .batch-section h3 em { color: var(--terra); }
+.batch-section p, .batch-section .sub, .batch-section li { color: var(--dim); }
+.batch-section .kicker { color: var(--terra); }
+
 </style>
 </head>
 <body>
@@ -108,7 +144,7 @@
 .batch-card.is-placeholder .batch-card-title{color:rgba(43,26,15,.5);}
 .batch-card.is-placeholder .batch-card-desc{color:rgba(92,71,56,.7);}
 .batch-card.is-placeholder .batch-card-meta{color:rgba(92,71,56,.7);}
-.registry-section{padding:64px 0 96px;background:var(--bone);border-top:1px solid var(--line);}
+.registry-section{padding:64px 0 96px;background:var(--paper);border-top:1px solid var(--line);}
 .registry-section .wrap{max-width:1100px;}
 .registry-head{margin-bottom:40px;}
 .registry-head .kicker{margin-bottom:14px;}
@@ -184,7 +220,6 @@
     </div>
   </div>
 </section>
-
 
 <style>
 .nl-strip{padding:96px 22px;background:var(--bone);border-top:1px solid var(--line);text-align:center;}

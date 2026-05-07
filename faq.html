@@ -8,6 +8,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <style>
+/* Option B */
+.faq-hero{background:var(--ink);}
+.faq-hero h1,.faq-hero h2,.faq-hero h3{color:var(--bone);}
+.faq-hero h1 em,.faq-hero h2 em{color:var(--terra);}
+.faq-hero p,.faq-hero .sub{color:rgba(245,239,228,.75);}
+.faq-hero .kicker{color:var(--terra);}
+.faq-hero .pull{color:var(--bone);border-left-color:rgba(245,239,228,.3);}
+.faq-jump{background:var(--paper);}
+.faq-cta{background:var(--terra);}
+.faq-cta h1,.faq-cta h2,.faq-cta h3{color:var(--bone);}
+.faq-cta h1 em,.faq-cta h2 em{color:var(--ink);}
+.faq-cta p,.faq-cta .sub{color:rgba(245,239,228,.85);}
+.faq-cta .kicker{color:rgba(245,239,228,.7);}
+.faq-cta .pull{color:var(--bone);border-left-color:rgba(245,239,228,.4);}
+.faq-cta a.btn{background:var(--ink);color:var(--bone);}
+</style>
+<style>
 /* Nav — full definition matching index */
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
@@ -34,6 +51,25 @@
   .nav-links{top:72px;}
 }
 </style>
+
+<style>
+/* ── DESIGN RHYTHM (auto-applied for v2) ── */
+
+.faq-hero { background: var(--ink); }
+.faq-hero h1, .faq-hero h2, .faq-hero h3, .faq-hero h4 { color: var(--bone); }
+.faq-hero h1 em, .faq-hero h2 em, .faq-hero h3 em { color: var(--terra); }
+.faq-hero p, .faq-hero .sub, .faq-hero li { color: rgba(245,239,228,0.78); }
+.faq-hero .kicker { color: var(--terra); }
+.faq-hero a { color: var(--bone); }
+.faq-hero a:hover { color: var(--terra); }
+
+.faq-body { background: var(--paper); }
+.faq-body h1, .faq-body h2, .faq-body h3, .faq-body h4 { color: var(--ink); }
+.faq-body h1 em, .faq-body h2 em, .faq-body h3 em { color: var(--terra); }
+.faq-body p, .faq-body .sub, .faq-body li { color: var(--dim); }
+.faq-body .kicker { color: var(--terra); }
+
+</style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
@@ -46,7 +82,7 @@
   </div>
 </div></nav>
 <style>
-.faq-hero{padding:96px 0 64px;background:linear-gradient(150deg,rgba(194,102,61,.06) 0%,transparent 55%);text-align:center;}
+.faq-hero{padding:96px 0 64px;background:var(--ink);text-align:center;}
 .faq-hero h1{font-size:clamp(46px,6.5vw,84px);letter-spacing:-.025em;margin:14px 0 20px;}
 .faq-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:560px;line-height:1.5;margin:0 auto;}
 .faq-jump{background:var(--paper);padding:32px 0;border-bottom:1px solid var(--line);}

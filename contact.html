@@ -12,6 +12,17 @@
 <link rel="stylesheet" href="/style.css">
 
 <style>
+/* Option B */
+.ct-hero{background:var(--ink);}
+.ct-hero h1,.ct-hero h2,.ct-hero h3{color:var(--bone);}
+.ct-hero h1 em,.ct-hero h2 em{color:var(--terra);}
+.ct-hero p,.ct-hero .sub{color:rgba(245,239,228,.75);}
+.ct-hero .kicker{color:var(--terra);}
+.ct-hero .pull{color:var(--bone);border-left-color:rgba(245,239,228,.3);}
+.ct-paths{background:var(--bone);}
+.ct-details{background:var(--paper);}
+</style>
+<style>
 /* Nav override: match index sizing */
 .nav-inner{height:88px;}
 @media(max-width:720px){.nav-inner{height:72px;}}
@@ -35,7 +46,7 @@
 .ct-hero-img picture,.ct-hero-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top;}
 
 /* Intent paths */
-.ct-paths{padding:80px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.ct-paths{padding:80px 0;background:var(--bone);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 .ct-paths-head{text-align:center;margin-bottom:48px;}
 .ct-paths-head h2{font-size:clamp(28px,3vw,38px);letter-spacing:-.015em;}
 .ct-paths-head h2 em{color:var(--terra);font-style:italic;}
@@ -88,6 +99,31 @@
 @media(max-width:720px){
   .nav-links{top:72px;}
 }
+</style>
+
+<style>
+/* ── DESIGN RHYTHM (auto-applied for v2) ── */
+
+.ct-hero { background: var(--ink); }
+.ct-hero h1, .ct-hero h2, .ct-hero h3, .ct-hero h4 { color: var(--bone); }
+.ct-hero h1 em, .ct-hero h2 em, .ct-hero h3 em { color: var(--terra); }
+.ct-hero p, .ct-hero .sub, .ct-hero li { color: rgba(245,239,228,0.78); }
+.ct-hero .kicker { color: var(--terra); }
+.ct-hero a { color: var(--bone); }
+.ct-hero a:hover { color: var(--terra); }
+
+.ct-details { background: var(--paper); }
+.ct-details h1, .ct-details h2, .ct-details h3, .ct-details h4 { color: var(--ink); }
+.ct-details h1 em, .ct-details h2 em, .ct-details h3 em { color: var(--terra); }
+.ct-details p, .ct-details .sub, .ct-details li { color: var(--dim); }
+.ct-details .kicker { color: var(--terra); }
+
+.ct-paths { background: var(--bone); }
+.ct-paths h1, .ct-paths h2, .ct-paths h3, .ct-paths h4 { color: var(--ink); }
+.ct-paths h1 em, .ct-paths h2 em, .ct-paths h3 em { color: var(--terra); }
+.ct-paths p, .ct-paths .sub, .ct-paths li { color: var(--dim); }
+.ct-paths .kicker { color: var(--terra); }
+
 </style>
 </head>
 <body>
@@ -194,7 +230,6 @@
     </div>
   </div>
 </section>
-
 
 <style>
 .nl-strip{padding:96px 22px;background:var(--bone);border-top:1px solid var(--line);text-align:center;}

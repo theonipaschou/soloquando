@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>solo.quando — design review prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#3D1F0D;--terra:#C4622D;--bone:#FAF3EE;--paper:#F5EDE4;--dim:#5C3317;--line:rgba(43,26,15,.12);}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Jost',sans-serif;font-weight:300;font-size:16px;line-height:1.6;color:var(--dim);background:var(--bone);}
+.shell{max-width:1280px;margin:0 auto;padding:64px 32px 96px;}
+header.intro{margin-bottom:64px;border-bottom:1px solid var(--line);padding-bottom:48px;}
+.kicker{font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5.5vw,68px);letter-spacing:-.02em;line-height:1.05;color:var(--ink);margin-bottom:18px;}
+h1 em{color:var(--terra);font-style:italic;}
+.intro p{font-size:18px;max-width:760px;line-height:1.65;}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px;}
+.legend-item{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.05em;}
+.legend-swatch{width:18px;height:18px;border:1px solid var(--line);}
+
+.pages-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;}
+@media(max-width:880px){.pages-grid{grid-template-columns:1fr;}}
+
+.page-card{border:1px solid var(--line);background:var(--paper);}
+.page-card-head{padding:24px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);background:var(--bone);}
+.page-card-head h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:24px;color:var(--ink);letter-spacing:-.005em;}
+.open-link{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);text-decoration:none;border-bottom:1px solid rgba(194,102,61,.4);padding-bottom:1px;}
+.open-link:hover{color:#a8552a;border-bottom-color:#a8552a;}
+
+.page-bands{display:flex;flex-direction:column;}
+.band{padding:16px 28px;}
+.band-row{display:grid;grid-template-columns:64px 1fr 2fr;gap:16px;align-items:center;}
+@media(max-width:560px){.band-row{grid-template-columns:50px 1fr;gap:8px;} .band-note{display:none;}}
+.band-label{font-size:10px;font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.18em;text-transform:uppercase;}
+.band-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;}
+.band-note{font-size:13px;letter-spacing:.01em;opacity:0.78;}
+
+.notes{margin-top:64px;padding:40px;background:var(--ink);color:var(--bone);}
+.notes h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:28px;color:var(--bone);margin-bottom:18px;}
+.notes h3 em{color:var(--terra);font-style:italic;}
+.notes p{color:rgba(250,243,238,.8);max-width:720px;margin-bottom:14px;font-size:16px;}
+.notes ul{list-style:none;margin-top:24px;}
+.notes li{padding:14px 0;border-bottom:1px solid rgba(250,243,238,.15);color:rgba(250,243,238,.85);font-size:15px;}
+.notes li:last-child{border-bottom:none;}
+.notes li strong{color:var(--bone);font-weight:400;}
+.notes li em{color:var(--terra);font-style:italic;}
+</style>
+</head>
+<body>
+<div class="shell">
+
+<header class="intro">
+  <p class="kicker">Design review prototype</p>
+  <h1>Option B, <em>restored and rhythmic</em>.</h1>
+  <p>Every page below shows its section flow as a stack of colour bands. The rule applied: no two adjacent sections share the same colour theme. Each page ends with the same unified newsletter strip on cream, sitting on top of the same dark footer.</p>
+  <div class="legend">
+    <div class="legend-item"><span class="legend-swatch" style="background:#3D1F0D;"></span> INK · dark, intimate</div>
+    <div class="legend-item"><span class="legend-swatch" style="background:#C4622D;"></span> TERRA · warm accent</div>
+    <div class="legend-item"><span class="legend-swatch" style="background:#F5EDE4;"></span> PAPER · subtle light</div>
+    <div class="legend-item"><span class="legend-swatch" style="background:#FAF3EE;"></span> CREAM · breathing light</div>
+  </div>
+</header>
+
+<div class="pages-grid">
+
+  <article class="page-card">
+    <header class="page-card-head">
+      <h2>index.html</h2>
+      <div class="page-card-actions">
+        <a class="open-link" href="/" target="_blank">Open page &rarr;</a>
+      </div>
+    </header>
+    <div class="page-bands">
+      
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Hero</span>
+        <span class="band-note">cinematic opening, marmalade photo</span>
+      </div>
+    </div>
+    <div class="band" style="background:#F5EDE4;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">PAPER</span>
+        <span class="band-name">Trust band</span>
+        <span class="band-note">three-point credibility strip</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Clarity</span>
+        <span class="band-note">how-it-works 3-line summary</span>
+      </div>
+    </div>
+    <div class="band" style="background:#F5EDE4;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">PAPER</span>
+        <span class="band-name">Open batches</span>
+        <span class="band-note">batch carousel</span>
+      </div>
+    </div>
+    <div class="band" style="background:#C4622D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">TERRA</span>
+        <span class="band-name">Why</span>
+        <span class="band-note">the why moment, warm accent</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Two-audience split</span>
+        <span class="band-note">buyers and bakers</span>
+      </div>
+    </div>
+    <div class="band" style="background:#F5EDE4;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">PAPER</span>
+        <span class="band-name">FAQ teaser</span>
+        <span class="band-note">inline questions</span>
+      </div>
+    </div>
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Founder</span>
+        <span class="band-note">intimate Theoni voice</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Newsletter strip</span>
+        <span class="band-note">unified newsletter (added)</span>
+      </div>
+    </div>
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Footer</span>
+        <span class="band-note">unified dark footer</span>
+      </div>
+    </div>
+    </div>
+  </article>
+
+  <article class="page-card">
+    <header class="page-card-head">
+      <h2>how-it-works.html</h2>
+      <div class="page-card-actions">
+        <a class="open-link" href="/how-it-works" target="_blank">Open page &rarr;</a>
+      </div>
+    </header>
+    <div class="page-bands">
+      
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Hero</span>
+        <span class="band-note">cinematic opening</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Three steps</span>
+        <span class="band-note">01 / 02 / 03 cards</span>
+      </div>
+    </div>
+    <div class="band" style="background:#C4622D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">TERRA</span>
+        <span class="band-name">Pickup secret</span>
+        <span class="band-note">curated pickup, warm accent</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Newsletter strip</span>
+        <span class="band-note">unified newsletter</span>
+      </div>
+    </div>
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Footer</span>
+        <span class="band-note">unified dark footer</span>
+      </div>
+    </div>
+    </div>
+  </article>
+
+  <article class="page-card">
+    <header class="page-card-head">
+      <h2>our-story.html</h2>
+      <div class="page-card-actions">
+        <a class="open-link" href="/our-story" target="_blank">Open page &rarr;</a>
+      </div>
+    </header>
+    <div class="page-bands">
+      
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Grandma opener</span>
+        <span class="band-note">intimate first section</span>
+      </div>
+    </div>
+    <div class="band" style="background:#F5EDE4;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">PAPER</span>
+        <span class="band-name">A thousand homes</span>
+        <span class="band-note">paper texture</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Food waste stats</span>
+        <span class="band-note">2.8M tonnes, 38% households</span>
+      </div>
+    </div>
+    <div class="band" style="background:#C4622D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">TERRA</span>
+        <span class="band-name">We did the opposite</span>
+        <span class="band-note">the turn, warm accent</span>
+      </div>
+    </div>
+    <div class="band" style="background:#F5EDE4;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">PAPER</span>
+        <span class="band-name">Personas</span>
+        <span class="band-note">who buys, who bakes</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Newsletter strip</span>
+        <span class="band-note">unified newsletter</span>
+      </div>
+    </div>
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Footer</span>
+        <span class="band-note">unified dark footer</span>
+      </div>
+    </div>
+    </div>
+  </article>
+
+  <article class="page-card">
+    <header class="page-card-head">
+      <h2>faq.html</h2>
+      <div class="page-card-actions">
+        <a class="open-link" href="/faq" target="_blank">Open page &rarr;</a>
+      </div>
+    </header>
+    <div class="page-bands">
+      
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Hero</span>
+        <span class="band-note">cinematic opening</span>
+      </div>
+    </div>
+    <div class="band" style="background:#F5EDE4;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">PAPER</span>
+        <span class="band-name">Q & A body</span>
+        <span class="band-note">paper texture for reading</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Newsletter strip</span>
+        <span class="band-note">unified newsletter</span>
+      </div>
+    </div>
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Footer</span>
+        <span class="band-note">unified dark footer</span>
+      </div>
+    </div>
+    </div>
+  </article>
+
+  <article class="page-card">
+    <header class="page-card-head">
+      <h2>products.html</h2>
+      <div class="page-card-actions">
+        <a class="open-link" href="/products" target="_blank">Open page &rarr;</a>
+      </div>
+    </header>
+    <div class="page-bands">
+      
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Hero</span>
+        <span class="band-note">cinematic opening</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Open batches</span>
+        <span class="band-note">batch carousel</span>
+      </div>
+    </div>
+    <div class="band" style="background:#F5EDE4;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">PAPER</span>
+        <span class="band-name">Producer registry</span>
+        <span class="band-note">all producers</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Newsletter strip</span>
+        <span class="band-note">unified newsletter</span>
+      </div>
+    </div>
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Footer</span>
+        <span class="band-note">unified dark footer</span>
+      </div>
+    </div>
+    </div>
+  </article>
+
+  <article class="page-card">
+    <header class="page-card-head">
+      <h2>contact.html</h2>
+      <div class="page-card-actions">
+        <a class="open-link" href="/contact" target="_blank">Open page &rarr;</a>
+      </div>
+    </header>
+    <div class="page-bands">
+      
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Hero</span>
+        <span class="band-note">Theoni portrait, say hello</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Three intent paths</span>
+        <span class="band-note">order / bake / press</span>
+      </div>
+    </div>
+    <div class="band" style="background:#F5EDE4;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">PAPER</span>
+        <span class="band-name">Direct contact</span>
+        <span class="band-note">email, phone, social</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Newsletter strip</span>
+        <span class="band-note">unified newsletter</span>
+      </div>
+    </div>
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Footer</span>
+        <span class="band-note">unified dark footer</span>
+      </div>
+    </div>
+    </div>
+  </article>
+
+  <article class="page-card">
+    <header class="page-card-head">
+      <h2>bake-with-us.html</h2>
+      <div class="page-card-actions">
+        <a class="open-link" href="/bake-with-us" target="_blank">Open page &rarr;</a>
+      </div>
+    </header>
+    <div class="page-bands">
+      
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Hero</span>
+        <span class="band-note">cinematic opening for bakers</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Who we built this for</span>
+        <span class="band-note">for the bakers never asked</span>
+      </div>
+    </div>
+    <div class="band" style="background:#C4622D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">TERRA</span>
+        <span class="band-name">Shield</span>
+        <span class="band-note">you never bake for nothing</span>
+      </div>
+    </div>
+    <div class="band" style="background:#F5EDE4;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">PAPER</span>
+        <span class="band-name">Curated pickup</span>
+        <span class="band-note">one quiet place to meet</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">You bring / we handle</span>
+        <span class="band-note">clear division of labour</span>
+      </div>
+    </div>
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Tell us your recipe</span>
+        <span class="band-note">baker recruitment CTA</span>
+      </div>
+    </div>
+    <div class="band" style="background:#FAF3EE;color:#3D1F0D;">
+      <div class="band-row">
+        <span class="band-label" style="color:#3D1F0D;opacity:0.6;">CREAM</span>
+        <span class="band-name">Newsletter strip</span>
+        <span class="band-note">unified newsletter</span>
+      </div>
+    </div>
+    <div class="band" style="background:#3D1F0D;color:#FAF3EE;">
+      <div class="band-row">
+        <span class="band-label" style="color:#FAF3EE;opacity:0.6;">INK</span>
+        <span class="band-name">Footer</span>
+        <span class="band-note">unified dark footer</span>
+      </div>
+    </div>
+    </div>
+  </article>
+
+</div>
+
+<section class="notes">
+  <h3>How to <em>review this</em>.</h3>
+  <p>Walk through each page card above. The top of each card is the top of the page. The colour band tells you what the visitor sees at that point.</p>
+  <p>If a colour feels wrong on any section, tell me which page and which section, and what colour you want. The build script applies your edits in one pass to every file.</p>
+  <ul>
+    <li><strong>What changed from before.</strong> Option B is restored. The two real bugs are fixed: <em>pickup-s</em> on how-it-works (was rendering paper but with terra-coloured text, invisible) and the conflicting later rules that overrode Option B. The <em>"Be among the first"</em> sections are gone. The unified newsletter strip sits above the dark footer on every page.</li>
+    <li><strong>The rhythm rule.</strong> No two adjacent sections share the same colour theme. The previous bug (founder-s + READY-TO-START both ink) cannot recur because the structure now goes founder → cream newsletter → ink footer.</li>
+    <li><strong>What's new on contact.</strong> The hero is ink, paths are cream, details are paper, then newsletter on cream, then footer on ink. Before, contact had no closing newsletter. Now it does, like every other page.</li>
+    <li><strong>Bake with us, kept on purpose.</strong> The "Tell us about your recipe" section (ink) sits between handle-s and the newsletter strip. It's the page's reason to exist. The colours rotate cleanly around it.</li>
+    <li><strong>Things I did not touch.</strong> Copy, images, layouts, navigation, footer content, individual section internals. Only colours, structural cleanup, and the newsletter strip insertion.</li>
+    <li><strong>Things to consider next.</strong> The <em>trust-band</em> on index is currently paper but very thin (3 small columns). It might want to be the same as the section before or after. Also, the <em>example-s</em> (open batches) on index is on paper while the <em>batch-section</em> on products is on cream. Worth aligning if you want consistent batch backgrounds across both pages.</li>
+  </ul>
+</section>
+
+</div>
+</body>
+</html>

@@ -9,6 +9,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <style>
+/* Option B */
+.s-section.first{background:var(--ink);}
+.s-section.first h1,.s-section.first h2,.s-section.first h3{color:var(--bone);}
+.s-section.first h1 em,.s-section.first h2 em{color:var(--terra);}
+.s-section.first p,.s-section.first .sub{color:rgba(245,239,228,.75);}
+.s-section.first .kicker{color:var(--terra);}
+.s-section.first .pull{color:var(--bone);border-left-color:rgba(245,239,228,.3);}
+.s-section.first .s-img figcaption{color:rgba(245,239,228,.5);}
+.s-section:not(.first):not(.alt){background:var(--terra);}
+.s-section:not(.first):not(.alt) h1,.s-section:not(.first):not(.alt) h2,.s-section:not(.first):not(.alt) h3{color:var(--bone);}
+.s-section:not(.first):not(.alt) h1 em,.s-section:not(.first):not(.alt) h2 em{color:var(--ink);}
+.s-section:not(.first):not(.alt) p,.s-section:not(.first):not(.alt) .sub{color:rgba(245,239,228,.85);}
+.s-section:not(.first):not(.alt) .kicker{color:rgba(245,239,228,.7);}
+.s-section:not(.first):not(.alt) .pull{color:var(--bone);border-left-color:rgba(245,239,228,.4);}
+.s-section:not(.first):not(.alt) .s-img figcaption{color:rgba(245,239,228,.5);}
+</style>
+<style>
 /* Nav — full definition matching index */
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
@@ -34,6 +51,23 @@
 @media(max-width:720px){
   .nav-links{top:72px;}
 }
+</style>
+
+<style>
+/* ── DESIGN RHYTHM (auto-applied for v2) ── */
+
+.personas-s { background: var(--paper); }
+.personas-s h1, .personas-s h2, .personas-s h3, .personas-s h4 { color: var(--ink); }
+.personas-s h1 em, .personas-s h2 em, .personas-s h3 em { color: var(--terra); }
+.personas-s p, .personas-s .sub, .personas-s li { color: var(--dim); }
+.personas-s .kicker { color: var(--terra); }
+
+.stats-wrap { background: var(--bone); }
+.stats-wrap h1, .stats-wrap h2, .stats-wrap h3, .stats-wrap h4 { color: var(--ink); }
+.stats-wrap h1 em, .stats-wrap h2 em, .stats-wrap h3 em { color: var(--terra); }
+.stats-wrap p, .stats-wrap .sub, .stats-wrap li { color: var(--dim); }
+.stats-wrap .kicker { color: var(--terra); }
+
 </style>
 </head>
 <body>
@@ -64,7 +98,7 @@
 .s-text p{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:16px;}
 .s-text .pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);line-height:1.5;border-left:3px solid var(--terra);padding-left:20px;margin:24px 0;}
 .s-text .kicker{margin-bottom:14px;display:block;}
-.stats-wrap{padding:80px 0;background:var(--paper);}
+.stats-wrap{padding:80px 0;background:var(--bone);}
 .stats-wrap svg{max-width:900px;width:100%;height:auto;display:block;margin:0 auto;}
 .stats-mobile{display:none;max-width:520px;margin:0 auto;padding:0 22px;}
 .stats-mobile-head{text-align:center;margin-bottom:36px;}
@@ -226,6 +260,7 @@
     </ul>
   </div>
 </section>
+
 <style>
 .nl-strip{padding:96px 22px;background:var(--bone);border-top:1px solid var(--line);text-align:center;}
 .nl-strip-inner{max-width:560px;margin:0 auto;}
