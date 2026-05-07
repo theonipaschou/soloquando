@@ -318,24 +318,43 @@
 
 <script src="/shared.js"></script>
 
+
+
 <style>
-/* ── Hero text fix: explicit hex, injected after all other rules ── */
-.h-hero .h-hero-text *,
-.h-hero .h-hero-text p,
+/* ── how-it-works: comprehensive late colour fix ── */
+
+/* Hero (ink bg) */
 .h-hero .h-hero-text h1,
 .h-hero .h-hero-text h2,
-.h-hero .h-hero-text h3 {
-  color: #FAF3EE;
-}
-.h-hero .h-hero-text em {
-  color: #C4622D;
-}
-.h-hero .h-hero-text .kicker {
-  color: #C4622D;
-}
-.h-hero .h-hero-text .sub {
-  color: rgba(245,239,228,.78);
-}
+.h-hero .h-hero-text h3,
+.h-hero .h-hero-text p,
+.h-hero .h-hero-text .sub { color: #FAF3EE; }
+.h-hero .h-hero-text em    { color: #C4622D; }
+.h-hero .h-hero-text .kicker { color: #C4622D; }
+
+/* Steps (bone bg) */
+.steps-s .step-text h2 { color: #3D1F0D; }
+.steps-s .step-text h2 em { color: #C4622D; }
+.steps-s .step-text p  { color: #5C3317; }
+.steps-s .step-text .kicker { color: #C4622D; }
+.steps-s .step-num { color: #C4622D; }
+
+/* Pickup (terra bg) */
+.pickup-s .pickup-inner h2   { color: #FAF3EE; }
+.pickup-s .pickup-inner h2 em { color: #3D1F0D; }
+.pickup-s .pickup-inner p    { color: rgba(245,239,228,.88); }
+.pickup-s .pickup-inner .pull { color: #FAF3EE; }
+.pickup-s .pickup-inner .kicker { color: rgba(245,239,228,.75); }
+
+/* Who this is for (paper bg) */
+.for-who-s .kicker,
+.for-who-head .kicker { color: #C4622D; }
+.for-who-head h2      { color: #3D1F0D; }
+.for-who-head h2 em   { color: #C4622D; }
+.for-who-col h3       { color: #3D1F0D; }
+.for-who-col h3 em    { color: #C4622D; }
+.for-who-col li       { color: #5C3317; }
 </style>
+
 </body>
 </html>
