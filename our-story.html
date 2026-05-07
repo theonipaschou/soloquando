@@ -63,6 +63,38 @@
 .stats-wrap .kicker { color: var(--terra); }
 
 </style>
+<style>
+.h-hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
+.h-hero{grid-template-columns:1fr;min-height:auto;}
+.h-hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;}
+.h-hero-text{padding:60px 22px;}
+.h-hero h1{color:var(--bone);font-size:clamp(48px,5.8vw,80px);line-height:1.04;letter-spacing:-.025em;margin:14px 0 22px;}
+.h-hero h1 em{color:var(--terra);font-style:italic;}
+.h-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:rgba(245,239,228,.78);max-width:480px;line-height:1.55;}
+.h-hero-img{position:relative;overflow:hidden;background:var(--paper);}
+.h-hero-img{height:60vw;min-height:300px;}
+.h-hero-img img{width:100%;height:100%;object-fit:cover;}
+</style>
+<style>
+/* why-s complete */
+.why-s { background: var(--terra); }
+.why-s h4 { color: var(--bone); }
+.why-s h3 em { color: var(--ink); }
+.why-s li { color: rgba(245,239,228,0.88); }
+.why-s .kicker { color: rgba(245,239,228,0.78); }
+.why-s{padding:96px 0;background:var(--terra);}
+.why-s .kicker{color:rgba(245,239,228,.7);}
+.why-inner{max-width:780px;margin:0 auto;text-align:center;}
+.why-h{font-size:clamp(44px,5.5vw,72px);line-height:1.05;letter-spacing:-.025em;margin:14px 0 26px;color:var(--bone);}
+.why-h em{color:var(--ink);font-style:italic;}
+.why-p{font-size:19px;line-height:1.7;color:rgba(245,239,228,.85);margin-bottom:18px;}
+.why-stats{display:flex;justify-content:center;gap:48px;margin-top:44px;flex-wrap:wrap;}
+.why-stats{gap:32px;}
+.why-stat-num{font-family:'Cormorant Garamond',serif;font-size:46px;color:var(--bone);line-height:1;letter-spacing:-.02em;}
+.why-stat-lbl{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,239,228,.65);margin-top:8px;}
+.why-cta{margin-top:48px;}
+.why-s h1, .why-s h2, .why-s h3, .why-s h4 { color: var(--bone); }
+</style>
 </head>
 
 <style>
@@ -261,6 +293,40 @@
   </div>
 </div></footer>
 <script src="/shared.js"></script>
+
+<style>
+/* ── our-story: late colour fix ── */
+
+/* Hero (dark ink) */
+.h-hero .h-hero-text h1,
+.h-hero .h-hero-text h2,
+.h-hero .h-hero-text p { color: #FAF3EE; }
+.h-hero .h-hero-text em  { color: #C4622D; }
+.h-hero .h-hero-text .kicker { color: #C4622D; }
+
+/* Story body (paper) */
+.story-body-s p { color: #5C3317; }
+.story-pull     { color: #3D1F0D; }
+
+/* Bigger picture (cream) */
+.bigger-s h2   { color: #3D1F0D; }
+.bigger-s p    { color: #5C3317; }
+.bigger-s .kicker { color: #C4622D; }
+
+/* Food waste / why-s (terra) */
+.why-s .why-h    { color: #FAF3EE; }
+.why-s .why-p    { color: rgba(245,239,228,.85); }
+.why-s .kicker   { color: rgba(245,239,228,.75); }
+.why-s .why-stat-num { color: #FAF3EE; }
+.why-s .why-stat-lbl { color: rgba(245,239,228,.65); }
+
+/* So we did the opposite (ink) */
+.opposite-s h2  { color: #FAF3EE; }
+.opposite-s p   { color: rgba(245,239,228,.82); }
+.opposite-s .kicker { color: #C4622D; }
+.opposite-pull  { color: #FAF3EE; }
+</style>
+
 </body>
 </html>
 </body>
