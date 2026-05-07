@@ -214,6 +214,14 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .split-s .kicker { color: var(--terra); }
 
 </style>
+
+<style>
+/* ── Equal-size carousel cards (applied site-wide) ── */
+.batch-card{min-height:620px;height:100%;}
+.batch-card-text{flex:1;display:flex;flex-direction:column;}
+.batch-card-meta{margin-top:auto;}
+.batch-carousel-track{align-items:stretch;}
+</style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
@@ -469,11 +477,23 @@ details[open] .faqi-q::after{content:'\2013';}
 <!-- ─── BATCHES: chronological 001 → 002 → ? ─── -->
 <section class="example-s" id="batches">
   <div class="wrap">
-    <div class="example-head">
-      <p class="kicker">This is what it looks like</p>
-      <h2 style="margin-top:14px;">Real batches. <em>Real people</em>.</h2>
-      <p>Home bakers in Z&uuml;rich. Each batch made only when enough neighbours pre-order.</p>
-    </div>
+    <!-- ─── BATCHES SECTION HEAD — shared with /products via /batches.js ─── -->
+    <div class="example-head" id="example-head"></div>
+    <script>
+    (function(){
+      var head = document.getElementById('example-head');
+      if(!head) return;
+      var data = (window.BATCHES_HEADER) || {
+        kicker: 'This is what it looks like',
+        title:  'Real batches. <em>Real people</em>.',
+        sub:    'Home bakers in Z\u00fcrich. Each batch made only when enough neighbours pre-order.'
+      };
+      head.innerHTML =
+        '<p class="kicker">' + data.kicker + '</p>' +
+        '<h2 style="margin-top:14px;">' + data.title + '</h2>' +
+        '<p>' + data.sub + '</p>';
+    })();
+    </script>
     <div class="batch-carousel-outer">
       <button class="carousel-btn carousel-btn-prev" aria-label="Previous batch">
         <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>

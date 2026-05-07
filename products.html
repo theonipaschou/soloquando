@@ -70,6 +70,14 @@
 .batch-section .kicker { color: var(--terra); }
 
 </style>
+
+<style>
+/* ── Equal-size carousel cards (applied site-wide) ── */
+.batch-card{min-height:620px;height:100%;}
+.batch-card-text{flex:1;display:flex;flex-direction:column;}
+.batch-card-meta{margin-top:auto;}
+.batch-carousel-track{align-items:stretch;}
+</style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
@@ -88,7 +96,7 @@
 @media(max-width:720px){.h-hero-text{padding:60px 22px;}}
 .h-hero h1{font-size:clamp(48px,5.8vw,80px);line-height:1.04;letter-spacing:-.025em;margin:14px 0 22px;}
 .h-hero h1 em{color:var(--terra);font-style:italic;}
-.h-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:480px;line-height:1.55;}
+.h-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:rgba(245,239,228,0.78);max-width:480px;line-height:1.55;}
 .h-hero-img{position:relative;overflow:hidden;background:var(--paper);}
 @media(max-width:860px){.h-hero-img{height:60vw;min-height:300px;}}
 .h-hero-img img{width:100%;height:100%;object-fit:cover;}
@@ -180,13 +188,31 @@
     <h1>The <em>full list</em>.</h1>
     <p class="sub">All solo.quando batches, in order. Made by your neighbour, only when you want it.</p>
   </div>
-  <figure class="h-hero-img">
+  <div class="h-hero-img">
     <img src="kneading-1200.webp" alt="Hands kneading bread dough by hand" loading="eager" fetchpriority="high"/>
-  </figure>
+  </div>
 </section>
 
 <section class="batch-section" id="batches">
-  <div class="batch-carousel-outer">
+  <div class="wrap">
+    <!-- ─── BATCHES SECTION HEAD — shared with index via /batches.js ─── -->
+    <div class="example-head" id="example-head"></div>
+    <script>
+    (function(){
+      var head = document.getElementById('example-head');
+      if(!head) return;
+      var data = (window.BATCHES_HEADER) || {
+        kicker: 'This is what it looks like',
+        title:  'Real batches. <em>Real people</em>.',
+        sub:    'Home bakers in Z\u00fcrich. Each batch made only when enough neighbours pre-order.'
+      };
+      head.innerHTML =
+        '<p class="kicker">' + data.kicker + '</p>' +
+        '<h2 style="margin-top:14px;">' + data.title + '</h2>' +
+        '<p>' + data.sub + '</p>';
+    })();
+    </script>
+    <div class="batch-carousel-outer">
     <button class="carousel-btn carousel-btn-prev" aria-label="Previous batch">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
@@ -197,6 +223,7 @@
       <div class="batch-carousel-track" id="batch-track"><!-- rendered by /batches.js --></div>
     </div>
     <div class="carousel-dots" id="batch-dots"><!-- rendered by /batches.js --></div>
+  </div>
   </div>
 </section>
 
