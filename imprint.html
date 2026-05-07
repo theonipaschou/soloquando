@@ -5,16 +5,23 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Imprint &middot; solo.quando</title>
 <meta name="description" content="Legal information for soloquando.ch."/>
-
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+<style>
+/* Nav override */
+.nav-inner{height:88px;}
+@media(max-width:720px){.nav-inner{height:72px;}}
+.nav-logo img{height:72px;width:auto;}
+@media(max-width:720px){.nav-logo img{height:32px;}}
+@media(max-width:920px){.nav-links{top:88px;}}
+@media(max-width:720px){.nav-links{top:72px;}}
+</style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="91" height="52"/></a>
-  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products">Batches</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li></ul>
+  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="126" height="72"/></a>
+  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products">Batches</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul>
   <div style="display:flex;align-items:center;">
-    <button class="nav-cta" onclick="location.href='/join'">Join</button>
     <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
@@ -39,7 +46,8 @@
 .ltoc ol{margin-left:18px;}
 .ltoc li{font-size:14px;color:var(--dim);margin-bottom:7px;}
 .ltoc a{color:var(--terra);}
-</style><div class="lw">
+</style>
+<div class="lw">
 <p class="kicker">Legal</p>
 <h1>Imprint.</h1>
 <span class="lmeta">Last updated: 29 April 2026</span>
@@ -51,7 +59,7 @@
   <p>Email: <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a><br/>Phone: <a href="tel:+41787942700">+41 78 794 27 00</a></p>
 </div>
 <h2>Platform description</h2>
-<p>solo.quando is a demand-first pre-order marketplace connecting home bakers ("Producers") with buyers ("Buyers") in Switzerland. The platform operates at soloquando.ch. Theoni Paschou acts as an intermediary; the contract for any food item is concluded directly between Producer and Buyer.</p>
+<p>solo.quando is a demand-first pre-order marketplace connecting home bakers with buyers in Switzerland. The platform operates at soloquando.ch. Theoni Paschou acts as an intermediary; the contract for any food item is concluded directly between Producer and Buyer.</p>
 <h2>Legal form</h2>
 <p>Einzelunternehmen under Swiss law. GmbH registration is planned after initial traction is established.</p>
 <h2 id="food-safety">Food safety</h2>
@@ -99,8 +107,6 @@
     <span><a href="#">EN</a> &middot; <a href="#">DE</a></span>
   </div>
 </div></footer>
-
-
 <script src="/shared.js"></script>
 </body>
 </html>

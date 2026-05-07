@@ -5,16 +5,23 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>How it works &middot; solo.quando</title>
 <meta name="description" content="Three simple steps. Pre-order before the kitchen opens. Pick up when it does."/>
-
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+<style>
+/* Nav override */
+.nav-inner{height:88px;}
+@media(max-width:720px){.nav-inner{height:72px;}}
+.nav-logo img{height:72px;width:auto;}
+@media(max-width:720px){.nav-logo img{height:32px;}}
+@media(max-width:920px){.nav-links{top:88px;}}
+@media(max-width:720px){.nav-links{top:72px;}}
+</style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="91" height="52"/></a>
-  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products">Batches</a></li><li><a href="/how-it-works" class="on">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li></ul>
+  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="126" height="72"/></a>
+  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products">Batches</a></li><li><a href="/how-it-works" class="on">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul>
   <div style="display:flex;align-items:center;">
-    <button class="nav-cta" onclick="location.href='/join'">Join</button>
     <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
@@ -22,7 +29,6 @@
 </div></nav>
 
 <style>
-/* ─── UNIFIED HERO ─── */
 .h-hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;}
 @media(max-width:860px){.h-hero{grid-template-columns:1fr;min-height:auto;}}
 .h-hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;}
@@ -33,31 +39,22 @@
 .h-hero-img{position:relative;overflow:hidden;background:var(--paper);}
 @media(max-width:860px){.h-hero-img{height:60vw;min-height:300px;}}
 .h-hero-img img{width:100%;height:100%;object-fit:cover;}
-
-/* ─── STEPS — big numerals, prose right, no card images ─── */
 .steps-s{padding:96px 0;}
 .step-row{display:grid;grid-template-columns:280px 1fr;gap:56px;max-width:920px;margin:0 auto;padding-bottom:80px;border-bottom:1px solid var(--line);align-items:center;}
 .step-row:last-child{border-bottom:none;padding-bottom:0;}
 .step-row + .step-row{padding-top:80px;}
-@media(max-width:760px){
-  .step-row{grid-template-columns:1fr;gap:24px;text-align:left;padding-bottom:60px;}
-  .step-row + .step-row{padding-top:60px;}
-}
+@media(max-width:760px){.step-row{grid-template-columns:1fr;gap:24px;text-align:left;padding-bottom:60px;}.step-row + .step-row{padding-top:60px;}}
 .step-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(140px,18vw,200px);color:var(--terra);line-height:0.85;letter-spacing:-.03em;}
 @media(max-width:760px){.step-num{font-size:120px;}}
 .step-text h2{font-size:clamp(32px,3.8vw,46px);letter-spacing:-.02em;margin-bottom:16px;line-height:1.1;}
 .step-text h2 em{color:var(--terra);font-style:italic;}
 .step-text p{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:14px;}
-
-/* ─── PICKUP SECRET ─── */
 .pickup-s{padding:96px 0;background:var(--paper);text-align:center;}
 .pickup-inner{max-width:680px;margin:0 auto;}
 .pickup-inner h2{font-size:clamp(36px,4.4vw,52px);letter-spacing:-.02em;margin-bottom:22px;line-height:1.1;}
 .pickup-inner h2 em{color:var(--terra);font-style:italic;}
 .pickup-inner p{font-size:19px;line-height:1.65;color:var(--dim);margin-bottom:14px;}
 .pickup-inner .pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);margin-top:32px;line-height:1.45;}
-
-/* ─── FINAL CTA ─── */
 .cta-s{padding:96px 0;text-align:center;background:var(--ink);color:var(--bone);}
 .cta-s h2{font-size:clamp(44px,5.5vw,72px);letter-spacing:-.025em;margin-bottom:18px;color:var(--bone);}
 .cta-s h2 em{color:var(--terra);font-style:italic;}
@@ -78,7 +75,6 @@
 .cta-result p{color:var(--terra);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;}
 </style>
 
-<!-- ─── HERO (unified, image right) ─── -->
 <header class="h-hero">
   <div class="h-hero-text">
     <p class="kicker">How it works</p>
@@ -90,10 +86,8 @@
   </div>
 </header>
 
-<!-- ─── STEPS — typographic, no card images ─── -->
 <section class="steps-s">
   <div class="wrap">
-
     <div class="step-row">
       <div class="step-num">01</div>
       <div class="step-text">
@@ -103,7 +97,6 @@
         <p>A proposal, not a product. Nothing on a shelf, nothing made yet.</p>
       </div>
     </div>
-
     <div class="step-row">
       <div class="step-num">02</div>
       <div class="step-text">
@@ -113,7 +106,6 @@
         <p>If the threshold isn't reached, every Franc returns to you. Automatically. Always.</p>
       </div>
     </div>
-
     <div class="step-row">
       <div class="step-num">03</div>
       <div class="step-text">
@@ -123,11 +115,9 @@
         <p>You collect at the agreed time, in central Z&uuml;rich. You meet, briefly, the person who made your food.</p>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ─── PICKUP SECRET ─── -->
 <section class="pickup-s">
   <div class="wrap">
     <div class="pickup-inner">
@@ -139,7 +129,6 @@
     </div>
   </div>
 </section>
-
 
 <section class="share-quiet">
   <div class="wrap">
@@ -154,16 +143,13 @@
   </div>
 </section>
 
-<!-- ─── FINAL CTA ─── -->
 <section class="cta-s">
   <div class="wrap">
     <p class="kicker" style="color:var(--terra);">Join us</p>
     <h2 style="margin-top:14px;">Be among the <em>first</em>.</h2>
     <p class="sub">Z&uuml;rich first. May 2026. Then your neighbourhood.</p>
     <div class="cta-form-wrap">
-      <form class="cta-form" id="hiw-waitlist"
-            action="https://formspree.io/f/mpqkvvnk"
-            method="POST">
+      <form class="cta-form" id="hiw-waitlist" action="https://formspree.io/f/mpqkvvnk" method="POST">
         <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
         <input type="hidden" name="source" value="how-it-works-cta"/>
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
@@ -186,14 +172,11 @@
     form.addEventListener('submit', async function(e){
       e.preventDefault();
       var btn = form.querySelector('button[type=submit]');
-      btn.disabled = true; btn.textContent = 'Joining…';
+      btn.disabled = true; btn.textContent = 'Joining\u2026';
       try{
         var r = await fetch(form.action, {method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-        if(r.ok){
-          form.style.display = 'none';
-          result.style.display = 'block';
-          result.innerHTML = '<p>You are on the list. We will be in touch.</p>';
-        } else { form.submit(); }
+        if(r.ok){ form.style.display='none'; result.style.display='block'; result.innerHTML='<p>You are on the list. We will be in touch.</p>'; }
+        else { form.submit(); }
       } catch(err){ form.submit(); }
     });
   }
@@ -237,7 +220,6 @@
     <span><a href="#">EN</a> &middot; <a href="#">DE</a></span>
   </div>
 </div></footer>
-
 
 <script src="/shared.js"></script>
 </body>

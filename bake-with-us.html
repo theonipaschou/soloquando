@@ -8,13 +8,21 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+<style>
+/* Nav override */
+.nav-inner{height:88px;}
+@media(max-width:720px){.nav-inner{height:72px;}}
+.nav-logo img{height:72px;width:auto;}
+@media(max-width:720px){.nav-logo img{height:32px;}}
+@media(max-width:920px){.nav-links{top:88px;}}
+@media(max-width:720px){.nav-links{top:72px;}}
+</style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="91" height="52"/></a>
-  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products">Batches</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us" class="on">Bake with us</a></li><li><a href="/faq">FAQ</a></li></ul>
+  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="126" height="72"/></a>
+  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products">Batches</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us" class="on">Bake with us</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul>
   <div style="display:flex;align-items:center;">
-    <button class="nav-cta" onclick="location.href='/join'">Join</button>
     <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>

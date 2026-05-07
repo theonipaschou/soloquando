@@ -8,21 +8,27 @@
 <link rel="preload" href="grandma-900.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+<style>
+/* Nav override */
+.nav-inner{height:88px;}
+@media(max-width:720px){.nav-inner{height:72px;}}
+.nav-logo img{height:72px;width:auto;}
+@media(max-width:720px){.nav-logo img{height:32px;}}
+@media(max-width:920px){.nav-links{top:88px;}}
+@media(max-width:720px){.nav-links{top:72px;}}
+</style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="91" height="52"/></a>
-  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products">Batches</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story" class="on">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li></ul>
+  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="126" height="72"/></a>
+  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products">Batches</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story" class="on">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul>
   <div style="display:flex;align-items:center;">
-    <button class="nav-cta" onclick="location.href='/join'">Join</button>
     <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
   </div>
 </div></nav>
-
 <style>
-/* ─── ALTERNATING SECTIONS ─── */
 .s-section{padding:96px 0;}
 .s-section.first{padding-top:64px;}
 .s-section.alt{background:var(--paper);}
@@ -40,8 +46,6 @@
 .s-text p{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:16px;}
 .s-text .pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);line-height:1.5;border-left:3px solid var(--terra);padding-left:20px;margin:24px 0;}
 .s-text .kicker{margin-bottom:14px;display:block;}
-
-/* ─── STATS ─── */
 .stats-wrap{padding:80px 0;background:var(--paper);}
 .stats-wrap svg{max-width:900px;width:100%;height:auto;display:block;margin:0 auto;}
 .stats-mobile{display:none;max-width:520px;margin:0 auto;padding:0 22px;}
@@ -60,13 +64,7 @@
 .stats-mobile-foot{text-align:center;padding-top:18px;}
 .stats-mobile-foot-lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;}
 .stats-mobile-foot-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--dim);}
-@media(max-width:680px){
-  .stats-wrap svg{display:none;}
-  .stats-mobile{display:block;}
-  .stats-wrap{padding:64px 0;}
-}
-
-/* ─── PERSONAS LIST ─── */
+@media(max-width:680px){.stats-wrap svg{display:none;}.stats-mobile{display:block;}.stats-wrap{padding:64px 0;}}
 .personas-s{padding:96px 0;text-align:center;}
 .personas-s h2{font-size:clamp(36px,4.5vw,52px);letter-spacing:-.02em;margin-bottom:14px;}
 .personas-s h2 em{color:var(--terra);font-style:italic;}
@@ -76,8 +74,6 @@
 .personas-list li:last-child{border-bottom:none;}
 .personas-list li::before{content:'';position:absolute;left:0;top:30px;width:18px;height:1px;background:var(--terra);}
 .personas-list li strong{color:var(--ink);font-weight:400;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;}
-
-/* ─── FINAL CTA shared with homepage ─── */
 .cta-s{padding:96px 0;text-align:center;background:var(--ink);color:var(--bone);}
 .cta-s h2{font-size:clamp(44px,5.5vw,72px);letter-spacing:-.025em;margin-bottom:18px;color:var(--bone);}
 .cta-s h2 em{color:var(--terra);font-style:italic;}
@@ -91,14 +87,11 @@
 .cta-form input[type=email]:focus{border-color:rgba(245,239,228,.45);}
 .cta-btn{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:18px 26px;white-space:nowrap;transition:background .2s;}
 .cta-btn:hover{background:#a8552a;}
-.cta-tertiary{margin-top:32px;font-size:15px;color:rgba(245,239,228,.55);}
-.cta-tertiary a{color:var(--terra);text-decoration:underline;text-decoration-color:rgba(194,102,61,.4);text-underline-offset:4px;}
 .cta-note{margin-top:18px;font-size:13px;color:rgba(245,239,228,.45);}
 .cta-result{max-width:480px;margin:14px auto 0;display:none;}
 .cta-result p{color:var(--terra);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;}
 </style>
 
-<!-- ─── SECTION 1: GRANDMOTHER (the page opener — no hero before it) ─── -->
 <section class="s-section first">
   <div class="wrap">
     <div class="s-split">
@@ -118,7 +111,6 @@
   </div>
 </section>
 
-<!-- ─── SECTION 2: A THOUSAND HOMES ─── -->
 <section class="s-section alt">
   <div class="wrap">
     <div class="s-split reverse">
@@ -138,7 +130,6 @@
   </div>
 </section>
 
-<!-- ─── STATS ─── -->
 <section class="stats-wrap">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" role="img" aria-label="Food waste statistics in Switzerland and globally">
   <defs>
@@ -149,20 +140,13 @@
       .heading{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-style:italic;fill:#3D1F0D;}
     </style>
   </defs>
-
   <rect width="900" height="580" fill="#F5EFE4"/>
-
-  <!-- Heading -->
   <text x="450" y="50" text-anchor="middle" class="lbl">The bigger picture</text>
   <text x="450" y="100" text-anchor="middle" class="heading" style="font-size:42px;">Food waste, in numbers.</text>
-
-  <!-- Switzerland row -->
-  <text x="450" y="160" text-anchor="middle" class="lbl" style="letter-spacing:0.24em;">Switzerland · every year</text>
+  <text x="450" y="160" text-anchor="middle" class="lbl" style="letter-spacing:0.24em;">Switzerland &middot; every year</text>
   <text x="450" y="265" text-anchor="middle" class="num" style="font-size:120px;">2.8</text>
   <text x="450" y="305" text-anchor="middle" class="lbl" style="fill:#C4622D;letter-spacing:0.22em;">million tonnes</text>
   <text x="450" y="335" text-anchor="middle" class="body" style="font-style:italic;font-family:Cormorant Garamond,Georgia,serif;font-size:18px;">of edible food, thrown away.</text>
-
-  <!-- Three tiles -->
   <g transform="translate(50 380)">
     <g>
       <rect x="0" y="0" width="250" height="120" fill="#FAF3EE" stroke="#3D1F0D" stroke-opacity="0.08"/>
@@ -178,17 +162,14 @@
     </g>
     <g transform="translate(550 0)">
       <rect x="0" y="0" width="250" height="120" fill="#FAF3EE" stroke="#3D1F0D" stroke-opacity="0.08"/>
-      <text x="125" y="60" text-anchor="middle" class="num" style="font-size:60px;">¼</text>
+      <text x="125" y="60" text-anchor="middle" class="num" style="font-size:60px;">&#xBC;</text>
       <text x="125" y="84" text-anchor="middle" class="lbl">food footprint</text>
       <text x="125" y="106" text-anchor="middle" class="body" style="font-size:12px;">half of all private cars</text>
     </g>
   </g>
-
-  <!-- Bottom: globally -->
-  <text x="450" y="546" text-anchor="middle" class="lbl" style="letter-spacing:0.24em;">Globally · every day</text>
+  <text x="450" y="546" text-anchor="middle" class="lbl" style="letter-spacing:0.24em;">Globally &middot; every day</text>
   <text x="450" y="572" text-anchor="middle" class="body" style="font-style:italic;font-family:Cormorant Garamond,Georgia,serif;font-size:18px;">One billion meals wasted, while 783 million go hungry.</text>
 </svg>
-
   <div class="stats-mobile">
     <div class="stats-mobile-head">
       <p class="stats-mobile-eyebrow">The bigger picture</p>
@@ -200,21 +181,9 @@
       <div class="stats-mobile-big-sub">of edible food, thrown away in Switzerland every year.</div>
     </div>
     <div class="stats-mobile-tiles">
-      <div class="stats-mobile-tile">
-        <div class="stats-mobile-tile-num">38%</div>
-        <div class="stats-mobile-tile-lbl">household share</div>
-        <div class="stats-mobile-tile-sub">the single largest source</div>
-      </div>
-      <div class="stats-mobile-tile">
-        <div class="stats-mobile-tile-num">CHF 600</div>
-        <div class="stats-mobile-tile-lbl">per person</div>
-        <div class="stats-mobile-tile-sub">CHF 5+ billion nationally</div>
-      </div>
-      <div class="stats-mobile-tile">
-        <div class="stats-mobile-tile-num">&frac14;</div>
-        <div class="stats-mobile-tile-lbl">food footprint</div>
-        <div class="stats-mobile-tile-sub">half of all private cars</div>
-      </div>
+      <div class="stats-mobile-tile"><div class="stats-mobile-tile-num">38%</div><div class="stats-mobile-tile-lbl">household share</div><div class="stats-mobile-tile-sub">the single largest source</div></div>
+      <div class="stats-mobile-tile"><div class="stats-mobile-tile-num">CHF 600</div><div class="stats-mobile-tile-lbl">per person</div><div class="stats-mobile-tile-sub">CHF 5+ billion nationally</div></div>
+      <div class="stats-mobile-tile"><div class="stats-mobile-tile-num">&frac14;</div><div class="stats-mobile-tile-lbl">food footprint</div><div class="stats-mobile-tile-sub">half of all private cars</div></div>
     </div>
     <div class="stats-mobile-foot">
       <p class="stats-mobile-foot-lbl">Globally &middot; every day</p>
@@ -223,7 +192,6 @@
   </div>
 </section>
 
-<!-- ─── SECTION 4: SO WE DID THE OPPOSITE ─── -->
 <section class="s-section">
   <div class="wrap">
     <div class="s-split">
@@ -242,7 +210,6 @@
   </div>
 </section>
 
-<!-- ─── SECTION 5: PERSONAS as a tight list ─── -->
 <section class="personas-s">
   <div class="wrap">
     <p class="kicker">Who this is for</p>
@@ -257,7 +224,6 @@
   </div>
 </section>
 
-
 <section class="share-quiet">
   <div class="wrap">
     <p class="share-quiet-line">
@@ -271,16 +237,13 @@
   </div>
 </section>
 
-<!-- ─── FINAL CTA ─── -->
 <section class="cta-s">
   <div class="wrap">
     <p class="kicker" style="color:var(--terra);">Join us</p>
     <h2 style="margin-top:14px;">Be among the <em>first</em>.</h2>
     <p class="sub">Z&uuml;rich first. May 2026. Then your neighbourhood.</p>
     <div class="cta-form-wrap">
-      <form class="cta-form" id="story-waitlist"
-            action="https://formspree.io/f/mpqkvvnk"
-            method="POST">
+      <form class="cta-form" id="story-waitlist" action="https://formspree.io/f/mpqkvvnk" method="POST">
         <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
         <input type="hidden" name="source" value="our-story-cta"/>
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
@@ -290,7 +253,6 @@
       <div class="cta-result" id="story-waitlist-result"></div>
       <p class="cta-note">Free &middot; Unsubscribe any time &middot; Z&uuml;rich first</p>
     </div>
-    <p class="cta-tertiary">Have a recipe to share? <a href="/bake-with-us">Bake with us &rarr;</a></p>
   </div>
 </section>
 
@@ -303,14 +265,11 @@
     form.addEventListener('submit', async function(e){
       e.preventDefault();
       var btn = form.querySelector('button[type=submit]');
-      btn.disabled = true; btn.textContent = 'Joining…';
+      btn.disabled = true; btn.textContent = 'Joining\u2026';
       try{
         var r = await fetch(form.action, {method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-        if(r.ok){
-          form.style.display = 'none';
-          result.style.display = 'block';
-          result.innerHTML = '<p>You are on the list. We will be in touch.</p>';
-        } else { form.submit(); }
+        if(r.ok){ form.style.display='none'; result.style.display='block'; result.innerHTML='<p>You are on the list. We will be in touch.</p>'; }
+        else { form.submit(); }
       } catch(err){ form.submit(); }
     });
   }
@@ -354,8 +313,6 @@
     <span><a href="#">EN</a> &middot; <a href="#">DE</a></span>
   </div>
 </div></footer>
-
-
 <script src="/shared.js"></script>
 </body>
 </html>
