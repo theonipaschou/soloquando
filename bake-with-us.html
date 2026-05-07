@@ -29,7 +29,7 @@
 .b-hero a { color: var(--bone); }
 .b-hero a:hover { color: var(--terra); }
 
-.form-s { background: var(--bone); }
+
 .form-s h1, .form-s h2, .form-s h3, .form-s h4 { color: var(--ink); }
 .form-s h1 em, .form-s h2 em, .form-s h3 em { color: var(--terra); }
 .form-s p, .form-s .sub, .form-s li { color: rgba(245,239,228,0.78); }
@@ -55,7 +55,7 @@
 .who-s p, .who-s .sub, .who-s li { color: var(--dim); }
 .who-s .kicker { color: var(--terra); }
 
-.handle-s { background: var(--ink); }
+.handle-s { background: var(--bone); }
 .handle-s h1, .handle-s h2, .handle-s h3, .handle-s h4 { color: var(--ink); }
 .handle-s h1 em, .handle-s h2 em, .handle-s h3 em { color: var(--terra); }
 .handle-s p, .handle-s .sub, .handle-s li { color: var(--dim); }
@@ -75,46 +75,38 @@
 </style>
 <style>
 /* ── handle-s redesign: open numbered layout on dark ── */
-.handle-s{padding:96px 0;background:var(--ink);}
+.handle-s{padding:96px 0;background:var(--bone);}
 .handle-intro{max-width:680px;margin:0 auto 72px;text-align:center;}
-.handle-intro h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(40px,5vw,60px);letter-spacing:-.025em;line-height:1.05;color:var(--bone);margin:14px 0 20px;}
+.handle-intro h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(40px,5vw,60px);letter-spacing:-.025em;line-height:1.05;color:var(--ink);margin:14px 0 20px;}
 .handle-intro h2 em{color:var(--terra);font-style:italic;}
-.handle-intro p{font-size:18px;color:rgba(245,239,228,.72);font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.6;}
+.handle-intro p{font-size:18px;color:var(--dim);font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.6;}
 .handle-split{display:grid;grid-template-columns:1fr 1px 1fr;gap:0;max-width:1000px;margin:0 auto;}
 @media(max-width:760px){.handle-split{grid-template-columns:1fr;}}
-.handle-divider{background:rgba(245,239,228,.12);}
+.handle-divider{background:var(--line);}
 @media(max-width:760px){.handle-divider{width:100%;height:1px;margin:48px 0;}}
 .handle-side{padding:0 56px;}
 @media(max-width:960px){.handle-side{padding:0 32px;}}
 @media(max-width:760px){.handle-side{padding:0;}}
-.handle-side-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:80px;color:rgba(194,102,61,.25);line-height:1;letter-spacing:-.03em;margin-bottom:16px;}
-.handle-side-h{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:32px;color:var(--bone);margin-bottom:8px;line-height:1.15;}
+.handle-side-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:80px;color:rgba(196,98,45,.18);line-height:1;letter-spacing:-.03em;margin-bottom:16px;}
+.handle-side-h{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:32px;color:var(--ink);margin-bottom:8px;line-height:1.15;}
 .handle-side-h em{color:var(--terra);font-style:italic;}
-.handle-side-lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:rgba(245,239,228,.55);margin-bottom:32px;line-height:1.5;}
+.handle-side-lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--dim);opacity:.7;margin-bottom:32px;line-height:1.5;}
 .handle-side ul{list-style:none;padding:0;}
-.handle-side li{font-size:16px;line-height:1.65;color:rgba(245,239,228,.82);padding:14px 0;border-bottom:1px solid rgba(245,239,228,.08);}
+.handle-side li{font-size:16px;line-height:1.65;color:var(--dim);padding:14px 0;border-bottom:1px solid var(--line);}
 .handle-side li:last-child{border-bottom:none;}
 
-/* ── form-s redesign: two-column invitation layout ── */
-.form-s{padding:0;background:var(--bone);}
-.form-s-grid{display:grid;grid-template-columns:1fr 1fr;min-height:480px;}
-@media(max-width:760px){.form-s-grid{grid-template-columns:1fr;min-height:auto;}}
-.form-s-left{background:var(--paper);padding:72px 56px;display:flex;flex-direction:column;justify-content:center;}
-@media(max-width:760px){.form-s-left{padding:48px 32px;}}
-.form-s-left .kicker{color:var(--terra);margin-bottom:20px;display:block;}
-.form-s-left h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(32px,3.8vw,48px);letter-spacing:-.02em;line-height:1.1;color:var(--ink);margin-bottom:24px;}
-.form-s-left h2 em{color:var(--terra);font-style:italic;}
-.form-s-checklist{list-style:none;padding:0;margin:0;}
-.form-s-checklist li{font-size:16px;color:var(--dim);line-height:1.65;padding:10px 0 10px 22px;border-bottom:1px solid var(--line);position:relative;}
-.form-s-checklist li:last-child{border-bottom:none;}
-.form-s-checklist li::before{content:'';position:absolute;left:0;top:18px;width:8px;height:1px;background:var(--terra);}
-.form-s-right{background:var(--ink);padding:72px 56px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;}
-@media(max-width:760px){.form-s-right{padding:48px 32px;align-items:center;text-align:center;}}
-.form-s-right-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2.8vw,32px);color:var(--bone);line-height:1.45;margin-bottom:40px;}
-.form-s-right-quote em{color:var(--terra);}
-.form-s-btn{display:inline-block;padding:18px 36px;background:var(--terra);color:var(--bone);font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s;margin-bottom:20px;}
-.form-s-btn:hover{background:#a8552a;}
-.form-s-right-note{font-size:13px;color:rgba(245,239,228,.45);letter-spacing:.04em;}
+
+</style>
+<style>
+/* form-s — terra, centered */
+.form-s{padding:96px 0;background:var(--terra);}
+.form-s-inner{max-width:620px;margin:0 auto;text-align:center;}
+.form-s-inner .kicker{color:rgba(245,239,228,.75);display:block;margin-bottom:18px;}
+.form-s-inner h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(40px,5vw,60px);letter-spacing:-.025em;line-height:1.05;color:var(--bone);margin:0 0 24px;}
+.form-s-inner h2 em{color:var(--ink);font-style:italic;}
+.form-s-lead{font-size:18px;line-height:1.7;color:rgba(245,239,228,.82);margin-bottom:40px;}
+.form-s-btn{display:inline-block;padding:18px 40px;background:var(--ink);color:var(--bone);font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+.form-s-btn:hover{background:#2c1608;}
 </style>
 </head>
 <body>
@@ -187,7 +179,7 @@
 
 
 /* ─── FORM ─── */
-.form-s{padding:80px 0;background:var(--bone);}
+
 .form-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;max-width:1100px;margin:0 auto;align-items:start;}
 @media(max-width:860px){.form-inner{grid-template-columns:1fr;gap:36px;}}
 .form-text h2{font-size:clamp(40px,5vw,60px);letter-spacing:-.02em;margin-bottom:22px;line-height:1.05;color:var(--bone);}
@@ -296,21 +288,12 @@
 </section>
 <!-- ─── SHARE YOUR RECIPE ─── -->
 <section class="form-s" id="tell-us">
-  <div class="form-s-grid">
-    <div class="form-s-left">
+  <div class="wrap">
+    <div class="form-s-inner">
       <p class="kicker">Ready to share?</p>
       <h2>Tell us about your <em>recipe</em>.</h2>
-      <ul class="form-s-checklist">
-        <li>What you make and where it comes from</li>
-        <li>The story behind it, if there is one</li>
-        <li>How many you can make in one batch</li>
-        <li>Anything else you want her to know</li>
-      </ul>
-    </div>
-    <div class="form-s-right">
-      <p class="form-s-right-quote">"I read every message myself.<br/>I reply within <em>48 hours</em>."<br/><br/>Theoni, founder</p>
+      <p class="form-s-lead">Write to Theoni directly. Tell her what you make, where it comes from, and what makes it yours. She reads every message and replies within 48 hours.</p>
       <a class="form-s-btn" href="mailto:hello@soloquando.ch?subject=My%20recipe%20%E2%80%94%20solo.quando">Write to us &rarr;</a>
-      <p class="form-s-right-note">hello@soloquando.ch</p>
     </div>
   </div>
 </section>
@@ -415,22 +398,6 @@
 
 <script src="/shared.js"></script>
 
-<style>
-/* ── handle-s: high-specificity text colour fix ── */
-/* .handle-s .handle-col-h has spec (0,2,0) > auto-applied .handle-s h3 (0,1,1) */
-.handle-s .handle-col-h { color: #FAF3EE; }
-.handle-s .handle-col-h em { color: #C4622D; }
-.handle-s .handle-col .handle-col-lead { color: rgba(245,239,228,.65); }
-.handle-s .handle-col li { color: rgba(245,239,228,.82); }
-.handle-s .handle-head h2 { color: #FAF3EE; }
-.handle-s .handle-head h2 em { color: #C4622D; }
-.handle-s .handle-head .sub { color: rgba(245,239,228,.75); }
-.handle-s .kicker { color: #C4622D; }
-/* ── form-s on bone: ensure dark text ── */
-.form-s .form-s-inner h2 { color: #3D1F0D; }
-.form-s .form-s-inner h2 em { color: #C4622D; }
-.form-s .form-s-inner .kicker { color: #C4622D; }
-.form-s .form-s-lead { color: #5C3317; }
-</style>
+
 </body>
 </html>
