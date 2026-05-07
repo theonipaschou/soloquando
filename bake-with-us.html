@@ -29,8 +29,8 @@
 .b-hero a { color: var(--bone); }
 .b-hero a:hover { color: var(--terra); }
 
-.form-s { background: var(--terra); }
-.form-s h1, .form-s h2, .form-s h3, .form-s h4 { color: var(--bone); }
+.form-s { background: var(--bone); }
+.form-s h1, .form-s h2, .form-s h3, .form-s h4 { color: var(--ink); }
 .form-s h1 em, .form-s h2 em, .form-s h3 em { color: var(--terra); }
 .form-s p, .form-s .sub, .form-s li { color: rgba(245,239,228,0.78); }
 .form-s .kicker { color: var(--terra); }
@@ -65,12 +65,12 @@
 <style>
 /* ── form-s clean styles ── */
 .form-s-inner{max-width:600px;margin:0 auto;text-align:center;}
-.form-s-inner .kicker{color:rgba(245,239,228,.78);margin-bottom:18px;display:block;}
-.form-s-inner h2{font-size:clamp(38px,5vw,60px);letter-spacing:-.025em;margin-bottom:24px;line-height:1.05;color:var(--bone);}
-.form-s-inner h2 em{color:var(--ink);font-style:italic;}
-.form-s-lead{font-size:18px;line-height:1.7;color:rgba(245,239,228,.85);margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;}
-.form-s-btn{display:inline-block;padding:18px 40px;background:var(--ink);color:var(--bone);font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s;}
-.form-s-btn:hover{background:#2C1608;color:var(--bone);}
+.form-s-inner .kicker{color:var(--terra);margin-bottom:18px;display:block;}
+.form-s-inner h2{font-size:clamp(38px,5vw,60px);letter-spacing:-.025em;margin-bottom:24px;line-height:1.05;color:var(--ink);}
+.form-s-inner h2 em{color:var(--terra);font-style:italic;}
+.form-s-lead{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;}
+.form-s-btn{display:inline-block;padding:18px 40px;background:var(--terra);color:var(--bone);font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s;}
+.form-s-btn:hover{background:#a8552a;color:var(--bone);}
 
 </style>
 </head>
@@ -144,7 +144,7 @@
 .handle-col li::before{content:'';position:absolute;left:0;top:13px;width:10px;height:1px;background:var(--terra);}
 
 /* ─── FORM ─── */
-.form-s{padding:80px 0;background:var(--terra);}
+.form-s{padding:80px 0;background:var(--bone);}
 .form-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;max-width:1100px;margin:0 auto;align-items:start;}
 @media(max-width:860px){.form-inner{grid-template-columns:1fr;gap:36px;}}
 .form-text h2{font-size:clamp(40px,5vw,60px);letter-spacing:-.02em;margin-bottom:22px;line-height:1.05;color:var(--bone);}
@@ -359,5 +359,23 @@
 </div></footer>
 
 <script src="/shared.js"></script>
+
+<style>
+/* ── handle-s: high-specificity text colour fix ── */
+/* .handle-s .handle-col-h has spec (0,2,0) > auto-applied .handle-s h3 (0,1,1) */
+.handle-s .handle-col-h { color: #FAF3EE; }
+.handle-s .handle-col-h em { color: #C4622D; }
+.handle-s .handle-col .handle-col-lead { color: rgba(245,239,228,.65); }
+.handle-s .handle-col li { color: rgba(245,239,228,.82); }
+.handle-s .handle-head h2 { color: #FAF3EE; }
+.handle-s .handle-head h2 em { color: #C4622D; }
+.handle-s .handle-head .sub { color: rgba(245,239,228,.75); }
+.handle-s .kicker { color: #C4622D; }
+/* ── form-s on bone: ensure dark text ── */
+.form-s .form-s-inner h2 { color: #3D1F0D; }
+.form-s .form-s-inner h2 em { color: #C4622D; }
+.form-s .form-s-inner .kicker { color: #C4622D; }
+.form-s .form-s-lead { color: #5C3317; }
+</style>
 </body>
 </html>
