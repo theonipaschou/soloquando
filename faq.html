@@ -5,221 +5,1010 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>FAQ &middot; solo.quando</title>
 <meta name="description" content="Common questions about solo.quando."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+
 <style>
-/* Option B */
-.faq-hero{background:var(--ink);}
-.faq-hero h1,.faq-hero h2,.faq-hero h3{color:var(--bone);}
-.faq-hero h1 em,.faq-hero h2 em{color:var(--terra);}
-.faq-hero p,.faq-hero .sub{color:rgba(245,239,228,.75);}
-.faq-hero .kicker{color:var(--terra);}
-.faq-hero .pull{color:var(--bone);border-left-color:rgba(245,239,228,.3);}
-.faq-jump{background:var(--paper);}
-.faq-cta{background:var(--terra);}
-.faq-cta h1,.faq-cta h2,.faq-cta h3{color:var(--bone);}
-.faq-cta h1 em,.faq-cta h2 em{color:var(--ink);}
-.faq-cta p,.faq-cta .sub{color:rgba(245,239,228,.85);}
-.faq-cta .kicker{color:rgba(245,239,228,.7);}
-.faq-cta .pull{color:var(--bone);border-left-color:rgba(245,239,228,.4);}
-.faq-cta a.btn{background:var(--ink);color:var(--bone);}
-</style>
-<style>
-/* Nav — full definition matching index */
-.nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
+/* ─── CSS VARIABLES ─── */
+:root {
+  --ink:    #3D1F0D;
+  --terra:  #C4622D;
+  --paper:  #FAF3EE;
+  --bone:   #F5EFE4;
+  --dim:    #5C3317;
+  --sage:   #7A8C6E;
+  --line:   rgba(61,31,13,.12);
+  --near-black: #2C2C2A;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--paper); color: var(--ink); font-family: 'Jost', sans-serif; font-weight: 300; }
+
+/* ─── NAV ─── */
+.nav { position: sticky; top: 0; z-index: 200; background: rgba(250,243,238,.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 88px; padding: 0 48px; max-width: 1180px; margin: 0 auto; }
 @media(max-width:720px){.nav-inner{padding:0 22px;height:72px;}}
-.nav-logo{display:flex;align-items:center;text-decoration:none;}
-.nav-logo img{height:72px;width:auto;display:block;}
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo img { height: 72px; width: auto; display: block; }
 @media(max-width:720px){.nav-logo img{height:32px;}}
-.nav-links{display:flex;gap:36px;list-style:none;}
-.nav-links a{font-size:16px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
-.nav-links a:hover,.nav-links a.on{color:var(--terra);}
-.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:10px;margin-left:8px;}
-.nav-burger span{display:block;width:24px;height:2px;background:var(--ink);transition:all .28s ease;transform-origin:center;}
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-size: 16px; letter-spacing: .02em; color: var(--dim); text-decoration: none; transition: color .2s; }
+.nav-links a:hover, .nav-links a.on { color: var(--terra); }
+.nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 10px; margin-left: 8px; }
+.nav-burger span { display: block; width: 24px; height: 2px; background: var(--ink); transition: all .28s ease; transform-origin: center; }
 @media(max-width:920px){
-  .nav-links{display:none;position:fixed;top:88px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
-  .nav-links.open{display:flex;}
-  .nav-links li{border-bottom:1px solid var(--line);}
-  .nav-links a{display:block;padding:20px 24px;font-size:18px;color:var(--ink);}
-  .nav-burger{display:flex;}
+  .nav-links { display: none; position: fixed; top: 88px; left: 0; right: 0; flex-direction: column; gap: 0; background: rgba(250,243,238,.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); box-shadow: 0 8px 32px rgba(43,26,15,.12); z-index: 199; }
+  .nav-links.open { display: flex; }
+  .nav-links li { border-bottom: 1px solid var(--line); }
+  .nav-links a { display: block; padding: 20px 24px; font-size: 18px; color: var(--ink); }
+  .nav-burger { display: flex; }
   .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .nav-burger.open span:nth-child(2){opacity:0;}
   .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 }
-@media(max-width:720px){
-  .nav-links{top:72px;}
+@media(max-width:720px){.nav-links{top:72px;}}
+
+/* ─── HERO ─── */
+.faq-hero {
+  background: var(--ink);
+  padding: 100px 22px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
-</style>
+.faq-hero::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -80px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196,98,45,.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.faq-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(122,140,110,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.faq-hero .kicker {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 18px;
+}
+.faq-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 300;
+  letter-spacing: -.03em;
+  line-height: 1;
+  color: var(--bone);
+  margin-bottom: 22px;
+}
+.faq-hero h1 em { color: var(--terra); font-style: italic; }
+.faq-hero .sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(245,239,228,.62);
+  max-width: 480px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
 
-<style>
-/* ── DESIGN RHYTHM (auto-applied for v2) ── */
+/* ─── SEARCH ─── */
+.faq-search-wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.faq-search-wrap svg {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: .45;
+  pointer-events: none;
+}
+#faq-search {
+  width: 100%;
+  padding: 17px 18px 17px 50px;
+  background: rgba(255,255,255,.09);
+  border: 1px solid rgba(245,239,228,.18);
+  color: var(--bone);
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  outline: none;
+  letter-spacing: .02em;
+  transition: background .2s, border-color .2s;
+}
+#faq-search::placeholder { color: rgba(245,239,228,.4); }
+#faq-search:focus {
+  background: rgba(255,255,255,.13);
+  border-color: rgba(196,98,45,.5);
+}
+.search-empty {
+  display: none;
+  text-align: center;
+  padding: 48px 22px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--dim);
+}
 
-.faq-hero { background: var(--ink); }
-.faq-hero h1, .faq-hero h2, .faq-hero h3, .faq-hero h4 { color: var(--bone); }
-.faq-hero h1 em, .faq-hero h2 em, .faq-hero h3 em { color: var(--terra); }
-.faq-hero p, .faq-hero .sub, .faq-hero li { color: rgba(245,239,228,0.78); }
-.faq-hero .kicker { color: var(--terra); }
-.faq-hero a { color: var(--bone); }
-.faq-hero a:hover { color: var(--terra); }
+/* ─── CATEGORY NAV ─── */
+.faq-cats {
+  background: var(--bone);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 88px;
+  z-index: 100;
+}
+@media(max-width:720px){.faq-cats{top:72px;}}
+.faq-cats-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 22px;
+}
+.faq-cats-inner::-webkit-scrollbar { display: none; }
+.faq-cat-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px;
+  margin-right: 36px;
+  height: 56px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  white-space: nowrap;
+  transition: color .2s, border-color .2s;
+  flex-shrink: 0;
+}
+.faq-cat-btn:hover { color: var(--terra); }
+.faq-cat-btn.active { color: var(--terra); border-bottom-color: var(--terra); }
+.faq-cat-btn .cat-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--line);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--dim);
+  transition: background .2s, color .2s;
+}
+.faq-cat-btn.active .cat-count {
+  background: rgba(196,98,45,.15);
+  color: var(--terra);
+}
 
-.faq-body { background: var(--paper); }
-.faq-body h1, .faq-body h2, .faq-body h3, .faq-body h4 { color: var(--ink); }
-.faq-body h1 em, .faq-body h2 em, .faq-body h3 em { color: var(--terra); }
-.faq-body p, .faq-body .sub, .faq-body li { color: var(--dim); }
-.faq-body .kicker { color: var(--terra); }
+/* ─── BODY ─── */
+.faq-body {
+  padding: 0 22px 120px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
 
+/* ─── SECTION ─── */
+.faq-section {
+  padding-top: 72px;
+  display: none;
+}
+.faq-section.visible { display: block; }
+
+.faq-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.faq-section-header-left { display: flex; align-items: center; gap: 20px; }
+.section-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(196,98,45,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.section-icon svg { width: 22px; height: 22px; stroke: var(--terra); fill: none; stroke-width: 1.5; }
+.faq-section-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 300;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.faq-section-header h2 em { color: var(--terra); font-style: italic; }
+.section-q-count {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: rgba(92,51,23,.45);
+  white-space: nowrap;
+  padding-bottom: 4px;
+}
+
+/* ─── ACCORDION ─── */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+  transition: background .2s;
+}
+.faq-item:first-child { border-top: 1px solid var(--line); }
+
+.faq-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  padding: 24px 0;
+  list-style: none;
+  user-select: none;
+  transition: padding .25s;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-q-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  line-height: 1.3;
+  color: var(--ink);
+  transition: color .2s;
+  flex: 1;
+}
+
+.faq-item[open] .faq-q-text { color: var(--terra); }
+
+.faq-toggle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background .22s, border-color .22s, transform .25s;
+}
+.faq-toggle svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--dim);
+  stroke-width: 2;
+  fill: none;
+  transition: stroke .2s, transform .28s ease;
+}
+.faq-item[open] .faq-toggle {
+  background: var(--terra);
+  border-color: var(--terra);
+}
+.faq-item[open] .faq-toggle svg {
+  stroke: var(--bone);
+  transform: rotate(45deg);
+}
+
+.faq-a {
+  padding: 0 0 32px;
+  max-width: 680px;
+}
+.faq-a p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--dim);
+  margin-bottom: 14px;
+}
+.faq-a p:last-child { margin-bottom: 0; }
+.faq-a a {
+  color: var(--terra);
+  text-decoration: underline;
+  text-decoration-color: rgba(196,98,45,.35);
+  text-underline-offset: 3px;
+  transition: text-decoration-color .2s;
+}
+.faq-a a:hover { text-decoration-color: var(--terra); }
+
+/* ─── HIGHLIGHT ON SEARCH ─── */
+mark {
+  background: rgba(196,98,45,.18);
+  color: var(--terra);
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+/* ─── CTA STRIP ─── */
+.faq-cta-strip {
+  margin: 64px 0 0;
+  padding: 64px;
+  background: var(--ink);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 40px;
+}
+@media(max-width:720px){
+  .faq-cta-strip { padding: 44px 28px; grid-template-columns: 1fr; gap: 28px; }
+}
+.faq-cta-strip h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: -.02em;
+  color: var(--bone);
+  margin-bottom: 10px;
+}
+.faq-cta-strip h3 em { color: var(--terra); font-style: italic; }
+.faq-cta-strip p {
+  font-size: 16px;
+  color: rgba(245,239,228,.55);
+  line-height: 1.6;
+}
+.btn-ghost {
+  display: inline-block;
+  padding: 15px 32px;
+  border: 1px solid rgba(245,239,228,.25);
+  color: var(--bone);
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .22s, border-color .22s;
+}
+.btn-ghost:hover {
+  background: rgba(245,239,228,.08);
+  border-color: rgba(245,239,228,.45);
+}
+
+/* ─── NL STRIP ─── */
+.nl-strip { padding: 96px 22px; background: var(--bone); border-top: 1px solid var(--line); text-align: center; }
+.nl-strip-inner { max-width: 560px; margin: 0 auto; }
+.nl-strip .kicker { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--terra); display: block; margin-bottom: 16px; }
+.nl-strip h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(34px,4.4vw,52px); letter-spacing: -.02em; line-height: 1.05; margin-bottom: 16px; color: var(--ink); }
+.nl-strip h2 em { color: var(--terra); font-style: italic; }
+.nl-strip-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: var(--dim); line-height: 1.5; margin-bottom: 32px; opacity: .7; }
+.nl-strip-form { display: flex; max-width: 440px; margin: 0 auto 14px; }
+@media(max-width:520px){.nl-strip-form{flex-direction:column;gap:10px;}}
+.nl-strip-form input[type=email] { flex: 1; padding: 16px 18px; background: var(--paper); border: 1px solid var(--line); border-right: none; color: var(--ink); font-family: 'Jost', sans-serif; font-size: 16px; outline: none; transition: border-color .2s; }
+@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid var(--line);}}
+.nl-strip-form input[type=email]::placeholder { color: var(--dim); opacity: .45; }
+.nl-strip-form input[type=email]:focus { border-color: rgba(43,26,15,.35); }
+.nl-strip-form button { background: var(--terra); color: var(--bone); border: none; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; padding: 16px 26px; white-space: nowrap; transition: background .2s; }
+.nl-strip-form button:hover { background: #a8552a; }
+.nl-strip-form button:disabled { opacity: .6; cursor: wait; }
+.nl-strip-note { font-size: 13px; color: var(--dim); opacity: .55; }
+.nl-strip-result { max-width: 440px; margin: 8px auto 0; display: none; }
+.nl-strip-result p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: var(--ink); }
+
+/* ─── FOOTER ─── */
+.footer { background: var(--ink); padding: 72px 22px 40px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(245,239,228,.1); margin-bottom: 32px; }
+@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+.footer-logo-img { height: 56px; width: auto; margin-bottom: 14px; }
+.footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: rgba(245,239,228,.5); }
+.footer-col h5 { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(245,239,228,.4); margin-bottom: 18px; font-weight: 400; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a { font-size: 15px; color: rgba(245,239,228,.65); text-decoration: none; transition: color .2s; }
+.footer-col a:hover { color: var(--bone); }
+.footer-payments { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+.footer-payments-label { font-size: 13px; color: rgba(245,239,228,.35); }
+.footer-payments-name { font-size: 13px; color: rgba(245,239,228,.55); text-decoration: none; transition: color .2s; }
+.footer-payments-name:hover { color: var(--bone); }
+.footer-payments-methods { font-size: 13px; color: rgba(245,239,228,.35); }
+.footer-bottom { font-size: 13px; color: rgba(245,239,228,.3); }
+
+/* ─── MISC ─── */
+.no-results-msg {
+  display: none;
+  padding: 80px 22px;
+  text-align: center;
+}
+.no-results-msg p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--dim);
+  opacity: .6;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.faq-section.visible { animation: fadeUp .3s ease both; }
 </style>
 </head>
 <body>
+
 <nav class="nav"><div class="nav-inner">
-  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="126" height="72"/></a>
-  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products">Batches</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq" class="on">FAQ</a></li><li><a href="/contact">Contact</a></li></ul>
+  <a href="/" class="nav-logo" aria-label="solo.quando home">
+    <img src="logo-nav.webp" alt="solo.quando" width="126" height="72"/>
+  </a>
+  <ul class="nav-links" id="main-nav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/products">Batches</a></li>
+    <li><a href="/how-it-works">How it works</a></li>
+    <li><a href="/our-story">Our story</a></li>
+    <li><a href="/bake-with-us">Bake with us</a></li>
+    <li><a href="/faq" class="on">FAQ</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
   <div style="display:flex;align-items:center;">
     <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
   </div>
 </div></nav>
-<style>
-.faq-hero{padding:96px 0 64px;background:var(--ink);text-align:center;}
-.faq-hero h1{font-size:clamp(46px,6.5vw,84px);letter-spacing:-.025em;margin:14px 0 20px;}
-.faq-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--dim);max-width:560px;line-height:1.5;margin:0 auto;}
-.faq-jump{background:var(--paper);padding:32px 0;border-bottom:1px solid var(--line);}
-.faq-jump-inner{max-width:920px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:18px 28px;padding:0 22px;}
-.faq-jump a{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s;border-bottom:1px solid transparent;padding-bottom:2px;}
-.faq-jump a:hover{color:var(--terra);border-bottom-color:rgba(194,102,61,.4);}
-.faq-body{padding:72px 0 96px;}
-.faq-section{max-width:780px;margin:0 auto 64px;}
-.faq-section:last-child{margin-bottom:0;}
-.faq-section-h{display:flex;align-items:baseline;gap:18px;margin-bottom:32px;padding-bottom:18px;border-bottom:1px solid var(--line);}
-.faq-section-h h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;letter-spacing:-.015em;color:var(--ink);}
-.faq-section-h h2 em{color:var(--terra);}
-.faq-section-h .count{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--dim);}
-.faq-item{border-bottom:1px solid var(--line);}
-.faq-item:first-child{border-top:1px solid var(--line);}
-.faq-item summary{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:22px 0;font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;letter-spacing:-.005em;color:var(--ink);user-select:none;list-style:none;line-height:1.3;}
-.faq-item summary::-webkit-details-marker{display:none;}
-.faq-item summary::after{content:'+';font-family:'Jost',sans-serif;font-size:26px;font-weight:300;color:var(--terra);transition:transform .25s;flex-shrink:0;margin-left:18px;}
-details[open] summary::after{content:'\2013';}
-.faq-a{padding:0 0 24px;font-size:17px;line-height:1.75;color:var(--dim);}
-.faq-a a{color:var(--terra);text-decoration:underline;text-decoration-color:rgba(194,102,61,.4);text-underline-offset:3px;}
-.faq-a p{margin-bottom:14px;}
-.faq-a p:last-child{margin-bottom:0;}
-.faq-cta{padding:96px 0;text-align:center;background:var(--paper);}
-.faq-cta h2{font-size:clamp(34px,4.5vw,52px);letter-spacing:-.02em;margin-bottom:14px;}
-.faq-cta p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:480px;margin:0 auto 36px;}
-</style>
 
+<!-- ─── HERO ─── -->
 <header class="faq-hero">
-  <div class="wrap">
-    <p class="kicker">Common questions</p>
-    <h1><em>Honest</em> answers.</h1>
-    <p class="sub">Everything we get asked, and a few things we wish we got asked more.</p>
+  <p class="kicker">Common questions</p>
+  <h1><em>Honest</em> answers.</h1>
+  <p class="sub">Everything we get asked, and a few things we wish we got asked more.</p>
+  <div class="faq-search-wrap">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(245,239,228,.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input type="search" id="faq-search" placeholder="Search questions..." autocomplete="off" aria-label="Search FAQ"/>
   </div>
 </header>
 
-<nav class="faq-jump">
-  <div class="faq-jump-inner">
-    <a href="#basics">The basics</a>
-    <a href="#buyers">For neighbours</a>
-    <a href="#bakers">For bakers</a>
-    <a href="#payments">Payments &amp; pickup</a>
-    <a href="#legal">Legal &amp; safety</a>
-    <a href="#about">About us</a>
+<!-- ─── CATEGORY NAV ─── -->
+<nav class="faq-cats" aria-label="FAQ categories">
+  <div class="faq-cats-inner">
+    <button class="faq-cat-btn active" data-target="all">
+      All <span class="cat-count" id="count-all">27</span>
+    </button>
+    <button class="faq-cat-btn" data-target="basics">
+      The basics <span class="cat-count" id="count-basics">6</span>
+    </button>
+    <button class="faq-cat-btn" data-target="buyers">
+      For neighbours <span class="cat-count" id="count-buyers">8</span>
+    </button>
+    <button class="faq-cat-btn" data-target="bakers">
+      For bakers <span class="cat-count" id="count-bakers">8</span>
+    </button>
+    <button class="faq-cat-btn" data-target="payments">
+      Payments &amp; pickup <span class="cat-count" id="count-payments">5</span>
+    </button>
+    <button class="faq-cat-btn" data-target="legal">
+      Legal &amp; safety <span class="cat-count" id="count-legal">4</span>
+    </button>
+    <button class="faq-cat-btn" data-target="about">
+      About us <span class="cat-count" id="count-about">4</span>
+    </button>
   </div>
 </nav>
 
-<section class="faq-body">
-  <div class="wrap">
+<!-- ─── FAQ BODY ─── -->
+<main class="faq-body" id="faq-main">
 
-    <div class="faq-section" id="basics">
-      <div class="faq-section-h"><h2>The <em>basics</em></h2><span class="count">five questions</span></div>
-      <details class="faq-item"><summary>What is solo.quando?</summary><div class="faq-a"><p>A demand-first pre-order marketplace for homemade food in Z&uuml;rich. A baker proposes a batch. Neighbours pre-order. Nothing is made until enough people say yes.</p><p>Think Kickstarter, for homemade food. Made by your neighbour.</p><p>solo.quando is also a small group of people who said yes early. They get priority on every batch, invitations to small gatherings, and a quiet line into what we're working on. <a href="/join">Join us here.</a></p></div></details>
-      <details class="faq-item"><summary>What does joining solo.quando get me?</summary><div class="faq-a"><p>Four things, while we're a pilot in Z&uuml;rich.</p><p>Priority on every batch. You hear before anyone else, and you reserve before public release.</p><p>Small gatherings. Kitchen tastings, supper-club style evenings, in Z&uuml;rich.</p><p>Farm and producer visits. Where the strawberries grow, where the honey comes from, the people behind the ingredients.</p><p>The parts that never make it online. Recipe drafts, behind-the-scenes, the first to know what's coming next.</p><p>It's free, while solo.quando is small. The early people get the most.</p></div></details>
-      <details class="faq-item"><summary>What is a "batch"?</summary><div class="faq-a"><p>A batch is a small round of baking proposed by one of our bakers. They decide the recipe, the price, the pickup window, and the minimum number of pre-orders they need before they'll cook. Once enough neighbours say yes, the batch is confirmed and the kitchen opens.</p></div></details>
-      <details class="faq-item"><summary>When does this launch?</summary><div class="faq-a"><p>First batches in Z&uuml;rich are planned for May 2026. <a href="/join">Join solo.quando</a> and you'll be the first to hear when a baker in your neighbourhood opens a batch.</p></div></details>
-      <details class="faq-item"><summary>Where does solo.quando operate?</summary><div class="faq-a"><p>solo.quando is currently a pilot project in Z&uuml;rich. We are intentionally starting small: a single city, a small group of bakers, one curated pickup point. Once the model is proven here, we'll expand to other Swiss cities. We are not in a hurry.</p></div></details>
-      <details class="faq-item"><summary>Do you have a mobile app?</summary><div class="faq-a"><p>Not yet. solo.quando is web-first, designed to work cleanly on phone browsers. An app may come later, when there's something for it to do.</p></div></details>
+  <!-- BASICS -->
+  <section class="faq-section visible" id="basics" data-section="basics">
+    <div class="faq-section-header">
+      <div class="faq-section-header-left">
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4m0 4h.01"/></svg>
+        </div>
+        <h2>The <em>basics</em></h2>
+      </div>
+      <span class="section-q-count">6 questions</span>
     </div>
+    <div class="faq-grid">
 
-    <div class="faq-section" id="buyers">
-      <div class="faq-section-h"><h2>For <em>neighbours</em></h2><span class="count">if you want to order</span></div>
-      <details class="faq-item"><summary>How do I pre-order a batch?</summary><div class="faq-a"><p>You browse open batches, choose one, and reserve a portion. Your payment is held but not charged until the batch is confirmed. If the threshold isn't met before the deadline, the hold is released automatically.</p></div></details>
-      <details class="faq-item"><summary>What if a batch doesn't reach its threshold?</summary><div class="faq-a"><p>Every payment returns automatically and in full. No exceptions, no credits, no partial refunds. The full amount, every time.</p></div></details>
-      <details class="faq-item"><summary>Can I cancel my pre-order?</summary><div class="faq-a"><p>You can cancel any time before the batch is confirmed. Once a batch is confirmed and the baker has started cooking, the order is final, the same way it would be at any small restaurant taking a private booking.</p></div></details>
-      <details class="faq-item"><summary>How do I know the food is fresh?</summary><div class="faq-a"><p>The whole model is built around freshness. Bakers don't cook anything until enough neighbours commit. You collect within hours of it being made, often the same day. There is no shelf, no warehouse, no waiting.</p></div></details>
-      <details class="faq-item"><summary>What if I have allergies or dietary restrictions?</summary><div class="faq-a"><p>Every listing must declare every ingredient and every major allergen before publication. Bakers must also disclose if their kitchen handles other allergens (cross-contamination risk). If a baker omits something or misdescribes a batch, write to us at <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a> within 24 hours of pickup.</p><p>If you have severe allergies, we strongly recommend reading every ingredient list carefully and contacting the baker through the platform with any specific questions before pre-ordering.</p></div></details>
-      <details class="faq-item"><summary>What if the food isn't what I expected?</summary><div class="faq-a"><p>If something is materially different from how it was described (wrong ingredients, spoiled, missing) write to <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a> within 24 hours of collection. We will investigate and resolve fairly.</p><p>For matters of personal taste, we ask for understanding. Homemade food is not factory food. Every batch is unique.</p></div></details>
-      <details class="faq-item"><summary>Can I request a custom batch from a baker?</summary><div class="faq-a"><p>Not yet. At launch, batches are proposed by bakers, not requested by neighbours. As the platform grows, we plan to allow direct requests, but only between people who already know each other through the platform.</p></div></details>
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">What is solo.quando?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>A demand-first pre-order marketplace for homemade food in Z&uuml;rich. A baker proposes a batch. Neighbours pre-order. Nothing is made until enough people say yes.</p>
+          <p>Think Kickstarter, for homemade food. Made by your neighbour.</p>
+          <p>solo.quando is also a small group of people who said yes early. They get priority on every batch, invitations to small gatherings, and a quiet line into what we're working on. <a href="/join">Join us here.</a></p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">What does joining solo.quando get me?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Four things, while we're a pilot in Z&uuml;rich.</p>
+          <p>Priority on every batch. You hear before anyone else, and you reserve before public release.</p>
+          <p>Small gatherings. Kitchen tastings, supper-club style evenings, in Z&uuml;rich.</p>
+          <p>Farm and producer visits. Where the strawberries grow, where the honey comes from, the people behind the ingredients.</p>
+          <p>The parts that never make it online. Recipe drafts, behind-the-scenes, the first to know what's coming next.</p>
+          <p>It's free, while solo.quando is small. The early people get the most.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">What is a "batch"?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>A batch is a small round of baking proposed by one of our bakers. They decide the recipe, the price, the pickup window, and the minimum number of pre-orders they need before they'll cook. Once enough neighbours say yes, the batch is confirmed and the kitchen opens.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">When does this launch?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>First batches in Z&uuml;rich are planned for May 2026. <a href="/join">Join solo.quando</a> and you'll be the first to hear when a baker in your neighbourhood opens a batch.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Where does solo.quando operate?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>solo.quando is currently a pilot project in Z&uuml;rich. We are intentionally starting small: a single city, a small group of bakers, one curated pickup point. Once the model is proven here, we'll expand to other Swiss cities. We are not in a hurry.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Do you have a mobile app?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Not yet. solo.quando is web-first, designed to work cleanly on phone browsers. An app may come later, when there's something for it to do.</p>
+        </div>
+      </details>
+
     </div>
+  </section>
 
-    <div class="faq-section" id="bakers">
-      <div class="faq-section-h"><h2>For <em>bakers</em></h2><span class="count">if you want to bake</span></div>
-      <details class="faq-item"><summary>Who can bake on solo.quando?</summary><div class="faq-a"><p>Anyone with a home kitchen, a recipe they're proud of, and the willingness to share it. No commercial kitchen required, no minimum volumes, no business background needed.</p><p>What matters is consistency, care, and honesty about what you make.</p></div></details>
-      <details class="faq-item"><summary>Do I need a permit to sell homemade food in Switzerland?</summary><div class="faq-a"><p>For most home bakers operating at small volumes, no specific permit is required, but you must comply with general Swiss food-safety law (LMG SR 817.0 and LGV SR 817.02) and your cantonal food-safety authority's guidance.</p><p>We guide every baker through the relevant rules during onboarding. The most common requirements: clear ingredient and allergen labelling, basic kitchen hygiene, and accurate descriptions of what you sell.</p></div></details>
-      <details class="faq-item"><summary>Do I need food-safety training?</summary><div class="faq-a"><p>Not legally required at small volumes, but strongly recommended. We can point you to short, low-cost hygiene courses available in Z&uuml;rich. The peace of mind is worth it.</p></div></details>
-      <details class="faq-item"><summary>How much does it cost me to use solo.quando?</summary><div class="faq-a"><p>For our first cohort of bakers in Z&uuml;rich, the platform is free. Our long-term model is a small commission per confirmed batch (planned at 10 to 15%). No subscription, no listing fees, no fees if a batch doesn't reach its threshold.</p></div></details>
-      <details class="faq-item"><summary>How do I get paid?</summary><div class="faq-a"><p>Payments are processed through Payrexx (Switzerland's leading SME payment platform). When a batch is confirmed and pickup is complete, your payout is transferred to your Swiss bank account. Refunds, if any, are automatic and don't affect your future payouts.</p></div></details>
-      <details class="faq-item"><summary>What if not enough people pre-order?</summary><div class="faq-a"><p>Then nothing happens. The batch closes. Nobody is charged. You haven't lost a Sunday or a gram of flour. You can re-list the same batch or try a different one.</p></div></details>
-      <details class="faq-item"><summary>Can I cancel a batch I've proposed?</summary><div class="faq-a"><p>You can cancel an open batch at any time before it reaches its threshold. After confirmation, cancellation should only happen for genuine emergencies. Repeated late cancellations risk being asked to leave the platform.</p></div></details>
-      <details class="faq-item"><summary>Who is liable if someone gets sick from my food?</summary><div class="faq-a"><p>Under Swiss law, the producer is responsible for the safety of the food they sell. solo.quando provides the platform but is not the manufacturer of the food.</p><p>We strongly recommend bakers consider basic food-product liability insurance (typically a few hundred CHF per year). We can recommend Swiss insurers who offer this.</p></div></details>
+  <!-- BUYERS -->
+  <section class="faq-section visible" id="buyers" data-section="buyers">
+    <div class="faq-section-header">
+      <div class="faq-section-header-left">
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h2>For <em>neighbours</em></h2>
+      </div>
+      <span class="section-q-count">8 questions</span>
     </div>
+    <div class="faq-grid">
 
-    <div class="faq-section" id="payments">
-      <div class="faq-section-h"><h2>Payments &amp; <em>pickup</em></h2><span class="count">how it actually works</span></div>
-      <details class="faq-item"><summary>How do I pay?</summary><div class="faq-a"><p>Payments are processed by Payrexx, a Swiss payment platform. Accepted methods include TWINT, Visa, Mastercard, and Apple Pay.</p><p>Your payment is authorised but not charged when you pre-order. The charge happens only if the batch is confirmed. If not, the authorisation expires and no money moves.</p></div></details>
-      <details class="faq-item"><summary>Where do I pick up?</summary><div class="faq-a"><p>Pickup happens at a single, central Z&uuml;rich address we curate. Quiet, warm, and considered. The address is shared with you only once you've committed to a batch.</p><p>We do not deliver. Pickup is part of the experience.</p></div></details>
-      <details class="faq-item"><summary>Why is the pickup location secret?</summary><div class="faq-a"><p>Something quietly held becomes something worth arriving for. We share it only with people who've committed.</p></div></details>
-      <details class="faq-item"><summary>What if the baker doesn't show up?</summary><div class="faq-a"><p>This shouldn't happen, but if it does, we refund your full payment immediately and the baker faces consequences on the platform, up to and including being asked to leave. Tell us at <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>.</p></div></details>
-      <details class="faq-item"><summary>What happens if I miss my pickup window?</summary><div class="faq-a"><p>Each batch has a clearly stated pickup window (usually 2 to 3 hours on a specific day). If you miss it without arranging an alternative with the baker, the food may be forfeited. Pickup is a commitment.</p></div></details>
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">How do I pre-order a batch?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>You browse open batches, choose one, and reserve a portion. Your payment is held but not charged until the batch is confirmed. If the threshold isn't met before the deadline, the hold is released automatically.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">What if a batch doesn't reach its threshold?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Every payment returns automatically and in full. No exceptions, no credits, no partial refunds. The full amount, every time.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Can I cancel my pre-order?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>You can cancel any time before the batch is confirmed. Once a batch is confirmed and the baker has started cooking, the order is final, the same way it would be at any small restaurant taking a private booking.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">How do I know the food is fresh?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>The whole model is built around freshness. Bakers don't cook anything until enough neighbours commit. You collect within hours of it being made, often the same day. There is no shelf, no warehouse, no waiting.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">What if I have allergies or dietary restrictions?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Every listing must declare every ingredient and every major allergen before publication. Bakers must also disclose if their kitchen handles other allergens (cross-contamination risk). If a baker omits something or misdescribes a batch, write to us at <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a> within 24 hours of pickup.</p>
+          <p>If you have severe allergies, we strongly recommend reading every ingredient list carefully and contacting the baker through the platform with any specific questions before pre-ordering.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">What if the food isn't what I expected?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>If something is materially different from how it was described (wrong ingredients, spoiled, missing) write to <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a> within 24 hours of collection. We will investigate and resolve fairly.</p>
+          <p>For matters of personal taste, we ask for understanding. Homemade food is not factory food. Every batch is unique.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Can I request a custom batch from a baker?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Not yet. At launch, batches are proposed by bakers, not requested by neighbours. As the platform grows, we plan to allow direct requests, but only between people who already know each other through the platform.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Is there a minimum order size?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>No. You reserve a single portion per batch. The minimum threshold applies to the batch as a whole, not to your individual order. One portion is always enough.</p>
+        </div>
+      </details>
+
     </div>
+  </section>
 
-    <div class="faq-section" id="legal">
-      <div class="faq-section-h"><h2>Legal &amp; <em>safety</em></h2><span class="count">the boring but important bit</span></div>
-      <details class="faq-item"><summary>Is solo.quando legal?</summary><div class="faq-a"><p>Yes. solo.quando operates within Swiss food-safety law (LMG SR 817.0 / LGV SR 817.02) and the Swiss Code of Obligations (CO/OR). We are the platform, not the producer. Bakers are responsible for the safety, declaration, and compliance of their own food.</p></div></details>
-      <details class="faq-item"><summary>How is food safety handled?</summary><div class="faq-a"><p>Every listing must declare every ingredient and every major allergen. Cantonal food-safety inspectors retain the right to inspect any home kitchen producing food for sale, including those operating through solo.quando. We cooperate fully with all such inspections.</p><p>We onboard every baker with a written agreement covering hygiene basics and accurate labelling.</p></div></details>
-      <details class="faq-item"><summary>How is my personal data handled?</summary><div class="faq-a"><p>Personal data is processed under the Swiss nDSG (Federal Act on Data Protection). We don't sell or share your data for marketing. See the <a href="/privacy">Privacy Policy</a> for full details.</p></div></details>
-      <details class="faq-item"><summary>Is this accessible for people with disabilities or chronic illness?</summary><div class="faq-a"><p>Intentionally so. The single, curated pickup point in central Z&uuml;rich means short pre-arranged collections in one place, significantly easier than a market or a shop with multiple visits. We can also accommodate specific accessibility needs. Just let us know in advance.</p></div></details>
+  <!-- BAKERS -->
+  <section class="faq-section visible" id="bakers" data-section="bakers">
+    <div class="faq-section-header">
+      <div class="faq-section-header-left">
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 19.92M9.1 9.08A3 3 0 0 0 6 12"/><path d="M12 6C7 6 4 9 3 12"/><path d="M15 6c1.5 1 2 3 2 4"/><path d="M19 7c1 2 1 4 0 6"/><path d="M21 3c1 3 1 5 0 7"/></svg>
+        </div>
+        <h2>For <em>bakers</em></h2>
+      </div>
+      <span class="section-q-count">8 questions</span>
     </div>
+    <div class="faq-grid">
 
-    <div class="faq-section" id="about">
-      <div class="faq-section-h"><h2>About <em>us</em></h2><span class="count">who's behind this</span></div>
-      <details class="faq-item"><summary>Who is behind solo.quando?</summary><div class="faq-a"><p>solo.quando was founded by Theoni Paschou, a PhD researcher with eight years of experience in product management and digital transformation. She's also the platform's first baker, making her grandmother's recipes from her own kitchen in Z&uuml;rich.</p><p>Read <a href="/our-story">the full story</a>.</p></div></details>
-      <details class="faq-item"><summary>How is solo.quando different from Too Good To Go?</summary><div class="faq-a"><p>Too Good To Go sells leftover restaurant or supermarket food at the end of the day, to reduce waste. solo.quando does the opposite: nothing is made until enough people have pre-ordered. The food is fresh, made by your neighbour, and only because you asked.</p></div></details>
-      <details class="faq-item"><summary>How is solo.quando different from a farmers' market?</summary><div class="faq-a"><p>A farmers' market requires the producer to bake speculatively, transport everything to the market, and sell what they can. solo.quando inverts that: the order comes first, then the cooking, then the pickup. Less waste, less guesswork, less anonymous.</p></div></details>
-      <details class="faq-item"><summary>How do I get in touch?</summary><div class="faq-a"><p>Email <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>, call <a href="tel:+41787942700">+41 78 794 27 00</a>, or visit the <a href="/contact">contact page</a>. We reply within 48 hours.</p></div></details>
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Who can bake on solo.quando?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Anyone with a home kitchen, a recipe they're proud of, and the willingness to share it. No commercial kitchen required, no minimum volumes, no business background needed.</p>
+          <p>What matters is consistency, care, and honesty about what you make.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Do I need a permit to sell homemade food in Switzerland?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>For most home bakers operating at small volumes, no specific permit is required, but you must comply with general Swiss food-safety law (LMG SR 817.0 and LGV SR 817.02) and your cantonal food-safety authority's guidance.</p>
+          <p>We guide every baker through the relevant rules during onboarding. The most common requirements: clear ingredient and allergen labelling, basic kitchen hygiene, and accurate descriptions of what you sell.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Do I need food-safety training?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Not legally required at small volumes, but strongly recommended. We can point you to short, low-cost hygiene courses available in Z&uuml;rich. The peace of mind is worth it.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">How much does it cost me to use solo.quando?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>For our first cohort of bakers in Z&uuml;rich, the platform is free. Our long-term model is a small commission per confirmed batch (planned at 10 to 15%). No subscription, no listing fees, no fees if a batch doesn't reach its threshold.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">How do I get paid?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Payments are processed through Payrexx, a Swiss payment platform. When a batch is confirmed and pickup is complete, your payout is transferred to your Swiss bank account. Refunds, if any, are automatic and don't affect your future payouts.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">What if not enough people pre-order?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Then nothing happens. The batch closes. Nobody is charged. You haven't lost a Sunday or a gram of flour. You can re-list the same batch or try a different one.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Can I cancel a batch I've proposed?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>You can cancel an open batch at any time before it reaches its threshold. After confirmation, cancellation should only happen for genuine emergencies. Repeated late cancellations risk being asked to leave the platform.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Who is liable if someone gets sick from my food?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Under Swiss law, the producer is responsible for the safety of the food they sell. solo.quando provides the platform but is not the manufacturer of the food.</p>
+          <p>We strongly recommend bakers consider basic food-product liability insurance (typically a few hundred CHF per year). We can recommend Swiss insurers who offer this.</p>
+        </div>
+      </details>
+
     </div>
+  </section>
 
+  <!-- PAYMENTS -->
+  <section class="faq-section visible" id="payments" data-section="payments">
+    <div class="faq-section-header">
+      <div class="faq-section-header-left">
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <h2>Payments &amp; <em>pickup</em></h2>
+      </div>
+      <span class="section-q-count">5 questions</span>
+    </div>
+    <div class="faq-grid">
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">How do I pay?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Payments are processed by Payrexx, a Swiss payment platform. Accepted methods include TWINT, Visa, Mastercard, and Apple Pay.</p>
+          <p>Your payment is authorised but not charged when you pre-order. The charge happens only if the batch is confirmed. If not, the authorisation expires and no money moves.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Where do I pick up?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Pickup happens at a single, central Z&uuml;rich address we curate. Quiet, warm, and considered. The address is shared with you only once you've committed to a batch.</p>
+          <p>We do not deliver. Pickup is part of the experience.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Why is the pickup location secret?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Something quietly held becomes something worth arriving for. We share it only with people who've committed.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">What if the baker doesn't show up?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>This shouldn't happen, but if it does, we refund your full payment immediately and the baker faces consequences on the platform, up to and including being asked to leave. Tell us at <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">What happens if I miss my pickup window?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Each batch has a clearly stated pickup window (usually 2 to 3 hours on a specific day). If you miss it without arranging an alternative with the baker, the food may be forfeited. Pickup is a commitment.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- LEGAL -->
+  <section class="faq-section visible" id="legal" data-section="legal">
+    <div class="faq-section-header">
+      <div class="faq-section-header-left">
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>
+        </div>
+        <h2>Legal &amp; <em>safety</em></h2>
+      </div>
+      <span class="section-q-count">4 questions</span>
+    </div>
+    <div class="faq-grid">
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Is solo.quando legal?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Yes. solo.quando operates within Swiss food-safety law (LMG SR 817.0 / LGV SR 817.02) and the Swiss Code of Obligations (CO/OR). We are the platform, not the producer. Bakers are responsible for the safety, declaration, and compliance of their own food.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">How is food safety handled?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Every listing must declare every ingredient and every major allergen. Cantonal food-safety inspectors retain the right to inspect any home kitchen producing food for sale, including those operating through solo.quando. We cooperate fully with all such inspections.</p>
+          <p>We onboard every baker with a written agreement covering hygiene basics and accurate labelling.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">How is my personal data handled?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Personal data is processed under the Swiss nDSG (Federal Act on Data Protection). We don't sell or share your data for marketing. See the <a href="/privacy">Privacy Policy</a> for full details.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Is this accessible for people with disabilities or chronic illness?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Intentionally so. The single, curated pickup point in central Z&uuml;rich means short pre-arranged collections in one place, significantly easier than a market or a shop with multiple visits. We can also accommodate specific accessibility needs. Just let us know in advance.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="faq-section visible" id="about" data-section="about">
+    <div class="faq-section-header">
+      <div class="faq-section-header-left">
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h2>About <em>us</em></h2>
+      </div>
+      <span class="section-q-count">4 questions</span>
+    </div>
+    <div class="faq-grid">
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">Who is behind solo.quando?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>solo.quando was founded by Theoni Paschou, a PhD researcher with eight years of experience in product management and digital transformation. She's also the platform's first baker, making her grandmother's recipes from her own kitchen in Z&uuml;rich.</p>
+          <p>Read <a href="/our-story">the full story</a>.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">How is solo.quando different from Too Good To Go?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Too Good To Go sells leftover restaurant or supermarket food at the end of the day, to reduce waste. solo.quando does the opposite: nothing is made until enough people have pre-ordered. The food is fresh, made by your neighbour, and only because you asked.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">How is solo.quando different from a farmers' market?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>A farmers' market requires the producer to bake speculatively, transport everything to the market, and sell what they can. solo.quando inverts that: the order comes first, then the cooking, then the pickup. Less waste, less guesswork, less anonymous.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-text">How do I get in touch?</span>
+          <span class="faq-toggle"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></span>
+        </summary>
+        <div class="faq-a">
+          <p>Email <a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a>, call <a href="tel:+41787942700">+41 78 794 27 00</a>, or visit the <a href="/contact">contact page</a>. We reply within 48 hours.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- NO RESULTS -->
+  <div class="no-results-msg" id="no-results">
+    <p>Nothing matched that search. Try a different word, or <button onclick="clearSearch()" style="background:none;border:none;cursor:pointer;font-family:inherit;font-size:inherit;color:var(--terra);font-style:italic;padding:0;">clear the search</button> to browse all questions.</p>
   </div>
-</section>
 
-<style>
-.nl-strip{padding:96px 22px;background:var(--bone);border-top:1px solid var(--line);text-align:center;}
-.nl-strip-inner{max-width:560px;margin:0 auto;}
-.nl-strip .kicker{color:var(--terra);}
-.nl-strip h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 16px;color:var(--ink);}
-.nl-strip h2 em{color:var(--terra);font-style:italic;}
-.nl-strip-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);line-height:1.5;margin-bottom:32px;}
-.nl-strip-form{display:flex;max-width:440px;margin:0 auto 14px;}
-@media(max-width:520px){.nl-strip-form{flex-direction:column;gap:10px;}}
-.nl-strip-form input[type=email]{flex:1;padding:16px 18px;background:var(--paper);border:1px solid var(--line);border-right:none;color:var(--ink);font-family:'Jost',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
-@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid var(--line);}}
-.nl-strip-form input[type=email]::placeholder{color:var(--dim);opacity:.55;}
-.nl-strip-form input[type=email]:focus{border-color:rgba(43,26,15,.4);}
-.nl-strip-form button{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:16px 26px;white-space:nowrap;transition:background .2s;}
-.nl-strip-form button:hover{background:#a8552a;}
-.nl-strip-form button:disabled{opacity:.6;cursor:wait;}
-.nl-strip-note{font-size:13px;color:var(--dim);opacity:.7;}
-.nl-strip-result{max-width:440px;margin:8px auto 0;display:none;}
-.nl-strip-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--ink);}
-</style>
+  <!-- CTA STRIP -->
+  <div class="faq-cta-strip">
+    <div>
+      <h3>Still have a <em>question?</em></h3>
+      <p>We reply to every email. Usually the same day.</p>
+    </div>
+    <a href="mailto:hello@soloquando.ch" class="btn-ghost">Write to us &rarr;</a>
+  </div>
 
-<!-- ─── UNIFIED NEWSLETTER STRIP ─── -->
+</main>
+
+<!-- ─── NEWSLETTER ─── -->
 <section class="nl-strip" aria-labelledby="nl-strip-h">
   <div class="nl-strip-inner">
-    <p class="kicker">Stay in the loop</p>
+    <span class="kicker">Stay in the loop</span>
     <h2 id="nl-strip-h">Subscribe to our <em>newsletter</em>.</h2>
+    <p class="nl-strip-sub">Z&uuml;rich first. One email when something actually happens.</p>
     <form class="nl-strip-form" id="nl-strip-form" action="https://formspree.io/f/mpqkvvnk" method="POST">
       <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
       <input type="hidden" name="source" value="faq"/>
@@ -231,31 +1020,8 @@ details[open] summary::after{content:'\2013';}
     <p class="nl-strip-note">Free. Unsubscribe any time. Z&uuml;rich first.</p>
   </div>
 </section>
-<script>
-(function(){
-  var form = document.getElementById('nl-strip-form');
-  var out  = document.getElementById('nl-strip-result');
-  if(!form || !out) return;
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    var btn = form.querySelector('button[type=submit]');
-    btn.disabled = true; btn.textContent = 'Joining';
-    try{
-      var r = await fetch(form.action, {method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-      if(r.ok){
-        form.style.display='none';
-        out.style.display='block';
-        out.innerHTML='<p>You are on the list. We will be in touch.</p>';
-      } else {
-        form.submit();
-      }
-    } catch(err) {
-      form.submit();
-    }
-  });
-})();
-</script>
 
+<!-- ─── FOOTER ─── -->
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
     <div>
@@ -291,6 +1057,157 @@ details[open] summary::after{content:'\2013';}
     <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
   </div>
 </div></footer>
-<script src="/shared.js"></script>
+
+<script>
+// ─── NAV BURGER ───
+(function(){
+  var burger = document.querySelector('.nav-burger');
+  var nav    = document.getElementById('main-nav');
+  if(!burger || !nav) return;
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+  });
+})();
+
+// ─── NEWSLETTER ───
+(function(){
+  var form = document.getElementById('nl-strip-form');
+  var out  = document.getElementById('nl-strip-result');
+  if(!form || !out) return;
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; btn.textContent = 'Joining';
+    try{
+      var r = await fetch(form.action, {method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(r.ok){
+        form.style.display='none';
+        out.style.display='block';
+        out.innerHTML='<p>You are on the list. We will be in touch.</p>';
+      } else { form.submit(); }
+    } catch(err) { form.submit(); }
+  });
+})();
+
+// ─── CATEGORY TABS ───
+var catBtns   = document.querySelectorAll('.faq-cat-btn');
+var sections  = document.querySelectorAll('.faq-section');
+var currentCat = 'all';
+
+function showCategory(cat) {
+  currentCat = cat;
+  catBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.target === cat); });
+  sections.forEach(function(s){
+    var show = cat === 'all' || s.dataset.section === cat;
+    s.classList.toggle('visible', show);
+  });
+}
+
+catBtns.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    clearSearchInput();
+    showCategory(btn.dataset.target);
+    document.getElementById('faq-main').scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+
+// ─── SEARCH ───
+var searchInput = document.getElementById('faq-search');
+var noResults   = document.getElementById('no-results');
+var allItems    = document.querySelectorAll('.faq-item');
+
+function clearSearch() {
+  searchInput.value = '';
+  runSearch('');
+}
+window.clearSearch = clearSearch;
+
+function clearSearchInput() {
+  searchInput.value = '';
+  runSearch('');
+}
+
+function stripMark(el) {
+  el.querySelectorAll('mark').forEach(function(m){
+    m.replaceWith(m.textContent);
+  });
+}
+
+function highlightText(node, term) {
+  if(node.nodeType === 3) {
+    var text = node.textContent;
+    var lower = text.toLowerCase();
+    var idx = lower.indexOf(term);
+    if(idx === -1) return node;
+    var before = document.createTextNode(text.slice(0, idx));
+    var match  = document.createElement('mark');
+    match.textContent = text.slice(idx, idx + term.length);
+    var after  = document.createTextNode(text.slice(idx + term.length));
+    var frag = document.createDocumentFragment();
+    frag.appendChild(before);
+    frag.appendChild(match);
+    frag.appendChild(after);
+    return frag;
+  }
+  return null;
+}
+
+function runSearch(term) {
+  term = term.toLowerCase().trim();
+  var hasResults = false;
+
+  sections.forEach(function(s){ s.classList.remove('visible'); });
+
+  if(!term) {
+    showCategory(currentCat);
+    allItems.forEach(function(item){
+      item.style.display = '';
+      stripMark(item);
+    });
+    noResults.style.display = 'none';
+    return;
+  }
+
+  // Activate all sections for search
+  sections.forEach(function(s){ s.classList.add('visible'); });
+
+  allItems.forEach(function(item){
+    // Strip existing marks first
+    stripMark(item);
+
+    var qText = item.querySelector('.faq-q-text');
+    var aText = item.querySelector('.faq-a');
+    var combined = (qText ? qText.textContent : '') + ' ' + (aText ? aText.textContent : '');
+
+    if(combined.toLowerCase().indexOf(term) !== -1) {
+      item.style.display = '';
+      hasResults = true;
+
+      // Highlight in question text
+      if(qText) {
+        var tn = qText.firstChild;
+        if(tn && tn.nodeType === 3) {
+          var frag = highlightText(tn, term);
+          if(frag) qText.replaceChild(frag, tn);
+        }
+      }
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  // Hide sections with no visible items
+  sections.forEach(function(s){
+    var visible = Array.from(s.querySelectorAll('.faq-item')).some(function(i){ return i.style.display !== 'none'; });
+    s.classList.toggle('visible', visible);
+  });
+
+  noResults.style.display = hasResults ? 'none' : 'block';
+}
+
+searchInput.addEventListener('input', function(){ runSearch(this.value); });
+</script>
 </body>
 </html>
