@@ -116,27 +116,20 @@
           <h2>Be among the <em>first</em>.</h2>
           <p class="sub">A short form. Theoni will reply within 24 hours.</p>
 
-          <form id="join-form"
-                action="https://formspree.io/f/mpqkvvnk"
-                method="POST">
-            <input type="hidden" name="_next" value="https://soloquando.ch/welcome"/>
-            <input type="hidden" name="_subject" value="New solo.quando member &mdash; from /join"/>
-            <input type="hidden" name="source" value="join-page"/>
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
-
+          <form id="join-form">
             <label>
               <span class="f-label">Your name *</span>
-              <input class="f-input" type="text" name="name" required placeholder="Anna Meier"/>
+              <input class="f-input" type="text" id="join-fname" required placeholder="Anna Meier"/>
             </label>
 
             <label>
               <span class="f-label">Your email *</span>
-              <input class="f-input" type="email" name="email" required placeholder="anna@email.ch"/>
+              <input class="f-input" type="email" id="join-email" required placeholder="anna@email.ch"/>
             </label>
 
             <label>
               <span class="f-label">Your neighbourhood (optional)</span>
-              <select class="f-input" name="neighbourhood">
+              <select class="f-input" id="join-neighbourhood">
                 <option value="">Select...</option>
                 <option>Kreis 1 &mdash; Altstadt</option><option>Kreis 2 &mdash; Enge / Wollishofen</option>
                 <option>Kreis 3 &mdash; Wiedikon</option><option>Kreis 4 &mdash; Aussersihl</option>
@@ -184,17 +177,45 @@
   var form = document.getElementById('join-form');
   var result = document.getElementById('join-form-result');
   if(!form) return;
-  form.addEventListener('submit', async function(e){
+
+  form.addEventListener('submit', function(e){
     e.preventDefault();
     var btn = form.querySelector('button[type=submit]');
-    btn.disabled = true; btn.textContent = 'Joining\u2026';
-    try{
-      var r = await fetch(form.action, {method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-      if(r.ok){
-        // Redirect to welcome page (Formspree's _next does this, but doing it client-side too as fallback)
+    var email = document.getElementById('join-email').value.trim();
+    var fname = document.getElementById('join-fname').value.trim();
+
+    if(!email || !fname){ return; }
+
+    btn.disabled = true;
+    btn.textContent = 'Joining\u2026';
+
+    var cbName = 'mcCb_' + Date.now();
+    var url = 'https://soloquando.us13.list-manage.com/subscribe/post-json'
+      + '?u=cb28c247503fba41dbd96774f'
+      + '&id=739f21ed6b'
+      + '&EMAIL=' + encodeURIComponent(email)
+      + '&FNAME=' + encodeURIComponent(fname)
+      + '&c=' + cbName;
+
+    window[cbName] = function(data){
+      delete window[cbName];
+      var s = document.getElementById('mc-script');
+      if(s) s.parentNode.removeChild(s);
+
+      if(data.result === 'success'){
         window.location.href = '/welcome';
-      } else { form.submit(); }
-    } catch(err){ form.submit(); }
+      } else {
+        result.style.display = 'block';
+        result.innerHTML = '<p>' + (data.msg || 'Something went wrong. Please try again.') + '</p>';
+        btn.disabled = false;
+        btn.textContent = 'Join solo.quando \u2192';
+      }
+    };
+
+    var script = document.createElement('script');
+    script.id = 'mc-script';
+    script.src = url;
+    document.body.appendChild(script);
   });
 })();
 </script>
