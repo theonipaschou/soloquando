@@ -59,20 +59,21 @@ window.SOLO_BATCHES = [
     productHtml: '<em>Ergolavoi</em>.',
     productPlain: 'Ergolavoi',
     baker: 'Theoni',
-    status: 'open',
-    statusEyebrow: 'PRE-ORDERS OPEN',
-    cardLine: 'A traditional Greek almond cookie. Soft, chewy, sandwiched with apricot jam. Made only when you want it.',
-    preorderByCarousel: 'Sat 23 May',
-    preorderByTable: 'Sat 23 May 2026',
-    pickupSummary: 'Sun 25 May, central Z\u00fcrich',
-    pickupTable: 'Sun 25 May 2026',
+    status: 'soon',
+    hidden: true,
+    statusEyebrow: 'COMING SOON',
+    cardLine: 'A traditional Greek almond cookie. Soft, chewy, sandwiched with apricot jam. Coming soon.',
+    preorderByCarousel: null,
+    preorderByTable: null,
+    pickupSummary: 'central Z\u00fcrich',
+    pickupTable: null,
     pickupLocation: 'central Z\u00fcrich',
-    price: 'CHF 9.00 per portion (4 cookies)',
-    priceTable: 'CHF 9.00 / portion',
+    price: null,
+    priceTable: null,
     image: '/ergolavoi-hero.webp',
     imageAlt: 'Greek ergolavoi almond cookies dusted with powdered sugar on a wooden tray',
-    link: '/batch-ergolavoi-003',
-    cta: 'Pre-order now \u2192'
+    link: null,
+    cta: null
   }
 ];
 
@@ -95,7 +96,7 @@ window.SoloBatches = (function () {
     if (b.status === 'soon') {
       return '' +
         '<article class="batch-card is-placeholder">' +
-          '<div class="batch-card-img"></div>' +
+          '<div class="batch-card-img">' + (b.image ? '<img src="' + esc(b.image) + '" alt="' + esc(b.imageAlt || '') + '" loading="lazy" decoding="async"/>' : '') + '</div>' +
           '<div class="batch-card-text">' +
             '<p class="batch-card-eyebrow">BATCH ' + esc(b.id) + ' &middot; ' + esc(b.statusEyebrow) + '</p>' +
             '<h3 class="batch-card-title">' + b.productHtml + '</h3>' +
@@ -191,7 +192,7 @@ window.SoloBatches = (function () {
   function renderTable (tbodySel) {
     var tbody = document.querySelector(tbodySel);
     if (!tbody) return;
-    tbody.innerHTML = window.SOLO_BATCHES.map(tableRowHtml).join('');
+    tbody.innerHTML = window.SOLO_BATCHES.filter(function(b){ return !b.hidden; }).map(tableRowHtml).join('');
   }
 
   /* ---------- AUTO-INIT ---------- */
