@@ -44,21 +44,16 @@
 }
 </style>
 <style>
-/* Hero — same grid pattern as bake-with-us */
-.ct-hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(78vh - 88px);background:var(--ink);}
-@media(max-width:860px){.ct-hero{grid-template-columns:1fr;min-height:auto;}}
-.ct-hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;}
-@media(max-width:720px){.ct-hero-text{padding:60px 22px;}}
-.ct-hero-text .kicker{color:var(--terra);}
-.ct-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(54px,6.4vw,86px);line-height:1.0;letter-spacing:-.025em;margin:14px 0 22px;color:var(--bone);}
+/* Hero — text-only, centered */
+.ct-hero{padding:120px 24px 110px;background:var(--ink);text-align:center;}
+.ct-hero-inner{max-width:680px;margin:0 auto;}
+.ct-hero .kicker{color:var(--terra);font-size:11px;letter-spacing:.26em;text-transform:uppercase;display:block;margin-bottom:22px;}
+.ct-h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(64px,8.5vw,108px);line-height:.95;letter-spacing:-.035em;color:var(--bone);margin-bottom:30px;}
 .ct-h1 em{color:var(--terra);font-style:italic;}
-.ct-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.6;color:rgba(245,239,228,.62);max-width:400px;margin-bottom:36px;}
+.ct-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.55;color:rgba(245,239,228,.6);max-width:480px;margin:0 auto 36px;}
 .ct-reply{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid rgba(196,98,45,.25);background:rgba(196,98,45,.07);}
 .ct-reply-dot{width:7px;height:7px;border-radius:50%;background:var(--terra);flex-shrink:0;}
 .ct-reply span{font-size:13px;letter-spacing:.12em;color:var(--terra);}
-.ct-hero-img{position:relative;overflow:hidden;background:var(--paper);}
-@media(max-width:860px){.ct-hero-img{height:60vw;min-height:300px;}}
-.ct-hero-img picture,.ct-hero-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 28%;}
 
 /* Intent paths — same as original */
 .ct-paths{padding:80px 0;background:var(--bone);}
@@ -76,7 +71,7 @@
 .ct-path-link{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);display:inline-block;margin-top:auto;transition:letter-spacing .2s;}
 .ct-path-link:hover{letter-spacing:.22em;}
 
-/* Direct contact — terracotta personal-note section */
+/* Direct contact — terracotta personal-note section with icons */
 .ct-direct{padding:104px 0;background:var(--terra);}
 .ct-direct-inner{max-width:1080px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start;}
 @media(max-width:860px){.ct-direct-inner{padding:0 40px;gap:60px;}}
@@ -86,16 +81,22 @@
 .ct-direct-intro h2 em{color:var(--ink);font-style:italic;}
 .ct-direct-intro p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.6;color:rgba(245,239,228,.85);max-width:340px;margin-bottom:30px;}
 .ct-direct-sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);}
-.ct-direct-list{display:grid;grid-template-columns:1fr;gap:28px;border-top:1px solid rgba(245,239,228,.18);padding-top:30px;}
-.ct-direct-item{display:flex;flex-direction:column;}
-.ct-direct-label{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,239,228,.55);margin-bottom:6px;}
-.ct-direct-value{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--bone);letter-spacing:-.01em;text-decoration:none;transition:color .2s;}
-a.ct-direct-value:hover{color:var(--ink);}
-.ct-direct-note{font-size:13px;color:rgba(245,239,228,.5);margin-top:4px;}
-.ct-direct-social{margin-top:14px;padding-top:30px;border-top:1px solid rgba(245,239,228,.18);}
-.ct-direct-social a{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--bone);text-decoration:none;transition:color .2s;}
-.ct-direct-social a:hover{color:var(--ink);}
-.ct-direct-sep{color:rgba(245,239,228,.4);margin:0 14px;}
+/* Right column — icon list */
+.ct-direct-list{display:flex;flex-direction:column;gap:12px;border-top:1px solid rgba(245,239,228,.18);padding-top:30px;}
+.ct-direct-item{display:flex;align-items:center;gap:20px;padding:10px 0;text-decoration:none;color:inherit;}
+.ct-direct-icon{width:48px;height:48px;border-radius:50%;border:1px solid rgba(245,239,228,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--bone);transition:background .2s,border-color .2s,color .2s;}
+.ct-direct-icon svg{width:20px;height:20px;display:block;}
+.ct-direct-item:hover .ct-direct-icon{background:var(--bone);border-color:var(--bone);color:var(--terra);}
+.ct-direct-text{display:flex;flex-direction:column;gap:3px;}
+.ct-direct-value{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--bone);letter-spacing:-.005em;line-height:1.2;transition:color .2s;}
+.ct-direct-item:hover .ct-direct-value{color:var(--ink);}
+.ct-direct-note{font-size:13px;color:rgba(245,239,228,.55);}
+/* Social row */
+.ct-direct-social{margin-top:30px;padding-top:30px;border-top:1px solid rgba(245,239,228,.18);display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.ct-direct-social-label{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,239,228,.55);margin-right:6px;}
+.ct-direct-social-icon{width:42px;height:42px;border-radius:50%;border:1px solid rgba(245,239,228,.25);display:flex;align-items:center;justify-content:center;color:var(--bone);transition:background .2s,border-color .2s,color .2s;}
+.ct-direct-social-icon svg{width:18px;height:18px;display:block;}
+.ct-direct-social-icon:hover{background:var(--bone);border-color:var(--bone);color:var(--terra);}
 </style>
 </head>
 <body>
@@ -112,7 +113,7 @@ a.ct-direct-value:hover{color:var(--ink);}
 
 <!-- Hero -->
 <section class="ct-hero">
-  <div class="ct-hero-text">
+  <div class="ct-hero-inner">
     <p class="kicker">From my kitchen</p>
     <h1 class="ct-h1">Come say <em>hi</em>.</h1>
     <p class="ct-sub">Write to me about anything &mdash; an order, a recipe, a hello. I read every message myself, often reply the same day.</p>
@@ -120,13 +121,6 @@ a.ct-direct-value:hover{color:var(--ink);}
       <span class="ct-reply-dot"></span>
       <span>Replies within 48 hours</span>
     </div>
-  </div>
-  <div class="ct-hero-img">
-    <picture>
-      <source type="image/webp" srcset="theoni-cooking-600.webp 600w, theoni-cooking-900.webp 900w, theoni-cooking-1400.webp 1400w" sizes="(max-width:860px) 100vw, 50vw">
-      <source type="image/jpeg" srcset="theoni-cooking-600.jpg 600w, theoni-cooking-900.jpg 900w, theoni-cooking-1400.jpg 1400w" sizes="(max-width:860px) 100vw, 50vw">
-      <img src="theoni-cooking-900.jpg" alt="Theoni Paschou in her kitchen, making strawberry preserves" fetchpriority="high"/>
-    </picture>
   </div>
 </section>
 
@@ -170,50 +164,65 @@ a.ct-direct-value:hover{color:var(--ink);}
     </div>
     <div>
       <div class="ct-direct-list">
-        <div class="ct-direct-item">
-          <span class="ct-direct-label">Email</span>
-          <a href="mailto:hello@soloquando.ch" class="ct-direct-value">hello@soloquando.ch</a>
-        </div>
-        <div class="ct-direct-item">
-          <span class="ct-direct-label">WhatsApp</span>
-          <a href="https://wa.me/message/SL244NA5ARHTL1" target="_blank" rel="noopener" class="ct-direct-value">Chat with me</a>
-          <span class="ct-direct-note">WhatsApp Business</span>
-        </div>
-        <div class="ct-direct-item">
-          <span class="ct-direct-label">Phone</span>
-          <a href="tel:+41787942700" class="ct-direct-value">+41 78 794 27 00</a>
-          <span class="ct-direct-note">Z&uuml;rich &middot; Monday to Friday</span>
-        </div>
+        <a href="mailto:hello@soloquando.ch" class="ct-direct-item" aria-label="Email">
+          <span class="ct-direct-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          </span>
+          <div class="ct-direct-text">
+            <span class="ct-direct-value">hello@soloquando.ch</span>
+          </div>
+        </a>
+        <a href="https://wa.me/message/SL244NA5ARHTL1" target="_blank" rel="noopener" class="ct-direct-item" aria-label="WhatsApp">
+          <span class="ct-direct-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.78a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26C2.16 6.45 6.6 2.01 12.05 2.01c2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.43 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.31-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.49-8.43"/></svg>
+          </span>
+          <div class="ct-direct-text">
+            <span class="ct-direct-value">Chat with me</span>
+            <span class="ct-direct-note">WhatsApp Business</span>
+          </div>
+        </a>
+        <a href="tel:+41787942700" class="ct-direct-item" aria-label="Phone">
+          <span class="ct-direct-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <div class="ct-direct-text">
+            <span class="ct-direct-value">+41 78 794 27 00</span>
+            <span class="ct-direct-note">Z&uuml;rich &middot; Monday to Friday</span>
+          </div>
+        </a>
       </div>
       <div class="ct-direct-social">
-        <span class="ct-direct-label">Follow along</span>
-        <a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">@solo.quando</a>
-        <span class="ct-direct-sep">&middot;</span>
-        <a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="ct-direct-social-label">Follow along</span>
+        <a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener" class="ct-direct-social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener" class="ct-direct-social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-.nl-strip{padding:96px 22px;background:var(--ink);text-align:center;}
+.nl-strip{padding:96px 22px;background:var(--bone);border-top:1px solid var(--line);text-align:center;}
 .nl-strip-inner{max-width:560px;margin:0 auto;}
 .nl-strip .kicker{color:var(--terra);}
-.nl-strip h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 16px;color:var(--bone);}
+.nl-strip h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 16px;color:var(--ink);}
 .nl-strip h2 em{color:var(--terra);font-style:italic;}
-.nl-strip-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:rgba(245,239,228,.6);line-height:1.5;margin-bottom:32px;}
+.nl-strip-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);line-height:1.5;margin-bottom:32px;}
 .nl-strip-form{display:flex;max-width:440px;margin:0 auto 14px;}
 @media(max-width:520px){.nl-strip-form{flex-direction:column;gap:10px;}}
-.nl-strip-form input[type=email]{flex:1;padding:16px 18px;background:rgba(245,239,228,.06);border:1px solid rgba(245,239,228,.15);border-right:none;color:var(--bone);font-family:'Jost',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
-@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid rgba(245,239,228,.15);}}
-.nl-strip-form input[type=email]::placeholder{color:rgba(245,239,228,.35);}
-.nl-strip-form input[type=email]:focus{border-color:rgba(245,239,228,.35);}
+.nl-strip-form input[type=email]{flex:1;padding:16px 18px;background:var(--paper);border:1px solid var(--line);border-right:none;color:var(--ink);font-family:'Jost',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
+@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid var(--line);}}
+.nl-strip-form input[type=email]::placeholder{color:var(--dim);opacity:.55;}
+.nl-strip-form input[type=email]:focus{border-color:rgba(43,26,15,.4);}
 .nl-strip-form button{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:16px 26px;white-space:nowrap;transition:background .2s;}
 .nl-strip-form button:hover{background:#a8552a;}
 .nl-strip-form button:disabled{opacity:.6;cursor:wait;}
-.nl-strip-note{font-size:13px;color:rgba(245,239,228,.4);}
+.nl-strip-note{font-size:13px;color:var(--dim);opacity:.7;}
 .nl-strip-result{max-width:440px;margin:8px auto 0;display:none;}
-.nl-strip-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--bone);}
+.nl-strip-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--ink);}
 </style>
 <section class="nl-strip" aria-labelledby="nl-strip-h">
   <div class="nl-strip-inner">
