@@ -5,680 +5,185 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Contact &middot; solo.quando</title>
 <meta name="description" content="Get in touch with solo.quando. Theoni reads every message personally and replies within 48 hours."/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
-
 <style>
-:root {
-  --ink:   #3D1F0D;
-  --terra: #C4622D;
-  --paper: #FAF3EE;
-  --bone:  #F5EFE4;
-  --dim:   #5C3317;
-  --line:  rgba(61,31,13,.09);
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { background: var(--paper); color: var(--ink); font-family: 'Jost', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
-a { text-decoration: none; color: inherit; }
-
-/* ── NAV ── */
-.nav { position: sticky; top: 0; z-index: 200; background: rgba(245,239,228,.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 88px; padding: 0 48px; max-width: 1180px; margin: 0 auto; }
-@media(max-width:720px){.nav-inner{padding:0 22px;height:72px;}}
-.nav-logo { display: flex; align-items: center; }
-.nav-logo img { height: 72px; width: auto; display: block; }
+/* Nav override */
+.nav-inner{height:88px;}
+@media(max-width:720px){.nav-inner{height:72px;}}
+.nav-logo img{height:72px;width:auto;}
 @media(max-width:720px){.nav-logo img{height:32px;}}
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-size: 16px; letter-spacing: .02em; color: var(--dim); transition: color .2s; }
-.nav-links a:hover, .nav-links a.on { color: var(--terra); }
-.nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 10px; margin-left: 8px; }
-.nav-burger span { display: block; width: 24px; height: 2px; background: var(--ink); transition: all .28s ease; transform-origin: center; }
-@media(max-width:920px){
-  .nav-links { display: none; position: fixed; top: 88px; left: 0; right: 0; flex-direction: column; gap: 0; background: rgba(245,239,228,.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); box-shadow: 0 8px 32px rgba(43,26,15,.12); z-index: 199; }
-  .nav-links.open { display: flex; }
-  .nav-links li { border-bottom: 1px solid var(--line); }
-  .nav-links a { display: block; padding: 20px 24px; font-size: 18px; color: var(--ink); }
-  .nav-burger { display: flex; }
-  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-  .nav-burger.open span:nth-child(2){opacity:0;}
-  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-}
+@media(max-width:920px){.nav-links{top:88px;}}
 @media(max-width:720px){.nav-links{top:72px;}}
+</style>
+<style>
+/* Hero — same grid pattern as bake-with-us */
+.ct-hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(78vh - 88px);background:var(--ink);}
+@media(max-width:860px){.ct-hero{grid-template-columns:1fr;min-height:auto;}}
+.ct-hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;}
+@media(max-width:720px){.ct-hero-text{padding:60px 22px;}}
+.ct-hero-text .kicker{color:var(--terra);}
+.ct-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(54px,6.4vw,86px);line-height:1.0;letter-spacing:-.025em;margin:14px 0 22px;color:var(--bone);}
+.ct-h1 em{color:var(--terra);font-style:italic;}
+.ct-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.6;color:rgba(245,239,228,.62);max-width:400px;margin-bottom:36px;}
+.ct-reply{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid rgba(196,98,45,.25);background:rgba(196,98,45,.07);}
+.ct-reply-dot{width:7px;height:7px;border-radius:50%;background:var(--terra);flex-shrink:0;}
+.ct-reply span{font-size:13px;letter-spacing:.12em;color:var(--terra);}
+.ct-hero-img{position:relative;overflow:hidden;background:var(--paper);}
+@media(max-width:860px){.ct-hero-img{height:60vw;min-height:300px;}}
+.ct-hero-img picture,.ct-hero-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top;}
 
-/* ══════════════════════════════════
-   HERO — split, full viewport height
-   ══════════════════════════════════ */
-.ct-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: calc(100vh - 88px);
-}
-@media(max-width:860px) {
-  .ct-hero { grid-template-columns: 1fr; min-height: auto; }
-}
+/* Intent paths — same as original */
+.ct-paths{padding:80px 0;background:var(--bone);}
+.ct-paths-head{text-align:center;margin-bottom:48px;}
+.ct-paths-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,38px);letter-spacing:-.015em;color:var(--ink);}
+.ct-paths-head h2 em{color:var(--terra);font-style:italic;}
+.ct-path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1080px;margin:0 auto;}
+@media(max-width:760px){.ct-path-grid{grid-template-columns:1fr;gap:16px;}}
+.ct-path-card{background:var(--paper);border:1px solid var(--line);padding:36px 32px;display:flex;flex-direction:column;transition:border-color .2s;}
+.ct-path-card:hover{border-color:rgba(194,102,61,.35);}
+@media(max-width:560px){.ct-path-card{padding:28px 24px;}}
+.ct-path-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:42px;color:var(--terra);line-height:1;margin-bottom:20px;}
+.ct-path-title{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:400;letter-spacing:-.01em;margin-bottom:10px;line-height:1.1;color:var(--ink);}
+.ct-path-desc{font-size:16px;line-height:1.7;color:var(--dim);flex:1;margin-bottom:28px;}
+.ct-path-link{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);display:inline-block;margin-top:auto;transition:letter-spacing .2s;}
+.ct-path-link:hover{letter-spacing:.22em;}
 
-/* LEFT PANEL — text on dark */
-.ct-hero-text {
-  background: var(--ink);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 72px 64px;
-  position: relative;
-  overflow: hidden;
-}
-@media(max-width:1100px){ .ct-hero-text { padding: 64px 48px; } }
-@media(max-width:860px)  { .ct-hero-text { padding: 64px 22px 56px; } }
-
-/* ambient warm glow */
-.ct-hero-text::before {
-  content: '';
-  position: absolute;
-  top: -80px; right: -80px;
-  width: 420px; height: 420px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(196,98,45,.13) 0%, transparent 68%);
-  pointer-events: none;
-}
-
-.ct-kicker {
-  font-size: 11px;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: var(--terra);
-  display: block;
-  margin-bottom: 22px;
-}
-
-.ct-h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
-  font-size: clamp(72px, 8.5vw, 120px);
-  line-height: .9;
-  letter-spacing: -.04em;
-  color: var(--bone);
-  margin-bottom: 40px;
-}
-.ct-h1 em { color: var(--terra); font-style: italic; }
-
-.ct-hero-note {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 18px;
-  line-height: 1.7;
-  color: rgba(245,239,228,.48);
-  max-width: 380px;
-  margin-bottom: 48px;
-}
-
-/* PRIMARY ACTIONS */
-.ct-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 44px;
-}
-
-.ct-action {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 22px;
-  border: 1px solid rgba(245,239,228,.1);
-  background: rgba(245,239,228,.04);
-  transition: background .25s, border-color .25s;
-  cursor: pointer;
-  text-decoration: none;
-}
-.ct-action:hover {
-  background: rgba(245,239,228,.09);
-  border-color: rgba(245,239,228,.2);
-}
-.ct-action-icon {
-  width: 38px; height: 38px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-.ct-action-icon svg { width: 18px; height: 18px; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.ct-action--email .ct-action-icon { background: rgba(196,98,45,.15); }
-.ct-action--email .ct-action-icon svg { stroke: var(--terra); }
-.ct-action--whatsapp .ct-action-icon { background: rgba(37,211,102,.15); }
-.ct-action--whatsapp .ct-action-icon svg { stroke: #25d366; }
-
-.ct-action-body { flex: 1; }
-.ct-action-label {
-  font-size: 10px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: rgba(245,239,228,.35);
-  display: block;
-  margin-bottom: 3px;
-}
-.ct-action-value {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  font-weight: 300;
-  color: var(--bone);
-  letter-spacing: -.01em;
-}
-.ct-action--email:hover .ct-action-value { color: var(--terra); }
-.ct-action--whatsapp:hover .ct-action-value { color: #25d366; }
-
-.ct-action-arrow {
-  font-size: 18px;
-  color: rgba(245,239,228,.2);
-  transition: color .2s, transform .2s;
-}
-.ct-action:hover .ct-action-arrow { color: rgba(245,239,228,.5); transform: translateX(4px); }
-
-/* Reply badge */
-.ct-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  width: fit-content;
-}
-.ct-badge-dot {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--terra);
-  animation: pulse 2.8s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.25;} }
-.ct-badge span {
-  font-size: 11px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(245,239,228,.3);
-}
-
-/* RIGHT PANEL — image */
-.ct-hero-img {
-  position: relative;
-  overflow: hidden;
-  background: #2a140a;
-}
-@media(max-width:860px){
-  .ct-hero-img { height: 70vw; min-height: 340px; }
-}
-.ct-hero-img picture,
-.ct-hero-img img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
-  transition: transform 8s ease;
-}
-.ct-hero-img:hover img { transform: scale(1.03); }
-
-/* gradient — dark at bottom */
-.ct-hero-img::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    160deg,
-    transparent 40%,
-    rgba(20,8,3,.55) 100%
-  );
-  pointer-events: none;
-}
-
-/* ══════════════════════════════════
-   WHAT BRINGS YOU HERE
-   ══════════════════════════════════ */
-.ct-paths {
-  padding: 96px 0;
-  background: var(--paper);
-}
-
-.ct-paths-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 64px;
-}
-@media(max-width:860px){ .ct-paths-inner { padding: 0 40px; } }
-@media(max-width:560px){ .ct-paths-inner { padding: 0 22px; } }
-
-.ct-section-kicker {
-  font-size: 11px;
-  letter-spacing: .26em;
-  text-transform: uppercase;
-  color: var(--terra);
-  display: block;
-  margin-bottom: 14px;
-}
-
-.ct-section-heading {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(34px, 4vw, 52px);
-  font-weight: 300;
-  letter-spacing: -.025em;
-  color: var(--ink);
-  line-height: 1.05;
-  margin-bottom: 56px;
-}
-.ct-section-heading em { color: var(--terra); font-style: italic; }
-
-/* path rows */
-.ct-path {
-  display: grid;
-  grid-template-columns: 200px 1fr auto;
-  align-items: center;
-  gap: 48px;
-  padding: 44px 0;
-}
-.ct-path + .ct-path {
-  border-top: 1px solid var(--line);
-}
-
-@media(max-width:860px){
-  .ct-path { grid-template-columns: 1fr; gap: 16px; }
-}
-
-.ct-path-left {}
-.ct-path-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 13px;
-  letter-spacing: .18em;
-  color: var(--terra);
-  display: block;
-  margin-bottom: 10px;
-}
-.ct-path-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: -.02em;
-  color: var(--ink);
-  line-height: 1.1;
-}
-
-.ct-path-desc {
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--dim);
-  opacity: .75;
-  max-width: 460px;
-}
-
-.ct-path-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
-  border: 1px solid rgba(61,31,13,.15);
-  color: var(--ink);
-  font-family: 'Jost', sans-serif;
-  font-size: 11px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: background .22s, border-color .22s, color .22s;
-}
-.ct-path-btn:hover {
-  background: var(--terra);
-  border-color: var(--terra);
-  color: var(--bone);
-}
-@media(max-width:860px){ .ct-path-btn { width: fit-content; } }
-
-/* ══════════════════════════════════
-   REACH US — dark section
-   ══════════════════════════════════ */
-.ct-reach {
-  background: var(--ink);
-  padding: 96px 0;
-}
-.ct-reach-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 64px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-@media(max-width:860px){ .ct-reach-inner { padding: 0 40px; } }
-@media(max-width:720px){ .ct-reach-inner { grid-template-columns: 1fr; gap: 56px; } }
-@media(max-width:560px){ .ct-reach-inner { padding: 0 22px; } }
-
-/* reach left */
-.ct-reach-label {
-  font-size: 11px;
-  letter-spacing: .26em;
-  text-transform: uppercase;
-  color: var(--terra);
-  display: block;
-  margin-bottom: 14px;
-}
-.ct-reach-heading {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(30px, 3.5vw, 44px);
-  font-weight: 300;
-  letter-spacing: -.025em;
-  color: var(--bone);
-  line-height: 1.1;
-  margin-bottom: 48px;
-}
-.ct-reach-heading em { color: var(--terra); font-style: italic; }
-
-.ct-contact-row {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 22px 0;
-  border-bottom: 1px solid rgba(245,239,228,.07);
-}
-
-
-.ct-contact-type {
-  font-size: 10px;
-  letter-spacing: .26em;
-  text-transform: uppercase;
-  color: rgba(245,239,228,.28);
-}
-.ct-contact-val {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(20px, 2.2vw, 26px);
-  font-weight: 300;
-  color: var(--bone);
-  letter-spacing: -.01em;
-  transition: color .2s;
-}
-.ct-contact-val:hover { color: var(--terra); }
-.ct-contact-val--wa:hover { color: #25d366; }
-.ct-contact-sub {
-  font-size: 13px;
-  color: rgba(245,239,228,.25);
-}
-
-/* reach right */
-.ct-reach-right {
-  border-left: 1px solid rgba(245,239,228,.07);
-  padding-left: 64px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-@media(max-width:720px){ .ct-reach-right { border-left: none; padding-left: 0; border-top: 1px solid rgba(245,239,228,.07); padding-top: 48px; } }
-
-.ct-social-label {
-  font-size: 11px;
-  letter-spacing: .26em;
-  text-transform: uppercase;
-  color: rgba(245,239,228,.28);
-  display: block;
-  margin-bottom: 28px;
-}
-
-.ct-social-item {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(245,239,228,.06);
-}
-
-
-.ct-social-platform {
-  font-size: 10px;
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  color: rgba(245,239,228,.25);
-}
-.ct-social-handle {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-weight: 300;
-  color: rgba(245,239,228,.6);
-  letter-spacing: -.01em;
-  transition: color .2s;
-}
-.ct-social-handle:hover { color: var(--terra); }
-
-/* bottom quote */
-.ct-reach-quote {
-  margin-top: 52px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(245,239,228,.06);
-}
-.ct-reach-quote p {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 19px;
-  line-height: 1.65;
-  color: rgba(245,239,228,.3);
-}
-.ct-reach-quote cite {
-  display: block;
-  margin-top: 14px;
-  font-family: 'Jost', sans-serif;
-  font-style: normal;
-  font-size: 10px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: rgba(245,239,228,.18);
-}
-
-/* ── NL STRIP ── */
-.nl-strip { padding: 96px 22px; background: var(--bone); text-align: center; }
-.nl-strip-inner { max-width: 560px; margin: 0 auto; }
-.nl-strip .kicker { font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--terra); display: block; margin-bottom: 16px; }
-.nl-strip h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(34px,4.4vw,52px); letter-spacing: -.02em; line-height: 1.05; margin-bottom: 16px; color: var(--ink); }
-.nl-strip h2 em { color: var(--terra); font-style: italic; }
-.nl-strip-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: var(--dim); opacity: .6; line-height: 1.5; margin-bottom: 32px; }
-.nl-strip-form { display: flex; max-width: 440px; margin: 0 auto 14px; }
-@media(max-width:520px){.nl-strip-form{flex-direction:column;gap:10px;}}
-.nl-strip-form input[type=email] { flex: 1; padding: 16px 18px; background: var(--paper); border: 1px solid var(--line); border-right: none; color: var(--ink); font-family: 'Jost', sans-serif; font-size: 16px; outline: none; transition: border-color .2s; }
-@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid var(--line);}}
-.nl-strip-form input[type=email]::placeholder { color: var(--dim); opacity: .4; }
-.nl-strip-form input[type=email]:focus { border-color: rgba(43,26,15,.3); }
-.nl-strip-form button { background: var(--terra); color: var(--bone); border: none; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; padding: 16px 26px; white-space: nowrap; transition: background .2s; }
-.nl-strip-form button:hover { background: #a8552a; }
-.nl-strip-form button:disabled { opacity: .6; cursor: wait; }
-.nl-strip-note { font-size: 13px; color: var(--dim); opacity: .4; }
-.nl-strip-result { max-width: 440px; margin: 8px auto 0; display: none; }
-.nl-strip-result p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; color: var(--ink); }
-
-/* ── FOOTER ── */
-.footer { background: var(--ink); padding: 72px 22px 40px; }
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
-.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(245,239,228,.08); margin-bottom: 32px; }
-@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
-.footer-logo-img { margin-bottom: 14px; }
-.footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: rgba(245,239,228,.4); }
-.footer-col h5 { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(245,239,228,.32); margin-bottom: 18px; font-weight: 400; }
-.footer-col ul { list-style: none; }
-.footer-col li { margin-bottom: 10px; }
-.footer-col a { font-size: 15px; color: rgba(245,239,228,.55); transition: color .2s; }
-.footer-col a:hover { color: var(--bone); }
-.footer-payments { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
-.footer-payments-label { font-size: 13px; color: rgba(245,239,228,.28); }
-.footer-payments-name { font-size: 13px; color: rgba(245,239,228,.45); transition: color .2s; }
-.footer-payments-name:hover { color: var(--bone); }
-.footer-payments-methods { font-size: 13px; color: rgba(245,239,228,.28); }
-.footer-bottom { font-size: 13px; color: rgba(245,239,228,.22); }
-
-/* entrance animation */
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(18px); }
-  to   { opacity:1; transform:translateY(0); }
-}
-.ct-kicker      { animation: fadeUp .5s ease both .06s; }
-.ct-h1          { animation: fadeUp .6s ease both .14s; }
-.ct-hero-note   { animation: fadeUp .6s ease both .22s; }
-.ct-actions     { animation: fadeUp .6s ease both .30s; }
-.ct-badge       { animation: fadeUp .5s ease both .40s; }
+/* Direct details */
+.ct-details{padding:80px 0;background:var(--paper);}
+.ct-details-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1080px;margin:0 auto;}
+@media(max-width:760px){.ct-details-grid{grid-template-columns:1fr;gap:48px;}}
+.ct-detail-group h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;letter-spacing:-.01em;margin-bottom:28px;line-height:1.1;color:var(--ink);}
+.ct-detail-group h3 em{color:var(--terra);font-style:italic;}
+.ct-detail-item{display:flex;flex-direction:column;gap:5px;margin-bottom:22px;}
+.ct-detail-label{font-size:11px;letter-spacing:.20em;text-transform:uppercase;color:var(--terra);}
+.ct-detail-value a{font-size:18px;color:var(--dim);transition:color .2s;}
+.ct-detail-value a:hover{color:var(--terra);}
+.ct-detail-note{font-size:14px;color:var(--dim);opacity:.7;margin-top:2px;}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav"><div class="nav-inner">
-  <a href="/" class="nav-logo" aria-label="solo.quando home">
-    <img src="https://soloquando.ch/logo-nav.webp" alt="solo.quando" width="126" height="72"/>
-  </a>
-  <ul class="nav-links" id="main-nav">
-    <li><a href="/">Home</a></li>
-    <li><a href="/products">Batches</a></li>
-    <li><a href="/how-it-works">How it works</a></li>
-    <li><a href="/our-story">Our story</a></li>
-    <li><a href="/bake-with-us">Bake with us</a></li>
-    <li><a href="/faq">FAQ</a></li>
-    <li><a href="/contact" class="on">Contact</a></li>
-  </ul>
-  <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="126" height="72"/></a>
+  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products">Batches</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact" class="on">Contact</a></li></ul>
+  <div style="display:flex;align-items:center;">
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </div></nav>
 
-<!-- HERO -->
-<header class="ct-hero">
-
-  <!-- LEFT: text + CTAs -->
+<!-- Hero -->
+<section class="ct-hero">
   <div class="ct-hero-text">
-    <span class="ct-kicker">Get in touch</span>
-    <h1 class="ct-h1">Say<br><em>hello.</em></h1>
-    <p class="ct-hero-note">Theoni reads every message herself. No inbox filters, no support tickets.</p>
-
-    <div class="ct-actions">
-      <a href="mailto:hello@soloquando.ch" class="ct-action ct-action--email">
-        <div class="ct-action-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-        </div>
-        <div class="ct-action-body">
-          <span class="ct-action-label">Email</span>
-          <span class="ct-action-value">hello@soloquando.ch</span>
-        </div>
-        <span class="ct-action-arrow">→</span>
-      </a>
-
-      <a href="https://wa.me/message/SL244NA5ARHTL1" target="_blank" rel="noopener" class="ct-action ct-action--whatsapp">
-        <div class="ct-action-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        </div>
-        <div class="ct-action-body">
-          <span class="ct-action-label">WhatsApp</span>
-          <span class="ct-action-value">Chat with Theoni</span>
-        </div>
-        <span class="ct-action-arrow">→</span>
-      </a>
-    </div>
-
-    <div class="ct-badge">
-      <span class="ct-badge-dot"></span>
+    <p class="kicker">Get in touch</p>
+    <h1 class="ct-h1">Say <em>hello</em>.</h1>
+    <p class="ct-sub">Theoni reads every message personally. No inbox filters, no support tickets.</p>
+    <div class="ct-reply">
+      <span class="ct-reply-dot"></span>
       <span>Replies within 48 hours</span>
     </div>
   </div>
-
-  <!-- RIGHT: portrait image -->
   <div class="ct-hero-img">
     <picture>
-      <source type="image/webp" srcset="https://soloquando.ch/theoni-portrait-600.webp 600w, https://soloquando.ch/theoni-portrait-900.webp 900w" sizes="(max-width:860px) 100vw, 50vw"/>
-      <source type="image/jpeg" srcset="https://soloquando.ch/theoni-portrait-600.jpg 600w, https://soloquando.ch/theoni-portrait-900.jpg 900w" sizes="(max-width:860px) 100vw, 50vw"/>
-      <img src="https://soloquando.ch/theoni-portrait-900.jpg" alt="Theoni Paschou, founder of solo.quando" fetchpriority="high"/>
+      <source type="image/webp" srcset="theoni-portrait-600.webp 600w, theoni-portrait-900.webp 900w" sizes="(max-width:860px) 100vw, 50vw">
+      <source type="image/jpeg" srcset="theoni-portrait-600.jpg 600w, theoni-portrait-900.jpg 900w" sizes="(max-width:860px) 100vw, 50vw">
+      <img src="theoni-portrait-900.jpg" alt="Theoni Paschou, founder of solo.quando" fetchpriority="high"/>
     </picture>
   </div>
+</section>
 
-</header>
-
-<!-- WHAT BRINGS YOU HERE -->
+<!-- Intent paths -->
 <section class="ct-paths">
-  <div class="ct-paths-inner">
-    <span class="ct-section-kicker">What brings you here?</span>
-    <h2 class="ct-section-heading">We can help with <em>this.</em></h2>
-
-    <div class="ct-path">
-      <div class="ct-path-left">
-        <span class="ct-path-num">01 &mdash;</span>
-        <div class="ct-path-title">Order or pickup question</div>
-      </div>
-      <p class="ct-path-desc">Pickup details, allergens, batch status, anything about your pre-order. Theoni will get back to you quickly.</p>
-      <a href="mailto:hello@soloquando.ch?subject=Order%20question" class="ct-path-btn">Email Theoni &rarr;</a>
+  <div class="wrap">
+    <div class="ct-paths-head">
+      <h2>What can we <em>help</em> with?</h2>
     </div>
-
-    <div class="ct-path">
-      <div class="ct-path-left">
-        <span class="ct-path-num">02 &mdash;</span>
-        <div class="ct-path-title">I want to bake here</div>
+    <div class="ct-path-grid">
+      <div class="ct-path-card">
+        <div class="ct-path-num">01</div>
+        <h3 class="ct-path-title">Order or pickup question</h3>
+        <p class="ct-path-desc">Pickup details, allergens, batch status, or anything about your pre-order. Theoni will get back to you quickly.</p>
+        <a href="mailto:hello@soloquando.ch?subject=Order%20question" class="ct-path-link">Email Theoni &rarr;</a>
       </div>
-      <p class="ct-path-desc">Have a recipe and want to bake for your neighbourhood? The baker form gets you started.</p>
-      <a href="/bake-with-us" class="ct-path-btn">Baker form &rarr;</a>
-    </div>
-
-    <div class="ct-path">
-      <div class="ct-path-left">
-        <span class="ct-path-num">03 &mdash;</span>
-        <div class="ct-path-title">Press or collaboration</div>
+      <div class="ct-path-card">
+        <div class="ct-path-num">02</div>
+        <h3 class="ct-path-title">I want to bake here</h3>
+        <p class="ct-path-desc">Have a recipe and want to bake for your neighbourhood? The baker form asks the right questions.</p>
+        <a href="/bake-with-us" class="ct-path-link">Go to baker form &rarr;</a>
       </div>
-      <p class="ct-path-desc">Media, partnerships, events. Or something we haven't thought of yet. All of it welcome.</p>
-      <a href="mailto:hello@soloquando.ch?subject=Press%20inquiry" class="ct-path-btn">Write to us &rarr;</a>
+      <div class="ct-path-card">
+        <div class="ct-path-num">03</div>
+        <h3 class="ct-path-title">Press or collaboration</h3>
+        <p class="ct-path-desc">Media, partnerships, events. Or something we haven't thought of yet.</p>
+        <a href="mailto:hello@soloquando.ch?subject=Press%20inquiry" class="ct-path-link">Write to us &rarr;</a>
+      </div>
     </div>
-
   </div>
 </section>
 
-<!-- REACH US DIRECTLY -->
-<section class="ct-reach">
-  <div class="ct-reach-inner">
-
-    <!-- Left: direct contact -->
-    <div>
-      <span class="ct-reach-label">All the ways to reach us</span>
-      <h2 class="ct-reach-heading">Find us <em>anywhere.</em></h2>
-
-      <div class="ct-contact-row">
-        <span class="ct-contact-type">Email</span>
-        <a href="mailto:hello@soloquando.ch" class="ct-contact-val">hello@soloquando.ch</a>
+<!-- Direct contact details -->
+<section class="ct-details">
+  <div class="wrap">
+    <div class="ct-details-grid">
+      <div class="ct-detail-group">
+        <h3>Direct <em>contact</em></h3>
+        <div class="ct-detail-item">
+          <span class="ct-detail-label">Email</span>
+          <div class="ct-detail-value"><a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a></div>
+        </div>
+        <div class="ct-detail-item">
+          <span class="ct-detail-label">WhatsApp</span>
+          <div class="ct-detail-value"><a href="https://wa.me/message/SL244NA5ARHTL1" target="_blank" rel="noopener">Chat with Theoni</a></div>
+          <div class="ct-detail-note">WhatsApp Business</div>
+        </div>
+        <div class="ct-detail-item">
+          <span class="ct-detail-label">Phone</span>
+          <div class="ct-detail-value"><a href="tel:+41787942700">+41 78 794 27 00</a></div>
+          <div class="ct-detail-note">Z&uuml;rich &middot; Monday to Friday</div>
+        </div>
       </div>
-      <div class="ct-contact-row">
-        <span class="ct-contact-type">WhatsApp</span>
-        <a href="https://wa.me/message/SL244NA5ARHTL1" target="_blank" rel="noopener" class="ct-contact-val ct-contact-val--wa">Chat directly with Theoni</a>
-        <span class="ct-contact-sub">WhatsApp Business</span>
-      </div>
-      <div class="ct-contact-row">
-        <span class="ct-contact-type">Phone</span>
-        <a href="tel:+41787942700" class="ct-contact-val">+41 78 794 27 00</a>
-        <span class="ct-contact-sub">Z&uuml;rich &middot; Monday to Friday</span>
-      </div>
-    </div>
-
-    <!-- Right: social + quote -->
-    <div class="ct-reach-right">
-      <span class="ct-social-label">Follow along</span>
-
-      <a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener" class="ct-social-item">
-        <span class="ct-social-platform">Instagram</span>
-        <span class="ct-social-handle">@solo.quando</span>
-      </a>
-      <a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener" class="ct-social-item">
-        <span class="ct-social-platform">LinkedIn</span>
-        <span class="ct-social-handle">soloquando</span>
-      </a>
-
-      <div class="ct-reach-quote">
-        <p>The food you've been missing didn't come from a factory. It came from a kitchen two streets away.</p>
-        <cite>Theoni Paschou &mdash; Founder</cite>
+      <div class="ct-detail-group">
+        <h3>Follow <em>along</em></h3>
+        <div class="ct-detail-item">
+          <span class="ct-detail-label">Instagram</span>
+          <div class="ct-detail-value"><a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">@solo.quando</a></div>
+          <div class="ct-detail-note">Batches, stories, behind the scenes</div>
+        </div>
+        <div class="ct-detail-item">
+          <span class="ct-detail-label">LinkedIn</span>
+          <div class="ct-detail-value"><a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">soloquando</a></div>
+        </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- NEWSLETTER -->
+<style>
+.nl-strip{padding:96px 22px;background:var(--bone);text-align:center;}
+.nl-strip-inner{max-width:560px;margin:0 auto;}
+.nl-strip .kicker{color:var(--terra);}
+.nl-strip h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 16px;color:var(--ink);}
+.nl-strip h2 em{color:var(--terra);font-style:italic;}
+.nl-strip-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);line-height:1.5;margin-bottom:32px;}
+.nl-strip-form{display:flex;max-width:440px;margin:0 auto 14px;}
+@media(max-width:520px){.nl-strip-form{flex-direction:column;gap:10px;}}
+.nl-strip-form input[type=email]{flex:1;padding:16px 18px;background:var(--paper);border:1px solid var(--line);border-right:none;color:var(--ink);font-family:'Jost',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
+@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid var(--line);}}
+.nl-strip-form input[type=email]::placeholder{color:var(--dim);opacity:.55;}
+.nl-strip-form input[type=email]:focus{border-color:rgba(43,26,15,.4);}
+.nl-strip-form button{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:16px 26px;white-space:nowrap;transition:background .2s;}
+.nl-strip-form button:hover{background:#a8552a;}
+.nl-strip-form button:disabled{opacity:.6;cursor:wait;}
+.nl-strip-note{font-size:13px;color:var(--dim);opacity:.7;}
+.nl-strip-result{max-width:440px;margin:8px auto 0;display:none;}
+.nl-strip-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--ink);}
+</style>
 <section class="nl-strip" aria-labelledby="nl-strip-h">
   <div class="nl-strip-inner">
-    <span class="kicker">Stay in the loop</span>
+    <p class="kicker">Stay in the loop</p>
     <h2 id="nl-strip-h">Subscribe to our <em>newsletter</em>.</h2>
-    <p class="nl-strip-sub">Z&uuml;rich first. One email when something actually happens.</p>
     <form class="nl-strip-form" id="nl-strip-form" action="https://formspree.io/f/mpqkvvnk" method="POST">
       <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
       <input type="hidden" name="source" value="contact"/>
@@ -690,12 +195,28 @@ a { text-decoration: none; color: inherit; }
     <p class="nl-strip-note">Free. Unsubscribe any time. Z&uuml;rich first.</p>
   </div>
 </section>
+<script>
+(function(){
+  var form=document.getElementById('nl-strip-form');
+  var out=document.getElementById('nl-strip-result');
+  if(!form||!out) return;
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=form.querySelector('button[type=submit]');
+    btn.disabled=true;btn.textContent='Joining';
+    try{
+      var r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(r.ok){form.style.display='none';out.style.display='block';out.innerHTML='<p>You are on the list. We will be in touch.</p>';}
+      else{form.submit();}
+    }catch(err){form.submit();}
+  });
+})();
+</script>
 
-<!-- FOOTER -->
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
     <div>
-      <img src="https://soloquando.ch/logo-footer.webp" alt="solo.quando" class="footer-logo-img" width="140" height="80" loading="lazy"/>
+      <img src="logo-footer.webp" alt="solo.quando" class="footer-logo-img" width="140" height="80" loading="lazy"/>
       <p class="footer-tagline">Made only when you want it.</p>
     </div>
     <div class="footer-col"><h5>Discover</h5><ul>
@@ -729,33 +250,6 @@ a { text-decoration: none; color: inherit; }
   </div>
 </div></footer>
 
-<script>
-(function(){
-  var burger = document.querySelector('.nav-burger');
-  var nav = document.getElementById('main-nav');
-  if(!burger||!nav) return;
-  burger.addEventListener('click', function(){
-    var open = nav.classList.toggle('open');
-    burger.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', open);
-  });
-})();
-(function(){
-  var form = document.getElementById('nl-strip-form');
-  var out = document.getElementById('nl-strip-result');
-  if(!form||!out) return;
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    var btn = form.querySelector('button[type=submit]');
-    btn.disabled = true; btn.textContent = 'Joining';
-    try {
-      var r = await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-      if(r.ok){ form.style.display='none'; out.style.display='block'; out.innerHTML='<p>You are on the list. We will be in touch.</p>'; }
-      else { form.submit(); }
-    } catch(e){ form.submit(); }
-  });
-})();
-</script>
 <script src="/shared.js"></script>
 </body>
 </html>
