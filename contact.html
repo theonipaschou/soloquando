@@ -17,6 +17,33 @@
 @media(max-width:720px){.nav-links{top:72px;}}
 </style>
 <style>
+/* Nav — full definition matching index */
+.nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
+@media(max-width:720px){.nav-inner{padding:0 22px;height:72px;}}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo img{height:72px;width:auto;display:block;}
+@media(max-width:720px){.nav-logo img{height:32px;}}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:16px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
+.nav-links a:hover,.nav-links a.on{color:var(--terra);}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:10px;margin-left:8px;}
+.nav-burger span{display:block;width:24px;height:2px;background:var(--ink);transition:all .28s ease;transform-origin:center;}
+@media(max-width:920px){
+  .nav-links{display:none;position:fixed;top:88px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
+  .nav-links.open{display:flex;}
+  .nav-links li{border-bottom:1px solid var(--line);}
+  .nav-links a{display:block;padding:20px 24px;font-size:18px;color:var(--ink);}
+  .nav-burger{display:flex;}
+  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+}
+@media(max-width:720px){
+  .nav-links{top:72px;}
+}
+</style>
+<style>
 /* Hero — same grid pattern as bake-with-us */
 .ct-hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(78vh - 88px);background:var(--ink);}
 @media(max-width:860px){.ct-hero{grid-template-columns:1fr;min-height:auto;}}
@@ -31,7 +58,7 @@
 .ct-reply span{font-size:13px;letter-spacing:.12em;color:var(--terra);}
 .ct-hero-img{position:relative;overflow:hidden;background:var(--paper);}
 @media(max-width:860px){.ct-hero-img{height:60vw;min-height:300px;}}
-.ct-hero-img picture,.ct-hero-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top;}
+.ct-hero-img picture,.ct-hero-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 28%;}
 
 /* Intent paths — same as original */
 .ct-paths{padding:80px 0;background:var(--bone);}
@@ -49,17 +76,26 @@
 .ct-path-link{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra);display:inline-block;margin-top:auto;transition:letter-spacing .2s;}
 .ct-path-link:hover{letter-spacing:.22em;}
 
-/* Direct details */
-.ct-details{padding:80px 0;background:var(--paper);}
-.ct-details-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1080px;margin:0 auto;}
-@media(max-width:760px){.ct-details-grid{grid-template-columns:1fr;gap:48px;}}
-.ct-detail-group h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;letter-spacing:-.01em;margin-bottom:28px;line-height:1.1;color:var(--ink);}
-.ct-detail-group h3 em{color:var(--terra);font-style:italic;}
-.ct-detail-item{display:flex;flex-direction:column;gap:5px;margin-bottom:22px;}
-.ct-detail-label{font-size:11px;letter-spacing:.20em;text-transform:uppercase;color:var(--terra);}
-.ct-detail-value a{font-size:18px;color:var(--dim);transition:color .2s;}
-.ct-detail-value a:hover{color:var(--terra);}
-.ct-detail-note{font-size:14px;color:var(--dim);opacity:.7;margin-top:2px;}
+/* Direct contact — terracotta personal-note section */
+.ct-direct{padding:104px 0;background:var(--terra);}
+.ct-direct-inner{max-width:1080px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start;}
+@media(max-width:860px){.ct-direct-inner{padding:0 40px;gap:60px;}}
+@media(max-width:700px){.ct-direct-inner{grid-template-columns:1fr;gap:48px;padding:0 24px;}}
+.ct-direct-intro .kicker{color:rgba(245,239,228,.7);font-size:11px;letter-spacing:.22em;text-transform:uppercase;display:block;margin-bottom:18px;}
+.ct-direct-intro h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(38px,4.6vw,60px);letter-spacing:-.025em;line-height:1.0;color:var(--bone);margin-bottom:26px;}
+.ct-direct-intro h2 em{color:var(--ink);font-style:italic;}
+.ct-direct-intro p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.6;color:rgba(245,239,228,.85);max-width:340px;margin-bottom:30px;}
+.ct-direct-sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);}
+.ct-direct-list{display:grid;grid-template-columns:1fr;gap:28px;border-top:1px solid rgba(245,239,228,.18);padding-top:30px;}
+.ct-direct-item{display:flex;flex-direction:column;}
+.ct-direct-label{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,239,228,.55);margin-bottom:6px;}
+.ct-direct-value{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--bone);letter-spacing:-.01em;text-decoration:none;transition:color .2s;}
+a.ct-direct-value:hover{color:var(--ink);}
+.ct-direct-note{font-size:13px;color:rgba(245,239,228,.5);margin-top:4px;}
+.ct-direct-social{margin-top:14px;padding-top:30px;border-top:1px solid rgba(245,239,228,.18);}
+.ct-direct-social a{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--bone);text-decoration:none;transition:color .2s;}
+.ct-direct-social a:hover{color:var(--ink);}
+.ct-direct-sep{color:rgba(245,239,228,.4);margin:0 14px;}
 </style>
 </head>
 <body>
@@ -77,9 +113,9 @@
 <!-- Hero -->
 <section class="ct-hero">
   <div class="ct-hero-text">
-    <p class="kicker">Get in touch</p>
-    <h1 class="ct-h1">Say <em>hello</em>.</h1>
-    <p class="ct-sub">Theoni reads every message personally. No inbox filters, no support tickets.</p>
+    <p class="kicker">From my kitchen</p>
+    <h1 class="ct-h1">Come say <em>hi</em>.</h1>
+    <p class="ct-sub">Write to me about anything &mdash; an order, a recipe, a hello. I read every message myself, often reply the same day.</p>
     <div class="ct-reply">
       <span class="ct-reply-dot"></span>
       <span>Replies within 48 hours</span>
@@ -87,9 +123,9 @@
   </div>
   <div class="ct-hero-img">
     <picture>
-      <source type="image/webp" srcset="theoni-portrait-600.webp 600w, theoni-portrait-900.webp 900w" sizes="(max-width:860px) 100vw, 50vw">
-      <source type="image/jpeg" srcset="theoni-portrait-600.jpg 600w, theoni-portrait-900.jpg 900w" sizes="(max-width:860px) 100vw, 50vw">
-      <img src="theoni-portrait-900.jpg" alt="Theoni Paschou, founder of solo.quando" fetchpriority="high"/>
+      <source type="image/webp" srcset="theoni-cooking-600.webp 600w, theoni-cooking-900.webp 900w, theoni-cooking-1400.webp 1400w" sizes="(max-width:860px) 100vw, 50vw">
+      <source type="image/jpeg" srcset="theoni-cooking-600.jpg 600w, theoni-cooking-900.jpg 900w, theoni-cooking-1400.jpg 1400w" sizes="(max-width:860px) 100vw, 50vw">
+      <img src="theoni-cooking-900.jpg" alt="Theoni Paschou in her kitchen, making strawberry preserves" fetchpriority="high"/>
     </picture>
   </div>
 </section>
@@ -98,7 +134,7 @@
 <section class="ct-paths">
   <div class="wrap">
     <div class="ct-paths-head">
-      <h2>What can we <em>help</em> with?</h2>
+      <h2>What brings you <em>here?</em></h2>
     </div>
     <div class="ct-path-grid">
       <div class="ct-path-card">
@@ -123,62 +159,61 @@
   </div>
 </section>
 
-<!-- Direct contact details -->
-<section class="ct-details">
-  <div class="wrap">
-    <div class="ct-details-grid">
-      <div class="ct-detail-group">
-        <h3>Direct <em>contact</em></h3>
-        <div class="ct-detail-item">
-          <span class="ct-detail-label">Email</span>
-          <div class="ct-detail-value"><a href="mailto:hello@soloquando.ch">hello@soloquando.ch</a></div>
+<!-- Direct contact — terracotta personal note from Theoni -->
+<section class="ct-direct">
+  <div class="ct-direct-inner">
+    <div class="ct-direct-intro">
+      <p class="kicker">A personal note</p>
+      <h2>I read every <em>message</em> myself.</h2>
+      <p>The email, the WhatsApp, the phone &mdash; they all come straight to me. Often I reply the same day.</p>
+      <p class="ct-direct-sig">&mdash; Theoni</p>
+    </div>
+    <div>
+      <div class="ct-direct-list">
+        <div class="ct-direct-item">
+          <span class="ct-direct-label">Email</span>
+          <a href="mailto:hello@soloquando.ch" class="ct-direct-value">hello@soloquando.ch</a>
         </div>
-        <div class="ct-detail-item">
-          <span class="ct-detail-label">WhatsApp</span>
-          <div class="ct-detail-value"><a href="https://wa.me/message/SL244NA5ARHTL1" target="_blank" rel="noopener">Chat with Theoni</a></div>
-          <div class="ct-detail-note">WhatsApp Business</div>
+        <div class="ct-direct-item">
+          <span class="ct-direct-label">WhatsApp</span>
+          <a href="https://wa.me/message/SL244NA5ARHTL1" target="_blank" rel="noopener" class="ct-direct-value">Chat with me</a>
+          <span class="ct-direct-note">WhatsApp Business</span>
         </div>
-        <div class="ct-detail-item">
-          <span class="ct-detail-label">Phone</span>
-          <div class="ct-detail-value"><a href="tel:+41787942700">+41 78 794 27 00</a></div>
-          <div class="ct-detail-note">Z&uuml;rich &middot; Monday to Friday</div>
+        <div class="ct-direct-item">
+          <span class="ct-direct-label">Phone</span>
+          <a href="tel:+41787942700" class="ct-direct-value">+41 78 794 27 00</a>
+          <span class="ct-direct-note">Z&uuml;rich &middot; Monday to Friday</span>
         </div>
       </div>
-      <div class="ct-detail-group">
-        <h3>Follow <em>along</em></h3>
-        <div class="ct-detail-item">
-          <span class="ct-detail-label">Instagram</span>
-          <div class="ct-detail-value"><a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">@solo.quando</a></div>
-          <div class="ct-detail-note">Batches, stories, behind the scenes</div>
-        </div>
-        <div class="ct-detail-item">
-          <span class="ct-detail-label">LinkedIn</span>
-          <div class="ct-detail-value"><a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">soloquando</a></div>
-        </div>
+      <div class="ct-direct-social">
+        <span class="ct-direct-label">Follow along</span>
+        <a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">@solo.quando</a>
+        <span class="ct-direct-sep">&middot;</span>
+        <a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-.nl-strip{padding:96px 22px;background:var(--bone);text-align:center;}
+.nl-strip{padding:96px 22px;background:var(--ink);text-align:center;}
 .nl-strip-inner{max-width:560px;margin:0 auto;}
 .nl-strip .kicker{color:var(--terra);}
-.nl-strip h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 16px;color:var(--ink);}
+.nl-strip h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 16px;color:var(--bone);}
 .nl-strip h2 em{color:var(--terra);font-style:italic;}
-.nl-strip-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);line-height:1.5;margin-bottom:32px;}
+.nl-strip-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:rgba(245,239,228,.6);line-height:1.5;margin-bottom:32px;}
 .nl-strip-form{display:flex;max-width:440px;margin:0 auto 14px;}
 @media(max-width:520px){.nl-strip-form{flex-direction:column;gap:10px;}}
-.nl-strip-form input[type=email]{flex:1;padding:16px 18px;background:var(--paper);border:1px solid var(--line);border-right:none;color:var(--ink);font-family:'Jost',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
-@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid var(--line);}}
-.nl-strip-form input[type=email]::placeholder{color:var(--dim);opacity:.55;}
-.nl-strip-form input[type=email]:focus{border-color:rgba(43,26,15,.4);}
+.nl-strip-form input[type=email]{flex:1;padding:16px 18px;background:rgba(245,239,228,.06);border:1px solid rgba(245,239,228,.15);border-right:none;color:var(--bone);font-family:'Jost',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
+@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid rgba(245,239,228,.15);}}
+.nl-strip-form input[type=email]::placeholder{color:rgba(245,239,228,.35);}
+.nl-strip-form input[type=email]:focus{border-color:rgba(245,239,228,.35);}
 .nl-strip-form button{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:16px 26px;white-space:nowrap;transition:background .2s;}
 .nl-strip-form button:hover{background:#a8552a;}
 .nl-strip-form button:disabled{opacity:.6;cursor:wait;}
-.nl-strip-note{font-size:13px;color:var(--dim);opacity:.7;}
+.nl-strip-note{font-size:13px;color:rgba(245,239,228,.4);}
 .nl-strip-result{max-width:440px;margin:8px auto 0;display:none;}
-.nl-strip-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--ink);}
+.nl-strip-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--bone);}
 </style>
 <section class="nl-strip" aria-labelledby="nl-strip-h">
   <div class="nl-strip-inner">
