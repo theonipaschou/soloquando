@@ -17,6 +17,33 @@
 @media(max-width:720px){.nav-links{top:72px;}}
 </style>
 <style>
+/* Nav — full definition matching index */
+.nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
+@media(max-width:720px){.nav-inner{padding:0 22px;height:72px;}}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo img{height:72px;width:auto;display:block;}
+@media(max-width:720px){.nav-logo img{height:32px;}}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:16px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
+.nav-links a:hover,.nav-links a.on{color:var(--terra);}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:10px;margin-left:8px;}
+.nav-burger span{display:block;width:24px;height:2px;background:var(--ink);transition:all .28s ease;transform-origin:center;}
+@media(max-width:920px){
+  .nav-links{display:none;position:fixed;top:88px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
+  .nav-links.open{display:flex;}
+  .nav-links li{border-bottom:1px solid var(--line);}
+  .nav-links a{display:block;padding:20px 24px;font-size:18px;color:var(--ink);}
+  .nav-burger{display:flex;}
+  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+}
+@media(max-width:720px){
+  .nav-links{top:72px;}
+}
+</style>
+<style>
 /* Hero */
 .faq-hero{padding:96px 0 64px;background:var(--ink);text-align:center;}
 .faq-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,6.5vw,84px);letter-spacing:-.025em;margin:14px 0 20px;color:var(--bone);}
@@ -30,9 +57,9 @@
 .faq-cat>summary::-webkit-details-marker{display:none;}
 .faq-cat-title{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,34px);font-weight:400;letter-spacing:-.015em;color:var(--ink);}
 .faq-cat-title em{color:var(--terra);font-style:italic;}
-.faq-cat-meta{display:flex;align-items:center;gap:20px;flex-shrink:0;}
-.faq-cat-count{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--dim);opacity:.5;}
-@media(max-width:520px){.faq-cat-count{display:none;}}
+
+
+
 .faq-cat>summary::after{content:'+';font-family:'Jost',sans-serif;font-size:28px;font-weight:300;color:var(--terra);line-height:1;flex-shrink:0;}
 .faq-cat[open]>summary::after{content:'\2013';}
 
@@ -50,7 +77,7 @@ details[open].faq-item summary::after{content:'\2013';}
 .faq-a p:last-child{margin-bottom:0;}
 
 /* CTA */
-.faq-cta{padding:72px 0;text-align:center;}
+.faq-cta{padding:72px 0;text-align:center;background:var(--bone);}
 .faq-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,52px);letter-spacing:-.02em;margin-bottom:14px;color:var(--ink);}
 .faq-cta h2 em{color:var(--terra);font-style:italic;}
 .faq-cta p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:480px;margin:0 auto 32px;}
@@ -83,7 +110,7 @@ details[open].faq-item summary::after{content:'\2013';}
     <details class="faq-cat">
       <summary>
         <span class="faq-cat-title">The <em>basics</em></span>
-        <span class="faq-cat-meta"><span class="faq-cat-count">6 questions</span></span>
+        
       </summary>
       <details class="faq-item"><summary>What is solo.quando?</summary><div class="faq-a"><p>A demand-first pre-order marketplace for homemade food in Z&uuml;rich. A baker proposes a batch. Neighbours pre-order. Nothing is made until enough people say yes.</p><p>Think Kickstarter, for homemade food. Made by your neighbour.</p><p>solo.quando is also a small group of people who said yes early. They get priority on every batch, invitations to small gatherings, and a quiet line into what we're working on. <a href="/join">Join us here.</a></p></div></details>
       <details class="faq-item"><summary>What does joining solo.quando get me?</summary><div class="faq-a"><p>Four things, while we're a pilot in Z&uuml;rich.</p><p>Priority on every batch. You hear before anyone else, and you reserve before public release.</p><p>Small gatherings. Kitchen tastings, supper-club style evenings, in Z&uuml;rich.</p><p>Farm and producer visits. Where the strawberries grow, where the honey comes from, the people behind the ingredients.</p><p>The parts that never make it online. Recipe drafts, behind-the-scenes, the first to know what's coming next.</p><p>It's free, while solo.quando is small. The early people get the most.</p></div></details>
@@ -96,7 +123,7 @@ details[open].faq-item summary::after{content:'\2013';}
     <details class="faq-cat">
       <summary>
         <span class="faq-cat-title">For <em>neighbours</em></span>
-        <span class="faq-cat-meta"><span class="faq-cat-count">8 questions</span></span>
+        
       </summary>
       <details class="faq-item"><summary>How do I pre-order a batch?</summary><div class="faq-a"><p>You browse open batches, choose one, and reserve a portion. Your payment is held but not charged until the batch is confirmed. If the threshold isn't met before the deadline, the hold is released automatically.</p></div></details>
       <details class="faq-item"><summary>What if a batch doesn't reach its threshold?</summary><div class="faq-a"><p>Every payment returns automatically and in full. No exceptions, no credits, no partial refunds. The full amount, every time.</p></div></details>
@@ -111,7 +138,7 @@ details[open].faq-item summary::after{content:'\2013';}
     <details class="faq-cat">
       <summary>
         <span class="faq-cat-title">For <em>bakers</em></span>
-        <span class="faq-cat-meta"><span class="faq-cat-count">8 questions</span></span>
+        
       </summary>
       <details class="faq-item"><summary>Who can bake on solo.quando?</summary><div class="faq-a"><p>Anyone with a home kitchen, a recipe they're proud of, and the willingness to share it. No commercial kitchen required, no minimum volumes, no business background needed.</p><p>What matters is consistency, care, and honesty about what you make.</p></div></details>
       <details class="faq-item"><summary>Do I need a permit to sell homemade food in Switzerland?</summary><div class="faq-a"><p>For most home bakers operating at small volumes, no specific permit is required, but you must comply with Swiss food-safety law (LMG SR 817.0 and LGV SR 817.02) and your cantonal food-safety authority's guidance.</p><p>We guide every baker through the relevant rules during onboarding. The most common requirements: clear ingredient and allergen labelling, basic kitchen hygiene, and accurate descriptions of what you sell.</p></div></details>
@@ -126,7 +153,7 @@ details[open].faq-item summary::after{content:'\2013';}
     <details class="faq-cat">
       <summary>
         <span class="faq-cat-title">Payments &amp; <em>pickup</em></span>
-        <span class="faq-cat-meta"><span class="faq-cat-count">5 questions</span></span>
+        
       </summary>
       <details class="faq-item"><summary>How do I pay?</summary><div class="faq-a"><p>Payments are processed by Payrexx, a Swiss payment platform. Accepted methods include TWINT, Visa, Mastercard, and Apple Pay.</p><p>Your payment is authorised but not charged when you pre-order. The charge happens only if the batch is confirmed. If not, the authorisation expires and no money moves.</p></div></details>
       <details class="faq-item"><summary>Where do I pick up?</summary><div class="faq-a"><p>Pickup happens at a single, central Z&uuml;rich address we curate. Quiet, warm, and considered. The address is shared with you only once you've committed to a batch.</p><p>We do not deliver. Pickup is part of the experience.</p></div></details>
@@ -138,7 +165,7 @@ details[open].faq-item summary::after{content:'\2013';}
     <details class="faq-cat">
       <summary>
         <span class="faq-cat-title">Legal &amp; <em>safety</em></span>
-        <span class="faq-cat-meta"><span class="faq-cat-count">4 questions</span></span>
+        
       </summary>
       <details class="faq-item"><summary>Is solo.quando legal?</summary><div class="faq-a"><p>Yes. solo.quando operates within Swiss food-safety law (LMG SR 817.0 / LGV SR 817.02) and the Swiss Code of Obligations (CO/OR). We are the platform, not the producer. Bakers are responsible for the safety, declaration, and compliance of their own food.</p></div></details>
       <details class="faq-item"><summary>How is food safety handled?</summary><div class="faq-a"><p>Every listing must declare every ingredient and every major allergen. Cantonal food-safety inspectors retain the right to inspect any home kitchen producing food for sale, including those operating through solo.quando. We cooperate fully with all such inspections.</p><p>We onboard every baker with a written agreement covering hygiene basics and accurate labelling.</p></div></details>
@@ -149,7 +176,7 @@ details[open].faq-item summary::after{content:'\2013';}
     <details class="faq-cat">
       <summary>
         <span class="faq-cat-title">About <em>us</em></span>
-        <span class="faq-cat-meta"><span class="faq-cat-count">4 questions</span></span>
+        
       </summary>
       <details class="faq-item"><summary>Who is behind solo.quando?</summary><div class="faq-a"><p>solo.quando was founded by Theoni Paschou, a PhD researcher with eight years of experience in product management and digital transformation. She's also the platform's first baker, making her grandmother's recipes from her own kitchen in Z&uuml;rich.</p><p>Read <a href="/our-story">the full story</a>.</p></div></details>
       <details class="faq-item"><summary>How is solo.quando different from Too Good To Go?</summary><div class="faq-a"><p>Too Good To Go sells leftover restaurant or supermarket food at the end of the day, to reduce waste. solo.quando does the opposite: nothing is made until enough people have pre-ordered. The food is fresh, made by your neighbour, and only because you asked.</p></div></details>
@@ -169,24 +196,24 @@ details[open].faq-item summary::after{content:'\2013';}
 </div>
 
 <style>
-.nl-strip{padding:96px 22px;background:var(--bone);text-align:center;}
+.nl-strip{padding:96px 22px;background:var(--ink);text-align:center;}
 .nl-strip-inner{max-width:560px;margin:0 auto;}
 .nl-strip .kicker{color:var(--terra);}
-.nl-strip h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 16px;color:var(--ink);}
+.nl-strip h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 16px;color:var(--bone);}
 .nl-strip h2 em{color:var(--terra);font-style:italic;}
-.nl-strip-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);line-height:1.5;margin-bottom:32px;}
+.nl-strip-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:rgba(245,239,228,.6);line-height:1.5;margin-bottom:32px;}
 .nl-strip-form{display:flex;max-width:440px;margin:0 auto 14px;}
 @media(max-width:520px){.nl-strip-form{flex-direction:column;gap:10px;}}
-.nl-strip-form input[type=email]{flex:1;padding:16px 18px;background:var(--paper);border:1px solid var(--line);border-right:none;color:var(--ink);font-family:'Jost',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
-@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid var(--line);}}
-.nl-strip-form input[type=email]::placeholder{color:var(--dim);opacity:.55;}
-.nl-strip-form input[type=email]:focus{border-color:rgba(43,26,15,.4);}
+.nl-strip-form input[type=email]{flex:1;padding:16px 18px;background:rgba(245,239,228,.06);border:1px solid rgba(245,239,228,.15);border-right:none;color:var(--bone);font-family:'Jost',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
+@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid rgba(245,239,228,.15);}}
+.nl-strip-form input[type=email]::placeholder{color:rgba(245,239,228,.35);}
+.nl-strip-form input[type=email]:focus{border-color:rgba(245,239,228,.35);}
 .nl-strip-form button{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:16px 26px;white-space:nowrap;transition:background .2s;}
 .nl-strip-form button:hover{background:#a8552a;}
 .nl-strip-form button:disabled{opacity:.6;cursor:wait;}
-.nl-strip-note{font-size:13px;color:var(--dim);opacity:.7;}
+.nl-strip-note{font-size:13px;color:rgba(245,239,228,.4);}
 .nl-strip-result{max-width:440px;margin:8px auto 0;display:none;}
-.nl-strip-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--ink);}
+.nl-strip-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--bone);}
 </style>
 <section class="nl-strip" aria-labelledby="nl-strip-h">
   <div class="nl-strip-inner">
@@ -238,6 +265,7 @@ details[open].faq-item summary::after{content:'\2013';}
       <li><a href="/contact">Contact us</a></li>
       <li><a href="mailto:hello@soloquando.ch">Email</a></li>
       <li><a href="tel:+41787942700">Phone</a></li>
+      <li><a href="https://wa.me/message/SL244NA5ARHTL1" target="_blank" rel="noopener">WhatsApp</a></li>
       <li><a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">Instagram</a></li>
       <li><a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">LinkedIn</a></li>
     </ul></div>
