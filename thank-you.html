@@ -113,6 +113,21 @@
       <p class="ty-sig">&mdash; Theoni</p>
     </div>
 
+    <!-- Payment / generic post-order, used by every batch -->
+    <div class="ty-msg" id="msg-payment">
+      <p class="ty-eyebrow">RESERVATION RECEIVED</p>
+      <h1 class="ty-h">Thank <em>you</em>.</h1>
+      <p class="ty-body">Your reservation is in.</p>
+      <p class="ty-detail">A confirmation is on its way to your inbox. The pickup address will follow the day before, once the batch is confirmed.</p>
+      <p class="ty-detail" style="font-size:17px;">If the batch does not reach its minimum, you'll be refunded in full &mdash; no action needed from you.</p>
+      <div class="ty-links">
+        <a href="/products">&rarr; See other open batches</a>
+        <a href="/how-it-works">&rarr; How the ritual works</a>
+        <a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">&rarr; Follow us on Instagram</a>
+      </div>
+      <p class="ty-sig">&mdash; Theoni</p>
+    </div>
+
   </div>
 </div>
 <script>
@@ -125,7 +140,7 @@
     return;
   }
   // /thank-you?form=X → variant
-  var m = {'waitlist':'msg-welcome','welcome':'msg-welcome','baker':'msg-baker','contact':'msg-contact','circle':'msg-welcome'};
+  var m = {'waitlist':'msg-welcome','welcome':'msg-welcome','baker':'msg-baker','contact':'msg-contact','circle':'msg-welcome','payment':'msg-payment','order':'msg-payment'};
   var id = m[p.get('form')] || 'msg-default';
   var el = document.getElementById(id);
   if(el) el.classList.add('active');
@@ -161,7 +176,7 @@
   <div class="footer-payments">
     <span class="footer-payments-label">Payments handled by</span>
     <a href="https://www.payrexx.com" target="_blank" rel="noopener" class="footer-payments-name">Payrexx</a>
-    <span class="footer-payments-methods">TWINT &middot; Visa &middot; Mastercard &middot; Apple Pay</span>
+    <span class="footer-payments-methods">TWINT &middot; Visa &middot; Mastercard</span>
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
