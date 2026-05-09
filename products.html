@@ -281,8 +281,7 @@
   <div class="nl-strip-inner">
     <p class="kicker">Stay in the loop</p>
     <h2 id="nl-strip-h">Subscribe to our <em>newsletter</em>.</h2>
-    <form class="nl-strip-form" id="nl-strip-form" action="https://formspree.io/f/mpqkvvnk" method="POST">
-      <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
+    <form class="nl-strip-form js-subscribe" id="nl-strip-form" data-result="#nl-strip-result" data-success="You are on the list. Check your inbox to confirm.">
       <input type="hidden" name="source" value="products"/>
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
       <input type="email" name="email" placeholder="your@email.ch" required aria-label="Email address"/>
@@ -292,30 +291,7 @@
     <p class="nl-strip-note">Free. Unsubscribe any time. Z&uuml;rich first.</p>
   </div>
 </section>
-<script>
-(function(){
-  var form = document.getElementById('nl-strip-form');
-  var out  = document.getElementById('nl-strip-result');
-  if(!form || !out) return;
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    var btn = form.querySelector('button[type=submit]');
-    btn.disabled = true; btn.textContent = 'Joining';
-    try{
-      var r = await fetch(form.action, {method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-      if(r.ok){
-        form.style.display='none';
-        out.style.display='block';
-        out.innerHTML='<p>You are on the list. We will be in touch.</p>';
-      } else {
-        form.submit();
-      }
-    } catch(err) {
-      form.submit();
-    }
-  });
-})();
-</script>
+
 
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
@@ -354,25 +330,151 @@
 </div></footer>
 <script src="/batches.js"></script>
 <script>
+/* ── Batch carousel ──
+   IMPORTANT: batches.js renders cards on DOMContentLoaded. This carousel logic
+   must run AFTER that, so we wrap in our own DOMContentLoaded listener.
+   The browser calls listeners in registration order; batches.js registered
+   first (loaded above), so its renderer runs first, then this. */
 (function(){
-  var track=document.getElementById('batch-track');
-  var dots=document.querySelectorAll('#batch-dots .carousel-dot');
-  var btnPrv=document.querySelector('.carousel-btn-prev');
-  var btnNxt=document.querySelector('.carousel-btn-next');
-  if(!track) return;
-  var items=track.children.length, cur=0;
-  function slideTo(n){
-    cur=Math.max(0,Math.min(items-1,n));
-    var cardW=track.children[0].offsetWidth+24;
-    track.style.transform='translateX(-'+(cur*cardW)+'px)';
-    dots.forEach(function(d,i){d.classList.toggle('on',i===cur);});
+  /* Configuration */
+  var AUTOPLAY_MS = 6000;        /* time per slide */
+  var MOBILE_BREAKPOINT = 760;   /* below this, mobile uses native scroll-snap; no autoplay */
+  var TRANSITION_MS = 500;       /* must match CSS transition duration */
+
+  function init(){
+    var track  = document.getElementById('batch-track');
+    if(!track) return;
+    var btnPrv = document.querySelector('.carousel-btn-prev');
+    var btnNxt = document.querySelector('.carousel-btn-next');
+    var outer  = document.querySelector('.batch-carousel-outer');
+
+    /* Re-query dots NOW (after batches.js has injected them) */
+    function getDots(){ return document.querySelectorAll('#batch-dots .carousel-dot'); }
+
+    var realItems = track.children.length;
+    if(realItems === 0) return;
+    if(realItems === 1) return;
+
+    /* Clone first card for seamless wrap */
+    var firstClone = track.children[0].cloneNode(true);
+    firstClone.setAttribute('aria-hidden', 'true');
+    var cloneLinks = firstClone.querySelectorAll('a');
+    cloneLinks.forEach(function(a){ a.setAttribute('tabindex','-1'); });
+    if(firstClone.tagName === 'A'){ firstClone.setAttribute('tabindex','-1'); }
+    track.appendChild(firstClone);
+
+    var cur = 0;
+    var displayPos = 0;
+
+    function applyTransform(pos, animate){
+      var first = track.children[0];
+      if(!first) return;
+      var cardW = first.offsetWidth + 24;
+      track.style.transition = animate ? '' : 'none';
+      track.style.transform = 'translateX(-' + (pos * cardW) + 'px)';
+      if(!animate){
+        void track.offsetHeight;
+        track.style.transition = '';
+      }
+    }
+
+    function updateDots(){
+      getDots().forEach(function(d,i){ d.classList.toggle('on', i === cur); });
+    }
+
+    function slideTo(n, direction){
+      direction = direction || 0;
+
+      if(direction === 1 && n >= realItems){
+        cur = 0;
+        displayPos = realItems;
+        applyTransform(displayPos, true);
+        updateDots();
+        setTimeout(function(){
+          displayPos = 0;
+          applyTransform(displayPos, false);
+        }, TRANSITION_MS + 20);
+        return;
+      }
+
+      if(direction === -1 && n < 0){
+        displayPos = realItems;
+        applyTransform(displayPos, false);
+        setTimeout(function(){
+          cur = realItems - 1;
+          displayPos = realItems - 1;
+          applyTransform(displayPos, true);
+          updateDots();
+        }, 20);
+        return;
+      }
+
+      n = Math.max(0, Math.min(realItems - 1, n));
+      cur = n;
+      displayPos = n;
+      applyTransform(displayPos, true);
+      updateDots();
+    }
+
+    /* Autoplay state */
+    var autoplayTimer = null;
+    var autoplayStopped = false;
+    var pausedByHover = false;
+    function isMobile(){ return window.innerWidth <= MOBILE_BREAKPOINT; }
+    function shouldAutoplay(){ return !autoplayStopped && !pausedByHover && !isMobile(); }
+    function startAutoplay(){
+      if(autoplayTimer) return;
+      if(!shouldAutoplay()) return;
+      autoplayTimer = setInterval(function(){
+        if(!shouldAutoplay()){ stopAutoplay(); return; }
+        slideTo(cur + 1, 1);
+      }, AUTOPLAY_MS);
+    }
+    function stopAutoplay(){
+      if(autoplayTimer){ clearInterval(autoplayTimer); autoplayTimer = null; }
+    }
+    function killAutoplayForever(){
+      autoplayStopped = true;
+      stopAutoplay();
+    }
+
+    if(btnPrv) btnPrv.addEventListener('click', function(){ killAutoplayForever(); slideTo(cur - 1, -1); });
+    if(btnNxt) btnNxt.addEventListener('click', function(){ killAutoplayForever(); slideTo(cur + 1, 1); });
+    getDots().forEach(function(d){
+      d.addEventListener('click', function(){
+        killAutoplayForever();
+        slideTo(parseInt(d.dataset.i, 10) || 0, 0);
+      });
+    });
+
+    if(outer){
+      outer.addEventListener('mouseenter', function(){ pausedByHover = true; stopAutoplay(); });
+      outer.addEventListener('mouseleave', function(){ pausedByHover = false; startAutoplay(); });
+    }
+
+    document.addEventListener('visibilitychange', function(){
+      if(document.hidden){ stopAutoplay(); }
+      else { startAutoplay(); }
+    });
+
+    window.addEventListener('resize', function(){
+      applyTransform(displayPos, false);
+      if(isMobile()){ stopAutoplay(); }
+      else { startAutoplay(); }
+    });
+
+    slideTo(0, 0);
+    startAutoplay();
   }
-  if(btnPrv) btnPrv.addEventListener('click',function(){slideTo(cur-1);});
-  if(btnNxt) btnNxt.addEventListener('click',function(){slideTo(cur+1);});
-  dots.forEach(function(d){d.addEventListener('click',function(){slideTo(+d.dataset.i);});});
-  window.addEventListener('resize',function(){slideTo(cur);});
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 </script>
+<script src="/subscribe.js"></script>
 <script src="/shared.js"></script>
 
 <style>

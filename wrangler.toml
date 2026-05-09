@@ -1,0 +1,32 @@
+# solo.quando — Cloudflare Worker config
+# -----------------------------------------------------------------
+# This file tells Cloudflare's `wrangler` CLI how to deploy your
+# subscribe worker. Don't put secrets here — they go via:
+#   wrangler secret put MAILCHIMP_API_KEY
+#
+# Deploy with:
+#   wrangler deploy
+# -----------------------------------------------------------------
+
+name = "soloquando-subscribe"
+main = "worker.js"
+compatibility_date = "2025-04-01"
+
+# Run on your own domain at /api/subscribe
+# Cloudflare will route any request matching this pattern to the worker.
+# Replace 'soloquando.ch' below if your zone is different.
+[[routes]]
+pattern = "soloquando.ch/api/subscribe"
+zone_name = "soloquando.ch"
+
+# Non-secret env vars (datacenter prefix and audience ID).
+# The API KEY itself MUST be set via `wrangler secret put MAILCHIMP_API_KEY`
+# so it's never committed to git.
+[vars]
+MAILCHIMP_DC = "us13"
+MAILCHIMP_AUDIENCE_ID = "739f21ed6b"
+
+# Useful but optional:
+# - workers_dev = false stops Cloudflare from auto-creating a public
+#   .workers.dev URL. We only want it served from soloquando.ch.
+workers_dev = false

@@ -109,8 +109,7 @@
   <div class="nl-strip-inner">
     <p class="kicker">Stay in the loop</p>
     <h2 id="nl-strip-h">Subscribe to our <em>newsletter</em>.</h2>
-    <form class="nl-strip-form" id="nl-strip-form" action="https://formspree.io/f/mpqkvvnk" method="POST">
-      <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
+    <form class="nl-strip-form js-subscribe" id="nl-strip-form" data-result="#nl-strip-result" data-success="You are on the list. Check your inbox to confirm.">
       <input type="hidden" name="source" value="privacy"/>
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
       <input type="email" name="email" placeholder="your@email.ch" required aria-label="Email address"/>
@@ -120,30 +119,7 @@
     <p class="nl-strip-note">Free. Unsubscribe any time. Z&uuml;rich first.</p>
   </div>
 </section>
-<script>
-(function(){
-  var form = document.getElementById('nl-strip-form');
-  var out  = document.getElementById('nl-strip-result');
-  if(!form || !out) return;
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    var btn = form.querySelector('button[type=submit]');
-    btn.disabled = true; btn.textContent = 'Joining';
-    try{
-      var r = await fetch(form.action, {method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-      if(r.ok){
-        form.style.display='none';
-        out.style.display='block';
-        out.innerHTML='<p>You are on the list. We will be in touch.</p>';
-      } else {
-        form.submit();
-      }
-    } catch(err) {
-      form.submit();
-    }
-  });
-})();
-</script>
+
 
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
@@ -180,6 +156,7 @@
     <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
   </div>
 </div></footer>
+<script src="/subscribe.js"></script>
 <script src="/shared.js"></script>
 </body>
 </html>
