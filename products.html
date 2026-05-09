@@ -355,6 +355,16 @@
     if(realItems === 0) return;
     if(realItems === 1) return;
 
+    /* How many cards are fully visible at once (desktop = 3, not used on mobile) */
+    function getVisibleCount(){
+      if(window.innerWidth <= MOBILE_BREAKPOINT) return 1;
+      if(window.innerWidth <= 960) return 1;
+      return 3;
+    }
+
+    /* Last position that makes sense: far enough that the final card is leftmost */
+    function maxPos(){ return Math.max(0, realItems - getVisibleCount()); }
+
     /* Clone first card for seamless wrap */
     var firstClone = track.children[0].cloneNode(true);
     firstClone.setAttribute('aria-hidden', 'true');
@@ -385,7 +395,7 @@
     function slideTo(n, direction){
       direction = direction || 0;
 
-      if(direction === 1 && n >= realItems){
+      if(direction === 1 && n > maxPos()){
         cur = 0;
         displayPos = realItems;
         applyTransform(displayPos, true);
@@ -401,15 +411,15 @@
         displayPos = realItems;
         applyTransform(displayPos, false);
         setTimeout(function(){
-          cur = realItems - 1;
-          displayPos = realItems - 1;
+          cur = maxPos();
+          displayPos = maxPos();
           applyTransform(displayPos, true);
           updateDots();
         }, 20);
         return;
       }
 
-      n = Math.max(0, Math.min(realItems - 1, n));
+      n = Math.max(0, Math.min(maxPos(), n));
       cur = n;
       displayPos = n;
       applyTransform(displayPos, true);
