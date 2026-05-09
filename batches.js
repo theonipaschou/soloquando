@@ -73,8 +73,6 @@ window.SOLO_BATCHES = [
     productPlain: 'Ergolavoi',
     baker: 'Theoni',
     status: 'soon',
-    hiddenInCarousel: true,              // hidden from homepage until ready
-    hiddenInTable: false,                // visible on /products schedule
     statusEyebrow: 'COMING SOON',
     cardLine: 'A traditional Greek almond cookie. Soft, chewy, sandwiched with apricot jam. Pre-orders open Sun 17 May.',
     preorderOpensTable: 'Sun 17 May 2026',
@@ -88,7 +86,7 @@ window.SOLO_BATCHES = [
     image: '/ergolavoi-hero.webp',
     imageAlt: 'Greek ergolavoi almond cookies dusted with powdered sugar on a wooden tray',
     link: '/batch-ergolavoi-003',
-    cta: null
+    cta: 'View batch \u2192'
   },
   {
     id: '004',
@@ -97,8 +95,6 @@ window.SOLO_BATCHES = [
     productFullName: 'VITA.RITUAL by Anca',
     baker: 'Anca',
     status: 'soon',
-    hiddenInCarousel: true,              // hidden from homepage until ready
-    hiddenInTable: false,                // visible on /products schedule
     statusEyebrow: 'COMING SOON',
     cardLine: 'No-sugar, vegan energy balls. Made with ceremonial matcha brought back from Uji, Kyoto. Pre-orders open Sun 24 May.',
     preorderOpensTable: 'Sun 24 May 2026',
@@ -112,7 +108,7 @@ window.SOLO_BATCHES = [
     image: null,
     imageAlt: '',
     link: '/batch-vita-ritual-004',
-    cta: null
+    cta: 'View batch \u2192'
   }
 ];
 
@@ -162,40 +158,48 @@ window.SoloBatches = (function () {
 
   /* ---------- CAROUSEL CARD (homepage CSS) ---------- */
   function carouselCardHtml (b) {
-    // PLACEHOLDER (status === 'soon')
-    if (b.status === 'soon') {
-      var phImgHtml = b.image
-        ? '<img src="' + esc(b.image) + '" alt="' + esc(b.imageAlt || '') + '" loading="lazy" decoding="async"/>'
-        : '';
-      return '' +
-        '<article class="batch-card is-placeholder">' +
-          '<div class="batch-card-img">' + phImgHtml + '</div>' +
-          '<div class="batch-card-text">' +
-            '<p class="batch-card-eyebrow">BATCH ' + esc(b.id) + ' &middot; ' + esc(b.statusEyebrow) + '</p>' +
-            '<h3 class="batch-card-title">' + b.productHtml + '</h3>' +
-            '<p class="batch-card-desc">' + esc(b.cardLine) + '</p>' +
-            '<p class="batch-card-meta">' +
-              '<strong>Baker:</strong> ' + esc(b.baker) + '<br/>' +
-              '<strong>Pickup:</strong> ' + esc(b.pickupLocation) +
-            '</p>' +
-          '</div>' +
-        '</article>';
+    /* All batches now share the same renderer.
+       Visual state is driven by `status`:
+         - 'open'      → terra-coloured "live" eyebrow with pulsing dot
+         - 'confirmed' → sage-coloured "is-confirmed" styling (faint)
+         - 'soon'      → muted "is-placeholder" styling
+       All batches with a link are clickable. */
+
+    var articleClass = 'batch-card is-clickable';
+    if (b.status === 'confirmed') articleClass += ' is-confirmed';
+    if (b.status === 'soon')      articleClass += ' is-soon';
+
+    var eyebrowClass = 'batch-card-eyebrow';
+    if (b.status === 'open')      eyebrowClass += ' is-live';
+    if (b.status === 'soon')      eyebrowClass += ' is-soon';
+
+    /* Pre-order line: shown for 'open' (current deadline) and 'soon' (when it opens) */
+    var preorderLine = '';
+    if (b.status === 'open' && b.preorderByCarousel) {
+      preorderLine = '<strong>Pre-order by:</strong> ' + esc(b.preorderByCarousel) + '<br/>';
+    } else if (b.status === 'soon' && b.preorderOpensTable) {
+      preorderLine = '<strong>Opens:</strong> ' + esc(b.preorderOpensTable) + '<br/>';
     }
 
-    // ACTIVE CARD
-    var articleClass = 'batch-card is-clickable' + (b.status === 'confirmed' ? ' is-confirmed' : '');
-    var eyebrowClass = 'batch-card-eyebrow' + (b.status === 'open' ? ' is-live' : '');
-
-    var preorderLine = (b.status === 'open' && b.preorderByCarousel)
-      ? '<strong>Pre-order by:</strong> ' + esc(b.preorderByCarousel) + '<br/>'
-      : '';
-
     var imgHtml = b.image
-      ? '<img src="' + esc(b.image) + '" alt="' + esc(b.imageAlt) + '" loading="lazy" decoding="async"/>'
+      ? '<img src="' + esc(b.image) + '" alt="' + esc(b.imageAlt || '') + '" loading="lazy" decoding="async"/>'
       : '<div class="batch-card-img-fallback"><span class="batch-card-img-fallback-mark">' + b.productHtml + '</span></div>';
 
-    return '' +
-      '<a href="' + esc(b.link) + '" class="batch-card-link">' +
+    var ctaHtml = b.cta
+      ? '<p class="batch-card-cta">' + esc(b.cta) + '</p>'
+      : '';
+
+    /* Pickup line uses summary for open/confirmed, location-only for soon */
+    var pickupLine = (b.status === 'soon')
+      ? '<strong>Pickup:</strong> ' + esc(b.pickupSummary || b.pickupLocation)
+      : '<strong>Pickup:</strong> ' + esc(b.pickupSummary);
+
+    /* Price line (skip if no price) */
+    var priceLine = b.price
+      ? '<br/><strong>Price:</strong> ' + esc(b.price)
+      : '';
+
+    var cardInner =
         '<article class="' + articleClass + '">' +
           '<div class="batch-card-img">' +
             imgHtml +
@@ -207,13 +211,17 @@ window.SoloBatches = (function () {
             '<p class="batch-card-meta">' +
               '<strong>Baker:</strong> ' + esc(b.baker) + '<br/>' +
               preorderLine +
-              '<strong>Pickup:</strong> ' + esc(b.pickupSummary) + '<br/>' +
-              '<strong>Price:</strong> ' + esc(b.price) +
+              pickupLine +
+              priceLine +
             '</p>' +
-            '<p class="batch-card-cta">' + esc(b.cta) + '</p>' +
+            ctaHtml +
           '</div>' +
-        '</article>' +
-      '</a>';
+        '</article>';
+
+    /* Wrap in <a> only if there's a link */
+    return b.link
+      ? '<a href="' + esc(b.link) + '" class="batch-card-link">' + cardInner + '</a>'
+      : cardInner;
   }
 
   function dotHtml (b, i) {

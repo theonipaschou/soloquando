@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Batch 002: Mousto &middot; solo.quando</title>
-<meta name="description" content="Mousto &mdash; a very traditional Greek cookie made with petimezi. Pre-order before Theoni bakes. 1 to 5 pieces per order at CHF 3.50 each. Pickup Wed 13 or Sat 16 May, central Z&uuml;rich."/>
+<meta name="description" content="Mousto &mdash; a very traditional Greek cookie made with petimezi. Pre-order before Theoni bakes. 1 to 5 pieces per order at CHF 3.50 each. Pickup Sat 16 May at 11:00 sharp, central Z&uuml;rich."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
@@ -66,8 +66,14 @@
 .b1-progress-stats .stat .sub{font-size:12px;color:var(--dim);margin-top:4px;}
 .b1-progress-track{height:6px;background:rgba(43,26,15,.08);position:relative;border-radius:3px;overflow:visible;max-width:480px;margin:0 auto;}
 .b1-progress-bar{height:100%;background:var(--terra);border-radius:3px;transition:width .6s ease;}
-.threshold-marker{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--ink);border-radius:1px;}
-.b1-progress-legend{display:flex;justify-content:space-between;margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);max-width:480px;margin-left:auto;margin-right:auto;}
+.threshold-marker{position:absolute;top:-7px;bottom:-7px;width:3px;background:var(--ink);border-radius:1.5px;transition:left .6s ease;transform:translateX(-1.5px);}
+.threshold-marker::before{content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:var(--ink);}
+.b1-progress-legend{position:relative;margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);max-width:480px;margin-left:auto;margin-right:auto;height:18px;}
+.b1-progress-legend .lg-min,.b1-progress-legend .lg-max,.b1-progress-legend .lg-threshold{position:absolute;top:0;}
+.b1-progress-legend .lg-min{left:0;}
+.b1-progress-legend .lg-max{right:0;}
+.b1-progress-legend .lg-threshold{transform:translateX(-50%);color:var(--terra);}
+.b1-progress-legend .lg-threshold::before{content:'▲';display:block;font-size:10px;line-height:1;margin-bottom:2px;color:var(--terra);}
 .b1-section{padding:80px 0;}
 .b1-section.alt{background:var(--paper);}
 .b1-section.ink{background:var(--ink);color:var(--bone);}
@@ -161,14 +167,18 @@
       <div class="stat"><div class="k">Maximum capacity</div><div class="v">60</div><div class="sub">pieces total &mdash; hard cap</div></div>
     </div>
     <div class="b1-progress-track">
-      <div class="b1-progress-bar" id="progress-bar" style="width:2%;"></div>
-      <div class="threshold-marker" id="threshold-marker" style="left:2%;"></div>
+      <div class="b1-progress-bar" id="progress-bar" style="width:0%;"></div>
+      <div class="threshold-marker" id="threshold-marker" style="left:0%;"></div>
     </div>
-    <div class="b1-progress-legend"><span>0</span><span>&#9650; min (10)</span><span>max (60)</span></div>
+    <div class="b1-progress-legend">
+      <span class="lg-min">0</span>
+      <span class="lg-threshold" id="threshold-legend" style="left:17%;">min (10)</span>
+      <span class="lg-max">max (60)</span>
+    </div>
     <p class="kicker" id="status-kicker" style="color:var(--terra);margin-top:28px;">9 pieces away from confirming this batch.</p>
     <p style="font-size:14px;color:var(--dim);margin-top:6px;">
-      <strong>Pre-order by:</strong> end of day Sun 10 May 2026 &nbsp;&nbsp;
-      <strong>Delivery:</strong> Wed 13 May or Sat 16 May &mdash; choose at checkout
+      <strong>Pre-order by:</strong> Fri 15 May 2026, 12:00 &nbsp;&nbsp;
+      <strong>Pickup:</strong> Sat 16 May, 11:00 sharp
     </p>
   </div>
 </section>
@@ -218,21 +228,21 @@
 <section class="b1-section alt">
   <div class="wrap"><div class="b1-section-inner">
     <p class="kicker">Pickup</p>
-    <h2 style="margin-top:14px;">Two days. <em>Pick yours</em> at checkout.</h2>
-    <p>The exact pickup address is sent to you the day before. Quiet, central, walkable from a tram stop.</p>
+    <h2 style="margin-top:14px;">Saturday morning. <em>11:00 sharp.</em></h2>
+    <p>One day, one moment. The exact pickup address is sent to you the day before. Quiet, central, walkable from a tram stop.</p>
     <div class="b1-pickup-grid">
       <div class="b1-pickup-card">
-        <p class="lbl">Wednesday 13 May</p>
-        <p class="val">For the long-weekend escape.</p>
-        <p class="note">Pick up your order before you leave. Fresh from the morning&rsquo;s bake.</p>
+        <p class="lbl">Saturday 16 May 2026</p>
+        <p class="val">11:00 sharp.</p>
+        <p class="note">Fresh from the morning&rsquo;s bake. Bring a coffee from the corner.</p>
       </div>
       <div class="b1-pickup-card">
-        <p class="lbl">Saturday 16 May</p>
-        <p class="val">For the ones staying in Z&uuml;rich.</p>
-        <p class="note">Late morning. Take your time. Bring a coffee from the corner.</p>
+        <p class="lbl">The ritual</p>
+        <p class="val">Open Sunday. Close Friday. Pickup Saturday.</p>
+        <p class="note">Every solo.quando batch follows the same rhythm. So you always know where to find us.</p>
       </div>
     </div>
-    <p style="margin-top:28px;font-size:15px;">If 10 pieces are not pre-ordered by end of day Sun 10 May 2026, the batch does not happen. Every payment is refunded in full within 48 hours.</p>
+    <p style="margin-top:28px;font-size:15px;">If 10 pieces are not pre-ordered by Fri 15 May 2026, 12:00, the batch does not happen. Every payment is refunded in full within 48 hours.</p>
   </div></div>
 </section>
 
@@ -241,7 +251,7 @@
     <div class="b1-form-head">
       <p class="kicker" style="color:var(--terra);">Pre-orders open</p>
       <h2>Pre-order before I <em>bake</em>.</h2>
-      <p class="sub">Select your quantity and pickup day. Your payment is handled securely by Payrexx. If the threshold is not reached by Sun 10 May, every payment is refunded automatically.</p>
+      <p class="sub">Select your quantity. Your payment is handled securely by Payrexx. If 10 pieces are not pre-ordered by Fri 15 May 12:00, every payment is refunded automatically.</p>
     </div>
     <div class="b1-form-card">
       <form id="batch002-form" novalidate>
@@ -262,12 +272,8 @@
           </div>
         </div>
         <label style="margin-bottom:18px;">
-          <span class="f-label">Pickup day *</span>
-          <select class="f-input" name="pickup_day" id="pickup-select">
-            <option value="" disabled selected>Choose your day</option>
-            <option value="Wednesday 13 May">Wednesday 13 May &mdash; for the long weekend</option>
-            <option value="Saturday 16 May">Saturday 16 May &mdash; for those staying in Z&uuml;rich</option>
-          </select>
+          <span class="f-label">Pickup *</span>
+          <input class="f-input" type="text" name="pickup_day" value="Saturday 16 May 2026, 11:00 sharp" readonly style="cursor:not-allowed;opacity:.85;"/>
         </label>
         <label style="margin-bottom:22px;">
           <span class="f-label">Notes (optional)</span>
@@ -277,11 +283,11 @@
           <p id="form-error-msg">Please fill in all required fields.</p>
         </div>
         <button type="submit" class="b1-form-submit" id="submit-btn">
-          Continue to payment &mdash; CHF <span id="btn-total">3.50</span> on Payrexx &rarr;
+          Reserve now &mdash; CHF <span id="btn-total">3.50</span> &rarr;
         </button>
         <p style="margin-top:16px;font-size:12px;color:rgba(245,239,228,.4);text-align:center;letter-spacing:.04em;">
-          You will be redirected to Payrexx to complete your payment securely.<br/>
-          <span style="opacity:.7;">TWINT &middot; PostFinance &middot; Visa &middot; Mastercard &middot; Apple Pay &middot; Google Pay</span>
+          Payment opens in a secure window without leaving this page.<br/>
+          <span style="opacity:.7;">TWINT &middot; Visa &middot; Mastercard</span>
         </p>
       </form>
     </div>
@@ -331,21 +337,16 @@
   <div class="footer-payments">
     <span class="footer-payments-label">Payments handled by</span>
     <a href="https://www.payrexx.com" target="_blank" rel="noopener" class="footer-payments-name">Payrexx</a>
-    <span class="footer-payments-methods">TWINT &middot; PostFinance &middot; Visa &middot; Mastercard &middot; Apple Pay &middot; Google Pay</span>
+    <span class="footer-payments-methods">TWINT &middot; Visa &middot; Mastercard</span>
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
   </div>
 </div></footer>
 
+<script src="/payrexx.js"></script>
 <script>
-var PAYREXX_LINKS = {
-  '1': 'https://soloquando.payrexx.com/en/?payment=7600013c9fdc90f073de1d39415b9d7e',
-  '2': 'https://soloquando.payrexx.com/en/?payment=ec0dee29224bb7d29140cd9a7f3ebe76',
-  '3': 'https://soloquando.payrexx.com/en/?payment=4ecefe53825b95b383c7cd82323b76f3',
-  '4': 'https://soloquando.payrexx.com/en/?payment=33d2639ffeba125232afee47dca30b04',
-  '5': 'https://soloquando.payrexx.com/en/?payment=76b5b93129945cf6eced7f9e96891f64'
-};
+/* Total + button price update */
 (function(){
   var PRICE=3.5;
   var select=document.getElementById('bags-select');
@@ -355,7 +356,10 @@ var PAYREXX_LINKS = {
   function update(){var n=parseInt(select.value,10)||1;var t=(n*PRICE).toFixed(2);if(display)display.textContent='CHF '+t;if(btnTotal)btnTotal.textContent=t;}
   select.addEventListener('change',update);update();
 })();
+
+/* Form submission via shared SoloPayrexx */
 (function(){
+  var PRICE=3.5;
   var form=document.getElementById('batch002-form');
   var errBox=document.getElementById('form-error');
   var errMsg=document.getElementById('form-error-msg');
@@ -365,25 +369,33 @@ var PAYREXX_LINKS = {
   function hideError(){errBox.style.display='none';}
   form.addEventListener('submit',function(e){
     e.preventDefault();hideError();
-    var pieces=form.querySelector('[name="pieces"]').value;
-    var pickup=form.querySelector('[name="pickup_day"]').value;
-    if(!pickup) return showError('Please choose your pickup day.');
-    var link=PAYREXX_LINKS[pieces];
-    if(!link) return showError('Payment is being set up — please try again shortly or write to hello@soloquando.ch.');
-    try{sessionStorage.setItem('sq_mousto_order',JSON.stringify({pieces:pieces,pickup:pickup,total:(parseInt(pieces)*3.5).toFixed(2)}));}catch(err){}
-    btn.textContent='Redirecting to Payrexx…';btn.disabled=true;
-    window.location.href=link;
+    if(!window.SoloPayrexx){return showError('Payment system is loading &mdash; please try again in a moment.');}
+    var pieces=parseInt(form.querySelector('[name="pieces"]').value,10);
+    if(!pieces||pieces<1){return showError('Please choose how many pieces.');}
+    var amount=pieces*PRICE;
+    var purpose='Batch 002 - Mousto - '+pieces+' piece'+(pieces>1?'s':'');
+    btn.textContent='Opening payment\u2026';btn.disabled=true;
+    SoloPayrexx.go({
+      amount: amount,
+      purpose: purpose,
+      sessionKey: 'sq_mousto_order',
+      sessionData: {batch:'002',pieces:pieces,pickup:'Saturday 16 May 2026, 11:00 sharp'}
+    });
   });
 })();
 (function(){
   var MIN=10,MAX=60;
   var countEl=document.getElementById('reserved-count');
   var reserved=countEl?parseInt(countEl.textContent,10):0;
+  if(isNaN(reserved)||reserved<0) reserved=0;
   var bar=document.getElementById('progress-bar');
   var marker=document.getElementById('threshold-marker');
-  var pct=Math.min(100,Math.round((reserved/MAX)*100));
+  var thresholdLegend=document.getElementById('threshold-legend');
+  var pct=Math.max(0,Math.min(100,(reserved/MAX)*100));
+  var thresholdPct=Math.max(0,Math.min(100,(MIN/MAX)*100));
   if(bar){bar.style.width=pct+'%';}
   if(marker){marker.style.left=pct+'%';}
+  if(thresholdLegend){thresholdLegend.style.left=thresholdPct+'%';}
   var kicker=document.getElementById('status-kicker');
   if(kicker&&reserved<MAX){
     if(reserved>=MIN){var rem=MAX-reserved;kicker.textContent='Threshold reached. The batch is happening. '+rem+(rem===1?' piece':' pieces')+' remaining.';}

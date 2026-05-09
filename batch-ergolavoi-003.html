@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Batch 003: Ergolavoi &middot; solo.quando</title>
-<meta name="description" content="Ergolavoi &mdash; a traditional Greek almond cookie, soft and chewy, paired with apricot jam. Pre-order before Theoni bakes. 1 to 5 portions at CHF 9.00 each. Pickup Sun 25 May, central Z&uuml;rich."/>
+<meta name="description" content="Ergolavoi &mdash; a traditional Greek almond cookie, soft and chewy, sandwiched with apricot jam. Pre-orders open Sun 17 May 2026 at 11:00."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
@@ -116,6 +116,39 @@
 .b1-form-result p{font-family:'Jost',sans-serif;font-size:15px;color:var(--terra);}
 .b1-form-submit{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:18px 32px;width:100%;transition:background .2s;}
 .b1-form-submit:hover{background:#a8552a;}
+
+/* Coming-soon overrides */
+.badge.cs-badge{background:rgba(122,139,106,.1);border-color:rgba(122,139,106,.28);}
+.badge.cs-badge .badge-dot{background:var(--sage);animation:none;}
+.badge.cs-badge span{color:var(--sage);}
+/* Coming-soon block (replaces order form section) */
+.b1-cs-inner{max-width:760px;margin:0 auto;text-align:center;}
+.b1-cs-inner .kicker{color:var(--terra);}
+.b1-cs-inner h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(40px,5.2vw,64px);letter-spacing:-.025em;line-height:1.05;margin:14px 0 28px;color:var(--bone);}
+.b1-cs-inner h2 em{color:var(--terra);font-style:italic;}
+.b1-cs-inner p{font-size:18px;line-height:1.7;color:rgba(245,239,228,.78);margin-bottom:18px;}
+.b1-cs-inner p.punch{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--bone);margin-top:24px;}
+.b1-cs-dates{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:48px 0 32px;}
+@media(max-width:600px){.b1-cs-dates{grid-template-columns:1fr;gap:14px;}}
+.b1-cs-date{padding:24px 22px;background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.14);}
+.b1-cs-date .lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
+.b1-cs-date .val{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--bone);line-height:1.3;}
+.b1-cs-notify{margin-top:48px;padding:36px 32px;background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.14);}
+.b1-cs-notify p.lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;text-align:center;}
+.b1-cs-notify h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:24px;color:var(--bone);text-align:center;margin-bottom:8px;}
+.b1-cs-notify .sub2{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:rgba(245,239,228,.65);text-align:center;margin-bottom:22px;}
+.b1-cs-form{display:flex;max-width:440px;margin:0 auto;}
+@media(max-width:520px){.b1-cs-form{flex-direction:column;gap:10px;}}
+.b1-cs-form input[type=email]{flex:1;padding:14px 16px;background:rgba(245,239,228,.06);border:1px solid rgba(245,239,228,.18);border-right:none;color:var(--bone);font-family:'Jost',sans-serif;font-size:15px;outline:none;transition:border-color .2s,background .2s;}
+@media(max-width:520px){.b1-cs-form input[type=email]{border-right:1px solid rgba(245,239,228,.18);}}
+.b1-cs-form input[type=email]::placeholder{color:rgba(245,239,228,.4);}
+.b1-cs-form input[type=email]:focus{border-color:rgba(245,239,228,.4);background:rgba(245,239,228,.09);}
+.b1-cs-form button{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:14px 22px;white-space:nowrap;transition:background .2s;}
+.b1-cs-form button:hover{background:#a8552a;}
+.b1-cs-form button:disabled{opacity:.6;cursor:wait;}
+.b1-cs-result{max-width:440px;margin:10px auto 0;display:none;}
+.b1-cs-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--bone);text-align:center;}
+
 .b1-full{padding:80px 32px;background:rgba(122,139,106,.12);border:1px solid rgba(122,139,106,.4);text-align:center;}
 .b1-full h2{font-size:clamp(36px,4.6vw,56px);color:var(--ink);margin-bottom:18px;letter-spacing:-.02em;line-height:1.05;}
 .b1-full h2 em{color:var(--terra);font-style:italic;}
@@ -137,8 +170,8 @@
 
 <header class="b1-hero">
   <div class="b1-hero-text">
-    <div class="badge"><span class="badge-dot"></span><span>Pre-orders open</span></div>
-    <p class="kicker">Batch 003 &middot; pre-orders open &middot; made by hand</p>
+    <div class="badge cs-badge"><span class="badge-dot"></span><span>Coming soon</span></div>
+    <p class="kicker">Batch 003 &middot; coming soon</p>
     <h1><em>Ergolavoi</em>.</h1>
     <p class="sub">A traditional Greek almond cookie. Soft, chewy, paired with apricot jam. Made by hand, made only when you want it.</p>
     <p class="baker"><strong>By Theoni</strong> &middot; Z&uuml;rich</p>
@@ -153,25 +186,7 @@
   </div>
 </header>
 
-<section class="b1-progress">
-  <div class="wrap b1-progress-inner">
-    <div class="b1-progress-stats">
-      <div class="stat"><div class="k">Pre-ordered</div><div class="v"><em id="reserved-count">0</em></div><div class="sub">portions so far</div></div>
-      <div class="stat"><div class="k">Minimum threshold</div><div class="v">8</div><div class="sub">portions needed for the batch to happen</div></div>
-      <div class="stat"><div class="k">Maximum capacity</div><div class="v">40</div><div class="sub">portions total &mdash; hard cap</div></div>
-    </div>
-    <div class="b1-progress-track">
-      <div class="b1-progress-bar" id="progress-bar" style="width:0%;"></div>
-      <div class="threshold-marker" id="threshold-marker" style="left:20%;"></div>
-    </div>
-    <div class="b1-progress-legend"><span>0</span><span>&#9650; min (8)</span><span>max (40)</span></div>
-    <p class="kicker" id="status-kicker" style="color:var(--terra);margin-top:28px;">8 portions away from confirming this batch.</p>
-    <p style="font-size:14px;color:var(--dim);margin-top:6px;">
-      <strong>Pre-order by:</strong> end of day Sat 23 May 2026 &nbsp;&nbsp;
-      <strong>Pickup:</strong> Sun 25 May &mdash; choose your window at checkout
-    </p>
-  </div>
-</section>
+
 
 <section class="b1-section">
   <div class="wrap"><div class="b1-section-inner">
@@ -236,53 +251,37 @@
 </section>
 
 <section class="b1-form-s" id="reserve">
-  <div class="wrap"><div class="b1-form-inner">
-    <div class="b1-form-head">
-      <p class="kicker" style="color:var(--terra);">Pre-orders open</p>
-      <h2>Pre-order before I <em>bake</em>.</h2>
-      <p class="sub">Select your quantity and pickup window. Your payment is handled securely by Payrexx. If the threshold is not reached by Sat 23 May, every payment is refunded automatically.</p>
+  <div class="wrap"><div class="b1-cs-inner">
+    <p class="kicker">Pre-orders open</p>
+    <h2>Sunday <em>17 May 2026</em>.</h2>
+    <p>Pre-orders aren't open yet. Come back Sunday at 11:00, or leave your email below and I'll write to you the moment it does.</p>
+    <div class="b1-cs-dates">
+      <div class="b1-cs-date">
+        <p class="lbl">Opens</p>
+        <p class="val">Sun 17 May<br/>11:00</p>
+      </div>
+      <div class="b1-cs-date">
+        <p class="lbl">Closes</p>
+        <p class="val">Fri 22 May<br/>12:00</p>
+      </div>
+      <div class="b1-cs-date">
+        <p class="lbl">Pickup</p>
+        <p class="val">Sat 23 May<br/>11:00 sharp</p>
+      </div>
     </div>
-    <div class="b1-form-card">
-      <form id="batch003-form" novalidate>
-        <div class="b1-bags-row" style="margin-bottom:18px;">
-          <label>
-            <span class="f-label">How many portions? *</span>
-            <select class="f-input" name="portions" id="bags-select">
-              <option value="1" selected>1 portion &mdash; CHF 9.00</option>
-              <option value="2">2 portions &mdash; CHF 18.00</option>
-              <option value="3">3 portions &mdash; CHF 27.00</option>
-              <option value="4">4 portions &mdash; CHF 36.00</option>
-              <option value="5">5 portions &mdash; CHF 45.00</option>
-            </select>
-          </label>
-          <div class="b1-total">
-            <p class="b1-total-lbl">You pay</p>
-            <p class="b1-total-val" id="total-display">CHF 9.00</p>
-          </div>
-        </div>
-        <label style="margin-bottom:18px;">
-          <span class="f-label">Pickup window *</span>
-          <select class="f-input" name="pickup_window" id="pickup-select">
-            <option value="" disabled selected>Choose your window</option>
-            <option value="Sunday 25 May 10:00-12:00">Sunday 25 May &mdash; 10:00 to 12:00</option>
-            <option value="Sunday 25 May 13:00-15:00">Sunday 25 May &mdash; 13:00 to 15:00</option>
-          </select>
-        </label>
-        <label style="margin-bottom:22px;">
-          <span class="f-label">Notes (optional)</span>
-          <textarea class="f-input" name="notes" placeholder="Allergies, questions, or anything else."></textarea>
-        </label>
-        <div class="b1-form-result err" id="form-error" role="alert" style="display:none;">
-          <p id="form-error-msg">Please fill in all required fields.</p>
-        </div>
-        <button type="submit" class="b1-form-submit" id="submit-btn">
-          Continue to payment &mdash; CHF <span id="btn-total">9.00</span> on Payrexx &rarr;
-        </button>
-        <p style="margin-top:16px;font-size:12px;color:rgba(245,239,228,.4);text-align:center;letter-spacing:.04em;">
-          You will be redirected to Payrexx to complete your payment securely.<br/>
-          <span style="opacity:.7;">TWINT &middot; PostFinance &middot; Visa &middot; Mastercard &middot; Apple Pay &middot; Google Pay</span>
-        </p>
+    <p class="punch">Open Sunday. Close Friday. Pickup Saturday. Every batch, every week.</p>
+    <div class="b1-cs-notify">
+      <p class="lbl">Be the first to know</p>
+      <h3>Get a heads-up when batch 003 opens.</h3>
+      <p class="sub2">One email, Sunday morning. No noise.</p>
+      <form class="b1-cs-form" id="b1-cs-form-003" action="https://formspree.io/f/mpqkvvnk" method="POST">
+        <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
+        <input type="hidden" name="source" value="batch-003-coming-soon"/>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+        <input type="email" name="email" placeholder="your@email.ch" required aria-label="Email address"/>
+        <button type="submit">Notify me &rarr;</button>
       </form>
+      <div class="b1-cs-result" id="b1-cs-result-003" role="status" aria-live="polite"></div>
     </div>
   </div></div>
 </section>
@@ -330,7 +329,7 @@
   <div class="footer-payments">
     <span class="footer-payments-label">Payments handled by</span>
     <a href="https://www.payrexx.com" target="_blank" rel="noopener" class="footer-payments-name">Payrexx</a>
-    <span class="footer-payments-methods">TWINT &middot; PostFinance &middot; Visa &middot; Mastercard &middot; Apple Pay &middot; Google Pay</span>
+    <span class="footer-payments-methods">TWINT &middot; Visa &middot; Mastercard</span>
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
@@ -338,61 +337,27 @@
 </div></footer>
 
 <script>
-var PAYREXX_LINKS = {
-  '1': '',
-  '2': '',
-  '3': '',
-  '4': '',
-  '5': ''
-};
 (function(){
-  var PRICE=9.0;
-  var select=document.getElementById('bags-select');
-  var display=document.getElementById('total-display');
-  var btnTotal=document.getElementById('btn-total');
-  if(!select) return;
-  function update(){var n=parseInt(select.value,10)||1;var t=(n*PRICE).toFixed(2);if(display)display.textContent='CHF '+t;if(btnTotal)btnTotal.textContent=t;}
-  select.addEventListener('change',update);update();
-})();
-(function(){
-  var form=document.getElementById('batch003-form');
-  var errBox=document.getElementById('form-error');
-  var errMsg=document.getElementById('form-error-msg');
-  var btn=document.getElementById('submit-btn');
-  if(!form) return;
-  function showError(msg){errMsg.textContent=msg;errBox.style.display='block';errBox.scrollIntoView({behavior:'smooth',block:'center'});}
-  function hideError(){errBox.style.display='none';}
-  form.addEventListener('submit',function(e){
-    e.preventDefault();hideError();
-    var portions=form.querySelector('[name="portions"]').value;
-    var pickup=form.querySelector('[name="pickup_window"]').value;
-    if(!pickup) return showError('Please choose your pickup window.');
-    var link=PAYREXX_LINKS[portions];
-    if(!link) return showError('Payment is being set up — please try again shortly or write to hello@soloquando.ch.');
-    try{sessionStorage.setItem('sq_ergolavoi_order',JSON.stringify({portions:portions,pickup:pickup,total:(parseInt(portions)*9).toFixed(2)}));}catch(err){}
-    btn.textContent='Redirecting to Payrexx…';btn.disabled=true;
-    window.location.href=link;
+  var form=document.getElementById('b1-cs-form-003');
+  var out=document.getElementById('b1-cs-result-003');
+  if(!form||!out) return;
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn=form.querySelector('button[type=submit]');
+    btn.disabled=true; btn.textContent='Saving';
+    try{
+      var r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(r.ok){
+        form.style.display='none';
+        out.style.display='block';
+        out.innerHTML='<p>You are on the list. I will write to you Sunday morning.</p>';
+      } else {
+        form.submit();
+      }
+    } catch(err) {
+      form.submit();
+    }
   });
-})();
-(function(){
-  var MIN=8,MAX=40;
-  var countEl=document.getElementById('reserved-count');
-  var reserved=countEl?parseInt(countEl.textContent,10):0;
-  var bar=document.getElementById('progress-bar');
-  var marker=document.getElementById('threshold-marker');
-  var pct=Math.min(100,Math.round((reserved/MAX)*100));
-  var minPct=Math.round((MIN/MAX)*100);
-  if(bar){bar.style.width=pct+'%';}
-  if(marker){marker.style.left=minPct+'%';}
-  var kicker=document.getElementById('status-kicker');
-  if(kicker&&reserved<MAX){
-    if(reserved>=MIN){var rem=MAX-reserved;kicker.textContent='Threshold reached. The batch is happening. '+rem+(rem===1?' portion':' portions')+' remaining.';}
-    else{var needed=MIN-reserved;kicker.textContent=needed+(needed===1?' portion':' portions')+' away from confirming this batch.';}
-  }
-  if(reserved>=MAX){
-    var fs=document.getElementById('reserve');
-    if(fs){fs.outerHTML='<section class="b1-section alt" id="reserve"><div class="wrap"><div class="b1-section-inner"><p class="kicker" style="color:var(--terra);">Sold out</p><h2 style="margin-top:14px;">Thank you. Batch 003 is <em>full</em>.</h2><p>All 40 portions are spoken for.</p></div></div></section>';}
-  }
 })();
 </script>
 <script src="/shared.js"></script>

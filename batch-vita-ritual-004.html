@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Batch 004: VITA.RITUAL by Anca &middot; solo.quando</title>
+<meta name="description" content="VITA.RITUAL Power Box by Anca &mdash; no-sugar, vegan energy balls with ceremonial matcha from Uji, Kyoto. Pre-orders open Sun 24 May 2026 at 11:00."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
+@media(max-width:720px){.nav-inner{padding:0 22px;height:72px;}}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo img{height:72px;width:auto;display:block;}
+@media(max-width:720px){.nav-logo img{height:32px;}}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:16px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
+.nav-links a:hover,.nav-links a.on{color:var(--terra);}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:10px;margin-left:8px;}
+.nav-burger span{display:block;width:24px;height:2px;background:var(--ink);transition:all .28s ease;transform-origin:center;}
+@media(max-width:920px){
+  .nav-links{display:none;position:fixed;top:88px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
+  .nav-links.open{display:flex;}
+  .nav-links li{border-bottom:1px solid var(--line);}
+  .nav-links a{display:block;padding:20px 24px;font-size:18px;color:var(--ink);}
+  .nav-burger{display:flex;}
+  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+}
+@media(max-width:720px){
+  .nav-links{top:72px;}
+}
+</style>
+<style>
+.batch-back{padding:32px 0 16px;background:var(--bone);}
+.batch-back a{font-size:14px;color:var(--dim);text-decoration:none;letter-spacing:.04em;transition:color .2s;}
+.batch-back a:hover{color:var(--terra);}
+.b1-hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;background:var(--bone);}
+@media(max-width:860px){.b1-hero{grid-template-columns:1fr;min-height:auto;}}
+.b1-hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;}
+@media(max-width:720px){.b1-hero-text{padding:60px 22px;}}
+.b1-hero h1{font-size:clamp(40px,4.6vw,60px);line-height:1.05;letter-spacing:-.025em;margin:14px 0 18px;}
+.b1-hero h1 em{color:var(--terra);font-style:italic;}
+.b1-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:460px;line-height:1.55;margin-bottom:18px;}
+.b1-hero .baker{font-size:14px;color:var(--dim);letter-spacing:.04em;}
+.b1-hero .baker strong{color:var(--ink);font-weight:400;}
+.b1-hero-img{position:relative;overflow:hidden;background:var(--paper);}
+.b1-hero-img img{width:100%;height:100%;object-fit:cover;display:block;}
+@media(max-width:860px){.b1-hero-img{height:60vw;min-height:300px;}}
+/* Text-only hero panel (used when no image) */
+.b1-hero-panel{position:relative;background:var(--paper);display:flex;align-items:center;justify-content:center;padding:60px 48px;border-left:1px solid var(--line);}
+@media(max-width:860px){.b1-hero-panel{border-left:none;border-top:1px solid var(--line);padding:64px 32px;min-height:auto;}}
+.b1-hero-panel-inner{text-align:center;max-width:340px;}
+.b1-hero-panel-kicker{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:24px;}
+.b1-hero-panel-trio{font-family:'Jost',sans-serif;font-weight:400;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);line-height:1.6;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;align-items:center;}
+.b1-hero-panel-trio .dot{color:var(--terra);}
+.b1-hero-panel-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--dim);margin-top:18px;line-height:1.5;}
+.b1-hero-panel-divider{width:36px;height:1px;background:var(--terra);margin:32px auto;}
+.b1-hero-panel-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--ink);line-height:1.55;}
+.b1-hero-specs{display:flex;gap:24px;margin-top:22px;flex-wrap:wrap;}
+.b1-hero-specs div{display:flex;flex-direction:column;gap:3px;}
+.sk{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);}
+.sv{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);}
+
+.b1-progress{padding:56px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.b1-progress-inner{max-width:780px;margin:0 auto;text-align:center;padding:0 24px;}
+.b1-progress-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px;}
+@media(max-width:600px){.b1-progress-stats{grid-template-columns:1fr 1fr;}}
+.b1-progress-stats .stat .k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);}
+.b1-progress-stats .stat .v{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,52px);font-weight:400;line-height:1;margin-top:6px;color:var(--ink);}
+.b1-progress-stats .stat .v em{font-style:italic;color:var(--terra);}
+.b1-progress-stats .stat .sub{font-size:12px;color:var(--dim);margin-top:4px;}
+.b1-progress-track{height:6px;background:rgba(43,26,15,.08);position:relative;border-radius:3px;overflow:visible;max-width:480px;margin:0 auto;}
+.b1-progress-bar{height:100%;background:var(--terra);border-radius:3px;transition:width .6s ease;}
+.threshold-marker{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--ink);border-radius:1px;}
+.b1-progress-legend{display:flex;justify-content:space-between;margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);max-width:480px;margin-left:auto;margin-right:auto;}
+
+.b1-section{padding:80px 0;}
+.b1-section.alt{background:var(--paper);}
+.b1-section.ink{background:var(--ink);color:var(--bone);}
+.b1-section.ink h2{color:var(--bone);}
+.b1-section.ink p{color:rgba(245,239,228,.75);}
+.b1-section.ink .kicker{color:var(--terra);}
+.b1-section-inner{max-width:780px;margin:0 auto;}
+.b1-section h2{font-size:clamp(32px,4vw,46px);letter-spacing:-.02em;margin-bottom:22px;line-height:1.1;}
+.b1-section h2 em{color:var(--terra);font-style:italic;}
+.b1-section p{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:16px;}
+.b1-section.ink p{color:rgba(245,239,228,.78);}
+.pullquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;line-height:1.55;border-left:3px solid var(--terra);padding-left:24px;margin:28px 0;color:var(--ink);}
+.b1-section.ink .pullquote{color:var(--bone);border-left-color:var(--terra);}
+
+.b1-spec{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px;}
+@media(max-width:680px){.b1-spec{grid-template-columns:1fr;gap:18px;}}
+.b1-spec-item{padding:24px 26px;background:var(--bone);border:1px solid var(--line);}
+.b1-spec-item h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
+.b1-spec-item p{font-size:16px;line-height:1.6;color:var(--ink);margin:0;}
+.b1-spec-item .small{font-size:13px;color:var(--dim);margin-top:8px;}
+
+/* The three balls */
+.b1-balls{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;}
+@media(max-width:860px){.b1-balls{grid-template-columns:1fr;gap:18px;}}
+.b1-ball-card{background:var(--bone);border:1px solid var(--line);padding:32px 28px;display:flex;flex-direction:column;}
+.b1-ball-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:36px;color:var(--terra);line-height:1;margin-bottom:12px;}
+.b1-ball-card h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:24px;letter-spacing:-.01em;color:var(--ink);margin-bottom:6px;line-height:1.15;}
+.b1-ball-card .ball-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--dim);margin-bottom:18px;}
+.b1-ball-card .ball-ing{font-size:14px;line-height:1.65;color:var(--dim);padding-top:16px;border-top:1px solid var(--line);}
+.b1-ball-card .ball-ing strong{color:var(--ink);font-weight:400;font-size:11px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:8px;}
+
+.b1-pickup-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px;}
+@media(max-width:680px){.b1-pickup-grid{grid-template-columns:1fr;gap:14px;}}
+.b1-pickup-card{padding:24px 20px;background:var(--bone);border:1px solid var(--line);}
+.b1-pickup-card .lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
+.b1-pickup-card .val{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--ink);line-height:1.3;margin-bottom:8px;}
+.b1-pickup-card .note{font-size:14px;color:var(--dim);line-height:1.5;}
+
+/* Form */
+.b1-form-s{padding:96px 0;background:var(--ink);color:var(--bone);}
+.b1-form-inner{max-width:680px;margin:0 auto;}
+.b1-form-head{text-align:center;margin-bottom:48px;}
+.b1-form-head h2{font-size:clamp(36px,4.6vw,56px);color:var(--bone);margin-bottom:16px;letter-spacing:-.02em;line-height:1.05;}
+.b1-form-head h2 em{color:var(--terra);font-style:italic;}
+.b1-form-head .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:rgba(245,239,228,.75);line-height:1.5;}
+.b1-form-card{background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.1);padding:40px 36px;}
+@media(max-width:560px){.b1-form-card{padding:28px 22px;}}
+.b1-form-card label{display:block;margin-bottom:18px;}
+.b1-form-card .f-label{display:block;color:rgba(245,239,228,.7);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
+.b1-form-card .f-input{width:100%;padding:14px 16px;background:rgba(245,239,228,.06);border:1px solid rgba(245,239,228,.18);color:var(--bone);font-family:'Jost',sans-serif;font-size:17px;outline:none;transition:border-color .2s,background .2s;}
+.b1-form-card .f-input::placeholder{color:rgba(245,239,228,.4);}
+.b1-form-card .f-input:focus{border-color:rgba(245,239,228,.4);background:rgba(245,239,228,.09);}
+.b1-form-card textarea.f-input{resize:vertical;min-height:90px;font-family:'Jost',sans-serif;line-height:1.5;}
+
+/* Two-option product picker */
+.b1-options{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+@media(max-width:560px){.b1-options{grid-template-columns:1fr;}}
+.b1-option{padding:20px 22px;background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.18);cursor:pointer;transition:border-color .2s,background .2s;}
+.b1-option:hover{border-color:rgba(245,239,228,.4);}
+.b1-option input{position:absolute;opacity:0;pointer-events:none;}
+.b1-option.is-active{border-color:var(--terra);background:rgba(194,102,61,.1);}
+.b1-option-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--bone);line-height:1.2;margin-bottom:4px;}
+.b1-option-title em{font-style:italic;color:var(--terra);}
+.b1-option-desc{font-size:13px;color:rgba(245,239,228,.6);line-height:1.45;margin-bottom:8px;}
+.b1-option-price{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--bone);}
+
+.b1-bags-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;}
+@media(max-width:560px){.b1-bags-row{grid-template-columns:1fr;}}
+.b1-total{padding:16px;background:rgba(194,102,61,.1);border:1px solid rgba(194,102,61,.3);text-align:center;}
+.b1-total-lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,239,228,.65);margin-bottom:4px;}
+.b1-total-val{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--bone);line-height:1;}
+.b1-form-result{display:none;padding:18px 22px;margin-top:14px;}
+.b1-form-result.err{background:rgba(194,102,61,.08);border-left:3px solid var(--terra);}
+.b1-form-result p{font-family:'Jost',sans-serif;font-size:15px;color:var(--terra);}
+.b1-form-submit{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:18px 32px;width:100%;transition:background .2s;}
+.b1-form-submit:hover{background:#a8552a;}
+
+/* Coming-soon overrides */
+.badge.cs-badge{background:rgba(122,139,106,.1);border-color:rgba(122,139,106,.28);}
+.badge.cs-badge .badge-dot{background:var(--sage);animation:none;}
+.badge.cs-badge span{color:var(--sage);}
+/* Coming-soon block (replaces order form section) */
+.b1-cs-inner{max-width:760px;margin:0 auto;text-align:center;}
+.b1-cs-inner .kicker{color:var(--terra);}
+.b1-cs-inner h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(40px,5.2vw,64px);letter-spacing:-.025em;line-height:1.05;margin:14px 0 28px;color:var(--bone);}
+.b1-cs-inner h2 em{color:var(--terra);font-style:italic;}
+.b1-cs-inner p{font-size:18px;line-height:1.7;color:rgba(245,239,228,.78);margin-bottom:18px;}
+.b1-cs-inner p.punch{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--bone);margin-top:24px;}
+.b1-cs-dates{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:48px 0 32px;}
+@media(max-width:600px){.b1-cs-dates{grid-template-columns:1fr;gap:14px;}}
+.b1-cs-date{padding:24px 22px;background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.14);}
+.b1-cs-date .lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
+.b1-cs-date .val{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--bone);line-height:1.3;}
+.b1-cs-notify{margin-top:48px;padding:36px 32px;background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.14);}
+.b1-cs-notify p.lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;text-align:center;}
+.b1-cs-notify h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:24px;color:var(--bone);text-align:center;margin-bottom:8px;}
+.b1-cs-notify .sub2{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:rgba(245,239,228,.65);text-align:center;margin-bottom:22px;}
+.b1-cs-form{display:flex;max-width:440px;margin:0 auto;}
+@media(max-width:520px){.b1-cs-form{flex-direction:column;gap:10px;}}
+.b1-cs-form input[type=email]{flex:1;padding:14px 16px;background:rgba(245,239,228,.06);border:1px solid rgba(245,239,228,.18);border-right:none;color:var(--bone);font-family:'Jost',sans-serif;font-size:15px;outline:none;transition:border-color .2s,background .2s;}
+@media(max-width:520px){.b1-cs-form input[type=email]{border-right:1px solid rgba(245,239,228,.18);}}
+.b1-cs-form input[type=email]::placeholder{color:rgba(245,239,228,.4);}
+.b1-cs-form input[type=email]:focus{border-color:rgba(245,239,228,.4);background:rgba(245,239,228,.09);}
+.b1-cs-form button{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:14px 22px;white-space:nowrap;transition:background .2s;}
+.b1-cs-form button:hover{background:#a8552a;}
+.b1-cs-form button:disabled{opacity:.6;cursor:wait;}
+.b1-cs-result{max-width:440px;margin:10px auto 0;display:none;}
+.b1-cs-result p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--bone);text-align:center;}
+
+
+.b1-full{padding:80px 32px;background:rgba(122,139,106,.12);border:1px solid rgba(122,139,106,.4);text-align:center;}
+.b1-full h2{font-size:clamp(36px,4.6vw,56px);color:var(--ink);margin-bottom:18px;letter-spacing:-.02em;line-height:1.05;}
+.b1-full h2 em{color:var(--terra);font-style:italic;}
+.b1-full p{font-size:18px;color:var(--dim);margin-bottom:28px;}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-logo" aria-label="solo.quando home"><img src="logo-nav.webp" alt="solo.quando" width="126" height="72"/></a>
+  <ul class="nav-links" id="main-nav"><li><a href="/">Home</a></li><li><a href="/products" class="on">Batches</a></li><li><a href="/how-it-works">How it works</a></li><li><a href="/our-story">Our story</a></li><li><a href="/bake-with-us">Bake with us</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul>
+  <div style="display:flex;align-items:center;">
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div></nav>
+
+<div class="batch-back"><div class="wrap"><a href="/products">&larr; Back to all batches</a></div></div>
+
+<header class="b1-hero">
+  <div class="b1-hero-text">
+    <div class="badge cs-badge"><span class="badge-dot"></span><span>Coming soon</span></div>
+    <p class="kicker">Batch 004 &middot; coming soon</p>
+    <h1><em>VITA.RITUAL</em>.<br/>Power Box.</h1>
+    <p class="sub">Handmade vegan energy balls. No refined sugar. Made with ceremonial matcha brought back from Uji, Kyoto.</p>
+    <p class="baker"><strong>By Anca</strong> &middot; Z&uuml;rich</p>
+    <div class="b1-hero-specs">
+      <div><span class="sk">Trio</span><span class="sv">CHF 7</span></div>
+      <div><span class="sk">Six</span><span class="sv">CHF 14</span></div>
+      <div><span class="sk">Order</span><span class="sv">1 to 5 boxes</span></div>
+    </div>
+  </div>
+  <div class="b1-hero-panel" aria-hidden="true">
+    <div class="b1-hero-panel-inner">
+      <p class="b1-hero-panel-kicker">A box of six</p>
+      <p class="b1-hero-panel-trio"><span>VITA.M</span><span class="dot">&middot;</span><span>VITA.BRAIN</span><span class="dot">&middot;</span><span>VITA.REST</span></p>
+      <p class="b1-hero-panel-line">Morning. Midday. Evening.</p>
+      <div class="b1-hero-panel-divider"></div>
+      <p class="b1-hero-panel-quote">&ldquo;Made only when you want it.&rdquo;</p>
+    </div>
+  </div>
+</header>
+
+
+
+<section class="b1-section">
+  <div class="wrap"><div class="b1-section-inner">
+    <p class="kicker">The story</p>
+    <h2 style="margin-top:14px;">From a tea house in <em>Uji</em>, to a kitchen in Z&uuml;rich.</h2>
+    <p style="margin-top:28px;">Anca recently came back from Japan with something she couldn&rsquo;t stop thinking about. Not a souvenir. A ritual.</p>
+    <p>The way people there reach for matcha instead of a fifth coffee. Steady, calm, no crash. She brought some ceremonial matcha home with her and started making something around it &mdash; small daily rituals for busy lives.</p>
+    <p>That is how the VITA.RITUAL Power Box was born. Six handmade balls. No refined sugar. Real ingredients, in small batches, made only when enough people reserve.</p>
+    <p class="pullquote">&ldquo;I want this to feel like a small ritual, not a snack. Something you keep for yourself, on the days that ask for it.&rdquo; &mdash; Anca</p>
+  </div></div>
+</section>
+
+<section class="b1-section ink">
+  <div class="wrap"><div class="b1-section-inner">
+    <p class="kicker">The matcha</p>
+    <h2 style="margin-top:14px;">Morihan, Uji. <em>Since 1836.</em></h2>
+    <p style="margin-top:28px;">The matcha in these balls is not a generic powder. It is from Morihan (&#26862;&#21322;), a tea house in Uji, Kyoto, founded in 1836. Nearly two hundred years of growing, picking, and stone-grinding tea in the region considered the home of Japanese matcha.</p>
+    <p class="pullquote">Morihan is the brand of Kyoeiseicha Co., Ltd. &mdash; a vertically integrated producer that grows, processes, and packages its own tea. Twice winner of the National Tea Appraisal and Tasting Competition in Japan.</p>
+    <p>Anca brought a batch back personally. This is what is in your matcha balls. There is no equivalent in any Swiss shop.</p>
+  </div></div>
+</section>
+
+<section class="b1-section">
+  <div class="wrap"><div class="b1-section-inner">
+    <p class="kicker">What's in the box</p>
+    <h2 style="margin-top:14px;">Three rituals. <em>One box.</em></h2>
+    <p>Six balls, two of each kind, made for three moments in your day. All vegan. All organic. No refined sugar.</p>
+
+    <div class="b1-balls">
+      <div class="b1-ball-card">
+        <div class="b1-ball-num">01</div>
+        <h3>VITA.M</h3>
+        <p class="ball-tag">The morning uplift.</p>
+        <p class="ball-ing"><strong>Ingredients</strong>Organic Medjool dates, organic cashews, organic Morihan matcha, organic coconut oil.</p>
+      </div>
+      <div class="b1-ball-card">
+        <div class="b1-ball-num">02</div>
+        <h3>VITA.BRAIN</h3>
+        <p class="ball-tag">The midday pulse.</p>
+        <p class="ball-ing"><strong>Ingredients</strong>Organic Medjool dates, organic walnuts, organic cacao, organic coconut oil.</p>
+      </div>
+      <div class="b1-ball-card">
+        <div class="b1-ball-num">03</div>
+        <h3>VITA.REST</h3>
+        <p class="ball-tag">The evening grounding.</p>
+        <p class="ball-ing"><strong>Ingredients</strong>Organic Medjool dates, organic almonds, organic pumpkin seeds, organic oats, organic coconut oil, organic cinnamon.</p>
+      </div>
+    </div>
+
+    <div class="b1-spec" style="margin-top:36px;">
+      <div class="b1-spec-item">
+        <h4>Two ways to order</h4>
+        <p>The Trio &mdash; one of each, three balls.</p>
+        <p>The Six &mdash; two of each, six balls.</p>
+        <p class="small">Made by hand in a home kitchen, individually wrapped.</p>
+      </div>
+      <div class="b1-spec-item">
+        <h4>Allergens to know</h4>
+        <p>Contains tree nuts (cashews, walnuts, almonds), oats, sesame is not used.</p>
+        <p class="small">Made in a home kitchen that handles other allergens. Cross-contamination is possible.</p>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<section class="b1-section alt">
+  <div class="wrap"><div class="b1-section-inner">
+    <p class="kicker">Pickup</p>
+    <h2 style="margin-top:14px;">Saturday morning. <em>11:00 sharp.</em></h2>
+    <p>One day, one moment. The exact pickup address is sent to you the day before. Quiet, central, walkable from a tram stop.</p>
+    <div class="b1-pickup-grid">
+      <div class="b1-pickup-card">
+        <p class="lbl">Saturday 30 May 2026</p>
+        <p class="val">11:00 sharp.</p>
+        <p class="note">Made the morning of. Bring a friend if you like. The ones who collect together, stay together.</p>
+      </div>
+      <div class="b1-pickup-card">
+        <p class="lbl">The ritual</p>
+        <p class="val">Open Sunday. Close Friday. Pickup Saturday.</p>
+        <p class="note">Every solo.quando batch follows the same rhythm. So you always know where to find us.</p>
+      </div>
+    </div>
+    <p style="margin-top:28px;font-size:15px;">If 5 boxes are not pre-ordered by Fri 29 May 2026, 12:00, the batch does not happen. Every payment is refunded in full within 48 hours.</p>
+  </div></div>
+</section>
+
+<section class="b1-form-s" id="reserve">
+  <div class="wrap"><div class="b1-cs-inner">
+    <p class="kicker">Pre-orders open</p>
+    <h2>Sunday <em>24 May 2026</em>.</h2>
+    <p>Pre-orders aren't open yet. Come back Sunday at 11:00, or leave your email below and Anca will write to you the moment they do.</p>
+    <div class="b1-cs-dates">
+      <div class="b1-cs-date">
+        <p class="lbl">Opens</p>
+        <p class="val">Sun 24 May<br/>11:00</p>
+      </div>
+      <div class="b1-cs-date">
+        <p class="lbl">Closes</p>
+        <p class="val">Fri 29 May<br/>12:00</p>
+      </div>
+      <div class="b1-cs-date">
+        <p class="lbl">Pickup</p>
+        <p class="val">Sat 30 May<br/>11:00 sharp</p>
+      </div>
+    </div>
+    <p class="punch">Open Sunday. Close Friday. Pickup Saturday. Every batch, every week.</p>
+    <div class="b1-cs-notify">
+      <p class="lbl">Be the first to know</p>
+      <h3>Get a heads-up when batch 004 opens.</h3>
+      <p class="sub2">One email, Sunday 24 May. No noise.</p>
+      <form class="b1-cs-form" id="b1-cs-form-004" action="https://formspree.io/f/mpqkvvnk" method="POST">
+        <input type="hidden" name="_next" value="https://soloquando.ch/thank-you?form=waitlist"/>
+        <input type="hidden" name="source" value="batch-004-coming-soon"/>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+        <input type="email" name="email" placeholder="your@email.ch" required aria-label="Email address"/>
+        <button type="submit">Notify me &rarr;</button>
+      </form>
+      <div class="b1-cs-result" id="b1-cs-result-004" role="status" aria-live="polite"></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="share-quiet">
+  <div class="wrap">
+    <p class="share-quiet-line">
+      <em>Know someone who would love a power box?</em>
+      <button class="share-quiet-link" data-share-title="VITA.RITUAL Power Box &mdash; solo.quando" data-share-text="Saw this and thought of you. Vegan energy balls made with ceremonial matcha from Kyoto, by Anca in Z&uuml;rich. Pre-order before she makes them." aria-label="Share this batch">
+        Share with a friend
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+      </button>
+      <span class="share-quiet-feedback" aria-live="polite"></span>
+    </p>
+  </div>
+</section>
+
+<footer class="footer"><div class="wrap">
+  <div class="footer-grid">
+    <div>
+      <img src="logo-footer.webp" alt="solo.quando" class="footer-logo-img" width="140" height="80" loading="lazy"/>
+      <p class="footer-tagline">Made only when you want it.</p>
+    </div>
+    <div class="footer-col"><h5>Discover</h5><ul>
+      <li><a href="/how-it-works">How it works</a></li>
+      <li><a href="/our-story">Our story</a></li>
+      <li><a href="/join">Join solo.quando</a></li>
+      <li><a href="/bake-with-us">Bake with us</a></li>
+      <li><a href="/faq">FAQ</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul>
+      <li><a href="/contact">Contact us</a></li>
+      <li><a href="mailto:hello@soloquando.ch">Email</a></li>
+      <li><a href="tel:+41787942700">Phone</a></li>
+      <li><a href="https://wa.me/message/SL244NA5ARHTL1" target="_blank" rel="noopener">WhatsApp</a></li>
+      <li><a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Legal</h5><ul>
+      <li><a href="/imprint">Imprint</a></li>
+      <li><a href="/privacy">Privacy policy</a></li>
+      <li><a href="/terms">Terms of use</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-payments">
+    <span class="footer-payments-label">Payments handled by</span>
+    <a href="https://www.payrexx.com" target="_blank" rel="noopener" class="footer-payments-name">Payrexx</a>
+    <span class="footer-payments-methods">TWINT &middot; Visa &middot; Mastercard</span>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  var form=document.getElementById('b1-cs-form-004');
+  var out=document.getElementById('b1-cs-result-004');
+  if(!form||!out) return;
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn=form.querySelector('button[type=submit]');
+    btn.disabled=true; btn.textContent='Saving';
+    try{
+      var r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(r.ok){
+        form.style.display='none';
+        out.style.display='block';
+        out.innerHTML='<p>You are on the list. We will write Sunday morning.</p>';
+      } else {
+        form.submit();
+      }
+    } catch(err) {
+      form.submit();
+    }
+  });
+})();
+</script>
+<script src="/shared.js"></script>
+
+</body>
+</html>
