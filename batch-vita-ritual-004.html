@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Batch 004: VITA.RITUAL by Anca &middot; solo.quando</title>
-<meta name="description" content="VITA.RITUAL Power Box by Anca &mdash; no-sugar, vegan energy balls with ceremonial matcha from Uji, Kyoto. Pre-orders open Sun 24 May 2026 at 11:00."/>
+<meta name="description" content="VITA.RITUAL Daily Box by Anca &mdash; no-sugar, vegan energy balls with ceremonial matcha from Uji, Kyoto. Pre-orders open now. Order by 25 May 2026."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
@@ -194,6 +194,26 @@
 .b1-full h2{font-size:clamp(36px,4.6vw,56px);color:var(--ink);margin-bottom:18px;letter-spacing:-.02em;line-height:1.05;}
 .b1-full h2 em{color:var(--terra);font-style:italic;}
 .b1-full p{font-size:18px;color:var(--dim);margin-bottom:28px;}
+
+/* Progress bar */
+.b1-progress{padding:56px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.b1-progress-inner{max-width:780px;margin:0 auto;text-align:center;padding:0 24px;}
+.b1-progress-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px;}
+@media(max-width:600px){.b1-progress-stats{grid-template-columns:1fr 1fr;}}
+.b1-progress-stats .stat .k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);}
+.b1-progress-stats .stat .v{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,52px);font-weight:400;line-height:1;margin-top:6px;color:var(--ink);}
+.b1-progress-stats .stat .v em{font-style:italic;color:var(--terra);}
+.b1-progress-stats .stat .sub{font-size:12px;color:var(--dim);margin-top:4px;}
+.b1-progress-track{height:6px;background:rgba(43,26,15,.08);position:relative;border-radius:3px;overflow:visible;max-width:480px;margin:0 auto;}
+.b1-progress-bar{height:100%;background:var(--terra);border-radius:3px;transition:width .6s ease;}
+.threshold-marker{position:absolute;top:-7px;bottom:-7px;width:3px;background:var(--ink);border-radius:1.5px;transition:left .6s ease;transform:translateX(-1.5px);}
+.threshold-marker::before{content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:var(--ink);}
+.b1-progress-legend{position:relative;margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);max-width:480px;margin-left:auto;margin-right:auto;height:18px;}
+.b1-progress-legend .lg-min,.b1-progress-legend .lg-max,.b1-progress-legend .lg-threshold{position:absolute;top:0;}
+.b1-progress-legend .lg-min{left:0;}
+.b1-progress-legend .lg-max{right:0;}
+.b1-progress-legend .lg-threshold{transform:translateX(-50%);color:var(--terra);}
+.b1-progress-legend .lg-threshold::before{content:'\25B2';display:block;font-size:10px;line-height:1;margin-bottom:2px;color:var(--terra);}
 </style>
 </head>
 <body>
@@ -211,24 +231,44 @@
 
 <header class="b1-hero">
   <div class="b1-hero-text">
-    <div class="badge cs-badge"><span class="badge-dot"></span><span>Coming soon</span></div>
-    <p class="kicker">Batch 004 &middot; coming soon</p>
-    <h1><em>VITA.RITUAL</em>.<br/>Power Box.</h1>
+    <div class="badge"><span class="badge-dot"></span><span>Pre-orders open</span></div>
+    <p class="kicker">Batch 004 &middot; pre-orders open</p>
+    <h1><em>VITA.RITUAL</em>.<br/>Daily Box.</h1>
     <p class="sub">Handmade vegan energy balls. No refined sugar. Made with ceremonial matcha brought back from Uji, Kyoto.</p>
     <p class="baker"><strong>By Anca</strong> &middot; Z&uuml;rich</p>
     <div class="b1-hero-specs">
-      <div><span class="sk">Trio</span><span class="sv">CHF 7</span></div>
-      <div><span class="sk">Six</span><span class="sv">CHF 14</span></div>
-      <div><span class="sk">Order</span><span class="sv">1 to 5 boxes</span></div>
+      <div><span class="sk">Trio &mdash; 3 balls</span><span class="sv">CHF 7.70</span></div>
+      <div><span class="sk">Six &mdash; 6 balls</span><span class="sv">CHF 15.40</span></div>
+      <div><span class="sk">Order</span><span class="sv">1&ndash;5 boxes</span></div>
     </div>
   </div>
   <div class="b1-hero-img">
-    <picture>
-      <source type="image/webp" srcset="vita-ritual-hero-900.webp 900w, vita-ritual-hero-1200.webp 1200w" sizes="(max-width:860px) 100vw, 50vw"/>
-      <img src="vita-ritual-hero-900.webp" alt="VITA.RITUAL energy balls on a stone slab beside a matcha bowl, with the brand mark and tagline Daily Rituals Naturally" fetchpriority="high"/>
-    </picture>
+    <picture><source type="image/jpeg" srcset="/vita-ritual-600.jpg 600w, /vita-ritual-900.jpg 900w" sizes="(max-width:860px) 100vw, 50vw"><img src="/vita-ritual-900.jpg?v=2" alt="VITA.RITUAL energy balls on a stone slab beside a ceramic matcha bowl. Made with intention. Made in Zurich." loading="eager" decoding="async" width="900" height="900" style="width:100%;height:100%;object-fit:cover;display:block;"/></picture>
   </div>
 </header>
+
+<section class="b1-progress">
+  <div class="wrap b1-progress-inner">
+    <div class="b1-progress-stats">
+      <div class="stat"><div class="k">Pre-ordered</div><div class="v"><em id="reserved-count">0</em></div><div class="sub">boxes so far</div></div>
+      <div class="stat"><div class="k">Minimum threshold</div><div class="v">5</div><div class="sub">boxes needed for the batch to happen</div></div>
+      <div class="stat"><div class="k">Maximum capacity</div><div class="v">60</div><div class="sub">boxes total &mdash; hard cap</div></div>
+    </div>
+    <div class="b1-progress-track">
+      <div class="b1-progress-bar" id="progress-bar" style="width:0%;"></div>
+      <div class="threshold-marker" id="threshold-marker" style="left:0%;"></div>
+    </div>
+    <div class="b1-progress-legend">
+      <span class="lg-min">0</span>
+      <span class="lg-threshold" id="threshold-legend" style="left:8.3%;">min (5)</span>
+      <span class="lg-max">max (60)</span>
+    </div>
+    <p class="kicker" id="status-kicker" style="color:var(--terra);margin-top:28px;">5 boxes away from confirming this batch.</p>
+    <p style="font-size:14px;color:var(--dim);margin-top:6px;">
+      <strong>Pre-order by:</strong> Mon 25 May 2026, midnight
+    </p>
+  </div>
+</section>
 
 
 
@@ -238,7 +278,7 @@
     <h2 style="margin-top:14px;">From a tea house in <em>Uji</em>, to a kitchen in Z&uuml;rich.</h2>
     <p style="margin-top:28px;">Anca recently came back from Japan with something she couldn&rsquo;t stop thinking about. Not a souvenir. A ritual.</p>
     <p>The way people there reach for matcha instead of a fifth coffee. Steady, calm, no crash. She brought some ceremonial matcha home with her and started making something around it &mdash; small daily rituals for busy lives.</p>
-    <p>That is how the VITA.RITUAL Power Box was born. Six handmade balls. No refined sugar. Real ingredients, in small batches, made only when enough people reserve.</p>
+    <p>That is how the VITA.RITUAL Daily Box was born. Six handmade balls. No refined sugar. Real ingredients, in small batches, made only when enough people reserve.</p>
     <p class="pullquote">&ldquo;I want this to feel like a small ritual, not a snack. Something you keep for yourself, on the days that ask for it.&rdquo; &mdash; Anca</p>
   </div></div>
 </section>
@@ -249,7 +289,7 @@
     <h2 style="margin-top:14px;">Morihan, Uji. <em>Since 1836.</em></h2>
     <p style="margin-top:28px;">The matcha in these balls is not a generic powder. It is from Morihan (&#26862;&#21322;), a tea house in Uji, Kyoto, founded in 1836. Nearly two hundred years of growing, picking, and stone-grinding tea in the region considered the home of Japanese matcha.</p>
     <p class="pullquote">Morihan is the brand of Kyoeiseicha Co., Ltd. &mdash; a vertically integrated producer that grows, processes, and packages its own tea. Twice winner of the National Tea Appraisal and Tasting Competition in Japan.</p>
-    <p>Anca brought a batch back personally. This is what is in your matcha balls. There is no equivalent in any Swiss shop.</p>
+    <p>Anca brought a batch back personally. This is what is in your matcha balls.</p>
   </div></div>
 </section>
 
@@ -257,12 +297,12 @@
   <div class="wrap"><div class="b1-section-inner">
     <p class="kicker">What's in the box</p>
     <h2 style="margin-top:14px;">Three rituals. <em>One box.</em></h2>
-    <p>Six balls, two of each kind, made for three moments in your day. All vegan. All organic. No refined sugar.</p>
+    <p>Three flavours, made for three moments in your day. Order a Trio (one of each, 3 balls) or a Six (two of each, 6 balls). All vegan. All organic. No refined sugar.</p>
 
     <div class="b1-balls">
       <div class="b1-ball-card">
         <div class="b1-ball-num">01</div>
-        <h3>VITA.M</h3>
+        <h3>VITA.M.</h3>
         <p class="ball-tag">The morning uplift.</p>
         <p class="ball-ing"><strong>Ingredients</strong>Organic Medjool dates, organic cashews, organic Morihan matcha, organic coconut oil.</p>
       </div>
@@ -280,11 +320,18 @@
       </div>
     </div>
 
+    <figure style="margin:48px 0 0;">
+      <picture>
+        <source type="image/jpeg" srcset="/vita-ritual-lineup-900.jpg 900w, /vita-ritual-lineup-1400.jpg 1400w" sizes="(max-width:780px) 100vw, 780px"/>
+        <img src="/vita-ritual-lineup-1400.jpg" alt="The three VITA.RITUAL balls side by side: VITA.M. matcha energy with cashews and dates; VITA.BRAIN cacao walnut; VITA.REST almond and pumpkin. Below, the Trio package from Anca's kitchen in Z&uuml;rich." loading="lazy" decoding="async" style="width:100%;height:auto;display:block;"/>
+      </picture>
+    </figure>
+
     <div class="b1-spec" style="margin-top:36px;">
       <div class="b1-spec-item">
         <h4>Two ways to order</h4>
-        <p>The Trio &mdash; one of each, three balls.</p>
-        <p>The Six &mdash; two of each, six balls.</p>
+        <p>The <strong>Trio</strong> &mdash; one of each. Three balls. CHF 7.70.</p>
+        <p>The <strong>Six</strong> &mdash; two of each. Six balls. CHF 15.40.</p>
         <p class="small">Made by hand in a home kitchen, individually wrapped.</p>
       </div>
       <div class="b1-spec-item">
@@ -299,64 +346,119 @@
 <section class="b1-section alt">
   <div class="wrap"><div class="b1-section-inner">
     <p class="kicker">Pickup</p>
-    <h2 style="margin-top:14px;">Saturday morning. <em>11:00 sharp.</em></h2>
-    <p>One day, one moment. The exact pickup address is sent to you the day before. Quiet, central, walkable from a tram stop.</p>
+    <h2 style="margin-top:14px;">Two moments. <em>Your choice.</em></h2>
+    <p>Choose whichever day works for you. The exact address for each is confirmed the day before.</p>
     <div class="b1-pickup-grid">
+      <div class="b1-pickup-card">
+        <p class="lbl">Friday 29 May 2026</p>
+        <p class="val">17:00 &ndash; 20:00</p>
+        <p class="note">Kloten. Come by when you're ready. Anca will be home.</p>
+      </div>
       <div class="b1-pickup-card">
         <p class="lbl">Saturday 30 May 2026</p>
         <p class="val">11:00 sharp.</p>
-        <p class="note">Made the morning of. Bring a friend if you like. The ones who collect together, stay together.</p>
-      </div>
-      <div class="b1-pickup-card">
-        <p class="lbl">The ritual</p>
-        <p class="val">Open Sunday. Close Friday. Pickup Saturday.</p>
-        <p class="note">Every solo.quando batch follows the same rhythm. So you always know where to find us.</p>
+        <p class="note">Central Z&uuml;rich. Baked fresh that morning. Quiet, walkable from a tram stop.</p>
       </div>
     </div>
-    <p style="margin-top:28px;font-size:15px;">If 5 boxes are not pre-ordered by Fri 29 May 2026, 12:00, the batch does not happen. Every payment is refunded in full within 48 hours.</p>
+    <p style="margin-top:28px;font-size:15px;">This batch happens only if at least 5 boxes are reserved by 25 May. Anca makes everything by hand in her own kitchen, so the batch caps at 60 boxes and ordering closes early once that's reached. If the minimum isn't met, every payment is returned in full. You are not charged until the batch is confirmed.</p>
   </div></div>
 </section>
 
 <section class="b1-form-s" id="reserve">
-  <div class="wrap"><div class="b1-cs-inner">
-    <p class="kicker">Pre-orders open</p>
-    <h2>Sunday <em>24 May 2026</em>.</h2>
-    <p>Pre-orders aren't open yet. Come back Sunday at 11:00, or leave your email below and Anca will write to you the moment they do.</p>
-    <div class="b1-cs-dates">
-      <div class="b1-cs-date">
-        <p class="lbl">Opens</p>
-        <p class="val">Sun 24 May<br/>11:00</p>
-      </div>
-      <div class="b1-cs-date">
-        <p class="lbl">Closes</p>
-        <p class="val">Fri 29 May<br/>12:00</p>
-      </div>
-      <div class="b1-cs-date">
-        <p class="lbl">Pickup</p>
-        <p class="val">Sat 30 May<br/>11:00 sharp</p>
+  <div class="wrap">
+    <div class="b1-cs-inner">
+      <p class="kicker">Pre-orders open</p>
+      <h2>Reserve your <em>Daily Box</em>.</h2>
+      <p>Open now until Mon 25 May, midnight. Your payment is handled securely by Payrexx. If 5 boxes are not reserved by 25 May, every payment is refunded automatically.</p>
+      <div class="b1-cs-dates">
+        <div class="b1-cs-date">
+          <p class="lbl">Opens</p>
+          <p class="val">Sun 10 May<br/>Today</p>
+        </div>
+        <div class="b1-cs-date">
+          <p class="lbl">Closes</p>
+          <p class="val">Mon 25 May<br/>midnight</p>
+        </div>
+        <div class="b1-cs-date">
+          <p class="lbl">Capacity</p>
+          <p class="val">max 60 boxes</p>
+        </div>
       </div>
     </div>
-    <p class="punch">Open Sunday. Close Friday. Pickup Saturday. Every batch, every week.</p>
-    <div class="b1-cs-notify">
-      <p class="lbl">Be the first to know</p>
-      <h3>Get a heads-up when batch 004 opens.</h3>
-      <p class="sub2">One email, Sunday 24 May. No noise.</p>
-      <form class="b1-cs-form js-subscribe" id="b1-cs-form-004" data-result="#b1-cs-result-004" data-success="You are on the list. I will write to you Sunday morning.">
-        <input type="hidden" name="source" value="batch-004-coming-soon"/>
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
-        <input type="email" name="email" placeholder="your@email.ch" required aria-label="Email address"/>
-        <button type="submit">Notify me &rarr;</button>
-      </form>
-      <div class="b1-cs-result" id="b1-cs-result-004" role="status" aria-live="polite"></div>
+
+    <div class="b1-form-inner" style="margin-top:48px;">
+      <div class="b1-form-card">
+        <form id="batch004-form" novalidate>
+          <p class="f-label" style="margin-bottom:12px;">Your box *</p>
+          <div class="b1-options">
+            <label class="b1-option is-active" for="opt-trio-004">
+              <input type="radio" name="box_type" value="trio" id="opt-trio-004" checked/>
+              <p class="b1-option-title">The <em>Trio</em></p>
+              <p class="b1-option-desc">One of each ball. Three in total.</p>
+              <p class="b1-option-price">CHF 7.70 / box</p>
+            </label>
+            <label class="b1-option" for="opt-six-004">
+              <input type="radio" name="box_type" value="six" id="opt-six-004"/>
+              <p class="b1-option-title">The <em>Six</em></p>
+              <p class="b1-option-desc">Two of each ball. Six in total.</p>
+              <p class="b1-option-price">CHF 15.40 / box</p>
+            </label>
+          </div>
+
+          <div class="b1-bags-row" style="margin-bottom:18px;">
+            <label>
+              <span class="f-label">How many boxes? *</span>
+              <select class="f-input" name="boxes" id="boxes-select">
+                <option value="1" selected>1 box</option>
+                <option value="2">2 boxes</option>
+                <option value="3">3 boxes</option>
+                <option value="4">4 boxes</option>
+                <option value="5">5 boxes</option>
+              </select>
+            </label>
+            <div class="b1-total">
+              <p class="b1-total-lbl">You pay</p>
+              <p class="b1-total-val" id="total-display">CHF 7.70</p>
+            </div>
+          </div>
+
+          <label style="margin-bottom:18px;">
+            <span class="f-label">Pickup *</span>
+            <select class="f-input" name="pickup_day" id="pickup-select">
+              <option value="Friday 29 May 2026, 17:00-20:00, Kloten">Friday 29 May, 17:00&ndash;20:00 &mdash; Kloten</option>
+              <option value="Saturday 30 May 2026, 11:00 sharp, central Zurich">Saturday 30 May, 11:00 sharp &mdash; central Z&uuml;rich</option>
+            </select>
+          </label>
+
+          <label style="margin-bottom:22px;">
+            <span class="f-label">Notes (optional)</span>
+            <textarea class="f-input" name="notes" placeholder="Allergies, questions, or anything else."></textarea>
+          </label>
+
+          <div class="b1-form-result err" id="form-error" role="alert" style="display:none;">
+            <p id="form-error-msg">Please fill in all required fields.</p>
+          </div>
+
+          <button type="submit" class="b1-form-submit" id="submit-btn">
+            Reserve now &mdash; CHF <span id="btn-total">7.70</span> &rarr;
+          </button>
+
+          <p style="margin-top:16px;font-size:12px;color:rgba(245,239,228,.4);text-align:center;letter-spacing:.04em;">
+            Payment opens in a secure window without leaving this page.<br/>
+            <span style="opacity:.7;">TWINT &middot; Visa &middot; Mastercard</span>
+          </p>
+        </form>
+      </div>
     </div>
-  </div></div>
+  </div>
 </section>
+
 
 <section class="share-quiet">
   <div class="wrap">
     <p class="share-quiet-line">
-      <em>Know someone who would love a power box?</em>
-      <button class="share-quiet-link" data-share-title="VITA.RITUAL Power Box &mdash; solo.quando" data-share-text="Saw this and thought of you. Vegan energy balls made with ceremonial matcha from Kyoto, by Anca in Z&uuml;rich. Pre-order before she makes them." aria-label="Share this batch">
+      <em>Know someone who would love a daily box?</em>
+      <button class="share-quiet-link" data-share-title="VITA.RITUAL Daily Box &mdash; solo.quando" data-share-text="Saw this and thought of you. Vegan energy balls made with ceremonial matcha from Kyoto, by Anca in Z&uuml;rich. Pre-order before she makes them." aria-label="Share this batch">
         Share with a friend
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
       </button>
@@ -438,6 +540,92 @@
 </div></footer>
 
 
+<script src="/payrexx.js"></script>
+<script>
+/* Total + button price update */
+(function(){
+  var PRICE_TRIO=7.70, PRICE_SIX=15.40;
+  var trioRadio=document.getElementById('opt-trio-004');
+  var sixRadio=document.getElementById('opt-six-004');
+  var trioLabel=trioRadio?trioRadio.closest('.b1-option'):null;
+  var sixLabel=sixRadio?sixRadio.closest('.b1-option'):null;
+  var boxesSelect=document.getElementById('boxes-select');
+  var totalDisplay=document.getElementById('total-display');
+  var btnTotal=document.getElementById('btn-total');
+  if(!trioRadio||!sixRadio||!boxesSelect) return;
+  function update(){
+    if(trioRadio.checked){trioLabel.classList.add('is-active');sixLabel.classList.remove('is-active');}
+    else{sixLabel.classList.add('is-active');trioLabel.classList.remove('is-active');}
+    var n=parseInt(boxesSelect.value,10)||1;
+    var price=trioRadio.checked?PRICE_TRIO:PRICE_SIX;
+    var t=(n*price).toFixed(2);
+    if(totalDisplay)totalDisplay.textContent='CHF '+t;
+    if(btnTotal)btnTotal.textContent=t;
+  }
+  trioRadio.addEventListener('change',update);
+  sixRadio.addEventListener('change',update);
+  boxesSelect.addEventListener('change',update);
+  update();
+})();
+
+/* Form submission via shared SoloPayrexx */
+(function(){
+  var PRICE_TRIO=7.70, PRICE_SIX=15.40;
+  var form=document.getElementById('batch004-form');
+  var errBox=document.getElementById('form-error');
+  var errMsg=document.getElementById('form-error-msg');
+  var btn=document.getElementById('submit-btn');
+  if(!form) return;
+  function showError(msg){errMsg.textContent=msg;errBox.style.display='block';errBox.scrollIntoView({behavior:'smooth',block:'center'});}
+  function hideError(){errBox.style.display='none';}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();hideError();
+    if(!window.SoloPayrexx){return showError('Payment system is loading \u2014 please try again in a moment.');}
+    var boxType=(form.querySelector('input[name="box_type"]:checked')||{}).value;
+    var boxes=parseInt(form.querySelector('[name="boxes"]').value,10);
+    var pickup=form.querySelector('[name="pickup_day"]').value;
+    var notes=form.querySelector('[name="notes"]').value||'';
+    if(!boxType){return showError('Please choose Trio or Six.');}
+    if(!boxes||boxes<1){return showError('Please choose how many boxes.');}
+    if(!pickup){return showError('Please choose a pickup day.');}
+    var pricePerBox=boxType==='trio'?PRICE_TRIO:PRICE_SIX;
+    var amount=boxes*pricePerBox;
+    var typeName=boxType==='trio'?'Trio (3 balls)':'Six (6 balls)';
+    var purpose='Batch 004 - VITA.RITUAL Daily Box - '+boxes+' x '+typeName;
+    btn.textContent='Opening payment\u2026';btn.disabled=true;
+    SoloPayrexx.go({
+      amount: amount,
+      purpose: purpose,
+      sessionKey: 'sq_vita_ritual_order',
+      sessionData: {batch:'004',box_type:boxType,boxes:boxes,pickup:pickup,notes:notes}
+    });
+  });
+})();
+/* Progress bar */
+(function(){
+  var MIN=5,MAX=60;
+  var countEl=document.getElementById('reserved-count');
+  var reserved=countEl?parseInt(countEl.textContent,10):0;
+  if(isNaN(reserved)||reserved<0) reserved=0;
+  var bar=document.getElementById('progress-bar');
+  var marker=document.getElementById('threshold-marker');
+  var thresholdLegend=document.getElementById('threshold-legend');
+  var pct=Math.max(0,Math.min(100,(reserved/MAX)*100));
+  var thresholdPct=Math.max(0,Math.min(100,(MIN/MAX)*100));
+  if(bar){bar.style.width=pct+'%';}
+  if(marker){marker.style.left=pct+'%';}
+  if(thresholdLegend){thresholdLegend.style.left=thresholdPct+'%';}
+  var kicker=document.getElementById('status-kicker');
+  if(kicker&&reserved<MAX){
+    if(reserved>=MIN){var rem=MAX-reserved;kicker.textContent='Threshold reached. The batch is happening. '+rem+(rem===1?' box':' boxes')+' remaining.';}
+    else{var needed=MIN-reserved;kicker.textContent=needed+(needed===1?' box':' boxes')+' away from confirming this batch.';}
+  }
+  if(reserved>=MAX){
+    var fs=document.getElementById('reserve');
+    if(fs){fs.outerHTML='<section class="b1-section alt" id="reserve"><div class="wrap"><div class="b1-section-inner"><p class="kicker" style="color:var(--terra);">Sold out</p><h2 style="margin-top:14px;">Thank you. Batch 004 is <em>full</em>.</h2><p>All 60 boxes are spoken for.</p></div></div></section>';}
+  }
+})();
+</script>
 <script src="/subscribe.js"></script>
 <script src="/shared.js"></script>
 
