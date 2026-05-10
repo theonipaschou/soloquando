@@ -654,15 +654,6 @@ details[open] .faqi-q::after{content:'\2013';}
     if(realItems === 0) return;  /* nothing rendered yet — bail safely */
     if(realItems === 1) return;  /* nothing to advance through */
 
-    /* How many cards are visible at once on desktop (CSS shows 3) */
-    function getVisibleCount(){
-      if(window.innerWidth <= MOBILE_BREAKPOINT) return 1;
-      if(window.innerWidth <= 960) return 1;
-      return 3;
-    }
-    /* Last logical position that makes sense */
-    function maxPos(){ return Math.max(0, realItems - getVisibleCount()); }
-
     /* Clone the first card and append it as a "ghost" — enables seamless infinite loop.
        When we slide to position realItems (the ghost), we then snap back to position 0
        with no animation, so the user never sees the rewind. */
@@ -699,7 +690,7 @@ details[open] .faqi-q::after{content:'\2013';}
     function slideTo(n, direction){
       direction = direction || 0;
 
-      if(direction === 1 && n > maxPos()){
+      if(direction === 1 && n >= realItems){
         /* Going forward off the end → animate to the ghost slot, then snap to 0 */
         cur = 0;
         displayPos = realItems;
@@ -718,8 +709,8 @@ details[open] .faqi-q::after{content:'\2013';}
         applyTransform(displayPos, false);
         /* Force reflow before animating */
         setTimeout(function(){
-          cur = maxPos();
-          displayPos = maxPos();
+          cur = realItems - 1;
+          displayPos = realItems - 1;
           applyTransform(displayPos, true);
           updateDots();
         }, 20);
@@ -727,7 +718,7 @@ details[open] .faqi-q::after{content:'\2013';}
       }
 
       /* Normal case */
-      n = Math.max(0, Math.min(maxPos(), n));
+      n = Math.max(0, Math.min(realItems - 1, n));
       cur = n;
       displayPos = n;
       applyTransform(displayPos, true);
