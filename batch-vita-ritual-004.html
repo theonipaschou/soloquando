@@ -322,38 +322,94 @@
 </section>
 
 <section class="b1-form-s" id="reserve">
-  <div class="wrap"><div class="b1-cs-inner">
-    <p class="kicker">Pre-orders open</p>
-    <h2>Pre-orders are <em>open now</em>.</h2>
-    <p>Order your box before 25 May. Anca buys ingredients and bakes once she knows what's needed. No guessing, no waste.</p>
-    <div class="b1-cs-dates">
-      <div class="b1-cs-date">
-        <p class="lbl">Opens</p>
-        <p class="val">Sun 10 May<br/>Today</p>
-      </div>
-      <div class="b1-cs-date">
-        <p class="lbl">Closes</p>
-        <p class="val">Mon 25 May<br/>midnight</p>
-      </div>
-      <div class="b1-cs-date">
-        <p class="lbl">Capacity</p>
-        <p class="val">5&ndash;60 boxes<br/>about 200 balls</p>
+  <div class="wrap">
+    <div class="b1-cs-inner">
+      <p class="kicker">Pre-orders open</p>
+      <h2>Reserve your <em>Daily Box</em>.</h2>
+      <p>Open now until Mon 25 May, midnight. Your payment is handled securely by Payrexx. If 5 boxes are not reserved by 25 May, every payment is refunded automatically.</p>
+      <div class="b1-cs-dates">
+        <div class="b1-cs-date">
+          <p class="lbl">Opens</p>
+          <p class="val">Sun 10 May<br/>Today</p>
+        </div>
+        <div class="b1-cs-date">
+          <p class="lbl">Closes</p>
+          <p class="val">Mon 25 May<br/>midnight</p>
+        </div>
+        <div class="b1-cs-date">
+          <p class="lbl">Capacity</p>
+          <p class="val">5&ndash;60 boxes<br/>about 200 balls</p>
+        </div>
       </div>
     </div>
-    <div class="b1-cs-notify">
-      <p class="lbl">Reserve your box</p>
-      <h3>Leave your email. Anca writes to you within 24 hours.</h3>
-      <p class="sub2">She will confirm your box and pickup details directly.</p>
-      <form class="b1-cs-form js-subscribe" id="b1-cs-form-004" data-result="#b1-cs-result-004" data-success="Reserved. Anca will write to you within 24 hours.">
-        <input type="hidden" name="source" value="batch-004-reserve"/>
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
-        <input type="email" name="email" placeholder="your@email.ch" required aria-label="Email address"/>
-        <button type="submit">Reserve &rarr;</button>
-      </form>
-      <div class="b1-cs-result" id="b1-cs-result-004" role="status" aria-live="polite"></div>
+
+    <div class="b1-form-inner" style="margin-top:48px;">
+      <div class="b1-form-card">
+        <form id="batch004-form" novalidate>
+          <p class="f-label" style="margin-bottom:12px;">Your box *</p>
+          <div class="b1-options">
+            <label class="b1-option is-active" for="opt-trio-004">
+              <input type="radio" name="box_type" value="trio" id="opt-trio-004" checked/>
+              <p class="b1-option-title">The <em>Trio</em></p>
+              <p class="b1-option-desc">One of each ball. Three in total.</p>
+              <p class="b1-option-price">CHF 7.70 / box</p>
+            </label>
+            <label class="b1-option" for="opt-six-004">
+              <input type="radio" name="box_type" value="six" id="opt-six-004"/>
+              <p class="b1-option-title">The <em>Six</em></p>
+              <p class="b1-option-desc">Two of each ball. Six in total.</p>
+              <p class="b1-option-price">CHF 15.40 / box</p>
+            </label>
+          </div>
+
+          <div class="b1-bags-row" style="margin-bottom:18px;">
+            <label>
+              <span class="f-label">How many boxes? *</span>
+              <select class="f-input" name="boxes" id="boxes-select">
+                <option value="1" selected>1 box</option>
+                <option value="2">2 boxes</option>
+                <option value="3">3 boxes</option>
+                <option value="4">4 boxes</option>
+                <option value="5">5 boxes</option>
+              </select>
+            </label>
+            <div class="b1-total">
+              <p class="b1-total-lbl">You pay</p>
+              <p class="b1-total-val" id="total-display">CHF 7.70</p>
+            </div>
+          </div>
+
+          <label style="margin-bottom:18px;">
+            <span class="f-label">Pickup *</span>
+            <select class="f-input" name="pickup_day" id="pickup-select">
+              <option value="Friday 29 May 2026, 17:00-20:00, Kloten">Friday 29 May, 17:00&ndash;20:00 &mdash; Kloten</option>
+              <option value="Saturday 30 May 2026, 11:00 sharp, central Zurich">Saturday 30 May, 11:00 sharp &mdash; central Z&uuml;rich</option>
+            </select>
+          </label>
+
+          <label style="margin-bottom:22px;">
+            <span class="f-label">Notes (optional)</span>
+            <textarea class="f-input" name="notes" placeholder="Allergies, questions, or anything else."></textarea>
+          </label>
+
+          <div class="b1-form-result err" id="form-error" role="alert" style="display:none;">
+            <p id="form-error-msg">Please fill in all required fields.</p>
+          </div>
+
+          <button type="submit" class="b1-form-submit" id="submit-btn">
+            Reserve now &mdash; CHF <span id="btn-total">7.70</span> &rarr;
+          </button>
+
+          <p style="margin-top:16px;font-size:12px;color:rgba(245,239,228,.4);text-align:center;letter-spacing:.04em;">
+            Payment opens in a secure window without leaving this page.<br/>
+            <span style="opacity:.7;">TWINT &middot; Visa &middot; Mastercard</span>
+          </p>
+        </form>
+      </div>
     </div>
-  </div></div>
+  </div>
 </section>
+
 
 <section class="share-quiet">
   <div class="wrap">
@@ -441,6 +497,68 @@
 </div></footer>
 
 
+<script src="/payrexx.js"></script>
+<script>
+/* Total + button price update */
+(function(){
+  var PRICE_TRIO=7.70, PRICE_SIX=15.40;
+  var trioRadio=document.getElementById('opt-trio-004');
+  var sixRadio=document.getElementById('opt-six-004');
+  var trioLabel=trioRadio?trioRadio.closest('.b1-option'):null;
+  var sixLabel=sixRadio?sixRadio.closest('.b1-option'):null;
+  var boxesSelect=document.getElementById('boxes-select');
+  var totalDisplay=document.getElementById('total-display');
+  var btnTotal=document.getElementById('btn-total');
+  if(!trioRadio||!sixRadio||!boxesSelect) return;
+  function update(){
+    if(trioRadio.checked){trioLabel.classList.add('is-active');sixLabel.classList.remove('is-active');}
+    else{sixLabel.classList.add('is-active');trioLabel.classList.remove('is-active');}
+    var n=parseInt(boxesSelect.value,10)||1;
+    var price=trioRadio.checked?PRICE_TRIO:PRICE_SIX;
+    var t=(n*price).toFixed(2);
+    if(totalDisplay)totalDisplay.textContent='CHF '+t;
+    if(btnTotal)btnTotal.textContent=t;
+  }
+  trioRadio.addEventListener('change',update);
+  sixRadio.addEventListener('change',update);
+  boxesSelect.addEventListener('change',update);
+  update();
+})();
+
+/* Form submission via shared SoloPayrexx */
+(function(){
+  var PRICE_TRIO=7.70, PRICE_SIX=15.40;
+  var form=document.getElementById('batch004-form');
+  var errBox=document.getElementById('form-error');
+  var errMsg=document.getElementById('form-error-msg');
+  var btn=document.getElementById('submit-btn');
+  if(!form) return;
+  function showError(msg){errMsg.textContent=msg;errBox.style.display='block';errBox.scrollIntoView({behavior:'smooth',block:'center'});}
+  function hideError(){errBox.style.display='none';}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();hideError();
+    if(!window.SoloPayrexx){return showError('Payment system is loading \u2014 please try again in a moment.');}
+    var boxType=(form.querySelector('input[name="box_type"]:checked')||{}).value;
+    var boxes=parseInt(form.querySelector('[name="boxes"]').value,10);
+    var pickup=form.querySelector('[name="pickup_day"]').value;
+    var notes=form.querySelector('[name="notes"]').value||'';
+    if(!boxType){return showError('Please choose Trio or Six.');}
+    if(!boxes||boxes<1){return showError('Please choose how many boxes.');}
+    if(!pickup){return showError('Please choose a pickup day.');}
+    var pricePerBox=boxType==='trio'?PRICE_TRIO:PRICE_SIX;
+    var amount=boxes*pricePerBox;
+    var typeName=boxType==='trio'?'Trio (3 balls)':'Six (6 balls)';
+    var purpose='Batch 004 - VITA.RITUAL Daily Box - '+boxes+' x '+typeName;
+    btn.textContent='Opening payment\u2026';btn.disabled=true;
+    SoloPayrexx.go({
+      amount: amount,
+      purpose: purpose,
+      sessionKey: 'sq_vita_ritual_order',
+      sessionData: {batch:'004',box_type:boxType,boxes:boxes,pickup:pickup,notes:notes}
+    });
+  });
+})();
+</script>
 <script src="/subscribe.js"></script>
 <script src="/shared.js"></script>
 
