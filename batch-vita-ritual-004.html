@@ -238,7 +238,7 @@
     <p class="baker"><strong>By Anca</strong> &middot; Z&uuml;rich</p>
     <div class="b1-hero-specs">
       <div><span class="sk">Trio &mdash; 3 balls</span><span class="sv">CHF 7.70</span></div>
-      <div><span class="sk">Six &mdash; 6 balls</span><span class="sv">CHF 15.40</span></div>
+      <div><span class="sk">Six &mdash; 6 balls</span><span class="sv">CHF 14</span></div>
       <div><span class="sk">Order</span><span class="sv">1&ndash;5 boxes</span></div>
     </div>
   </div>
@@ -278,6 +278,15 @@
     <h2 style="margin-top:14px;">From a tea house in <em>Uji</em>, to a kitchen in Z&uuml;rich.</h2>
     <p style="margin-top:28px;">Anca recently came back from Japan with something she couldn&rsquo;t stop thinking about. Not a souvenir. A ritual.</p>
     <p>The way people there reach for matcha instead of a fifth coffee. Steady, calm, no crash. She brought some ceremonial matcha home with her and started making something around it &mdash; small daily rituals for busy lives.</p>
+
+    <figure style="margin:36px 0;">
+      <picture>
+        <source type="image/jpeg" srcset="/vita-ritual-japan-600.jpg 600w, /vita-ritual-japan-900.jpg 900w" sizes="(max-width:780px) 100vw, 780px"/>
+        <img src="/vita-ritual-japan-900.jpg" alt="Anca in a red kimono with crane patterns, learning to whisk matcha at a tea ceremony in Japan. A Japanese tea master in a white kimono sits at a small table on the left." loading="lazy" decoding="async" style="width:100%;height:auto;display:block;"/>
+      </picture>
+      <figcaption style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--dim);text-align:center;margin-top:14px;line-height:1.5;">Anca learning the matcha ritual on her trip to Japan.</figcaption>
+    </figure>
+
     <p>That is how the VITA.RITUAL Daily Box was born. Six handmade balls. No refined sugar. Real ingredients, in small batches, made only when enough people reserve.</p>
     <p class="pullquote">&ldquo;I want this to feel like a small ritual, not a snack. Something you keep for yourself, on the days that ask for it.&rdquo; &mdash; Anca</p>
   </div></div>
@@ -331,7 +340,7 @@
       <div class="b1-spec-item">
         <h4>Two ways to order</h4>
         <p>The <strong>Trio</strong> &mdash; one of each. Three balls. CHF 7.70.</p>
-        <p>The <strong>Six</strong> &mdash; two of each. Six balls. CHF 15.40.</p>
+        <p>The <strong>Six</strong> &mdash; two of each. Six balls. CHF 14.</p>
         <p class="small">Made by hand in a home kitchen, individually wrapped.</p>
       </div>
       <div class="b1-spec-item">
@@ -401,7 +410,7 @@
               <input type="radio" name="box_type" value="six" id="opt-six-004"/>
               <p class="b1-option-title">The <em>Six</em></p>
               <p class="b1-option-desc">Two of each ball. Six in total.</p>
-              <p class="b1-option-price">CHF 15.40 / box</p>
+              <p class="b1-option-price">CHF 14 / box</p>
             </label>
           </div>
 
@@ -544,7 +553,7 @@
 <script>
 /* Total + button price update */
 (function(){
-  var PRICE_TRIO=7.70, PRICE_SIX=15.40;
+  var PRICE_TRIO=7.70, PRICE_SIX=14.00;
   var trioRadio=document.getElementById('opt-trio-004');
   var sixRadio=document.getElementById('opt-six-004');
   var trioLabel=trioRadio?trioRadio.closest('.b1-option'):null;
@@ -570,7 +579,7 @@
 
 /* Form submission via shared SoloPayrexx */
 (function(){
-  var PRICE_TRIO=7.70, PRICE_SIX=15.40;
+  var PRICE_TRIO=7.70, PRICE_SIX=14.00;
   var form=document.getElementById('batch004-form');
   var errBox=document.getElementById('form-error');
   var errMsg=document.getElementById('form-error-msg');
