@@ -143,7 +143,7 @@
 .b1-option.is-active{border-color:var(--terra);background:rgba(194,102,61,.1);}
 .b1-option-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--bone);line-height:1.2;margin-bottom:4px;}
 .b1-option-title em{font-style:italic;color:var(--terra);}
-.b1-option-desc{font-size:13px;color:rgba(245,239,228,.6);line-height:1.45;margin-bottom:8px;}
+.b1-option-desc{font-size:14px;color:rgba(245,239,228,.7);line-height:1.5;margin-bottom:10px;}
 .b1-option-price{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--bone);}
 
 .b1-bags-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;}
@@ -200,20 +200,20 @@
 .b1-progress-inner{max-width:780px;margin:0 auto;text-align:center;padding:0 24px;}
 .b1-progress-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px;}
 @media(max-width:600px){.b1-progress-stats{grid-template-columns:1fr 1fr;}}
-.b1-progress-stats .stat .k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);}
+.b1-progress-stats .stat .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);}
 .b1-progress-stats .stat .v{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,52px);font-weight:400;line-height:1;margin-top:6px;color:var(--ink);}
 .b1-progress-stats .stat .v em{font-style:italic;color:var(--terra);}
-.b1-progress-stats .stat .sub{font-size:12px;color:var(--dim);margin-top:4px;}
+.b1-progress-stats .stat .sub{font-size:14px;color:var(--dim);margin-top:8px;line-height:1.45;}
 .b1-progress-track{height:6px;background:rgba(43,26,15,.08);position:relative;border-radius:3px;overflow:visible;max-width:480px;margin:0 auto;}
 .b1-progress-bar{height:100%;background:var(--terra);border-radius:3px;transition:width .6s ease;}
 .threshold-marker{position:absolute;top:-7px;bottom:-7px;width:3px;background:var(--ink);border-radius:1.5px;transition:left .6s ease;transform:translateX(-1.5px);}
 .threshold-marker::before{content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:var(--ink);}
-.b1-progress-legend{position:relative;margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);max-width:480px;margin-left:auto;margin-right:auto;height:18px;}
+.b1-progress-legend{position:relative;margin-top:10px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);max-width:480px;margin-left:auto;margin-right:auto;height:18px;}
 .b1-progress-legend .lg-min,.b1-progress-legend .lg-max,.b1-progress-legend .lg-threshold{position:absolute;top:0;}
 .b1-progress-legend .lg-min{left:0;}
 .b1-progress-legend .lg-max{right:0;}
 .b1-progress-legend .lg-threshold{transform:translateX(-50%);color:var(--terra);}
-.b1-progress-legend .lg-threshold::before{content:'\25B2';display:block;font-size:10px;line-height:1;margin-bottom:2px;color:var(--terra);}
+.b1-progress-legend .lg-threshold::before{content:'\25B2';display:block;font-size:11px;line-height:1;margin-bottom:2px;color:var(--terra);}
 </style>
 </head>
 <body>
@@ -226,6 +226,26 @@
     </button>
   </div>
 </div></nav>
+<script>
+/* Mobile nav toggle — self-contained, no dependency on shared.js */
+(function(){
+  var btn = document.querySelector('.nav-burger');
+  var menu = document.getElementById('main-nav');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', function(){
+    var isOpen = btn.classList.toggle('open');
+    menu.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  menu.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
 
 <div class="batch-back"><div class="wrap"><a href="/products">&larr; Back to all batches</a></div></div>
 
@@ -250,9 +270,9 @@
 <section class="b1-progress">
   <div class="wrap b1-progress-inner">
     <div class="b1-progress-stats">
-      <div class="stat"><div class="k">Pre-ordered</div><div class="v"><em id="reserved-count">0</em></div><div class="sub">boxes so far</div></div>
-      <div class="stat"><div class="k">Minimum threshold</div><div class="v">5</div><div class="sub">boxes needed for the batch to happen</div></div>
-      <div class="stat"><div class="k">Maximum capacity</div><div class="v">60</div><div class="sub">boxes total &mdash; hard cap</div></div>
+      <div class="stat"><div class="k">Pre-ordered</div><div class="v"><em id="reserved-count">1</em></div><div class="sub">boxes so far</div></div>
+      <div class="stat"><div class="k">Minimum</div><div class="v">5</div><div class="sub">boxes Anca needs to start baking</div></div>
+      <div class="stat"><div class="k">Maximum</div><div class="v">60</div><div class="sub">boxes is the cap, no more</div></div>
     </div>
     <div class="b1-progress-track">
       <div class="b1-progress-bar" id="progress-bar" style="width:0%;"></div>
@@ -263,8 +283,8 @@
       <span class="lg-threshold" id="threshold-legend" style="left:8.3%;">min (5)</span>
       <span class="lg-max">max (60)</span>
     </div>
-    <p class="kicker" id="status-kicker" style="color:var(--terra);margin-top:28px;">5 boxes away from confirming this batch.</p>
-    <p style="font-size:14px;color:var(--dim);margin-top:6px;">
+    <p class="kicker" id="status-kicker" style="color:var(--terra);margin-top:28px;">5 boxes to go before Anca starts baking.</p>
+    <p style="font-size:15px;color:var(--dim);margin-top:8px;line-height:1.5;">
       <strong>Pre-order by:</strong> Mon 25 May 2026, midnight
     </p>
   </div>
@@ -284,7 +304,7 @@
         <source type="image/jpeg" srcset="/vita-ritual-japan-600.jpg 600w, /vita-ritual-japan-900.jpg 900w" sizes="(max-width:780px) 100vw, 780px"/>
         <img src="/vita-ritual-japan-900.jpg" alt="Anca in a red kimono with crane patterns, learning to whisk matcha at a tea ceremony in Japan. A Japanese tea master in a white kimono sits at a small table on the left." loading="lazy" decoding="async" style="width:100%;height:auto;display:block;"/>
       </picture>
-      <figcaption style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--dim);text-align:center;margin-top:14px;line-height:1.5;">Anca learning the matcha ritual on her trip to Japan.</figcaption>
+      <figcaption style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--dim);text-align:center;margin-top:14px;line-height:1.5;">Anca in Japan, learning to whisk matcha. The trip that started it all.</figcaption>
     </figure>
 
     <p>That is how the VITA.RITUAL Daily Box was born. Six handmade balls. No refined sugar. Real ingredients, in small batches, made only when enough people reserve.</p>
@@ -369,7 +389,7 @@
         <p class="note">Central Z&uuml;rich. Baked fresh that morning. Quiet, walkable from a tram stop.</p>
       </div>
     </div>
-    <p style="margin-top:28px;font-size:15px;">This batch happens only if at least 5 boxes are reserved by 25 May. Anca makes everything by hand in her own kitchen, so the batch caps at 60 boxes and ordering closes early once that's reached. If the minimum isn't met, every payment is returned in full. You are not charged until the batch is confirmed.</p>
+    <p style="margin-top:28px;font-size:16px;line-height:1.65;">This batch happens only if at least 5 boxes are reserved by 25 May. Anca makes every ball by hand in her own kitchen, so she has capped the batch at 60. Once that's reached, ordering closes. If we don't hit the minimum, every payment is returned in full. You are not charged until the batch is confirmed.</p>
   </div></div>
 </section>
 
@@ -378,7 +398,7 @@
     <div class="b1-cs-inner">
       <p class="kicker">Pre-orders open</p>
       <h2>Reserve your <em>Daily Box</em>.</h2>
-      <p>Open now until Mon 25 May, midnight. Your payment is handled securely by Payrexx. If 5 boxes are not reserved by 25 May, every payment is refunded automatically.</p>
+      <p>Open until midnight on Mon 25 May. Payment is handled by Payrexx. If fewer than 5 boxes are reserved by then, every payment is returned in full.</p>
       <div class="b1-cs-dates">
         <div class="b1-cs-date">
           <p class="lbl">Opens</p>
@@ -452,9 +472,9 @@
             Reserve now &mdash; CHF <span id="btn-total">7.70</span> &rarr;
           </button>
 
-          <p style="margin-top:16px;font-size:12px;color:rgba(245,239,228,.4);text-align:center;letter-spacing:.04em;">
+          <p style="margin-top:18px;font-size:13px;color:rgba(245,239,228,.55);text-align:center;letter-spacing:.04em;line-height:1.6;">
             Payment opens in a secure window without leaving this page.<br/>
-            <span style="opacity:.7;">TWINT &middot; Visa &middot; Mastercard</span>
+            <span style="opacity:.8;">TWINT &middot; Visa &middot; Mastercard</span>
           </p>
         </form>
       </div>
@@ -626,8 +646,8 @@
   if(thresholdLegend){thresholdLegend.style.left=thresholdPct+'%';}
   var kicker=document.getElementById('status-kicker');
   if(kicker&&reserved<MAX){
-    if(reserved>=MIN){var rem=MAX-reserved;kicker.textContent='Threshold reached. The batch is happening. '+rem+(rem===1?' box':' boxes')+' remaining.';}
-    else{var needed=MIN-reserved;kicker.textContent=needed+(needed===1?' box':' boxes')+' away from confirming this batch.';}
+    if(reserved>=MIN){var rem=MAX-reserved;kicker.textContent='Minimum reached. Anca is baking. '+rem+(rem===1?' box':' boxes')+' left to take.';}
+    else{var needed=MIN-reserved;kicker.textContent=needed+(needed===1?' box':' boxes')+' to go before Anca starts baking.';}
   }
   if(reserved>=MAX){
     var fs=document.getElementById('reserve');
