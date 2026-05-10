@@ -7,6 +7,7 @@
 <meta name="description" content="Every solo.quando batch, in order. Pre-order by the deadline; the kitchen opens only if enough neighbours sign up."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
+
 <style>
 /* Nav — full definition matching index */
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
@@ -47,120 +48,98 @@
 @media(max-width:860px){.h-hero-img{height:60vw;min-height:300px;}}
 .h-hero-img img{width:100%;height:100%;object-fit:cover;}
 
-/* ── STATUS BAR (anchor tabs) ── */
-.status-bar{background:var(--bone);border-bottom:1px solid var(--line);position:sticky;top:88px;z-index:100;}
-@media(max-width:720px){.status-bar{top:72px;}}
-.status-bar-inner{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;gap:0;}
-@media(max-width:720px){.status-bar-inner{padding:0 22px;overflow-x:auto;scrollbar-width:none;}
-.status-bar-inner::-webkit-scrollbar{display:none;}}
-.status-tab{font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);padding:18px 24px 16px;border-bottom:2px solid transparent;text-decoration:none;white-space:nowrap;transition:color .2s,border-color .2s;display:flex;align-items:center;gap:8px;}
-.status-tab:hover{color:var(--ink);}
-.status-tab.is-open-tab{color:var(--terra);border-bottom-color:var(--terra);}
-.status-dot{width:6px;height:6px;border-radius:50%;background:var(--terra);display:inline-block;animation:pulse 2s infinite;}
+/* ── BATCHES WRAP ── */
+.batches-wrap{padding:64px 0 96px;background:var(--bone);}
+.batches-inner{max-width:1100px;margin:0 auto;padding:0 48px;}
+@media(max-width:720px){.batches-inner{padding:0 22px;}}
+
+/* ── ACCORDION SECTION (same shell for all 3 statuses) ── */
+.batch-section{margin-bottom:24px;border:1px solid var(--line);background:var(--bone);overflow:hidden;}
+.batch-section[open]{box-shadow:0 12px 40px -16px rgba(43,26,15,.08);}
+
+.batch-section summary{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:28px 36px;list-style:none;user-select:none;color:var(--bone);}
+@media(max-width:720px){.batch-section summary{padding:22px 24px;}}
+.batch-section summary::-webkit-details-marker{display:none;}
+
+.batch-section summary .head-left{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;}
+.batch-section summary .kicker{margin:0;color:rgba(245,239,228,.65);font-size:11px;letter-spacing:.22em;}
+.batch-section summary h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,3.4vw,40px);letter-spacing:-.02em;line-height:1;margin:0;color:var(--bone);}
+.batch-section summary h2 em{font-style:italic;}
+.batch-section summary .count{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:rgba(245,239,228,.7);}
+.batch-section summary .chev{font-family:'Jost',sans-serif;font-size:32px;font-weight:300;color:var(--bone);line-height:1;flex-shrink:0;margin-left:18px;transition:transform .3s ease;}
+.batch-section[open] summary .chev{transform:rotate(45deg);}
+
+/* Status colour coding — only the header strip changes colour */
+.batch-section--open    summary{background:var(--terra);}
+.batch-section--open    summary h2 em{color:var(--ink);}
+.batch-section--open    summary .live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--bone);margin-right:10px;animation:pulse 2s infinite;vertical-align:middle;}
+
+.batch-section--soon    summary{background:#7A8C6E;} /* sage */
+.batch-section--soon    summary h2 em{color:var(--ink);}
+
+.batch-section--done    summary{background:var(--ink);}
+.batch-section--done    summary h2 em{color:var(--terra);}
+
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
 
-/* ── SHARED CARD STYLES ── */
-.batch-card{background:var(--bone);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
-.batch-card-link{text-decoration:none;color:inherit;display:flex;flex-direction:column;}
-.batch-card-link:hover .batch-card.is-clickable{transform:translateY(-3px);box-shadow:0 16px 40px -16px rgba(43,26,15,.2);border-color:rgba(194,102,61,.3);}
-.batch-card-link:hover .batch-card-cta{color:var(--terra);gap:10px;}
-.batch-card-img{overflow:hidden;background:var(--paper);}
-.batch-card-img img{width:100%;height:100%;object-fit:cover;display:block;}
-.batch-card-text{padding:36px 32px;flex:1;display:flex;flex-direction:column;}
-@media(max-width:520px){.batch-card-text{padding:28px 22px;}}
-.batch-card-eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
-.batch-card-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,38px);letter-spacing:-.015em;margin-bottom:12px;line-height:1.05;color:var(--ink);}
-.batch-card-title em{color:var(--terra);font-style:italic;}
-.batch-card-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--dim);line-height:1.55;margin-bottom:auto;}
-.batch-card-meta{font-size:14px;color:var(--dim);line-height:1.8;padding-top:18px;border-top:1px solid var(--line);margin-top:20px;}
-.batch-card-meta strong{color:var(--ink);font-weight:400;}
-.batch-card-cta{margin-top:18px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);display:inline-flex;align-items:center;gap:6px;transition:gap .2s ease,color .2s ease;}
+/* Section body */
+.batch-section-body{padding:36px;}
+@media(max-width:720px){.batch-section-body{padding:24px;}}
+.batch-section-empty{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--dim);margin:0;}
 
-/* ── OPEN NOW SECTION ── */
-.open-section{background:var(--bone);padding:0 0 80px;}
-.open-section-head{background:var(--terra);padding:48px 48px 40px;max-width:100%;}
-@media(max-width:720px){.open-section-head{padding:36px 22px 32px;}}
-.open-section-head .kicker{color:rgba(245,239,228,.7);margin-bottom:10px;}
-.open-section-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:400;letter-spacing:-.02em;color:var(--bone);margin:0;}
-.open-section-head h2 em{font-style:italic;color:var(--ink);}
-.open-cards{max-width:1100px;margin:0 auto;padding:48px 48px 0;}
-@media(max-width:720px){.open-cards{padding:32px 22px 0;}}
+/* ── CARD GRID (identical across all three sections) ── */
+.bcard-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+@media(max-width:760px){.bcard-grid{grid-template-columns:1fr;}}
 
-/* Open card: horizontal on desktop */
-.open-card-wrap{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(194,102,61,.25);overflow:hidden;background:var(--bone);margin-bottom:24px;transition:box-shadow .25s ease;}
-.open-card-wrap:hover{box-shadow:0 20px 60px -20px rgba(43,26,15,.18);}
-@media(max-width:760px){.open-card-wrap{grid-template-columns:1fr;}}
-.open-card-wrap .batch-card-img{aspect-ratio:auto;min-height:380px;}
-@media(max-width:760px){.open-card-wrap .batch-card-img{min-height:260px;}}
-.open-card-content{padding:52px 48px;display:flex;flex-direction:column;justify-content:center;}
-@media(max-width:1024px){.open-card-content{padding:40px 36px;}}
-@media(max-width:760px){.open-card-content{padding:32px 24px;}}
-.open-card-eyebrow{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
-.open-card-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,58px);letter-spacing:-.025em;line-height:1.04;color:var(--ink);margin-bottom:18px;}
-.open-card-title em{color:var(--terra);font-style:italic;}
-.open-card-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--dim);line-height:1.6;margin-bottom:28px;}
-.open-card-meta{font-size:14px;color:var(--dim);line-height:1.9;border-top:1px solid var(--line);padding-top:20px;margin-bottom:28px;}
-.open-card-meta strong{color:var(--ink);font-weight:400;}
-.open-card-btn{display:inline-block;padding:16px 36px;background:var(--terra);color:var(--bone);font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:background .2s;align-self:flex-start;}
-.open-card-btn:hover{background:#a8552a;}
+/* ── CARD (shared structure, status changes accent only) ── */
+.bcard{border:1px solid var(--line);overflow:hidden;background:var(--bone);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s;}
+.bcard-link{text-decoration:none;color:inherit;display:flex;flex-direction:column;height:100%;}
+.bcard-link:hover .bcard{transform:translateY(-3px);box-shadow:0 16px 40px -16px rgba(43,26,15,.16);}
+.bcard-link:hover .bcard-cta{gap:12px;}
 
-/* ── COMING SOON SECTION ── */
-.soon-section{background:var(--paper);border-top:1px solid var(--line);padding:80px 0;}
-.soon-section-inner{max-width:1100px;margin:0 auto;padding:0 48px;}
-@media(max-width:720px){.soon-section-inner{padding:0 22px;}}
-.soon-section-head{margin-bottom:48px;}
-.soon-section-head .kicker{color:var(--terra);margin-bottom:10px;}
-.soon-section-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,46px);font-weight:400;letter-spacing:-.02em;color:var(--ink);margin:0 0 10px;}
-.soon-section-head h2 em{color:var(--terra);font-style:italic;}
-.soon-section-head p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--dim);line-height:1.5;}
-.soon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
-@media(max-width:760px){.soon-grid{grid-template-columns:1fr;}}
+.bcard-img{aspect-ratio:4/3;overflow:hidden;background:var(--paper);}
+.bcard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+.bcard-link:hover .bcard-img img{transform:scale(1.03);}
 
-.soon-card{border:1px solid var(--line);overflow:hidden;background:var(--bone);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s;}
-.soon-card-link{text-decoration:none;color:inherit;display:flex;flex-direction:column;}
-.soon-card-link:hover .soon-card{transform:translateY(-3px);box-shadow:0 12px 36px -12px rgba(43,26,15,.14);}
-.soon-card-img{aspect-ratio:4/3;overflow:hidden;background:linear-gradient(135deg,rgba(122,139,106,.07) 0%,rgba(43,26,15,.03) 100%);position:relative;}
-.soon-card-img img{width:100%;height:100%;object-fit:cover;opacity:.85;}
-.soon-card-img-overlay{position:absolute;inset:0;background:rgba(245,239,228,.08);}
-.soon-card-text{padding:32px 28px;flex:1;display:flex;flex-direction:column;}
-@media(max-width:520px){.soon-card-text{padding:24px 20px;}}
-.soon-card-eyebrow{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
-.soon-card-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,34px);letter-spacing:-.015em;line-height:1.05;color:var(--ink);margin-bottom:10px;}
-.soon-card-title em{color:var(--terra);font-style:italic;}
-.soon-card-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--dim);line-height:1.55;margin-bottom:auto;}
-.soon-card-opens{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--dim);font-family:'Jost',sans-serif;letter-spacing:.04em;}
-.soon-card-opens strong{color:var(--ink);font-weight:400;}
+.bcard-body{padding:32px 28px;flex:1;display:flex;flex-direction:column;}
+@media(max-width:520px){.bcard-body{padding:26px 22px;}}
 
-/* ── CONFIRMED / PAST SECTION ── */
-.past-section{background:var(--bone);border-top:1px solid var(--line);padding:64px 0 80px;}
-.past-section-inner{max-width:1100px;margin:0 auto;padding:0 48px;}
-@media(max-width:720px){.past-section-inner{padding:0 22px;}}
-.past-section-head{margin-bottom:36px;}
-.past-section-head .kicker{color:var(--terra);margin-bottom:10px;}
-.past-section-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.2vw,38px);font-weight:400;letter-spacing:-.02em;color:var(--ink);margin:0;}
-.past-section-head h2 em{color:var(--terra);font-style:italic;}
-.past-list{display:flex;flex-direction:column;gap:0;}
-.past-item{display:grid;grid-template-columns:48px 1fr auto;gap:24px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);}
-@media(max-width:600px){.past-item{grid-template-columns:32px 1fr;gap:14px;}
-.past-item-cta{display:none;}}
-.past-item-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:rgba(43,26,15,.3);line-height:1;}
-.past-item-name{font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:-.01em;color:var(--ink);}
-.past-item-name em{font-style:italic;color:var(--terra);}
-.past-item-sub{font-size:13px;color:var(--dim);font-family:'Jost',sans-serif;margin-top:2px;}
-.past-item-cta{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);text-decoration:none;white-space:nowrap;border:1px solid var(--line);padding:8px 16px;transition:color .2s,border-color .2s;}
-.past-item-cta:hover{color:var(--terra);border-color:rgba(194,102,61,.4);}
-.past-item-link{text-decoration:none;}
-.past-item-link:hover .past-item-name{color:var(--terra);}
+.bcard-eyebrow{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;margin:0 0 12px;display:flex;align-items:center;gap:8px;}
+.bcard-eyebrow .dot{width:6px;height:6px;border-radius:50%;display:inline-block;}
 
-/* ── EMPTY STATES ── */
-.section-empty{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--dim);padding:32px 0;}
+.bcard-title{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(26px,3vw,34px);letter-spacing:-.015em;line-height:1.05;color:var(--ink);margin:0 0 12px;}
+.bcard-title em{color:var(--terra);font-style:italic;}
+
+.bcard-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--dim);line-height:1.55;margin:0 0 auto;}
+
+.bcard-meta{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--dim);line-height:1.85;}
+.bcard-meta strong{color:var(--ink);font-weight:400;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:inline-block;min-width:74px;}
+
+.bcard-cta{margin-top:22px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;transition:gap .2s,color .2s;align-self:flex-start;}
+
+/* Per-status card accents */
+.bcard--open   {border-color:rgba(194,98,45,.3);}
+.bcard--open   .bcard-eyebrow{color:var(--terra);}
+.bcard--open   .bcard-eyebrow .dot{background:var(--terra);animation:pulse 2s infinite;}
+.bcard--open   .bcard-cta{color:var(--terra);}
+
+.bcard--soon   {border-color:rgba(122,140,110,.35);}
+.bcard--soon   .bcard-eyebrow{color:#5d6e54;}
+.bcard--soon   .bcard-eyebrow .dot{background:#7A8C6E;}
+.bcard--soon   .bcard-cta{color:#5d6e54;}
+.bcard--soon   .bcard-img img{opacity:.92;}
+
+.bcard--done   .bcard-eyebrow{color:var(--ink);}
+.bcard--done   .bcard-eyebrow .dot{background:var(--ink);}
+.bcard--done   .bcard-cta{color:var(--ink);}
+.bcard--done   .bcard-img img{filter:saturate(.85);}
 
 /* ── REGISTRY TABLE ── */
 .registry-section{padding:64px 0 96px;background:var(--paper);border-top:1px solid var(--line);}
 .registry-section .wrap{max-width:1100px;}
 .registry-head{margin-bottom:40px;}
 .registry-head .kicker{color:var(--terra);margin-bottom:14px;}
-.registry-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.2vw,40px);font-weight:400;letter-spacing:-.02em;margin-bottom:10px;color:var(--ink);}
+.registry-head h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,3.2vw,40px);letter-spacing:-.02em;margin-bottom:10px;color:var(--ink);}
 .registry-head h2 em{color:var(--terra);font-style:italic;}
 .registry-head p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--dim);line-height:1.5;}
 .batch-table-wrap{overflow-x:auto;}
@@ -183,7 +162,7 @@
 .status-pill-open{color:var(--terra);}
 .status-pill-open::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--terra);display:inline-block;animation:pulse 2s infinite;}
 .status-pill-soon{color:var(--dim);}
-.status-pill-completed{color:var(--sage);opacity:.6;}
+.status-pill-completed{color:var(--ink);opacity:.7;}
 .status-pill-completed::before{content:"\2713";font-size:13px;}
 
 /* Newsletter strip */
@@ -238,48 +217,55 @@
   </div>
 </header>
 
-<!-- ─── STATUS ANCHOR BAR ─── -->
-<nav class="status-bar" aria-label="Batch status sections">
-  <div class="status-bar-inner" id="status-bar-tabs">
-    <!-- rendered by JS after batches.js loads -->
-  </div>
-</nav>
+<!-- ─── BATCHES (3 accordion sections, same card grid in each) ─── -->
+<section class="batches-wrap">
+  <div class="batches-inner">
 
-<!-- ─── OPEN NOW ─── -->
-<section id="open-now" aria-labelledby="open-now-heading">
-  <div class="open-section-head">
-    <p class="kicker">Order now</p>
-    <h2 id="open-now-heading">Pre-orders <em>open</em>.</h2>
-  </div>
-  <div class="open-cards" id="open-cards">
-    <!-- rendered by batches-render.js -->
-  </div>
-</section>
+    <!-- OPEN NOW -->
+    <details class="batch-section batch-section--open" open>
+      <summary>
+        <div class="head-left">
+          <span class="kicker">Order now</span>
+          <h2><span class="live-dot"></span>Pre-orders <em>open</em></h2>
+          <span class="count" id="count-open"></span>
+        </div>
+        <span class="chev" aria-hidden="true">+</span>
+      </summary>
+      <div class="batch-section-body">
+        <div class="bcard-grid" id="grid-open"><!-- rendered --></div>
+      </div>
+    </details>
 
-<!-- ─── COMING SOON ─── -->
-<section class="soon-section" id="coming-soon" aria-labelledby="coming-soon-heading">
-  <div class="soon-section-inner">
-    <div class="soon-section-head">
-      <p class="kicker">On the horizon</p>
-      <h2 id="coming-soon-heading">Coming <em>soon</em>.</h2>
-      <p>These batches open for pre-orders shortly. Join the newsletter to hear first.</p>
-    </div>
-    <div class="soon-grid" id="soon-cards">
-      <!-- rendered by batches-render.js -->
-    </div>
-  </div>
-</section>
+    <!-- COMING SOON -->
+    <details class="batch-section batch-section--soon" open>
+      <summary>
+        <div class="head-left">
+          <span class="kicker">On the horizon</span>
+          <h2>Coming <em>soon</em></h2>
+          <span class="count" id="count-soon"></span>
+        </div>
+        <span class="chev" aria-hidden="true">+</span>
+      </summary>
+      <div class="batch-section-body">
+        <div class="bcard-grid" id="grid-soon"><!-- rendered --></div>
+      </div>
+    </details>
 
-<!-- ─── CONFIRMED / PAST ─── -->
-<section class="past-section" id="confirmed" aria-labelledby="confirmed-heading">
-  <div class="past-section-inner">
-    <div class="past-section-head">
-      <p class="kicker">It happened</p>
-      <h2 id="confirmed-heading">Confirmed &amp; <em>completed</em>.</h2>
-    </div>
-    <div class="past-list" id="past-cards">
-      <!-- rendered by batches-render.js -->
-    </div>
+    <!-- COMPLETED -->
+    <details class="batch-section batch-section--done" open>
+      <summary>
+        <div class="head-left">
+          <span class="kicker">It happened</span>
+          <h2>Confirmed &amp; <em>completed</em></h2>
+          <span class="count" id="count-done"></span>
+        </div>
+        <span class="chev" aria-hidden="true">+</span>
+      </summary>
+      <div class="batch-section-body">
+        <div class="bcard-grid" id="grid-done"><!-- rendered --></div>
+      </div>
+    </details>
+
   </div>
 </section>
 
@@ -360,7 +346,7 @@
 <!-- batches.js renders the registry table (#batch-table-body) -->
 <script src="/batches.js"></script>
 
-<!-- batches-render.js renders the status sections -->
+<!-- batches-render.js renders the three accordion grids -->
 <script src="/batches-render.js"></script>
 
 <script src="/subscribe.js"></script>
