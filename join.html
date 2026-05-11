@@ -144,11 +144,13 @@
       <h2 style="margin-top:14px;">Our <em>newsletter</em>.</h2>
       <p>New batches, producer stories, and the occasional recipe. One email when there is something worth saying. Nothing more.</p>
 
-      <form class="nl-form" id="nl-form">
-        <input type="email" id="nl-email" placeholder="your@email.ch" required aria-label="Email address"/>
+      <form class="nl-form js-subscribe" id="nl-form" data-result="#nl-result" data-success="You are on the list. Check your inbox to confirm.">
+        <input type="hidden" name="source" value="join"/>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+        <input type="email" name="email" placeholder="your@email.ch" required aria-label="Email address"/>
         <button type="submit">Subscribe &rarr;</button>
       </form>
-      <div class="nl-result" id="nl-result"></div>
+      <div class="nl-result" id="nl-result" role="status" aria-live="polite"></div>
       <p class="nl-note">Free &middot; Unsubscribe any time</p>
 
       <div class="nl-divider"></div>
@@ -157,39 +159,7 @@
   </div>
 </section>
 
-<script>
-(function(){
-  var form   = document.getElementById('nl-form');
-  var result = document.getElementById('nl-result');
-  if(!form) return;
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var btn   = form.querySelector('button[type=submit]');
-    var email = document.getElementById('nl-email').value.trim();
-    if(!email) return;
-    btn.disabled = true; btn.textContent = 'Subscribing\u2026';
-    var cbName = 'mcNl_' + Date.now();
-    var url = 'https://soloquando.us13.list-manage.com/subscribe/post-json'
-      + '?u=cb28c247503fba41dbd96774f&id=739f21ed6b'
-      + '&EMAIL=' + encodeURIComponent(email) + '&c=' + cbName;
-    window[cbName] = function(data){
-      delete window[cbName];
-      var s = document.getElementById('mc-nl-s'); if(s) s.parentNode.removeChild(s);
-      if(data.result === 'success' || (data.msg && data.msg.indexOf('already subscribed') > -1)){
-        form.style.display = 'none';
-        result.style.display = 'block';
-        result.innerHTML = '<p>You are on the list.</p>';
-      } else {
-        var msg = (data.msg||'').replace(/<[^>]+>/g,'');
-        btn.disabled = false; btn.textContent = 'Subscribe \u2192';
-        result.style.display = 'block';
-        result.innerHTML = '<p style="font-size:14px;color:var(--terra);">' + (msg||'Something went wrong. Please try again.') + '</p>';
-      }
-    };
-    var script = document.createElement('script'); script.id='mc-nl-s'; script.src=url; document.body.appendChild(script);
-  });
-})();
-</script>
+
 
 <footer class="footer"><div class="wrap">
   <div class="footer-grid">
@@ -220,7 +190,7 @@
   <div class="footer-payments">
     <span class="footer-payments-label">Payments handled by</span>
     <a href="https://www.payrexx.com" target="_blank" rel="noopener" class="footer-payments-name">Payrexx</a>
-    <span class="footer-payments-methods">TWINT &middot; Visa &middot; Mastercard &middot; Apple Pay</span>
+    <span class="footer-payments-methods">TWINT &middot; Visa &middot; Mastercard</span>
   </div>
   <div class="footer-bottom">
     <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
@@ -229,6 +199,7 @@
 </div></footer>
 
 
+<script src="/subscribe.js"></script>
 <script src="/shared.js"></script>
 </body>
 </html>
