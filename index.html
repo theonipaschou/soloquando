@@ -863,18 +863,7 @@ details[open] .faqi-q::after{content:'\2013';}
     <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
   </div>
 </div></footer>
-<script>
-(function(){
-  var burger=document.querySelector('.nav-burger');
-  var menu=document.querySelector('.nav-links');
-  if(burger && menu){
-    function close(){menu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');}
-    burger.addEventListener('click',function(){var open=menu.classList.toggle('open');burger.classList.toggle('open',open);burger.setAttribute('aria-expanded',String(open));});
-    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
-    document.addEventListener('click',function(e){if(!burger.contains(e.target) && !menu.contains(e.target)) close();});
-  }
-})();
-</script>
+
 <script>
 (function(){
   document.querySelectorAll('.share-quiet-link').forEach(function(btn){
@@ -897,24 +886,5 @@ details[open] .faqi-q::after{content:'\2013';}
 </script>
 <script src="/subscribe.js"></script>
 <script src="/shared.js"></script>
-<script>
-(function(){
-  var burger = document.querySelector('.nav-burger');
-  var nav = document.getElementById('main-nav');
-  if(!burger || !nav) return;
-  burger.addEventListener('click', function(){
-    var open = nav.classList.toggle('open');
-    burger.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      nav.classList.remove('open');
-      burger.classList.remove('open');
-      burger.setAttribute('aria-expanded', 'false');
-    });
-  });
-})();
-</script>
 </body>
 </html>
