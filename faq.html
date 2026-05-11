@@ -270,5 +270,24 @@ details[open].faq-item summary::after{content:'\2013';}
 
 <script src="/subscribe.js"></script>
 <script src="/shared.js"></script>
+<script>
+(function(){
+  var burger = document.querySelector('.nav-burger');
+  var nav = document.getElementById('main-nav');
+  if(!burger || !nav) return;
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 </body>
 </html>
