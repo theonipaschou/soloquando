@@ -6,35 +6,19 @@ export default async function handler(req, res) {
   try {
     const secret = req.query.secret || '';
     if (secret !== process.env.WEBHOOK_SECRET) {
-      console.warn('Webhook: invalid secret');
       return res.status(401).json({ error: 'Unauthorized' });
     }
 
     const body = req.body;
-    let transaction = null;
+    console.log('FULL BODY:', JSON.stringify(body));
 
-    if (body && body.transaction) {
-      transaction = body.transaction;
-    } else if (body && body['transaction[id]']) {
-      transaction = {
-        id:      body['transaction[id]'],
-        status:  body['transaction[status]'],
-        purpose: body['transaction[purpose]'],
-        amount:  body['transaction[amount]'],
-      };
-    }
+    return res.status(200).json({ received: true });
 
-    if (!transaction) {
-      console.warn('Webhook: no transaction data', body);
-      return res.status(400).json({ error: 'No transaction data' });
-    }
-
-    const status  = (transaction.status || '').toLowerCase();
-    const purpose = transaction.purpose || '';
-    console.log(`Webhook received: status=${status} purpose="${purpose}"`);
-
-    if (status !== 'confirmed') {
-      console.log(`Ignoring status: ${status}`);
+  } catch (err) {
+    console.error('Webhook error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+}      console.log(`Ignoring status: ${status}`);
       return res.status(200).json({ ignored: true, status });
     }
 
