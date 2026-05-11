@@ -1,11 +1,11 @@
 {
   "batch": "004",
   "name": "VITA.RITUAL Daily Box",
-  "reserved": 3,
+  "reserved": 4,
   "min": 5,
   "max": 60,
   "unit": "box",
   "unit_plural": "boxes",
   "status": "open",
-  "updated_at": "2026-05-11T10:55:40.490Z"
+  "updated_at": "2026-05-11T10:56:09.373Z"
 }
