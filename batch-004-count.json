@@ -1,7 +1,7 @@
 {
   "batch": "004",
   "name": "VITA.RITUAL Daily Box",
-  "reserved": 6,
+  "reserved": 2,
   "min": 5,
   "max": 60,
   "unit": "box",
