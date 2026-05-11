@@ -267,7 +267,7 @@
   </div>
 </header>
 
-<section class="b1-progress">
+<section class="b1-progress" data-batch-id="004">
   <div class="wrap b1-progress-inner">
     <div class="b1-progress-stats">
       <div class="stat"><div class="k">Pre-ordered</div><div class="v"><em id="reserved-count">1</em></div><div class="sub">boxes so far</div></div>
@@ -630,31 +630,9 @@
     });
   });
 })();
-/* Progress bar */
-(function(){
-  var MIN=5,MAX=60;
-  var countEl=document.getElementById('reserved-count');
-  var reserved=countEl?parseInt(countEl.textContent,10):0;
-  if(isNaN(reserved)||reserved<0) reserved=0;
-  var bar=document.getElementById('progress-bar');
-  var marker=document.getElementById('threshold-marker');
-  var thresholdLegend=document.getElementById('threshold-legend');
-  var pct=Math.max(0,Math.min(100,(reserved/MAX)*100));
-  var thresholdPct=Math.max(0,Math.min(100,(MIN/MAX)*100));
-  if(bar){bar.style.width=pct+'%';}
-  if(marker){marker.style.left=pct+'%';}
-  if(thresholdLegend){thresholdLegend.style.left=thresholdPct+'%';}
-  var kicker=document.getElementById('status-kicker');
-  if(kicker&&reserved<MAX){
-    if(reserved>=MIN){var rem=MAX-reserved;kicker.textContent='Minimum reached. Anca is baking. '+rem+(rem===1?' box':' boxes')+' left to take.';}
-    else{var needed=MIN-reserved;kicker.textContent=needed+(needed===1?' box':' boxes')+' to go before Anca starts baking.';}
-  }
-  if(reserved>=MAX){
-    var fs=document.getElementById('reserve');
-    if(fs){fs.outerHTML='<section class="b1-section alt" id="reserve"><div class="wrap"><div class="b1-section-inner"><p class="kicker" style="color:var(--terra);">Sold out</p><h2 style="margin-top:14px;">Thank you. Batch 004 is <em>full</em>.</h2><p>All 60 boxes are spoken for.</p></div></div></section>';}
-  }
-})();
+/* Progress bar handled by /batch-progress.js */
 </script>
+<script src="/batch-progress.js"></script>
 <script src="/subscribe.js"></script>
 <script src="/shared.js"></script>
 

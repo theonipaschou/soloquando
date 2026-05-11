@@ -159,10 +159,10 @@
   </div>
 </header>
 
-<section class="b1-progress">
+<section class="b1-progress" data-batch-id="002">
   <div class="wrap b1-progress-inner">
     <div class="b1-progress-stats">
-      <div class="stat"><div class="k">Pre-ordered</div><div class="v"><em id="reserved-count">8</em></div><div class="sub">pieces so far</div></div>
+      <div class="stat"><div class="k">Pre-ordered</div><div class="v"><em id="reserved-count">1</em></div><div class="sub">pieces so far</div></div>
       <div class="stat"><div class="k">Minimum threshold</div><div class="v">10</div><div class="sub">pieces needed for the batch to happen</div></div>
       <div class="stat"><div class="k">Maximum capacity</div><div class="v">60</div><div class="sub">pieces total &mdash; hard cap</div></div>
     </div>
@@ -418,30 +418,9 @@
     });
   });
 })();
-(function(){
-  var MIN=10,MAX=60;
-  var countEl=document.getElementById('reserved-count');
-  var reserved=countEl?parseInt(countEl.textContent,10):0;
-  if(isNaN(reserved)||reserved<0) reserved=0;
-  var bar=document.getElementById('progress-bar');
-  var marker=document.getElementById('threshold-marker');
-  var thresholdLegend=document.getElementById('threshold-legend');
-  var pct=Math.max(0,Math.min(100,(reserved/MAX)*100));
-  var thresholdPct=Math.max(0,Math.min(100,(MIN/MAX)*100));
-  if(bar){bar.style.width=pct+'%';}
-  if(marker){marker.style.left=pct+'%';}
-  if(thresholdLegend){thresholdLegend.style.left=thresholdPct+'%';}
-  var kicker=document.getElementById('status-kicker');
-  if(kicker&&reserved<MAX){
-    if(reserved>=MIN){var rem=MAX-reserved;kicker.textContent='Threshold reached. The batch is happening. '+rem+(rem===1?' piece':' pieces')+' remaining.';}
-    else{var needed=MIN-reserved;kicker.textContent=needed+(needed===1?' piece':' pieces')+' away from confirming this batch.';}
-  }
-  if(reserved>=MAX){
-    var fs=document.getElementById('reserve');
-    if(fs){fs.outerHTML='<section class="b1-section alt" id="reserve"><div class="wrap"><div class="b1-section-inner"><p class="kicker" style="color:var(--terra);">Sold out</p><h2 style="margin-top:14px;">Thank you. Batch 002 is <em>full</em>.</h2><p>All 60 pieces are spoken for.</p></div></div></section>';}
-  }
-})();
+/* Progress bar handled by /batch-progress.js */
 </script>
+<script src="/batch-progress.js"></script>
 <script src="/subscribe.js"></script>
 <script src="/shared.js"></script>
 </body>
