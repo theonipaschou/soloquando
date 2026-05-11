@@ -94,21 +94,21 @@ window.SOLO_BATCHES = [
     productPlain: 'VITA.RITUAL Power Box',
     productFullName: 'VITA.RITUAL by Anca',
     baker: 'Anca',
-    status: 'soon',
-    statusEyebrow: 'COMING SOON',
-    cardLine: 'No-sugar, vegan energy balls. Made with ceremonial matcha brought back from Uji, Kyoto. Pre-orders open Sun 24 May.',
-    preorderOpensTable: 'Sun 24 May 2026',
-    preorderByCarousel: 'Fri 29 May, 12:00',
-    preorderByTable: 'Fri 29 May 2026, 12:00',
-    pickupSummary: 'Sat 30 May, 11:00 sharp',
-    pickupTable: 'Sat 30 May 2026, 11:00',
-    pickupLocation: 'central Z\u00fcrich',
+    status: 'open',
+    statusEyebrow: 'PRE-ORDERS OPEN',
+    cardLine: 'No-sugar, vegan energy balls. Made with ceremonial matcha brought back from Uji, Kyoto.',
+    preorderOpensTable: 'Sun 10 May 2026',
+    preorderByCarousel: 'Mon 25 May, midnight',
+    preorderByTable: 'Mon 25 May 2026, midnight',
+    pickupSummary: 'Fri 29 May (Kloten) or Sat 30 May (Z\u00fcrich)',
+    pickupTable: 'Fri 29 / Sat 30 May 2026',
+    pickupLocation: 'Kloten or central Z\u00fcrich',
     price: 'Trio CHF 7 / Six CHF 14 (1\u20135 per order)',
     priceTable: 'Trio CHF 7 / Six CHF 14',
     image: '/vita-ritual-900.webp',
     imageAlt: 'VITA.RITUAL energy balls on a stone slab beside a matcha bowl, with the brand mark and tagline Daily Rituals Naturally',
     link: '/batch-vita-ritual-004',
-    cta: 'View batch \u2192'
+    cta: 'Pre-order now \u2192'
   }
 ];
 
@@ -230,10 +230,24 @@ window.SoloBatches = (function () {
            '" aria-label="Batch ' + esc(b.id) + '"></button>';
   }
 
+  /* Sort order for carousel: open first, then soon, then confirmed/completed/closed.
+     Within the same status, batches are ordered by id (string compare, so 002 < 003). */
+  var CAROUSEL_STATUS_ORDER = { open: 0, soon: 1, confirmed: 2, completed: 3, closed: 4 };
+
+  function sortForCarousel (a, b) {
+    var sa = CAROUSEL_STATUS_ORDER[a.status] != null ? CAROUSEL_STATUS_ORDER[a.status] : 99;
+    var sb = CAROUSEL_STATUS_ORDER[b.status] != null ? CAROUSEL_STATUS_ORDER[b.status] : 99;
+    if (sa !== sb) return sa - sb;
+    return (a.id || '').localeCompare(b.id || '');
+  }
+
   function renderCarousel (trackSel, dotsSel) {
     var track = document.querySelector(trackSel);
     if (!track) return;
-    var visible = window.SOLO_BATCHES.filter(function(b){ return !isHiddenInCarousel(b); });
+    var visible = window.SOLO_BATCHES
+      .filter(function (b) { return !isHiddenInCarousel(b); })
+      .slice()
+      .sort(sortForCarousel);
     track.innerHTML = visible.map(carouselCardHtml).join('\n');
 
     if (dotsSel) {
