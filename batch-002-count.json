@@ -1,11 +1,11 @@
 {
   "batch": "002",
   "name": "Mousto",
-  "reserved": 8,
+  "reserved": 12,
   "min": 10,
   "max": 60,
   "unit": "piece",
   "unit_plural": "pieces",
-  "status": "open",
-  "updated_at": "2026-05-11T11:25:37.433Z"
+  "status": "confirmed",
+  "updated_at": "2026-05-12T18:21:15.474Z"
 }
