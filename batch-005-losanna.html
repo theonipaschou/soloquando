@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Batch 005: L'Osanna &middot; solo.quando</title>
+<meta name="description" content="L'Osanna. Hand-made Swiss pralines that put cheese and chocolate in the same bite. Batch 005 reservations open in central Z&uuml;rich. Two box sizes. One impossible idea."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#F5EFE4;--paper:#EDE5D4;--ink:#2B1A0F;
+  --dim:#5C4738;--terra:#C4622D;--sage:#7A8B6A;
+  --line:rgba(43,26,15,.10);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bone);color:var(--ink);
+  font-family:'Jost',sans-serif;font-weight:300;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+@media(max-width:720px){body{font-size:18px;}}
+.wrap{max-width:1180px;margin:0 auto;padding:0 48px;}
+@media(max-width:720px){.wrap{padding:0 22px;}}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.05;letter-spacing:-.02em;}
+em{font-style:italic;color:var(--terra);}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+.kicker{font-size:13px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
+@media(max-width:720px){.nav-inner{padding:0 22px;height:72px;}}
+.nav-logo{display:flex;align-items:center;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);letter-spacing:-.01em;}
+.nav-logo span{color:var(--terra);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:16px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
+.nav-links a:hover,.nav-links a.on{color:var(--terra);}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:10px;margin-left:8px;}
+.nav-burger span{display:block;width:24px;height:2px;background:var(--ink);transition:all .28s ease;transform-origin:center;}
+@media(max-width:920px){
+  .nav-links{display:none;position:fixed;top:88px;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,239,228,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);box-shadow:0 8px 32px rgba(43,26,15,.12);z-index:199;}
+  .nav-links.open{display:flex;}
+  .nav-links li{border-bottom:1px solid var(--line);}
+  .nav-links a{display:block;padding:20px 24px;font-size:18px;color:var(--ink);}
+  .nav-burger{display:flex;}
+  .nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-burger.open span:nth-child(2){opacity:0;}
+  .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+}
+@media(max-width:720px){.nav-links{top:72px;}}
+
+/* ── FOOTER (shared) ── */
+.footer{background:var(--ink);color:rgba(245,239,228,.65);padding:72px 0 40px;font-size:15px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;align-items:start;}
+@media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:40px 32px;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;gap:32px;}}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--bone);margin-bottom:12px;letter-spacing:-.01em;}
+.footer-logo span{color:var(--terra);}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;line-height:1.5;color:rgba(245,239,228,.6);margin-top:12px;}
+.footer-payments{padding:24px 0;border-top:1px solid rgba(245,239,228,.08);margin-top:32px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:12px;letter-spacing:.06em;color:rgba(245,239,228,.45);text-align:center;}
+.footer-payments-label{text-transform:uppercase;letter-spacing:.16em;}
+.footer-payments-name{color:rgba(245,239,228,.7);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;letter-spacing:0;border-bottom:1px solid rgba(194,102,61,.3);padding-bottom:1px;transition:color .2s;}
+.footer-payments-name:hover{color:var(--terra);}
+.footer-payments-methods{color:rgba(245,239,228,.35);}
+@media(max-width:560px){.footer-payments{flex-direction:column;gap:8px;}}
+.footer-col h5{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:18px;font-weight:500;margin-top:14px;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:10px;}
+.footer-col a{color:rgba(245,239,228,.65);transition:color .2s;font-size:15px;}
+.footer-col a:hover{color:var(--bone);}
+.footer-bottom{border-top:1px solid rgba(245,239,228,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;letter-spacing:.04em;color:rgba(245,239,228,.45);}
+.footer-bottom a{color:rgba(245,239,228,.45);}
+.footer-bottom a:hover{color:var(--bone);}
+
+/* ── SHARE STRIP ── */
+.share-quiet{padding:36px 0;border-top:1px solid var(--line);text-align:center;}
+.share-quiet-line{font-size:14px;color:var(--dim);letter-spacing:.02em;line-height:1.6;}
+.share-quiet-line em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--ink);margin-right:8px;}
+.share-quiet-link{display:inline-flex;align-items:center;gap:6px;background:transparent;border:none;color:var(--terra);font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.04em;cursor:pointer;padding:0;border-bottom:1px solid rgba(194,102,61,.4);padding-bottom:1px;transition:all .2s;}
+.share-quiet-link:hover{color:#a8552a;border-bottom-color:#a8552a;}
+.share-quiet-link svg{width:14px;height:14px;}
+@media(max-width:560px){.share-quiet-line em{display:block;margin:0 0 10px;}}
+
+/* ── BACK LINK ── */
+.batch-back{padding:32px 0 16px;background:var(--bone);}
+.batch-back a{font-size:14px;color:var(--dim);letter-spacing:.04em;transition:color .2s;}
+.batch-back a:hover{color:var(--terra);}
+
+/* ── HERO ── */
+.b1-hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;background:var(--bone);}
+@media(max-width:860px){.b1-hero{grid-template-columns:1fr;min-height:auto;}}
+.b1-hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px;}
+@media(max-width:720px){.b1-hero-text{padding:60px 22px;}}
+.b1-hero h1{font-size:clamp(40px,4.6vw,60px);line-height:1.05;letter-spacing:-.025em;margin:14px 0 18px;}
+.b1-hero h1 em{color:var(--terra);font-style:italic;}
+.b1-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:460px;line-height:1.55;margin-bottom:18px;}
+.b1-hero .baker{font-size:14px;color:var(--dim);letter-spacing:.04em;}
+.b1-hero .baker strong{color:var(--ink);font-weight:400;}
+.b1-hero-img{position:relative;overflow:hidden;background:var(--paper);}
+.b1-hero-img img{width:100%;height:100%;object-fit:cover;display:block;}
+@media(max-width:860px){.b1-hero-img{height:60vw;min-height:300px;}}
+
+/* ── PROGRESS BAND ── */
+.b1-progress{padding:56px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.b1-progress-inner{max-width:780px;margin:0 auto;text-align:center;padding:0 24px;}
+.b1-progress-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px;}
+@media(max-width:600px){.b1-progress-stats{grid-template-columns:1fr 1fr;}}
+.b1-progress-stats .stat .k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);}
+.b1-progress-stats .stat .v{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,52px);font-weight:400;line-height:1;margin-top:6px;color:var(--ink);}
+.b1-progress-stats .stat .v em{font-style:italic;color:var(--terra);}
+.b1-progress-stats .stat .sub{font-size:12px;color:var(--dim);margin-top:4px;}
+.b1-progress-track{height:6px;background:rgba(43,26,15,.08);position:relative;border-radius:3px;max-width:480px;margin:0 auto;}
+.b1-progress-bar{height:100%;background:var(--terra);border-radius:3px;}
+.threshold-marker{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--ink);border-radius:1px;}
+.b1-progress-legend{display:flex;justify-content:space-between;margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);max-width:480px;margin-left:auto;margin-right:auto;}
+
+/* ── SECTION ── */
+.b1-section{padding:80px 0;}
+.b1-section.alt{background:var(--paper);}
+.b1-section.ink{background:var(--ink);color:var(--bone);}
+.b1-section.ink h2{color:var(--bone);}
+.b1-section.ink p{color:rgba(245,239,228,.75);}
+.b1-section.ink .kicker{color:var(--terra);}
+.b1-section-inner{max-width:780px;margin:0 auto;}
+.b1-section h2{font-size:clamp(32px,4vw,46px);letter-spacing:-.02em;margin-bottom:22px;line-height:1.1;}
+.b1-section h2 em{color:var(--terra);font-style:italic;}
+.b1-section p{font-size:18px;line-height:1.7;color:var(--dim);margin-bottom:16px;}
+.b1-section.ink p{color:rgba(245,239,228,.75);}
+.pullquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;line-height:1.55;border-left:3px solid var(--terra);padding-left:24px;margin:28px 0;color:var(--ink);}
+.b1-section.ink .pullquote{color:var(--bone);}
+
+/* ── SPEC GRID ── */
+.b1-spec{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px;}
+@media(max-width:680px){.b1-spec{grid-template-columns:1fr;gap:18px;}}
+.b1-spec-item{padding:24px 26px;background:var(--bone);border:1px solid var(--line);}
+.b1-spec-item h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
+.b1-spec-item p{font-size:16px;line-height:1.6;color:var(--ink);margin:0;}
+.b1-spec-item .small{font-size:13px;color:var(--dim);margin-top:8px;}
+
+/* ── PRODUCT (BOX) CARDS, reusing the spec language ── */
+.b1-boxes{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:28px;}
+@media(max-width:680px){.b1-boxes{grid-template-columns:1fr;gap:20px;}}
+.b1-box{background:var(--bone);border:1px solid var(--line);padding:0 0 32px;display:flex;flex-direction:column;}
+.b1-box.feat{background:var(--paper);border-color:rgba(194,102,61,.35);position:relative;}
+.b1-box.feat:before{content:"Best value";position:absolute;top:-12px;left:32px;background:var(--terra);color:var(--bone);font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:6px 12px;z-index:2;}
+.b1-box .box-img{width:100%;aspect-ratio:4/3;overflow:hidden;background:#efe5d2;}
+.b1-box .box-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.b1-box .box-body{padding:28px 32px 0;display:flex;flex-direction:column;flex:1;}
+.b1-box h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--ink);margin-bottom:10px;line-height:1.15;}
+.b1-box .desc{font-size:15px;line-height:1.6;color:var(--dim);margin-bottom:18px;}
+.b1-box .flavor-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink);margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line);}
+.b1-box .price-block{margin-bottom:18px;}
+.b1-box .price-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);}
+.b1-box .price-final{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--ink);line-height:1;margin-top:4px;}
+.b1-box .price-final em{color:var(--terra);font-style:italic;font-size:24px;}
+.b1-box .price-break{font-size:13px;color:var(--dim);margin-top:8px;line-height:1.6;}
+.b1-box .price-break b{color:var(--ink);font-weight:400;}
+.b1-box .cta{margin-top:auto;display:inline-block;text-align:center;padding:16px 22px;background:var(--ink);color:var(--bone);font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .2s;text-decoration:none;}
+.b1-box .cta:hover{background:var(--terra);}
+.b1-box.feat .cta{background:var(--terra);}
+.b1-box.feat .cta:hover{background:#a8552a;}
+
+/* ── ORDER FORM (dark ink section, matches batch 004) ── */
+.b1-form-s{padding:96px 0;background:var(--ink);color:var(--bone);}
+.b1-form-inner{max-width:680px;margin:0 auto;padding:0 24px;}
+.b1-cs-inner{max-width:760px;margin:0 auto;text-align:center;padding:0 24px;}
+.b1-cs-inner .kicker{color:var(--terra);}
+.b1-cs-inner h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(40px,5.2vw,64px);letter-spacing:-.025em;line-height:1.05;margin:14px 0 28px;color:var(--bone);}
+.b1-cs-inner h2 em{color:var(--terra);font-style:italic;}
+.b1-cs-inner p{font-size:18px;line-height:1.7;color:rgba(245,239,228,.78);margin-bottom:18px;}
+.b1-cs-dates{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:48px 0 32px;}
+@media(max-width:600px){.b1-cs-dates{grid-template-columns:1fr;gap:14px;}}
+.b1-cs-date{padding:24px 22px;background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.14);}
+.b1-cs-date .lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
+.b1-cs-date .val{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--bone);line-height:1.3;}
+.b1-form-card{background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.1);padding:40px 36px;}
+@media(max-width:560px){.b1-form-card{padding:28px 22px;}}
+.b1-form-card label{display:block;margin-bottom:18px;}
+.b1-form-card .f-label{display:block;color:rgba(245,239,228,.7);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
+.b1-form-card .f-input{width:100%;padding:14px 16px;background:rgba(245,239,228,.06);border:1px solid rgba(245,239,228,.18);color:var(--bone);font-family:'Jost',sans-serif;font-size:17px;outline:none;transition:border-color .2s,background .2s;}
+.b1-form-card .f-input::placeholder{color:rgba(245,239,228,.4);}
+.b1-form-card .f-input:focus{border-color:rgba(245,239,228,.4);background:rgba(245,239,228,.09);}
+.b1-form-card textarea.f-input{resize:vertical;min-height:90px;font-family:'Jost',sans-serif;line-height:1.5;}
+.b1-options{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+@media(max-width:560px){.b1-options{grid-template-columns:1fr;}}
+.b1-option{position:relative;padding:20px 22px;background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.18);cursor:pointer;transition:border-color .2s,background .2s;}
+.b1-option:hover{border-color:rgba(245,239,228,.4);}
+.b1-option input{position:absolute;opacity:0;pointer-events:none;}
+.b1-option.is-active{border-color:var(--terra);background:rgba(194,102,61,.1);}
+.b1-option-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--bone);line-height:1.2;margin-bottom:4px;}
+.b1-option-title em{font-style:italic;color:var(--terra);}
+.b1-option-desc{font-size:14px;color:rgba(245,239,228,.7);line-height:1.5;margin-bottom:10px;}
+.b1-option-price{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--bone);}
+.b1-bags-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;margin-bottom:18px;}
+@media(max-width:560px){.b1-bags-row{grid-template-columns:1fr;}}
+.b1-total{padding:16px;background:rgba(194,102,61,.1);border:1px solid rgba(194,102,61,.3);text-align:center;}
+.b1-total-lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,239,228,.65);margin-bottom:4px;}
+.b1-total-val{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--bone);line-height:1;}
+.b1-form-result{display:none;padding:18px 22px;margin-top:14px;}
+.b1-form-result.err{background:rgba(194,102,61,.08);border-left:3px solid var(--terra);}
+.b1-form-result p{font-family:'Jost',sans-serif;font-size:15px;color:var(--terra);}
+.b1-form-submit{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:18px 32px;width:100%;transition:background .2s;}
+.b1-form-submit:hover{background:#a8552a;}
+.b1-form-submit:disabled{opacity:.6;cursor:wait;}
+
+/* ── PICKUP CARDS ── */
+.b1-pickup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px;}
+@media(max-width:680px){.b1-pickup-grid{grid-template-columns:1fr;gap:14px;}}
+.b1-pickup-card{padding:24px 20px;background:var(--bone);border:1px solid var(--line);text-align:center;}
+.b1-pickup-card .lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:10px;}
+.b1-pickup-card .val{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--ink);line-height:1.3;}
+
+/* ── PAIRING (4-up, like a small ritual list) ── */
+.b1-ritual{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:28px;}
+@media(max-width:680px){.b1-ritual{grid-template-columns:1fr 1fr;}}
+.b1-ritual-item{padding:24px 22px;background:var(--bone);border:1px solid var(--line);}
+.b1-ritual-item .num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--terra);margin-bottom:8px;}
+.b1-ritual-item h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--ink);margin-bottom:8px;}
+.b1-ritual-item p{font-size:14px;color:var(--dim);line-height:1.55;margin:0;}
+
+/* ── RESERVE CARD (replaces thank-you card) ── */
+.b1-thanks{padding:80px 0;background:var(--bone);}
+.b1-thanks-inner{max-width:780px;margin:0 auto;padding:0 24px;}
+.b1-thanks-card{padding:64px 48px;background:var(--paper);border:1px solid var(--line);text-align:center;}
+@media(max-width:560px){.b1-thanks-card{padding:48px 24px;}}
+.b1-thanks-card .kicker{color:var(--terra);}
+.b1-thanks-card h2{font-size:clamp(34px,4.4vw,52px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 18px;color:var(--ink);}
+.b1-thanks-card h2 em{color:var(--terra);font-style:italic;}
+.b1-thanks-card p{font-size:17px;color:var(--dim);line-height:1.7;max-width:560px;margin:0 auto 12px;}
+.b1-thanks-card p.cta{margin-top:24px;}
+.b1-thanks-card a{color:var(--terra);border-bottom:1px solid rgba(194,102,61,.4);padding-bottom:1px;transition:all .2s;}
+.b1-thanks-card a:hover{color:#a8552a;border-bottom-color:#a8552a;}
+
+/* ── NEWSLETTER STRIP ── */
+.nl-strip{padding:96px 22px;background:var(--bone);border-top:1px solid var(--line);text-align:center;}
+.nl-strip-inner{max-width:560px;margin:0 auto;}
+.nl-strip .kicker{color:var(--terra);}
+.nl-strip h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);letter-spacing:-.02em;line-height:1.05;margin:14px 0 16px;color:var(--ink);}
+.nl-strip h2 em{color:var(--terra);font-style:italic;}
+.nl-strip-form{display:flex;max-width:440px;margin:0 auto 14px;}
+@media(max-width:520px){.nl-strip-form{flex-direction:column;gap:10px;}}
+.nl-strip-form input[type=email]{flex:1;padding:16px 18px;background:var(--paper);border:1px solid var(--line);border-right:none;color:var(--ink);font-family:'Jost',sans-serif;font-size:16px;outline:none;transition:border-color .2s;}
+@media(max-width:520px){.nl-strip-form input[type=email]{border-right:1px solid var(--line);}}
+.nl-strip-form input[type=email]::placeholder{color:var(--dim);opacity:.55;}
+.nl-strip-form input[type=email]:focus{border-color:rgba(43,26,15,.4);}
+.nl-strip-form button{background:var(--terra);color:var(--bone);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:16px 26px;white-space:nowrap;transition:background .2s;}
+.nl-strip-form button:hover{background:#a8552a;}
+.nl-strip-note{font-size:13px;color:var(--dim);opacity:.7;}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-logo" aria-label="solo.quando home">solo<span>.</span>quando</a>
+  <ul class="nav-links" id="main-nav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/products" class="on">Batches</a></li>
+    <li><a href="/how-it-works">How it works</a></li>
+    <li><a href="/our-story">Our story</a></li>
+    <li><a href="/bake-with-us">Bake with us</a></li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;">
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div></nav>
+
+<!-- ── BACK LINK ── -->
+<div class="batch-back">
+  <div class="wrap">
+    <a href="/products">&larr; Back to all batches</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<header class="b1-hero">
+  <div class="b1-hero-text">
+    <p class="kicker">Batch 005 &middot; open &middot; reservations</p>
+    <h1><em>L'Osanna</em>.<br/>Cheese meets chocolate.</h1>
+    <p class="sub">Eleven flavours, hand-made by Osanna in a Swiss kitchen. Brie, Parmesan and Truffle Brie folded into white, milk, dark and ruby chocolate. Two centuries side by side. One bite together.</p>
+    <p class="baker"><strong>By Osanna</strong> &middot; Switzerland &middot; from CHF 19.80 per box</p>
+  </div>
+  <div class="b1-hero-img">
+    <img src="https://res.cloudinary.com/dcadhvztl/image/upload/c_crop,g_center,w_1300,h_1100/c_fill,w_1800,q_auto,f_auto/v1772964044/IMG_1211_yu2qgx.jpg" alt="A tray of L'Osanna pralines on a dark wood table. White, milk, dark and ruby chocolate, each finished by hand." fetchpriority="high"/>
+  </div>
+</header>
+
+<!-- ── PROGRESS BAND ── -->
+<section class="b1-progress">
+  <div class="wrap b1-progress-inner">
+
+    <div class="b1-progress-stats">
+      <div class="stat">
+        <div class="k">Reserved</div>
+        <div class="v"><em>0</em></div>
+        <div class="sub">boxes pre-ordered</div>
+      </div>
+      <div class="stat">
+        <div class="k">Minimum threshold</div>
+        <div class="v">5</div>
+        <div class="sub">needed for batch to happen</div>
+      </div>
+      <div class="stat">
+        <div class="k">Maximum capacity</div>
+        <div class="v">15</div>
+        <div class="sub">boxes total. Hard cap.</div>
+      </div>
+    </div>
+
+    <div class="b1-progress-track">
+      <!-- 0 / 15 = 0% -->
+      <div class="b1-progress-bar" style="width:0%;"></div>
+      <!-- min marker at 5 / 15 = 33.33% -->
+      <div class="threshold-marker" style="left:33.33%;"></div>
+    </div>
+    <div class="b1-progress-legend">
+      <span>0</span>
+      <span>&#9650; min (5)</span>
+      <span>max (15)</span>
+    </div>
+
+    <p class="kicker" style="color:var(--terra);margin-top:28px;">Reservations open Sunday 17 May. 5 boxes needed to make the batch happen.</p>
+    <p style="font-size:14px;color:var(--dim);margin-top:6px;">
+      <strong>Reserve by:</strong> Friday 22 May 2026 &nbsp;&nbsp;
+      <strong>Pickup:</strong> Saturday 23 May 2026
+    </p>
+
+  </div>
+</section>
+
+<!-- ── THE STORY ── -->
+<section class="b1-section">
+  <div class="wrap">
+    <div class="b1-section-inner">
+      <p class="kicker">The story</p>
+      <h2 style="margin-top:14px;">The question <em>nobody</em> asked.</h2>
+      <p>Every Swiss childhood holds two things in its hands. A piece of chocolate, broken off the bar, softening in a coat pocket on the walk home from school. A wedge of cheese cut thick at the end of a long day, eaten over dark bread without a plate.</p>
+      <p>Both, the whole country agrees, are perfect.</p>
+      <p>They have lived in the same country, on the same shelves, in the same fridges, for two hundred years. Almost never in the same bite.</p>
+      <p>Osanna is the woman who finally asked why.</p>
+      <p>She makes her pralines by hand, in Switzerland. The work is slow. Each piece is shaped, filled, dipped and finished one at a time. By the time a box is closed, every praline inside it has passed through her hands.</p>
+      <p>What she ended up with is something that didn't exist before her: <em>eleven</em> flavours that pair Brie, Truffle Brie and aged Parmesan with white, milk, dark and ruby chocolate. The boxes hold six of them, or twelve. Each praline is small. Each one is a complete idea.</p>
+      <p>The first time you bite into one is the moment you finally understand the question.</p>
+      <p class="pullquote">"Osanna is super passionate, and you can see it reflecting in her pralines."<br/><span style="font-style:normal;font-size:15px;color:var(--dim);letter-spacing:.04em;">Vanessa, My Memories</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ── THE PAIRING (dark section) ── -->
+<section class="b1-section ink">
+  <div class="wrap">
+    <div class="b1-section-inner">
+      <p class="kicker">The pairing</p>
+      <h2 style="margin-top:14px;">Two halves of the same <em>country</em>.</h2>
+      <p>Brie is air and butter. Parmesan is salt and time. White chocolate is sugar that has almost forgotten it was once cocoa. Dark chocolate is cocoa that refuses to forget. None of them is shy on its own. Together they argue, then agree, then argue again, all in the space of one bite.</p>
+      <p class="pullquote">Cold first, the cheese leads. Ten minutes on the counter and the chocolate steps forward. The same praline, twice.</p>
+      <p>Most people pause after the first one. Some people get quiet. Some people pass the box around without saying anything, which is the highest compliment a Swiss table can pay.</p>
+      <p>Mochito is the one that converts the doubters: Parmesan, white chocolate, mint, a quick slap of lime. It tastes a little like a mojito and a cheeseboard met somewhere in between. Tartufo, white or dark, is the one for the chocolate-only crowd. StrawBrie Ruby is the praline that always disappears first.</p>
+      <p>Eleven flavours in total. Other chocolatiers seem to think the question was worth asking, too.</p>
+      <p class="pullquote">"As a fellow chocolatier I strongly recommend L'Osanna Pralines. The distinct tastes and flavours are a perfect match. Masterpieces."<br/><span style="font-style:normal;font-size:15px;color:rgba(245,239,228,.55);letter-spacing:.04em;">Merle S., chocolatier</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT'S IN IT ── -->
+<section class="b1-section">
+  <div class="wrap">
+    <div class="b1-section-inner">
+      <p class="kicker">What's in it</p>
+      <h2 style="margin-top:14px;">Swiss ingredients. <em>One hand.</em></h2>
+      <p>Made in a Swiss home kitchen from ingredients you can name. No preservatives, no thickeners, no shortcuts. Hand-tempered, hand-filled, hand-finished, hand-boxed.</p>
+
+      <div class="b1-spec">
+        <div class="b1-spec-item">
+          <h4>Ingredients</h4>
+          <p>Swiss Brie, aged Parmesan, Truffle Brie. White, milk and dark Swiss chocolate. Real fruit (strawberry, raspberry, orange). Mint. Lime. Nothing else hiding in the back.</p>
+          <p class="small">Each praline is shaped and dipped individually. Tempered at temperature, by hand.</p>
+        </div>
+        <div class="b1-spec-item">
+          <h4>Good to know</h4>
+          <p>Contains dairy. Some pralines contain nuts. Made in a home kitchen that also handles wheat and eggs. Cross-contamination is possible.</p>
+          <p class="small">Best within 14 days of pickup. Keep refrigerated. Take out 10 minutes before eating for the full second flavour.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CHOOSE YOUR BOX ── -->
+<section class="b1-section alt" id="choose">
+  <div class="wrap">
+    <div class="b1-section-inner">
+      <p class="kicker">Choose your box</p>
+      <h2 style="margin-top:14px;">Two sizes. One <em>idea</em>.</h2>
+      <p>Both boxes come from the same eleven flavours, hand-finished in the same kitchen. Pick the size that fits the occasion. The feeling inside is the same.</p>
+
+      <div class="b1-boxes">
+
+        <!-- 6 box -->
+        <div class="b1-box">
+          <div class="box-img">
+            <img src="https://www.losanna-pralines.ch/cdn/shop/files/6-box.jpg?v=1701722937&amp;width=1200" alt="L'Osanna 6-piece cheese and chocolate praline gift box" loading="lazy"/>
+          </div>
+          <div class="box-body">
+            <h3>6 Cheese + Chocolate Pralines</h3>
+            <p class="desc">The first hello. Six pralines, hand-finished, just enough to walk a person through the idea. The right box for a Tuesday evening with a glass of wine, or for someone you want to surprise without overdoing it.</p>
+            <p class="flavor-line">A curated six: Tartufo, StrawBrie, Orancina, ParmeSala, Mochito.</p>
+
+            <div class="price-block">
+              <p class="price-label">Batch 005 price</p>
+              <p class="price-final">CHF 19<em>.80</em></p>
+            </div>
+
+            <a href="#reserve" class="cta">Reserve the 6-piece &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 12 box -->
+        <div class="b1-box feat">
+          <div class="box-img">
+            <img src="https://www.losanna-pralines.ch/cdn/shop/files/12-box.jpg?v=1701726200&amp;width=1200" alt="L'Osanna 12-piece cheese and chocolate praline gift box" loading="lazy"/>
+          </div>
+          <div class="box-body">
+            <h3>12 Cheese + Chocolate Pralines</h3>
+            <p class="desc">The whole conversation. Twelve pralines from across Osanna's full range, white through ruby through dark. The right box for a long evening with someone, for a gift that means it, or for the kind of Saturday you want to make last a little longer.</p>
+            <p class="flavor-line">Tartufo, StrawBrie Ruby and Dark, Orancina, ParmeSala, RaspBrie, BlackBrie, StrawSan, Mochito.</p>
+
+            <div class="price-block">
+              <p class="price-label">Batch 005 price</p>
+              <p class="price-final">CHF 39<em>.60</em></p>
+            </div>
+
+            <a href="#reserve" class="cta">Reserve the 12-piece &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW TO EAT THEM ── -->
+<section class="b1-section">
+  <div class="wrap">
+    <div class="b1-section-inner">
+      <p class="kicker">How to eat them</p>
+      <h2 style="margin-top:14px;">A small ritual, <em>not a snack</em>.</h2>
+      <p>Two temperatures, two pairings, four moments. The praline does not stay the same praline twice in a row.</p>
+
+      <div class="b1-ritual">
+        <div class="b1-ritual-item">
+          <div class="num">i.</div>
+          <h4>Cold first</h4>
+          <p>Straight from the fridge. The cheese leads. Brie, Parmesan, Truffle, all forward.</p>
+        </div>
+        <div class="b1-ritual-item">
+          <div class="num">ii.</div>
+          <h4>Then warm</h4>
+          <p>Ten minutes on the counter. Now the chocolate steps forward and the cheese turns into a soft, savoury background.</p>
+        </div>
+        <div class="b1-ritual-item">
+          <div class="num">iii.</div>
+          <h4>With wine</h4>
+          <p>A Pinot Noir, a chilled ros&eacute;, or a glass of Swiss Chasselas. Pair it like a cheeseboard.</p>
+        </div>
+        <div class="b1-ritual-item">
+          <div class="num">iv.</div>
+          <h4>With coffee</h4>
+          <p>An espresso after dinner. The bitterness lifts the sweet edge. The savoury notes do their best work.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PICKUP ── -->
+<section class="b1-section alt">
+  <div class="wrap">
+    <div class="b1-section-inner">
+      <p class="kicker">Pickup</p>
+      <h2 style="margin-top:14px;">Saturday <em>23 May</em>. One secret address in central Z&uuml;rich.</h2>
+      <p>There is only one pickup. The exact address is shared with reserved customers by email the day before. Always somewhere central, always walkable from a tram stop. Boxes arrive in Osanna's signature presentation packaging.</p>
+
+      <div class="b1-pickup-grid">
+        <div class="b1-pickup-card">
+          <p class="lbl">Date</p>
+          <p class="val">Saturday<br/>23 May 2026</p>
+        </div>
+        <div class="b1-pickup-card">
+          <p class="lbl">Time</p>
+          <p class="val">11:00 sharp<br/>(one window)</p>
+        </div>
+        <div class="b1-pickup-card">
+          <p class="lbl">Location</p>
+          <p class="val">Secret, central Z&uuml;rich<br/>address by email on Fri</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ORDER FORM ── -->
+<section class="b1-form-s" id="reserve">
+  <div class="wrap">
+    <div class="b1-cs-inner">
+      <p class="kicker">Pre-orders open</p>
+      <h2>Reserve your <em>L'Osanna box</em>.</h2>
+      <p>Solo.quando only happens when enough people raise their hand. Reservations open on Sunday 17 May and close at midnight on Friday 22 May. If we don't reach five boxes by then, nobody is charged, Osanna doesn't bake, and the batch waits quietly for the next try. Five boxes is all this one needs.</p>
+      <div class="b1-cs-dates">
+        <div class="b1-cs-date">
+          <p class="lbl">Opens</p>
+          <p class="val">Sun 17 May<br/>00:00</p>
+        </div>
+        <div class="b1-cs-date">
+          <p class="lbl">Closes</p>
+          <p class="val">Fri 22 May<br/>midnight</p>
+        </div>
+        <div class="b1-cs-date">
+          <p class="lbl">Capacity</p>
+          <p class="val">max 15 boxes</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="b1-form-inner" style="margin-top:48px;">
+      <div class="b1-form-card">
+        <form id="batch005-form" novalidate>
+          <p class="f-label" style="margin-bottom:12px;">Your box *</p>
+          <div class="b1-options">
+            <label class="b1-option is-active" for="opt-six-005">
+              <input type="radio" name="box_type" value="six" id="opt-six-005" checked/>
+              <p class="b1-option-title">The <em>Six</em></p>
+              <p class="b1-option-desc">6 cheese + chocolate pralines. The introduction.</p>
+              <p class="b1-option-price">CHF 19.80 / box</p>
+            </label>
+            <label class="b1-option" for="opt-twelve-005">
+              <input type="radio" name="box_type" value="twelve" id="opt-twelve-005"/>
+              <p class="b1-option-title">The <em>Twelve</em></p>
+              <p class="b1-option-desc">12 pralines. The full signature library.</p>
+              <p class="b1-option-price">CHF 39.60 / box</p>
+            </label>
+          </div>
+
+          <div class="b1-bags-row">
+            <label>
+              <span class="f-label">How many boxes? *</span>
+              <select class="f-input" name="boxes" id="boxes-select">
+                <option value="1" selected>1 box</option>
+                <option value="2">2 boxes</option>
+                <option value="3">3 boxes</option>
+                <option value="4">4 boxes</option>
+                <option value="5">5 boxes</option>
+              </select>
+            </label>
+            <div class="b1-total">
+              <p class="b1-total-lbl">You pay</p>
+              <p class="b1-total-val" id="total-display">CHF 19.80</p>
+            </div>
+          </div>
+
+          <input type="hidden" name="pickup_day" value="Saturday 23 May 2026, 11:00 sharp. Secret address in central Zurich (shared by email on Fri 22 May)."/>
+          <div style="margin-bottom:18px;padding:18px 20px;background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.14);">
+            <p class="f-label" style="margin-bottom:6px;">Pickup</p>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--bone);line-height:1.4;margin:0;">Saturday 23 May, <em style="color:var(--terra);font-style:italic;">11:00 sharp</em></p>
+            <p style="font-size:13px;color:rgba(245,239,228,.6);margin-top:6px;line-height:1.5;">Secret address, always central Z&uuml;rich. Shared by email the day before.</p>
+          </div>
+
+          <label style="margin-bottom:22px;">
+            <span class="f-label">Notes (optional)</span>
+            <textarea class="f-input" name="notes" placeholder="Allergies, gift wrapping, or anything else."></textarea>
+          </label>
+
+          <div class="b1-form-result err" id="form-error" role="alert" style="display:none;">
+            <p id="form-error-msg">Please fill in all required fields.</p>
+          </div>
+
+          <button type="submit" class="b1-form-submit" id="submit-btn">
+            Reserve now. CHF <span id="btn-total">19.80</span> &rarr;
+          </button>
+
+          <p style="margin-top:18px;font-size:13px;color:rgba(245,239,228,.55);text-align:center;letter-spacing:.04em;line-height:1.6;">
+            Payment opens in a secure window without leaving this page.<br/>
+            <span style="opacity:.8;">TWINT &middot; Visa &middot; Mastercard</span>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SHARE STRIP ── -->
+<section class="share-quiet">
+  <div class="wrap">
+    <p class="share-quiet-line">
+      <em>Know someone who would love these?</em>
+      <button class="share-quiet-link" data-share-title="solo.quando &middot; Batch 005" aria-label="Share with a friend">
+        Share with a friend
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+      </button>
+    </p>
+  </div>
+</section>
+
+<!-- ── NEWSLETTER STRIP ── -->
+<section class="nl-strip" aria-labelledby="nl-strip-h">
+  <div class="nl-strip-inner">
+    <p class="kicker">Stay in the loop</p>
+    <h2 id="nl-strip-h">Subscribe to our <em>newsletter</em>.</h2>
+    <form class="nl-strip-form" id="nl-strip-form">
+      <input type="hidden" name="source" value="batch-005"/>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+      <input type="email" name="email" placeholder="your@email.ch" required aria-label="Email address"/>
+      <button type="submit">Join &rarr;</button>
+    </form>
+    <p class="nl-strip-note">Free. Unsubscribe any time. Z&uuml;rich first.</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer"><div class="wrap">
+  <div class="footer-grid">
+    <div>
+      <p class="footer-logo">solo<span>.</span>quando</p>
+      <p class="footer-tagline">Made only when you want it.</p>
+    </div>
+    <div class="footer-col"><h5>Discover</h5><ul>
+      <li><a href="/how-it-works">How it works</a></li>
+      <li><a href="/our-story">Our story</a></li>
+      <li><a href="/join">Join solo.quando</a></li>
+      <li><a href="/bake-with-us">Bake with us</a></li>
+      <li><a href="/faq">FAQ</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul>
+      <li><a href="/contact">Contact us</a></li>
+      <li><a href="mailto:hello@soloquando.ch">Email</a></li>
+      <li><a href="tel:+41787942700">Phone</a></li>
+      <li><a href="https://wa.me/message/SL244NA5ARHTL1" target="_blank" rel="noopener">WhatsApp</a></li>
+      <li><a href="https://www.instagram.com/solo.quando" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/company/soloquando/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Legal</h5><ul>
+      <li><a href="/imprint">Imprint</a></li>
+      <li><a href="/privacy">Privacy policy</a></li>
+      <li><a href="/terms">Terms of use</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-payments">
+    <span class="footer-payments-label">Payments handled by</span>
+    <a href="https://www.payrexx.com" target="_blank" rel="noopener" class="footer-payments-name">Payrexx</a>
+    <span class="footer-payments-methods">TWINT &middot; Visa &middot; Mastercard</span>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 solo.quando &middot; Z&uuml;rich</span>
+  </div>
+</div></footer>
+
+<script src="/payrexx.js"></script>
+<script>
+/* Mobile menu + share */
+(function(){
+  var burger = document.querySelector('.nav-burger');
+  var links = document.getElementById('main-nav');
+  if(burger && links){
+    burger.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  document.querySelectorAll('.share-quiet-link').forEach(function(btn){
+    btn.addEventListener('click', async function(){
+      var url = window.location.href;
+      var title = btn.getAttribute('data-share-title') || 'solo.quando';
+      if(navigator.share){ try { await navigator.share({title:title,url:url}); } catch(e){} }
+      else { try { await navigator.clipboard.writeText(url); } catch(e){} }
+    });
+  });
+})();
+
+/* Order form: totals + button update */
+(function(){
+  var PRICE_SIX=19.80, PRICE_TWELVE=39.60;
+  var sixRadio=document.getElementById('opt-six-005');
+  var twelveRadio=document.getElementById('opt-twelve-005');
+  var sixLabel=sixRadio?sixRadio.closest('.b1-option'):null;
+  var twelveLabel=twelveRadio?twelveRadio.closest('.b1-option'):null;
+  var boxesSelect=document.getElementById('boxes-select');
+  var totalDisplay=document.getElementById('total-display');
+  var btnTotal=document.getElementById('btn-total');
+  if(!sixRadio||!twelveRadio||!boxesSelect) return;
+  function update(){
+    if(sixRadio.checked){sixLabel.classList.add('is-active');twelveLabel.classList.remove('is-active');}
+    else{twelveLabel.classList.add('is-active');sixLabel.classList.remove('is-active');}
+    var n=parseInt(boxesSelect.value,10)||1;
+    var price=sixRadio.checked?PRICE_SIX:PRICE_TWELVE;
+    var t=(n*price).toFixed(2);
+    if(totalDisplay)totalDisplay.textContent='CHF '+t;
+    if(btnTotal)btnTotal.textContent=t;
+  }
+  sixRadio.addEventListener('change',update);
+  twelveRadio.addEventListener('change',update);
+  boxesSelect.addEventListener('change',update);
+  update();
+})();
+
+/* Order form: submission via shared SoloPayrexx */
+(function(){
+  var PRICE_SIX=19.80, PRICE_TWELVE=39.60;
+  var form=document.getElementById('batch005-form');
+  var errBox=document.getElementById('form-error');
+  var errMsg=document.getElementById('form-error-msg');
+  var btn=document.getElementById('submit-btn');
+  if(!form) return;
+  function showError(msg){errMsg.textContent=msg;errBox.style.display='block';errBox.scrollIntoView({behavior:'smooth',block:'center'});}
+  function hideError(){errBox.style.display='none';}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();hideError();
+    if(!window.SoloPayrexx){return showError('Payment system is loading. Please try again in a moment.');}
+    var boxType=(form.querySelector('input[name="box_type"]:checked')||{}).value;
+    var boxes=parseInt(form.querySelector('[name="boxes"]').value,10);
+    var pickup=form.querySelector('[name="pickup_day"]').value;
+    var notes=form.querySelector('[name="notes"]').value||'';
+    if(!boxType){return showError('Please choose Six or Twelve.');}
+    if(!boxes||boxes<1){return showError('Please choose how many boxes.');}
+    if(!pickup){return showError('Please choose a pickup day.');}
+    var pricePerBox=boxType==='six'?PRICE_SIX:PRICE_TWELVE;
+    var amount=boxes*pricePerBox;
+    var typeName=boxType==='six'?'Six (6 pralines)':'Twelve (12 pralines)';
+    var purpose='Batch 005 - L’Osanna - '+boxes+' x '+typeName;
+    btn.textContent='Opening payment…';btn.disabled=true;
+    SoloPayrexx.go({
+      amount: amount,
+      purpose: purpose,
+      sessionKey: 'sq_losanna_order',
+      sessionData: {batch:'005',box_type:boxType,boxes:boxes,pickup:pickup,notes:notes}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
