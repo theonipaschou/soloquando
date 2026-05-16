@@ -29,8 +29,8 @@ window.SOLO_BATCHES = [
     productHtml: 'Strawberry <em>marmalade</em>.',
     productPlain: 'Strawberry marmalade',
     baker: 'Theoni',
-    status: 'confirmed',                // 'confirmed' | 'open' | 'soon'
-    statusEyebrow: 'CONFIRMED',
+    status: 'completed',                // 'confirmed' | 'open' | 'soon' | 'completed'
+    statusEyebrow: 'COMPLETED',
     cardLine: 'A Greek recipe from my grandmother. Slow-simmered with strawberries from a farm near Z\u00fcrich.',
     preorderOpensTable: 'Mon 4 May 2026',
     preorderByCarousel: null,
