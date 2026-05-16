@@ -320,6 +320,11 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .batch-card.is-confirmed{opacity:.85;}
 .batch-card.is-confirmed .batch-card-eyebrow{color:var(--sage);}
 
+/* Completed card — done, still visible. Sage-tinted, slightly more muted than confirmed. */
+.batch-card.is-completed{opacity:.78;}
+.batch-card.is-completed .batch-card-eyebrow{color:var(--sage);}
+.batch-card-eyebrow.is-completed::before{content:"\2713";display:inline-block;color:var(--sage);margin-right:8px;vertical-align:middle;}
+
 /* Coming-soon card */
 .batch-card.is-soon .batch-card-eyebrow{color:var(--dim);}
 .batch-card.is-soon .batch-card-img{background:linear-gradient(135deg,rgba(122,139,106,.08) 0%,rgba(43,26,15,.04) 100%);}
@@ -584,7 +589,7 @@ details[open] .faqi-q::after{content:'\2013';}
     <div class="faqi-list">
       <details class="faqi-item">
         <summary class="faqi-q">When does this launch?</summary>
-        <p class="faqi-a">solo.quando is live in Z&uuml;rich. Batch 003 (Mousto) is open for pre-orders now. <a href="/#batches">See the current batches &rarr;</a></p>
+        <p class="faqi-a">solo.quando is live in Z&uuml;rich. Batch 002 (Moustokouloura) was completed on Saturday 16 May. Batch 003 (Ergolavoi) pre-orders open Sunday 17 May. <a href="/#batches">See the current batches &rarr;</a></p>
       </details>
       <details class="faqi-item">
         <summary class="faqi-q">What if a batch doesn't reach its threshold?</summary>

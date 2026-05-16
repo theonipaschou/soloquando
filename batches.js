@@ -51,8 +51,8 @@ window.SOLO_BATCHES = [
     productPlain: 'Mousto',
     productFullName: 'Moustokouloura',
     baker: 'Theoni',
-    status: 'open',
-    statusEyebrow: 'PRE-ORDERS OPEN',
+    status: 'completed',
+    statusEyebrow: 'COMPLETED',
     cardLine: 'A very traditional Greek cookie. Petimezi, olive oil, cinnamon. Made by hand, made only when you want it.',
     preorderOpensTable: 'Sun 10 May 2026',
     preorderByCarousel: 'Fri 15 May, 12:00',
@@ -65,7 +65,7 @@ window.SOLO_BATCHES = [
     image: '/mousto-900.jpg',
     imageAlt: 'Greek moustokouloura with sesame seeds and coffee',
     link: '/batch-moustokouloura-002',
-    cta: 'Pre-order now \u2192'
+    cta: 'View batch \u2192'
   },
   {
     id: '003',
@@ -162,15 +162,18 @@ window.SoloBatches = (function () {
        Visual state is driven by `status`:
          - 'open'      → terra-coloured "live" eyebrow with pulsing dot
          - 'confirmed' → sage-coloured "is-confirmed" styling (faint)
+         - 'completed' → sage-tinted "is-completed" styling (done, but still on display)
          - 'soon'      → muted "is-placeholder" styling
        All batches with a link are clickable. */
 
     var articleClass = 'batch-card is-clickable';
     if (b.status === 'confirmed') articleClass += ' is-confirmed';
+    if (b.status === 'completed') articleClass += ' is-completed';
     if (b.status === 'soon')      articleClass += ' is-soon';
 
     var eyebrowClass = 'batch-card-eyebrow';
     if (b.status === 'open')      eyebrowClass += ' is-live';
+    if (b.status === 'completed') eyebrowClass += ' is-completed';
     if (b.status === 'soon')      eyebrowClass += ' is-soon';
 
     /* Pre-order line: shown for 'open' (current deadline) and 'soon' (when it opens) */
@@ -266,6 +269,7 @@ window.SoloBatches = (function () {
     var statusLabelMap = {
       confirmed: 'Confirmed',
       open: 'Pre-orders open',
+      completed: 'Completed',
       soon: 'Coming soon'
     };
     var statusCell = '<span class="status-pill status-pill-' + esc(b.status) + '">' +
