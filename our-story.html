@@ -14,17 +14,18 @@
 .h-hero h1 em{color:var(--terra);}
 .h-hero p,.h-hero .sub{color:rgba(245,239,228,.75);}
 .h-hero .kicker{color:var(--terra);}
-.story-body-s{background:var(--paper);}
-.bigger-s{background:var(--bone);}
+.story-body-s{background:var(--bone);}
+.bigger-s{background:var(--paper);}
 .why-s{background:var(--terra);}
 .why-s h2,.why-s h3{color:var(--bone);}
 .why-s h2 em{color:var(--ink);}
 .why-s p{color:rgba(245,239,228,.85);}
 .why-s .kicker{color:rgba(245,239,228,.7);}
-.opposite-s{background:var(--ink);}
-.opposite-s h2,.opposite-s h3{color:var(--bone);}
+/* opposite-s: bone bg (was ink) to break the terra→brown adjacency */
+.opposite-s{background:var(--bone);}
+.opposite-s h2,.opposite-s h3{color:var(--ink);}
 .opposite-s h2 em{color:var(--terra);}
-.opposite-s p{color:rgba(245,239,228,.82);}
+.opposite-s p{color:var(--dim);}
 .opposite-s .kicker{color:var(--terra);}
 /* Nav */
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
@@ -104,11 +105,14 @@
 .h-hero-img{position:relative;overflow:hidden;background:var(--paper);}
 @media(max-width:860px){.h-hero-img{height:60vw;min-height:300px;}}
 .h-hero-img img{width:100%;height:100%;object-fit:cover;}
-/* Story body */
-.story-body-s{padding:80px 0;}
-.story-body-inner{max-width:680px;margin:0 auto;padding:0 32px;}
-.story-body-s p{font-size:18px;line-height:1.75;color:var(--dim);margin-bottom:18px;}
-.story-pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.4vw,26px);color:var(--ink);line-height:1.5;border-left:3px solid var(--terra);padding-left:24px;margin:32px 0;}
+/* Story body — text left, image right (stacks on mobile) */
+.story-body-s{padding:96px 0;}
+.story-body-grid{display:grid;grid-template-columns:1fr 460px;gap:64px;max-width:1080px;margin:0 auto;padding:0 48px;align-items:center;}
+@media(max-width:860px){.story-body-grid{grid-template-columns:1fr;gap:36px;padding:0 22px;}}
+.story-body-text p{font-size:18px;line-height:1.75;color:var(--dim);margin-bottom:18px;}
+.story-body-img{position:relative;}
+.story-body-img img{width:100%;height:auto;display:block;border:1px solid var(--line);}
+.story-pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.4vw,26px);color:var(--ink);line-height:1.5;border-left:3px solid var(--terra);padding-left:24px;margin:32px 0 0;}
 /* Bigger picture */
 .bigger-s{padding:96px 0;}
 .bigger-inner{max-width:780px;margin:0 auto;padding:0 32px;}
@@ -132,7 +136,7 @@
 .opposite-s .kicker{display:block;margin-bottom:20px;}
 .opposite-s h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(40px,5vw,64px);letter-spacing:-.025em;margin-bottom:32px;line-height:1.08;}
 .opposite-s p{font-size:19px;line-height:1.7;margin-bottom:18px;}
-.opposite-pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2.8vw,30px);line-height:1.45;border-top:1px solid rgba(250,243,238,.15);border-bottom:1px solid rgba(250,243,238,.15);padding:36px 0;margin:40px 0 0;}
+.opposite-pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2.8vw,30px);line-height:1.45;color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:36px 0;margin:40px 0 0;}
 </style>
 
 <header class="page-hero">
@@ -144,17 +148,19 @@
 </header>
 
 <section class="story-body-s">
-  <div class="story-body-inner">
-    <p>My grandmother taught me to bake. Patience. Butter. Citrus peel. Time.</p>
-    <p>She never used a recipe book. She remembered everything by hand. She called me to the kitchen when something needed stirring, and that is how I learned.</p>
-    <p>She is no longer here. The recipes are. So I make them. Most Sundays.</p>
-    <figure class="story-figure">
+  <div class="story-body-grid">
+    <div class="story-body-text">
+      <p>My grandmother taught me to bake. Patience. Butter. Citrus peel. Time.</p>
+      <p>She never used a recipe book. She remembered everything by hand. She called me to the kitchen when something needed stirring, and that is how I learned.</p>
+      <p>She is no longer here. The recipes are. So I make them. Most Sundays.</p>
+      <p class="story-pull">&ldquo;One Sunday I made twenty-four cookies. I ate two. The rest went to waste. That was the Sunday I knew something was wrong.&rdquo;</p>
+    </div>
+    <div class="story-body-img">
       <picture>
-        <source type="image/webp" srcset="grandma-600.webp 600w, grandma-900.webp 900w" sizes="(max-width:860px) 100vw, 780px">
+        <source type="image/webp" srcset="grandma-600.webp 600w, grandma-900.webp 900w" sizes="(max-width:860px) 100vw, 460px">
         <img src="grandma-900.webp" alt="Theoni and her grandmother making marmalade together" loading="lazy" decoding="async"/>
       </picture>
-    </figure>
-    <p class="story-pull">"One Sunday I made twenty-four cookies. I ate two. The rest went to waste. That was the Sunday I knew something was wrong."</p>
+    </div>
   </div>
 </section>
 
