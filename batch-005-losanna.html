@@ -142,20 +142,21 @@ img{display:block;max-width:100%;}
 .b1-spec-item .small{font-size:13px;color:var(--dim);margin-top:8px;}
 
 /* PRODUCT BOX CARDS */
-.b1-boxes{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:28px;}
+.b1-boxes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:28px;}
+@media(max-width:960px){.b1-boxes{grid-template-columns:1fr 1fr;}}
 @media(max-width:680px){.b1-boxes{grid-template-columns:1fr;gap:20px;}}
-.b1-box{background:var(--bone);border:1px solid var(--line);padding:0 0 32px;display:flex;flex-direction:column;}
+.b1-box{background:var(--bone);border:1px solid var(--line);padding:0 0 28px;display:flex;flex-direction:column;}
 .b1-box.feat{background:var(--paper);border-color:rgba(194,102,61,.35);position:relative;}
 .b1-box.feat:before{content:"Best value";position:absolute;top:-12px;left:32px;background:var(--terra);color:var(--bone);font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:6px 12px;z-index:2;}
 .b1-box .box-img{width:100%;aspect-ratio:4/3;overflow:hidden;background:#efe5d2;}
 .b1-box .box-img img{width:100%;height:100%;object-fit:cover;display:block;}
-.b1-box .box-body{padding:28px 32px 0;display:flex;flex-direction:column;flex:1;}
-.b1-box h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--ink);margin-bottom:10px;line-height:1.15;}
+.b1-box .box-body{padding:24px 24px 0;display:flex;flex-direction:column;flex:1;}
+.b1-box h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--ink);margin-bottom:10px;line-height:1.2;}
 .b1-box .desc{font-size:15px;line-height:1.6;color:var(--dim);margin-bottom:18px;}
 .b1-box .flavor-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink);margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line);}
 .b1-box .price-block{margin-bottom:18px;}
 .b1-box .price-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);}
-.b1-box .price-final{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--ink);line-height:1;margin-top:4px;}
+.b1-box .price-final{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--ink);line-height:1;margin-top:4px;}
 .b1-box .price-final em{color:var(--terra);font-style:italic;font-size:24px;}
 .b1-box .cta{margin-top:auto;display:inline-block;text-align:center;padding:16px 22px;background:var(--ink);color:var(--bone);font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .2s;text-decoration:none;}
 .b1-box .cta:hover{background:var(--terra);}
@@ -379,6 +380,122 @@ img{display:block;max-width:100%;}
 </section>
 
 <!-- CHOOSE YOUR BOX -->
+
+<style>
+/* ── Flavours gallery ── */
+.flavors-s{padding:96px 0;background:var(--bone);border-top:1px solid var(--line);}
+.flavors-s .b1-section-inner{text-align:center;}
+.flavors-s h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(36px,4.4vw,56px);letter-spacing:-.025em;line-height:1.08;margin:14px 0 14px;color:var(--ink);}
+.flavors-s h2 em{color:var(--terra);font-style:italic;}
+.flavors-s .lede{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:560px;margin:0 auto 56px;line-height:1.5;}
+.flavors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto;text-align:left;}
+@media(max-width:980px){.flavors-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:760px){.flavors-grid{grid-template-columns:repeat(2,1fr);gap:18px;}}
+@media(max-width:480px){.flavors-grid{grid-template-columns:1fr;}}
+.flavor-card{background:var(--bone);border:1px solid var(--line);padding:22px 22px 20px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;}
+.flavor-card:hover{border-color:rgba(194,102,61,.35);transform:translateY(-2px);}
+.flavor-disc{width:46px;height:46px;border-radius:50%;margin-bottom:16px;flex-shrink:0;border:1px solid rgba(43,26,15,.08);}
+.flavor-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:10px;}
+.flavor-name em{font-style:italic;color:var(--terra);}
+.flavor-ing{font-size:13px;line-height:1.55;color:var(--dim);margin-bottom:14px;flex:1;}
+.flavor-intensity{display:flex;gap:5px;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--line);}
+.flavor-intensity .ilbl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-right:auto;}
+.flavor-intensity .dot{width:7px;height:7px;border-radius:50%;background:rgba(43,26,15,.15);}
+.flavor-intensity .dot.on{background:var(--ink);}
+</style>
+
+<!-- ── ELEVEN FLAVOURS GALLERY ── -->
+<section class="flavors-s" id="flavors">
+  <div class="wrap">
+    <div class="b1-section-inner">
+      <p class="kicker">Eleven flavours</p>
+      <h2>The full <em>menu</em>.</h2>
+      <p class="lede">Each praline shaped, filled, dipped and finished by hand. Brie or Parmesan inside, white, milk, dark or ruby chocolate outside. Eleven small ideas, each a complete bite.</p>
+
+      <div class="flavors-grid">
+
+        <article class="flavor-card">
+          <div class="flavor-disc" style="background:#d59097;"></div>
+          <h3 class="flavor-name"><em>StrawBrie</em> Ruby</h3>
+          <p class="flavor-ing">Brie cheese, white chocolate, strawberry, rosemary.</p>
+          <div class="flavor-intensity"><span class="ilbl">Mild</span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        </article>
+
+        <article class="flavor-card">
+          <div class="flavor-disc" style="background:#6a2924;"></div>
+          <h3 class="flavor-name"><em>StrawBrie</em> Dark</h3>
+          <p class="flavor-ing">Brie cheese, dark chocolate, rosemary, edible glitter.</p>
+          <div class="flavor-intensity"><span class="ilbl">Mild</span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        </article>
+
+        <article class="flavor-card">
+          <div class="flavor-disc" style="background:#a86b7a;"></div>
+          <h3 class="flavor-name"><em>RaspBrie</em></h3>
+          <p class="flavor-ing">Brie cheese, white chocolate, raspberry, black pepper.</p>
+          <div class="flavor-intensity"><span class="ilbl">Mild</span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        </article>
+
+        <article class="flavor-card">
+          <div class="flavor-disc" style="background:#5a4a6e;"></div>
+          <h3 class="flavor-name"><em>BlackBrie</em></h3>
+          <p class="flavor-ing">Brie cheese, white chocolate, blackberry, lavender.</p>
+          <div class="flavor-intensity"><span class="ilbl">Mild</span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        </article>
+
+        <article class="flavor-card">
+          <div class="flavor-disc" style="background:#b07533;"></div>
+          <h3 class="flavor-name"><em>ParmeSala</em></h3>
+          <p class="flavor-ing">Parmesan cheese, white chocolate, carrot, masala, peanut.</p>
+          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+        </article>
+
+        <article class="flavor-card">
+          <div class="flavor-disc" style="background:#2b1a0f;"></div>
+          <h3 class="flavor-name"><em>Tartufo</em> Dark</h3>
+          <p class="flavor-ing">Truffle brie cheese, dark chocolate, truffle powder.</p>
+          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div>
+        </article>
+
+        <article class="flavor-card">
+          <div class="flavor-disc" style="background:#f0e6d5;"></div>
+          <h3 class="flavor-name"><em>Tartufo</em> White</h3>
+          <p class="flavor-ing">Truffle brie cheese, white chocolate, truffle powder.</p>
+          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div>
+        </article>
+
+        <article class="flavor-card">
+          <div class="flavor-disc" style="background:#dcc890;"></div>
+          <h3 class="flavor-name"><em>StrawSan</em></h3>
+          <p class="flavor-ing">Parmesan cheese, white chocolate, strawberry, rosemary, pistachio.</p>
+          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+        </article>
+
+        <article class="flavor-card">
+          <div class="flavor-disc" style="background:#bccea7;"></div>
+          <h3 class="flavor-name"><em>Mochito</em></h3>
+          <p class="flavor-ing">Parmesan cheese, white chocolate, lime, mint.</p>
+          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+        </article>
+
+        <article class="flavor-card">
+          <div class="flavor-disc" style="background:#4a2a1a;"></div>
+          <h3 class="flavor-name"><em>Orancina</em> Dark</h3>
+          <p class="flavor-ing">Parmesan cheese, dark chocolate, pumpkin, orange.</p>
+          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+        </article>
+
+        <article class="flavor-card">
+          <div class="flavor-disc" style="background:#e8b97a;"></div>
+          <h3 class="flavor-name"><em>Orancina</em> White</h3>
+          <p class="flavor-ing">Parmesan cheese, white chocolate, pumpkin, orange.</p>
+          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="b1-section alt" id="choose">
   <div class="wrap">
     <div class="b1-section-inner">
@@ -388,6 +505,25 @@ img{display:block;max-width:100%;}
 
       <div class="b1-boxes">
 
+        <!-- 4 box -->
+        <div class="b1-box">
+          <div class="box-img">
+            <img src="https://www.losanna-pralines.ch/cdn/shop/files/6-box.jpg?v=1701722937&amp;width=1200" alt="L'Osanna 4-piece cheese and chocolate praline taster box" loading="lazy"/>
+          </div>
+          <div class="box-body">
+            <h3>4 Cheese + Chocolate Pralines</h3>
+            <p class="desc">The taster. Four pralines from across Osanna's range, hand-finished, just enough to know what the conversation is about.</p>
+            <p class="flavor-line">Mochito, ParmeSala, Tartufo Dark, RaspBrie Dark.</p>
+
+            <div class="price-block">
+              <p class="price-label">Batch 005 price</p>
+              <p class="price-final">CHF 13<em>.80</em></p>
+            </div>
+
+            <a href="#reserve" class="cta">Reserve the 4-piece &rarr;</a>
+          </div>
+        </div>
+
         <!-- 6 box -->
         <div class="b1-box">
           <div class="box-img">
@@ -395,12 +531,12 @@ img{display:block;max-width:100%;}
           </div>
           <div class="box-body">
             <h3>6 Cheese + Chocolate Pralines</h3>
-            <p class="desc">The first hello. Six pralines, hand-finished, just enough to walk a person through the idea. The right box for a Tuesday evening with a glass of wine, or for someone you want to surprise without overdoing it.</p>
-            <p class="flavor-line">A curated six: Tartufo, StrawBrie, Orancina, ParmeSala, Mochito.</p>
+            <p class="desc">The first hello. Six pralines, hand-finished, enough to walk a person through the idea. The right box for a Tuesday evening with a glass of wine, or for someone you want to surprise without overdoing it.</p>
+            <p class="flavor-line">Tartufo White, StrawBrie Ruby, Orancina White, ParmeSala, RaspBrie, StrawSan.</p>
 
             <div class="price-block">
               <p class="price-label">Batch 005 price</p>
-              <p class="price-final">CHF 19<em>.80</em></p>
+              <p class="price-final">CHF 18<em>.00</em></p>
             </div>
 
             <a href="#reserve" class="cta">Reserve the 6-piece &rarr;</a>
@@ -414,12 +550,12 @@ img{display:block;max-width:100%;}
           </div>
           <div class="box-body">
             <h3>12 Cheese + Chocolate Pralines</h3>
-            <p class="desc">The whole conversation. Twelve pralines from across Osanna's full range, white through ruby through dark. The right box for a long evening with someone, for a gift that means it, or for the kind of Saturday you want to make last a little longer.</p>
-            <p class="flavor-line">Tartufo, StrawBrie Ruby and Dark, Orancina, ParmeSala, RaspBrie, BlackBrie, StrawSan, Mochito.</p>
+            <p class="desc">The whole library. All eleven flavours plus one double surprise. The right box for a long evening with someone, a gift that means it, or a Saturday you want to make last.</p>
+            <p class="flavor-line">All 11 flavours &middot; plus one double surprise from Osanna.</p>
 
             <div class="price-block">
               <p class="price-label">Batch 005 price</p>
-              <p class="price-final">CHF 39<em>.60</em></p>
+              <p class="price-final">CHF 36<em>.00</em></p>
             </div>
 
             <a href="#reserve" class="cta">Reserve the 12-piece &rarr;</a>
@@ -519,17 +655,23 @@ img{display:block;max-width:100%;}
         <form id="batch005-form" novalidate>
           <p class="f-label" style="margin-bottom:12px;">Your box *</p>
           <div class="b1-options">
-            <label class="b1-option is-active" for="opt-six-005">
-              <input type="radio" name="box_type" value="six" id="opt-six-005" checked/>
+            <label class="b1-option is-active" for="opt-four-005">
+              <input type="radio" name="box_type" value="four" id="opt-four-005" checked/>
+              <p class="b1-option-title">The <em>Four</em></p>
+              <p class="b1-option-desc">4 pralines. The taster.</p>
+              <p class="b1-option-price">CHF 13.80 / box</p>
+            </label>
+            <label class="b1-option" for="opt-six-005">
+              <input type="radio" name="box_type" value="six" id="opt-six-005"/>
               <p class="b1-option-title">The <em>Six</em></p>
-              <p class="b1-option-desc">6 cheese + chocolate pralines. The introduction.</p>
-              <p class="b1-option-price">CHF 19.80 / box</p>
+              <p class="b1-option-desc">6 pralines. The introduction.</p>
+              <p class="b1-option-price">CHF 18.00 / box</p>
             </label>
             <label class="b1-option" for="opt-twelve-005">
               <input type="radio" name="box_type" value="twelve" id="opt-twelve-005"/>
               <p class="b1-option-title">The <em>Twelve</em></p>
-              <p class="b1-option-desc">12 pralines. The full signature library.</p>
-              <p class="b1-option-price">CHF 39.60 / box</p>
+              <p class="b1-option-desc">12 pralines. The full library.</p>
+              <p class="b1-option-price">CHF 36.00 / box</p>
             </label>
           </div>
 
@@ -546,7 +688,7 @@ img{display:block;max-width:100%;}
             </label>
             <div class="b1-total">
               <p class="b1-total-lbl">You pay</p>
-              <p class="b1-total-val" id="total-display">CHF 19.80</p>
+              <p class="b1-total-val" id="total-display">CHF 13.80</p>
             </div>
           </div>
 
@@ -567,7 +709,7 @@ img{display:block;max-width:100%;}
           </div>
 
           <button type="submit" class="b1-form-submit" id="submit-btn">
-            Reserve now. CHF <span id="btn-total">19.80</span> &rarr;
+            Reserve now. CHF <span id="btn-total">13.80</span> &rarr;
           </button>
 
           <p style="margin-top:18px;font-size:13px;color:rgba(245,239,228,.55);text-align:center;letter-spacing:.04em;line-height:1.6;">
@@ -672,33 +814,43 @@ img{display:block;max-width:100%;}
 
 /* Order form totals + button update */
 (function(){
-  var PRICE_SIX = 19.80, PRICE_TWELVE = 39.60;
-  var sixRadio = document.getElementById('opt-six-005');
-  var twelveRadio = document.getElementById('opt-twelve-005');
-  var sixLabel = sixRadio ? sixRadio.closest('.b1-option') : null;
-  var twelveLabel = twelveRadio ? twelveRadio.closest('.b1-option') : null;
+  var PRICES = { four: 13.80, six: 18.00, twelve: 36.00 };
+  var radios = [
+    { el: document.getElementById('opt-four-005'),   val: 'four' },
+    { el: document.getElementById('opt-six-005'),    val: 'six' },
+    { el: document.getElementById('opt-twelve-005'), val: 'twelve' }
+  ].filter(function(r){ return r.el; });
   var boxesSelect = document.getElementById('boxes-select');
   var totalDisplay = document.getElementById('total-display');
   var btnTotal = document.getElementById('btn-total');
-  if(!sixRadio || !twelveRadio || !boxesSelect) return;
+  if(radios.length === 0 || !boxesSelect) return;
+  function checked(){
+    for(var i=0;i<radios.length;i++){ if(radios[i].el.checked) return radios[i]; }
+    return radios[0];
+  }
   function update(){
-    if(sixRadio.checked){ sixLabel.classList.add('is-active'); twelveLabel.classList.remove('is-active'); }
-    else { twelveLabel.classList.add('is-active'); sixLabel.classList.remove('is-active'); }
+    var sel = checked();
+    radios.forEach(function(r){
+      var lbl = r.el.closest('.b1-option');
+      if(!lbl) return;
+      if(r === sel) lbl.classList.add('is-active');
+      else lbl.classList.remove('is-active');
+    });
     var n = parseInt(boxesSelect.value, 10) || 1;
-    var price = sixRadio.checked ? PRICE_SIX : PRICE_TWELVE;
+    var price = PRICES[sel.val] || 0;
     var t = (n * price).toFixed(2);
     if(totalDisplay) totalDisplay.textContent = 'CHF ' + t;
     if(btnTotal) btnTotal.textContent = t;
   }
-  sixRadio.addEventListener('change', update);
-  twelveRadio.addEventListener('change', update);
+  radios.forEach(function(r){ r.el.addEventListener('change', update); });
   boxesSelect.addEventListener('change', update);
   update();
 })();
 
 /* Order form submission via shared SoloPayrexx */
 (function(){
-  var PRICE_SIX = 19.80, PRICE_TWELVE = 39.60;
+  var PRICES = { four: 13.80, six: 18.00, twelve: 36.00 };
+  var NAMES  = { four: 'Four (4 pralines)', six: 'Six (6 pralines)', twelve: 'Twelve (12 pralines)' };
   var form = document.getElementById('batch005-form');
   var errBox = document.getElementById('form-error');
   var errMsg = document.getElementById('form-error-msg');
@@ -713,12 +865,11 @@ img{display:block;max-width:100%;}
     var boxes = parseInt(form.querySelector('[name="boxes"]').value, 10);
     var pickup = form.querySelector('[name="pickup_day"]').value;
     var notes = form.querySelector('[name="notes"]').value || '';
-    if(!boxType){ return showError('Please choose Six or Twelve.'); }
+    if(!boxType || !PRICES[boxType]){ return showError('Please choose Four, Six or Twelve.'); }
     if(!boxes || boxes < 1){ return showError('Please choose how many boxes.'); }
     if(!pickup){ return showError('Pickup details missing.'); }
-    var pricePerBox = boxType === 'six' ? PRICE_SIX : PRICE_TWELVE;
-    var amount = boxes * pricePerBox;
-    var typeName = boxType === 'six' ? 'Six (6 pralines)' : 'Twelve (12 pralines)';
+    var amount = boxes * PRICES[boxType];
+    var typeName = NAMES[boxType];
     var purpose = 'Batch 005 - LOsanna - ' + boxes + ' x ' + typeName;
     btn.textContent = 'Opening payment...'; btn.disabled = true;
     SoloPayrexx.go({
