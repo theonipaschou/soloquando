@@ -1,0 +1,11 @@
+{
+  "batch": "006",
+  "name": "PNOE",
+  "reserved": 0,
+  "min": 5,
+  "max": 15,
+  "unit": "bottle",
+  "unit_plural": "bottles",
+  "status": "open",
+  "updated_at": "2026-05-17T08:00:00.000Z"
+}

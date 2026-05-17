@@ -131,6 +131,28 @@ window.SOLO_BATCHES = [
     imageAlt: 'L\u2019Osanna 6-piece cheese-and-chocolate praline gift box',
     link: '/batch-005-losanna',
     cta: 'Pre-order now \u2192'
+  },
+  {
+    id: '006',
+    productHtml: '<em>PNOE</em>.',
+    productPlain: 'PNOE',
+    productFullName: 'PNOE 1L Extra Virgin Olive Oil',
+    baker: 'The PNOE family',
+    status: 'open',
+    statusEyebrow: 'PRE-ORDERS OPEN',
+    cardLine: 'One litre of certified extra virgin olive oil from a small family grove in Ilis, Peloponnese. Cold-pressed within hours of harvest.',
+    preorderOpensTable: 'Sun 17 May 2026',
+    preorderByCarousel: 'Fri 5 June, midnight',
+    preorderByTable: 'Fri 5 June 2026, midnight',
+    pickupSummary: 'Sat 6 June, 11:00 sharp',
+    pickupTable: 'Sat 6 June 2026, 11:00',
+    pickupLocation: 'central Z\u00fcrich',
+    price: 'CHF 22 per 1L bottle (1\u20135 per order)',
+    priceTable: 'CHF 22 / 1L bottle',
+    image: 'https://pnoe-project.com/wp-content/uploads/elementor/thumbs/high-view-bottles-filled-with-olive-oil-marble-background-scaled-rkzll4ebj9fp9u0s5u06u9x5w41g36yhtgd09cri98.jpg',
+    imageAlt: 'PNOE extra virgin olive oil bottles arranged on a marble surface',
+    link: '/batch-006-pnoe',
+    cta: 'Pre-order now \u2192'
   }
 ];
 
