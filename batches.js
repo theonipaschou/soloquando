@@ -149,8 +149,8 @@ window.SOLO_BATCHES = [
     pickupLocation: 'central Z\u00fcrich',
     price: 'Simple CHF 19.80 / Gift CHF 24.20 (1 to 5 per order)',
     priceTable: 'Simple CHF 19.80 / Gift CHF 24.20',
-    image: '/pnoe-bottle-1l.webp',
-    imageAlt: 'PNOE 1-litre extra virgin olive oil glass bottle on a wooden kitchen table',
+    image: 'https://pnoe-project.com/wp-content/uploads/2026/03/pnoe-1.png',
+    imageAlt: 'PNOE 1-litre extra virgin olive oil glass bottle',
     link: '/batch-006-pnoe',
     cta: 'Pre-order now \u2192'
   }
