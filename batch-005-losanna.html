@@ -382,26 +382,14 @@ img{display:block;max-width:100%;}
 <!-- CHOOSE YOUR BOX -->
 
 <style>
-/* ── Flavours gallery ── */
+/* ── Flavours gallery (single image) ── */
 .flavors-s{padding:96px 0;background:var(--bone);border-top:1px solid var(--line);}
-.flavors-s .b1-section-inner{text-align:center;}
+.flavors-s .b1-section-inner{text-align:center;max-width:1200px;margin:0 auto;}
 .flavors-s h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(36px,4.4vw,56px);letter-spacing:-.025em;line-height:1.08;margin:14px 0 14px;color:var(--ink);}
 .flavors-s h2 em{color:var(--terra);font-style:italic;}
-.flavors-s .lede{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:560px;margin:0 auto 56px;line-height:1.5;}
-.flavors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto;text-align:left;}
-@media(max-width:980px){.flavors-grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:760px){.flavors-grid{grid-template-columns:repeat(2,1fr);gap:18px;}}
-@media(max-width:480px){.flavors-grid{grid-template-columns:1fr;}}
-.flavor-card{background:var(--bone);border:1px solid var(--line);padding:22px 22px 20px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;}
-.flavor-card:hover{border-color:rgba(194,102,61,.35);transform:translateY(-2px);}
-.flavor-disc{width:46px;height:46px;border-radius:50%;margin-bottom:16px;flex-shrink:0;border:1px solid rgba(43,26,15,.08);}
-.flavor-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:10px;}
-.flavor-name em{font-style:italic;color:var(--terra);}
-.flavor-ing{font-size:13px;line-height:1.55;color:var(--dim);margin-bottom:14px;flex:1;}
-.flavor-intensity{display:flex;gap:5px;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--line);}
-.flavor-intensity .ilbl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-right:auto;}
-.flavor-intensity .dot{width:7px;height:7px;border-radius:50%;background:rgba(43,26,15,.15);}
-.flavor-intensity .dot.on{background:var(--ink);}
+.flavors-s .lede{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--dim);max-width:560px;margin:0 auto 48px;line-height:1.5;}
+.flavors-image{width:100%;max-width:1200px;height:auto;display:block;margin:0 auto;}
+@media(max-width:720px){.flavors-s{padding:64px 0;}}
 </style>
 
 <!-- ── ELEVEN FLAVOURS GALLERY ── -->
@@ -411,87 +399,10 @@ img{display:block;max-width:100%;}
       <p class="kicker">Eleven flavours</p>
       <h2>The full <em>menu</em>.</h2>
       <p class="lede">Each praline shaped, filled, dipped and finished by hand. Brie or Parmesan inside, white, milk, dark or ruby chocolate outside. Eleven small ideas, each a complete bite.</p>
-
-      <div class="flavors-grid">
-
-        <article class="flavor-card">
-          <div class="flavor-disc" style="background:#d59097;"></div>
-          <h3 class="flavor-name"><em>StrawBrie</em> Ruby</h3>
-          <p class="flavor-ing">Brie cheese, white chocolate, strawberry, rosemary.</p>
-          <div class="flavor-intensity"><span class="ilbl">Mild</span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-        </article>
-
-        <article class="flavor-card">
-          <div class="flavor-disc" style="background:#6a2924;"></div>
-          <h3 class="flavor-name"><em>StrawBrie</em> Dark</h3>
-          <p class="flavor-ing">Brie cheese, dark chocolate, rosemary, edible glitter.</p>
-          <div class="flavor-intensity"><span class="ilbl">Mild</span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-        </article>
-
-        <article class="flavor-card">
-          <div class="flavor-disc" style="background:#a86b7a;"></div>
-          <h3 class="flavor-name"><em>RaspBrie</em></h3>
-          <p class="flavor-ing">Brie cheese, white chocolate, raspberry, black pepper.</p>
-          <div class="flavor-intensity"><span class="ilbl">Mild</span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-        </article>
-
-        <article class="flavor-card">
-          <div class="flavor-disc" style="background:#5a4a6e;"></div>
-          <h3 class="flavor-name"><em>BlackBrie</em></h3>
-          <p class="flavor-ing">Brie cheese, white chocolate, blackberry, lavender.</p>
-          <div class="flavor-intensity"><span class="ilbl">Mild</span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-        </article>
-
-        <article class="flavor-card">
-          <div class="flavor-disc" style="background:#b07533;"></div>
-          <h3 class="flavor-name"><em>ParmeSala</em></h3>
-          <p class="flavor-ing">Parmesan cheese, white chocolate, carrot, masala, peanut.</p>
-          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
-        </article>
-
-        <article class="flavor-card">
-          <div class="flavor-disc" style="background:#2b1a0f;"></div>
-          <h3 class="flavor-name"><em>Tartufo</em> Dark</h3>
-          <p class="flavor-ing">Truffle brie cheese, dark chocolate, truffle powder.</p>
-          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div>
-        </article>
-
-        <article class="flavor-card">
-          <div class="flavor-disc" style="background:#f0e6d5;"></div>
-          <h3 class="flavor-name"><em>Tartufo</em> White</h3>
-          <p class="flavor-ing">Truffle brie cheese, white chocolate, truffle powder.</p>
-          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div>
-        </article>
-
-        <article class="flavor-card">
-          <div class="flavor-disc" style="background:#dcc890;"></div>
-          <h3 class="flavor-name"><em>StrawSan</em></h3>
-          <p class="flavor-ing">Parmesan cheese, white chocolate, strawberry, rosemary, pistachio.</p>
-          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
-        </article>
-
-        <article class="flavor-card">
-          <div class="flavor-disc" style="background:#bccea7;"></div>
-          <h3 class="flavor-name"><em>Mochito</em></h3>
-          <p class="flavor-ing">Parmesan cheese, white chocolate, lime, mint.</p>
-          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
-        </article>
-
-        <article class="flavor-card">
-          <div class="flavor-disc" style="background:#4a2a1a;"></div>
-          <h3 class="flavor-name"><em>Orancina</em> Dark</h3>
-          <p class="flavor-ing">Parmesan cheese, dark chocolate, pumpkin, orange.</p>
-          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
-        </article>
-
-        <article class="flavor-card">
-          <div class="flavor-disc" style="background:#e8b97a;"></div>
-          <h3 class="flavor-name"><em>Orancina</em> White</h3>
-          <p class="flavor-ing">Parmesan cheese, white chocolate, pumpkin, orange.</p>
-          <div class="flavor-intensity"><span class="ilbl">Bold</span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
-        </article>
-
-      </div>
+      <picture>
+        <source type="image/webp" srcset="/losanna-flavors-1000.webp 1000w, /losanna-flavors-1400.webp 1400w" sizes="(max-width:1200px) 100vw, 1200px">
+        <img class="flavors-image" src="/losanna-flavors-1400.webp" alt="The 11 L'Osanna pralines: ParmeSala, Tartufo Dark, StrawBrie Ruby, RaspBrie, StrawSan, Tartufo White, StrawBrie Dark, BlackBrie, Mochito, Orancina Dark, Orancina White — each shown whole and cut in half with the ingredient list" loading="lazy" decoding="async"/>
+      </picture>
     </div>
   </div>
 </section>
