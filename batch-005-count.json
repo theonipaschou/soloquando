@@ -3,7 +3,7 @@
   "name": "L'Osanna",
   "reserved": 0,
   "min": 5,
-  "max": 15,
+  "max": 25,
   "unit": "box",
   "unit_plural": "boxes",
   "status": "open",
