@@ -33,8 +33,9 @@ img{display:block;max-width:100%;}
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
 @media(max-width:720px){.nav-inner{padding:0 22px;height:72px;}}
-.nav-logo{display:flex;align-items:center;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);letter-spacing:-.01em;}
+.nav-logo{display:flex;align-items:center;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);letter-spacing:-.01em;line-height:1;}
 .nav-logo span{color:var(--terra);}
+@media(max-width:720px){.nav-logo{font-size:24px;}}
 .nav-links{display:flex;gap:36px;list-style:none;}
 .nav-links a{font-size:16px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
 .nav-links a:hover,.nav-links a.on{color:var(--terra);}

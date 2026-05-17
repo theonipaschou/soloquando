@@ -33,8 +33,9 @@ img{display:block;max-width:100%;}
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
 @media(max-width:720px){.nav-inner{padding:0 22px;height:72px;}}
-.nav-logo{display:flex;align-items:center;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);letter-spacing:-.01em;}
+.nav-logo{display:flex;align-items:center;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);letter-spacing:-.01em;line-height:1;}
 .nav-logo span{color:var(--terra);}
+@media(max-width:720px){.nav-logo{font-size:24px;}}
 .nav-links{display:flex;gap:36px;list-style:none;}
 .nav-links a{font-size:16px;letter-spacing:.02em;color:var(--dim);transition:color .2s;}
 .nav-links a:hover,.nav-links a.on{color:var(--terra);}
@@ -149,24 +150,38 @@ img{display:block;max-width:100%;}
 .b1-analysis-item .v em{color:var(--terra);font-style:italic;}
 .b1-analysis-item .sub{font-size:12px;color:rgba(245,239,228,.5);margin-top:6px;letter-spacing:.04em;}
 
-/* SINGLE PRODUCT CARD */
-.b1-single{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:28px;background:var(--bone);border:1px solid var(--line);}
-@media(max-width:760px){.b1-single{grid-template-columns:1fr;}}
-.b1-single-img{position:relative;background:#efe5d2;aspect-ratio:1/1;overflow:hidden;}
-.b1-single-img img{width:100%;height:100%;object-fit:cover;display:block;}
-.b1-single-body{padding:48px 44px;display:flex;flex-direction:column;justify-content:center;}
-@media(max-width:720px){.b1-single-body{padding:32px 26px;}}
-.b1-single-body h3{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;color:var(--ink);margin-bottom:10px;line-height:1.1;}
-.b1-single-body h3 em{color:var(--terra);font-style:italic;}
-.b1-single-body .desc{font-size:16px;line-height:1.65;color:var(--dim);margin-bottom:20px;}
-.b1-single-body .flavor-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--ink);margin-bottom:24px;padding-bottom:22px;border-bottom:1px solid var(--line);}
-.b1-single-body .price-block{margin-bottom:22px;}
-.b1-single-body .price-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);}
-.b1-single-body .price-final{font-family:'Cormorant Garamond',serif;font-size:48px;color:var(--ink);line-height:1;margin-top:4px;}
-.b1-single-body .price-final em{color:var(--terra);font-style:italic;font-size:26px;}
-.b1-single-body .price-meta{font-size:13px;color:var(--dim);margin-top:6px;letter-spacing:.04em;}
-.b1-single-body .cta{display:inline-block;text-align:center;padding:16px 22px;background:var(--terra);color:var(--bone);font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .2s;text-decoration:none;}
-.b1-single-body .cta:hover{background:#a8552a;}
+/* PRODUCT BOX CARDS */
+.b1-boxes{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:28px;}
+@media(max-width:680px){.b1-boxes{grid-template-columns:1fr;gap:20px;}}
+.b1-box{background:var(--bone);border:1px solid var(--line);padding:0 0 32px;display:flex;flex-direction:column;}
+.b1-box.feat{background:var(--paper);border-color:rgba(194,102,61,.35);position:relative;}
+.b1-box.feat:before{content:"Gift wrapped";position:absolute;top:-12px;left:32px;background:var(--terra);color:var(--bone);font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:6px 12px;z-index:2;}
+.b1-box .box-img{width:100%;aspect-ratio:4/3;overflow:hidden;background:#efe5d2;}
+.b1-box .box-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.b1-box .box-body{padding:28px 32px 0;display:flex;flex-direction:column;flex:1;}
+.b1-box h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--ink);margin-bottom:10px;line-height:1.15;}
+.b1-box .desc{font-size:15px;line-height:1.6;color:var(--dim);margin-bottom:18px;}
+.b1-box .flavor-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink);margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line);}
+.b1-box .price-block{margin-bottom:18px;}
+.b1-box .price-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);}
+.b1-box .price-final{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--ink);line-height:1;margin-top:4px;}
+.b1-box .price-final em{color:var(--terra);font-style:italic;font-size:24px;}
+.b1-box .cta{margin-top:auto;display:inline-block;text-align:center;padding:16px 22px;background:var(--ink);color:var(--bone);font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .2s;text-decoration:none;}
+.b1-box .cta:hover{background:var(--terra);}
+.b1-box.feat .cta{background:var(--terra);}
+.b1-box.feat .cta:hover{background:#a8552a;}
+
+/* RADIO OPTIONS (in order form) */
+.b1-options{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+@media(max-width:560px){.b1-options{grid-template-columns:1fr;}}
+.b1-option{position:relative;padding:20px 22px;background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.18);cursor:pointer;transition:border-color .2s,background .2s;}
+.b1-option:hover{border-color:rgba(245,239,228,.4);}
+.b1-option input{position:absolute;opacity:0;pointer-events:none;}
+.b1-option.is-active{border-color:var(--terra);background:rgba(194,102,61,.1);}
+.b1-option-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--bone);line-height:1.2;margin-bottom:4px;}
+.b1-option-title em{font-style:italic;color:var(--terra);}
+.b1-option-desc{font-size:14px;color:rgba(245,239,228,.7);line-height:1.5;margin-bottom:10px;}
+.b1-option-price{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--bone);}
 
 /* ORDER FORM (dark ink) */
 .b1-form-s{padding:96px 0;background:var(--ink);color:var(--bone);}
@@ -266,8 +281,8 @@ img{display:block;max-width:100%;}
   <div class="b1-hero-text">
     <p class="kicker">Batch 006 &middot; open &middot; reservations</p>
     <h1>From <em>Ilis</em> to your table.<br/>One litre at a time.</h1>
-    <p class="sub">PNOE. Certified extra virgin olive oil from a small family grove in the Peloponnese. Hand-picked, cold-pressed within hours, bottled in one-litre glass. Harvest 2025&ndash;2026.</p>
-    <p class="baker"><strong>By the PNOE family</strong> &middot; Ilis, Greece &middot; CHF 22 per 1L bottle</p>
+    <p class="sub">PNOE. Certified extra virgin olive oil from a small family grove in the Peloponnese. Hand-picked, cold-pressed within hours, bottled in one-litre glass. Harvest 2025 / 2026.</p>
+    <p class="baker"><strong>By the PNOE family</strong> &middot; Ilis, Greece &middot; from CHF 19.80 per 1L bottle</p>
   </div>
   <div class="b1-hero-img">
     <img src="https://pnoe-project.com/wp-content/uploads/elementor/thumbs/high-view-bottles-filled-with-olive-oil-marble-background-scaled-rkzll4ebj9fp9u0s5u06u9x5w41g36yhtgd09cri98.jpg" alt="PNOE extra virgin olive oil bottles arranged on a marble surface" fetchpriority="high"/>
@@ -322,9 +337,9 @@ img{display:block;max-width:100%;}
       <p class="kicker">The story</p>
       <h2 style="margin-top:14px;">A grove chosen by <em>science</em>. A family that already knew.</h2>
       <p>Most olive oil starts with a tree someone inherited. PNOE started with a map.</p>
-      <p>In 2023, the family spent months reading a Greek academic study called <em>Mapping the Climatic Suitability for Olive Groves in Greece</em>. They were looking for the conditions that turn an olive into an oil worth bottling: the right altitude, the right soil, the right slow rhythm of sun and sea wind. The map kept pointing to one corner of the Peloponnese &mdash; the region of Ilis, on the Ionian coast, west of Olympia.</p>
+      <p>In 2023, the family spent months reading a Greek academic study called <em>Mapping the Climatic Suitability for Olive Groves in Greece</em>. They were looking for the conditions that turn an olive into an oil worth bottling: the right altitude, the right soil, the right slow rhythm of sun and sea wind. The map kept pointing to one corner of the Peloponnese. The region of Ilis, on the Ionian coast, west of Olympia.</p>
       <p>That is where they bought the land.</p>
-      <p>By 2024 they were on it. Preparing the soil, walking the rows, learning the trees one at a time. The first harvest came late that autumn. Cold nights, warm afternoons, the sea about an hour away in every direction. By 2025 the project had a name: PNOE &mdash; pronounced <em>pno-ay</em>, the Greek word for <em>breath</em>.</p>
+      <p>By 2024 they were on it. Preparing the soil, walking the rows, learning the trees one at a time. The first harvest came late that autumn. Cold nights, warm afternoons, the sea about an hour away in every direction. By 2025 the project had a name: PNOE, pronounced <em>pno-ay</em>, the Greek word for <em>breath</em>.</p>
       <p>That is the part most people miss. Olive oil is not pressed. It is breathed. Air, salt, time, hands that do not hurry. The PNOE family bottles all four into the same litre.</p>
       <p class="pullquote">"Not a random land. A scientifically selected one. Because great olive oil starts from the land."<br/><span style="font-style:normal;font-size:15px;color:var(--dim);letter-spacing:.04em;">PNOE, on choosing Ilis</span></p>
     </div>
@@ -338,10 +353,11 @@ img{display:block;max-width:100%;}
       <p class="kicker">The land</p>
       <h2 style="margin-top:14px;">An hour from the <em>Ionian</em>. A breath above the rest.</h2>
       <p>The grove sits in Ilis, in the western Peloponnese. The Ionian Sea breathes over the trees from one side. The mountains behind hold the cold air. The result is the kind of mild, ventilated climate that an olive tree would design for itself if it could.</p>
-      <p>Two things follow. The trees stay healthy without unnecessary treatments &mdash; the breeze and the dryness do most of the work that chemicals do elsewhere. And the olives ripen at their own pace, never rushed, which is what gives the finished oil its unhurried, layered taste.</p>
+      <p>Two things follow. The trees stay healthy without unnecessary treatments. The breeze and the dryness do most of the work that chemicals do elsewhere. And the olives ripen at their own pace, never rushed, which is what gives the finished oil its unhurried, layered taste.</p>
       <p class="pullquote">The sea breeze does the spraying. The sun does the timing. We mostly stay out of the way.</p>
-      <p>The harvest happens in late autumn, by hand. Each batch of olives goes to the press within hours of being picked &mdash; not days, not weeks. Cold extraction, no heat, no shortcuts. What you taste in the bottle is what the tree gave that morning.</p>
-      <p>The 2025&ndash;2026 harvest was sent to IC CHEM, an accredited laboratory in Patras, for the full chemical and organoleptic panel. It came back as <em>extra virgin</em> on every line.</p>
+      <p>The harvest happens in late autumn, by hand. Each batch of olives goes to the press within hours of being picked. Not days, not weeks. Cold extraction, no heat, no shortcuts. What you taste in the bottle is what the tree gave that morning.</p>
+      <p>The 2025 / 2026 harvest was sent to IC CHEM, an accredited laboratory in Patras, for the full chemical and organoleptic panel. It came back as <em>extra virgin</em> on every line.</p>
+      <p style="margin-top:24px;font-size:15px;color:rgba(245,239,228,.6);">More on the family, the land and the harvest at <a href="https://pnoe-project.com" target="_blank" rel="noopener" style="color:var(--terra);border-bottom:1px solid rgba(194,102,61,.4);padding-bottom:1px;">pnoe-project.com</a>.</p>
     </div>
   </div>
 </section>
@@ -389,17 +405,17 @@ img{display:block;max-width:100%;}
     <div class="b1-section-inner">
       <p class="kicker">In the bottle</p>
       <h2 style="margin-top:14px;">Olives. <em>That's the entire ingredient list.</em></h2>
-      <p>One litre of cold-pressed extra virgin olive oil, in dark glass to keep the light out. Nothing blended in, nothing filtered for show. The colour, the cloudiness, the way it catches the back of your throat &mdash; all of it is the olive, talking.</p>
+      <p>One litre of cold-pressed extra virgin olive oil, in dark glass to keep the light out. Nothing blended in, nothing filtered for show. The colour, the cloudiness, the way it catches the back of your throat. All of it is the olive, talking. (<a href="https://pnoe-project.com" target="_blank" rel="noopener" style="color:var(--terra);border-bottom:1px solid rgba(194,102,61,.4);padding-bottom:1px;">More about PNOE</a>.)</p>
 
       <div class="b1-spec">
         <div class="b1-spec-item">
           <h4>Ingredients</h4>
-          <p>100% extra virgin olive oil. Single origin, single estate, Ilis, Peloponnese, Greece. Harvest 2025&ndash;2026.</p>
+          <p>100% extra virgin olive oil. Single origin, single estate, Ilis, Peloponnese, Greece. Harvest 2025 / 2026.</p>
           <p class="small">Cold extracted within hours of harvest. No heat, no filtering aids, no blending.</p>
         </div>
         <div class="b1-spec-item">
           <h4>Good to know</h4>
-          <p>1 litre, dark glass bottle. Stores best somewhere cool and dark &mdash; not next to the stove. Once opened, drink it within a few months, not a year.</p>
+          <p>1 litre, dark glass bottle. Stores best somewhere cool and dark, not next to the stove. Once opened, drink it within a few months, not a year.</p>
           <p class="small">A faint natural sediment at the bottom is the oil being itself. Shake gently, or let it settle. Either way, eat well.</p>
         </div>
       </div>
@@ -411,27 +427,50 @@ img{display:block;max-width:100%;}
 <section class="b1-section alt" id="choose">
   <div class="wrap">
     <div class="b1-section-inner">
-      <p class="kicker">The bottle</p>
-      <h2 style="margin-top:14px;">One bottle. <em>One litre.</em> One harvest.</h2>
-      <p>The whole batch is one product. One size, one quality, one decision. The price is the price &mdash; no tiers, no upsells, no &laquo;premium&raquo; version of the same olive.</p>
+      <p class="kicker">Choose your bottle</p>
+      <h2 style="margin-top:14px;">One litre. <em>Two ways</em> to give it.</h2>
+      <p>Same oil, same harvest, same grove. The only thing that changes is the wrap. Keep the bottle for yourself, or hand it over with a ribbon on it.</p>
 
-      <div class="b1-single">
-        <div class="b1-single-img">
-          <img src="https://pnoe-project.com/wp-content/uploads/2026/02/Pnoe_syntheseis-1-1.png" alt="PNOE 1-litre extra virgin olive oil bottle with olives and olive branch" loading="lazy"/>
-        </div>
-        <div class="b1-single-body">
-          <h3>PNOE <em>1L</em> EVOO</h3>
-          <p class="desc">A full litre of certified extra virgin olive oil from the PNOE family grove in Ilis. Cold-pressed within hours of harvest, lab-confirmed, hand-bottled in dark glass. The same oil PNOE ships to its customers in Z&uuml;rich and beyond &mdash; brought into the solo.quando batch at the same producer&rsquo;s price.</p>
-          <p class="flavor-line">Fresh, fruity, gently bitter, alive at the back of the throat.</p>
+      <div class="b1-boxes">
 
-          <div class="price-block">
-            <p class="price-label">Batch 006 price</p>
-            <p class="price-final">CHF 22<em>.00</em></p>
-            <p class="price-meta">Per 1L bottle &middot; order 1 to 5 per person</p>
+        <!-- Simple -->
+        <div class="b1-box">
+          <div class="box-img">
+            <img src="/pnoe-bottle-1l.webp" alt="PNOE 1-litre extra virgin olive oil glass bottle on a wooden kitchen table" loading="lazy"/>
           </div>
+          <div class="box-body">
+            <h3>The <em>Simple</em></h3>
+            <p class="desc">A full litre of certified extra virgin olive oil from the PNOE family grove in Ilis. Cold-pressed within hours of harvest, lab-confirmed, hand-bottled in dark glass. Ready to live on your kitchen counter and disappear faster than you expect.</p>
+            <p class="flavor-line">Fresh, fruity, gently bitter, alive at the back of the throat.</p>
 
-          <a href="#reserve" class="cta">Reserve a bottle &rarr;</a>
+            <div class="price-block">
+              <p class="price-label">Batch 006 price</p>
+              <p class="price-final">CHF 19<em>.80</em></p>
+            </div>
+
+            <a href="#reserve" class="cta">Reserve the Simple &rarr;</a>
+          </div>
         </div>
+
+        <!-- Gift -->
+        <div class="b1-box feat">
+          <div class="box-img">
+            <img src="/pnoe-bottle-1l.webp" alt="PNOE 1-litre extra virgin olive oil glass bottle, gift-wrapped version" loading="lazy"/>
+          </div>
+          <div class="box-body">
+            <h3>The <em>Gift</em></h3>
+            <p class="desc">The same litre, in the kind of wrapping you can hand over without an apology. Boxed, ribboned, finished by hand, with a small card that tells the PNOE story. The right answer for a host, a thank-you, a housewarming, or any time you want the gift to feel chosen, not picked up.</p>
+            <p class="flavor-line">Fresh, fruity, gently bitter. Dressed for company.</p>
+
+            <div class="price-block">
+              <p class="price-label">Batch 006 price</p>
+              <p class="price-final">CHF 24<em>.20</em></p>
+            </div>
+
+            <a href="#reserve" class="cta">Reserve the Gift &rarr;</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -523,10 +562,24 @@ img{display:block;max-width:100%;}
     <div class="b1-form-inner" style="margin-top:48px;">
       <div class="b1-form-card">
         <form id="batch006-form" novalidate>
-          <div style="margin-bottom:24px;padding:22px 24px;background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.14);">
-            <p class="f-label" style="margin-bottom:6px;">Your bottle</p>
-            <p style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--bone);line-height:1.3;margin:0;">PNOE 1L Extra Virgin Olive Oil <em style="color:var(--terra);font-style:italic;">&middot; CHF 22.00</em></p>
-            <p style="font-size:13px;color:rgba(245,239,228,.6);margin-top:6px;line-height:1.5;">Harvest 2025&ndash;2026. Single estate, Ilis, Peloponnese. Dark glass, hand-bottled.</p>
+          <p class="f-label" style="margin-bottom:12px;">Your bottle *</p>
+          <div class="b1-options">
+            <label class="b1-option is-active" for="opt-simple-006">
+              <input type="radio" name="bottle_type" value="simple" id="opt-simple-006" checked/>
+              <p class="b1-option-title">The <em>Simple</em></p>
+              <p class="b1-option-desc">1L PNOE EVOO. The everyday bottle.</p>
+              <p class="b1-option-price">CHF 19.80 / bottle</p>
+            </label>
+            <label class="b1-option" for="opt-gift-006">
+              <input type="radio" name="bottle_type" value="gift" id="opt-gift-006"/>
+              <p class="b1-option-title">The <em>Gift</em></p>
+              <p class="b1-option-desc">Same 1L, boxed and ribboned with a story card.</p>
+              <p class="b1-option-price">CHF 24.20 / bottle</p>
+            </label>
+          </div>
+
+          <div style="margin-bottom:18px;padding:16px 20px;background:rgba(245,239,228,.04);border:1px solid rgba(245,239,228,.14);font-size:13px;color:rgba(245,239,228,.6);line-height:1.5;">
+            Harvest 2025 / 2026. Single estate, Ilis, Peloponnese. Dark glass, hand-bottled. Full producer story at <a href="https://pnoe-project.com" target="_blank" rel="noopener" style="color:var(--terra);border-bottom:1px solid rgba(194,102,61,.4);padding-bottom:1px;">pnoe-project.com</a>.
           </div>
 
           <div class="b1-bags-row">
@@ -542,7 +595,7 @@ img{display:block;max-width:100%;}
             </label>
             <div class="b1-total">
               <p class="b1-total-lbl">You pay</p>
-              <p class="b1-total-val" id="total-display">CHF 22.00</p>
+              <p class="b1-total-val" id="total-display">CHF 19.80</p>
             </div>
           </div>
 
@@ -563,7 +616,7 @@ img{display:block;max-width:100%;}
           </div>
 
           <button type="submit" class="b1-form-submit" id="submit-btn">
-            Reserve now. CHF <span id="btn-total">22.00</span> &rarr;
+            Reserve now. CHF <span id="btn-total">19.80</span> &rarr;
           </button>
 
           <p style="margin-top:18px;font-size:13px;color:rgba(245,239,228,.55);text-align:center;letter-spacing:.04em;line-height:1.6;">
@@ -668,24 +721,33 @@ img{display:block;max-width:100%;}
 
 /* Order form totals + button update */
 (function(){
-  var PRICE = 22.00;
+  var PRICE_SIMPLE = 19.80, PRICE_GIFT = 24.20;
+  var simpleRadio = document.getElementById('opt-simple-006');
+  var giftRadio = document.getElementById('opt-gift-006');
+  var simpleLabel = simpleRadio ? simpleRadio.closest('.b1-option') : null;
+  var giftLabel = giftRadio ? giftRadio.closest('.b1-option') : null;
   var bottlesSelect = document.getElementById('bottles-select');
   var totalDisplay = document.getElementById('total-display');
   var btnTotal = document.getElementById('btn-total');
-  if(!bottlesSelect) return;
+  if(!simpleRadio || !giftRadio || !bottlesSelect) return;
   function update(){
+    if(simpleRadio.checked){ simpleLabel.classList.add('is-active'); giftLabel.classList.remove('is-active'); }
+    else { giftLabel.classList.add('is-active'); simpleLabel.classList.remove('is-active'); }
     var n = parseInt(bottlesSelect.value, 10) || 1;
-    var t = (n * PRICE).toFixed(2);
+    var price = simpleRadio.checked ? PRICE_SIMPLE : PRICE_GIFT;
+    var t = (n * price).toFixed(2);
     if(totalDisplay) totalDisplay.textContent = 'CHF ' + t;
     if(btnTotal) btnTotal.textContent = t;
   }
+  simpleRadio.addEventListener('change', update);
+  giftRadio.addEventListener('change', update);
   bottlesSelect.addEventListener('change', update);
   update();
 })();
 
 /* Order form submission via shared SoloPayrexx */
 (function(){
-  var PRICE = 22.00;
+  var PRICE_SIMPLE = 19.80, PRICE_GIFT = 24.20;
   var form = document.getElementById('batch006-form');
   var errBox = document.getElementById('form-error');
   var errMsg = document.getElementById('form-error-msg');
@@ -696,19 +758,23 @@ img{display:block;max-width:100%;}
   form.addEventListener('submit', function(e){
     e.preventDefault(); hideError();
     if(!window.SoloPayrexx){ return showError('Payment system is loading. Please try again in a moment.'); }
+    var bottleType = (form.querySelector('input[name="bottle_type"]:checked') || {}).value;
     var bottles = parseInt(form.querySelector('[name="bottles"]').value, 10);
     var pickup = form.querySelector('[name="pickup_day"]').value;
     var notes = form.querySelector('[name="notes"]').value || '';
+    if(!bottleType){ return showError('Please choose Simple or Gift.'); }
     if(!bottles || bottles < 1){ return showError('Please choose how many bottles.'); }
     if(!pickup){ return showError('Pickup details missing.'); }
-    var amount = bottles * PRICE;
-    var purpose = 'Batch 006 - PNOE - ' + bottles + ' x 1L EVOO';
+    var pricePerBottle = bottleType === 'simple' ? PRICE_SIMPLE : PRICE_GIFT;
+    var amount = bottles * pricePerBottle;
+    var typeName = bottleType === 'simple' ? 'Simple (1L)' : 'Gift (1L, wrapped)';
+    var purpose = 'Batch 006 - PNOE - ' + bottles + ' x ' + typeName;
     btn.textContent = 'Opening payment...'; btn.disabled = true;
     SoloPayrexx.go({
       amount: amount,
       purpose: purpose,
       sessionKey: 'sq_pnoe_order',
-      sessionData: { batch:'006', bottles:bottles, pickup:pickup, notes:notes }
+      sessionData: { batch:'006', bottle_type:bottleType, bottles:bottles, pickup:pickup, notes:notes }
     });
   });
 })();

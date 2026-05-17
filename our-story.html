@@ -30,7 +30,9 @@
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
 @media(max-width:720px){.nav-inner{padding:0 22px;height:72px;}}
-.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo{display:flex;align-items:center;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);letter-spacing:-.01em;line-height:1;}
+.nav-logo span{color:var(--terra);}
+@media(max-width:720px){.nav-logo{font-size:24px;}}
 .nav-logo img{height:72px;width:auto;display:block;}
 @media(max-width:720px){.nav-logo img{height:32px;}}
 .nav-links{display:flex;gap:36px;list-style:none;}
@@ -79,6 +81,7 @@
     <li><a href="/">Home</a></li>
     <li><a href="/products">Batches</a></li>
     <li><a href="/how-it-works">How it works</a></li>
+    <li><a href="/our-story" class="on">Our story</a></li>
     <li><a href="/bake-with-us">Bake with us</a></li>
     <li><a href="/faq">FAQ</a></li>
     <li><a href="/contact">Contact</a></li>
@@ -132,16 +135,11 @@
 .opposite-pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,2.8vw,30px);line-height:1.45;border-top:1px solid rgba(250,243,238,.15);border-bottom:1px solid rgba(250,243,238,.15);padding:36px 0;margin:40px 0 0;}
 </style>
 
-<header class="h-hero">
-  <div class="h-hero-text">
+<header class="page-hero">
+  <div class="wrap">
     <p class="kicker">Our story</p>
     <h1>It began in <em>her kitchen</em>.</h1>
-  </div>
-  <div class="h-hero-img">
-    <picture>
-      <source type="image/webp" srcset="grandma-600.webp 600w, grandma-900.webp 900w" sizes="(max-width:860px) 100vw, 50vw">
-      <img src="grandma-900.webp" alt="Theoni and her grandmother making marmalade together" fetchpriority="high"/>
-    </picture>
+    <p class="sub">How a quiet Sunday in Z&uuml;rich turned into solo.quando.</p>
   </div>
 </header>
 
@@ -150,6 +148,12 @@
     <p>My grandmother taught me to bake. Patience. Butter. Citrus peel. Time.</p>
     <p>She never used a recipe book. She remembered everything by hand. She called me to the kitchen when something needed stirring, and that is how I learned.</p>
     <p>She is no longer here. The recipes are. So I make them. Most Sundays.</p>
+    <figure class="story-figure">
+      <picture>
+        <source type="image/webp" srcset="grandma-600.webp 600w, grandma-900.webp 900w" sizes="(max-width:860px) 100vw, 780px">
+        <img src="grandma-900.webp" alt="Theoni and her grandmother making marmalade together" loading="lazy" decoding="async"/>
+      </picture>
+    </figure>
     <p class="story-pull">"One Sunday I made twenty-four cookies. I ate two. The rest went to waste. That was the Sunday I knew something was wrong."</p>
   </div>
 </section>

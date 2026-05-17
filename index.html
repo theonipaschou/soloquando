@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>solo.quando &middot; Z&uuml;rich</title>
 <meta name="description" content="Pre-order homemade food from your neighbour in Z&uuml;rich. Made only when you want it."/>
-<link rel="preload" href="hero-abundance-1200.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -138,6 +137,18 @@ picture img{width:100%;height:100%;object-fit:cover;}
 .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--terra);animation:pulse 2s infinite;}
 .badge span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+
+/* ── Canonical page-hero ── */
+.page-hero{padding:96px 0 64px;background:var(--ink);text-align:center;}
+.page-hero .wrap{max-width:780px;}
+.page-hero .kicker{color:var(--terra);}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(46px,6.5vw,84px);letter-spacing:-.025em;margin:14px 0 20px;color:var(--bone);line-height:1.05;}
+.page-hero h1 em{color:var(--terra);font-style:italic;}
+.page-hero .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:rgba(245,239,228,.65);max-width:560px;line-height:1.5;margin:0 auto;}
+@media(max-width:720px){
+  .page-hero{padding:72px 0 48px;}
+  .page-hero .sub{font-size:18px;}
+}
 </style>
 <style>
 /* Option B */
@@ -229,6 +240,7 @@ picture img{width:100%;height:100%;object-fit:cover;}
 <nav class="nav"><div class="nav-inner">
   <a href="/" class="nav-logo" aria-label="solo.quando home">solo<span>.</span>quando</a>
   <ul class="nav-links" id="main-nav">
+    <li><a href="/" class="on">Home</a></li>
     <li><a href="/products">Batches</a></li>
     <li><a href="/how-it-works">How it works</a></li>
     <li><a href="/our-story">Our story</a></li>
@@ -434,18 +446,13 @@ details[open] .faqi-q::after{content:'\2013';}
 
 </style>
 
-<!-- ─── HERO — clean, matches other pages ─── -->
-<section class="hero">
-  <div class="hero-text">
+<header class="page-hero">
+  <div class="wrap">
     <p class="kicker">The food you've been missing</p>
-    <h1 class="hero-h1">Made only when<br/><em>you want it</em>.</h1>
-    <p class="hero-quote">Where culture moves slowly across kitchen counters.</p>
-    <p class="hero-sub">Pre-order homemade food from your neighbour in Z&uuml;rich. Made by hand. By someone with a name.</p>
+    <h1>Made only when <em>you want it</em>.</h1>
+    <p class="sub">Pre-order homemade food from your neighbour in Z&uuml;rich. Made by hand. By someone with a name.</p>
   </div>
-  <div class="hero-img">
-    <picture><source type="image/webp" srcset="hero-abundance-800.webp 800w, hero-abundance-1200.webp 1200w" sizes="(max-width:860px) 100vw, 50vw"><source type="image/jpeg" srcset="hero-abundance-800.jpg 800w, hero-abundance-1200.jpg 1200w" sizes="(max-width:860px) 100vw, 50vw"><img src="hero-abundance-1200.jpg" alt="A warm cottage kitchen filled with homemade cake, jars of preserves, fresh fruit and bread on a wooden table, with a baker working at the stove in the background" fetchpriority="high"/></picture>
-  </div>
-</section>
+</header>
 
 <!-- ─── TRUST BAND ─── -->
 <section class="trust-band">

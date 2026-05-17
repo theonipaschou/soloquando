@@ -21,7 +21,9 @@
 .nav{position:sticky;top:0;z-index:200;background:rgba(245,239,228,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;padding:0 48px;max-width:1180px;margin:0 auto;}
 @media(max-width:720px){.nav-inner{padding:0 22px;height:72px;}}
-.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo{display:flex;align-items:center;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--ink);letter-spacing:-.01em;line-height:1;}
+.nav-logo span{color:var(--terra);}
+@media(max-width:720px){.nav-logo{font-size:24px;}}
 .nav-logo img{height:72px;width:auto;display:block;}
 @media(max-width:720px){.nav-logo img{height:32px;}}
 .nav-links{display:flex;gap:36px;list-style:none;}
@@ -110,6 +112,7 @@
     <li><a href="/our-story">Our story</a></li>
     <li><a href="/bake-with-us">Bake with us</a></li>
     <li><a href="/faq">FAQ</a></li>
+    <li><a href="/contact" class="on">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;">
     <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
