@@ -127,7 +127,7 @@ window.SOLO_BATCHES = [
     pickupLocation: 'central Z\u00fcrich',
     price: '4-pcs CHF 13.80 / 6-pcs CHF 18 / 12-pcs CHF 36 (1\u20135 per order)',
     priceTable: 'CHF 13.80 / 4 \u00b7 CHF 18 / 6 \u00b7 CHF 36 / 12',
-    image: 'https://www.losanna-pralines.ch/cdn/shop/files/6-box.jpg?v=1701722937&width=1200',
+    image: '/losanna-6-box-900.webp',
     imageAlt: 'L\u2019Osanna 6-piece cheese-and-chocolate praline gift box',
     link: '/batch-005-losanna',
     cta: 'Pre-order now \u2192'
