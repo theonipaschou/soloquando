@@ -277,14 +277,19 @@ img{display:block;max-width:100%;}
   </div>
 </header>
 
+<<<<<<< HEAD
 <!-- PROGRESS BAND -->
 <section class="b1-progress">
+=======
+<!-- ── PROGRESS BAND ── -->
+<section class="b1-progress" data-batch-id="005">
+>>>>>>> 5800479 (Open batches 003 + 005 with live reservation flow)
   <div class="wrap b1-progress-inner">
 
     <div class="b1-progress-stats">
       <div class="stat">
         <div class="k">Reserved</div>
-        <div class="v"><em>0</em></div>
+        <div class="v"><em id="reserved-count">0</em></div>
         <div class="sub">boxes pre-ordered</div>
       </div>
       <div class="stat">
@@ -300,16 +305,27 @@ img{display:block;max-width:100%;}
     </div>
 
     <div class="b1-progress-track">
+<<<<<<< HEAD
       <div class="b1-progress-bar" style="width:0%;"></div>
       <div class="threshold-marker" style="left:33.33%;"></div>
+=======
+      <!-- 0 / 15 = 0% -->
+      <div class="b1-progress-bar" id="progress-bar" style="width:0%;"></div>
+      <!-- min marker at 5 / 15 = 33.33% -->
+      <div class="threshold-marker" id="threshold-marker" style="left:33.33%;"></div>
+>>>>>>> 5800479 (Open batches 003 + 005 with live reservation flow)
     </div>
     <div class="b1-progress-legend">
       <span>0</span>
-      <span>&#9650; min (5)</span>
+      <span id="threshold-legend">&#9650; min (5)</span>
       <span>max (15)</span>
     </div>
 
+<<<<<<< HEAD
     <p class="kicker" style="color:var(--terra);margin-top:28px;">Reservations open today. 5 boxes needed to make the batch happen.</p>
+=======
+    <p class="kicker" id="status-kicker" style="color:var(--terra);margin-top:28px;">Reservations open Sunday 17 May. 5 boxes needed to make the batch happen.</p>
+>>>>>>> 5800479 (Open batches 003 + 005 with live reservation flow)
     <p style="font-size:14px;color:var(--dim);margin-top:6px;">
       <strong>Reserve by:</strong> Friday 22 May 2026 &nbsp;&nbsp;
       <strong>Pickup:</strong> Saturday 23 May 2026
@@ -645,6 +661,7 @@ img{display:block;max-width:100%;}
 </div></footer>
 
 <script src="/payrexx.js"></script>
+<script src="/batch-progress.js"></script>
 <script>
 /* Mobile menu + share */
 (function(){

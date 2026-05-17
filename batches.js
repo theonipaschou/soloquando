@@ -72,9 +72,9 @@ window.SOLO_BATCHES = [
     productHtml: '<em>Ergolavoi</em>.',
     productPlain: 'Ergolavoi',
     baker: 'Theoni',
-    status: 'soon',
-    statusEyebrow: 'COMING SOON',
-    cardLine: 'A traditional Greek almond cookie. Soft, chewy, sandwiched with apricot jam. Pre-orders open Sun 17 May.',
+    status: 'open',
+    statusEyebrow: 'PRE-ORDERS OPEN',
+    cardLine: 'A traditional Greek almond cookie. Soft, chewy, sandwiched with apricot jam. Pre-order by Fri 22 May, 12:00.',
     preorderOpensTable: 'Sun 17 May 2026',
     preorderByCarousel: 'Fri 22 May, 12:00',
     preorderByTable: 'Fri 22 May 2026, 12:00',
@@ -86,7 +86,7 @@ window.SOLO_BATCHES = [
     image: '/ergolavoi-hero.webp',
     imageAlt: 'Greek ergolavoi almond cookies dusted with powdered sugar on a wooden tray',
     link: '/batch-ergolavoi-003',
-    cta: 'View batch \u2192'
+    cta: 'Pre-order now \u2192'
   },
   {
     id: '004',
@@ -108,6 +108,28 @@ window.SOLO_BATCHES = [
     image: '/vita-ritual-900.webp',
     imageAlt: 'VITA.RITUAL energy balls on a stone slab beside a matcha bowl, with the brand mark and tagline Daily Rituals Naturally',
     link: '/batch-vita-ritual-004',
+    cta: 'Pre-order now \u2192'
+  },
+  {
+    id: '005',
+    productHtml: '<em>L\u2019Osanna</em>.',
+    productPlain: 'L\u2019Osanna',
+    productFullName: 'L\u2019Osanna pralines',
+    baker: 'Osanna',
+    status: 'open',
+    statusEyebrow: 'PRE-ORDERS OPEN',
+    cardLine: 'Cheese meets chocolate. Swiss-made pralines from Osanna. 5 boxes needed to make the batch happen.',
+    preorderOpensTable: 'Sun 17 May 2026',
+    preorderByCarousel: 'Fri 22 May, 12:00',
+    preorderByTable: 'Fri 22 May 2026, 12:00',
+    pickupSummary: 'Sat 23 May, 11:00 sharp',
+    pickupTable: 'Sat 23 May 2026, 11:00',
+    pickupLocation: 'central Z\u00fcrich',
+    price: '6-box CHF 19.80 / 12-box CHF 39.60 (1\u20135 per order)',
+    priceTable: 'CHF 19.80 / 6-box \u00b7 CHF 39.60 / 12-box',
+    image: 'https://www.losanna-pralines.ch/cdn/shop/files/6-box.jpg?v=1701722937&width=1200',
+    imageAlt: 'L\u2019Osanna 6-piece cheese-and-chocolate praline gift box',
+    link: '/batch-005-losanna',
     cta: 'Pre-order now \u2192'
   }
 ];

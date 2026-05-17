@@ -52,8 +52,7 @@ const ALLOWED_SOURCES = new Set([
   'batch-002',
   'batch-003',
   'batch-004',
-  'batch-003-coming-soon',
-  'batch-004-coming-soon'
+  'batch-005'
 ]);
 
 

@@ -1,11 +1,11 @@
 {
-  "batch": "002",
-  "name": "Mousto",
-  "reserved": 16,
+  "batch": "003",
+  "name": "Ergolavoi",
+  "reserved": 0,
   "min": 10,
-  "max": 60,
+  "max": 30,
   "unit": "piece",
   "unit_plural": "pieces",
-  "status": "completed",
+  "status": "open",
   "updated_at": "2026-05-17T08:00:00.000Z"
 }
