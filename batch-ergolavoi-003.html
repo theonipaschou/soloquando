@@ -180,8 +180,8 @@
 
 <header class="b1-hero">
   <div class="b1-hero-text">
-    <div class="badge"><span class="badge-dot"></span><span>Pre-orders open</span></div>
-    <p class="kicker">Batch 003 &middot; open &middot; reservations</p>
+    <div class="badge cs-badge"><span class="badge-dot"></span><span>Coming soon</span></div>
+    <p class="kicker">Batch 003 &middot; coming soon</p>
     <h1><em>Ergolavoi</em>.</h1>
     <p class="sub">A traditional Greek almond cookie. Soft, chewy, paired with apricot jam. Made by hand, made only when you want it.</p>
     <p class="baker"><strong>By Theoni</strong> &middot; Z&uuml;rich</p>
@@ -284,68 +284,21 @@
 </section>
 
 <section class="b1-form-s" id="reserve">
-  <div class="wrap">
-    <div class="b1-cs-inner">
-      <p class="kicker">Pre-orders open</p>
-      <h2>Reserve your <em>ergolavoi</em>.</h2>
-      <p>Open until midnight on Fri 22 May. Payment is handled by Payrexx. If fewer than 10 portions are reserved by then, every payment is returned in full.</p>
-      <div class="b1-cs-dates">
-        <div class="b1-cs-date">
-          <p class="lbl">Opens</p>
-          <p class="val">Sun 17 May<br/>Today</p>
-        </div>
-        <div class="b1-cs-date">
-          <p class="lbl">Closes</p>
-          <p class="val">Fri 22 May<br/>12:00</p>
-        </div>
-        <div class="b1-cs-date">
-          <p class="lbl">Pickup</p>
-          <p class="val">Sat 23 May<br/>11:00, central Z&uuml;rich</p>
-        </div>
-      </div>
+  <div class="wrap"><div class="b1-cs-inner">
+    <p class="kicker">Coming soon</p>
+    <h2>Pre-orders open <em>soon</em>.</h2>
+    <p>This batch isn't taking reservations yet. Leave your email and I'll write to you the moment it opens.</p>
+    <div class="b1-cs-notify">
+      <p class="lbl">Be the first to know</p>
+      <form class="b1-cs-form js-subscribe" id="b1-cs-form-003" data-result="#b1-cs-result-003" data-success="You are on the list. I will write to you when this batch opens.">
+        <input type="hidden" name="source" value="batch-003-coming-soon"/>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+        <input type="email" name="email" placeholder="your@email.ch" required aria-label="Email address"/>
+        <button type="submit">Notify me &rarr;</button>
+      </form>
+      <div class="b1-cs-result" id="b1-cs-result-003" role="status" aria-live="polite"></div>
     </div>
-
-    <div class="b1-form-inner" style="margin-top:48px;">
-      <div class="b1-form-card">
-        <form id="batch003-form" novalidate>
-          <div class="b1-bags-row" style="margin-bottom:18px;">
-            <label>
-              <span class="f-label">How many portions? *</span>
-              <select class="f-input" name="portions" id="portions-select">
-                <option value="1" selected>1 portion</option>
-                <option value="2">2 portions</option>
-                <option value="3">3 portions</option>
-                <option value="4">4 portions</option>
-                <option value="5">5 portions</option>
-              </select>
-            </label>
-            <div class="b1-total">
-              <p class="b1-total-lbl">You pay</p>
-              <p class="b1-total-val" id="total-display">CHF 9.00</p>
-            </div>
-          </div>
-
-          <label style="margin-bottom:22px;">
-            <span class="f-label">Notes (optional)</span>
-            <textarea class="f-input" name="notes" placeholder="Allergies, questions, or anything else."></textarea>
-          </label>
-
-          <div class="b1-form-result err" id="form-error" role="alert" style="display:none;">
-            <p id="form-error-msg">Please fill in all required fields.</p>
-          </div>
-
-          <button type="submit" class="b1-form-submit" id="submit-btn">
-            Reserve now &mdash; CHF <span id="btn-total">9.00</span> &rarr;
-          </button>
-
-          <p style="margin-top:18px;font-size:13px;color:rgba(245,239,228,.55);text-align:center;letter-spacing:.04em;line-height:1.6;">
-            Payment opens in a secure window without leaving this page.<br/>
-            <span style="opacity:.8;">TWINT &middot; Visa &middot; Mastercard</span>
-          </p>
-        </form>
-      </div>
-    </div>
-  </div>
+  </div></div>
 </section>
 
 <section class="share-quiet">
@@ -438,67 +391,7 @@
 <script src="/shared.js"></script>
 <script src="/batch-progress.js"></script>
 
-<script src="/payrexx.js"></script>
 <script>
-/* Total + button price update */
-(function(){
-  var PRICE = 9.00;
-  var portionsSelect = document.getElementById('portions-select');
-  var totalDisplay   = document.getElementById('total-display');
-  var btnTotal       = document.getElementById('btn-total');
-  if (!portionsSelect) return;
-  function update(){
-    var n = parseInt(portionsSelect.value, 10) || 1;
-    var t = (n * PRICE).toFixed(2);
-    if (totalDisplay) totalDisplay.textContent = 'CHF ' + t;
-    if (btnTotal)     btnTotal.textContent     = t;
-  }
-  portionsSelect.addEventListener('change', update);
-  update();
-})();
-
-/* Form submission via shared SoloPayrexx */
-(function(){
-  var PRICE = 9.00;
-  var form   = document.getElementById('batch003-form');
-  var errBox = document.getElementById('form-error');
-  var errMsg = document.getElementById('form-error-msg');
-  var btn    = document.getElementById('submit-btn');
-  if (!form) return;
-  function showError(msg){
-    errMsg.textContent = msg;
-    errBox.style.display = 'block';
-    errBox.scrollIntoView({behavior:'smooth', block:'center'});
-  }
-  function hideError(){ errBox.style.display = 'none'; }
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    hideError();
-    if (!window.SoloPayrexx){
-      return showError('Payment system is loading — please try again in a moment.');
-    }
-    var portions = parseInt(form.querySelector('[name="portions"]').value, 10);
-    var notes    = form.querySelector('[name="notes"]').value || '';
-    if (!portions || portions < 1){
-      return showError('Please choose how many portions.');
-    }
-    var amount  = portions * PRICE;
-    var purpose = 'Batch 003 - Ergolavoi - ' + portions + ' portion' + (portions === 1 ? '' : 's');
-    btn.textContent = 'Opening payment…';
-    btn.disabled = true;
-    SoloPayrexx.go({
-      amount: amount,
-      purpose: purpose,
-      sessionKey: 'sq_ergolavoi_order',
-      sessionData: {
-        batch: '003',
-        portions: portions,
-        pickup: 'Saturday 23 May 2026, 11:00, central Zurich',
-        notes: notes
-      }
-    });
-  });
-})();
 </script>
 
 <script>

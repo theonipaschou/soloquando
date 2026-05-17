@@ -72,9 +72,9 @@ window.SOLO_BATCHES = [
     productHtml: '<em>Ergolavoi</em>.',
     productPlain: 'Ergolavoi',
     baker: 'Theoni',
-    status: 'open',
-    statusEyebrow: 'PRE-ORDERS OPEN',
-    cardLine: 'A traditional Greek almond cookie. Soft, chewy, sandwiched with apricot jam. Pre-order by Fri 22 May, 12:00.',
+    status: 'soon',
+    statusEyebrow: 'COMING SOON',
+    cardLine: 'A traditional Greek almond cookie. Soft, chewy, sandwiched with apricot jam. Pre-orders opening soon.',
     preorderOpensTable: 'Sun 17 May 2026',
     preorderByCarousel: 'Fri 22 May, 12:00',
     preorderByTable: 'Fri 22 May 2026, 12:00',
@@ -86,7 +86,7 @@ window.SOLO_BATCHES = [
     image: '/ergolavoi-hero.webp',
     imageAlt: 'Greek ergolavoi almond cookies dusted with powdered sugar on a wooden tray',
     link: '/batch-ergolavoi-003',
-    cta: 'Pre-order now \u2192'
+    cta: 'View batch \u2192'
   },
   {
     id: '004',
@@ -138,9 +138,9 @@ window.SOLO_BATCHES = [
     productPlain: 'PNOE',
     productFullName: 'PNOE 1L Extra Virgin Olive Oil',
     baker: 'The PNOE family',
-    status: 'open',
-    statusEyebrow: 'PRE-ORDERS OPEN',
-    cardLine: 'One litre of certified extra virgin olive oil from a small family grove in Ilis, Peloponnese. Cold-pressed within hours of harvest. Simple or gift-wrapped.',
+    status: 'soon',
+    statusEyebrow: 'COMING SOON',
+    cardLine: 'One litre of certified extra virgin olive oil from a small family grove in Ilis, Peloponnese. Cold-pressed within hours of harvest. Pre-orders opening soon.',
     preorderOpensTable: 'Sun 17 May 2026',
     preorderByCarousel: 'Fri 5 June, midnight',
     preorderByTable: 'Fri 5 June 2026, midnight',
@@ -152,7 +152,7 @@ window.SOLO_BATCHES = [
     image: '/pnoe-hero-900.webp',
     imageAlt: 'PNOE extra virgin olive oil bottles arranged on a marble surface',
     link: '/batch-006-pnoe',
-    cta: 'Pre-order now \u2192'
+    cta: 'View batch \u2192'
   }
 ];
 
