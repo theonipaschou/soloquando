@@ -1,11 +1,11 @@
 {
   "batch": "005",
   "name": "L'Osanna",
-  "reserved": 1,
+  "reserved": 2,
   "min": 5,
   "max": 30,
   "unit": "box",
   "unit_plural": "boxes",
   "status": "open",
-  "updated_at": "2026-05-17T16:51:54.480Z"
+  "updated_at": "2026-05-19T09:07:28.524Z"
 }
